@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+    <title>[Job-Room Bootstrap] prototype</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="src/images/schweiz.png"/>
+
+    <!-- Bootstrap -->
+    <link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Job-Room -->
+    <link href="src/css/jr-1.0.css" rel="stylesheet"/>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<div id="wrap">
+    <div class="container">
+        <img src="src/images/jobroomA_de.jpg" alt="Logo: Jobroom der ALV und Arbeitsvermittlung"/>
+
+        <div class="navbar navbar-default" role="navigation">
+            <div class="container">
+                <ul class="nav navbar-nav">
+                    <li><a href="#">Neu im Job-Room</a></li>
+                    <li><a href="#">Kontakt</a></li>
+                    <li><a href="#">Login private Arbeitsvermittler</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active"><a href="#">DE</a></li>
+                    <li><a href="#">FR</a></li>
+                    <li><a href="#">IT</a></li>
+                </ul>
+            </div>
+        </div>
+        <!--/.navbar -->
+
+        <div class="row">
+            <div class="col-md-3" role="navigation">
+                <ul class="nav nav-sidebar">
+                    <li class="active"><a href="#">Job suchen</a></li>
+                    <li><a href="#">Kandidaten suchen</a></li>
+                    <li><a href="#">Job publizieren</a></li>
+                </ul>
+
+                <img src="src/images/seco_logo_de.png" alt="Logo: SECO" />
+            </div>
+            <!--/.subnav -->
+
+            <div class="col-md-9">
+                <ol class="breadcrumb">
+                    <li>Job suchen</li>
+                </ol>
+
+                <div class="alert alert-info">...</div>
+
+                <fieldset>
+                    <legend>Job suchen</legend>
+
+                    <form action="#" class="form-horizontal" role="form">
+
+                        <div class="form-group jr-beruf-input">
+                            <div class="col-md-4 radio">
+                                <label for="beruf1" class="control-label"><input name="job" type="radio" checked="checked" /> Ich suche einen Job als:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="beruf1" placeholder="z.B. Maurer" />
+                            </div>
+                        </div>
+                        <div class="form-group jr-beruf-input">
+                            <div class="col-md-4 radio">
+                                <label for="job" class="control-label"><input name="job" type="radio" /> Berufsgruppensuche:</label>
+                            </div>
+                            <div class="col-md-6">
+                                <select class="form-control" disabled="disabled">
+                                    <option>- keine Auswahl -</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="ort" class="col-md-4 control-label">Gewünschter Arbeitsort:</label>
+                            <div class="col-md-6">
+                                <input type="text" class="form-control" id="ort" placeholder="z.B. Ort, Gemeinde oder Kanton" />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="pensum" class="col-md-4 control-label">Arbeitspensum: *</label>
+                            <div class="col-md-6" id="pensum">
+                                <div>
+                                    <label for="pensum_von" class="col-md-1 control-label">von:</label>
+                                    <div class="col-md-2">
+                                        <input type="number" class="form-control" id="pensum_von" value="0" />
+                                    </div>
+                                </div>
+                                <div>
+                                    <label for="pensum_bis" class="col-md-1 control-label">bis:</label>
+                                    <div class="col-md-2">
+                                        <input type="number" class="form-control" id="pensum_bis" value="0" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="intern_extern" class="col-md-4 control-label">Interne/Externe Stellen:</label>
+                            <div class="col-md-6">
+                                <select class="form-control">
+                                    <option>interne und externe</option>
+                                    <option>2</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="online_seit" class="col-md-4 control-label">Stelle online seit: *</label>
+                            <div class="col-md-2">
+                                <input type="number" class="form-control" id="online_seit" value="20" />
+                            </div>
+                            <div class="col-md-2">
+                                Tagen
+                            </div>
+                        </div>
+                    </form>
+                </fieldset>
+
+                <br />
+
+                <button type="button" class="btn btn-primary">Suchen</button>
+                <button type="button" class="btn btn-default">Zurücksetzen</button>
+            </div>
+            <!--/.content-->
+        </div>
+    </div>
+    <!--/.container-->
+</div>
+<!--/.wrap -->
+
+<div id="footer">
+    <div class="container">
+        &copy; Informatik der Arbeitslosenversicherung und Arbeitsvermittlung
+    </div>
+</div>
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery.js"></script>
+<!-- Bootstrap core JavaScript -->
+<script type="text/javascript" src="src/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
