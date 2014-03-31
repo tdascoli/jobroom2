@@ -6,12 +6,25 @@
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
 
-    <title>[Job-Room Bootstrap] prototype</title>
+    <title>[Job-Room] prototype</title>
 
-    <link rel="shortcut icon" type="image/x-icon" href="src/images/schweiz.png"/>
+    <link rel="shortcut icon" type="image/x-icon" href="/src/images/schweiz.png"/>
 
-    <!-- Bootstrap -->
-    <link href="src/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- LESS Bootstrap -->
+    <link rel="stylesheet/less" type="text/css" href="/src/less/jobroom.less"/>
+    <script type="text/javascript">
+        less = {
+            env: "development",
+            async: false,
+            fileAsync: false,
+            poll: 1000,
+            functions: {},
+            dumpLineNumbers: "comments",
+            relativeUrls: false,
+            rootpath: ":/a.com/"
+        };
+    </script>
+    <script type="text/javascript" src="/src/less/less-1.7.0.min.js"></script>
 
     <!-- Job-Room -->
     <link href="src/css/jr-1.0.css" rel="stylesheet"/>
