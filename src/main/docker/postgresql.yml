@@ -1,0 +1,11 @@
+version: '2'
+services:
+    jobroom-postgresql:
+        image: postgres:9.6.2
+        # volumes:
+        #     - ~/volumes/jhipster/jobroom/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=jobroom
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
