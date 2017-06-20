@@ -23,6 +23,7 @@ import {
     ProfileService,
     PageRibbonComponent,
     ActiveMenuDirective,
+    MegaMenuDirective,
     ErrorComponent
 } from './layouts';
 
@@ -44,7 +45,8 @@ import {
         ErrorComponent,
         PageRibbonComponent,
         ActiveMenuDirective,
-        FooterComponent
+        FooterComponent,
+        MegaMenuDirective,
     ],
     providers: [
         ProfileService,

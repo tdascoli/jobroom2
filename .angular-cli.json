@@ -9,7 +9,8 @@
         "assets": [
             "content",
             "i18n",
-            "favicon.ico"
+            "favicon.ico",
+            { "glob": "**/*", "input": "../../../node_modules/@alv-ch/alv-styleguide/src/assets/styleguide/images", "output": "./styleguide/images/" }
         ],
         "index": "index.html",
         "main": "app/app.main.ts",
