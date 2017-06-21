@@ -11,6 +11,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import javax.validation.constraints.*;
 import java.time.Instant;
 import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 /**
@@ -18,7 +19,7 @@ import java.util.stream.Collectors;
  */
 public class UserDTO {
 
-    private Long id;
+    private UUID id;
 
     @NotBlank
     @Pattern(regexp = Constants.LOGIN_REGEX)
@@ -65,7 +66,7 @@ public class UserDTO {
                 .collect(Collectors.toSet()));
     }
 
-    public UserDTO(Long id, String login, String firstName, String lastName,
+    public UserDTO(UUID id, String login, String firstName, String lastName,
         String email, boolean activated, String imageUrl, String langKey,
         String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate,
         Set<String> authorities) {
@@ -85,11 +86,11 @@ public class UserDTO {
         this.authorities = authorities;
     }
 
-    public Long getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

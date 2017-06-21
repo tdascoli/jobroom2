@@ -92,6 +92,7 @@
     "webpack-notifier": "1.5.0",
     "webpack-visualizer-plugin": "0.1.11",
     "write-file-webpack-plugin": "3.4.2",
+    "generator-jhipster-postgresuuid-converter": "0.1.0",    
     "yargs": "6.6.0"
   },
   "engines": {
