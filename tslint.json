@@ -2,6 +2,9 @@
     "rulesDirectory": [
         "node_modules/codelyzer"
     ],
+    "extends": [
+        "tslint-eslint-rules"
+    ],
     "rules": {
         "class-name": true,
         "comment-format": [
@@ -49,6 +52,10 @@
         "no-unused-expression": true,
         "no-use-before-declare": true,
         "no-var-keyword": true,
+        "object-curly-spacing": [
+            true,
+            "always"
+        ],
         "object-literal-sort-keys": false,
         "one-line": [
             true,

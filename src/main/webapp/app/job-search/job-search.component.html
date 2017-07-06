@@ -1,0 +1,23 @@
+<jhi-job-search-toolbar jhiStickyToolbarItem [total]="totalCount"></jhi-job-search-toolbar>
+
+<div class="container">
+
+    <div class="base">
+
+        <div class="base__subnavbar">
+
+            <jhi-job-search-filter></jhi-job-search-filter>
+
+        </div>
+
+        <div class="base__content--wide">
+
+            <h3 class="text--light">{{totalCount}} {{term | capitalize}} Jobs in Zürich (Kanton)</h3>
+
+            <jhi-job-search-list-item *ngFor="let job of jobList" [job]="job"></jhi-job-search-list-item>
+
+        </div>
+
+    </div>
+
+</div>

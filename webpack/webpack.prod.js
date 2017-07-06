@@ -15,6 +15,14 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         filename: 'app/[hash].[name].bundle.js',
         chunkFilename: 'app/[hash].[id].chunk.js'
     },
+    module: {
+        rules: [{
+            test: /\.ts$/,
+            loaders: [
+                'angular-router-loader?aot=true&genDir=build/aot/'
+            ]
+        }]
+    },
     plugins: [
         new ExtractTextPlugin('[hash].styles.css'),
         new Visualizer({

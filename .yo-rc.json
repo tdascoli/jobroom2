@@ -2,7 +2,8 @@
   "generator-jhipster": {
     "promptValues": {
       "packageName": "ch.admin.seco.jobroom",
-      "nativeLanguage": "de"
+      "nativeLanguage": "de",
+      "microservicePath": "../job-service"
     },
     "jhipsterVersion": "4.5.5",
     "baseName": "jobroom",

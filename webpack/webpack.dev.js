@@ -24,6 +24,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
             context: [
                 /* jhipster-needle-add-entity-to-webpack - JHipster will add entity api paths here */
                 '/api',
+                '/jobservice',
                 '/management',
                 '/swagger-resources',
                 '/v2/api-docs',
@@ -42,7 +43,8 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         rules: [{
             test: /\.ts$/,
             loaders: [
-                'tslint-loader'
+                'tslint-loader',
+                'angular-router-loader'
             ],
             exclude: ['node_modules', new RegExp('reflect-metadata\\' + path.sep + 'Reflect\\.ts')]
         }]

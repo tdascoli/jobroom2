@@ -12,31 +12,35 @@ import { JobroomEntityModule } from './entities/entity.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
-
-// jhipster-needle-angular-add-module-import JHipster will add new module here
-
 import {
+    ActiveMenuDirective,
+    ErrorComponent,
+    FooterComponent,
     JhiMainComponent,
     LayoutRoutingModule,
-    NavbarComponent,
-    FooterComponent,
-    ProfileService,
-    PageRibbonComponent,
-    ActiveMenuDirective,
     MegaMenuDirective,
-    ErrorComponent
+    NavbarComponent,
+    PageRibbonComponent,
+    ProfileService
 } from './layouts';
+
+import { AppRoutingModule } from './app.routing.module';
+import { JobSearchModule } from './job-search/job-search.module';
+
+// jhipster-needle-angular-add-module-import JHipster will add new module here
 
 @NgModule({
     imports: [
         BrowserModule,
+        AppRoutingModule,
         LayoutRoutingModule,
-        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-'}),
+        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         JobroomSharedModule,
         JobroomHomeModule,
         JobroomAdminModule,
         JobroomAccountModule,
         JobroomEntityModule,
+        JobSearchModule
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
@@ -46,7 +50,7 @@ import {
         PageRibbonComponent,
         ActiveMenuDirective,
         FooterComponent,
-        MegaMenuDirective,
+        MegaMenuDirective
     ],
     providers: [
         ProfileService,
@@ -54,6 +58,7 @@ import {
         PaginationConfig,
         UserRouteAccessService
     ],
-    bootstrap: [ JhiMainComponent ]
+    bootstrap: [JhiMainComponent]
 })
-export class JobroomAppModule {}
+export class JobroomAppModule {
+}

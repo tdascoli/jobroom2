@@ -1,4 +1,4 @@
-import {AfterViewInit, Directive, ViewContainerRef} from '@angular/core';
+import { AfterViewInit, Directive, ViewContainerRef } from '@angular/core';
 
 @Directive({
   selector: '[jhiMegaMenu]'
@@ -17,6 +17,6 @@ export class MegaMenuDirective implements AfterViewInit {
         const marginMegamenu = (document.body.clientWidth - 1540) / 2;
         const diff = -(positionLeft - marginMegamenu);
         const menu = <HTMLDivElement>this.el.querySelector('.dropdown-menu');
-        Object.assign(menu.style, {left: diff + 'px'});
+        Object.assign(menu.style, { left: diff + 'px' });
     }
 }

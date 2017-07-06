@@ -24,3 +24,7 @@ only screen and (                min-resolution: 2dppx) {
         background-size: contain;
     }
 }
+
+.jumbotron {
+    background: url("~@alv-ch/alv-styleguide/build/images/bg-jobroom.jpg");
+}

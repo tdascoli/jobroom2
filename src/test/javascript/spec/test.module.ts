@@ -4,6 +4,10 @@ import { Http, BaseRequestOptions } from '@angular/http';
 import { JhiLanguageService } from 'ng-jhipster';
 import { MockLanguageService } from './helpers/mock-language.service';
 
+export function httpFactory(backendInstance: MockBackend, defaultOptions: BaseRequestOptions) {
+    return new Http(backendInstance, defaultOptions);
+}
+
 @NgModule({
     providers: [
         MockBackend,
@@ -14,9 +18,7 @@ import { MockLanguageService } from './helpers/mock-language.service';
         },
         {
             provide: Http,
-            useFactory: (backendInstance: MockBackend, defaultOptions: BaseRequestOptions) => {
-                return new Http(backendInstance, defaultOptions);
-            },
+            useFactory: httpFactory,
             deps: [MockBackend, BaseRequestOptions]
         }
     ]

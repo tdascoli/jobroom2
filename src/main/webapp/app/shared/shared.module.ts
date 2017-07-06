@@ -13,7 +13,8 @@ import {
     LoginModalService,
     Principal,
     HasAnyAuthorityDirective,
-    JhiLoginModalComponent
+    JhiLoginModalComponent,
+    StickyToolbarItemDirective
 } from './';
 
 @NgModule({
@@ -23,7 +24,8 @@ import {
     ],
     declarations: [
         JhiLoginModalComponent,
-        HasAnyAuthorityDirective
+        HasAnyAuthorityDirective,
+        StickyToolbarItemDirective
     ],
     providers: [
         LoginService,
@@ -41,7 +43,8 @@ import {
         JobroomSharedCommonModule,
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
-        DatePipe
+        DatePipe,
+        StickyToolbarItemDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

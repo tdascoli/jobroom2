@@ -3,10 +3,6 @@
 Bootstrap tweaks
 ===============================================================*/
 
-body, h1, h2, h3, h4 {
-    font-weight: 300;
-}
-
 
 /* ==========================================================================
 Browser Upgrade Prompt
@@ -200,5 +196,24 @@ ui bootstrap tweaks
     outline: none;
 }
 
+/*=================================================================================
+Style guide customization
+=================================================================================== */
+.header {
+    margin: 0;
+
+    .toolbar {
+        display: none;
+    }
+}
+
+
+.header--with-toolbar {
+    margin-bottom: 4rem;
+
+    .toolbar {
+        display: block;
+    }
+}
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */

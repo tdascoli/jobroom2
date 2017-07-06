@@ -1,3 +1,4 @@
+export * from './layout/sticky-toolbar-item.directive';
 export * from './constants/pagination.constants';
 export * from './alert/alert.component';
 export * from './alert/alert-error.component';

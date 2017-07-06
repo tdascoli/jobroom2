@@ -1,4 +1,4 @@
-import { Directive, OnInit, ElementRef, Renderer, Input} from '@angular/core';
+import { Directive, OnInit, ElementRef, Renderer, Input } from '@angular/core';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 
 @Directive({

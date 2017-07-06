@@ -4,6 +4,7 @@ import { RouterModule } from '@angular/router';
 import { JobroomSharedModule } from '../shared';
 
 import { HOME_ROUTE, HomeComponent } from './';
+import { JobSearchComponent } from './tools/job-search.component';
 
 @NgModule({
     imports: [
@@ -12,6 +13,7 @@ import { HOME_ROUTE, HomeComponent } from './';
     ],
     declarations: [
         HomeComponent,
+        JobSearchComponent
     ],
     entryComponents: [
     ],

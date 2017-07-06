@@ -1,0 +1,80 @@
+{
+    "jobroomApp": {
+        "job" : {
+            "home": {
+                "title": "Jobs",
+                "createLabel": "Créer un nouveau Job",
+                "createOrEditLabel": "Créer ou éditer un Job"
+            },
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Job {{ id }} ?"
+            },
+            "detail": {
+                "title": "Job"
+            },
+            "externalId": "External Id",
+            "publicationStartDate": "Publication Start Date",
+            "publicationEndDate": "Publication End Date",
+            "externalUrl": "External Url",
+            "applicationUrl": "Application Url",
+            "registrationDate": "Registration Date",
+            "cancellationDate": "Cancellation Date",
+            "cancellationReason": "Cancellation Reason",
+            "title": "Title",
+            "description": "Description",
+            "workingTimePercentageMin": "Working Time Percentage Min",
+            "workingTimePercentageMax": "Working Time Percentage Max",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "startsImmediately": "Starts Immediately",
+            "isPermanent": "Is Permanent",
+            "fingerPrint": "Finger Print",
+            "numberOfJobs": "Number Of Jobs",
+            "isJobSharing": "Is Job Sharing",
+            "isSuitableForDisabled": "Is Suitable For Disabled",
+            "locality" : {
+                "text": "Locality Text",
+                "zipCode": "Job Locality Zip Code",
+                "communalCode": "Locality Communal Code",
+                "cantonCode": "Locality Canton Code",
+                "regionCode": "Locality Region Code",
+                "countryCode": "Locality Country Code"
+            },
+            "paymentMin": "Payment Min",
+            "paymentMax": "Payment Max",
+            "currencyCode": "Currency Code",
+            "ageMin": "Age Min",
+            "ageMax": "Age Max",
+            "ageRestrictionReason": "Age Restriction Reason",
+            "gender": "Gender",
+            "hasPersonalVehicle": "Has Personal Vehicle",
+            "drivingLicenseLevel": "Driving License Level",
+            "companyName": "Company Name",
+            "companyAddressLine1": "Company Address Line 1",
+            "companyAddressLine2": "Company Address Line 2",
+            "companyZipCode": "Company Zip Code",
+            "companyCity": "Company City",
+            "companyCountryCode": "Company Country Code",
+            "companyPostboxNumber": "Company Postbox Number",
+            "companyPostboxZipCode": "Company Postbox Zip Code",
+            "companyPostboxCity": "Company Postbox City",
+            "companyPhone": "Company Phone",
+            "companyEmail": "Company Email",
+            "companyWebsite": "Company Website",
+            "contactTitle": "Contact Title",
+            "contactFirstName": "Contact First Name",
+            "contactLastName": "Contact Last Name",
+            "contactPhone": "Contact Phone",
+            "contactEmail": "Contact Email",
+            "professions": "Professions",
+            "languages": "Languages"
+        }
+    },
+    "jobserviceApp": {
+        "job" : {
+            "created": "Un nouveau Job a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Job avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Job avec l'identifiant {{ param }} a été supprimé"
+        }
+    }
+}

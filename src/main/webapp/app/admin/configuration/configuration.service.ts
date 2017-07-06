@@ -40,7 +40,7 @@ export class JhiConfigurationService {
 
                     for (const valKey in valsObject) {
                         if (valsObject.hasOwnProperty(valKey)) {
-                            vals.push({key: valKey, val: valsObject[valKey]});
+                            vals.push({ key: valKey, val: valsObject[valKey] });
                         }
                     }
                     properties[key] = vals;

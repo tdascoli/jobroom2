@@ -1,11 +1,22 @@
 <jhi-page-ribbon></jhi-page-ribbon>
 
-<router-outlet name="navbar"></router-outlet>
+<div class="header sticky-top">
+    <!-- alv-header -->
+    <div class="alv-header alv-header--inverse bg-inverse">
+        <span class="alv-header__brand mb-0">
+            <img src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/swiss.svg" width="20" height="20" class="d-inline-block" alt="Swiss Confederation">
+            Arbeitslosenversicherung ALV
+        </span>
+    </div>
+    <!-- /alv-header -->
+    <router-outlet name="navbar"></router-outlet>
 
-<div class="container-fluid">
-    <div class="card jh-card">
-        <router-outlet></router-outlet>
-        <router-outlet name="popup"></router-outlet>
+    <!--Placeholder for sticky toolbar items-->
+    <div class="toolbar toolbar--light md-whiteframe-3dp">
     </div>
 </div>
+
+<router-outlet></router-outlet>
+<router-outlet name="popup"></router-outlet>
+
 <jhi-footer></jhi-footer>

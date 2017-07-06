@@ -1,0 +1,23 @@
+<div class="logo-box flex-height result-list__item md-whiteframe-1dp">
+
+    <div class="d-flex w-100 justify-content-between mb-1">
+        <h4 class="text--primary-color"><a href="job-detail.html">{{job.title}}</a></h4>
+        <div>
+            <small style="vertical-align: text-top;">{{job.registrationDate | date}}</small>
+            <div style="display: inline-block; padding: 0 10px; font-size: 1.25em;" class="text--primary-color">
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <span class="text--primary-color">{{job.companyName}}</span>
+        <span class="badge badge-primary">{{job.locality.text}}</span>
+        <span class="badge badge-success">Success</span>
+        <span class="badge badge-info">Info</span>
+        <span class="badge badge-warning">Warning</span>
+    </div>
+
+    <p>{{job.description}}</p>
+
+</div>

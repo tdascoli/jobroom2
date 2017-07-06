@@ -64,7 +64,7 @@ export class PasswordStrengthBarComponent {
         } else {
             idx = 4;
         }
-        return {idx: idx + 1, col: this.colors[idx]};
+        return { idx: idx + 1, col: this.colors[idx] };
     };
 
     @Input()
