@@ -48,6 +48,8 @@ task gatlingRunAll(dependsOn: 'manifestJar') {
     }
 }
 
+compileScala.enabled = false
+
 def createGatlingRunTask(def gatlingSimulationClassName) {
     return tasks.create("gatlingRun${gatlingSimulationClassName}", JavaExec) {
 
