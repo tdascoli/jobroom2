@@ -1,31 +1,36 @@
 package ch.admin.seco.jobroom.config;
 
-import io.github.jhipster.config.JHipsterProperties;
-import io.github.jhipster.config.metrics.SpectatorLogMetricWriter;
+import java.lang.management.ManagementFactory;
+import java.util.concurrent.TimeUnit;
 
-import com.netflix.spectator.api.Registry;
-import org.springframework.boot.actuate.autoconfigure.ExportMetricReader;
-import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
-import org.springframework.boot.actuate.metrics.writer.MetricWriter;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.cloud.netflix.metrics.spectator.SpectatorMetricReader;
+import javax.annotation.PostConstruct;
 
 import com.codahale.metrics.JmxReporter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.Slf4jReporter;
 import com.codahale.metrics.health.HealthCheckRegistry;
-import com.codahale.metrics.jvm.*;
+import com.codahale.metrics.jvm.BufferPoolMetricSet;
+import com.codahale.metrics.jvm.FileDescriptorRatioGauge;
+import com.codahale.metrics.jvm.GarbageCollectorMetricSet;
+import com.codahale.metrics.jvm.MemoryUsageGaugeSet;
+import com.codahale.metrics.jvm.ThreadStatesGaugeSet;
+import com.netflix.spectator.api.Registry;
 import com.ryantenney.metrics.spring.config.annotation.EnableMetrics;
 import com.ryantenney.metrics.spring.config.annotation.MetricsConfigurerAdapter;
 import com.zaxxer.hikari.HikariDataSource;
+import io.github.jhipster.config.JHipsterProperties;
+import io.github.jhipster.config.metrics.SpectatorLogMetricWriter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.*;
 
-import javax.annotation.PostConstruct;
-import java.lang.management.ManagementFactory;
-import java.util.concurrent.TimeUnit;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.autoconfigure.ExportMetricReader;
+import org.springframework.boot.actuate.autoconfigure.ExportMetricWriter;
+import org.springframework.boot.actuate.metrics.writer.MetricWriter;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
+import org.springframework.cloud.netflix.metrics.spectator.SpectatorMetricReader;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableMetrics(proxyTargetClass = true)
@@ -37,13 +42,9 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter {
     private static final String PROP_METRIC_REG_JVM_FILES = "jvm.files";
     private static final String PROP_METRIC_REG_JVM_BUFFERS = "jvm.buffers";
     private final Logger log = LoggerFactory.getLogger(MetricsConfiguration.class);
-
-    private MetricRegistry metricRegistry = new MetricRegistry();
-
-    private HealthCheckRegistry healthCheckRegistry = new HealthCheckRegistry();
-
     private final JHipsterProperties jHipsterProperties;
-
+    private MetricRegistry metricRegistry = new MetricRegistry();
+    private HealthCheckRegistry healthCheckRegistry = new HealthCheckRegistry();
     private HikariDataSource hikariDataSource;
 
     public MetricsConfiguration(JHipsterProperties jHipsterProperties) {
@@ -99,7 +100,7 @@ public class MetricsConfiguration extends MetricsConfigurerAdapter {
     @Bean
     @ConditionalOnProperty("jhipster.logging.spectator-metrics.enabled")
     @ExportMetricReader
-    public SpectatorMetricReader SpectatorMetricReader(Registry registry) {
+    public SpectatorMetricReader spectatorMetricReader(Registry registry) {
         log.info("Initializing Spectator Metrics Log reporting");
         return new SpectatorMetricReader(registry);
     }

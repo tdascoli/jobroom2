@@ -1,0 +1,18 @@
+apply plugin: 'maven-publish'
+
+publishing {
+    repositories {
+        maven {
+            credentials {
+                username System.env.ARTIFACTORY_USERNAME
+                password System.env.ARTIFACTORY_PASSWORD
+            }
+            url "${artifactoryRepoBase}/libs-${project.version.endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}-local"
+        }
+    }
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}

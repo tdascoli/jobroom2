@@ -30,6 +30,7 @@ apply plugin: 'war'
 apply plugin: 'propdeps'
 apply plugin: 'com.moowork.node'
 apply plugin: 'io.spring.dependency-management'
+apply plugin: 'maven-publish'
 dependencyManagement {
   imports {
     mavenBom 'org.springframework.cloud:spring-cloud-dependencies:' + spring_cloud_version
@@ -112,6 +113,7 @@ apply from: 'gradle/liquibase.gradle'
 apply from: 'gradle/gatling.gradle'
 apply from: 'gradle/mapstruct.gradle'
 apply from: 'gradle/docker.gradle'
+apply from: 'gradle/maven-publish.gradle'
 //jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
 
 if (project.hasProperty('prod')) {

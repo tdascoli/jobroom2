@@ -1,20 +1,30 @@
 package ch.admin.seco.jobroom.config;
 
-import io.github.jhipster.config.JHipsterConstants;
-import io.github.jhipster.config.JHipsterProperties;
-import io.github.jhipster.web.filter.CachingHttpHeadersFilter;
+import java.io.File;
+import java.nio.file.Paths;
+import java.util.EnumSet;
+
+import javax.servlet.DispatcherType;
+import javax.servlet.FilterRegistration;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
+import javax.servlet.ServletRegistration;
 
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.servlet.InstrumentedFilter;
 import com.codahale.metrics.servlets.MetricsServlet;
-import com.hazelcast.core.HazelcastInstance;
-
+import io.github.jhipster.config.JHipsterConstants;
+import io.github.jhipster.config.JHipsterProperties;
+import io.github.jhipster.web.filter.CachingHttpHeadersFilter;
+import io.undertow.UndertowOptions;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.embedded.*;
+import org.springframework.boot.context.embedded.ConfigurableEmbeddedServletContainer;
+import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomizer;
+import org.springframework.boot.context.embedded.MimeMappings;
 import org.springframework.boot.context.embedded.undertow.UndertowEmbeddedServletContainerFactory;
-import io.undertow.UndertowOptions;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -22,11 +32,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
-
-import java.io.File;
-import java.nio.file.Paths;
-import java.util.*;
-import javax.servlet.*;
 
 /**
  * Configuration of web application with Servlet 3.0 APIs.
@@ -40,15 +45,12 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
 
     private final JHipsterProperties jHipsterProperties;
 
-    private final HazelcastInstance hazelcastInstance;
-
     private MetricRegistry metricRegistry;
 
-    public WebConfigurer(Environment env, JHipsterProperties jHipsterProperties, HazelcastInstance hazelcastInstance) {
+    public WebConfigurer(Environment env, JHipsterProperties jHipsterProperties) {
 
         this.env = env;
         this.jHipsterProperties = jHipsterProperties;
-        this.hazelcastInstance = hazelcastInstance;
     }
 
     @Override
@@ -94,6 +96,24 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
                 .addBuilderCustomizers(builder ->
                     builder.setServerOption(UndertowOptions.ENABLE_HTTP2, true));
         }
+    }
+
+    @Bean
+    public CorsFilter corsFilter() {
+        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        CorsConfiguration config = jHipsterProperties.getCors();
+        if (config.getAllowedOrigins() != null && !config.getAllowedOrigins().isEmpty()) {
+            log.debug("Registering CORS filter");
+            source.registerCorsConfiguration("/api/**", config);
+            source.registerCorsConfiguration("/v2/api-docs", config);
+            source.registerCorsConfiguration("/*/api/**", config);
+        }
+        return new CorsFilter(source);
+    }
+
+    @Autowired(required = false)
+    public void setMetricRegistry(MetricRegistry metricRegistry) {
+        this.metricRegistry = metricRegistry;
     }
 
     private void setLocationForStaticAssets(ConfigurableEmbeddedServletContainer container) {
@@ -160,19 +180,6 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
         metricsAdminServlet.setLoadOnStartup(2);
     }
 
-    @Bean
-    public CorsFilter corsFilter() {
-        UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-        CorsConfiguration config = jHipsterProperties.getCors();
-        if (config.getAllowedOrigins() != null && !config.getAllowedOrigins().isEmpty()) {
-            log.debug("Registering CORS filter");
-            source.registerCorsConfiguration("/api/**", config);
-            source.registerCorsConfiguration("/v2/api-docs", config);
-            source.registerCorsConfiguration("/*/api/**", config);
-        }
-        return new CorsFilter(source);
-    }
-
     /**
      * Initializes H2 console.
      */
@@ -182,10 +189,5 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
         h2ConsoleServlet.addMapping("/h2-console/*");
         h2ConsoleServlet.setInitParameter("-properties", "src/main/resources/");
         h2ConsoleServlet.setLoadOnStartup(1);
-    }
-
-    @Autowired(required = false)
-    public void setMetricRegistry(MetricRegistry metricRegistry) {
-        this.metricRegistry = metricRegistry;
     }
 }
