@@ -1,19 +1,20 @@
 package ch.admin.seco.jobroom.web.rest;
 
-import ch.admin.seco.jobroom.web.rest.vm.RouteVM;
-
 import java.util.ArrayList;
 import java.util.List;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.codahale.metrics.annotation.Timed;
+
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.cloud.netflix.zuul.filters.Route;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
-import org.springframework.http.*;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import com.codahale.metrics.annotation.Timed;
+import ch.admin.seco.jobroom.web.rest.vm.RouteVM;
 
 /**
  * REST controller for managing Gateway configuration.
@@ -21,8 +22,6 @@ import com.codahale.metrics.annotation.Timed;
 @RestController
 @RequestMapping("/api/gateway")
 public class GatewayResource {
-
-    private final Logger log = LoggerFactory.getLogger(GatewayResource.class);
 
     private final RouteLocator routeLocator;
 

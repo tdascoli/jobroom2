@@ -15,7 +15,7 @@
 
 eureka:
     client:
-        enabled: true
+        enabled: false
     instance:
         appname: jobroom
         instanceId: jobroom:${spring.application.instance-id:${random.value}}

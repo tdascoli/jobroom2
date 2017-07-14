@@ -10,3 +10,11 @@ jacocoTestReport {
         xml.enabled true
     }
 }
+
+sonarqube {
+    properties {
+        property "sonar.host.url", 'https://sonarcloud.io'
+        property "sonar.organization", 'michael-wirth-github'
+        property "sonar.login", '759b17c954d3de2b17929175e2c0e283c64057a2'
+    }
+}

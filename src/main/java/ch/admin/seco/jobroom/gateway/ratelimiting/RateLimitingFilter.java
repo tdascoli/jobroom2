@@ -1,9 +1,8 @@
 package ch.admin.seco.jobroom.gateway.ratelimiting;
 
-import ch.admin.seco.jobroom.security.SecurityUtils;
-
 import java.time.Duration;
 import java.util.function.Supplier;
+
 import javax.cache.CacheManager;
 import javax.cache.Caching;
 import javax.cache.configuration.CompleteConfiguration;
@@ -11,18 +10,22 @@ import javax.cache.configuration.MutableConfiguration;
 import javax.cache.spi.CachingProvider;
 import javax.servlet.http.HttpServletRequest;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.http.HttpStatus;
-
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
-
-import io.github.bucket4j.*;
+import io.github.bucket4j.Bandwidth;
+import io.github.bucket4j.Bucket;
+import io.github.bucket4j.Bucket4j;
+import io.github.bucket4j.BucketConfiguration;
 import io.github.bucket4j.grid.GridBucketState;
 import io.github.bucket4j.grid.ProxyManager;
 import io.github.bucket4j.grid.jcache.JCache;
 import io.github.jhipster.config.JHipsterProperties;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
+import org.springframework.http.HttpStatus;
+
+import ch.admin.seco.jobroom.security.SecurityUtils;
 
 /**
  * Zuul filter for limiting the number of HTTP calls per client.
@@ -33,10 +36,8 @@ import io.github.jhipster.config.JHipsterProperties;
  */
 public class RateLimitingFilter extends ZuulFilter {
 
+    public static final String GATEWAY_RATE_LIMITING_CACHE_NAME = "gateway-rate-limiting";
     private final Logger log = LoggerFactory.getLogger(RateLimitingFilter.class);
-
-    public final static String GATEWAY_RATE_LIMITING_CACHE_NAME = "gateway-rate-limiting";
-
     private final JHipsterProperties jHipsterProperties;
 
     private javax.cache.Cache<String, GridBucketState> cache;
@@ -69,7 +70,6 @@ public class RateLimitingFilter extends ZuulFilter {
     @Override
     public boolean shouldFilter() {
         // specific APIs can be filtered out using
-        // if (RequestContext.getCurrentContext().getRequest().getRequestURI().startsWith("/api")) { ... }
         return true;
     }
 
