@@ -6,5 +6,13 @@
         "hookFor": "entity",
         "hookType": "post",
         "generatorCallback": "jhipster-postgresuuid-converter:app"
+    },
+    {
+        "name": "Elasticsearch Reindexer generator",
+        "npmPackageName": "generator-jhipster-elasticsearch-reindexer",
+        "description": "Generate a service for reindexing all database rows for each of your entities",
+        "hookFor": "entity",
+        "hookType": "post",
+        "generatorCallback": "jhipster-elasticsearch-reindexer:app"
     }
 ]
