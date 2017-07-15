@@ -1,5 +1,15 @@
 {
     "job-search": {
-        "title": "Job search"
+        "title": "Job search",
+        "toolbar": {
+            "occupation": {
+                "placeholder": "Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
+            }
+        }
+    },
+    "typeahead-multiselect": {
+        "type": {
+            "occupation": "Occupation"
+        }
     }
 }

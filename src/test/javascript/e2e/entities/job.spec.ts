@@ -1,6 +1,6 @@
 import { browser, element, by, $ } from 'protractor';
 
-describe('Job e2e test', () => {
+xdescribe('Job e2e test', () => {
 
     const username = element(by.id('username'));
     const password = element(by.id('password'));

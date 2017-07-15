@@ -1,15 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
-  selector: 'jhi-job-search-filter',
-  templateUrl: './job-search-filter.component.html',
-  styles: []
+    selector: 'jr2-job-search-filter',
+    templateUrl: './job-search-filter.component.html',
+    styles: []
 })
-export class JobSearchFilterComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+export class JobSearchFilterComponent {
 }

@@ -1,0 +1,66 @@
+@import '../../../../content/scss/jbr2_variables.scss';
+
+.typeahead-multiselect {
+    width: 490px;
+
+    .typeahead-multiselect__input {
+        &:focus {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+        padding: 0;
+        border: 0;
+        width: 385px;
+    }
+
+    .typeahead-multiselect__tag--classification {
+        background-color: $main-accent-color-400;
+        border-color: $main-accent-color-400;
+    }
+
+    .typeahead-multiselect__tag--occupation {
+        background-color: $additional-accent-green;
+        border-color: $additional-accent-green;
+    }
+
+    .typeahead-multiselect__tag--free-text {
+        background-color: $additional-accent-amber;
+        border-color: $additional-accent-amber;
+    }
+
+    .typeahead-multiselect__tag {
+        margin: 0 0 0.2rem 0.2rem;
+
+        .remove-button {
+            margin-left: 0.3rem;
+            cursor: pointer;
+        }
+    }
+
+    .typeahead-multiselect__type-label {
+        float: right;
+        font-size: 0.8rem;
+        color: $main-color-gray-light-50;
+        margin: -0.5rem -20px 0.5rem 0;
+    }
+}
+
+:host /deep/ .dropdown-item {
+    margin: 0;
+    padding: 3px 1.5rem;
+    color: $main-color-black !important;
+    font-weight: $text-weight-light;
+    font-size: 1rem;
+
+    &.active {
+        background-color: $main-color-gray-100;
+        color: $main-accent-color !important;
+    }
+
+    .fist-in-group-item {
+        border-top: 1px solid $main-color-gray-light-400;
+        padding: 0.5rem 0 0 0;
+    }
+}
+
