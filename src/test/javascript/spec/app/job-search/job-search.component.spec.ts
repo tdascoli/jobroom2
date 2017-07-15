@@ -50,22 +50,22 @@ describe('JobSearchComponent', () => {
             component.ngOnInit();
 
             // THEN
-            expect(mockJobService.search).toHaveBeenCalledWith(new JobSearchRequest());
-            expect(component.term).toEqual('');
+            expect(mockJobService.search).toHaveBeenCalledWith(new JobSearchRequest([]));
+            expect(component.terms).toEqual('');
             expect(component.totalCount).toEqual(1);
             expect(component.jobList).toContain(new Job());
         }));
 
         it('should call jobService.search with a valid JobSearchRequest if term query param exists', fakeAsync(() => {
             // GIVEN
-            mockRoute.queryParams = Observable.of({ 'term': 'test' });
+            mockRoute.queryParams = Observable.of({ 'classification': 'c1', 'occupation': 'o1', 'query': 'q1' });
 
             // WHEN
             component.ngOnInit();
 
             // THEN
-            expect(mockJobService.search).toHaveBeenCalledWith(new JobSearchRequest('test'));
-            expect(component.term).toEqual('test');
+            expect(mockJobService.search).toHaveBeenCalledWith(new JobSearchRequest(['c1,o1,q1']));
+            expect(component.terms).toEqual('c1,o1,q1');
             expect(component.totalCount).toEqual(1);
             expect(component.jobList).toContain(new Job());
         }));

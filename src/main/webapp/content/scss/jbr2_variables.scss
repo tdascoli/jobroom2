@@ -1,0 +1,14 @@
+/**
+ * We must duplicate the sass variables instead on including the alv-ch_variables.scss
+ * because the AOT compiler can not resolve the imports.
+ * The yarn start works but yarn install fails while executing ngc -p tsconfig-aot.json.
+ */
+$additional-accent-amber: #ffc500;
+$additional-accent-green: #64b500;
+$main-accent-color-400: #439cc5;
+$main-accent-color: #007AB1;
+$main-color-black: #323232;
+$main-color-gray-100: #ececec; // lighten 42.5%
+$main-color-gray-light-400: #d7d7d7; // lighten 5.5%
+$main-color-gray-light-50: #fcfcfc; // lighten 20%
+$text-weight-light: 300;

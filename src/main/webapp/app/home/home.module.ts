@@ -1,24 +1,22 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
-
-import { JobroomSharedModule } from '../shared';
-
+import { JobroomSharedModule, JobSearchSharedModule } from '../shared';
 import { HOME_ROUTE, HomeComponent } from './';
-import { JobSearchComponent } from './tools/job-search.component';
+import { JobSearchToolComponent } from './tools/job-search-tool.component';
 
 @NgModule({
     imports: [
         JobroomSharedModule,
-        RouterModule.forRoot([ HOME_ROUTE ], { useHash: true })
+        JobSearchSharedModule,
+        RouterModule.forRoot([HOME_ROUTE], { useHash: true })
     ],
     declarations: [
         HomeComponent,
-        JobSearchComponent
+        JobSearchToolComponent
     ],
-    entryComponents: [
-    ],
-    providers: [
-    ],
+    entryComponents: [],
+    providers: [],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
-export class JobroomHomeModule {}
+export class JobroomHomeModule {
+}

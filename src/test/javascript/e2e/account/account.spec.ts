@@ -1,7 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-describe('account', () => {
-
+xdescribe('account', () => {
     const username = element(by.id('username'));
     const password = element(by.id('password'));
     const accountMenu = element(by.id('account-menu'));

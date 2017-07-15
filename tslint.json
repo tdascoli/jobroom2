@@ -104,7 +104,7 @@
         "space-before-function-paren": [true, "never"],
 
         "directive-selector": [true, "attribute", "jhi", "camelCase"],
-        "component-selector": [true, "element", "jhi", "kebab-case"],
+        "component-selector": [true, "element", ["jhi", "jr2"], "kebab-case"],
         "use-input-property-decorator": true,
         "use-output-property-decorator": true,
         "use-host-property-decorator": true,

@@ -4,7 +4,7 @@ import { JobSearchComponent } from './job-search.component';
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'job-search',
         component: JobSearchComponent,
         data: {
             authorities: [],

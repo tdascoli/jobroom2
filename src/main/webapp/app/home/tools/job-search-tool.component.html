@@ -1,9 +1,6 @@
 <div>
     <div class="form-group form-group--wide">
-        <label for="formGroupExampleInput" class="sr-only">Berufsbezeichnung, Berufsgruppe,
-            Fähigkeiten</label>
-        <input type="text" class="form-control form-control-lg" id="formGroupExampleInput" [(ngModel)]="term" [ngbTypeahead]="loadJobs"
-               placeholder="Berufsbezeichnung, Berufsgruppe, Fähigkeiten" >
+        <jr2-typeahead-multiselect [(ngModel)]="queryModel" [itemLoader]="fetchSuggestions" [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
     </div>
     <div class="form-group form-group--wide form-group--icon">
         <label for="basic-addon2" class="sr-only">Ort, Region, Kanton</label>
