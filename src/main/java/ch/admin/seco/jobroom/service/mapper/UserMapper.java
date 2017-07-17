@@ -1,13 +1,16 @@
 package ch.admin.seco.jobroom.service.mapper;
 
-import ch.admin.seco.jobroom.domain.Authority;
-import ch.admin.seco.jobroom.domain.User;
-import ch.admin.seco.jobroom.service.dto.UserDTO;
+import java.util.List;
+import java.util.Objects;
+import java.util.Set;
+import java.util.UUID;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
-import java.util.*;
-import java.util.stream.Collectors;
+import ch.admin.seco.jobroom.domain.Authority;
+import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.service.dto.UserDTO;
 
 /**
  * Mapper for the entity User and its DTO called UserDTO.
@@ -43,7 +46,7 @@ public class UserMapper {
             user.setActivated(userDTO.isActivated());
             user.setLangKey(userDTO.getLangKey());
             Set<Authority> authorities = this.authoritiesFromStrings(userDTO.getAuthorities());
-            if(authorities != null) {
+            if (authorities != null) {
                 user.setAuthorities(authorities);
             }
             return user;

@@ -1,14 +1,15 @@
 package ch.admin.seco.jobroom.web.rest;
 
-import ch.admin.seco.jobroom.security.jwt.JWTConfigurer;
-import ch.admin.seco.jobroom.security.jwt.TokenProvider;
-import ch.admin.seco.jobroom.web.rest.vm.LoginVM;
+import java.util.Collections;
+
+import javax.servlet.http.HttpServletResponse;
+import javax.validation.Valid;
 
 import com.codahale.metrics.annotation.Timed;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -16,11 +17,14 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
-import java.util.Collections;
+import ch.admin.seco.jobroom.security.jwt.JWTConfigurer;
+import ch.admin.seco.jobroom.security.jwt.TokenProvider;
+import ch.admin.seco.jobroom.web.rest.vm.LoginVM;
 
 /**
  * Controller to authenticate users.

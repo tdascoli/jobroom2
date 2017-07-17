@@ -1,18 +1,19 @@
 package ch.admin.seco.jobroom.gateway.responserewriting;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.netflix.zuul.context.RequestContext;
-import org.apache.commons.io.IOUtils;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter;
-import springfox.documentation.swagger2.web.Swagger2Controller;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.LinkedHashMap;
 import java.util.zip.GZIPInputStream;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.netflix.zuul.context.RequestContext;
+import org.apache.commons.io.IOUtils;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import springfox.documentation.swagger2.web.Swagger2Controller;
+
+import org.springframework.cloud.netflix.zuul.filters.post.SendResponseFilter;
 
 /**
  * Zuul filter to rewrite micro-services Swagger URL Base Path.
@@ -65,8 +66,8 @@ public class SwaggerBasePathRewritingFilter extends SendResponseFilter {
             if (response != null) {
                 LinkedHashMap<String, Object> map = this.mapper.readValue(response, LinkedHashMap.class);
 
-                String basePath = requestUri.replace(Swagger2Controller.DEFAULT_URL,"");
-                map.put("basePath",basePath);
+                String basePath = requestUri.replace(Swagger2Controller.DEFAULT_URL, "");
+                map.put("basePath", basePath);
                 log.debug("Swagger-docs: rewritten Base URL with correct micro-service route: {}", basePath);
                 return mapper.writeValueAsString(map);
             }

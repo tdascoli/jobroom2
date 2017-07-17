@@ -1,18 +1,19 @@
 package ch.admin.seco.jobroom.service.dto;
 
-import ch.admin.seco.jobroom.config.Constants;
-
-import ch.admin.seco.jobroom.domain.Authority;
-import ch.admin.seco.jobroom.domain.User;
-
-import org.hibernate.validator.constraints.Email;
-import org.hibernate.validator.constraints.NotBlank;
-
-import javax.validation.constraints.*;
 import java.time.Instant;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
+
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Email;
+import org.hibernate.validator.constraints.NotBlank;
+
+import ch.admin.seco.jobroom.config.Constants;
+import ch.admin.seco.jobroom.domain.Authority;
+import ch.admin.seco.jobroom.domain.User;
 
 /**
  * A DTO representing a user, with his authorities.

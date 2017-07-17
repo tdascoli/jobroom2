@@ -1,0 +1,4 @@
+apply plugin: 'checkstyle'
+
+checkstyle.configFile file('gradle/config/checkstyle.xml')
+checkstyleTest.enabled false
