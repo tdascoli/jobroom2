@@ -45,7 +45,7 @@ public class AuditEventService {
     }
 
     public Optional<AuditEvent> find(UUID id) {
-        return Optional.ofNullable(persistenceAuditEventRepository.findOne(id)).map
-            (auditEventConverter::convertToAuditEvent);
+        return persistenceAuditEventRepository.findById(id)
+            .map(auditEventConverter::convertToAuditEvent);
     }
 }

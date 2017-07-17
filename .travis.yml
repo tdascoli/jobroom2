@@ -34,7 +34,7 @@ script:
   - chmod +x gradlew
   - ./gradlew clean test sonarqube
   - yarn test
-  - ./gradlew bootRepackage -Pprod -x test
+  - ./gradlew bootJar -Pprod -x test
 after_success:
   - bash <(curl -s https://codecov.io/bash)
 deploy:

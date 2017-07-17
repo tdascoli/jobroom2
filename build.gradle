@@ -38,8 +38,8 @@ dependencyManagement {
 }
 defaultTasks 'bootRun'
 
-bootRepackage {
-   mainClass = 'ch.admin.seco.jobroom.JobroomApp'
+bootJar  {
+    mainClass = 'ch.admin.seco.service.job.JobServiceApp'
 }
 
 war {
@@ -47,8 +47,6 @@ war {
 }
 
 springBoot {
-    mainClass = 'ch.admin.seco.jobroom.JobroomApp'
-    executable = true
     buildInfo()
 }
 
@@ -67,15 +65,10 @@ if (OperatingSystem.current().isWindows()) {
     }
 
     bootRun {
-        addResources = false
         dependsOn pathingJar
         doFirst {
             classpath = files("$buildDir/classes/main", "$buildDir/resources/main", pathingJar.archivePath)
         }
-    }
-} else {
-    bootRun {
-        addResources = false
     }
 }
 
