@@ -42,7 +42,7 @@ describe('OccupationService', () => {
                 const urlArray = lastConnection.request.url.split(/[?&]/);
                 expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/occupations']));
                 expect(urlArray).toEqual(arrayContaining(['prefix=info']));
-                expect(urlArray).toEqual(arrayContaining(['responseSize=10']));
+                expect(urlArray).toEqual(arrayContaining(['responseSize=100']));
                 expect(urlArray).toEqual(arrayContaining(['language=de']));
             }));
 
