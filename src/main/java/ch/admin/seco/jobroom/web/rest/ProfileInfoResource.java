@@ -49,7 +49,7 @@ public class ProfileInfoResource {
         return null;
     }
 
-    class ProfileInfoVM {
+    public class ProfileInfoVM {
 
         private String[] activeProfiles;
 
