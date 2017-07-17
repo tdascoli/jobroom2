@@ -5,7 +5,7 @@ import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/ht
 import { TranslateService } from '@ngx-translate/core';
 import { InputType, OccupationAutocomplete, OccupationSuggestion } from './occupation-autocomplete';
 
-const DEFAULT_RESPONSE_SIZE = '10';
+const DEFAULT_RESPONSE_SIZE = '100';
 const SEARCH_URL = 'referenceservice/api/_search/occupations';
 
 @Injectable()

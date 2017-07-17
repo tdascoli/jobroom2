@@ -46,21 +46,26 @@
     }
 }
 
-:host /deep/ .dropdown-item {
-    margin: 0;
-    padding: 3px 1.5rem;
-    color: $main-color-black !important;
-    font-weight: $text-weight-light;
-    font-size: 1rem;
+:host /deep/ ngb-typeahead-window {
+    max-height: 400px;
+    overflow-y: auto;
 
-    &.active {
-        background-color: $main-color-gray-100;
-        color: $main-accent-color !important;
-    }
+    .dropdown-item {
+        margin: 0;
+        padding: 3px 1.5rem;
+        color: $main-color-black !important;
+        font-weight: $text-weight-light;
+        font-size: 1rem;
 
-    .fist-in-group-item {
-        border-top: 1px solid $main-color-gray-light-400;
-        padding: 0.5rem 0 0 0;
+        &.active {
+            background-color: $main-color-gray-100;
+            color: $main-accent-color !important;
+        }
+
+        .fist-in-group-item {
+            border-top: 1px solid $main-color-gray-light-400;
+            padding: 0.5rem 0 0 0;
+        }
     }
 }
 
