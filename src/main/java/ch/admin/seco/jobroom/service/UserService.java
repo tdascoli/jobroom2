@@ -1,15 +1,14 @@
 package ch.admin.seco.jobroom.service;
 
+import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.repository.AuthorityRepository;
-import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.repository.UserRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.security.SecurityUtils;
-import ch.admin.seco.jobroom.service.util.RandomUtil;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
-
+import ch.admin.seco.jobroom.service.util.RandomUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.data.domain.Page;
@@ -58,16 +57,16 @@ public class UserService {
     }
 
     public Optional<User> completePasswordReset(String newPassword, String key) {
-       log.debug("Reset user password for reset key {}", key);
+        log.debug("Reset user password for reset key {}", key);
 
-       return userRepository.findOneByResetKey(key)
-           .filter(user -> user.getResetDate().isAfter(Instant.now().minusSeconds(86400)))
-           .map(user -> {
+        return userRepository.findOneByResetKey(key)
+            .filter(user -> user.getResetDate().isAfter(Instant.now().minusSeconds(86400)))
+            .map(user -> {
                 user.setPassword(passwordEncoder.encode(newPassword));
                 user.setResetKey(null);
                 user.setResetDate(null);
                 return user;
-           });
+            });
     }
 
     public Optional<User> requestPasswordReset(String mail) {
@@ -81,10 +80,10 @@ public class UserService {
     }
 
     public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey) {
+                           String imageUrl, String langKey) {
 
         User newUser = new User();
-        Authority authority = authorityRepository.findOne(AuthoritiesConstants.USER);
+        Authority authority = authorityRepository.getOne(AuthoritiesConstants.USER);
         Set<Authority> authorities = new HashSet<>();
         String encryptedPassword = passwordEncoder.encode(password);
         newUser.setLogin(login);
@@ -121,7 +120,7 @@ public class UserService {
         if (userDTO.getAuthorities() != null) {
             Set<Authority> authorities = new HashSet<>();
             userDTO.getAuthorities().forEach(
-                authority -> authorities.add(authorityRepository.findOne(authority))
+                authority -> authorities.add(authorityRepository.getOne(authority))
             );
             user.setAuthorities(authorities);
         }
@@ -139,10 +138,10 @@ public class UserService {
      * Update basic information (first name, last name, email, language) for the current user.
      *
      * @param firstName first name of user
-     * @param lastName last name of user
-     * @param email email id of user
-     * @param langKey language key
-     * @param imageUrl image URL of user
+     * @param lastName  last name of user
+     * @param email     email id of user
+     * @param langKey   language key
+     * @param imageUrl  image URL of user
      */
     public void updateUser(String firstName, String lastName, String email, String langKey, String imageUrl) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
@@ -162,8 +161,8 @@ public class UserService {
      * @return updated user
      */
     public Optional<UserDTO> updateUser(UserDTO userDTO) {
-        return Optional.of(userRepository
-            .findOne(userDTO.getId()))
+        return userRepository
+            .findById(userDTO.getId())
             .map(user -> {
                 user.setLogin(userDTO.getLogin());
                 user.setFirstName(userDTO.getFirstName());
@@ -175,7 +174,7 @@ public class UserService {
                 Set<Authority> managedAuthorities = user.getAuthorities();
                 managedAuthorities.clear();
                 userDTO.getAuthorities().stream()
-                    .map(authorityRepository::findOne)
+                    .map(authorityRepository::getOne)
                     .forEach(managedAuthorities::add);
                 log.debug("Changed Information for User: {}", user);
                 return user;

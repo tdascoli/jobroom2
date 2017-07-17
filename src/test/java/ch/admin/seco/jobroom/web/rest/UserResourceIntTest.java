@@ -101,17 +101,6 @@ public class UserResourceIntTest {
 
     private User user;
 
-    @Before
-    public void setup() {
-        MockitoAnnotations.initMocks(this);
-        UserResource userResource = new UserResource(userRepository, mailService, userService);
-        this.restUserMockMvc = MockMvcBuilders.standaloneSetup(userResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setMessageConverters(jacksonMessageConverter)
-            .build();
-    }
-
     /**
      * Create a User.
      * <p>
@@ -129,6 +118,17 @@ public class UserResourceIntTest {
         user.setImageUrl(DEFAULT_IMAGEURL);
         user.setLangKey(DEFAULT_LANGKEY);
         return user;
+    }
+
+    @Before
+    public void setup() {
+        MockitoAnnotations.initMocks(this);
+        UserResource userResource = new UserResource(userRepository, mailService, userService);
+        this.restUserMockMvc = MockMvcBuilders.standaloneSetup(userResource)
+            .setCustomArgumentResolvers(pageableArgumentResolver)
+            .setControllerAdvice(exceptionTranslator)
+            .setMessageConverters(jacksonMessageConverter)
+            .build();
     }
 
     @Before
@@ -335,7 +335,7 @@ public class UserResourceIntTest {
         int databaseSizeBeforeUpdate = userRepository.findAll().size();
 
         // Update the user
-        User updatedUser = userRepository.findOne(user.getId());
+        User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
@@ -379,7 +379,7 @@ public class UserResourceIntTest {
         int databaseSizeBeforeUpdate = userRepository.findAll().size();
 
         // Update the user
-        User updatedUser = userRepository.findOne(user.getId());
+        User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
@@ -434,7 +434,7 @@ public class UserResourceIntTest {
         userRepository.saveAndFlush(anotherUser);
 
         // Update the user
-        User updatedUser = userRepository.findOne(user.getId());
+        User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");
@@ -478,7 +478,7 @@ public class UserResourceIntTest {
         userRepository.saveAndFlush(anotherUser);
 
         // Update the user
-        User updatedUser = userRepository.findOne(user.getId());
+        User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
         authorities.add("ROLE_USER");

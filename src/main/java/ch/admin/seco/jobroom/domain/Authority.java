@@ -2,10 +2,11 @@ package ch.admin.seco.jobroom.domain;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.persistence.Column;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
@@ -35,22 +36,21 @@ public class Authority implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        return name != null ? name.hashCode() : 0;
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (o == null || !Authority.class.isAssignableFrom(o.getClass())) {
             return false;
         }
 
         Authority authority = (Authority) o;
-
-        return !(name != null ? !name.equals(authority.name) : authority.name != null);
-    }
-
-    @Override
-    public int hashCode() {
-        return name != null ? name.hashCode() : 0;
+        return !(name != null ? !name.equals(authority.getName()) : authority.getName() != null);
     }
 
     @Override
