@@ -1,9 +1,14 @@
 package ch.admin.seco.jobroom.web.rest.errors;
 
-import ch.admin.seco.jobroom.JobroomApp;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -11,10 +16,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import ch.admin.seco.jobroom.JobroomApp;
 
 /**
  * Test class for the ExceptionTranslator controller advice.
@@ -49,12 +51,12 @@ public class ExceptionTranslatorIntTest {
 
     @Test
     public void testMethodArgumentNotValid() throws Exception {
-         mockMvc.perform(post("/test/method-argument").content("{}").contentType(MediaType.APPLICATION_JSON))
-             .andExpect(status().isBadRequest())
-             .andExpect(jsonPath("$.message").value(ErrorConstants.ERR_VALIDATION))
-             .andExpect(jsonPath("$.fieldErrors.[0].objectName").value("testDTO"))
-             .andExpect(jsonPath("$.fieldErrors.[0].field").value("test"))
-             .andExpect(jsonPath("$.fieldErrors.[0].message").value("NotNull"));
+        mockMvc.perform(post("/test/method-argument").content("{}").contentType(MediaType.APPLICATION_JSON))
+            .andExpect(status().isBadRequest())
+            .andExpect(jsonPath("$.message").value(ErrorConstants.ERR_VALIDATION))
+            .andExpect(jsonPath("$.fieldErrors.[0].objectName").value("testDTO"))
+            .andExpect(jsonPath("$.fieldErrors.[0].field").value("test"))
+            .andExpect(jsonPath("$.fieldErrors.[0].message").value("NotNull"));
     }
 
     @Test

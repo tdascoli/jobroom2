@@ -1,13 +1,13 @@
 package ch.admin.seco.jobroom.web.rest;
 
-import ch.admin.seco.jobroom.JobroomApp;
-import ch.admin.seco.jobroom.domain.User;
-import ch.admin.seco.jobroom.repository.UserRepository;
-import ch.admin.seco.jobroom.security.jwt.TokenProvider;
-import ch.admin.seco.jobroom.web.rest.vm.LoginVM;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -17,9 +17,11 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import ch.admin.seco.jobroom.JobroomApp;
+import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.repository.UserRepository;
+import ch.admin.seco.jobroom.security.jwt.TokenProvider;
+import ch.admin.seco.jobroom.web.rest.vm.LoginVM;
 
 /**
  * Test class for the UserJWTController REST controller.

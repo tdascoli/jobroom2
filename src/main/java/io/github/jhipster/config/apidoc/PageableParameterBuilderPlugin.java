@@ -19,10 +19,15 @@
 
 package io.github.jhipster.config.apidoc;
 
+import static com.google.common.collect.Lists.newArrayList;
+import static springfox.documentation.schema.ResolvedTypes.modelRefFactory;
+import static springfox.documentation.spi.schema.contexts.ModelContext.inputParam;
+
+import java.util.List;
+
 import com.fasterxml.classmate.ResolvedType;
 import com.fasterxml.classmate.TypeResolver;
 import com.google.common.base.Function;
-import org.springframework.data.domain.Pageable;
 import springfox.documentation.schema.ModelReference;
 import springfox.documentation.schema.TypeNameExtractor;
 import springfox.documentation.service.Parameter;
@@ -32,11 +37,7 @@ import springfox.documentation.spi.schema.contexts.ModelContext;
 import springfox.documentation.spi.service.ParameterBuilderPlugin;
 import springfox.documentation.spi.service.contexts.ParameterContext;
 
-import java.util.List;
-
-import static com.google.common.collect.Lists.newArrayList;
-import static springfox.documentation.schema.ResolvedTypes.modelRefFactory;
-import static springfox.documentation.spi.schema.contexts.ModelContext.inputParam;
+import org.springframework.data.domain.Pageable;
 
 public class PageableParameterBuilderPlugin implements ParameterBuilderPlugin {
 

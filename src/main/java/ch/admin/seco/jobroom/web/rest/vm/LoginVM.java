@@ -1,9 +1,10 @@
 package ch.admin.seco.jobroom.web.rest.vm;
 
-import ch.admin.seco.jobroom.config.Constants;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
+
+import ch.admin.seco.jobroom.config.Constants;
 
 /**
  * View Model object for storing a user's credentials.

@@ -1,6 +1,24 @@
 package ch.admin.seco.jobroom.domain;
 
-import ch.admin.seco.jobroom.config.Constants;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Locale;
+import java.util.Set;
+import java.util.UUID;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.hibernate.annotations.BatchSize;
@@ -9,16 +27,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
-import java.io.Serializable;
-import java.util.HashSet;
-import java.util.Locale;
-import java.util.Set;
-import java.time.Instant;
-import java.util.UUID;
+import ch.admin.seco.jobroom.config.Constants;
 
 /**
  * A user.
@@ -45,7 +54,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @JsonIgnore
     @NotNull
     @Size(min = 60, max = 60)
-    @Column(name = "password_hash",length = 60)
+    @Column(name = "password_hash", length = 60)
     private String password;
 
     @Size(max = 50)
@@ -178,12 +187,13 @@ public class User extends AbstractAuditingEntity implements Serializable {
     }
 
     public Instant getResetDate() {
-       return resetDate;
+        return resetDate;
     }
 
     public void setResetDate(Instant resetDate) {
-       this.resetDate = resetDate;
+        this.resetDate = resetDate;
     }
+
     public String getLangKey() {
         return langKey;
     }
@@ -201,6 +211,11 @@ public class User extends AbstractAuditingEntity implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        return login.hashCode();
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -212,11 +227,6 @@ public class User extends AbstractAuditingEntity implements Serializable {
         User user = (User) o;
 
         return login.equals(user.login);
-    }
-
-    @Override
-    public int hashCode() {
-        return login.hashCode();
     }
 
     @Override

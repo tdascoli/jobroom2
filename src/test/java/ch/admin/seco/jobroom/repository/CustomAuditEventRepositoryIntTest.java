@@ -1,12 +1,19 @@
 package ch.admin.seco.jobroom.repository;
 
-import ch.admin.seco.jobroom.JobroomApp;
-import ch.admin.seco.jobroom.config.Constants;
-import ch.admin.seco.jobroom.config.audit.AuditEventConverter;
-import ch.admin.seco.jobroom.domain.PersistentAuditEvent;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import java.time.Instant;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpSession;
+
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -16,14 +23,10 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.servlet.http.HttpSession;
-import java.time.Instant;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import ch.admin.seco.jobroom.JobroomApp;
+import ch.admin.seco.jobroom.config.Constants;
+import ch.admin.seco.jobroom.config.audit.AuditEventConverter;
+import ch.admin.seco.jobroom.domain.PersistentAuditEvent;
 
 /**
  * Test class for the CustomAuditEventRepository customAuditEventRepository class.

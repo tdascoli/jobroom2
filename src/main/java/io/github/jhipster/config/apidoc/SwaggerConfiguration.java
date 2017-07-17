@@ -19,18 +19,13 @@
 
 package io.github.jhipster.config.apidoc;
 
+import static springfox.documentation.builders.PathSelectors.regex;
+
 import com.fasterxml.classmate.TypeResolver;
 import io.github.jhipster.config.JHipsterConstants;
 import io.github.jhipster.config.JHipsterProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.Profile;
-import org.springframework.http.ResponseEntity;
-import org.springframework.util.StopWatch;
 import springfox.bean.validators.configuration.BeanValidatorPluginsConfiguration;
 import springfox.documentation.schema.TypeNameExtractor;
 import springfox.documentation.service.ApiInfo;
@@ -39,7 +34,13 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
-import static springfox.documentation.builders.PathSelectors.regex;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnClass;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.Import;
+import org.springframework.context.annotation.Profile;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.StopWatch;
 
 /**
  * Springfox Swagger configuration.
@@ -98,7 +99,7 @@ public class SwaggerConfiguration {
 
     @Bean
     PageableParameterBuilderPlugin pageableParameterBuilderPlugin(TypeNameExtractor nameExtractor,
-                                                                  TypeResolver resolver) {
+        TypeResolver resolver) {
 
         return new PageableParameterBuilderPlugin(nameExtractor, resolver);
     }

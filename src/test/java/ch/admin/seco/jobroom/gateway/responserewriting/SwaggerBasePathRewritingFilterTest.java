@@ -1,16 +1,19 @@
 package ch.admin.seco.jobroom.gateway.responserewriting;
 
-import com.netflix.zuul.context.RequestContext;
-import org.apache.commons.io.IOUtils;
-import org.junit.Test;
-import org.springframework.mock.web.MockHttpServletRequest;
-import org.springframework.mock.web.MockHttpServletResponse;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static springfox.documentation.swagger2.web.Swagger2Controller.DEFAULT_URL;
 
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 
-import static org.junit.Assert.*;
-import static springfox.documentation.swagger2.web.Swagger2Controller.DEFAULT_URL;
+import com.netflix.zuul.context.RequestContext;
+import org.apache.commons.io.IOUtils;
+import org.junit.Test;
+
+import org.springframework.mock.web.MockHttpServletRequest;
+import org.springframework.mock.web.MockHttpServletResponse;
 
 /**
  * Tests SwaggerBasePathRewritingFilter class.

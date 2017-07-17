@@ -1,22 +1,28 @@
 package ch.admin.seco.jobroom.web.rest;
 
-import ch.admin.seco.jobroom.JobroomApp;
-import ch.admin.seco.jobroom.domain.Authority;
-import ch.admin.seco.jobroom.domain.User;
-import ch.admin.seco.jobroom.repository.AuthorityRepository;
-import ch.admin.seco.jobroom.repository.UserRepository;
-import ch.admin.seco.jobroom.security.AuthoritiesConstants;
-import ch.admin.seco.jobroom.service.MailService;
-import ch.admin.seco.jobroom.service.UserService;
-import ch.admin.seco.jobroom.service.dto.UserDTO;
-import ch.admin.seco.jobroom.web.rest.vm.KeyAndPasswordVM;
-import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Matchers.anyObject;
+import static org.mockito.Mockito.doNothing;
+import static org.mockito.Mockito.when;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+
+import java.time.Instant;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Optional;
+import java.util.Set;
+
 import org.apache.commons.lang3.RandomStringUtils;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -28,19 +34,17 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.Instant;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.Set;
-
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.mockito.Matchers.anyObject;
-import static org.mockito.Mockito.doNothing;
-import static org.mockito.Mockito.when;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
+import ch.admin.seco.jobroom.JobroomApp;
+import ch.admin.seco.jobroom.domain.Authority;
+import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.repository.AuthorityRepository;
+import ch.admin.seco.jobroom.repository.UserRepository;
+import ch.admin.seco.jobroom.security.AuthoritiesConstants;
+import ch.admin.seco.jobroom.service.MailService;
+import ch.admin.seco.jobroom.service.UserService;
+import ch.admin.seco.jobroom.service.dto.UserDTO;
+import ch.admin.seco.jobroom.web.rest.vm.KeyAndPasswordVM;
+import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 
 /**
  * Test class for the AccountResource REST controller.

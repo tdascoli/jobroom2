@@ -114,6 +114,9 @@ public class RateLimitingFilter extends ZuulFilter {
 
     /**
      * The ID that will identify the limit: the user login or the user IP address.
+     *
+     * @param httpServletRequest servletRequest
+     * @return login id or ip
      */
     private String getId(HttpServletRequest httpServletRequest) {
         String login = SecurityUtils.getCurrentUserLogin();

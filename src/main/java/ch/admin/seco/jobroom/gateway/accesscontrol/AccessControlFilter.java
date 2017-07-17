@@ -1,18 +1,17 @@
 package ch.admin.seco.jobroom.gateway.accesscontrol;
 
-import io.github.jhipster.config.JHipsterProperties;
-
 import java.util.List;
 import java.util.Map;
 
+import com.netflix.zuul.ZuulFilter;
+import com.netflix.zuul.context.RequestContext;
+import io.github.jhipster.config.JHipsterProperties;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
 import org.springframework.cloud.netflix.zuul.filters.Route;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.http.HttpStatus;
-
-import com.netflix.zuul.ZuulFilter;
-import com.netflix.zuul.context.RequestContext;
 
 /**
  * Zuul filter for restricting access to backend micro-services endpoints.
@@ -55,10 +54,21 @@ public class AccessControlFilter extends ZuulFilter {
             // If this route correspond to the current request URI
             // We do a substring to remove the "**" at the end of the route URL
             if (requestUri.startsWith(serviceUrl.substring(0, serviceUrl.length() - 2))) {
-				return !isAuthorizedRequest(serviceUrl, serviceName, requestUri);
+                return !isAuthorizedRequest(serviceUrl, serviceName, requestUri);
             }
         }
         return true;
+    }
+
+    @Override
+    public Object run() {
+        RequestContext ctx = RequestContext.getCurrentContext();
+        ctx.setResponseStatusCode(HttpStatus.FORBIDDEN.value());
+        if (ctx.getResponseBody() == null && !ctx.getResponseGZipped()) {
+            ctx.setSendZuulResponse(false);
+        }
+        log.debug("Access Control: filtered unauthorized access on endpoint {}", ctx.getRequest().getRequestURI());
+        return null;
     }
 
     private boolean isAuthorizedRequest(String serviceUrl, String serviceName, String requestUri) {
@@ -85,16 +95,5 @@ public class AccessControlFilter extends ZuulFilter {
             }
         }
         return false;
-    }
-
-    @Override
-    public Object run() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        ctx.setResponseStatusCode(HttpStatus.FORBIDDEN.value());
-        if (ctx.getResponseBody() == null && !ctx.getResponseGZipped()) {
-            ctx.setSendZuulResponse(false);
-        }
-        log.debug("Access Control: filtered unauthorized access on endpoint {}", ctx.getRequest().getRequestURI());
-        return null;
     }
 }

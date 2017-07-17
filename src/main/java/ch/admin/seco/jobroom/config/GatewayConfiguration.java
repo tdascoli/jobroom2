@@ -2,14 +2,14 @@ package ch.admin.seco.jobroom.config;
 
 import io.github.jhipster.config.JHipsterProperties;
 
-import ch.admin.seco.jobroom.gateway.ratelimiting.RateLimitingFilter;
-import ch.admin.seco.jobroom.gateway.accesscontrol.AccessControlFilter;
-import ch.admin.seco.jobroom.gateway.responserewriting.SwaggerBasePathRewritingFilter;
-
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.netflix.zuul.filters.RouteLocator;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
+import ch.admin.seco.jobroom.gateway.accesscontrol.AccessControlFilter;
+import ch.admin.seco.jobroom.gateway.ratelimiting.RateLimitingFilter;
+import ch.admin.seco.jobroom.gateway.responserewriting.SwaggerBasePathRewritingFilter;
 
 @Configuration
 public class GatewayConfiguration {
@@ -18,7 +18,7 @@ public class GatewayConfiguration {
     public static class SwaggerBasePathRewritingConfiguration {
 
         @Bean
-        public SwaggerBasePathRewritingFilter swaggerBasePathRewritingFilter(){
+        public SwaggerBasePathRewritingFilter swaggerBasePathRewritingFilter() {
             return new SwaggerBasePathRewritingFilter();
         }
     }
@@ -27,7 +27,7 @@ public class GatewayConfiguration {
     public static class AccessControlFilterConfiguration {
 
         @Bean
-        public AccessControlFilter accessControlFilter(RouteLocator routeLocator, JHipsterProperties jHipsterProperties){
+        public AccessControlFilter accessControlFilter(RouteLocator routeLocator, JHipsterProperties jHipsterProperties) {
             return new AccessControlFilter(routeLocator, jHipsterProperties);
         }
     }
