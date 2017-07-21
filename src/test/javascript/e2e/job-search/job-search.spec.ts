@@ -40,19 +40,20 @@ describe('job-search', () => {
         it('should possible to select an item from suggest box and delete it', async() => {
             // trigger suggest box
             const input = autocomplete.inputElement();
-            input.sendKeys('info');
+            input.sendKeys('informatik');
 
             const suggestBox = autocomplete.suggestBox();
             expect(suggestBox.isDisplayed()).toBeTruthy();
 
             // select item
-            const firstItem = autocomplete.dropdownItems();
-            firstItem.click();
+            const dropdown = autocomplete.dropdownItem('Projekt Manager Informatik');
+            expect(dropdown.isPresent()).toBeTruthy();
+            dropdown.click();
 
             // check item
             const tags = autocomplete.tags();
             expect(tags.first().isPresent()).toBeTruthy();
-            expect(await tags.first().getText()).toEqual('Informatiker');
+            expect(await tags.first().getText()).toEqual('Projekt Manager Informatik');
 
             // remove item
             autocomplete.deleteFirstTag();
