@@ -42,7 +42,7 @@ describe('OccupationService', () => {
                 const urlArray = lastConnection.request.url.split(/[?&]/);
                 expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/occupations']));
                 expect(urlArray).toEqual(arrayContaining(['prefix=info']));
-                expect(urlArray).toEqual(arrayContaining(['responseSize=100']));
+                expect(urlArray).toEqual(arrayContaining(['responseSize=10']));
                 expect(urlArray).toEqual(arrayContaining(['language=de']));
             }));
 
@@ -54,6 +54,9 @@ describe('OccupationService', () => {
                         { code: '00', name: 'Informatiker' },
                         { code: '01', name: 'Bioinformatiker' },
                         { code: '02', name: 'Wirtschaftinformatiker' },
+                    ],
+                    classifications: [
+                        { code: '10', name: 'Berufe der Informatik' }
                     ]
                 };
 
@@ -64,11 +67,12 @@ describe('OccupationService', () => {
                 tick();
 
                 // THEN
-                expect(model.length).toEqual(3);
+                expect(model.length).toEqual(4);
                 expect(model).toEqual([
                     new TypeaheadMultiselectModel(InputType.OCCUPATION, '00', 'Informatiker', 0),
                     new TypeaheadMultiselectModel(InputType.OCCUPATION, '01', 'Bioinformatiker', 0),
-                    new TypeaheadMultiselectModel(InputType.OCCUPATION, '02', 'Wirtschaftinformatiker', 0)
+                    new TypeaheadMultiselectModel(InputType.OCCUPATION, '02', 'Wirtschaftinformatiker', 0),
+                    new TypeaheadMultiselectModel(InputType.CLASSIFICATION, '10', 'Berufe der Informatik', 1)
                 ]);
             })));
     });

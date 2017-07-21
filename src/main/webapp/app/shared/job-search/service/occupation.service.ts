@@ -5,7 +5,7 @@ import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/ht
 import { TranslateService } from '@ngx-translate/core';
 import { InputType, OccupationAutocomplete, OccupationSuggestion } from './occupation-autocomplete';
 
-const DEFAULT_RESPONSE_SIZE = '100';
+const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations';
 
 @Injectable()
@@ -29,8 +29,7 @@ export class OccupationService {
 
                 const occupations = jsonResponse.occupations
                     .map((o: OccupationSuggestion) => new TypeaheadMultiselectModel(InputType.OCCUPATION, o.code, o.name, 0));
-                // todo: ClassificationSuggestion has to be defined
-                const classifications = (jsonResponse.classifications || [])
+                const classifications = jsonResponse.classifications
                     .map((c: any) => new TypeaheadMultiselectModel(InputType.CLASSIFICATION, c.code, c.name, 1));
 
                 return [...occupations, ...classifications];

@@ -35,8 +35,7 @@ export class OccupationAutocomplete {
         return this.component.element(by.css('ngb-typeahead-window'));
     }
 
-    dropdownItems(): ElementArrayFinder {
-        return this.suggestBox().all(by.css('button.dropdown-item'));
+    dropdownItem(text: string) {
+        return this.suggestBox().all(by.cssContainingText('ngb-highlight', text)).first();
     }
 }
-

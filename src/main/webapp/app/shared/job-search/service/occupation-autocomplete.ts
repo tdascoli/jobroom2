@@ -10,10 +10,11 @@ export interface OccupationSuggestion {
 }
 
 export interface ClassificationSuggestion {
-
+    name: string;
+    code: string;
 }
 
 export interface OccupationAutocomplete {
     occupations: OccupationSuggestion[];
-    classifications?: ClassificationSuggestion[];
+    classifications: ClassificationSuggestion[];
 }

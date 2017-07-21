@@ -9,7 +9,8 @@
     },
     "typeahead-multiselect": {
         "type": {
-            "occupation": "Occupation"
+            "occupation": "Occupation",
+            "classification": "Classification"
         }
     }
 }
