@@ -3,9 +3,10 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgJhipsterModule } from 'ng-jhipster';
+import { JhiLanguageService, NgJhipsterModule } from 'ng-jhipster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CookieModule } from 'ngx-cookie';
+import { Jobroom2LanguageService } from './language/jobroom2-language.service';
 
 @NgModule({
     imports: [
@@ -26,6 +27,9 @@ import { CookieModule } from 'ngx-cookie';
         NgbModule,
         NgJhipsterModule,
         InfiniteScrollModule
+    ],
+    providers: [
+        { provide: JhiLanguageService, useClass: Jobroom2LanguageService },
     ]
 })
 export class JobroomSharedLibsModule {}

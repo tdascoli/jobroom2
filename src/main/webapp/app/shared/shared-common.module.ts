@@ -6,8 +6,7 @@ import {
     JhiLanguageHelper,
     FindLanguageFromKeyPipe,
     JhiAlertComponent,
-    JhiAlertErrorComponent,
-    LanguageStoreService
+    JhiAlertErrorComponent
 } from './';
 
 @NgModule({
@@ -21,8 +20,7 @@ import {
     ],
     providers: [
         JhiLanguageHelper,
-        Title,
-        LanguageStoreService
+        Title
     ],
     exports: [
         JobroomSharedLibsModule,

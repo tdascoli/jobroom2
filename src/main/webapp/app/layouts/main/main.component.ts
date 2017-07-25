@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRouteSnapshot, NavigationEnd, Router } from '@angular/router';
 
 import { JhiLanguageHelper } from '../../shared';
-import { LanguageStoreService } from '../../shared/language/language-store.service';
 
 @Component({
     selector: 'jhi-main',
@@ -11,8 +10,7 @@ import { LanguageStoreService } from '../../shared/language/language-store.servi
 export class JhiMainComponent implements OnInit {
 
     constructor(private jhiLanguageHelper: JhiLanguageHelper,
-                private router: Router,
-                private languageStore: LanguageStoreService) {
+                private router: Router) {
     }
 
     private getPageTitle(routeSnapshot: ActivatedRouteSnapshot) {
@@ -24,8 +22,6 @@ export class JhiMainComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.languageStore.initDefaultLanguage();
-
         this.router.events.subscribe((event) => {
             if (event instanceof NavigationEnd) {
                 this.jhiLanguageHelper.updateTitle(this.getPageTitle(this.router.routerState.snapshot.root));
