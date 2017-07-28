@@ -1,24 +1,24 @@
 {
     "register": {
-        "title": "Registrazione",
         "form": {
             "button": "Crea Account"
         },
         "messages": {
+            "error": {
+                "emailexists": "<strong>L'indirizzo email \u00e8 gi\u00e0 in uso</strong> Si prega di sceglierne un altro.",
+                "fail": "<strong>La registrazione dell'account \u00e8 fallita!</strong> Riprova pi\u00f9 tardi.",
+                "userexists": "<strong>Il nome utente scelto \u00e8 gi\u00e0 registrato!</strong> Si prega di scegliere un altro nome utente."
+            },
+            "success": "<strong>La registrazione account \u00e8 stata salvata!</strong> Controlla la tua email per confermare.",
             "validate": {
                 "login": {
-                    "required": "Il nome utente è obbligatorio.",
+                    "maxlength": "Il nome utente non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
                     "minlength": "Il nome utente deve essere di almeno 1 carattere",
-                    "maxlength": "Il nome utente non può contenere più di 50 caratteri",
-                    "pattern": "Il nome utente può contenere solo lettere minuscole e cifre."
+                    "pattern": "Il nome utente pu\u00f2 contenere solo lettere minuscole e cifre.",
+                    "required": "Il nome utente \u00e8 obbligatorio."
                 }
-            },
-            "success": "<strong>La registrazione account è stata salvata!</strong> Controlla la tua email per confermare.",
-            "error": {
-                "fail": "<strong>La registrazione dell'account è fallita!</strong> Riprova più tardi.",
-                "userexists": "<strong>Il nome utente scelto è già registrato!</strong> Si prega di scegliere un altro nome utente.",
-                "emailexists": "<strong>L'indirizzo email è già in uso</strong> Si prega di sceglierne un altro."
             }
-        }
+        },
+        "title": "Registrazione"
     }
 }

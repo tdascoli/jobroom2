@@ -1,31 +1,33 @@
 {
     "health": {
-        "title": "Gesundheit Ihrer Anwendung",
-        "refresh.button": "Aktualisieren",
-        "stacktrace": "Stacktrace",
         "details": {
             "details": "Details",
-            "properties": "Properties",
+            "error": "Error",
             "name": "Name",
-            "value": "Wert",
-            "error": "Error"
+            "properties": "Properties",
+            "value": "Wert"
         },
         "indicator": {
-            "discoveryComposite": "Discovery Composite",
-            "refreshScope": "Microservice Refresh Scope",
             "configServer": "Microservice Config Server",
-            "hystrix": "Hystrix",
+            "db": "Datenbank",
+            "discoveryComposite": "Discovery Composite",
             "diskSpace": "Festplattenspeicher",
+            "hystrix": "Hystrix",
             "mail": "Email",
-            "db": "Datenbank"
+            "refreshScope": "Microservice Refresh Scope"
+        },
+        "refresh": {
+            "button": "Aktualisieren"
+        },
+        "stacktrace": "Stacktrace",
+        "status": {
+            "DOWN": "DOWN",
+            "UP": "UP"
         },
         "table": {
             "service": "Dienst Name",
             "status": "Status"
         },
-        "status": {
-            "UP": "UP",
-            "DOWN": "DOWN"
-        }
+        "title": "Gesundheit Ihrer Anwendung"
     }
 }

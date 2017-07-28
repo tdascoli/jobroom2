@@ -1,31 +1,33 @@
 {
     "health": {
-        "title": "Health Checks",
-        "refresh.button": "Refresh",
-        "stacktrace": "Stacktrace",
         "details": {
             "details": "Details",
-            "properties": "Properties",
+            "error": "Error",
             "name": "Name",
-            "value": "Value",
-            "error": "Error"
+            "properties": "Properties",
+            "value": "Value"
         },
         "indicator": {
-            "discoveryComposite": "Discovery Composite",
-            "refreshScope": "Microservice Refresh Scope",
             "configServer": "Microservice Config Server",
-            "hystrix": "Hystrix",
+            "db": "Database",
+            "discoveryComposite": "Discovery Composite",
             "diskSpace": "Disk space",
+            "hystrix": "Hystrix",
             "mail": "Email",
-            "db": "Database"
+            "refreshScope": "Microservice Refresh Scope"
+        },
+        "refresh": {
+            "button": "Refresh"
+        },
+        "stacktrace": "Stacktrace",
+        "status": {
+            "DOWN": "DOWN",
+            "UP": "UP"
         },
         "table": {
             "service": "Service name",
             "status": "Status"
         },
-        "status": {
-            "UP": "UP",
-            "DOWN": "DOWN"
-        }
+        "title": "Health Checks"
     }
 }

@@ -1,11 +1,36 @@
 {
-    "logs": {
-        "title": "Protokolle",
-        "nbloggers": "Es existieren {{ total }} Logger.",
-        "filter": "Filter",
+    "audits": {
+        "filter": {
+            "button": {
+                "clear": "",
+                "close": "",
+                "today": "",
+                "weeks": ""
+            },
+            "from": "",
+            "title": "",
+            "to": ""
+        },
         "table": {
-            "name": "Name",
-            "level": "Stufe"
-        }
+            "data": {
+                "remoteAddress": ""
+            },
+            "header": {
+                "data": "",
+                "date": "",
+                "principal": "",
+                "status": ""
+            }
+        },
+        "title": ""
+    },
+    "logs": {
+        "filter": "Filter",
+        "nbloggers": "Es existieren {{ total }} Logger.",
+        "table": {
+            "level": "Stufe",
+            "name": "Name"
+        },
+        "title": "Protokolle"
     }
 }

@@ -1,101 +1,103 @@
 {
     "metrics": {
-        "title": "Métriques de l'application",
-        "refresh.button": "Rafraîchir",
-        "updating": "Mise à jour...",
+        "cache": {
+            "averageGetTime": "Temps de lecture moyen (\u00b5s)",
+            "averagePutTime": "Temps d'\u00e9criture moyen (\u00b5s)",
+            "averageRemoveTime": "Temps de suppression moyen (\u00b5s)",
+            "cachename": "Nom du cache",
+            "evictions": "\u00c9victions",
+            "gets": "Lectures",
+            "hitPercent": "% donn\u00e9es existantes",
+            "hits": "Donn\u00e9es existantes",
+            "missPercent": "% donn\u00e9es non existantes",
+            "misses": "Donn\u00e9es non existantes",
+            "puts": "\u00c9critures",
+            "removals": "Suppressions",
+            "title": "Statistiques de cache"
+        },
+        "datasource": {
+            "count": "Total",
+            "max": "Max",
+            "mean": "M\u00e9dian",
+            "min": "Min",
+            "name": "Utilisation du pool",
+            "p50": "p50",
+            "p75": "p75",
+            "p95": "p95",
+            "p99": "p99",
+            "title": "Statistiques du pool de connexions (temps en millisecondes)",
+            "usage": "Usage"
+        },
         "jvm": {
-            "title": "Métriques de la JVM",
-            "memory": {
-                "title": "Mémoire",
-                "total": "Mémoire totale",
-                "heap": "Mémoire \"Heap\"",
-                "nonheap": "Mémoire \"Non-Heap\""
-            },
-            "threads": {
-                "title": "Threads",
-                "all": "Tous",
-                "runnable": "Exécutable",
-                "timedwaiting": "Temps d'attente",
-                "waiting": "En attente",
-                "blocked": "Bloqué",
-                "dump": {
-                    "title": "Threads dump",
-                    "id": "Id :",
-                    "blockedtime": "Temps bloqué",
-                    "blockedcount": "Nb fois bloqué",
-                    "waitedtime": "Temps d'attente",
-                    "waitedcount": "Nb fois en attente",
-                    "lockname": "Nom du process bloquant",
-                    "stacktrace": "Stacktrace",
-                    "show": "Afficher",
-                    "hide": "Cacher"
-                }
-            },
             "gc": {
-                "title": "Garbage collections",
                 "marksweepcount": "Total de \"Mark Sweep\"",
                 "marksweeptime": "Temps \"Mark Sweep\"",
                 "scavengecount": "Total \"Scavenge\"",
-                "scavengetime": "Temps \"Scavenge\""
+                "scavengetime": "Temps \"Scavenge\"",
+                "title": "Garbage collections"
             },
             "http": {
-                "title": "Requêtes HTTP (évènements par seconde)",
-                "active": "Requêtes actives :",
-                "total": "Requêtes totales :",
+                "active": "Requ\u00eates actives :",
+                "code": {
+                    "notfound": "Non trouv\u00e9",
+                    "ok": "Ok",
+                    "servererror": "Erreur serveur"
+                },
                 "table": {
+                    "average": "Moyenne",
                     "code": "Code",
                     "count": "Total",
-                    "mean": "Médian",
-                    "average": "Moyenne"
+                    "mean": "M\u00e9dian"
                 },
-                "code": {
-                    "ok": "Ok",
-                    "notfound": "Non trouvé",
-                    "servererror": "Erreur serveur"
-                }
-            }
+                "title": "Requ\u00eates HTTP (\u00e9v\u00e8nements par seconde)",
+                "total": "Requ\u00eates totales :"
+            },
+            "memory": {
+                "heap": "M\u00e9moire \"Heap\"",
+                "nonheap": "M\u00e9moire \"Non-Heap\"",
+                "title": "M\u00e9moire",
+                "total": "M\u00e9moire totale"
+            },
+            "threads": {
+                "all": "Tous",
+                "blocked": "Bloqu\u00e9",
+                "dump": {
+                    "blockedcount": "Nb fois bloqu\u00e9",
+                    "blockedtime": "Temps bloqu\u00e9",
+                    "hide": "Cacher",
+                    "id": "Id :",
+                    "lockname": "Nom du process bloquant",
+                    "show": "Afficher",
+                    "stacktrace": "Stacktrace",
+                    "title": "Threads dump",
+                    "waitedcount": "Nb fois en attente",
+                    "waitedtime": "Temps d'attente"
+                },
+                "runnable": "Ex\u00e9cutable",
+                "timedwaiting": "Temps d'attente",
+                "title": "Threads",
+                "waiting": "En attente"
+            },
+            "title": "M\u00e9triques de la JVM"
+        },
+        "refresh": {
+            "button": "Rafra\u00eechir"
         },
         "servicesstats": {
-            "title": "Statistiques des services (temps en millisecondes)",
             "table": {
-                "name": "Nom du server",
                 "count": "Total",
-                "mean": "Médian",
-                "min": "Min",
                 "max": "Max",
+                "mean": "M\u00e9dian",
+                "min": "Min",
+                "name": "Nom du server",
                 "p50": "p50",
                 "p75": "p75",
                 "p95": "p95",
                 "p99": "p99"
-            }
+            },
+            "title": "Statistiques des services (temps en millisecondes)"
         },
-        "cache": {
-            "title": "Statistiques de cache",
-            "cachename": "Nom du cache",
-            "hits": "Données existantes",
-            "misses": "Données non existantes",
-            "gets": "Lectures",
-            "puts": "Écritures",
-            "removals": "Suppressions",
-            "evictions": "Évictions",
-            "hitPercent": "% données existantes",
-            "missPercent": "% données non existantes",
-            "averageGetTime": "Temps de lecture moyen (µs)",
-            "averagePutTime": "Temps d'écriture moyen (µs)",
-            "averageRemoveTime": "Temps de suppression moyen (µs)"
-        },
-        "datasource": {
-            "usage": "Usage",
-            "title": "Statistiques du pool de connexions (temps en millisecondes)",
-            "name": "Utilisation du pool",
-            "count": "Total",
-            "mean": "Médian",
-            "min": "Min",
-            "max": "Max",
-            "p50": "p50",
-            "p75": "p75",
-            "p95": "p95",
-            "p99": "p99"
-        }
+        "title": "M\u00e9triques de l'application",
+        "updating": "Mise \u00e0 jour..."
     }
 }

@@ -1,6 +1,6 @@
 {
     "error": {
-        "title": "Page d'erreur !",
-        "403": "Vous n'avez pas les droits pour accéder à cette page."
+        "403": "Vous n'avez pas les droits pour acc\u00e9der \u00e0 cette page.",
+        "title": "Page d'erreur !"
     }
 }

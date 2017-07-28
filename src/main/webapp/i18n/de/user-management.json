@@ -1,30 +1,30 @@
 {
     "userManagement": {
-        "home": {
-            "title": "Benutzer",
-            "createLabel": "Neuen Benutzer erstellen",
-            "createOrEditLabel": "Benutzer erstellen oder bearbeiten"
-        },
+        "activated": "Aktiv",
         "created": "Ein neuer Benutzer wurde mit ID {{ param }} erstellt",
-        "updated": "Ein Benutzer mit ID {{ param }} wurde geändert",
-        "deleted": "Ein Benutzer mit ID {{ param }} wurde gelöscht",
+        "createdBy": "Erstellt von",
+        "createdDate": "Erstellt am",
+        "deactivated": "Deaktiviert",
         "delete": {
-            "question": "Sind Sie sicher, dass Sie den Benutzer {{ login }} löschen möchten?"
+            "question": "Sind Sie sicher, dass Sie den Benutzer {{ login }} l\u00f6schen m\u00f6chten?"
         },
+        "deleted": "Ein Benutzer mit ID {{ param }} wurde gel\u00f6scht",
         "detail": {
             "title": "Benutzer"
         },
-        "login": "Login",
-        "firstName": "Vorname",
-        "lastName": "Nachname",
         "email": "Email",
-        "activated": "Aktiv",
-        "deactivated": "Deaktiviert",
-        "profiles": "Profile",
+        "firstName": "Vorname",
+        "home": {
+            "createLabel": "Neuen Benutzer erstellen",
+            "createOrEditLabel": "Benutzer erstellen oder bearbeiten",
+            "title": "Benutzer"
+        },
         "langKey": "Sprache",
-        "createdBy": "Erstellt von",
-        "createdDate": "Erstellt am",
         "lastModifiedBy": "Bearbeitet von",
-        "lastModifiedDate": "Zuletzt bearbeitet"
+        "lastModifiedDate": "Zuletzt bearbeitet",
+        "lastName": "Nachname",
+        "login": "Login",
+        "profiles": "Profile",
+        "updated": "Ein Benutzer mit ID {{ param }} wurde ge\u00e4ndert"
     }
 }

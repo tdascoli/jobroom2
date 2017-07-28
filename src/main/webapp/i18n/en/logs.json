@@ -1,11 +1,36 @@
 {
-    "logs": {
-        "title": "Logs",
-        "nbloggers": "There are {{ total }} loggers.",
-        "filter": "Filter",
+    "audits": {
+        "filter": {
+            "button": {
+                "clear": "",
+                "close": "",
+                "today": "",
+                "weeks": ""
+            },
+            "from": "",
+            "title": "",
+            "to": ""
+        },
         "table": {
-            "name": "Name",
-            "level": "Level"
-        }
+            "data": {
+                "remoteAddress": ""
+            },
+            "header": {
+                "data": "",
+                "date": "",
+                "principal": "",
+                "status": ""
+            }
+        },
+        "title": ""
+    },
+    "logs": {
+        "filter": "Filter",
+        "nbloggers": "There are {{ total }} loggers.",
+        "table": {
+            "level": "Level",
+            "name": "Name"
+        },
+        "title": "Logs"
     }
 }

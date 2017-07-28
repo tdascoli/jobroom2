@@ -1,0 +1,140 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+
+    }
+    dependencies {
+        classpath "org.apache.commons:commons-csv:1.4"
+    }
+}
+
+def languageKeys = ["de", "en", "fr", "it"]
+
+task csv2json() {
+    doLast {
+        def fileReader = new FileReader("./src/main/webapp/i18n/translations.csv")
+        def records = org.apache.commons.csv.CSVFormat.DEFAULT
+            .withHeader(["page", "key", *languageKeys] as String[])
+            .withSkipHeaderRecord()
+            .parse(fileReader)
+
+        def pageToLanguageToTranslationMap = records.collect {
+            [page: it.get("page"),
+             key : it.get("key"),
+             de  : it.get("de"),
+             en  : it.get("en"),
+             fr  : it.get("fr"),
+             it  : it.get("it")]
+        }
+        .groupBy {
+            it.page
+        }
+        .collectEntries { k, v ->
+            [k, v.inject([:]) { acc, value ->
+                acc.get('de', [:]).put(value.key, value.de)
+                acc.get('en', [:]).put(value.key, value.en)
+                acc.get('fr', [:]).put(value.key, value.fr)
+                acc.get('it', [:]).put(value.key, value.it)
+
+                return acc
+            }
+            ]
+        }
+
+        fileReader.close();
+
+        pageToLanguageToTranslationMap.each { page, lang2Translation ->
+            lang2Translation.each { lang, translations ->
+
+                def file = new File("./src/main/webapp/i18n/$lang/${page}.json")
+                file.write(translationsToJSON(translations as Map) + "\n")
+            }
+        }
+    }
+}
+
+
+task json2csv() {
+    doLast {
+        def slurper = new groovy.json.JsonSlurper()
+
+        def rows = languageKeys.collect {
+            [lang: it,
+             path: "./src/main/webapp/i18n/${it}"]
+        }.collect { m ->
+            project.file(m.path).listFiles().collect { [lang: m.lang, file: it] }
+        }
+        .flatten().collect { m ->
+            flattenJSON(slurper.parseText(m.file.text)).collect {
+                [lang    : m.lang,
+                 fileName: m.file.name,
+                 content : it]
+            }
+        }.flatten().collect {
+            [page: it.fileName.split("\\.", 2)[0],
+             key : it.content.key, ("content_" + it.lang): it.content.value]
+        }.inject([:]) { acc, value ->
+            def translations = acc.get(value.page + "@" + value.key, [:])
+            translations << value
+
+            return acc
+        }.sort { a, b ->
+            a.key <=> b.key
+        }
+
+        def pw = new PrintWriter("./src/main/webapp/i18n/translations.csv")
+        def printer = new org.apache.commons.csv.CSVPrinter(pw, org.apache.commons.csv.CSVFormat.DEFAULT)
+        printer.printRecord(["page", "key", *languageKeys])
+
+        rows.values().each { row ->
+            printer.print(row.page)
+            printer.print(row.key)
+            languageKeys.each { lang ->
+                printer.print(row["content_" + lang])
+            }
+            printer.println()
+
+        }
+        printer.close()
+    }
+}
+
+def flattenJSON(Object m, String parent = "") {
+    m.collectMany { k, v ->
+        def key = parent.isEmpty() ? k : parent + "." + k
+
+        if (v instanceof Map) {
+            return flattenJSON(v, key)
+        } else {
+            // eg.: [key: "gateway.routes.title", value: "Aktuelle Routen"]
+            return [[key: key, value: v]]
+        }
+    }
+}
+
+
+def translationsToJSON(Map translations) {
+    def root = [:]
+    translations.each { k, v ->
+        def path = k.split("\\.") as List
+        def current = root
+
+        path.withIndex().any { itm, idx ->
+            def value = current.get(itm, [:])
+            if (idx < path.size() - 1 && value instanceof Map) {
+                current = value
+
+                return false
+            } else {
+                def key = path[idx..path.size() - 1].join('.')
+                current[key] = v
+
+                return true
+            }
+        }
+    }
+
+    def jsonString = groovy.json.JsonOutput.toJson(root)
+    return groovy.json.JsonOutput.prettyPrint(jsonString)
+}

@@ -1,135 +1,143 @@
 {
-    "global": {
-        "title": "Jobroom",
-        "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.",
-        "menu": {
-            "home": "Startseite",
-            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
-            "entities": {
-                "main": "Entitäten",
-                "job": "Job",
-                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
-            },
-            "account": {
-                "main": "Zugang",
-                "settings": "Einstellungen",
-                "password": "Passwort",
-                "sessions": "Sitzungen",
-                "login": "Anmelden",
-                "logout": "Abmelden",
-                "register": "Registrierung"
-            },
-            "admin": {
-                "main": "Administration",
-                "gateway": "Gateway",
-                "userManagement": "Benutzerverwaltung",
-                "tracker": "Benutzer Aktivitäten",
-                "metrics": "Metriken",
-                "health": "Status",
-                "configuration": "Konfiguration",
-                "logs": "Protokoll",
-                "audits": "Audits",
-                "apidocs": "API",
-                "database": "Datenbank",
-                "elasticsearch-reindex": "Reindex Elasticsearch",
-                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
-            },
-            "language": "Sprache"
-        },
-        "form": {
-            "username": "Benutzername",
-            "username.placeholder": "Ihr Benutzername",
-            "newpassword": "Neues Passwort",
-            "newpassword.placeholder": "Neues Passwort",
-            "confirmpassword": "Neues Passwort bestätigen",
-            "confirmpassword.placeholder": "Bestätigen Sie Ihr neues Passwort",
-            "email": "Email Adresse",
-            "email.placeholder": "Ihre Email Adresse"
-        },
-        "messages": {
-            "info": {
-                "authenticated": {
-                    "prefix": "Wenn Sie sich ",
-                    "link": "anmelden",
-                    "suffix": " möchten, versuchen Sie es mit <br/>- Administrator (Name=\"admin\" und Passwort=\"admin\")<br/>- Benutzer (Name=\"user\" und Passwort=\"user\")."
-                },
-                "register": {
-                    "noaccount": "Sie haben noch keinen Zugang?",
-                    "link": "Registrieren Sie sich"
-                }
-            },
-            "error": {
-                "dontmatch": "Das bestätigte Passwort entspricht nicht dem neuen Passwort!"
-            },
-            "validate": {
-                "newpassword": {
-                    "required": "Ein neues Passwort wird benötigt.",
-                    "minlength": "Das neue Passwort muss mindestens 5 Zeichen lang sein",
-                    "maxlength": "Das neue Passwort darf nicht länger als 50 Zeichen sein",
-                    "strength": "Passwortstärke:"
-                },
-                "confirmpassword": {
-                    "required": "Sie müssen das Passwort bestätigen.",
-                    "minlength": "Das bestätigte Passwort muss mindestens 5 Zeichen lang sein",
-                    "maxlength": "Das bestätigte Passwort darf nicht länger als 50 Zeichen sein"
-                },
-                "email": {
-                    "required": "Ihre Email Adresse wird benötigt.",
-                    "invalid": "Ihre Email Adresse ist ungültig.",
-                    "minlength": "Ihre Email Adresse muss mindestens 5 Zeichen lang sein",
-                    "maxlength": "Ihre Email Adresse darf nicht länger als 50 Zeichen sein"
-                }
-            }
-        },
-        "field": {
-            "id" : "ID"
-        },
-        "ribbon": {
-            "dev":"Development"
-        },
-        "item-count": "Ergebnis {{first}} - {{second}} von {{total}} Elemente."
-    },
     "entity": {
         "action": {
-            "addblob": "Blob hinzufügen",
-            "addimage": "Bild hinzufügen",
-            "back": "Zurück",
+            "addblob": "Blob hinzuf\u00fcgen",
+            "addimage": "Bild hinzuf\u00fcgen",
+            "back": "Zur\u00fcck",
             "cancel": "Abbrechen",
-            "delete": "Löschen",
+            "delete": "L\u00f6schen",
             "edit": "Bearbeiten",
             "open": "Open",
             "save": "Speichern",
             "view": "Details"
         },
+        "delete": {
+            "title": "L\u00f6schen best\u00e4tigen"
+        },
         "detail": {
             "field": "Feld",
             "value": "Wert"
         },
-        "delete": {
-            "title": "Löschen bestätigen"
-        },
         "validation": {
-            "required": "Dieses Feld wird benötigt.",
-            "minlength": "Dieses Feld muss mind. {{min}} Zeichen lang sein.",
-            "maxlength": "Dieses Feld darf max. {{max}} Zeichen lang sein.",
-            "min": "Dieses Feld muss größer als {{min}} sein.",
+            "datetimelocal": "Dieses Feld muss eine Datums- und Zeitangabe enthalten.",
             "max": "Dieses Feld muss kleiner als {{max}} sein.",
-            "minbytes": "Dieses Feld sollte mehr als {{min}} bytes haben.",
             "maxbytes": "Dieses Feld sollte nicht mehr als {{max}} bytes haben.",
-            "pattern": "Dieses Feld muss das Muster {{pattern}} erfüllen.",
+            "maxlength": "Dieses Feld darf max. {{max}} Zeichen lang sein.",
+            "min": "Dieses Feld muss gr\u00f6\u00dfer als {{min}} sein.",
+            "minbytes": "Dieses Feld sollte mehr als {{min}} bytes haben.",
+            "minlength": "Dieses Feld muss mind. {{min}} Zeichen lang sein.",
             "number": "Dieses Feld muss eine Zahl sein.",
-            "datetimelocal": "Dieses Feld muss eine Datums- und Zeitangabe enthalten."
+            "pattern": "Dieses Feld muss das Muster {{pattern}} erf\u00fcllen.",
+            "required": "Dieses Feld wird ben\u00f6tigt."
         }
     },
     "error": {
-        "internalServerError": "Internal server error",
-        "server.not.reachable": "Server ist nicht erreichbar",
-        "url.not.found": "Nicht gefunden",
         "NotNull": "Feld {{fieldName}} kann nicht leer sein!",
-        "Size": "Feld {{fieldName}} erfüllt nicht die minimalen/maximalen Voraussetzungen!",
-        "userexists": "Benutzername bereits vergeben!",
+        "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
         "emailexists": "Email wird bereits verwendet!",
-        "idexists": "Ein neuer {{entityName}} kann noch keine ID haben"
+        "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
+        "internalServerError": "Internal server error",
+        "server": {
+            "not": {
+                "reachable": "Server ist nicht erreichbar"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Nicht gefunden"
+            }
+        },
+        "userexists": "Benutzername bereits vergeben!"
     },
-    "footer": "Dies ist Ihre Fußzeile"
+    "footer": "Dies ist Ihre Fu\u00dfzeile",
+    "global": {
+        "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
+        "field": {
+            "id": "ID"
+        },
+        "form": {
+            "confirmpassword": "Neues Passwort best\u00e4tigen",
+            "confirmpassword.placeholder": "Best\u00e4tigen Sie Ihr neues Passwort",
+            "email": "Email Adresse",
+            "email.placeholder": "Ihre Email Adresse",
+            "newpassword": "Neues Passwort",
+            "newpassword.placeholder": "Neues Passwort",
+            "username": "Benutzername",
+            "username.placeholder": "Ihr Benutzername"
+        },
+        "item-count": "Ergebnis {{first}} - {{second}} von {{total}} Elemente.",
+        "menu": {
+            "account": {
+                "login": "Anmelden",
+                "logout": "Abmelden",
+                "main": "Zugang",
+                "password": "Passwort",
+                "register": "Registrierung",
+                "sessions": "Sitzungen",
+                "settings": "Einstellungen"
+            },
+            "admin": {
+                "apidocs": "API",
+                "audits": "Audits",
+                "configuration": "Konfiguration",
+                "database": "Datenbank",
+                "elasticsearch-reindex": "Reindex Elasticsearch",
+                "gateway": "Gateway",
+                "health": "Status",
+                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)",
+                "logs": "Protokoll",
+                "main": "Administration",
+                "metrics": "Metriken",
+                "tracker": "Benutzer Aktivit\u00e4ten",
+                "userManagement": "Benutzerverwaltung"
+            },
+            "entities": {
+                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+                "job": "Job",
+                "main": "Entit\u00e4ten"
+            },
+            "home": "Startseite",
+            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "language": "Sprache"
+        },
+        "messages": {
+            "error": {
+                "dontmatch": "Das best\u00e4tigte Passwort entspricht nicht dem neuen Passwort!"
+            },
+            "info": {
+                "authenticated": {
+                    "link": "anmelden",
+                    "prefix": "Wenn Sie sich ",
+                    "suffix": " m\u00f6chten, versuchen Sie es mit <br/>- Administrator (Name=\"admin\" und Passwort=\"admin\")<br/>- Benutzer (Name=\"user\" und Passwort=\"user\")."
+                },
+                "register": {
+                    "link": "Registrieren Sie sich",
+                    "noaccount": "Sie haben noch keinen Zugang?"
+                }
+            },
+            "validate": {
+                "confirmpassword": {
+                    "maxlength": "Das best\u00e4tigte Passwort darf nicht l\u00e4nger als 50 Zeichen sein",
+                    "minlength": "Das best\u00e4tigte Passwort muss mindestens 5 Zeichen lang sein",
+                    "required": "Sie m\u00fcssen das Passwort best\u00e4tigen."
+                },
+                "email": {
+                    "invalid": "Ihre Email Adresse ist ung\u00fcltig.",
+                    "maxlength": "Ihre Email Adresse darf nicht l\u00e4nger als 50 Zeichen sein",
+                    "minlength": "Ihre Email Adresse muss mindestens 5 Zeichen lang sein",
+                    "required": "Ihre Email Adresse wird ben\u00f6tigt."
+                },
+                "newpassword": {
+                    "maxlength": "Das neue Passwort darf nicht l\u00e4nger als 50 Zeichen sein",
+                    "minlength": "Das neue Passwort muss mindestens 5 Zeichen lang sein",
+                    "required": "Ein neues Passwort wird ben\u00f6tigt.",
+                    "strength": "Passwortst\u00e4rke:"
+                }
+            }
+        },
+        "ribbon": {
+            "dev": "Development"
+        },
+        "title": "Jobroom"
+    }
 }

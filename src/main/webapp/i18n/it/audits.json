@@ -1,27 +1,27 @@
 {
     "audits": {
-        "title": "Cambiamenti",
         "filter": {
-            "title": "Filtra per data",
-            "from": "da",
-            "to": "a",
             "button": {
-                "weeks": "Settimane",
-                "today": "oggi",
                 "clear": "cancella",
-                "close": "chiudi"
-            }
+                "close": "chiudi",
+                "today": "oggi",
+                "weeks": "Settimane"
+            },
+            "from": "da",
+            "title": "Filtra per data",
+            "to": "a"
         },
         "table": {
-            "header": {
-                "principal": "Utente",
-                "date": "Data",
-                "status": "Stato",
-                "data": "Altre informazioni"
-            },
             "data": {
                 "remoteAddress": "Indirizzo remoto:"
+            },
+            "header": {
+                "data": "Altre informazioni",
+                "date": "Data",
+                "principal": "Utente",
+                "status": "Stato"
             }
-        }
+        },
+        "title": "Cambiamenti"
     }
 }

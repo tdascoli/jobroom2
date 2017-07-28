@@ -1,101 +1,103 @@
 {
     "metrics": {
-        "title": "Application Metrics",
-        "refresh.button": "Refresh",
-        "updating": "Updating...",
+        "cache": {
+            "averageGetTime": "Average get time (\u00b5s)",
+            "averagePutTime": "Average put time (\u00b5s)",
+            "averageRemoveTime": "Average remove time (\u00b5s)",
+            "cachename": "Cache name",
+            "evictions": "Cache Evictions",
+            "gets": "Cache Gets",
+            "hitPercent": "Cache Hit %",
+            "hits": "Cache Hits",
+            "missPercent": "Cache Miss %",
+            "misses": "Cache Misses",
+            "puts": "Cache Puts",
+            "removals": "Cache Removals",
+            "title": "Cache statistics"
+        },
+        "datasource": {
+            "count": "Count",
+            "max": "Max",
+            "mean": "Mean",
+            "min": "Min",
+            "name": "Pool usage",
+            "p50": "p50",
+            "p75": "p75",
+            "p95": "p95",
+            "p99": "p99",
+            "title": "DataSource statistics (time in millisecond)",
+            "usage": "Usage"
+        },
         "jvm": {
-            "title": "JVM Metrics",
-            "memory": {
-                "title": "Memory",
-                "total": "Total Memory",
-                "heap": "Heap Memory",
-                "nonheap": "Non-Heap Memory"
-            },
-            "threads": {
-                "title": "Threads",
-                "all": "All",
-                "runnable": "Runnable",
-                "timedwaiting": "Timed waiting",
-                "waiting": "Waiting",
-                "blocked": "Blocked",
-                "dump": {
-                    "title": "Threads dump",
-                    "id": "Id: ",
-                    "blockedtime": "Blocked Time",
-                    "blockedcount": "Blocked Count",
-                    "waitedtime": "Waited Time",
-                    "waitedcount": "Waited Count",
-                    "lockname": "Lock name",
-                    "stacktrace": "Stacktrace",
-                    "show": "Show Stacktrace",
-                    "hide": "Hide Stacktrace"
-                }
-            },
             "gc": {
-                "title": "Garbage collections",
                 "marksweepcount": "Mark Sweep count",
                 "marksweeptime": "Mark Sweep time",
                 "scavengecount": "Scavenge count",
-                "scavengetime": "Scavenge time"
+                "scavengetime": "Scavenge time",
+                "title": "Garbage collections"
             },
             "http": {
-                "title": "HTTP requests (events per second)",
                 "active": "Active requests:",
-                "total": "Total requests:",
+                "code": {
+                    "notfound": "Not found",
+                    "ok": "Ok",
+                    "servererror": "Server Error"
+                },
                 "table": {
+                    "average": "Average",
                     "code": "Code",
                     "count": "Count",
-                    "mean": "Mean",
-                    "average": "Average"
+                    "mean": "Mean"
                 },
-                "code": {
-                    "ok": "Ok",
-                    "notfound": "Not found",
-                    "servererror": "Server Error"
-                }
-            }
+                "title": "HTTP requests (events per second)",
+                "total": "Total requests:"
+            },
+            "memory": {
+                "heap": "Heap Memory",
+                "nonheap": "Non-Heap Memory",
+                "title": "Memory",
+                "total": "Total Memory"
+            },
+            "threads": {
+                "all": "All",
+                "blocked": "Blocked",
+                "dump": {
+                    "blockedcount": "Blocked Count",
+                    "blockedtime": "Blocked Time",
+                    "hide": "Hide Stacktrace",
+                    "id": "Id: ",
+                    "lockname": "Lock name",
+                    "show": "Show Stacktrace",
+                    "stacktrace": "Stacktrace",
+                    "title": "Threads dump",
+                    "waitedcount": "Waited Count",
+                    "waitedtime": "Waited Time"
+                },
+                "runnable": "Runnable",
+                "timedwaiting": "Timed waiting",
+                "title": "Threads",
+                "waiting": "Waiting"
+            },
+            "title": "JVM Metrics"
+        },
+        "refresh": {
+            "button": "Refresh"
         },
         "servicesstats": {
-            "title": "Services statistics (time in millisecond)",
             "table": {
-                "name": "Service name",
                 "count": "Count",
+                "max": "Max",
                 "mean": "Mean",
                 "min": "Min",
-                "max": "Max",
+                "name": "Service name",
                 "p50": "p50",
                 "p75": "p75",
                 "p95": "p95",
                 "p99": "p99"
-            }
+            },
+            "title": "Services statistics (time in millisecond)"
         },
-        "cache": {
-            "title": "Cache statistics",
-            "cachename": "Cache name",
-            "hits": "Cache Hits",
-            "misses": "Cache Misses",
-            "gets": "Cache Gets",
-            "puts": "Cache Puts",
-            "removals": "Cache Removals",
-            "evictions": "Cache Evictions",
-            "hitPercent": "Cache Hit %",
-            "missPercent": "Cache Miss %",
-            "averageGetTime": "Average get time (µs)",
-            "averagePutTime": "Average put time (µs)",
-            "averageRemoveTime": "Average remove time (µs)"
-        },
-        "datasource": {
-            "usage": "Usage",
-            "title": "DataSource statistics (time in millisecond)",
-            "name": "Pool usage",
-            "count": "Count",
-            "mean": "Mean",
-            "min": "Min",
-            "max": "Max",
-            "p50": "p50",
-            "p75": "p75",
-            "p95": "p95",
-            "p99": "p99"
-        }
+        "title": "Application Metrics",
+        "updating": "Updating..."
     }
 }

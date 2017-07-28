@@ -3,14 +3,14 @@
         "title": "Job search",
         "toolbar": {
             "occupation": {
-                "placeholder": "Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
+                "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
             }
         }
     },
     "typeahead-multiselect": {
         "type": {
-            "occupation": "Occupation",
-            "classification": "Classification"
+            "classification": "Classification",
+            "occupation": "Occupation"
         }
     }
 }

@@ -1,32 +1,32 @@
 {
     "settings": {
-        "title": "Profil de l'utilisateur [<b>{{username}}</b>]",
         "form": {
-            "firstname": "Prénom",
-            "firstname.placeholder": "Votre prénom",
-            "lastname": "Nom",
-            "lastname.placeholder": "Votre nom",
+            "button": "Sauvegarder",
+            "firstname": "Pr\u00e9nom",
+            "firstname.placeholder": "Votre pr\u00e9nom",
             "language": "Langue",
-            "button": "Sauvegarder"
+            "lastname": "Nom",
+            "lastname.placeholder": "Votre nom"
         },
         "messages": {
             "error": {
-                "fail": "<strong>Une erreur est survenue !</strong> Votre profil n'a pas été sauvegardé.",
-                "emailexists": "<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre."
+                "emailexists": "<strong>Cet email est d\u00e9j\u00e0 utilis\u00e9 !</strong> Veuillez en choisir un autre.",
+                "fail": "<strong>Une erreur est survenue !</strong> Votre profil n'a pas \u00e9t\u00e9 sauvegard\u00e9."
             },
-            "success": "<strong>Votre profil a été sauvegardé !</strong>",
+            "success": "<strong>Votre profil a \u00e9t\u00e9 sauvegard\u00e9 !</strong>",
             "validate": {
                 "firstname": {
-                    "required": "Votre prénom est requis.",
-                    "minlength": "Votre prénom doit comporter au moins un caractère.",
-                    "maxlength": "Votre prénom ne doit pas comporter plus de 50 caractères."
+                    "maxlength": "Votre pr\u00e9nom ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Votre pr\u00e9nom doit comporter au moins un caract\u00e8re.",
+                    "required": "Votre pr\u00e9nom est requis."
                 },
                 "lastname": {
-                    "required": "Votre nom est requis.",
-                    "minlength": "Votre nom doit comporter au moins un caractère.",
-                    "maxlength": "Votre nom ne doit pas comporter plus de 50 caractères."
+                    "maxlength": "Votre nom ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Votre nom doit comporter au moins un caract\u00e8re.",
+                    "required": "Votre nom est requis."
                 }
             }
-        }
+        },
+        "title": "Profil de l'utilisateur [<b>{{username}}</b>]"
     }
 }

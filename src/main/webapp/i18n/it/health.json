@@ -1,31 +1,33 @@
 {
     "health": {
-        "title": "Verifiche",
-        "refresh.button": "Aggiorna",
-        "stacktrace": "Stacktrace",
         "details": {
             "details": "Dettagli",
-            "properties": "Proprietà",
+            "error": "Errore",
             "name": "Nome",
-            "value": "Valore",
-            "error": "Errore"
+            "properties": "Propriet\u00e0",
+            "value": "Valore"
         },
         "indicator": {
-            "discoveryComposite": "Discovery Composite",
-            "refreshScope": "Scopo di Aggiornamento Microservice",
             "configServer": "Server di Configurazioni Microservice",
-            "hystrix": "Hystrix",
+            "db": "Database",
+            "discoveryComposite": "Discovery Composite",
             "diskSpace": "Spazio su disco",
+            "hystrix": "Hystrix",
             "mail": "Email",
-            "db": "Database"
+            "refreshScope": "Scopo di Aggiornamento Microservice"
+        },
+        "refresh": {
+            "button": "Aggiorna"
+        },
+        "stacktrace": "Stacktrace",
+        "status": {
+            "DOWN": "NON DISPONIBILE",
+            "UP": "DISPONIBILE"
         },
         "table": {
             "service": "Nome del servizio",
             "status": "Stato"
         },
-        "status": {
-            "UP": "DISPONIBILE",
-            "DOWN": "NON DISPONIBILE"
-        }
+        "title": "Verifiche"
     }
 }

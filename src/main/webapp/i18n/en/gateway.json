@@ -1,15 +1,15 @@
 {
     "gateway": {
-        "title": "Gateway",
-        "routes": {
-            "title": "Current routes",
-            "url": "URL",
-            "service": "service",
-            "servers": "Available servers",
-            "error": "Warning: no server available!"
-        },
         "refresh": {
             "button": "Refresh"
-        }
+        },
+        "routes": {
+            "error": "Warning: no server available!",
+            "servers": "Available servers",
+            "service": "service",
+            "title": "Current routes",
+            "url": "URL"
+        },
+        "title": "Gateway"
     }
 }

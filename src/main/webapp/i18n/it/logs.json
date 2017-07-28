@@ -1,11 +1,36 @@
 {
-    "logs": {
-        "title": "Log",
-        "nbloggers": "Hai {{ total }} logger.",
-        "filter": "Filtro",
+    "audits": {
+        "filter": {
+            "button": {
+                "clear": "",
+                "close": "",
+                "today": "",
+                "weeks": ""
+            },
+            "from": "",
+            "title": "",
+            "to": ""
+        },
         "table": {
-            "name": "Nome",
-            "level": "Livello"
-        }
+            "data": {
+                "remoteAddress": ""
+            },
+            "header": {
+                "data": "",
+                "date": "",
+                "principal": "",
+                "status": ""
+            }
+        },
+        "title": ""
+    },
+    "logs": {
+        "filter": "Filtro",
+        "nbloggers": "Hai {{ total }} logger.",
+        "table": {
+            "level": "Livello",
+            "name": "Nome"
+        },
+        "title": "Log"
     }
 }

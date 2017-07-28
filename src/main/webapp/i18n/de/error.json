@@ -1,6 +1,6 @@
 {
     "error": {
-        "title": "Fehlerseite!",
-        "403": "Sie haben nicht die nötigen Berechtigungen diese Seite anzuzeigen."
+        "403": "Sie haben nicht die n\u00f6tigen Berechtigungen diese Seite anzuzeigen.",
+        "title": "Fehlerseite!"
     }
 }

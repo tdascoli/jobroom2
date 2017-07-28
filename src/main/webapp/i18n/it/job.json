@@ -1,80 +1,80 @@
 {
     "jobroomApp": {
-        "job" : {
-            "home": {
-                "title": "Jobs",
-                "createLabel": "Genera un nuovo Job",
-                "createOrEditLabel": "Genera o modifica un Job"
-            },
-            "delete": {
-                "question": "Sei sicuro di volere eliminare Job {{ id }}?"
-            },
-            "detail": {
-                "title": "Job"
-            },
-            "externalId": "External Id",
-            "publicationStartDate": "Publication Start Date",
-            "publicationEndDate": "Publication End Date",
-            "externalUrl": "External Url",
+        "job": {
+            "ageMax": "Age Max",
+            "ageMin": "Age Min",
+            "ageRestrictionReason": "Age Restriction Reason",
             "applicationUrl": "Application Url",
-            "registrationDate": "Registration Date",
             "cancellationDate": "Cancellation Date",
             "cancellationReason": "Cancellation Reason",
-            "title": "Title",
-            "description": "Description",
-            "workingTimePercentageMin": "Working Time Percentage Min",
-            "workingTimePercentageMax": "Working Time Percentage Max",
-            "startDate": "Start Date",
-            "endDate": "End Date",
-            "startsImmediately": "Starts Immediately",
-            "isPermanent": "Is Permanent",
-            "fingerPrint": "Finger Print",
-            "numberOfJobs": "Number Of Jobs",
-            "isJobSharing": "Is Job Sharing",
-            "isSuitableForDisabled": "Is Suitable For Disabled",
-            "locality" : {
-                "text": "Locality Text",
-                "zipCode": "Job Locality Zip Code",
-                "communalCode": "Locality Communal Code",
-                "cantonCode": "Locality Canton Code",
-                "regionCode": "Locality Region Code",
-                "countryCode": "Locality Country Code"
-            },
-            "paymentMin": "Payment Min",
-            "paymentMax": "Payment Max",
-            "currencyCode": "Currency Code",
-            "ageMin": "Age Min",
-            "ageMax": "Age Max",
-            "ageRestrictionReason": "Age Restriction Reason",
-            "gender": "Gender",
-            "hasPersonalVehicle": "Has Personal Vehicle",
-            "drivingLicenseLevel": "Driving License Level",
-            "companyName": "Company Name",
             "companyAddressLine1": "Company Address Line 1",
             "companyAddressLine2": "Company Address Line 2",
-            "companyZipCode": "Company Zip Code",
             "companyCity": "Company City",
             "companyCountryCode": "Company Country Code",
+            "companyEmail": "Company Email",
+            "companyName": "Company Name",
+            "companyPhone": "Company Phone",
+            "companyPostboxCity": "Company Postbox City",
             "companyPostboxNumber": "Company Postbox Number",
             "companyPostboxZipCode": "Company Postbox Zip Code",
-            "companyPostboxCity": "Company Postbox City",
-            "companyPhone": "Company Phone",
-            "companyEmail": "Company Email",
             "companyWebsite": "Company Website",
-            "contactTitle": "Contact Title",
+            "companyZipCode": "Company Zip Code",
+            "contactEmail": "Contact Email",
             "contactFirstName": "Contact First Name",
             "contactLastName": "Contact Last Name",
             "contactPhone": "Contact Phone",
-            "contactEmail": "Contact Email",
+            "contactTitle": "Contact Title",
+            "currencyCode": "Currency Code",
+            "delete": {
+                "question": "Sei sicuro di volere eliminare Job {{ id }}?"
+            },
+            "description": "Description",
+            "detail": {
+                "title": "Job"
+            },
+            "drivingLicenseLevel": "Driving License Level",
+            "endDate": "End Date",
+            "externalId": "External Id",
+            "externalUrl": "External Url",
+            "fingerPrint": "Finger Print",
+            "gender": "Gender",
+            "hasPersonalVehicle": "Has Personal Vehicle",
+            "home": {
+                "createLabel": "Genera un nuovo Job",
+                "createOrEditLabel": "Genera o modifica un Job",
+                "title": "Jobs"
+            },
+            "isJobSharing": "Is Job Sharing",
+            "isPermanent": "Is Permanent",
+            "isSuitableForDisabled": "Is Suitable For Disabled",
+            "languages": "Languages",
+            "locality": {
+                "cantonCode": "Locality Canton Code",
+                "communalCode": "Locality Communal Code",
+                "countryCode": "Locality Country Code",
+                "regionCode": "Locality Region Code",
+                "text": "Locality Text",
+                "zipCode": "Job Locality Zip Code"
+            },
+            "numberOfJobs": "Number Of Jobs",
+            "paymentMax": "Payment Max",
+            "paymentMin": "Payment Min",
             "professions": "Professions",
-            "languages": "Languages"
+            "publicationEndDate": "Publication End Date",
+            "publicationStartDate": "Publication Start Date",
+            "registrationDate": "Registration Date",
+            "startDate": "Start Date",
+            "startsImmediately": "Starts Immediately",
+            "title": "Title",
+            "workingTimePercentageMax": "Working Time Percentage Max",
+            "workingTimePercentageMin": "Working Time Percentage Min"
         }
     },
     "jobserviceApp": {
-        "job" : {
+        "job": {
             "created": "&Egrave; stato generato un nuovo Job con identificatore { param }}",
-            "updated": "&Egrave; stato aggiornato Job identificato da {{ param }}",
-            "deleted": "&Egrave; stato eliminato Job con identificatore {{ param }}"
+            "deleted": "&Egrave; stato eliminato Job con identificatore {{ param }}",
+            "updated": "&Egrave; stato aggiornato Job identificato da {{ param }}"
         }
     }
 }

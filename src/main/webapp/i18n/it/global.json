@@ -1,94 +1,4 @@
 {
-    "global": {
-        "title": "Jobroom",
-        "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
-        "menu": {
-            "home": "Home",
-            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
-            "entities": {
-                "main": "Entità",
-                "job": "Job",
-                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
-            },
-            "account": {
-                "main": "Utente",
-                "settings": "Impostazioni",
-                "password": "Password",
-                "sessions": "Sessioni",
-                "login": "Accesso",
-                "logout": "Esci",
-                "register": "Registrazione"
-            },
-            "admin": {
-                "main": "Amministratore",
-                "gateway": "Gateway",
-                "userManagement": "Gestione utenti",
-                "tracker": "Tracciamento utente",
-                "metrics": "Metriche",
-                "health": "Integrità",
-                "configuration": "Configurazione",
-                "logs": "Log",
-                "audits": "Cambiamenti",
-                "apidocs": "API",
-                "database": "Database",
-                "elasticsearch-reindex": "Reindex Elasticsearch",
-                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)"
-            },
-            "language": "Lingua"
-        },
-        "form": {
-            "username": "Utente",
-            "username.placeholder": "Il tuo nome utente",
-            "newpassword": "Nuova password",
-            "newpassword.placeholder": "Nuova password",
-            "confirmpassword": "Conferma nuova password",
-            "confirmpassword.placeholder": "Conferma nuova password",
-            "email": "Email",
-            "email.placeholder": "Il tuo indirizzo email"
-        },
-        "messages": {
-            "info": {
-                "authenticated": {
-                    "prefix": "Se vuoi ",
-                    "link": "accedere",
-                    "suffix": ", puoi provare gli account di default: <br/> - Amministratore (user = \"admin\" e la password = \"admin\") <br/> - utente (user = \"user\" e la password = \"user\")"
-                },
-                "register": {
-                    "noaccount": "Non hai ancora un account?",
-                    "link": "Crea un account"
-                }
-            },
-            "error": {
-                "dontmatch" : "La password e la sua conferma non corrispondono!"
-            },
-            "validate": {
-                "newpassword": {
-                    "required": "La password è obbligatoria.",
-                    "minlength": "La password deve essere di almeno 4 caratteri",
-                    "maxlength": "La password non può contenere più di 50 caratteri",
-                    "strength": "Robustezza della password:"
-                },
-                "confirmpassword": {
-                    "required": "La password di conferma è obbligatoria.",
-                    "minlength": "La tua password deve essere di almeno 4 caratteri",
-                    "maxlength": "La tua password non può contenere più di 50 caratteri"
-                },
-                "email": {
-                    "required": "L'indirizzo email è obbligatorio.",
-                    "invalid": "L'indirizzo email non è valido.",
-                    "minlength": "L'indirizzo email deve essere di almeno 5 caratteri",
-                    "maxlength": "L'indirizzo email non può contenere più di 50 caratteri"
-                }
-            }
-        },
-        "field": {
-            "id" : "ID"
-        },
-        "ribbon": {
-            "dev":"Development"
-        },
-        "item-count": "Mostra {{first}} - {{second}} di {{total}} articoli."
-    },
     "entity": {
         "action": {
             "addblob": "Aggiungi blob",
@@ -101,35 +11,133 @@
             "save": "Salva",
             "view": "Visualizza"
         },
+        "delete": {
+            "title": "Conferma operazione di cancellazione"
+        },
         "detail": {
             "field": "Campo",
             "value": "Valore"
         },
-        "delete": {
-            "title": "Conferma operazione di cancellazione"
-        },
         "validation": {
-            "required": "Questo campo è obbligatorio.",
+            "datetimelocal": "Questo campo dovrebbe essere data e ora.",
+            "max": "Questo campo non pu\u00f2 essere superiore a {{ max }}.",
+            "maxbytes": "Questo campo non pu\u00f2 essere superiore a {{ max }} byte.",
+            "maxlength": "Questo campo non pu\u00f2 essere pi\u00f9 di {{ max }} caratteri.",
+            "min": "Questo campo dovrebbe essere pi\u00f9 di {{ min }}.",
+            "minbytes": "Questo campo dovrebbe essere pi\u00f9 di {{ min }} byte.",
             "minlength": "Questo campo deve essere di almeno {{ min }} caratteri.",
-            "maxlength": "Questo campo non può essere più di {{ max }} caratteri.",
-            "min": "Questo campo dovrebbe essere più di {{ min }}.",
-            "max": "Questo campo non può essere superiore a {{ max }}.",
-            "minbytes": "Questo campo dovrebbe essere più di {{ min }} byte.",
-            "maxbytes": "Questo campo non può essere superiore a {{ max }} byte.",
-            "pattern": "Questo campo dovrebbe corrispondere al modello {{ pattern }}.",
             "number": "Questo campo dovrebbe essere un numero.",
-            "datetimelocal": "Questo campo dovrebbe essere data e ora."
+            "pattern": "Questo campo dovrebbe corrispondere al modello {{ pattern }}.",
+            "required": "Questo campo \u00e8 obbligatorio."
         }
     },
     "error": {
+        "NotNull": "Il campo {{ fieldName }} non pu\u00f2 essere vuoto!",
+        "Size": "Il campo {{ fieldName }} non \u00e8 conforme ai requisiti di lunghezza min/max!",
+        "emailexists": "L'email \u00e8 gi\u00e0 in uso!",
+        "idexists": "Un(a) nuovo/a {{entityName}} non pu\u00f2 gi\u00e0 avere un ID",
         "internalServerError": "Internal server error",
-        "server.not.reachable": "Server non raggiungibile",
-        "url.not.found": "Non trovato",
-        "NotNull": "Il campo {{ fieldName }} non può essere vuoto!",
-        "Size": "Il campo {{ fieldName }} non è conforme ai requisiti di lunghezza min/max!",
-        "userexists": "Il nome utente è già in uso!",
-        "emailexists": "L'email è già in uso!",
-        "idexists": "Un(a) nuovo/a {{entityName}} non può già avere un ID"
+        "server": {
+            "not": {
+                "reachable": "Server non raggiungibile"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Non trovato"
+            }
+        },
+        "userexists": "Il nome utente \u00e8 gi\u00e0 in uso!"
     },
-    "footer": "Piè di pagina"
+    "footer": "Pi\u00e8 di pagina",
+    "global": {
+        "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
+        "field": {
+            "id": "ID"
+        },
+        "form": {
+            "confirmpassword": "Conferma nuova password",
+            "confirmpassword.placeholder": "Conferma nuova password",
+            "email": "Email",
+            "email.placeholder": "Il tuo indirizzo email",
+            "newpassword": "Nuova password",
+            "newpassword.placeholder": "Nuova password",
+            "username": "Utente",
+            "username.placeholder": "Il tuo nome utente"
+        },
+        "item-count": "Mostra {{first}} - {{second}} di {{total}} articoli.",
+        "menu": {
+            "account": {
+                "login": "Accesso",
+                "logout": "Esci",
+                "main": "Utente",
+                "password": "Password",
+                "register": "Registrazione",
+                "sessions": "Sessioni",
+                "settings": "Impostazioni"
+            },
+            "admin": {
+                "apidocs": "API",
+                "audits": "Cambiamenti",
+                "configuration": "Configurazione",
+                "database": "Database",
+                "elasticsearch-reindex": "Reindex Elasticsearch",
+                "gateway": "Gateway",
+                "health": "Integrit\u00e0",
+                "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)",
+                "logs": "Log",
+                "main": "Amministratore",
+                "metrics": "Metriche",
+                "tracker": "Tracciamento utente",
+                "userManagement": "Gestione utenti"
+            },
+            "entities": {
+                "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
+                "job": "Job",
+                "main": "Entit\u00e0"
+            },
+            "home": "Home",
+            "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "language": "Lingua"
+        },
+        "messages": {
+            "error": {
+                "dontmatch": "La password e la sua conferma non corrispondono!"
+            },
+            "info": {
+                "authenticated": {
+                    "link": "accedere",
+                    "prefix": "Se vuoi ",
+                    "suffix": ", puoi provare gli account di default: <br/> - Amministratore (user = \"admin\" e la password = \"admin\") <br/> - utente (user = \"user\" e la password = \"user\")"
+                },
+                "register": {
+                    "link": "Crea un account",
+                    "noaccount": "Non hai ancora un account?"
+                }
+            },
+            "validate": {
+                "confirmpassword": {
+                    "maxlength": "La tua password non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
+                    "minlength": "La tua password deve essere di almeno 4 caratteri",
+                    "required": "La password di conferma \u00e8 obbligatoria."
+                },
+                "email": {
+                    "invalid": "L'indirizzo email non \u00e8 valido.",
+                    "maxlength": "L'indirizzo email non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
+                    "minlength": "L'indirizzo email deve essere di almeno 5 caratteri",
+                    "required": "L'indirizzo email \u00e8 obbligatorio."
+                },
+                "newpassword": {
+                    "maxlength": "La password non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
+                    "minlength": "La password deve essere di almeno 4 caratteri",
+                    "required": "La password \u00e8 obbligatoria.",
+                    "strength": "Robustezza della password:"
+                }
+            }
+        },
+        "ribbon": {
+            "dev": "Development"
+        },
+        "title": "Jobroom"
+    }
 }

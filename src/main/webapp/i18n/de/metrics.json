@@ -1,93 +1,103 @@
 {
     "metrics": {
-        "title": "Anwendungs-Metriken",
-        "refresh.button": "Aktualisieren",
-        "updating": "Aktualisierung...",
+        "cache": {
+            "averageGetTime": "",
+            "averagePutTime": "",
+            "averageRemoveTime": "",
+            "cachename": "Cache Name",
+            "evictions": "Anzahl entfernter Objekte",
+            "gets": "",
+            "hitPercent": "",
+            "hits": "Treffer",
+            "missPercent": "",
+            "misses": "Keine Treffer",
+            "puts": "",
+            "removals": "",
+            "title": "Cache Statistiken"
+        },
+        "datasource": {
+            "count": "Anzahl",
+            "max": "Max",
+            "mean": "Mittel",
+            "min": "Min",
+            "name": "Pool-Auslastung",
+            "p50": "p50",
+            "p75": "p75",
+            "p95": "p95",
+            "p99": "p99",
+            "title": "Datenquelle (Zeit in Millisekunden)",
+            "usage": "Usage"
+        },
         "jvm": {
-            "title": "JVM Metriken",
-            "memory": {
-                "title": "Hauptspeicher",
-                "total": "Gesamter Hauptspeicher",
-                "heap": "Heap Speicher",
-                "nonheap": "Non-Heap Speicher"
-            },
-            "threads": {
-                "title": "Threads",
-                "all": "Alle",
-                "runnable": "Runnable",
-                "timedwaiting": "Wartezeit",
-                "waiting": "Wartend",
-                "blocked": "Geblockt",
-                "dump": {
-                    "title": "Threads dump",
-                    "id": "Id: ",
-                    "blockedtime": "Geblockte Zeit",
-                    "blockedcount": "Geblockte Zahl",
-                    "waitedtime": "Gewartete Zeit",
-                    "waitedcount": "Gewartete Anzahl",
-                    "lockname": "Lock-Name",
-                    "stacktrace": "Stacktrace",
-                    "show": "Zeigen",
-                    "hide": "Verstecken"
-                }
-            },
             "gc": {
-                "title": "Speicherbereinigung (GC)",
                 "marksweepcount": "Durchlaufmarkierungs (Mark Sweep) Anzahl",
                 "marksweeptime": "Durchlaufmarkierungs (Mark Sweep) Zeit",
                 "scavengecount": "Bereinigungslauf (Scavenge) Anzahl",
-                "scavengetime": "Bereinigungslauf (Scavenge) Zeit"
+                "scavengetime": "Bereinigungslauf (Scavenge) Zeit",
+                "title": "Speicherbereinigung (GC)"
             },
             "http": {
-                "title": "HTTP Anfragen (Ereignisse pro Sekunde)",
                 "active": "Aktive Anfragen:",
-                "total": "Alle Anfragen:",
+                "code": {
+                    "notfound": "Nicht gefunden",
+                    "ok": "Ok",
+                    "servererror": "Server Fehler"
+                },
                 "table": {
+                    "average": "Mittelwert",
                     "code": "Codierung",
                     "count": "Anzahl",
-                    "mean": "Durchschnittswert",
-                    "average": "Mittelwert"
+                    "mean": "Durchschnittswert"
                 },
-                "code": {
-                    "ok": "Ok",
-                    "notfound": "Nicht gefunden",
-                    "servererror": "Server Fehler"
-                }
-            }
+                "title": "HTTP Anfragen (Ereignisse pro Sekunde)",
+                "total": "Alle Anfragen:"
+            },
+            "memory": {
+                "heap": "Heap Speicher",
+                "nonheap": "Non-Heap Speicher",
+                "title": "Hauptspeicher",
+                "total": "Gesamter Hauptspeicher"
+            },
+            "threads": {
+                "all": "Alle",
+                "blocked": "Geblockt",
+                "dump": {
+                    "blockedcount": "Geblockte Zahl",
+                    "blockedtime": "Geblockte Zeit",
+                    "hide": "Verstecken",
+                    "id": "Id: ",
+                    "lockname": "Lock-Name",
+                    "show": "Zeigen",
+                    "stacktrace": "Stacktrace",
+                    "title": "Threads dump",
+                    "waitedcount": "Gewartete Anzahl",
+                    "waitedtime": "Gewartete Zeit"
+                },
+                "runnable": "Runnable",
+                "timedwaiting": "Wartezeit",
+                "title": "Threads",
+                "waiting": "Wartend"
+            },
+            "title": "JVM Metriken"
+        },
+        "refresh": {
+            "button": "Aktualisieren"
         },
         "servicesstats": {
-            "title": "Service Statistiken (Zeit in Millisekunden)",
             "table": {
-                "name": "Service Name",
                 "count": "Anzahl",
+                "max": "Maximum",
                 "mean": "Durchschnitt",
                 "min": "Minimum",
-                "max": "Maximum",
+                "name": "Service Name",
                 "p50": "p50",
                 "p75": "p75",
                 "p95": "p95",
                 "p99": "p99"
-            }
+            },
+            "title": "Service Statistiken (Zeit in Millisekunden)"
         },
-        "cache": {
-            "title": "Cache Statistiken",
-            "cachename": "Cache Name",
-            "hits": "Treffer",
-            "misses": "Keine Treffer",
-            "evictions": "Anzahl entfernter Objekte"
-        },
-        "datasource": {
-            "usage": "Usage",
-            "title": "Datenquelle (Zeit in Millisekunden)",
-            "name": "Pool-Auslastung",
-            "count": "Anzahl",
-            "mean": "Mittel",
-            "min": "Min",
-            "max": "Max",
-            "p50": "p50",
-            "p75": "p75",
-            "p95": "p95",
-            "p99": "p99"
-        }
+        "title": "Anwendungs-Metriken",
+        "updating": "Aktualisierung..."
     }
 }

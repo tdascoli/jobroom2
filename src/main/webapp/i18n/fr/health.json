@@ -1,31 +1,33 @@
 {
     "health": {
-        "title": "Diagnostics",
-        "refresh.button": "Rafraichir",
-        "stacktrace": "Stacktrace",
         "details": {
-            "details": "Détails",
-            "properties": "Propriétés",
+            "details": "D\u00e9tails",
+            "error": "Erreur",
             "name": "Nom",
-            "value": "Valeur",
-            "error": "Erreur"
+            "properties": "Propri\u00e9t\u00e9s",
+            "value": "Valeur"
         },
         "indicator": {
-            "discoveryComposite": "Discovery Composite",
-            "refreshScope": "Microservice Refresh Scope",
             "configServer": "Microservice Config Server",
-            "hystrix": "Hystrix",
+            "db": "Base de donn\u00e9es",
+            "discoveryComposite": "Discovery Composite",
             "diskSpace": "Espace disque",
+            "hystrix": "Hystrix",
             "mail": "Email",
-            "db": "Base de données"
+            "refreshScope": "Microservice Refresh Scope"
+        },
+        "refresh": {
+            "button": "Rafraichir"
+        },
+        "stacktrace": "Stacktrace",
+        "status": {
+            "DOWN": "HORS SERVICE",
+            "UP": "DISPONIBLE"
         },
         "table": {
             "service": "Nom du service",
             "status": "Etat"
         },
-        "status": {
-            "UP": "DISPONIBLE",
-            "DOWN": "HORS SERVICE"
-        }
+        "title": "Diagnostics"
     }
 }

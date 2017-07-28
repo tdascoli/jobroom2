@@ -1,27 +1,27 @@
 {
     "reset": {
-        "request": {
-            "title": "Réinitialiser son mot de passe",
+        "finish": {
             "form": {
-                "button": "Réinitialiser le mot de passe"
+                "button": "R\u00e9initialiser le mot de passe"
             },
             "messages": {
-                "info": "Veuillez renseigner l'adresse email utilisée pour vous enregistrer",
-                "success": "Veuillez vérifier vos nouveaux emails et suivre les instructions pour réinitialiser votre mot de passe.",
-                "notfound": "<strong>L'adresse email n'existe pas !</strong> Merci de la vérifier et de réessayer."
-            }
-        },
-        "finish" : {
-            "title": "Réinitialisation du mot de passe",
-            "form": {
-                "button": "Réinitialiser le mot de passe"
-            },
-            "messages": {
+                "error": "Votre mot de passe n'a pas pu \u00eatre r\u00e9initialis\u00e9. La demande de r\u00e9initialisation n'est valable que 24 heures.",
                 "info": "Choisir un nouveau mot de passe",
-                "success": "<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ",
-                "keymissing": "La clef de réinitilisation est manquante",
-                "error": "Votre mot de passe n'a pas pu être réinitialisé. La demande de réinitialisation n'est valable que 24 heures."
-            }
+                "keymissing": "La clef de r\u00e9initilisation est manquante",
+                "success": "<strong>Votre mot de passe a \u00e9t\u00e9 r\u00e9initialis\u00e9.</strong> Merci de "
+            },
+            "title": "R\u00e9initialisation du mot de passe"
+        },
+        "request": {
+            "form": {
+                "button": "R\u00e9initialiser le mot de passe"
+            },
+            "messages": {
+                "info": "Veuillez renseigner l'adresse email utilis\u00e9e pour vous enregistrer",
+                "notfound": "<strong>L'adresse email n'existe pas !</strong> Merci de la v\u00e9rifier et de r\u00e9essayer.",
+                "success": "Veuillez v\u00e9rifier vos nouveaux emails et suivre les instructions pour r\u00e9initialiser votre mot de passe."
+            },
+            "title": "R\u00e9initialiser son mot de passe"
         }
     }
 }

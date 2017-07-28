@@ -1,32 +1,32 @@
 {
     "settings": {
-        "title": "Impostazioni per l'utente [<b>{{username}}</b>]",
         "form": {
+            "button": "Salva",
             "firstname": "Nome",
             "firstname.placeholder": "Il tuo nome",
+            "language": "Lingua",
             "lastname": "Cognome",
-            "lastname.placeholder": "Il tuo cognome",
-            "button": "Salva",
-            "language": "Lingua"
+            "lastname.placeholder": "Il tuo cognome"
         },
         "messages": {
             "error": {
-                "fail": "<strong>Si è verificato un errore!</strong> Impossibile salvare le impostazioni.",
-                "emailexists": "<strong>L'indirizzo email è già in uso!</strong> Si prega di sceglierne un altro."
+                "emailexists": "<strong>L'indirizzo email \u00e8 gi\u00e0 in uso!</strong> Si prega di sceglierne un altro.",
+                "fail": "<strong>Si \u00e8 verificato un errore!</strong> Impossibile salvare le impostazioni."
             },
             "success": "<strong>Impostazioni salvate!</strong>",
             "validate": {
                 "firstname": {
-                    "required": "Il nome è obbligatorio.",
+                    "maxlength": "Il nome non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
                     "minlength": "Il nome deve essere di almeno 1 carattere",
-                    "maxlength": "Il nome non può contenere più di 50 caratteri"
+                    "required": "Il nome \u00e8 obbligatorio."
                 },
                 "lastname": {
-                    "required": "Il cognome è obbligatorio.",
+                    "maxlength": "Il cognome non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
                     "minlength": "Il cognome deve essere di almeno 1 carattere",
-                    "maxlength": "Il cognome non può contenere più di 50 caratteri"
+                    "required": "Il cognome \u00e8 obbligatorio."
                 }
             }
-        }
+        },
+        "title": "Impostazioni per l'utente [<b>{{username}}</b>]"
     }
 }

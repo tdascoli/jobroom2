@@ -1,9 +1,9 @@
 {
     "activate": {
-        "title": "Activation",
         "messages": {
-            "success": "<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ",
-            "error": "<strong>Votre compte utilisateur n'a pas pu être activé.</strong> Utilisez le formulaire d'enregistrement pour en créer un nouveau."
-        }
+            "error": "<strong>Votre compte utilisateur n'a pas pu \u00eatre activ\u00e9.</strong> Utilisez le formulaire d'enregistrement pour en cr\u00e9er un nouveau.",
+            "success": "<strong>Votre compte utilisateur a \u00e9t\u00e9 activ\u00e9.</strong> Merci de vous "
+        },
+        "title": "Activation"
     }
 }

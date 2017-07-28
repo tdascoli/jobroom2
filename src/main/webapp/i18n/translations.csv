@@ -1,0 +1,391 @@
+page,key,de,en,fr,it
+activate,activate.messages.error,"<strong>Ihr Benutzer konnte nicht aktiviert werden.</strong> Bitte benutzen Sie die Registrierungsmaske, um sich zu registrieren.",<strong>Your user could not be activated.</strong> Please use the registration form to sign up.,<strong>Votre compte utilisateur n'a pas pu être activé.</strong> Utilisez le formulaire d'enregistrement pour en créer un nouveau.,<strong>Il tuo account non può essere attivato.</strong> Si prega di usare il modulo di registrazione per iscriversi.
+activate,activate.messages.success,"<strong>Ihr Benutzer wurde aktiviert.</strong> Bitte ","<strong>Your user account has been activated.</strong> Please ","<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ","<strong>Il tuo account è stato attivato.</strong> Si prega di "
+activate,activate.title,Aktivierung,Activation,Activation,Attivazione
+audits,audits.filter.button.clear,leeren,clear,Effacer,cancella
+audits,audits.filter.button.close,abschließen,close,Fermer,chiudi
+audits,audits.filter.button.today,heute,today,Aujourd'hui,oggi
+audits,audits.filter.button.weeks,Wochen,Weeks,Semaines,Settimane
+audits,audits.filter.from,von,from,De,da
+audits,audits.filter.title,Nach Datum filtern,Filter per date,Filtrer par date,Filtra per data
+audits,audits.filter.to,bis,to,à,a
+audits,audits.table.data.remoteAddress,Remote-Adresse:,Remote Address:,Adresse Distante :,Indirizzo remoto:
+audits,audits.table.header.data,Extrainformationen,Extra data,Autres données,Altre informazioni
+audits,audits.table.header.date,Datum,Date,Date,Data
+audits,audits.table.header.principal,Benutzer,User,Utilisateur,Utente
+audits,audits.table.header.status,Stand,State,Status,Stato
+audits,audits.title,Audits,Audits,Audits,Cambiamenti
+configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filtrer (par préfixe),Filtro (per prefisso)
+configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
+configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
+configuration,configuration.title,Konfiguration,Configuration,Configuration,Configurazione
+elasticsearch-reindex,elasticsearch.reindex.accepted,"Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing."
+elasticsearch-reindex,elasticsearch.reindex.dialog.cancel,Cancel,Cancel,Cancel,Cancel
+elasticsearch-reindex,elasticsearch.reindex.dialog.confirm,Reindex,Reindex,Reindex,Reindex
+elasticsearch-reindex,elasticsearch.reindex.dialog.question,Are you sure you want to reindex Elasticsearch? This could take a while!,Are you sure you want to reindex Elasticsearch? This could take a while!,Are you sure you want to reindex Elasticsearch? This could take a while!,Are you sure you want to reindex Elasticsearch? This could take a while!
+elasticsearch-reindex,elasticsearch.reindex.dialog.title,Confirm Elasticsearch Reindex,Confirm Elasticsearch Reindex,Confirm Elasticsearch Reindex,Confirm Elasticsearch Reindex
+elasticsearch-reindex,elasticsearch.reindex.go,Go de,Go,Go,Go
+elasticsearch-reindex,elasticsearch.reindex.instructions1,"This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete.","This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete.","This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete.","This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete."
+elasticsearch-reindex,elasticsearch.reindex.instructions2,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.
+elasticsearch-reindex,elasticsearch.reindex.title,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch
+error,error.403,Sie haben nicht die nötigen Berechtigungen diese Seite anzuzeigen.,You are not authorized to access the page.,Vous n'avez pas les droits pour accéder à cette page.,Non si dispongono i privilegi sufficienti per accedere a qusta pagina.
+error,error.title,Fehlerseite!,Error page!,Page d'erreur !,Pagina di errore!
+gateway,gateway.refresh.button,Aktualisieren,Refresh,Rafraîchir,Aggiorna
+gateway,gateway.routes.error,Achtung: keine Server verfügbar!,Warning: no server available!,Attention : aucun serveur disponible !,Attenzione: non ci sono server disponibili!
+gateway,gateway.routes.servers,Verfügbare Server,Available servers,Serveurs disponibles,Server disponibili
+gateway,gateway.routes.service,service,service,Service,servizio
+gateway,gateway.routes.title,Aktuelle Routen,Current routes,Routes actuelles,Itinerari attuali
+gateway,gateway.routes.url,URL,URL,URL,URL
+gateway,gateway.title,Gateway,Gateway,Gateway,Gateway
+gender,jobroomApp.Gender.FEMALE,FEMALE,FEMALE,FEMALE,FEMALE
+gender,jobroomApp.Gender.MALE,MALE,MALE,MALE,MALE
+gender,jobroomApp.Gender.null,,,,
+global,entity.action.addblob,Blob hinzufügen,Add blob,Ajouter blob,Aggiungi blob
+global,entity.action.addimage,Bild hinzufügen,Add image,Ajouter image,Aggiungi immagine
+global,entity.action.back,Zurück,Back,Retour,Indietro
+global,entity.action.cancel,Abbrechen,Cancel,Annuler,Annulla
+global,entity.action.delete,Löschen,Delete,Supprimer,Elimina
+global,entity.action.edit,Bearbeiten,Edit,Editer,Modifica
+global,entity.action.open,Open,Open,Ouvrir,Open
+global,entity.action.save,Speichern,Save,Sauvegarder,Salva
+global,entity.action.view,Details,View,Voir,Visualizza
+global,entity.delete.title,Löschen bestätigen,Confirm delete operation,Confirmation de suppression,Conferma operazione di cancellazione
+global,entity.detail.field,Feld,Field,Champs,Campo
+global,entity.detail.value,Wert,Value,Valeur,Valore
+global,entity.validation.datetimelocal,Dieses Feld muss eine Datums- und Zeitangabe enthalten.,This field should be a date and time.,Ce champ doit être une date et une heure.,Questo campo dovrebbe essere data e ora.
+global,entity.validation.max,Dieses Feld muss kleiner als {{max}} sein.,This field cannot be more than {{ max }}.,Ce champ doit être inférieur à {{max}}.,Questo campo non può essere superiore a {{ max }}.
+global,entity.validation.maxbytes,Dieses Feld sollte nicht mehr als {{max}} bytes haben.,This field cannot be more than {{ max }} bytes.,Ce champ doit être inférieur à {{max}} bytes.,Questo campo non può essere superiore a {{ max }} byte.
+global,entity.validation.maxlength,Dieses Feld darf max. {{max}} Zeichen lang sein.,This field cannot be longer than {{ max }} characters.,Ce champ doit faire moins de {{max}} caractères.,Questo campo non può essere più di {{ max }} caratteri.
+global,entity.validation.min,Dieses Feld muss größer als {{min}} sein.,This field should be at least {{ min }}.,Ce champ doit être supérieur à {{min}}.,Questo campo dovrebbe essere più di {{ min }}.
+global,entity.validation.minbytes,Dieses Feld sollte mehr als {{min}} bytes haben.,This field should be at least {{ min }} bytes.,Ce champ doit être supérieur à {{min}} bytes.,Questo campo dovrebbe essere più di {{ min }} byte.
+global,entity.validation.minlength,Dieses Feld muss mind. {{min}} Zeichen lang sein.,This field is required to be at least {{ min }} characters.,Ce champ doit faire au minimum {{min}} caractères.,Questo campo deve essere di almeno {{ min }} caratteri.
+global,entity.validation.number,Dieses Feld muss eine Zahl sein.,This field should be a number.,Ce champ doit être un nombre.,Questo campo dovrebbe essere un numero.
+global,entity.validation.pattern,Dieses Feld muss das Muster {{pattern}} erfüllen.,This field should follow pattern for {{ pattern }}.,Ce champ doit suivre l'expression régulière {{pattern}}.,Questo campo dovrebbe corrispondere al modello {{ pattern }}.
+global,entity.validation.required,Dieses Feld wird benötigt.,This field is required.,Ce champ est obligatoire.,Questo campo è obbligatorio.
+global,error.NotNull,Feld {{fieldName}} kann nicht leer sein!,Field {{ fieldName }} cannot be empty!,Le champ {{fieldName}} ne peut pas être vide !,Il campo {{ fieldName }} non può essere vuoto!
+global,error.Size,Feld {{fieldName}} erfüllt nicht die minimalen/maximalen Voraussetzungen!,Field {{ fieldName }} does not meet min/max size requirements!,Le champ {{fieldName}} ne respecte pas les critères minimum et maximum !,Il campo {{ fieldName }} non è conforme ai requisiti di lunghezza min/max!
+global,error.emailexists,Email wird bereits verwendet!,Email is already in use!,Email déjà utilisé !,L'email è già in uso!
+global,error.idexists,Ein neuer {{entityName}} kann noch keine ID haben,A new {{ entityName }} cannot already have an ID,Une nouvelle entité {{entityName}} ne peut pas avoir d'ID !,Un(a) nuovo/a {{entityName}} non può già avere un ID
+global,error.internalServerError,Internal server error,Internal server error,Erreur interne du serveur,Internal server error
+global,error.server.not.reachable,Server ist nicht erreichbar,Server not reachable,Serveur inaccessible,Server non raggiungibile
+global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
+global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Login déjà utilisé !,Il nome utente è già in uso!
+global,footer,Dies ist Ihre Fußzeile,This is your footer,Ceci est votre pied de page,Piè di pagina
+global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
+global,global.field.id,ID,ID,ID,ID
+global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
+global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Confirm the new password,Confirmation du nouveau mot de passe,Conferma nuova password
+global,global.form.email,Email Adresse,Email,Email,Email
+global,global.form.email.placeholder,Ihre Email Adresse,Your email,Votre email,Il tuo indirizzo email
+global,global.form.newpassword,Neues Passwort,New password,Nouveau mot de passe,Nuova password
+global,global.form.newpassword.placeholder,Neues Passwort,New password,Nouveau mot de passe,Nuova password
+global,global.form.username,Benutzername,Username,Nom d'utilisateur,Utente
+global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom d'utilisateur,Il tuo nome utente
+global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} items.,Mostra {{first}} - {{second}} di {{total}} articoli.
+global,global.menu.account.login,Anmelden,Sign in,S'authentifier,Accesso
+global,global.menu.account.logout,Abmelden,Sign out,Déconnexion,Esci
+global,global.menu.account.main,Zugang,Account,Compte,Utente
+global,global.menu.account.password,Passwort,Password,Mot de passe,Password
+global,global.menu.account.register,Registrierung,Register,Créer un compte,Registrazione
+global,global.menu.account.sessions,Sitzungen,Sessions,Sessions,Sessioni
+global,global.menu.account.settings,Einstellungen,Settings,Profil,Impostazioni
+global,global.menu.admin.apidocs,API,API,API,API
+global,global.menu.admin.audits,Audits,Audits,Audits,Cambiamenti
+global,global.menu.admin.configuration,Konfiguration,Configuration,Configuration,Configurazione
+global,global.menu.admin.database,Datenbank,Database,Base de données,Database
+global,global.menu.admin.elasticsearch-reindex,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch
+global,global.menu.admin.gateway,Gateway,Gateway,Gateway,Gateway
+global,global.menu.admin.health,Status,Health,Diagnostics,Integrità
+global,global.menu.admin.jhipster-needle-menu-add-admin-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
+global,global.menu.admin.logs,Protokoll,Logs,Logs,Log
+global,global.menu.admin.main,Administration,Administration,Administration,Amministratore
+global,global.menu.admin.metrics,Metriken,Metrics,Métriques,Metriche
+global,global.menu.admin.tracker,Benutzer Aktivitäten,User tracker,Suivi des utilisateurs,Tracciamento utente
+global,global.menu.admin.userManagement,Benutzerverwaltung,User management,Gestion des utilisateurs,Gestione utenti
+global,global.menu.entities.jhipster-needle-menu-add-entry,JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!)
+global,global.menu.entities.job,Job,Job,Job,Job
+global,global.menu.entities.main,Entitäten,Entities,Entités,Entità
+global,global.menu.home,Startseite,Home,Accueil,Home
+global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
+global,global.menu.language,Sprache,Language,Langue,Lingua
+global,global.messages.error.dontmatch,Das bestätigte Passwort entspricht nicht dem neuen Passwort!,The password and its confirmation do not match!,Le nouveau mot de passe et sa confirmation ne sont pas égaux !,La password e la sua conferma non corrispondono!
+global,global.messages.info.authenticated.link,anmelden,sign in,connecter,accedere
+global,global.messages.info.authenticated.prefix,"Wenn Sie sich ","If you want to ","Si vous voulez vous ","Se vuoi "
+global,global.messages.info.authenticated.suffix," möchten, versuchen Sie es mit <br/>- Administrator (Name=""admin"" und Passwort=""admin"")<br/>- Benutzer (Name=""user"" und Passwort=""user"").",", you can try the default accounts:<br/>- Administrator (login=""admin"" and password=""admin"") <br/>- User (login=""user"" and password=""user"").",", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=""admin"" et mot de passe =""admin"") <br/> - Utilisateur (nom d'utilisateur=""user"" et mot de passe =""user"").",", puoi provare gli account di default: <br/> - Amministratore (user = ""admin"" e la password = ""admin"") <br/> - utente (user = ""user"" e la password = ""user"")"
+global,global.messages.info.register.link,Registrieren Sie sich,Register a new account,Créer un compte,Crea un account
+global,global.messages.info.register.noaccount,Sie haben noch keinen Zugang?,You don't have an account yet?,Vous n'avez pas encore de compte ?,Non hai ancora un account?
+global,global.messages.validate.confirmpassword.maxlength,Das bestätigte Passwort darf nicht länger als 50 Zeichen sein,Your confirmation password cannot be longer than 50 characters.,Votre confirmation du mot de passe ne doit pas comporter plus de 50 caractères.,La tua password non può contenere più di 50 caratteri
+global,global.messages.validate.confirmpassword.minlength,Das bestätigte Passwort muss mindestens 5 Zeichen lang sein,Your confirmation password is required to be at least 4 characters.,Votre confirmation du mot de passe doit comporter au moins 5 caractères.,La tua password deve essere di almeno 4 caratteri
+global,global.messages.validate.confirmpassword.required,Sie müssen das Passwort bestätigen.,Your confirmation password is required.,Votre confirmation du mot de passe est requise.,La password di conferma è obbligatoria.
+global,global.messages.validate.email.invalid,Ihre Email Adresse ist ungültig.,Your email is invalid.,Votre email n'est pas valide.,L'indirizzo email non è valido.
+global,global.messages.validate.email.maxlength,Ihre Email Adresse darf nicht länger als 50 Zeichen sein,Your email cannot be longer than 50 characters.,Votre email ne doit pas comporter plus de 50 caractères.,L'indirizzo email non può contenere più di 50 caratteri
+global,global.messages.validate.email.minlength,Ihre Email Adresse muss mindestens 5 Zeichen lang sein,Your email is required to be at least 5 characters.,Votre email doit comporter au moins 5 caractères.,L'indirizzo email deve essere di almeno 5 caratteri
+global,global.messages.validate.email.required,Ihre Email Adresse wird benötigt.,Your email is required.,Votre email est requis.,L'indirizzo email è obbligatorio.
+global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nicht länger als 50 Zeichen sein,Your password cannot be longer than 50 characters.,Votre mot de passe ne doit pas comporter plus de 50 caractères.,La password non può contenere più di 50 caratteri
+global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,Your password is required to be at least 4 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
+global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,Your password is required.,Votre mot de passe est requis.,La password è obbligatoria.
+global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Robustezza della password:
+global,global.ribbon.dev,Development,Development,Développement,Development
+global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
+health,health.details.details,Details,Details,Détails,Dettagli
+health,health.details.error,Error,Error,Erreur,Errore
+health,health.details.name,Name,Name,Nom,Nome
+health,health.details.properties,Properties,Properties,Propriétés,Proprietà
+health,health.details.value,Wert,Value,Valeur,Valore
+health,health.indicator.configServer,Microservice Config Server,Microservice Config Server,Microservice Config Server,Server di Configurazioni Microservice
+health,health.indicator.db,Datenbank,Database,Base de données,Database
+health,health.indicator.discoveryComposite,Discovery Composite,Discovery Composite,Discovery Composite,Discovery Composite
+health,health.indicator.diskSpace,Festplattenspeicher,Disk space,Espace disque,Spazio su disco
+health,health.indicator.hystrix,Hystrix,Hystrix,Hystrix,Hystrix
+health,health.indicator.mail,Email,Email,Email,Email
+health,health.indicator.refreshScope,Microservice Refresh Scope,Microservice Refresh Scope,Microservice Refresh Scope,Scopo di Aggiornamento Microservice
+health,health.refresh.button,Aktualisieren,Refresh,Rafraichir,Aggiorna
+health,health.stacktrace,Stacktrace,Stacktrace,Stacktrace,Stacktrace
+health,health.status.DOWN,DOWN,DOWN,HORS SERVICE,NON DISPONIBILE
+health,health.status.UP,UP,UP,DISPONIBLE,DISPONIBILE
+health,health.table.service,Dienst Name,Service name,Nom du service,Nome del servizio
+health,health.table.status,Status,Status,Etat,Stato
+health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
+home,home.github,GitHub,GitHub,"GitHub ",GitHub
+home,home.like,"Wenn Sie JHipster mögen, vergessen Sie nicht uns einen Stern zu geben auf","If you like JHipster, don't forget to give us a star on","Si vous aimez JHipster, donnez nous une étoile sur","Se ti piace JHipster, non dimenticarti di darci una stella su"
+home,home.link.bugtracker,JHipster Fehlereinträge,JHipster bug tracker,JHipster bug tracker,JHipster tracciamento errori
+home,home.link.chat,JHipster Chat,JHipster public chat room,JHipster public chat room,Chat room pubblica di JHipster
+home,home.link.follow,kontaktieren Sie uns mit @java_hipster auf Twitter,follow @java_hipster on Twitter,Suivez @java_hipster sur Twitter,segui @java_hipster su Twitter
+home,home.link.homepage,JHipster Hauptseite,JHipster homepage,Page d'accueil de JHipster,Homepage JHipster
+home,home.link.stackoverflow,JHipster auf Stack Overflow,JHipster on Stack Overflow,JHipster sur Stack Overflow,JHipster su Stack Overflow
+home,home.logged.message,"Sie sind als Benutzer ""{{username}}"" angemeldet.","You are logged in as user ""{{username}}"".","Vous êtes connecté en tant que ""{{username}}"".","Autenticato come ""{{username}}""."
+home,home.question,Wenn Sie Fragen zu JHipster haben:,If you have any question on JHipster:,Si vous avez des questions à propos de JHipster :,In caso di domande su JHipster:
+home,home.subtitle,Dies ist Ihre Hauptseite,This is your homepage,Ceci est votre page d'accueil,Questa è la tua home page
+home,home.title,"Willkommen, Java Hipster!","Welcome, Java Hipster!","Bienvenue, Java Hipster !","Benvenuto, Java Hipster!"
+job-search,job-search.title,Job search,Job search,Job search,Job search
+job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
+job-search,typeahead-multiselect.type.classification,Classification,Classification,Classification,Classification
+job-search,typeahead-multiselect.type.occupation,Occupation,Occupation,Occupation,Occupation
+job,jobroomApp.job.ageMax,Age Max,Age Max,Age Max,Age Max
+job,jobroomApp.job.ageMin,Age Min,Age Min,Age Min,Age Min
+job,jobroomApp.job.ageRestrictionReason,Age Restriction Reason,Age Restriction Reason,Age Restriction Reason,Age Restriction Reason
+job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url
+job,jobroomApp.job.cancellationDate,Cancellation Date,Cancellation Date,Cancellation Date,Cancellation Date
+job,jobroomApp.job.cancellationReason,Cancellation Reason,Cancellation Reason,Cancellation Reason,Cancellation Reason
+job,jobroomApp.job.companyAddressLine1,Company Address Line 1,Company Address Line 1,Company Address Line 1,Company Address Line 1
+job,jobroomApp.job.companyAddressLine2,Company Address Line 2,Company Address Line 2,Company Address Line 2,Company Address Line 2
+job,jobroomApp.job.companyCity,Company City,Company City,Company City,Company City
+job,jobroomApp.job.companyCountryCode,Company Country Code,Company Country Code,Company Country Code,Company Country Code
+job,jobroomApp.job.companyEmail,Company Email,Company Email,Company Email,Company Email
+job,jobroomApp.job.companyName,Company Name,Company Name,Company Name,Company Name
+job,jobroomApp.job.companyPhone,Company Phone,Company Phone,Company Phone,Company Phone
+job,jobroomApp.job.companyPostboxCity,Company Postbox City,Company Postbox City,Company Postbox City,Company Postbox City
+job,jobroomApp.job.companyPostboxNumber,Company Postbox Number,Company Postbox Number,Company Postbox Number,Company Postbox Number
+job,jobroomApp.job.companyPostboxZipCode,Company Postbox Zip Code,Company Postbox Zip Code,Company Postbox Zip Code,Company Postbox Zip Code
+job,jobroomApp.job.companyWebsite,Company Website,Company Website,Company Website,Company Website
+job,jobroomApp.job.companyZipCode,Company Zip Code,Company Zip Code,Company Zip Code,Company Zip Code
+job,jobroomApp.job.contactEmail,Contact Email,Contact Email,Contact Email,Contact Email
+job,jobroomApp.job.contactFirstName,Contact First Name,Contact First Name,Contact First Name,Contact First Name
+job,jobroomApp.job.contactLastName,Contact Last Name,Contact Last Name,Contact Last Name,Contact Last Name
+job,jobroomApp.job.contactPhone,Contact Phone,Contact Phone,Contact Phone,Contact Phone
+job,jobroomApp.job.contactTitle,Contact Title,Contact Title,Contact Title,Contact Title
+job,jobroomApp.job.currencyCode,Currency Code,Currency Code,Currency Code,Currency Code
+job,jobroomApp.job.delete.question,Soll Job {{ id }} wirklich dauerhaft gelöscht werden?,Are you sure you want to delete Job {{ id }}?,Etes-vous certain de vouloir supprimer le Job {{ id }} ?,Sei sicuro di volere eliminare Job {{ id }}?
+job,jobroomApp.job.description,Description,Description,Description,Description
+job,jobroomApp.job.detail.title,Job,Job,Job,Job
+job,jobroomApp.job.drivingLicenseLevel,Driving License Level,Driving License Level,Driving License Level,Driving License Level
+job,jobroomApp.job.endDate,End Date,End Date,End Date,End Date
+job,jobroomApp.job.externalId,External Id,External Id,External Id,External Id
+job,jobroomApp.job.externalUrl,External Url,External Url,External Url,External Url
+job,jobroomApp.job.fingerPrint,Finger Print,Finger Print,Finger Print,Finger Print
+job,jobroomApp.job.gender,Gender,Gender,Gender,Gender
+job,jobroomApp.job.hasPersonalVehicle,Has Personal Vehicle,Has Personal Vehicle,Has Personal Vehicle,Has Personal Vehicle
+job,jobroomApp.job.home.createLabel,Job erstellen,Create a new Job,Créer un nouveau Job,Genera un nuovo Job
+job,jobroomApp.job.home.createOrEditLabel,Job erstellen oder bearbeiten,Create or edit a Job,Créer ou éditer un Job,Genera o modifica un Job
+job,jobroomApp.job.home.title,Jobs,Jobs,Jobs,Jobs
+job,jobroomApp.job.isJobSharing,Is Job Sharing,Is Job Sharing,Is Job Sharing,Is Job Sharing
+job,jobroomApp.job.isPermanent,Is Permanent,Is Permanent,Is Permanent,Is Permanent
+job,jobroomApp.job.isSuitableForDisabled,Is Suitable For Disabled,Is Suitable For Disabled,Is Suitable For Disabled,Is Suitable For Disabled
+job,jobroomApp.job.languages,Languages,Languages,Languages,Languages
+job,jobroomApp.job.locality.cantonCode,Locality Canton Code,Locality Canton Code,Locality Canton Code,Locality Canton Code
+job,jobroomApp.job.locality.communalCode,Locality Communal Code,Locality Communal Code,Locality Communal Code,Locality Communal Code
+job,jobroomApp.job.locality.countryCode,Locality Country Code,Locality Country Code,Locality Country Code,Locality Country Code
+job,jobroomApp.job.locality.regionCode,Locality Region Code,Locality Region Code,Locality Region Code,Locality Region Code
+job,jobroomApp.job.locality.text,Locality Text,Locality Text,Locality Text,Locality Text
+job,jobroomApp.job.locality.zipCode,Job Locality Zip Code,Job Locality Zip Code,Job Locality Zip Code,Job Locality Zip Code
+job,jobroomApp.job.numberOfJobs,Number Of Jobs,Number Of Jobs,Number Of Jobs,Number Of Jobs
+job,jobroomApp.job.paymentMax,Payment Max,Payment Max,Payment Max,Payment Max
+job,jobroomApp.job.paymentMin,Payment Min,Payment Min,Payment Min,Payment Min
+job,jobroomApp.job.professions,Professions,Professions,Professions,Professions
+job,jobroomApp.job.publicationEndDate,Publication End Date,Publication End Date,Publication End Date,Publication End Date
+job,jobroomApp.job.publicationStartDate,Publication Start Date,Publication Start Date,Publication Start Date,Publication Start Date
+job,jobroomApp.job.registrationDate,Registration Date,Registration Date,Registration Date,Registration Date
+job,jobroomApp.job.startDate,Start Date,Start Date,Start Date,Start Date
+job,jobroomApp.job.startsImmediately,Starts Immediately,Starts Immediately,Starts Immediately,Starts Immediately
+job,jobroomApp.job.title,Title,Title,Title,Title
+job,jobroomApp.job.workingTimePercentageMax,Working Time Percentage Max,Working Time Percentage Max,Working Time Percentage Max,Working Time Percentage Max
+job,jobroomApp.job.workingTimePercentageMin,Working Time Percentage Min,Working Time Percentage Min,Working Time Percentage Min,Working Time Percentage Min
+job,jobserviceApp.job.created,Job erstellt mit ID {{ param }},A new Job is created with identifier {{ param }},Un nouveau Job a été créé avec l'identifiant {{ param }},&Egrave; stato generato un nuovo Job con identificatore { param }}
+job,jobserviceApp.job.deleted,Job gelöscht mit ID {{ param }},A Job is deleted with identifier {{ param }},Le Job avec l'identifiant {{ param }} a été supprimé,&Egrave; stato eliminato Job con identificatore {{ param }}
+job,jobserviceApp.job.updated,Job aktualisiert mit ID {{ param }},A Job is updated with identifier {{ param }},Le Job avec l'identifiant {{ param }} a été mis à jour,&Egrave; stato aggiornato Job identificato da {{ param }}
+login,login.form.button,Anmelden,Sign in,Connexion,Accedi
+login,login.form.password,Passwort,Password,Mot de passe,Password
+login,login.form.password.placeholder,Ihr Passwort,Your password,Votre mot de passe,La tua password
+login,login.form.rememberme,Automatische Anmeldung,Remember me,Garder la session ouverte,Ricordami
+login,login.messages.error.authentication,<strong>Anmeldung fehlgeschlagen!</strong> Überprüfen Sie bitte Ihre Angaben und versuchen Sie es erneut.,<strong>Failed to sign in!</strong> Please check your credentials and try again.,<strong>Erreur d'authentification !</strong> Veuillez vérifier vos identifiants de connexion.,<strong>Accesso non riuscito!</strong> Si prega di controllare le credenziali e riprovare.
+login,login.password.forgot,Sie haben Ihr Passwort vergessen?,Did you forget your password?,Avez-vous oublié votre mot de passe ?,Password dimenticata?
+login,login.title,Anmeldung,Sign in,Authentification,Accedi
+logs,audits.filter.button.clear,,,Effacer,
+logs,audits.filter.button.close,,,Fermer,
+logs,audits.filter.button.today,,,Aujourd'hui,
+logs,audits.filter.button.weeks,,,Semaines,
+logs,audits.filter.from,,,De,
+logs,audits.filter.title,,,Filtrer par date,
+logs,audits.filter.to,,,à,
+logs,audits.table.data.remoteAddress,,,Adresse Distante :,
+logs,audits.table.header.data,,,Autres données,
+logs,audits.table.header.date,,,Date,
+logs,audits.table.header.principal,,,Utilisateur,
+logs,audits.table.header.status,,,Status,
+logs,audits.title,,,Audits,
+logs,logs.filter,Filter,Filter,Filtrer,Filtro
+logs,logs.nbloggers,Es existieren {{ total }} Logger.,There are {{ total }} loggers.,"Total de {{ total }} ""loggers"".",Hai {{ total }} logger.
+logs,logs.table.level,Stufe,Level,Niveau,Livello
+logs,logs.table.name,Name,Name,Nom,Nome
+logs,logs.title,Protokolle,Logs,Logs,Log
+metrics,metrics.cache.averageGetTime,,Average get time (µs),Temps de lecture moyen (µs),
+metrics,metrics.cache.averagePutTime,,Average put time (µs),Temps d'écriture moyen (µs),
+metrics,metrics.cache.averageRemoveTime,,Average remove time (µs),Temps de suppression moyen (µs),
+metrics,metrics.cache.cachename,Cache Name,Cache name,Nom du cache,Nome Cache
+metrics,metrics.cache.evictions,Anzahl entfernter Objekte,Cache Evictions,Évictions,Evictions
+metrics,metrics.cache.gets,,Cache Gets,Lectures,
+metrics,metrics.cache.hitPercent,,Cache Hit %,% données existantes,
+metrics,metrics.cache.hits,Treffer,Cache Hits,Données existantes,Hits
+metrics,metrics.cache.missPercent,,Cache Miss %,% données non existantes,
+metrics,metrics.cache.misses,Keine Treffer,Cache Misses,Données non existantes,Misses
+metrics,metrics.cache.puts,,Cache Puts,Écritures,
+metrics,metrics.cache.removals,,Cache Removals,Suppressions,
+metrics,metrics.cache.title,Cache Statistiken,Cache statistics,Statistiques de cache,Statistiche cache
+metrics,metrics.datasource.count,Anzahl,Count,Total,Count
+metrics,metrics.datasource.max,Max,Max,Max,Max
+metrics,metrics.datasource.mean,Mittel,Mean,Médian,Mean
+metrics,metrics.datasource.min,Min,Min,Min,Min
+metrics,metrics.datasource.name,Pool-Auslastung,Pool usage,Utilisation du pool,Pool usage
+metrics,metrics.datasource.p50,p50,p50,p50,p50
+metrics,metrics.datasource.p75,p75,p75,p75,p75
+metrics,metrics.datasource.p95,p95,p95,p95,p95
+metrics,metrics.datasource.p99,p99,p99,p99,p99
+metrics,metrics.datasource.title,Datenquelle (Zeit in Millisekunden),DataSource statistics (time in millisecond),Statistiques du pool de connexions (temps en millisecondes),Statistiche DataSource (in millisecondi)
+metrics,metrics.datasource.usage,Usage,Usage,Usage,Utilizzo
+metrics,metrics.jvm.gc.marksweepcount,Durchlaufmarkierungs (Mark Sweep) Anzahl,Mark Sweep count,"Total de ""Mark Sweep""",Mark Sweep count
+metrics,metrics.jvm.gc.marksweeptime,Durchlaufmarkierungs (Mark Sweep) Zeit,Mark Sweep time,"Temps ""Mark Sweep""",Mark Sweep time
+metrics,metrics.jvm.gc.scavengecount,Bereinigungslauf (Scavenge) Anzahl,Scavenge count,"Total ""Scavenge""",Scavenge count
+metrics,metrics.jvm.gc.scavengetime,Bereinigungslauf (Scavenge) Zeit,Scavenge time,"Temps ""Scavenge""",Scavenge time
+metrics,metrics.jvm.gc.title,Speicherbereinigung (GC),Garbage collections,Garbage collections,Garbage collections
+metrics,metrics.jvm.http.active,Aktive Anfragen:,Active requests:,Requêtes actives :,Richieste attive:
+metrics,metrics.jvm.http.code.notfound,Nicht gefunden,Not found,Non trouvé,Non trovato/i
+metrics,metrics.jvm.http.code.ok,Ok,Ok,Ok,Ok
+metrics,metrics.jvm.http.code.servererror,Server Fehler,Server Error,Erreur serveur,Errore Server
+metrics,metrics.jvm.http.table.average,Mittelwert,Average,Moyenne,Media
+metrics,metrics.jvm.http.table.code,Codierung,Code,Code,Codice
+metrics,metrics.jvm.http.table.count,Anzahl,Count,Total,Numero
+metrics,metrics.jvm.http.table.mean,Durchschnittswert,Mean,Médian,Mediana
+metrics,metrics.jvm.http.title,HTTP Anfragen (Ereignisse pro Sekunde),HTTP requests (events per second),Requêtes HTTP (évènements par seconde),Richieste HTTP (eventi al secondo)
+metrics,metrics.jvm.http.total,Alle Anfragen:,Total requests:,Requêtes totales :,Richieste totali:
+metrics,metrics.jvm.memory.heap,Heap Speicher,Heap Memory,"Mémoire ""Heap""",Memoria Heap
+metrics,metrics.jvm.memory.nonheap,Non-Heap Speicher,Non-Heap Memory,"Mémoire ""Non-Heap""",Memoria Non-Heap
+metrics,metrics.jvm.memory.title,Hauptspeicher,Memory,Mémoire,Memoria
+metrics,metrics.jvm.memory.total,Gesamter Hauptspeicher,Total Memory,Mémoire totale,Memoria Totale
+metrics,metrics.jvm.threads.all,Alle,All,Tous,Tutti
+metrics,metrics.jvm.threads.blocked,Geblockt,Blocked,Bloqué,Blocked
+metrics,metrics.jvm.threads.dump.blockedcount,Geblockte Zahl,Blocked Count,Nb fois bloqué,Blocked Count
+metrics,metrics.jvm.threads.dump.blockedtime,Geblockte Zeit,Blocked Time,Temps bloqué,Blocked Time
+metrics,metrics.jvm.threads.dump.hide,Verstecken,Hide Stacktrace,Cacher,Hide
+metrics,metrics.jvm.threads.dump.id,"Id: ","Id: ",Id :,"Id: "
+metrics,metrics.jvm.threads.dump.lockname,Lock-Name,Lock name,Nom du process bloquant,Lock name
+metrics,metrics.jvm.threads.dump.show,Zeigen,Show Stacktrace,Afficher,Show
+metrics,metrics.jvm.threads.dump.stacktrace,Stacktrace,Stacktrace,Stacktrace,Stacktrace
+metrics,metrics.jvm.threads.dump.title,Threads dump,Threads dump,Threads dump,Threads dump
+metrics,metrics.jvm.threads.dump.waitedcount,Gewartete Anzahl,Waited Count,Nb fois en attente,Waited Count
+metrics,metrics.jvm.threads.dump.waitedtime,Gewartete Zeit,Waited Time,Temps d'attente,Waited Time
+metrics,metrics.jvm.threads.runnable,Runnable,Runnable,Exécutable,Runnable
+metrics,metrics.jvm.threads.timedwaiting,Wartezeit,Timed waiting,Temps d'attente,Timed waiting
+metrics,metrics.jvm.threads.title,Threads,Threads,Threads,Threads
+metrics,metrics.jvm.threads.waiting,Wartend,Waiting,En attente,Waiting
+metrics,metrics.jvm.title,JVM Metriken,JVM Metrics,Métriques de la JVM,Metriche di JVM
+metrics,metrics.refresh.button,Aktualisieren,Refresh,Rafraîchir,Aggiorna
+metrics,metrics.servicesstats.table.count,Anzahl,Count,Total,Count
+metrics,metrics.servicesstats.table.max,Maximum,Max,Max,Max
+metrics,metrics.servicesstats.table.mean,Durchschnitt,Mean,Médian,Mean
+metrics,metrics.servicesstats.table.min,Minimum,Min,Min,Min
+metrics,metrics.servicesstats.table.name,Service Name,Service name,Nom du server,Nome servizio
+metrics,metrics.servicesstats.table.p50,p50,p50,p50,p50
+metrics,metrics.servicesstats.table.p75,p75,p75,p75,p75
+metrics,metrics.servicesstats.table.p95,p95,p95,p95,p95
+metrics,metrics.servicesstats.table.p99,p99,p99,p99,p99
+metrics,metrics.servicesstats.title,Service Statistiken (Zeit in Millisekunden),Services statistics (time in millisecond),Statistiques des services (temps en millisecondes),Statistiche Servizi (in millisecondi)
+metrics,metrics.title,Anwendungs-Metriken,Application Metrics,Métriques de l'application,Metriche dell'applicazione
+metrics,metrics.updating,Aktualisierung...,Updating...,Mise à jour...,Aggiornamento...
+password,password.form.button,Speichern,Save,Sauvegarder,Salva
+password,password.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Das Passwort konnte nicht geändert werden.,<strong>An error has occurred!</strong> The password could not be changed.,<strong>Une erreur est survenue !</strong> Le mot de passe n'a pas pu être modifié.,<strong>C'è stato un errore!</strong> Impossibile cambiare password.
+password,password.messages.success,<strong>Passwort wurde geändert!</strong>,<strong>Password changed!</strong>,<strong>Le mot de passe a été modifié !</strong>,<strong>Password modificata correttamente!</strong>
+password,password.title,Passwort für [<b>{{username}}</b>],Password for [<b>{{username}}</b>],Changer le mot de passe pour [<b>{{username}}</b>],Password per [<b>{{username}}</b>]
+register,register.form.button,Registrieren,Register,Enregistrement,Crea Account
+register,register.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso</strong> Si prega di sceglierne un altro.
+register,register.messages.error.fail,<strong>Registrierung fehlgeschlagen!</strong> Bitte versuchen Sie es später nochmal.,<strong>Registration failed!</strong> Please try again later.,<strong>Compte non créé !</strong> Merci d'essayer à nouveau plus tard.,<strong>La registrazione dell'account è fallita!</strong> Riprova più tardi.
+register,register.messages.error.userexists,<strong>Benutzername bereits vergeben!</strong> Bitte wählen Sie einen anderen aus.,<strong>Login name already registered!</strong> Please choose another one.,<strong>Ce compte utilisateur existe déjà !</strong> Veuillez en choisir un autre.,<strong>Il nome utente scelto è già registrato!</strong> Si prega di scegliere un altro nome utente.
+register,register.messages.success,<strong>Registrierung gespeichert!</strong> Bitte überprüfen Sie Ihre Emails für die Bestätigung.,<strong>Registration saved!</strong> Please check your email for confirmation.,<strong>Compte enregistré !</strong> Merci de vérifier votre email de confirmation.,<strong>La registrazione account è stata salvata!</strong> Controlla la tua email per confermare.
+register,register.messages.validate.login.maxlength,Ihr Benutzername darf nicht länger als 50 Zeichen sein,Your username cannot be longer than 50 characters.,Votre nom d'utilisateur ne peut pas contenir plus de 50 caractères.,Il nome utente non può contenere più di 50 caratteri
+register,register.messages.validate.login.minlength,Ihr Benutzername muss mindestens 1 Zeichen lang sein,Your username is required to be at least 1 character.,Votre nom d'utilisateur doit contenir plus d'un caractère.,Il nome utente deve essere di almeno 1 carattere
+register,register.messages.validate.login.pattern,Ihr Benutzername darf nur Kleinbuchstaben und Ziffern enthalten,Your username can only contain lower-case letters and digits.,Votre nom d'utilisateur ne peut contenir que des lettres minuscules ou des nombres.,Il nome utente può contenere solo lettere minuscole e cifre.
+register,register.messages.validate.login.required,Ihr Benutzername wird benötigt.,Your username is required.,Votre nom d'utilisateur est obligatoire.,Il nome utente è obbligatorio.
+register,register.title,Registrierung,Registration,Création de compte utilisateur,Registrazione
+reset,reset.finish.form.button,Neues Passwort setzen,Validate new password,Réinitialiser le mot de passe,Convalida la nuova password
+reset,reset.finish.messages.error,Ihr Passwort konnte nicht zurückgesetzt werden. Zur Erinnerung Ihre Anfrage ist nur 24 Stunden gültig.,Your password couldn't be reset. Remember a password request is only valid for 24 hours.,Votre mot de passe n'a pas pu être réinitialisé. La demande de réinitialisation n'est valable que 24 heures.,La tua password potrebbe non essere ripristinata. Ricorda che la richiesta della password è valida solo per 24 ore.
+reset,reset.finish.messages.info,Wählen Sie ein neues Passwort,Choose a new password,Choisir un nouveau mot de passe,Scegliere una nuova password
+reset,reset.finish.messages.keymissing,Der Reset Schlüssel fehlt.,The reset key is missing.,La clef de réinitilisation est manquante,La chiave di reimpostazione non è presente.
+reset,reset.finish.messages.success,"<strong>Ihr Passwort wurde zurückgesetzt.</strong> Bitte ","<strong>Your password has been reset.</strong> Please ","<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ","<strong>La tua password è stata reimpostata .</strong> Per favore "
+reset,reset.finish.title,Passwort zurücksetzen,Reset password,Réinitialisation du mot de passe,Cambia Password
+reset,reset.request.form.button,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Reimposta Password
+reset,reset.request.messages.info,"Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",Enter the email address you used to register,Veuillez renseigner l'adresse email utilisée pour vous enregistrer,Inserisci l'indirizzo email utilizzato per la registrazione
+reset,reset.request.messages.notfound,<strong>Diese Email Adresse existiert nicht!</strong> Überprüfen Sie Ihre Email Adresse und versuchen Sie es nochmal.,<strong>Email address isn't registered!</strong> Please check and try again,<strong>L'adresse email n'existe pas !</strong> Merci de la vérifier et de réessayer.,<strong>Email non registrata!</strong> Si prega di verificarla e riprovare!
+reset,reset.request.messages.success,Eine Email mit weiteren Instruktionen für das Zurücksetzen des Passworts wurde gesendet.,Check your emails for details on how to reset your password.,Veuillez vérifier vos nouveaux emails et suivre les instructions pour réinitialiser votre mot de passe.,Controlla la tua email per i dettagli su come reimpostare la password.
+reset,reset.request.title,Passwort zurücksetzen,Reset your password,Réinitialiser son mot de passe,Reimposta Password
+sessions,sessions.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Die Sitzung konnte nicht geschlossen werden.,<strong>An error has occurred!</strong> The session could not be invalidated.,<strong>Une erreur est survenue !</strong> La session ne peut pas être invalidée.,<strong>Si è verificato un errore!</strong> Impossibile invalidare la sessione.
+sessions,sessions.messages.success,<strong>Sitzung wurde geschlossen!</strong>,<strong>Session invalidated!</strong>,<strong>La session a été invalidée !</strong>,<strong>Sessione invalidata!</strong>
+sessions,sessions.table.button,Schließen,Invalidate,Invalider,Invalida
+sessions,sessions.table.date,Datum,Date,Date,Data
+sessions,sessions.table.ipaddress,IP Adresse,IP address,Adresse IP,Indirizzo IP
+sessions,sessions.table.useragent,User Agent,User Agent,User Agent,User Agent
+sessions,sessions.title,Aktive Sitzungen für [<b>{{username}}</b>],Active sessions for [<b>{{username}}</b>],Sessions actives de [<b>{{username}}</b>],Sessioni attive per [<b>{{username}}</b>]
+settings,settings.form.button,Speichern,Save,Sauvegarder,Salva
+settings,settings.form.firstname,Vorname,First Name,Prénom,Nome
+settings,settings.form.firstname.placeholder,Ihr Vorname,Your first name,Votre prénom,Il tuo nome
+settings,settings.form.language,Sprache,Language,Langue,Lingua
+settings,settings.form.lastname,Nachname,Last Name,Nom,Cognome
+settings,settings.form.lastname.placeholder,Ihr Nachname,Your last name,Votre nom,Il tuo cognome
+settings,settings.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso!</strong> Si prega di sceglierne un altro.
+settings,settings.messages.error.fail,<strong>Es ist ein Fehler aufgetreten!</strong> Die Einstellungen konnten nicht gespeichert werden.,<strong>An error has occurred!</strong> Settings could not be saved.,<strong>Une erreur est survenue !</strong> Votre profil n'a pas été sauvegardé.,<strong>Si è verificato un errore!</strong> Impossibile salvare le impostazioni.
+settings,settings.messages.success,<strong>Einstellungen wurden gespeichert!</strong>,<strong>Settings saved!</strong>,<strong>Votre profil a été sauvegardé !</strong>,<strong>Impostazioni salvate!</strong>
+settings,settings.messages.validate.firstname.maxlength,Ihr Vorname darf nicht länger als 50 Zeichen sein,Your first name cannot be longer than 50 characters,Votre prénom ne doit pas comporter plus de 50 caractères.,Il nome non può contenere più di 50 caratteri
+settings,settings.messages.validate.firstname.minlength,Ihr Vorname muss mindestens 1 Zeichen lang sein,Your first name is required to be at least 1 character,Votre prénom doit comporter au moins un caractère.,Il nome deve essere di almeno 1 carattere
+settings,settings.messages.validate.firstname.required,Ihr Vorname wird benötigt.,Your first name is required.,Votre prénom est requis.,Il nome è obbligatorio.
+settings,settings.messages.validate.lastname.maxlength,Ihr Nachname darf nicht länger als 50 Zeichen sein,Your last name cannot be longer than 50 characters,Votre nom ne doit pas comporter plus de 50 caractères.,Il cognome non può contenere più di 50 caratteri
+settings,settings.messages.validate.lastname.minlength,Ihr Nachname muss mindestens 1 Zeichen lang sein,Your last name is required to be at least 1 character,Votre nom doit comporter au moins un caractère.,Il cognome deve essere di almeno 1 carattere
+settings,settings.messages.validate.lastname.required,Ihr Nachname wird benötigt.,Your last name is required.,Votre nom est requis.,Il cognome è obbligatorio.
+settings,settings.title,Einstellungen für Benutzer [<b>{{username}}</b>],User settings for [<b>{{username}}</b>],Profil de l'utilisateur [<b>{{username}}</b>],Impostazioni per l'utente [<b>{{username}}</b>]
+user-management,userManagement.activated,Aktiv,Activated,Activé,Attivato
+user-management,userManagement.created,Ein neuer Benutzer wurde mit ID {{ param }} erstellt,A new user is created with identifier {{ param }},L'utilisateur {{ param }} a été créé.,È stato creato un nuovo utente con identificativo {{ param }}
+user-management,userManagement.createdBy,Erstellt von,Created by,Créé par,Creato da
+user-management,userManagement.createdDate,Erstellt am,Created date,Créé le,Creato il
+user-management,userManagement.deactivated,Deaktiviert,Deactivated,Désactivé,Disattivato
+user-management,userManagement.delete.question,"Sind Sie sicher, dass Sie den Benutzer {{ login }} löschen möchten?",Are you sure you want to delete user {{ login }}?,Etes-vous certain de vouloir supprimer l'utilisateur {{ login }} ?,Si è sicuri di volere eliminare l'utente {{ login }}?
+user-management,userManagement.deleted,Ein Benutzer mit ID {{ param }} wurde gelöscht,An user is deleted with identifier {{ param }},L'utilisateur {{ param }} a été supprimé.,È stato eliminato l'utente identificato da {{ param }}
+user-management,userManagement.detail.title,Benutzer,User,Utilisateur,Utente
+user-management,userManagement.email,Email,Email,Email,Email
+user-management,userManagement.firstName,Vorname,First name,Prénom,Nome
+user-management,userManagement.home.createLabel,Neuen Benutzer erstellen,Create a new user,Créer un nouvel utilisateur,Crea un nuovo utente
+user-management,userManagement.home.createOrEditLabel,Benutzer erstellen oder bearbeiten,Create or edit a user,Créer ou éditer un utilisateur,Crea o modifica un utente
+user-management,userManagement.home.title,Benutzer,Users,Utilisateurs,Utenti
+user-management,userManagement.langKey,Sprache,Language,Langue,Lingua
+user-management,userManagement.lastModifiedBy,Bearbeitet von,Modified by,Modifié par,Modificato da
+user-management,userManagement.lastModifiedDate,Zuletzt bearbeitet,Modified date,Modifié le,Modificato il
+user-management,userManagement.lastName,Nachname,Last name,Nom,Cognome
+user-management,userManagement.login,Login,Login,Login,Login
+user-management,userManagement.profiles,Profile,Profiles,Droits,Profili
+user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,An user is updated with identifier {{ param }},L'utilisateur {{ param }} a été mis à jour.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}
