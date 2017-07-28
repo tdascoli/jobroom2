@@ -134,12 +134,12 @@ and everything is committed into git.
 
 To optimize the jobroom application for production, run:
 
-    ./gradlew -Pprod clean bootJar
+    ./gradlew -Pprod clean bootWar
 
 This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
 To ensure everything worked, run:
 
-    java -jar build/libs/*.jar
+    java -jar build/libs/*.war
 
 Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
@@ -181,7 +181,7 @@ To stop it and remove the container, run:
 You can also fully dockerize your application and all the services that it depends on.
 To achieve this, first build a docker image of your app by running:
 
-    ./gradlew bootJar -Pprod buildDocker
+    ./gradlew bootWar -Pprod buildDocker
 
 Then run:
 

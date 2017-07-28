@@ -1,9 +1,10 @@
 version: '2'
 services:
     jhipster-registry:
-        image: jhipster/jhipster-registry:v3.0.3
+        image: jhipster/jhipster-registry:v3.1.0
         volumes:
             - ./central-server-config:/central-config
+            - $HOME/config:/config
         # When run with the "dev" Spring profile, the JHipster Registry will
         # read the config from the local filesystem (central-server-config directory)
         # When run with the "prod" Spring profile, it will read the config from a git repository
@@ -12,6 +13,10 @@ services:
             - SPRING_PROFILES_ACTIVE=dev
             - SECURITY_USER_PASSWORD=admin
             - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:./central-config/localhost-config/
+            #            - ENCRYPT_KEYSTORE_LOCATION=file:/config/encryption.jks
+            #            - ENCRYPT_KEYSTORE_PASSWORD=letmein
+            #            - ENCRYPT_KEYSTORE_ALIAS=config-server
+            #            - ENCRYPT_KEYSTORE_SECRET=changeme
             # - GIT_URI=https://github.com/jhipster/jhipster-registry/
             # - GIT_SEARCH_PATHS=central-config
         ports:

@@ -28,3 +28,9 @@ spring:
 info:
     project:
         version: #project.version#
+
+logging:
+    level:
+        org.springframework.core.env: TRACE
+        org.springframework.cloud.netflix.eureka: TRACE
+        com.netflix.discovery: TRACE
