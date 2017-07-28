@@ -78,6 +78,57 @@ will generate few files:
     create src/main/webapp/app/my-component/my-component.component.html
     create src/main/webapp/app/my-component/my-component.component.ts
     update src/main/webapp/app/app.module.ts
+    
+### Export / Import translation json files to / from CSV file
+
+We use the [ngx-translate](https://github.com/ngx-translate) module with JSON files to internationalize the application.
+The JSON files can be exported to a single CSV file by executing the ``json2csv`` gradle task.
+
+    ./gradlew json2csv    
+
+This task generates the ``translation.csv`` file under the ``src/main/webapp/i18n/`` directory.
+Where the structure of the CSV file is the following:
+
+|  page    |  key                 | de          |  en         | fr          | it          |
+|----------|----------------------|-------------|-------------|-------------|-------------|
+|  health  |  health.table.status | Status      |  Status     | Etat        | Stato       |
+| activate |  activate.title      | Aktivierung |  Activation | Activation  | Attivazione |
+ 
+
+* page is same as the routing path that maps an url to component
+* key is the translation key that can be used either by the ``jhiTranslate`` directive or by the ``translate`` pipe
+* de, en, fr, it are the translations  
+  
+The ``csv2json`` gradle tasks generates the JSON translation files from the ``translation.csv``.
+When we execute the ``./gradlew json2csv`` command, considering the example above the following file structure will be generated:
+    
+    src/main/webapp/i18n
+        ├── de
+        │   ├── activate.json
+        │   └── health.json
+        ├── en
+        │   ├── activate.json
+        │   └── health.json
+        ├── fr
+        │   ├── activate.json
+        │   └── health.json
+        ├── it
+        │   ├── activate.json
+        │   └── health.json
+        └── translations.csv   
+    
+Where a single translation file is like:
+
+    {
+        "health": {      
+            "table": {            
+                "status": "Status"
+            }
+        }
+    }
+
+The tasks must be executed manually. If you change either a translation JSON or the csv file make sure that the changes are synchronized
+and everything is committed into git.   
 
 ## Building for production
 
