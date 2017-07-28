@@ -83,12 +83,12 @@ will generate few files:
 
 To optimize the jobroom application for production, run:
 
-    ./gradlew -Pprod clean bootRepackage
+    ./gradlew -Pprod clean bootJar
 
 This will concatenate and minify the client CSS and JavaScript files. It will also modify `index.html` so it references these new files.
 To ensure everything worked, run:
 
-    java -jar build/libs/*.war
+    java -jar build/libs/*.jar
 
 Then navigate to [http://localhost:8080](http://localhost:8080) in your browser.
 
@@ -130,7 +130,7 @@ To stop it and remove the container, run:
 You can also fully dockerize your application and all the services that it depends on.
 To achieve this, first build a docker image of your app by running:
 
-    ./gradlew bootRepackage -Pprod buildDocker
+    ./gradlew bootJar -Pprod buildDocker
 
 Then run:
 

@@ -38,7 +38,7 @@ dependencyManagement {
 defaultTasks 'bootRun'
 
 bootJar  {
-    mainClass = 'ch.admin.seco.service.job.JobServiceApp'
+    mainClass = 'ch.admin.seco.jobroom.JobroomApp'
 }
 
 war {
@@ -256,7 +256,7 @@ task wrapper(type: Wrapper) {
     gradleVersion = '3.5'
 }
 
-task stage(dependsOn: 'bootRepackage') {
+task stage(dependsOn: 'bootJar') {
 }
 
 if (project.hasProperty('nodeInstall')) {
