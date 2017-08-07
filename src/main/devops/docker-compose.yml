@@ -1,0 +1,76 @@
+version: '2'
+services:
+    jobroom-app:
+        build: dockerfiles/jobroom
+        environment:
+            - JAVA_OPTS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=development,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SLEEP=30
+        ports:
+            - 8080:8080
+    jobservice-app:
+        build: dockerfiles/jobservice
+        environment:
+            - JAVA_OPTS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=development,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SLEEP=30
+        ports:
+            - 8081:8081
+    referenceservice-app:
+        build: dockerfiles/referenceservice
+        environment:
+            - JAVA_OPTS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=development,swagger
+            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SLEEP=30
+        ports:
+            - 8082:8082
+    jobroom-postgresql:
+        build: dockerfiles/postgresql
+        ports:
+            - 5432:5432
+    jhipster-registry:
+        image: jhipster/jhipster-registry:v3.1.0
+        environment:
+            - JAVA_OPTS=-Xmx512m -Xms256m
+            - SECURITY_USER_PASSWORD=admin
+            - SPRING_PROFILES_ACTIVE=development
+            - GIT_URI=https://github.com/alv-ch/central-config.git
+            - SPRING_CLOUD_CONFIG_PROFILE=development
+            - ENCRYPT_KEY=5mA%R8G7@Xwt
+        ports:
+            - 8761:8761
+    jobroom-kibana:
+        image: docker.elastic.co/kibana/kibana:5.4.1
+        ports:
+          - 5601:5601
+        environment:
+            - xpack.security.enabled=false
+        links:
+          - jobroom-elasticsearch:elasticsearch
+    jobroom-elasticsearch:
+        image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
+        cap_add:
+            - IPC_LOCK
+#        volumes:
+#            - esdata1:/usr/share/elasticsearch/data
+        ports:
+            - 9200:9200
+            - 9300:9300
+        environment:
+          - xpack.security.enabled=false
+          - cluster.name=jobroom-cluster
+          - bootstrap.memory_lock=true
+          - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+        ulimits:
+          memlock:
+            soft: -1
+            hard: -1
+        mem_limit: 1g
+
+#volumes:
+#    esdata1:
+#        driver: local
+
