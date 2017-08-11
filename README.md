@@ -1,7 +1,7 @@
-# jobroom
+# jobroom2
 
-[![Build Status](https://travis-ci.org/alv-ch/job-room.svg?branch=develop)](https://travis-ci.org/alv-ch/job-room)
-[![Coverage Status](https://codecov.io/github/alv-ch/job-room/coverage.svg?branch=develop)](https://codecov.io/github/alv-ch/job-room?branch=develop)
+[![Build Status](https://travis-ci.org/alv-ch/jobroom2.svg?branch=develop)](https://travis-ci.org/alv-ch/jobroom2)
+[![Coverage Status](https://codecov.io/github/alv-ch/jobroom2/coverage.svg?branch=develop)](https://codecov.io/github/alv-ch/jobroom2?branch=develop)
 [![Quality Gate](https://sonarqube.com/api/badges/gate?key=ch.admin.seco.jobroom:jobroom)](https://sonarcloud.io/dashboard?id=ch.admin.seco.jobroom:jobroom)
 
 This application was generated using JHipster 4.5.5, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.5](https://jhipster.github.io/documentation-archive/v4.5.5).
