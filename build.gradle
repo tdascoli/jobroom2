@@ -110,6 +110,7 @@ apply from: 'gradle/mapstruct.gradle'
 apply from: 'gradle/docker.gradle'
 apply from: 'gradle/translation.gradle'
 apply from: 'gradle/maven-publish.gradle'
+apply from: 'gradle/jacoco.gradle'
 //jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
 
 if (project.hasProperty('prod')) {

@@ -35,7 +35,7 @@ before_install:
 install:
 - yarn install
 script:
-- "./gradlew clean test sonarqube --stacktrace"
+- "./gradlew clean test jacocoTestReport sonarqube --stacktrace"
 - yarn test
 after_success:
 - bash <(curl -s https://codecov.io/bash)
