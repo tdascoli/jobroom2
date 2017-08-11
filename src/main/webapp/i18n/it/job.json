@@ -72,9 +72,9 @@
     },
     "jobserviceApp": {
         "job": {
-            "created": "&Egrave; stato generato un nuovo Job con identificatore { param }}",
-            "deleted": "&Egrave; stato eliminato Job con identificatore {{ param }}",
-            "updated": "&Egrave; stato aggiornato Job identificato da {{ param }}"
+            "created": "\u00c8 stato generato un nuovo Job con identificatore { param }}",
+            "deleted": "\u00c8 stato eliminato Job con identificatore {{ param }}",
+            "updated": "\u00c8 stato aggiornato Job identificato da {{ param }}"
         }
     }
 }

@@ -26,6 +26,8 @@ import {
 
 import { AppRoutingModule } from './app.routing.module';
 import { JobSearchModule } from './job-search/job-search.module';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
@@ -40,7 +42,9 @@ import { JobSearchModule } from './job-search/job-search.module';
         JobroomAdminModule,
         JobroomAccountModule,
         JobroomEntityModule,
-        JobSearchModule
+        JobSearchModule,
+        StoreModule.forRoot({}),
+        EffectsModule.forRoot([])
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [

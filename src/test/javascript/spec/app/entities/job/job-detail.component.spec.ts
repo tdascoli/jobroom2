@@ -1,9 +1,10 @@
-import { ComponentFixture, TestBed, async, inject } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { OnInit } from '@angular/core';
+import { TranslateService } from '@ngx-translate/core';
 import { DatePipe } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Rx';
-import { JhiDateUtils, JhiDataUtils, JhiEventManager } from 'ng-jhipster';
+import { JhiDataUtils, JhiDateUtils, JhiEventManager } from 'ng-jhipster';
 import { JobroomTestModule } from '../../../test.module';
 import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { JobDetailComponent } from '../../../../../../main/webapp/app/entities/job/job-detail.component';
@@ -27,13 +28,14 @@ describe('Component Tests', () => {
                     DatePipe,
                     {
                         provide: ActivatedRoute,
-                        useValue: new MockActivatedRoute({id: 123})
+                        useValue: new MockActivatedRoute({ id: 123 })
                     },
+                    { provide: TranslateService, useValue: { currentLang: 'de' } },
                     JobService,
                     JhiEventManager
                 ]
             }).overrideTemplate(JobDetailComponent, '')
-            .compileComponents();
+                .compileComponents();
         }));
 
         beforeEach(() => {
@@ -42,19 +44,18 @@ describe('Component Tests', () => {
             service = fixture.debugElement.injector.get(JobService);
         });
 
-
         describe('OnInit', () => {
             it('Should call load all on init', () => {
-            // GIVEN
+                // GIVEN
 
-            spyOn(service, 'find').and.returnValue(Observable.of(new Job(10)));
+                spyOn(service, 'find').and.returnValue(Observable.of(new Job(10)));
 
-            // WHEN
-            comp.ngOnInit();
+                // WHEN
+                comp.ngOnInit();
 
-            // THEN
-            expect(service.find).toHaveBeenCalledWith(123);
-            expect(comp.job).toEqual(jasmine.objectContaining({id:10}));
+                // THEN
+                expect(service.find).toHaveBeenCalledWith(123);
+                expect(comp.job).toEqual(jasmine.objectContaining({ id: 10 }));
             });
         });
     });

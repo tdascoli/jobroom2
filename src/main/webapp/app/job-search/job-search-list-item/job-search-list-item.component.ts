@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Job } from '../../entities/job/job.model';
 
 @Component({
@@ -6,13 +6,6 @@ import { Job } from '../../entities/job/job.model';
     templateUrl: './job-search-list-item.component.html',
     styles: []
 })
-export class JobSearchListItemComponent implements OnInit {
+export class JobSearchListItemComponent {
     @Input() job: Job;
-
-    constructor() {
-    }
-
-    ngOnInit() {
-    }
-
 }

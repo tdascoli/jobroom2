@@ -1,5 +1,27 @@
 {
     "job-search": {
+        "job-search-list-item": {
+            "badge": {
+                "permanent": "Unbefristet"
+            }
+        },
+        "job-search-list": {
+            "title": {
+                "none": {
+                    "with-locale": "No {{query}} Jobs in {{locale}}",
+                    "without-locale": "No {{query}} Jobs"
+                },
+                "one": {
+                    "with-locale": "1 {{query}} Job in {{locale}}",
+                    "without-locale": "1 {{query}} Job"
+                },
+                "other": {
+                    "with-locale": "{{count}} {{query}} Jobs in {{locale}}",
+                    "without-locale": "{{count}} {{query}} Jobs"
+                }
+            },
+            "error-message": "Failed to load job result list!"
+        },
         "title": "Job search",
         "toolbar": {
             "occupation": {

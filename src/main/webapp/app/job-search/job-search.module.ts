@@ -8,9 +8,18 @@ import { JobSearchFilterComponent } from './job-search-filter/job-search-filter.
 import { JobSearchListItemComponent } from './job-search-list-item/job-search-list-item.component';
 import { JhiLanguageService } from 'ng-jhipster';
 import { customHttpProvider } from '../blocks/interceptor/http.provider';
+import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { jobSearchReducer } from './state-management/reducers/job-search.reducers';
+import { JobSearchEffects } from './state-management/effects/job-search.effects';
+import { JobSearchListComponent } from './job-search-list/job-search-list.component';
 
 @NgModule({
     imports: [
+        StoreModule.forFeature('jobSearch', jobSearchReducer),
+        EffectsModule.forFeature([JobSearchEffects]),
+        StoreRouterConnectingModule,
         JobroomSharedModule,
         CommonModule,
         JobSearchRoutingModule,
@@ -21,6 +30,7 @@ import { customHttpProvider } from '../blocks/interceptor/http.provider';
         JobSearchToolbarComponent,
         JobSearchFilterComponent,
         JobSearchListItemComponent,
+        JobSearchListComponent,
     ],
     providers: [
         customHttpProvider(),

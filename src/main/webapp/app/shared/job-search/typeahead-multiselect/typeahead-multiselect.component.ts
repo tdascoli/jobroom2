@@ -107,8 +107,6 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
 
         return text$
             .filter((query: string) => query.length > 2)
-            .debounceTime(200)
-            .distinctUntilChanged()
             .switchMap((query: string) => this.itemLoader(query))
             .map(toDisplayModelArray);
     }

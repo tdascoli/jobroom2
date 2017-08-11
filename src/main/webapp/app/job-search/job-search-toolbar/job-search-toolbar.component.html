@@ -2,7 +2,7 @@
     <div class="toolbar-collapse">
         <div class="form-inline toolbar-form">
             <div class="form-group form-group--wide">
-                <jr2-typeahead-multiselect [(ngModel)]="queryModel" [itemLoader]="fetchSuggestions" [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
+                <jr2-typeahead-multiselect [(ngModel)]="baseQueryModel" [itemLoader]="fetchSuggestions" [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
             </div>
             <div class="form-group form-group--wide form-group--icon">
                 <label for="basic-addon2" class="sr-only">Ort, Region, Kanton</label>

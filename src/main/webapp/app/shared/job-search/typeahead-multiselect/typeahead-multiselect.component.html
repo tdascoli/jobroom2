@@ -20,6 +20,7 @@
                [ngbTypeahead]="wrappedItemLoader"
                [resultFormatter]="formatResultItem"
                (selectItem)="selectItem($event)"
-               [resultTemplate]="template"/>
+               [resultTemplate]="template"
+               [focusFirst]="false"/>
     </form>
 </div>

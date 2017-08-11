@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { BaseRequestOptions, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { JhiDateUtils } from 'ng-jhipster';
-
 import { Job } from './job.model';
-import { ResponseWrapper, createRequestOption } from '../../shared';
+import { createRequestOption, ResponseWrapper } from '../../shared';
+import { TranslateService } from '@ngx-translate/core';
+import { JobSearchRequest } from './job-search-request';
 
 @Injectable()
 export class JobService {
@@ -12,7 +13,8 @@ export class JobService {
     private resourceUrl = 'jobservice/api/jobs';
     private searchUrl = 'jobservice/api/_search/jobs';
 
-    constructor(private http: Http, private dateUtils: JhiDateUtils) { }
+    constructor(private http: Http, private dateUtils: JhiDateUtils, private translateService: TranslateService) {
+    }
 
     create(job: Job): Observable<Job> {
         const copy = this.convert(job);
@@ -46,8 +48,11 @@ export class JobService {
             .map((res: Response) => this.convertResponse(res));
     }
 
-    search(req?: any): Observable<ResponseWrapper> {
-        const options = createRequestOption(req);
+    search(req: JobSearchRequest): Observable<ResponseWrapper> {
+        const options: BaseRequestOptions = new BaseRequestOptions();
+        options.params = req.toURLSearchParams();
+        options.params.set('language', this.translateService.currentLang);
+
         return this.http.get(this.searchUrl, options)
             .map((res: Response) => this.convertResponse(res));
     }

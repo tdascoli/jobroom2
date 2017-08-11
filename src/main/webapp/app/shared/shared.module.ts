@@ -16,6 +16,7 @@ import {
     JhiLoginModalComponent,
     StickyToolbarItemDirective
 } from './';
+import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
 
 @NgModule({
     imports: [
@@ -25,7 +26,8 @@ import {
     declarations: [
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
-        StickyToolbarItemDirective
+        StickyToolbarItemDirective,
+        LocaleAwareDatePipe
     ],
     providers: [
         LoginService,
@@ -36,7 +38,8 @@ import {
         CSRFService,
         AuthServerProvider,
         UserService,
-        DatePipe
+        DatePipe,
+        LocaleAwareDatePipe
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
@@ -44,6 +47,7 @@ import {
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
         DatePipe,
+        LocaleAwareDatePipe,
         StickyToolbarItemDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
