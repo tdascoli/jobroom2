@@ -161,9 +161,13 @@ UI end-to-end tests are powered by [Protractor][], which is built on top of WebD
 and can be run by starting Spring Boot in one terminal (`./gradlew bootRun`) and running the tests (`yarn run e2e`) in a second one.
 ### Other tests
 
-Performance tests are run by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling) and can be run with:
+Performance tests are run against the DEV enviroment by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling) and can be run with:
 
-    ./gradlew gatlingRun
+    baseURL=http://159.100.254.166:8080 ./gradlew -b e2e.gradle gatlingRunAll
+
+or run individual test
+
+    baseURL=http://159.100.254.166:8080 ./gradlew -b e2e.gradle gatlingRun -PgatlingSimulationClass=JobGatlingTest
 
 For more information, refer to the [Running tests page][].
 

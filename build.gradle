@@ -105,7 +105,6 @@ cucumberTest.finalizedBy(testReport)
 apply from: 'gradle/checkstyle.gradle'
 apply from: 'gradle/sonar.gradle'
 apply from: 'gradle/liquibase.gradle'
-apply from: 'gradle/gatling.gradle'
 apply from: 'gradle/mapstruct.gradle'
 apply from: 'gradle/docker.gradle'
 apply from: 'gradle/translation.gradle'
@@ -241,7 +240,6 @@ dependencies {
     testCompile "org.mockito:mockito-core"
     testCompile "com.mattbertolini:liquibase-slf4j:${liquibase_slf4j_version}"
     testCompile "org.hamcrest:hamcrest-library"
-    testCompile "io.gatling.highcharts:gatling-charts-highcharts:${gatling_version}"
     optional ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
