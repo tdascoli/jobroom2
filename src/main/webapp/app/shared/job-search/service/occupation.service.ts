@@ -6,7 +6,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { OccupationInputType, OccupationAutocomplete, OccupationSuggestion } from './occupation-autocomplete';
 
 const DEFAULT_RESPONSE_SIZE = '10';
-const SEARCH_URL = 'referenceservice/api/_search/occupations';
+const SEARCH_URL = 'referenceservice/api/_search/occupations/synonym';
 
 @Injectable()
 export class OccupationService {
