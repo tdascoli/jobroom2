@@ -15,7 +15,7 @@ export class JobSearchListComponent {
     @Input() jobList: Array<Job>;
     @Input() totalCount: number;
     @Input() baseQueryString: string;
-    @Input() locationQueryString: string;
+    @Input() localityQueryString: string;
 
     displayError$: Observable<boolean>;
 
@@ -42,10 +42,10 @@ export class JobSearchListComponent {
             key += '.other';
         }
 
-        if (this.locationQueryString.length > 0) {
-            key += '.with-locale';
+        if (this.localityQueryString.length > 0) {
+            key += '.with-locality';
         } else {
-            key += '.without-locale';
+            key += '.without-locality';
         }
 
         return key;

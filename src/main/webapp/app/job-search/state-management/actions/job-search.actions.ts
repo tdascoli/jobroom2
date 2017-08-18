@@ -9,6 +9,7 @@ export const LOAD_JOB_LIST = 'LOAD_JOB_LIST';
 export const SHOW_JOB_LIST_ERROR_ACTION = 'SHOW_JOB_LIST_ERROR_ACTION';
 export const HIDE_JOB_LIST_ERROR_ACTION = 'HIDE_JOB_LIST_ERROR_ACTION';
 export const BASE_QUERY_UPDATED = 'BASE_QUERY_UPDATED';
+export const LOCALITY_QUERY_UPDATED = 'LOCALITY_QUERY_UPDATED';
 export const LOAD_NEXT_PAGE = 'LOAD_NEXT_PAGE';
 export const NEXT_PAGE_LOADED = 'NEXT_PAGE_LOADED';
 export const NAVIGATION_FINISHED = 'NAVIGATION_FINISHED';
@@ -16,10 +17,12 @@ export const NAVIGATION_FINISHED = 'NAVIGATION_FINISHED';
 export class ExecuteSearchAction implements Action {
     readonly type = EXECUTE_SEARCH;
 
-    constructor(public baseQuery: Array<TypeaheadMultiselectModel>, public locationQuery: Array<TypeaheadMultiselectModel>) {
+    constructor(public baseQuery: Array<TypeaheadMultiselectModel>, public localityQuery: Array<TypeaheadMultiselectModel>) {
     }
 }
 
+// Todo: Do we need two separate actions for the query update?
+// Review this during https://alv-ch.atlassian.net/browse/JR2-38
 export class BaseQueryUpdatedAction implements Action {
     readonly type = BASE_QUERY_UPDATED;
 
@@ -27,10 +30,17 @@ export class BaseQueryUpdatedAction implements Action {
     }
 }
 
+export class LocalityQueryUpdatedAction implements Action {
+    readonly type = LOCALITY_QUERY_UPDATED;
+
+    constructor(public localityQuery: Array<TypeaheadMultiselectModel>) {
+    }
+}
+
 export class LoadJobListAction implements Action {
     readonly type = LOAD_JOB_LIST;
 
-    constructor(public baseQuery: Array<TypeaheadMultiselectModel>, public locationQuery: Array<TypeaheadMultiselectModel>) {
+    constructor(public baseQuery: Array<TypeaheadMultiselectModel>, public localityQuery: Array<TypeaheadMultiselectModel>) {
     }
 }
 
@@ -79,6 +89,7 @@ export type Actions =
     | JobListLoadedAction
     | RouterNavigationAction
     | BaseQueryUpdatedAction
+    | LocalityQueryUpdatedAction
     | LoadNextPageAction
     | NextPageLoadedAction
     | NavigationFinishedAction

@@ -8,7 +8,7 @@
                 "error": "La tua password potrebbe non essere ripristinata. Ricorda che la richiesta della password \u00e8 valida solo per 24 ore.",
                 "info": "Scegliere una nuova password",
                 "keymissing": "La chiave di reimpostazione non \u00e8 presente.",
-                "success": "<strong>La tua password \u00e8 stata reimpostata .</strong> Per favore "
+                "success": "<strong>La tua password \u00e8 stata reimpostata .</strong> Per favore"
             },
             "title": "Cambia Password"
         },

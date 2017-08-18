@@ -8,22 +8,28 @@
         "job-search-list": {
             "title": {
                 "none": {
-                    "with-locale": "No {{query}} Jobs in {{locale}}",
-                    "without-locale": "No {{query}} Jobs"
+                    "with-locality": "No {{query}} Jobs in {{locality}}",
+                    "without-locality": "No {{query}} Jobs"
                 },
                 "one": {
-                    "with-locale": "1 {{query}} Job in {{locale}}",
-                    "without-locale": "1 {{query}} Job"
+                    "with-locality": "1 {{query}} Job in {{locality}}",
+                    "without-locality": "1 {{query}} Job"
                 },
                 "other": {
-                    "with-locale": "{{count}} {{query}} Jobs in {{locale}}",
-                    "without-locale": "{{count}} {{query}} Jobs"
+                    "with-locality": "{{count}} {{query}} Jobs in {{locality}}",
+                    "without-locality": "{{count}} {{query}} Jobs"
                 }
             },
             "error-message": "Failed to load job result list!"
         },
         "title": "Job search",
         "toolbar": {
+            "locality": {
+                "placeholder": "Ort, Region, Kanton"
+            },
+            "locality-select": {
+                "tooltip": "Select my current location"
+            },
             "occupation": {
                 "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
             }

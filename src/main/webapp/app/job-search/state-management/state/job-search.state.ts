@@ -13,7 +13,7 @@ export interface JobSearchState {
 
 export interface JobSearchQuery {
     baseQuery: Array<TypeaheadMultiselectModel>;
-    locationQuery: Array<TypeaheadMultiselectModel>;
+    localityQuery: Array<TypeaheadMultiselectModel>;
     page: number;
 }
 
@@ -25,7 +25,7 @@ export const initialState: JobSearchState = {
     jobSearchError: false,
     searchQuery: {
         baseQuery: [],
-        locationQuery: [],
+        localityQuery: [],
         page: 0
     },
     searchFilter: {},
@@ -39,6 +39,6 @@ export const getTotalJobCount = createSelector(getJobSearchState, (state: JobSea
 export const getJobList = createSelector(getJobSearchState, (state: JobSearchState) => state.jobList);
 export const getSearchQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery);
 export const getBaseQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery.baseQuery);
-export const getLocationQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery.locationQuery);
+export const getLocalityQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery.localityQuery);
 export const getJobSearchError = createSelector(getJobSearchState, (state: JobSearchState) => state.jobSearchError);
 export const getSearchFilter = createSelector(getJobSearchState, (state: JobSearchState) => state.searchFilter);

@@ -1,6 +1,6 @@
 <jr2-job-search-toolbar jhiStickyToolbarItem [total]="totalCount$ | async"
                         [baseQueryModel]="baseQueryModel$ | async"
-                        [locationQueryModel]="locationQueryModel$ | async"></jr2-job-search-toolbar>
+                        [localityQueryModel]="localityQueryModel$ | async"></jr2-job-search-toolbar>
 
 <div class="container">
 
@@ -16,7 +16,7 @@
             <jr2-job-search-list [jobList]="jobList$ | async"
                                  [totalCount]="totalCount$ | async"
                                  [baseQueryString]="baseQueryString$ | async"
-                                 [locationQueryString]="locationQueryString$ | async"></jr2-job-search-list>
+                                 [localityQueryString]="localityQueryString$ | async"></jr2-job-search-list>
 
         </div>
 

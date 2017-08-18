@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Rx';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect/typeahead-multiselect-model';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import { TranslateService } from '@ngx-translate/core';
-import { InputType, OccupationAutocomplete, OccupationSuggestion } from './occupation-autocomplete';
+import { OccupationInputType, OccupationAutocomplete, OccupationSuggestion } from './occupation-autocomplete';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations';
@@ -28,9 +28,9 @@ export class OccupationService {
                 const jsonResponse = <OccupationAutocomplete>res.json();
 
                 const occupations = jsonResponse.occupations
-                    .map((o: OccupationSuggestion) => new TypeaheadMultiselectModel(InputType.OCCUPATION, o.code, o.name, 0));
+                    .map((o: OccupationSuggestion) => new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, o.code, o.name, 0));
                 const classifications = jsonResponse.classifications
-                    .map((c: any) => new TypeaheadMultiselectModel(InputType.CLASSIFICATION, c.code, c.name, 1));
+                    .map((c: any) => new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, c.code, c.name, 1));
 
                 return [...occupations, ...classifications];
             })

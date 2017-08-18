@@ -2,17 +2,17 @@
     <div class="toolbar-collapse">
         <div class="form-inline toolbar-form">
             <div class="form-group form-group--wide">
-                <jr2-typeahead-multiselect [(ngModel)]="baseQueryModel" [itemLoader]="fetchSuggestions" [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
+                <jr2-typeahead-multiselect [(ngModel)]="baseQueryModel"
+                                           [itemLoader]="fetchOccupationSuggestions"
+                                           [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
             </div>
             <div class="form-group form-group--wide form-group--icon">
-                <label for="basic-addon2" class="sr-only">Ort, Region, Kanton</label>
-                <input type="text" class="form-control form-control-lg" placeholder="Ort, Region, Kanton"
-                       id="basic-addon2">
-                <!-- todo refine -->
-                <a href="#" class="fa-stack form-control--icon">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
-                </a>
+                <jr2-typeahead-multiselect [(ngModel)]="localityQueryModel"
+                                           [itemLoader]="fetchLocalitySuggestions"
+                                           [editable]="false"
+                                           [focusFirst]="true"
+                                           [placeHolder]="'job-search.toolbar.locality.placeholder' | translate"></jr2-typeahead-multiselect>
+                <jr2-geo-location-select (localitySelect)="handleLocalitySelect($event)" [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
             </div>
             <div class="form-group form-group--slider">
                 <label for="ex1" class="sr-only">Radius</label>

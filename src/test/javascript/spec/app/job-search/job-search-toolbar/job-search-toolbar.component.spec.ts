@@ -8,6 +8,7 @@ import {
 } from '../../../../../../main/webapp/app/shared/job-search';
 import { Store } from '@ngrx/store';
 import { ExecuteSearchAction } from '../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
+import { LocalityService } from '../../../../../../main/webapp/app/shared/job-search/service/locality.service';
 
 describe('JobSearchToolbarComponent', () => {
     const mockOccupationService = jasmine.createSpyObj('mockOccupationService',
@@ -15,6 +16,8 @@ describe('JobSearchToolbarComponent', () => {
 
     mockOccupationService.getClassifications.and.returnValue(Observable.of([new TypeaheadMultiselectModel('classification', 'c1', 'C1')]));
     mockOccupationService.getOccupations.and.returnValue(Observable.of([new TypeaheadMultiselectModel('occupation', 'o1', 'O1')]));
+
+    const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);
 
     const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
     mockStore.select.and.returnValue(Observable.of([]));
@@ -28,6 +31,7 @@ describe('JobSearchToolbarComponent', () => {
             declarations: [JobSearchToolbarComponent],
             providers: [
                 { provide: OccupationService, useValue: mockOccupationService },
+                { provide: LocalityService, useValue: mockLocalityService },
                 { provide: Store, useValue: mockStore }
             ]
         })
@@ -54,7 +58,7 @@ describe('JobSearchToolbarComponent', () => {
                 new TypeaheadMultiselectModel('free-text', 'free-text_code', 'free-text_code'),
             ];
             component.baseQueryModel = queryModel;
-            component.locationQueryModel = [];
+            component.localityQueryModel = [];
 
             // WHEN
             component.search();

@@ -1,8 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService, TypeaheadMultiselectModel } from '../../shared/job-search';
+import {
+    Locality,
+    LocalityService,
+    OccupationService,
+    TypeaheadMultiselectModel
+} from '../../shared/job-search';
 import { Store } from '@ngrx/store';
 import { ExecuteSearchAction, JobSearchState } from '../state-management';
+import { LocalityInputType } from '../../shared/job-search/service/locality';
 
 @Component({
     selector: 'jr2-job-search-toolbar',
@@ -12,14 +18,29 @@ import { ExecuteSearchAction, JobSearchState } from '../state-management';
 export class JobSearchToolbarComponent {
     @Input() total: number;
     @Input() baseQueryModel: Array<TypeaheadMultiselectModel>;
-    @Input() locationQueryModel: Array<TypeaheadMultiselectModel>;
+    @Input() localityQueryModel: Array<TypeaheadMultiselectModel>;
 
-    constructor(private service: OccupationService, private store: Store<JobSearchState>) {
+    constructor(private occupationService: OccupationService,
+                private localityService: LocalityService,
+                private store: Store<JobSearchState>) {
     }
 
     search() {
-        this.store.dispatch(new ExecuteSearchAction(this.baseQueryModel, this.locationQueryModel));
+        this.store.dispatch(new ExecuteSearchAction(this.baseQueryModel, this.localityQueryModel));
     }
 
-    fetchSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.service.fetchSuggestions(query);
+    handleLocalitySelect(locality: Locality) {
+        // Todo: Research if this fits into the ngrx concept and find a better solution.
+        const currentLocality = new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, locality.city, locality.city, 1);
+        const exists = !!this.localityQueryModel.find((i: TypeaheadMultiselectModel) =>
+            currentLocality.equals(i));
+
+        if (!exists) {
+            this.localityQueryModel = [...this.localityQueryModel, currentLocality];
+        }
+    }
+
+    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
+
+    fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(query);
 }

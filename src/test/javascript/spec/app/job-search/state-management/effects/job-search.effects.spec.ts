@@ -18,6 +18,7 @@ import {
     JobListLoadedAction,
     LoadJobListAction,
     LoadNextPageAction,
+    LocalityQueryUpdatedAction,
     NextPageLoadedAction,
     ShowJobListErrorAction
 } from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
@@ -166,12 +167,14 @@ describe('JobSearchEffects', () => {
 
             actions$ = hot('-a', { a: action });
 
-            const queryModelUpdatedAction = new BaseQueryUpdatedAction(baseQueryModel);
+            const baseQueryUpdatedAction = new BaseQueryUpdatedAction(baseQueryModel);
+            const localityQueryUpdatedAction = new LocalityQueryUpdatedAction([]);
             const loadJobListAction = new LoadJobListAction(baseQueryModel, []);
 
-            const expected = cold('-(ab)', {
-                a: queryModelUpdatedAction,
-                b: loadJobListAction,
+            const expected = cold('-(abc)', {
+                a: baseQueryUpdatedAction,
+                b: localityQueryUpdatedAction,
+                c: loadJobListAction
             });
 
             expect(effects.executeSearch$).toBeObservable(expected);

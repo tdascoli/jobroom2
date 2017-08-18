@@ -4,7 +4,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Response, ResponseOptions } from '@angular/http';
 import { JobroomTestModule } from '../../../../test.module';
 import {
-    InputType,
+    OccupationInputType,
     OccupationAutocomplete,
     OccupationService,
     TypeaheadMultiselectModel
@@ -69,10 +69,10 @@ describe('OccupationService', () => {
                 // THEN
                 expect(model.length).toEqual(4);
                 expect(model).toEqual([
-                    new TypeaheadMultiselectModel(InputType.OCCUPATION, '00', 'Informatiker', 0),
-                    new TypeaheadMultiselectModel(InputType.OCCUPATION, '01', 'Bioinformatiker', 0),
-                    new TypeaheadMultiselectModel(InputType.OCCUPATION, '02', 'Wirtschaftinformatiker', 0),
-                    new TypeaheadMultiselectModel(InputType.CLASSIFICATION, '10', 'Berufe der Informatik', 1)
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '00', 'Informatiker', 0),
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '01', 'Bioinformatiker', 0),
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '02', 'Wirtschaftinformatiker', 0),
+                    new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, '10', 'Berufe der Informatik', 1)
                 ]);
             })));
     });

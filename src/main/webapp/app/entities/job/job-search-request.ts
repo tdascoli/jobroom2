@@ -1,28 +1,30 @@
 import { URLSearchParams } from '@angular/http';
 import { TypeaheadMultiselectModel } from '../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
-import { InputType } from '../../shared/job-search/service/occupation-autocomplete';
+import { OccupationInputType } from '../../shared/job-search/service/occupation-autocomplete';
 import { ITEMS_PER_PAGE } from '../../shared/constants/pagination.constants';
+import { LocalityInputType } from '../../shared/job-search/service/locality';
 
 export class JobSearchRequest {
 
     constructor(private baseQuery: Array<TypeaheadMultiselectModel>,
-                private locationQuery: Array<TypeaheadMultiselectModel>,
+                private localityQuery: Array<TypeaheadMultiselectModel>,
                 private page = 0) {
     }
 
     toMap(): any {
         const keywords = this.baseQuery
-            .filter((value: TypeaheadMultiselectModel) => value.type === InputType.FREE_TEXT)
+            .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.FREE_TEXT)
             .map((value: TypeaheadMultiselectModel) => value.label);
         const occupations = this.baseQuery
-            .filter((value: TypeaheadMultiselectModel) => value.type === InputType.OCCUPATION)
+            .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.OCCUPATION)
             .map((value: TypeaheadMultiselectModel) => value.code);
         const classifications = this.baseQuery
-            .filter((value: TypeaheadMultiselectModel) => value.type === InputType.CLASSIFICATION)
+            .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.CLASSIFICATION)
             .map((value: TypeaheadMultiselectModel) => value.code);
 
-        // todo: Implement this with JR2-34
-        const localities = [];
+        const localities = this.localityQuery
+            .filter((value: TypeaheadMultiselectModel) => value.type === LocalityInputType.LOCALITY)
+            .map((value: TypeaheadMultiselectModel) => value.label);
         const regions = [];
         const cantons = [];
 

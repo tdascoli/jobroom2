@@ -107,7 +107,7 @@
             "info": {
                 "authenticated": {
                     "link": "accedere",
-                    "prefix": "Se vuoi ",
+                    "prefix": "Se vuoi",
                     "suffix": ", puoi provare gli account di default: <br/> - Amministratore (user = \"admin\" e la password = \"admin\") <br/> - utente (user = \"user\" e la password = \"user\")"
                 },
                 "register": {

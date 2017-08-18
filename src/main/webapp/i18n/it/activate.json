@@ -2,7 +2,7 @@
     "activate": {
         "messages": {
             "error": "<strong>Il tuo account non pu\u00f2 essere attivato.</strong> Si prega di usare il modulo di registrazione per iscriversi.",
-            "success": "<strong>Il tuo account \u00e8 stato attivato.</strong> Si prega di "
+            "success": "<strong>Il tuo account \u00e8 stato attivato.</strong> Si prega di"
         },
         "title": "Attivazione"
     }

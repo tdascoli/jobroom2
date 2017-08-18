@@ -19,11 +19,14 @@ import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { ResponseWrapper } from '../../../shared/model/response-wrapper.model';
 import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
-import { InputType } from '../../../shared/job-search/service/occupation-autocomplete';
+import { OccupationInputType } from '../../../shared/job-search/service/occupation-autocomplete';
 import { Router } from '@angular/router';
 import { ROUTER_NAVIGATION, RouterNavigationPayload } from '@ngrx/router-store';
 import { JobSearchRequest } from '../../../entities/job/job-search-request';
-import { ShowJobListErrorAction } from '../actions/job-search.actions';
+import {
+    LocalityQueryUpdatedAction,
+    ShowJobListErrorAction
+} from '../actions/job-search.actions';
 
 @Injectable()
 export class JobSearchEffects {
@@ -50,7 +53,7 @@ export class JobSearchEffects {
     loadJobList$: Observable<Action> = this.actions
         .ofType(LOAD_JOB_LIST)
         .switchMap((action: LoadJobListAction) =>
-            this.jobSearchService.search(new JobSearchRequest(action.baseQuery, action.locationQuery))
+            this.jobSearchService.search(new JobSearchRequest(action.baseQuery, action.localityQuery))
                 .map((response: ResponseWrapper) => new JobListLoadedAction(response.json, +response.headers.get('X-Total-Count')))
                 .catch((err: any) => Observable.of(new ShowJobListErrorAction(err)))
         );
@@ -60,7 +63,7 @@ export class JobSearchEffects {
         .ofType(LOAD_NEXT_PAGE)
         .withLatestFrom(this.store.select(getSearchQuery))
         .switchMap(([action, query]) =>
-            this.jobSearchService.search(new JobSearchRequest(query.baseQuery, query.locationQuery, query.page + 1))
+            this.jobSearchService.search(new JobSearchRequest(query.baseQuery, query.localityQuery, query.page + 1))
                 .map((response: ResponseWrapper) => new NextPageLoadedAction(response.json))
                 .catch((err: any) => Observable.of(new ShowJobListErrorAction(err)))
         );
@@ -71,7 +74,8 @@ export class JobSearchEffects {
         .do((action: ExecuteSearchAction) => this.router.navigate(['job-search'], { queryParams: toQueryParams(action.baseQuery) }))
         .flatMap((action: ExecuteSearchAction) => [
                 new BaseQueryUpdatedAction(action.baseQuery),
-                new LoadJobListAction(action.baseQuery, action.locationQuery)
+                new LocalityQueryUpdatedAction(action.localityQuery),
+                new LoadJobListAction(action.baseQuery, action.localityQuery)
             ]
         );
 
@@ -95,13 +99,13 @@ function toQueryModel(payload: RouterNavigationPayload): Observable<Array<Typeah
 
 function toQueryParams(queryModel: Array<TypeaheadMultiselectModel>) {
     const query = queryModel
-        .filter((value: TypeaheadMultiselectModel) => value.type === InputType.FREE_TEXT)
+        .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.FREE_TEXT)
         .map((value: TypeaheadMultiselectModel) => value.label);
     const occupation = queryModel
-        .filter((value: TypeaheadMultiselectModel) => value.type === InputType.OCCUPATION)
+        .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.OCCUPATION)
         .map((value: TypeaheadMultiselectModel) => value.code);
     const classification = queryModel
-        .filter((value: TypeaheadMultiselectModel) => value.type === InputType.CLASSIFICATION)
+        .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.CLASSIFICATION)
         .map((value: TypeaheadMultiselectModel) => value.code);
 
     let ret = {};

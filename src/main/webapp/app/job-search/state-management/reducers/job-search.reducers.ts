@@ -9,6 +9,7 @@ import {
     NEXT_PAGE_LOADED,
     SHOW_JOB_LIST_ERROR_ACTION
 } from '../index';
+import { LOCALITY_QUERY_UPDATED } from '../actions/job-search.actions';
 
 export function jobSearchReducer(state = initialState, action: Actions): JobSearchState {
     let newState;
@@ -22,8 +23,14 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
             break;
 
         case BASE_QUERY_UPDATED:
-            const searchQuery = Object.assign({}, state.searchQuery, { baseQuery: action.baseQuery });
+            const searchQuery = Object.assign({}, state.searchQuery, { baseQuery: [...action.baseQuery] });
             newState = Object.assign({}, state, { searchQuery });
+            break;
+
+        case LOCALITY_QUERY_UPDATED:
+            // FIXME(birom): Clean up this
+            const searchQuery1 = Object.assign({}, state.searchQuery, { localityQuery: [...action.localityQuery] });
+            newState = Object.assign({}, state, { searchQuery: searchQuery1 });
             break;
 
         case NEXT_PAGE_LOADED:

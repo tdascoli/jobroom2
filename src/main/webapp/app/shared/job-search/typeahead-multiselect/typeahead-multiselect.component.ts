@@ -1,4 +1,10 @@
-import { Component, forwardRef, Input, ViewChild } from '@angular/core';
+import {
+    ChangeDetectorRef,
+    Component,
+    forwardRef,
+    Input,
+    ViewChild
+} from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TypeaheadMultiselectModel } from './typeahead-multiselect-model';
@@ -25,10 +31,15 @@ export class ItemDisplayModel {
 export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     @Input() itemLoader: (text: string) => Observable<TypeaheadMultiselectModel[]>;
     @Input() placeHolder: string;
+    @Input() editable = true;
+    @Input() focusFirst = false;
     @ViewChild('input') inputEl;
 
     inputValue: string;
     selectedItems: Array<TypeaheadMultiselectModel> = [];
+
+    constructor(private changeDetectorRef: ChangeDetectorRef) {
+    }
 
     registerOnChange(fn: (value: any) => any): void {
         this._onChange = fn;
@@ -44,6 +55,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     writeValue(obj: any): void {
         if (obj) {
             this.selectedItems = [...obj];
+            this.changeDetectorRef.markForCheck();
         }
     }
 
@@ -70,7 +82,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
 
     selectFreeText($e) {
         const freeText = new TypeaheadMultiselectModel('free-text', this.inputValue, this.inputValue);
-        if (!this.exists(freeText) && freeText.code.length > 2) {
+        if (this.editable && !this.exists(freeText) && freeText.code.length > 2) {
             const newItems = [...this.selectedItems, freeText];
 
             this._onChange(newItems);

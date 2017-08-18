@@ -1,4 +1,4 @@
-export class InputType {
+export class OccupationInputType {
     static OCCUPATION = 'occupation';
     static CLASSIFICATION = 'classification';
     static FREE_TEXT = 'free-text';
