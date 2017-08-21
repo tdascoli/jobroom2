@@ -40,7 +40,6 @@ script:
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:
-- "./gradlew bootWar publish -Pprod -Pgraphite -Pprometheus -x test --stacktrace"
 - chmod +x .travis/deploy.sh
 deploy:
 - provider: script
@@ -54,6 +53,11 @@ deploy:
   on:
     all_branches: true
     condition: "$TRAVIS_BRANCH =~ ^release.*$"
+- provider: script
+  skip_cleanup: true
+  script: "./gradlew bootJar publish -Pprod -Pgraphite -Pprometheus -Pversion=${TRAVIS_TAG} -x test --stacktrace"
+  on:
+    tags: true
 #Uncomment gatling task when at least one test exists
 #after_deploy:
 #- sleep 90 && baseURL=http://159.100.254.166:8080 ./gradlew -b e2e.gradle gatlingRunAll --stacktrace
