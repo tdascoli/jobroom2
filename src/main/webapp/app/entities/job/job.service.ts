@@ -34,7 +34,7 @@ export class JobService {
         });
     }
 
-    find(id: number): Observable<Job> {
+    find(id: string): Observable<any> {
         return this.http.get(`${this.resourceUrl}/${id}`).map((res: Response) => {
             const jsonResponse = res.json();
             this.convertItemFromServer(jsonResponse);

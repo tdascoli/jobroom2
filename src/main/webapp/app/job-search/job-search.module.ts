@@ -14,6 +14,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { jobSearchReducer } from './state-management/reducers/job-search.reducers';
 import { JobSearchEffects } from './state-management/effects/job-search.effects';
 import { JobSearchListComponent } from './job-search-list/job-search-list.component';
+import { JobDetailComponent } from './job-detail/job-detail.component';
 
 @NgModule({
     imports: [
@@ -31,6 +32,7 @@ import { JobSearchListComponent } from './job-search-list/job-search-list.compon
         JobSearchFilterComponent,
         JobSearchListItemComponent,
         JobSearchListComponent,
+        JobDetailComponent,
     ],
     providers: [
         customHttpProvider(),

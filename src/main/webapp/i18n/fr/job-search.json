@@ -2,10 +2,12 @@
     "job-search": {
         "job-search-list-item": {
             "badge": {
-                "permanent": "Unbefristet"
+                "permanent": "Unbefristet",
+                "nonPermanent": "Befristet"
             }
         },
         "job-search-list": {
+            "error-message": "Failed to load job result list!",
             "title": {
                 "none": {
                     "with-locality": "No {{query}} Jobs in {{locality}}",
@@ -19,16 +21,15 @@
                     "with-locality": "{{count}} {{query}} Jobs in {{locality}}",
                     "without-locality": "{{count}} {{query}} Jobs"
                 }
-            },
-            "error-message": "Failed to load job result list!"
+            }
         },
         "title": "Job search",
         "toolbar": {
-            "locality": {
-                "placeholder": "Ort, Region, Kanton"
-            },
             "locality-select": {
                 "tooltip": "Select my current location"
+            },
+            "locality": {
+                "placeholder": "Ort, Region, Kanton"
             },
             "occupation": {
                 "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"

@@ -200,20 +200,34 @@ ui bootstrap tweaks
 Style guide customization
 =================================================================================== */
 .header {
-    margin: 0;
-
     .toolbar {
         display: none;
     }
 }
 
-
 .header--with-toolbar {
     margin-bottom: 4rem;
-
     .toolbar {
         display: block;
     }
 }
+
+/* ########################################## */
+/* Will be fixed in a next styleguide release */
+
+html, body, jhi-main {
+    height: 100%;
+}
+
+jhi-main {
+    display: flex;
+    flex-direction: column;
+}
+
+jr2-job-detail {
+    flex: 1 0 auto;
+}
+
+/* ########################################## */
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
