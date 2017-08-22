@@ -28,6 +28,8 @@ import { AppRoutingModule } from './app.routing.module';
 import { JobSearchModule } from './job-search/job-search.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { DEBUG_INFO_ENABLED } from './app.constants';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
@@ -44,6 +46,7 @@ import { EffectsModule } from '@ngrx/effects';
         JobroomEntityModule,
         JobSearchModule,
         StoreModule.forRoot({}),
+        DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
         EffectsModule.forRoot([])
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
