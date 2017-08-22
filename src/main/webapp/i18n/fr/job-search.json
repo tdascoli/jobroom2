@@ -34,6 +34,9 @@
             "occupation": {
                 "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
             }
+        },
+        "filter": {
+            "workingtimepercentage": "Pensum"
         }
     },
     "typeahead-multiselect": {

@@ -172,6 +172,7 @@ job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Ort, R
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
 job-search,typeahead-multiselect.type.classification,Classification,Classification,Classification,Classification
 job-search,typeahead-multiselect.type.occupation,Occupation,Occupation,Occupation,Occupation
+job-search,job-search.filter.workingtimepercentage,Pensum,Pensum,Pensum,Pensum
 job-detail,job-detail.title,Job detail,Job detail,Job detail,Job detail
 job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
 job-detail,job-detail.onlineSince,Online since,Online since,Online since,Online since

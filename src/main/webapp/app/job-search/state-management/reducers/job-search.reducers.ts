@@ -7,7 +7,8 @@ import {
     JobSearchState,
     NAVIGATION_FINISHED,
     NEXT_PAGE_LOADED,
-    SHOW_JOB_LIST_ERROR_ACTION
+    SHOW_JOB_LIST_ERROR_ACTION,
+    FILTER_WORKINGTIMEPERCENTAGE_CHANGED
 } from '../index';
 import { LOCALITY_QUERY_UPDATED } from '../actions/job-search.actions';
 
@@ -51,6 +52,11 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
 
         case HIDE_JOB_LIST_ERROR_ACTION:
             newState = Object.assign({}, state, { jobSearchError: false });
+            break;
+
+        case FILTER_WORKINGTIMEPERCENTAGE_CHANGED:
+            const searchFilter = { workingtimepercentage: action.workingtimepercentage };
+            newState = Object.assign({}, state, { searchFilter });
             break;
 
         default:

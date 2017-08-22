@@ -18,7 +18,12 @@ export interface JobSearchQuery {
 }
 
 export interface JobSearchFilter {
+    workingtimepercentage: Workingtimepercentage;
+}
 
+export interface Workingtimepercentage {
+    min: number;
+    max: number;
 }
 
 export const initialState: JobSearchState = {
@@ -28,7 +33,9 @@ export const initialState: JobSearchState = {
         localityQuery: [],
         page: 0
     },
-    searchFilter: {},
+    searchFilter: {
+        workingtimepercentage: { min: 0, max: 100 }
+    },
     totalJobCount: 0,
     jobList: [],
     initialState: true,
@@ -42,3 +49,4 @@ export const getBaseQuery = createSelector(getJobSearchState, (state: JobSearchS
 export const getLocalityQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery.localityQuery);
 export const getJobSearchError = createSelector(getJobSearchState, (state: JobSearchState) => state.jobSearchError);
 export const getSearchFilter = createSelector(getJobSearchState, (state: JobSearchState) => state.searchFilter);
+export const getFilterWorkingtimepercentage = createSelector(getSearchFilter, (filter: JobSearchFilter) => filter.workingtimepercentage);
