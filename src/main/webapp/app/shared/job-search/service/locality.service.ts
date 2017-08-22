@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect/typeahead-multiselect-model';
@@ -8,10 +8,13 @@ import { Observer } from 'rxjs/Observer';
 
 const LOCALITIES_URL = 'referenceservice/api/_search/localities';
 
+export const NAVIGATOR_TOKEN = new InjectionToken<NavigatorGeolocation>('NavigatorGeolocation');
+
 @Injectable()
 export class LocalityService {
 
-    constructor(private http: Http) {
+    constructor(private http: Http,
+                @Inject(NAVIGATOR_TOKEN) private navigator: NavigatorGeolocation) {
     }
 
     fetchSuggestions(query: string): Observable<TypeaheadMultiselectModel[]> {
@@ -29,7 +32,7 @@ export class LocalityService {
                     .map((o: Locality) => o.city)
                     .reduce((result: Array<string>, current: string) =>
                         result.indexOf(current) > -1 ? result : [...result, current], [])
-                    .map((city: string) => new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, city, city, 1));
+                    .map((city: string) => new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, city, city, 0));
 
                 // Todo: We should add cantons and regions
 
@@ -53,15 +56,19 @@ export class LocalityService {
     getCurrentPosition(): Observable<GeoPoint> {
         return new Observable((observer: Observer<GeoPoint>) => {
             // Invokes getCurrentPosition method of Geolocation API.
-            navigator.geolocation.getCurrentPosition(
-                (position: Position) => {
-                    observer.next(position.coords);
-                    observer.complete();
-                },
-                (error: PositionError) => {
-                    observer.error(error);
-                }
-            );
+            if ('geolocation' in this.navigator) {
+                this.navigator.geolocation.getCurrentPosition(
+                    (position: Position) => {
+                        observer.next(position.coords);
+                        observer.complete();
+                    },
+                    (error: PositionError) => {
+                        observer.error(error);
+                    }
+                );
+            } else {
+                observer.error('Geolocation is not available!');
+            }
         });
     }
 
