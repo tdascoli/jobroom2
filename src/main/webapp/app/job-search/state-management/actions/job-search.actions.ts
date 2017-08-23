@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 import { Job } from '../../../entities/job/job.model';
 import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 import { RouterNavigationAction } from '@ngrx/router-store';
-import { Workingtimepercentage } from '../state/job-search.state';
+import { WorkingTime } from '../state/job-search.state';
 
 export const EXECUTE_SEARCH = 'EXECUTE_JOB_SEARCH';
 export const JOB_LIST_LOADED = 'JOB_LIST_LOADED';
@@ -14,7 +14,7 @@ export const LOCALITY_QUERY_UPDATED = 'LOCALITY_QUERY_UPDATED';
 export const LOAD_NEXT_PAGE = 'LOAD_NEXT_PAGE';
 export const NEXT_PAGE_LOADED = 'NEXT_PAGE_LOADED';
 export const NAVIGATION_FINISHED = 'NAVIGATION_FINISHED';
-export const FILTER_WORKINGTIMEPERCENTAGE_CHANGED = 'FILTER_WORKINGTIMEPERCENTAGE_CHANGED';
+export const FILTER_WORKINGTIME_CHANGED = 'FILTER_WORKINGTIME_CHANGED';
 
 export class ExecuteSearchAction implements Action {
     readonly type = EXECUTE_SEARCH;
@@ -85,10 +85,10 @@ export class NavigationFinishedAction implements Action {
     readonly type = NAVIGATION_FINISHED;
 }
 
-export class WorkingtimepercentageChangedAction implements Action {
-    readonly type = FILTER_WORKINGTIMEPERCENTAGE_CHANGED;
+export class WorkingTimeChangedAction implements Action {
+    readonly type = FILTER_WORKINGTIME_CHANGED;
 
-    constructor(public workingtimepercentage: Workingtimepercentage) {
+    constructor(public workingTime: WorkingTime) {
     }
 }
 
@@ -104,5 +104,5 @@ export type Actions =
     | NavigationFinishedAction
     | ShowJobListErrorAction
     | HideJobListErrorAction
-    | WorkingtimepercentageChangedAction
+    | WorkingTimeChangedAction
     ;

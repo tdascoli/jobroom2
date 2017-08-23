@@ -15,7 +15,7 @@ import { jobSearchReducer } from './state-management/reducers/job-search.reducer
 import { JobSearchEffects } from './state-management/effects/job-search.effects';
 import { JobSearchListComponent } from './job-search-list/job-search-list.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
-import { WorkingtimepercentageFilterComponent } from './job-search-filter/workingtimepercentage-filter/workingtimepercentage-filter.component';
+import { WorkingTimeFilterComponent } from './job-search-filter/working-time-filter/working-time-filter.component';
 
 @NgModule({
     imports: [
@@ -34,7 +34,7 @@ import { WorkingtimepercentageFilterComponent } from './job-search-filter/workin
         JobSearchListItemComponent,
         JobSearchListComponent,
         JobDetailComponent,
-        WorkingtimepercentageFilterComponent
+        WorkingTimeFilterComponent
     ],
     providers: [
         customHttpProvider(),

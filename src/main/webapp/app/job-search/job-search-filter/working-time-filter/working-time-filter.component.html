@@ -1,0 +1,10 @@
+<p class="text--line-height--h4">{{'job-search.filter.workingTime' | translate}}</p>
+<div class="form-group">
+    <select [ngModel]="min" (ngModelChange)="onChangeMin($event)" class="form-control form-control-sm" name="workingTimeMin" id="workingTimeMin">
+        <option *ngFor="let i of [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]" [value]="i" [disabled]="i > max">{{ i }} %</option>
+    </select>
+    -
+    <select [ngModel]="max" (ngModelChange)="onChangeMax($event)" class="form-control form-control-sm" name="workingTimeMax" id="workingTimeMax">
+        <option *ngFor="let i of [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]" [value]="i" [disabled]="i < min">{{ i }} %</option>
+    </select>
+</div>
