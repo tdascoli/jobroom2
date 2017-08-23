@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import {
@@ -13,9 +13,10 @@ import {
   templateUrl: './workingtimepercentage-filter.component.html',
   styleUrls: ['./workingtimepercentage-filter.component.scss']
 })
-export class WorkingtimepercentageFilterComponent implements OnInit {
+export class WorkingtimepercentageFilterComponent implements OnInit, OnDestroy {
 
   private workingtimepercentage$: Observable<Workingtimepercentage>;
+  private subscription: any;
   private min: number;
   private max: number;
 
@@ -24,12 +25,16 @@ export class WorkingtimepercentageFilterComponent implements OnInit {
   }
 
   ngOnInit() {
-      this.workingtimepercentage$.subscribe(
+      this.subscription = this.workingtimepercentage$.subscribe(
           (result) => {
               this.min = result.min;
               this.max = result.max;
           }
       );
+  }
+
+  ngOnDestroy() {
+      this.subscription.unsubscribe();
   }
 
   onChangeMin(newValue) {
