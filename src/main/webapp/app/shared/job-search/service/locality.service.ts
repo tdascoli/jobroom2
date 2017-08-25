@@ -2,8 +2,13 @@ import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect/typeahead-multiselect-model';
-import { Locality } from '../index';
-import { GeoPoint, LocalityInputType } from './locality';
+import {
+    CantonSuggestion,
+    GeoPoint,
+    LocalityAutocomplete,
+    LocalityInputType,
+    LocalitySuggestion
+} from './locality-autocomplete';
 import { Observer } from 'rxjs/Observer';
 
 const LOCALITIES_URL = 'referenceservice/api/_search/localities';
@@ -18,32 +23,32 @@ export class LocalityService {
                 @Inject(NAVIGATOR_TOKEN) private navigator: NavigatorGeolocation) {
     }
 
-    fetchSuggestions(query: string): Observable<TypeaheadMultiselectModel[]> {
+    fetchSuggestions(prefix: string): Observable<TypeaheadMultiselectModel[]> {
         const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
 
-        params.set('prefix', `${query}`);
+        params.set('prefix', `${prefix}`);
         params.set('resultSize', DEFAULT_RESPONSE_SIZE);
 
         return this.http.get(LOCALITIES_URL, options)
             .map((res: Response) => {
-                const jsonResponse = <Locality[]>res.json();
+                const jsonResponse = <LocalityAutocomplete>res.json();
 
-                const localities = jsonResponse
-                    .map((o: Locality) => o.city)
-                    .reduce((result: Array<string>, current: string) =>
-                        result.indexOf(current) > -1 ? result : [...result, current], [])
-                    .map((city: string) => new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, city, city, 0));
+                const localities = jsonResponse.localities
+                    .map((o: LocalitySuggestion) =>
+                        new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, String(o.communalCode), o.city, 0));
 
-                // Todo: We should add cantons and regions
+                const cantons = jsonResponse.cantons
+                    .map((o: CantonSuggestion) =>
+                        new TypeaheadMultiselectModel(LocalityInputType.CANTON, String(o.code), o.name + ' (' + o.code + ')', 0));
 
-                return [...localities];
+                return [...localities, ...cantons];
             })
             .catch(this.handleError);
     }
 
-    getNearestLocality(geoPoint: GeoPoint): Observable<Locality> {
+    getNearestLocality(geoPoint: GeoPoint): Observable<LocalitySuggestion> {
         const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
@@ -52,7 +57,7 @@ export class LocalityService {
         params.set('longitude', geoPoint.longitude.toString());
 
         return this.http.get(`${LOCALITIES_URL}/nearest`, options)
-            .map((res: Response) => <Locality>res.json());
+            .map((res: Response) => <LocalitySuggestion>res.json());
     }
 
     getCurrentPosition(): Observable<GeoPoint> {

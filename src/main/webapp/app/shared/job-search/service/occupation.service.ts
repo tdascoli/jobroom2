@@ -3,7 +3,11 @@ import { Observable } from 'rxjs/Rx';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect/typeahead-multiselect-model';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import { TranslateService } from '@ngx-translate/core';
-import { OccupationInputType, OccupationAutocomplete, OccupationSuggestion } from './occupation-autocomplete';
+import {
+    OccupationAutocomplete,
+    OccupationInputType,
+    OccupationSuggestion
+} from './occupation-autocomplete';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations/synonym';
@@ -20,7 +24,7 @@ export class OccupationService {
         options.params = params;
 
         params.set('prefix', query);
-        params.set('responseSize', DEFAULT_RESPONSE_SIZE);
+        params.set('resultSize', DEFAULT_RESPONSE_SIZE);
         params.set('language', this.translateService.currentLang);
 
         return this.http.get(SEARCH_URL, options)

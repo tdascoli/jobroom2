@@ -1,14 +1,14 @@
 import { Component, Input } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
-    Locality,
     LocalityService,
+    LocalitySuggestion,
     OccupationService,
     TypeaheadMultiselectModel
 } from '../../shared/job-search';
 import { Store } from '@ngrx/store';
 import { ExecuteSearchAction, JobSearchState } from '../state-management';
-import { LocalityInputType } from '../../shared/job-search/service/locality';
+import { LocalityInputType } from '../../shared/job-search/service/locality-autocomplete';
 
 @Component({
     selector: 'jr2-job-search-toolbar',
@@ -29,8 +29,8 @@ export class JobSearchToolbarComponent {
         this.store.dispatch(new ExecuteSearchAction(this.baseQueryModel, this.localityQueryModel));
     }
 
-    handleLocalitySelect(locality: Locality) {
-        // Todo: Research if this fits into the ngrx concept and find a better solution.
+    handleLocalitySelect(locality: LocalitySuggestion) {
+        // TODO: Research if this fits into the ngrx concept and find a better solution.
         const currentLocality = new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, locality.city, locality.city, 1);
         const exists = !!this.localityQueryModel.find((i: TypeaheadMultiselectModel) =>
             currentLocality.equals(i));

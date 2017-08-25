@@ -2,7 +2,7 @@ import { URLSearchParams } from '@angular/http';
 import { TypeaheadMultiselectModel } from '../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 import { OccupationInputType } from '../../shared/job-search/service/occupation-autocomplete';
 import { ITEMS_PER_PAGE } from '../../shared/constants/pagination.constants';
-import { LocalityInputType } from '../../shared/job-search/service/locality';
+import { LocalityInputType } from '../../shared/job-search/service/locality-autocomplete';
 
 export class JobSearchRequest {
 
@@ -24,9 +24,12 @@ export class JobSearchRequest {
 
         const localities = this.localityQuery
             .filter((value: TypeaheadMultiselectModel) => value.type === LocalityInputType.LOCALITY)
-            .map((value: TypeaheadMultiselectModel) => value.label);
+            .map((value: TypeaheadMultiselectModel) => value.code);
+        const cantons = this.localityQuery
+            .filter((value: TypeaheadMultiselectModel) => value.type === LocalityInputType.CANTON)
+            .map((value: TypeaheadMultiselectModel) => value.code);
+
         const regions = [];
-        const cantons = [];
 
         return {
             keywords,

@@ -7,3 +7,11 @@
 :host /deep/ .typeahead-multiselect__type-label--occupation {
     background-color: $additional-accent-green;
 }
+
+:host /deep/ .typeahead-multiselect__type-label--canton {
+    background-color: $main-accent-color-400;
+}
+
+:host /deep/ .typeahead-multiselect__type-label--locality {
+    background-color: $additional-accent-green;
+}

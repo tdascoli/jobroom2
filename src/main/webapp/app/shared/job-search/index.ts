@@ -1,5 +1,5 @@
 export * from './service/locality.service'
-export * from './service/locality'
+export * from './service/locality-autocomplete'
 export * from './service/occupation-autocomplete'
 export * from './service/occupation.service'
 export * from './job-search-shared.module'

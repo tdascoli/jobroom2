@@ -1,8 +1,8 @@
-import {fakeAsync, inject, TestBed, tick} from '@angular/core/testing';
-import {MockBackend} from '@angular/http/testing';
-import {TranslateService} from '@ngx-translate/core';
-import {Response, ResponseOptions} from '@angular/http';
-import {JobroomTestModule} from '../../../../test.module';
+import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
+import { MockBackend } from '@angular/http/testing';
+import { TranslateService } from '@ngx-translate/core';
+import { Response, ResponseOptions } from '@angular/http';
+import { JobroomTestModule } from '../../../../test.module';
 import {
     OccupationAutocomplete,
     OccupationInputType,
@@ -13,14 +13,14 @@ import arrayContaining = jasmine.arrayContaining;
 
 describe('OccupationService', () => {
 
-    const createJsonResponse = (obj: any) => new Response(new ResponseOptions({body: JSON.stringify(obj)}));
+    const createJsonResponse = (obj: any) => new Response(new ResponseOptions({ body: JSON.stringify(obj) }));
 
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [JobroomTestModule],
             providers: [
                 OccupationService,
-                {provide: TranslateService, useValue: {currentLang: 'de'}}
+                { provide: TranslateService, useValue: { currentLang: 'de' } }
             ]
         });
     });
@@ -42,7 +42,7 @@ describe('OccupationService', () => {
                 const urlArray = lastConnection.request.url.split(/[?&]/);
                 expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/occupations/synonym']));
                 expect(urlArray).toEqual(arrayContaining(['prefix=info']));
-                expect(urlArray).toEqual(arrayContaining(['responseSize=10']));
+                expect(urlArray).toEqual(arrayContaining(['resultSize=10']));
                 expect(urlArray).toEqual(arrayContaining(['language=de']));
             }));
 
@@ -51,12 +51,12 @@ describe('OccupationService', () => {
                 // GIVEN
                 const suggestResponse: OccupationAutocomplete = {
                     occupations: [
-                        {code: '00', name: 'Informatiker'},
-                        {code: '01', name: 'Bioinformatiker'},
-                        {code: '02', name: 'Wirtschaftinformatiker'},
+                        { code: '00', name: 'Informatiker' },
+                        { code: '01', name: 'Bioinformatiker' },
+                        { code: '02', name: 'Wirtschaftinformatiker' },
                     ],
                     classifications: [
-                        {code: '10', name: 'Berufe der Informatik'}
+                        { code: '10', name: 'Berufe der Informatik' }
                     ]
                 };
 

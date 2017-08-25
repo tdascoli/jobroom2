@@ -7,7 +7,7 @@ import {
     Output,
 } from '@angular/core';
 import { LocalityService } from '../service/locality.service';
-import { GeoPoint, Locality } from '../service/locality';
+import { GeoPoint, LocalitySuggestion } from '../service/locality-autocomplete';
 
 @Component({
     selector: 'jr2-geo-location-select',
@@ -17,9 +17,8 @@ import { GeoPoint, Locality } from '../service/locality';
 export class GeoLocationSelectComponent implements OnInit {
     private geoPoint: GeoPoint;
     private loading = false;
-    private lastLocality: Locality;
-
-    @Output() localitySelect = new EventEmitter<Locality>();
+    @Output() localitySelect = new EventEmitter<LocalitySuggestion>();
+    private lastLocality: LocalitySuggestion;
     @Input() tooltip;
 
     constructor(private localityService: LocalityService,
@@ -42,7 +41,7 @@ export class GeoLocationSelectComponent implements OnInit {
             this.loading = true;
             setTimeout(() => {
                 this.localityService.getNearestLocality(this.geoPoint)
-                    .subscribe((locality: Locality) => {
+                    .subscribe((locality: LocalitySuggestion) => {
                         this.localitySelect.emit(locality);
                         this.lastLocality = locality;
                         this.loading = false;

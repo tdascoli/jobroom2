@@ -42,7 +42,9 @@
     "typeahead-multiselect": {
         "type": {
             "classification": "Classification",
-            "occupation": "Occupation"
+            "occupation": "Occupation",
+            "canton": "Kanton",
+            "locality": "Ortschaft"
         }
     }
 }

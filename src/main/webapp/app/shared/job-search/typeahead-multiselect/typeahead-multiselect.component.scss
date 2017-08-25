@@ -14,6 +14,8 @@
         width: 385px;
     }
 
+    //TODO make colors customizable
+
     .typeahead-multiselect__tag--classification {
         background-color: $main-accent-color-400;
         border-color: $main-accent-color-400;
@@ -27,6 +29,16 @@
     .typeahead-multiselect__tag--free-text {
         background-color: $additional-accent-amber;
         border-color: $additional-accent-amber;
+    }
+
+    .typeahead-multiselect__tag--canton {
+        background-color: $main-accent-color-400;
+        border-color: $main-accent-color-400;
+    }
+
+    .typeahead-multiselect__tag--locality {
+        background-color: $additional-accent-green;
+        border-color: $additional-accent-green;
     }
 
     .typeahead-multiselect__tag {

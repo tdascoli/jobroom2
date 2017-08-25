@@ -4,9 +4,9 @@ import { LocalityService } from '../../../../../../../main/webapp/app/shared/ind
 import { MockBackend } from '@angular/http/testing';
 import {
     GeoPoint,
-    Locality,
+    LocalityAutocomplete,
     LocalityInputType
-} from '../../../../../../../main/webapp/app/shared/job-search/service/locality';
+} from '../../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 import { Response, ResponseOptions } from '@angular/http';
 import { NAVIGATOR_TOKEN } from '../../../../../../../main/webapp/app/shared/job-search/service/locality.service';
@@ -43,40 +43,28 @@ describe('LocalityService', () => {
                 const urlArray = lastConnection.request.url.split(/[?&]/);
                 expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/localities']));
                 expect(urlArray).toEqual(arrayContaining(['prefix=ber']));
-                expect(urlArray).toEqual(arrayContaining(['resultSize=10']));
             }));
 
         it('should map the response Locality list without duplicates to an array of TypeaheadMultiselectModel',
             inject([LocalityService], (service: LocalityService) => {
                 // GIVEN
-                const suggestResponse: Array<Locality> = [
-                    {
-                        city: 'Bern',
-                        zipCode: '3004',
-                        communalCode: 351,
-                        cantonCode: 'BE',
-                        geoPoint: { latitude: 0, longitude: 0 }
-                    }, {
-                        city: 'Bern',
-                        zipCode: '3005',
-                        communalCode: 351,
-                        cantonCode: 'BE',
-                        geoPoint: { latitude: 0, longitude: 0 }
-                    }, {
-                        city: 'Bern',
-                        zipCode: '3006',
-                        communalCode: 351,
-                        cantonCode: 'BE',
-                        geoPoint: { latitude: 0, longitude: 0 }
-                    },
-                    {
-                        city: 'Bertschikon (Gossau ZH)',
-                        zipCode: '8614',
-                        communalCode: 115,
-                        cantonCode: 'ZH',
-                        geoPoint: { latitude: 0, longitude: 0 }
-                    }
-                ];
+                const suggestResponse: LocalityAutocomplete = {
+                    localities: [
+                        {
+                            city: 'Bern',
+                            communalCode: 351,
+                            cantonCode: 'BE'
+                        }, {
+                            city: 'Bertschikon (Gossau ZH)',
+                            communalCode: 115,
+                            cantonCode: 'ZH'
+                        }
+                    ],
+                    cantons: [{
+                        code: 'BE',
+                        name: 'Bern / Berne'
+                    }]
+                };
 
                 // WHEN
                 let model: Array<TypeaheadMultiselectModel>;
@@ -84,14 +72,17 @@ describe('LocalityService', () => {
                 lastConnection.mockRespond(createJsonResponse(suggestResponse));
 
                 // THEN
-                expect(model.length).toEqual(2);
+                expect(model.length).toEqual(3);
                 expect(model).toEqual([
-                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, 'Bern', 'Bern', 0),
-                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, 'Bertschikon (Gossau ZH)', 'Bertschikon (Gossau ZH)', 0),
+                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '351', 'Bern', 0),
+                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '115', 'Bertschikon (Gossau ZH)', 0),
+                    new TypeaheadMultiselectModel(LocalityInputType.CANTON, 'BE', 'Bern / Berne (BE)', 0),
                 ]);
 
-            }));
-    });
+            })
+        );
+    })
+    ;
 
     describe('getNearestLocality', () => {
         let lastConnection;
@@ -162,4 +153,5 @@ describe('LocalityService', () => {
             latitude: 202
         });
     }));
-});
+})
+;
