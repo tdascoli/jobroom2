@@ -7,6 +7,7 @@ import { GeoPoint, LocalityInputType } from './locality';
 import { Observer } from 'rxjs/Observer';
 
 const LOCALITIES_URL = 'referenceservice/api/_search/localities';
+const DEFAULT_RESPONSE_SIZE = '10';
 
 export const NAVIGATOR_TOKEN = new InjectionToken<NavigatorGeolocation>('NavigatorGeolocation');
 
@@ -22,7 +23,8 @@ export class LocalityService {
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
 
-        params.set('query', `${query}*`);
+        params.set('prefix', `${query}`);
+        params.set('resultSize', DEFAULT_RESPONSE_SIZE);
 
         return this.http.get(LOCALITIES_URL, options)
             .map((res: Response) => {
