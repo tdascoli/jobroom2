@@ -1,13 +1,15 @@
 import { jobSearchReducer } from '../../../../../../../main/webapp/app/job-search/state-management/reducers/job-search.reducers';
 import {
+    ContractType,
     initialState,
+    JobSearchFilter,
+    JobSearchQuery,
     JobSearchState
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 
 describe('jobSearchReducer', () => {
-
     it('should not change state for undefined action', () => {
         // GIVEN
         const state = initialState;
@@ -20,23 +22,48 @@ describe('jobSearchReducer', () => {
         expect(newState).toEqual(state);
     });
 
-    it('should update query model for BASE_QUERY_UPDATED action', () => {
+    it('should update JobSearchState for TOOLBAR_CHANGED action', () => {
         // GIVEN
         const state = initialState;
-        const baseQueryModel = [new TypeaheadMultiselectModel('classification', 'c1', 'C1'),
-            new TypeaheadMultiselectModel('occupation', 'o1', 'O1'),
-            new TypeaheadMultiselectModel('free-text', 'q1', 'q1')];
-        const action = new actions.BaseQueryUpdatedAction(baseQueryModel);
+        const searchQuery: JobSearchQuery = {
+            baseQuery: [
+                new TypeaheadMultiselectModel('classification', 'c1', 'C1'),
+                new TypeaheadMultiselectModel('occupation', 'o1', 'O1'),
+                new TypeaheadMultiselectModel('free-text', 'q1', 'q1')
+            ],
+            localityQuery: []
+        };
+        const action = new actions.ToolbarChangedAction(searchQuery);
 
         // WHEN
         const newState = jobSearchReducer(state, action);
 
         // THEN
-        expect(newState.searchQuery.baseQuery).toEqual(baseQueryModel);
-        verifyUnchanged(newState, state, ['searchQuery']);
+        expect(newState.searchQuery).toEqual(searchQuery);
+        expect(newState.loading).toBeTruthy();
+        verifyUnchanged(newState, state, ['loading', 'searchQuery']);
     });
 
-    it('should update query model for JOB_LIST_LOADED action', () => {
+    it('should update JobSearchState for FILTER_CHANGED action', () => {
+        // GIVEN
+        const state = initialState;
+        const searchFilter: JobSearchFilter = {
+            contractType: ContractType.Permanent,
+            sort: {},
+            workingTime: [80, 100]
+        };
+        const action = new actions.FilterChangedAction(searchFilter);
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchFilter).toEqual(searchFilter);
+        expect(newState.loading).toBeTruthy();
+        verifyUnchanged(newState, state, ['searchFilter', 'loading']);
+    });
+
+    it('should update JobSearchState for JOB_LIST_LOADED action', () => {
         // GIVEN
         const state = initialState;
         const jobList = [
@@ -44,7 +71,11 @@ describe('jobSearchReducer', () => {
             { id: 1, title: 'title-1' },
             { id: 2, title: 'title-2' }
         ];
-        const action = new actions.JobListLoadedAction(jobList, 100);
+        const action = new actions.JobListLoadedAction({
+            jobList,
+            totalCount: 100,
+            page: 1
+        });
 
         // WHEN
         const newState = jobSearchReducer(state, action);
@@ -52,10 +83,20 @@ describe('jobSearchReducer', () => {
         // THEN
         expect(newState.jobList).toEqual(jobList);
         expect(newState.totalJobCount).toEqual(100);
-        verifyUnchanged(newState, state, ['jobList', 'totalJobCount']);
+        expect(newState.page).toEqual(1);
+        expect(newState.initialState).toBeFalsy();
+        expect(newState.loading).toBeFalsy();
+
+        verifyUnchanged(newState, state, [
+            'jobList',
+            'totalJobCount',
+            'page',
+            'initialState',
+            'loading'
+        ]);
     });
 
-    it('should update query model for NEXT_PAGE_LOADED action', () => {
+    it('should update JobSearchState for NEXT_PAGE_LOADED action', () => {
         // GIVEN
         const state = initialState;
         const initialJobList = [
@@ -79,8 +120,47 @@ describe('jobSearchReducer', () => {
 
         // THEN
         expect(newState.jobList).toEqual([...initialJobList, ...jobList]);
-        expect(newState.searchQuery.page).toEqual(1);
-        verifyUnchanged(newState, state, ['jobList', 'searchQuery']);
+        verifyUnchanged(newState, state, ['jobList']);
+    });
+
+    it('should update JobSearchState for SHOW_JOB_LIST_ERROR action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, { loading: true });
+        const action = new actions.ShowJobListErrorAction('some error');
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchError).toBeTruthy();
+        expect(newState.loading).toBeFalsy();
+        verifyUnchanged(newState, state, ['searchError', 'loading']);
+    });
+
+    it('should update JobSearchState for HIDE_JOB_LIST_ERROR action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, { searchError: true });
+        const action = new actions.HideJobListErrorAction();
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchError).toBeFalsy();
+        verifyUnchanged(newState, state, ['searchError']);
+    });
+
+    it('should update JobSearchState for LOAD_NEXT_PAGE action', () => {
+        // GIVEN
+        const state = initialState;
+        const action = new actions.LoadNextPageAction();
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.page).toEqual(1);
+        verifyUnchanged(newState, state, ['page']);
     });
 });
 

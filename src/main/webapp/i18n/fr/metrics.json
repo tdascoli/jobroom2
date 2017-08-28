@@ -65,7 +65,7 @@
                     "blockedcount": "Nb fois bloqu\u00e9",
                     "blockedtime": "Temps bloqu\u00e9",
                     "hide": "Cacher",
-                    "id": "Id :",
+                    "id": "Id:",
                     "lockname": "Nom du process bloquant",
                     "show": "Afficher",
                     "stacktrace": "Stacktrace",

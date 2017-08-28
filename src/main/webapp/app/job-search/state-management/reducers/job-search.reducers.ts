@@ -1,62 +1,55 @@
+import { initialState, JobSearchState } from '../state/job-search.state';
 import {
     Actions,
-    BASE_QUERY_UPDATED,
-    HIDE_JOB_LIST_ERROR_ACTION,
-    initialState,
+    FILTER_CHANGED,
+    HIDE_JOB_LIST_ERROR,
     JOB_LIST_LOADED,
-    JobSearchState,
-    NAVIGATION_FINISHED,
+    LOAD_NEXT_PAGE,
     NEXT_PAGE_LOADED,
-    SHOW_JOB_LIST_ERROR_ACTION,
-    FILTER_WORKINGTIME_CHANGED
-} from '../index';
-import { LOCALITY_QUERY_UPDATED } from '../actions/job-search.actions';
+    SHOW_JOB_LIST_ERROR,
+    TOOLBAR_CHANGED
+} from '../actions/job-search.actions';
 
 export function jobSearchReducer(state = initialState, action: Actions): JobSearchState {
     let newState;
     switch (action.type) {
+        case TOOLBAR_CHANGED:
+            const searchQuery = Object.assign({}, action.payload);
+            newState = Object.assign({}, state, { searchQuery }, { loading: true });
+            break;
+
+        case FILTER_CHANGED:
+            const searchFilter = Object.assign({}, action.payload);
+            newState = Object.assign({}, state, { searchFilter }, { loading: true });
+            break;
+
         case JOB_LIST_LOADED:
             newState = Object.assign({}, state, {
-                jobList: [...action.jobList],
-                totalJobCount: action.totalCount,
-                jobSearchError: false,
+                jobList: [...action.payload.jobList],
+                totalJobCount: action.payload.totalCount,
+                searchError: false,
+                page: action.payload.page,
+                initialState: false,
+                loading: false
             });
             break;
 
-        case BASE_QUERY_UPDATED:
-            const searchQuery = Object.assign({}, state.searchQuery, { baseQuery: [...action.baseQuery] });
-            newState = Object.assign({}, state, { searchQuery });
-            break;
-
-        case LOCALITY_QUERY_UPDATED:
-            // FIXME(birom): Clean up this
-            const searchQuery1 = Object.assign({}, state.searchQuery, { localityQuery: [...action.localityQuery] });
-            newState = Object.assign({}, state, { searchQuery: searchQuery1 });
-            break;
-
         case NEXT_PAGE_LOADED:
-            const nextPageQuery = Object.assign({}, state.searchQuery, { page: state.searchQuery.page + 1 });
-
             newState = Object.assign({}, state, {
-                jobList: [...state.jobList, ...action.jobList]
-            }, { searchQuery: nextPageQuery });
+                jobList: [...state.jobList, ...action.payload]
+            });
             break;
 
-        case NAVIGATION_FINISHED:
-            newState = Object.assign({}, state, { initialState: false });
+        case SHOW_JOB_LIST_ERROR:
+            newState = Object.assign({}, state, { searchError: true }, { loading: false });
             break;
 
-        case SHOW_JOB_LIST_ERROR_ACTION:
-            newState = Object.assign({}, state, { jobSearchError: true });
+        case HIDE_JOB_LIST_ERROR:
+            newState = Object.assign({}, state, { searchError: false });
             break;
 
-        case HIDE_JOB_LIST_ERROR_ACTION:
-            newState = Object.assign({}, state, { jobSearchError: false });
-            break;
-
-        case FILTER_WORKINGTIME_CHANGED:
-            const searchFilter = { workingTime: action.workingTime };
-            newState = Object.assign({}, state, { searchFilter });
+        case LOAD_NEXT_PAGE:
+            newState = Object.assign({}, state, { page: state.page + 1 });
             break;
 
         default:

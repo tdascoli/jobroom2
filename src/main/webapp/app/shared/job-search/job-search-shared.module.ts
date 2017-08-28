@@ -4,8 +4,10 @@ import { TypeaheadMultiselectComponent } from './typeahead-multiselect/typeahead
 import { JobroomSharedLibsModule } from '../shared-libs.module';
 import { LocalityService, NAVIGATOR_TOKEN } from './service/locality.service';
 import { GeoLocationSelectComponent } from './geo-location-select/geo-location-select.component';
+import { RangeInputComponent } from './range-input/range-input.component';
 
 declare const navigator: NavigatorGeolocation;
+
 export function navigatorFactory(): NavigatorGeolocation {
     return navigator;
 }
@@ -16,11 +18,13 @@ export function navigatorFactory(): NavigatorGeolocation {
     ],
     exports: [
         TypeaheadMultiselectComponent,
-        GeoLocationSelectComponent
+        GeoLocationSelectComponent,
+        RangeInputComponent
     ],
     declarations: [
         TypeaheadMultiselectComponent,
-        GeoLocationSelectComponent
+        GeoLocationSelectComponent,
+        RangeInputComponent
     ],
     providers: [
         OccupationService,

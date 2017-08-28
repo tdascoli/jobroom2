@@ -1,9 +1,21 @@
 {
     "job-search": {
+        "filter": {
+            "contract-type": {
+                "option": {
+                    "all": "Alle",
+                    "permanent": "Unbefristet",
+                    "temporary": "Befristet"
+                },
+                "title": "Vertragsart"
+            },
+            "title": "Suchergebnisse filtern",
+            "workingTime": "Pensum"
+        },
         "job-search-list-item": {
             "badge": {
                 "permanent": "Unbefristet",
-                "nonPermanent": "Befristet"
+                "temporary": "Befristet"
             }
         },
         "job-search-list": {
@@ -34,17 +46,14 @@
             "occupation": {
                 "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
             }
-        },
-        "filter": {
-            "workingTime": "Pensum"
         }
     },
     "typeahead-multiselect": {
         "type": {
-            "classification": "Classification",
-            "occupation": "Occupation",
             "canton": "Canton",
-            "locality": "Ortschaft"
+            "classification": "Classification",
+            "locality": "Ortschaft",
+            "occupation": "Occupation"
         }
     }
 }

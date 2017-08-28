@@ -1,15 +1,14 @@
-<jr2-job-search-toolbar jhiStickyToolbarItem [total]="totalCount$ | async"
-                        [baseQueryModel]="baseQueryModel$ | async"
-                        [localityQueryModel]="localityQueryModel$ | async"></jr2-job-search-toolbar>
+<jr2-job-search-toolbar [total]="totalCount$ | async"
+                        [searchQuery]="searchQuery$ | async"
+                        [loading]="loading$ | async"
+                        jhiStickyToolbarItem></jr2-job-search-toolbar>
 
 <div class="container">
 
     <div class="base">
 
         <div class="base__subnavbar">
-
-            <jr2-job-search-filter></jr2-job-search-filter>
-
+            <jr2-job-search-sidebar></jr2-job-search-sidebar>
         </div>
 
         <div class="base__content--wide">

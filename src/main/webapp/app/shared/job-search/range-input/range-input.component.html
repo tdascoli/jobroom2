@@ -1,0 +1,9 @@
+<div class="form-group">
+    <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control form-control-sm" name="workingTimeMin" id="workingTimeMin">
+        <option *ngFor="let i of options" [value]="i" [disabled]="i > range[1]">{{ i }} %</option>
+    </select>
+    -
+    <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)" class="form-control form-control-sm" name="workingTimeMax" id="workingTimeMax">
+        <option *ngFor="let i of options" [value]="i" [disabled]="i < range[0]">{{ i }} %</option>
+    </select>
+</div>

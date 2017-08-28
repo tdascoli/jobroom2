@@ -1,69 +1,26 @@
 import { Action } from '@ngrx/store';
+import { JobSearchFilter, JobSearchQuery } from '../state/job-search.state';
 import { Job } from '../../../entities/job/job.model';
-import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
-import { RouterNavigationAction } from '@ngrx/router-store';
-import { WorkingTime } from '../state/job-search.state';
 
-export const EXECUTE_SEARCH = 'EXECUTE_JOB_SEARCH';
-export const JOB_LIST_LOADED = 'JOB_LIST_LOADED';
-export const LOAD_JOB_LIST = 'LOAD_JOB_LIST';
-export const SHOW_JOB_LIST_ERROR_ACTION = 'SHOW_JOB_LIST_ERROR_ACTION';
-export const HIDE_JOB_LIST_ERROR_ACTION = 'HIDE_JOB_LIST_ERROR_ACTION';
-export const BASE_QUERY_UPDATED = 'BASE_QUERY_UPDATED';
-export const LOCALITY_QUERY_UPDATED = 'LOCALITY_QUERY_UPDATED';
 export const LOAD_NEXT_PAGE = 'LOAD_NEXT_PAGE';
+export const JOB_LIST_LOADED = 'JOB_LIST_LOADED';
 export const NEXT_PAGE_LOADED = 'NEXT_PAGE_LOADED';
-export const NAVIGATION_FINISHED = 'NAVIGATION_FINISHED';
-export const FILTER_WORKINGTIME_CHANGED = 'FILTER_WORKINGTIME_CHANGED';
+export const SHOW_JOB_LIST_ERROR = 'SHOW_JOB_LIST_ERROR';
+export const HIDE_JOB_LIST_ERROR = 'HIDE_JOB_LIST_ERROR';
+export const FILTER_CHANGED = 'FILTER_CHANGED';
+export const TOOLBAR_CHANGED = 'TOOLBAR_CHANGED';
 
-export class ExecuteSearchAction implements Action {
-    readonly type = EXECUTE_SEARCH;
+export class ToolbarChangedAction implements Action {
+    readonly type = TOOLBAR_CHANGED;
 
-    constructor(public baseQuery: Array<TypeaheadMultiselectModel>, public localityQuery: Array<TypeaheadMultiselectModel>) {
+    constructor(public payload: JobSearchQuery) {
     }
 }
 
-// Todo: Do we need two separate actions for the query update?
-// Review this during https://alv-ch.atlassian.net/browse/JR2-38
-export class BaseQueryUpdatedAction implements Action {
-    readonly type = BASE_QUERY_UPDATED;
+export class FilterChangedAction implements Action {
+    readonly type = FILTER_CHANGED;
 
-    constructor(public baseQuery: Array<TypeaheadMultiselectModel>) {
-    }
-}
-
-export class LocalityQueryUpdatedAction implements Action {
-    readonly type = LOCALITY_QUERY_UPDATED;
-
-    constructor(public localityQuery: Array<TypeaheadMultiselectModel>) {
-    }
-}
-
-export class LoadJobListAction implements Action {
-    readonly type = LOAD_JOB_LIST;
-
-    constructor(public baseQuery: Array<TypeaheadMultiselectModel>, public localityQuery: Array<TypeaheadMultiselectModel>) {
-    }
-}
-
-export class JobListLoadedAction implements Action {
-    readonly type = JOB_LIST_LOADED;
-
-    constructor(public jobList: Array<Job>, public totalCount: number) {
-    }
-}
-
-export class ShowJobListErrorAction implements Action {
-    readonly type = SHOW_JOB_LIST_ERROR_ACTION;
-
-    constructor(error: any) {
-    }
-}
-
-export class HideJobListErrorAction implements Action {
-    readonly type = HIDE_JOB_LIST_ERROR_ACTION;
-
-    constructor() {
+    constructor(public payload: JobSearchFilter) {
     }
 }
 
@@ -74,35 +31,40 @@ export class LoadNextPageAction implements Action {
     }
 }
 
-export class NextPageLoadedAction implements Action {
-    readonly type = NEXT_PAGE_LOADED;
+export class JobListLoadedAction implements Action {
+    readonly type = JOB_LIST_LOADED;
 
-    constructor(public jobList: Array<Job>) {
+    constructor(public payload: { jobList: Array<Job>, totalCount: number, page: number}) {
     }
 }
 
-export class NavigationFinishedAction implements Action {
-    readonly type = NAVIGATION_FINISHED;
+export class NextPageLoadedAction implements Action {
+    readonly type = NEXT_PAGE_LOADED;
+
+    constructor(public payload: Array<Job>) {
+    }
 }
 
-export class WorkingTimeChangedAction implements Action {
-    readonly type = FILTER_WORKINGTIME_CHANGED;
+export class ShowJobListErrorAction implements Action {
+    readonly type = SHOW_JOB_LIST_ERROR;
 
-    constructor(public workingTime: WorkingTime) {
+    constructor(public error: any) {
+    }
+}
+
+export class HideJobListErrorAction implements Action {
+    readonly type = HIDE_JOB_LIST_ERROR;
+
+    constructor() {
     }
 }
 
 export type Actions =
-    | ExecuteSearchAction
-    | LoadJobListAction
-    | JobListLoadedAction
-    | RouterNavigationAction
-    | BaseQueryUpdatedAction
-    | LocalityQueryUpdatedAction
+    | ToolbarChangedAction
+    | FilterChangedAction
     | LoadNextPageAction
+    | JobListLoadedAction
     | NextPageLoadedAction
-    | NavigationFinishedAction
     | ShowJobListErrorAction
     | HideJobListErrorAction
-    | WorkingTimeChangedAction
     ;

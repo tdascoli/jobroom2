@@ -1,0 +1,20 @@
+<p class="text--line-height--h3">{{'job-search.filter.title' | translate}}</p>
+
+<form [formGroup]="filterForm" novalidate>
+    <p class="text--line-height--h4">{{'job-search.filter.contract-type.title' | translate}}</p>
+
+    <div class="form-group">
+        <select class="form-control-sm custom-select" formControlName="contractType">
+            <option *ngFor="let option of contractTypeOptions" [ngValue]="option.value">
+                {{'job-search.filter.contract-type.option.'+ uncapFirst(option.name) | translate}}
+            </option>
+        </select>
+    </div>
+
+    <p class="text--line-height--h4">{{'job-search.filter.workingTime' | translate}}</p>
+    <div class="form-group">
+        <jr2-range-input formControlName="workingTime"
+                                 [min]="0" [max]="100"
+                                 [step]="10"></jr2-range-input>
+    </div>
+</form>

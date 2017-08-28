@@ -65,7 +65,7 @@
                     "blockedcount": "Geblockte Zahl",
                     "blockedtime": "Geblockte Zeit",
                     "hide": "Verstecken",
-                    "id": "Id: ",
+                    "id": "Id:",
                     "lockname": "Lock-Name",
                     "show": "Zeigen",
                     "stacktrace": "Stacktrace",

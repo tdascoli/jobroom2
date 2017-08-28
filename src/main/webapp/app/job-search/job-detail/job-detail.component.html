@@ -50,7 +50,7 @@
                 <!-- Badge names will be fixed in a next styleguide release -->
                 <span *ngIf="job.workingTimePercentageMin && job.workingTimePercentageMax" class="badge badge-experience">{{ job?.workingTimePercentageMin }} - {{ job?.workingTimePercentageMax }}</span>
                 <span *ngIf="job.permanent" class="badge badge-contract">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
-                <span *ngIf="!job.permanent" class="badge badge-contract">{{'job-search.job-search-list-item.badge.nonPermanent' | translate}}</span>
+                <span *ngIf="!job.permanent" class="badge badge-contract">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
                 <!-- ####################### -->
             </div>
 

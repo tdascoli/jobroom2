@@ -65,7 +65,7 @@
                     "blockedcount": "Blocked Count",
                     "blockedtime": "Blocked Time",
                     "hide": "Hide Stacktrace",
-                    "id": "Id: ",
+                    "id": "Id:",
                     "lockname": "Lock name",
                     "show": "Show Stacktrace",
                     "stacktrace": "Stacktrace",

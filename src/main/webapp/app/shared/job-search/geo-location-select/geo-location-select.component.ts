@@ -45,8 +45,10 @@ export class GeoLocationSelectComponent implements OnInit {
                         this.localitySelect.emit(locality);
                         this.lastLocality = locality;
                         this.loading = false;
+                        this.changeDetectorRef.markForCheck();
                     }, (error: any) => {
                         this.loading = false;
+                        this.changeDetectorRef.markForCheck();
                     });
             }, 500);
         }

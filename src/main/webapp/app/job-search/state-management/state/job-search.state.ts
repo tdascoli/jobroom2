@@ -2,41 +2,58 @@ import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-
 import { Job } from '../../../entities/job/job.model';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
+export enum ContractType {
+    All,
+    Temporary,
+    Permanent,
+}
+
+export enum Order {
+    Asc,
+    Desc
+}
+
 export interface JobSearchState {
-    jobSearchError: boolean;
+    loading: boolean;
+    searchError: boolean;
     searchQuery: JobSearchQuery;
     searchFilter: JobSearchFilter;
     jobList: Array<Job>;
     totalJobCount: number;
     initialState: boolean;
+    page: number;
+}
+
+export interface Sort {
+    field?: string;
+    order?: Order;
 }
 
 export interface JobSearchQuery {
     baseQuery: Array<TypeaheadMultiselectModel>;
     localityQuery: Array<TypeaheadMultiselectModel>;
-    page: number;
 }
 
 export interface JobSearchFilter {
-    workingTime: WorkingTime;
-}
-
-export interface WorkingTime {
-    min: number;
-    max: number;
+    sort: Sort;
+    contractType: ContractType;
+    workingTime: [number, number];
 }
 
 export const initialState: JobSearchState = {
-    jobSearchError: false,
+    loading: false,
+    searchError: false,
     searchQuery: {
         baseQuery: [],
-        localityQuery: [],
-        page: 0
+        localityQuery: []
     },
     searchFilter: {
-        workingTime: { min: 0, max: 100 }
+        sort: {},
+        contractType: ContractType.All,
+        workingTime: [0, 100]
     },
     totalJobCount: 0,
+    page: 0,
     jobList: [],
     initialState: true,
 };
@@ -45,8 +62,10 @@ export const getJobSearchState = createFeatureSelector<JobSearchState>('jobSearc
 export const getTotalJobCount = createSelector(getJobSearchState, (state: JobSearchState) => state.totalJobCount);
 export const getJobList = createSelector(getJobSearchState, (state: JobSearchState) => state.jobList);
 export const getSearchQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery);
-export const getBaseQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery.baseQuery);
-export const getLocalityQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery.localityQuery);
-export const getJobSearchError = createSelector(getJobSearchState, (state: JobSearchState) => state.jobSearchError);
+export const getBaseQuery = createSelector(getSearchQuery, (searchQuery: JobSearchQuery) => searchQuery.baseQuery);
+export const getLocalityQuery = createSelector(getSearchQuery, (searchQuery: JobSearchQuery) => searchQuery.localityQuery);
+export const getSearchError = createSelector(getJobSearchState, (state: JobSearchState) => state.searchError);
 export const getSearchFilter = createSelector(getJobSearchState, (state: JobSearchState) => state.searchFilter);
+export const getContractType = createSelector(getSearchFilter, (filter: JobSearchFilter) => filter.contractType);
 export const getFilterWorkingTime = createSelector(getSearchFilter, (filter: JobSearchFilter) => filter.workingTime);
+export const getLoading = createSelector(getJobSearchState, (state: JobSearchState) => state.loading);

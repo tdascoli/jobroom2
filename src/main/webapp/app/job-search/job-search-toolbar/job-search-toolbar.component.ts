@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
     LocalityService,
@@ -7,7 +7,10 @@ import {
     TypeaheadMultiselectModel
 } from '../../shared/job-search';
 import { Store } from '@ngrx/store';
-import { ExecuteSearchAction, JobSearchState } from '../state-management';
+import { JobSearchState, ToolbarChangedAction } from '../state-management';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import { JobSearchQuery } from '../state-management/state/job-search.state';
+import { Subscription } from 'rxjs/Subscription';
 import { LocalityInputType } from '../../shared/job-search/service/locality-autocomplete';
 
 @Component({
@@ -15,28 +18,47 @@ import { LocalityInputType } from '../../shared/job-search/service/locality-auto
     templateUrl: './job-search-toolbar.component.html',
     styleUrls: ['./job-search-toolbar.component.scss']
 })
-export class JobSearchToolbarComponent {
+export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     @Input() total: number;
-    @Input() baseQueryModel: Array<TypeaheadMultiselectModel>;
-    @Input() localityQueryModel: Array<TypeaheadMultiselectModel>;
+    @Input() loading: boolean;
+    @Input() searchQuery: JobSearchQuery;
+
+    toolbarForm: FormGroup;
+
+    private subscription: Subscription;
 
     constructor(private occupationService: OccupationService,
                 private localityService: LocalityService,
-                private store: Store<JobSearchState>) {
+                private store: Store<JobSearchState>,
+                private fb: FormBuilder) {
     }
 
-    search() {
-        this.store.dispatch(new ExecuteSearchAction(this.baseQueryModel, this.localityQueryModel));
+    ngOnInit(): void {
+        this.toolbarForm = this.fb.group({
+            baseQuery: [[...this.searchQuery.baseQuery]],
+            localityQuery: [[...this.searchQuery.localityQuery]]
+        });
+
+        this.subscription = this.toolbarForm.valueChanges.subscribe((formValue: any) =>
+            this.search(formValue)
+        );
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
+    }
+
+    search(formValue: any) {
+        this.store.dispatch(new ToolbarChangedAction(formValue));
     }
 
     handleLocalitySelect(locality: LocalitySuggestion) {
-        // TODO: Research if this fits into the ngrx concept and find a better solution.
-        const currentLocality = new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, locality.city, locality.city, 1);
-        const exists = !!this.localityQueryModel.find((i: TypeaheadMultiselectModel) =>
-            currentLocality.equals(i));
+        const currentLocality = new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, String(locality.communalCode), locality.city, 0);
+        const ctrl = this.toolbarForm.get('localityQuery');
+        const exists = !!ctrl.value.find((i: TypeaheadMultiselectModel) => currentLocality.equals(i));
 
         if (!exists) {
-            this.localityQueryModel = [...this.localityQueryModel, currentLocality];
+            ctrl.setValue([...ctrl.value, currentLocality]);
         }
     }
 

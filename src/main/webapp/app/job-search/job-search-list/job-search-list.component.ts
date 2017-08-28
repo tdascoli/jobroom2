@@ -3,7 +3,7 @@ import { Job } from '../../entities/job/job.model';
 import { Store } from '@ngrx/store';
 import { JobSearchState, LoadNextPageAction } from '../state-management';
 import { Observable } from 'rxjs/Observable';
-import { getJobSearchError } from '../state-management/state/job-search.state';
+import { getSearchError } from '../state-management/state/job-search.state';
 import { HideJobListErrorAction } from '../state-management/actions/job-search.actions';
 
 @Component({
@@ -20,7 +20,7 @@ export class JobSearchListComponent {
     displayError$: Observable<boolean>;
 
     constructor(private store: Store<JobSearchState>) {
-        this.displayError$ = store.select(getJobSearchError);
+        this.displayError$ = store.select(getSearchError);
     }
 
     closeAlert() {

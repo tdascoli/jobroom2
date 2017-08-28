@@ -1,18 +1,18 @@
 {
     "job-detail": {
-        "title": "Job detail",
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "onlineSince": "Online since",
-        "contactPerson": "Ihre Kontaktperson",
         "action": {
             "applyNow": "Jetzt Bewerben",
-            "saveJob": "Stellenangebot speichern",
             "copyLink": "Link kopieren",
-            "sendEmail": "Per E-Mail versenden",
             "print": "Drucken",
-            "savePdf": "Als PDF speichern"
+            "saveJob": "Stellenangebot speichern",
+            "savePdf": "Als PDF speichern",
+            "sendEmail": "Per E-Mail versenden"
         },
+        "back": "Zur\u00fcck zu den Suchergebnissen",
+        "contactPerson": "Ihre Kontaktperson",
+        "onlineSince": "Online since",
         "otherJobsCompany": "{{count}} Jobs anzeigen",
-        "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen"
+        "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",
+        "title": "Job detail"
     }
 }

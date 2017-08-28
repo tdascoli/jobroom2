@@ -7,8 +7,11 @@ import {
     TypeaheadMultiselectModel
 } from '../../../../../../main/webapp/app/shared/job-search';
 import { Store } from '@ngrx/store';
-import { ExecuteSearchAction } from '../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { LocalityService } from '../../../../../../main/webapp/app/shared/job-search/service/locality.service';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ToolbarChangedAction } from '../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
+import { initialState } from '../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
+import { LocalityInputType } from '../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
 
 describe('JobSearchToolbarComponent', () => {
     const mockOccupationService = jasmine.createSpyObj('mockOccupationService',
@@ -27,7 +30,7 @@ describe('JobSearchToolbarComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [JobroomTestModule],
+            imports: [JobroomTestModule, ReactiveFormsModule],
             declarations: [JobSearchToolbarComponent],
             providers: [
                 { provide: OccupationService, useValue: mockOccupationService },
@@ -42,6 +45,7 @@ describe('JobSearchToolbarComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(JobSearchToolbarComponent);
         component = fixture.componentInstance;
+        component.searchQuery = initialState.searchQuery;
         fixture.detectChanges();
     });
 
@@ -49,22 +53,62 @@ describe('JobSearchToolbarComponent', () => {
         expect(component).toBeTruthy();
     });
 
-    describe('search', () => {
-        it('should dispatch an ExecuteSearchAction', () => {
-            // GIVEN
-            const queryModel = [
-                new TypeaheadMultiselectModel('classification', 'classification_code', 'classification_label'),
-                new TypeaheadMultiselectModel('occupation', 'occupation_code', 'occupation_label'),
-                new TypeaheadMultiselectModel('free-text', 'free-text_code', 'free-text_code'),
-            ];
-            component.baseQueryModel = queryModel;
-            component.localityQueryModel = [];
-
+    describe('ngOnInit', () => {
+        it('should subscribe to toolbarForm value changes', () => {
             // WHEN
-            component.search();
+            component.toolbarForm.setValue({
+                'baseQuery': [new TypeaheadMultiselectModel('type1', 'code1', 'label1')],
+                'localityQuery': [new TypeaheadMultiselectModel('type2', 'code2', 'label2')],
+            }, { emitEvent: true });
 
             // THEN
-            expect(mockStore.dispatch).toHaveBeenCalledWith(new ExecuteSearchAction(queryModel, []));
+            expect(mockStore.dispatch).toHaveBeenCalledWith(new ToolbarChangedAction({
+                baseQuery: [new TypeaheadMultiselectModel('type1', 'code1', 'label1')],
+                localityQuery: [new TypeaheadMultiselectModel('type2', 'code2', 'label2')],
+            }));
+        });
+    });
+
+    describe('handleLocalitySelect', () => {
+        it('should add non existing locality', () => {
+            // GIVEN
+            component.toolbarForm.get('localityQuery').setValue([new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '371', 'Biel')]);
+
+            // WHEN
+            component.handleLocalitySelect({
+                city: 'Bern',
+                communalCode: 351,
+                cantonCode: 'BE',
+            });
+
+            // THEN
+            expect(component.toolbarForm.value).toEqual({
+                baseQuery: [],
+                localityQuery: [
+                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '371', 'Biel'),
+                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '351', 'Bern')
+                ]
+            });
+        });
+
+        it('should not add existing locality', () => {
+            // GIVEN
+            component.toolbarForm.get('localityQuery').setValue([new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '371', 'Biel')]);
+
+            // WHEN
+            component.handleLocalitySelect({
+                city: 'Biel',
+                communalCode: 371,
+                cantonCode: 'BE',
+            });
+
+            // THEN
+            expect(component.toolbarForm.value).toEqual({
+                baseQuery: [],
+                localityQuery: [
+                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '371', 'Biel')
+                ]
+            });
         });
     });
 });

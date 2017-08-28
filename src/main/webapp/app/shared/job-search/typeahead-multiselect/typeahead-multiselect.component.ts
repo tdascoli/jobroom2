@@ -9,7 +9,7 @@ import { Observable } from 'rxjs/Rx';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TypeaheadMultiselectModel } from './typeahead-multiselect-model';
 
-const OCCUPATION_INPUT_CONTROL_VALUE_ACCESSOR: any = {
+const TYPEAHEAD_MULTISELECT_CONTROL_VALUE_ACCESSOR: any = {
     provide: NG_VALUE_ACCESSOR,
     useExisting: forwardRef(() => TypeaheadMultiselectComponent),
     multi: true
@@ -26,7 +26,7 @@ export class ItemDisplayModel {
     selector: 'jr2-typeahead-multiselect',
     templateUrl: './typeahead-multiselect.component.html',
     styleUrls: ['./typeahead-multiselect.component.scss'],
-    providers: [OCCUPATION_INPUT_CONTROL_VALUE_ACCESSOR]
+    providers: [TYPEAHEAD_MULTISELECT_CONTROL_VALUE_ACCESSOR]
 })
 export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     @Input() itemLoader: (text: string) => Observable<TypeaheadMultiselectModel[]>;

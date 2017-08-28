@@ -4,7 +4,7 @@ import { JobSearchRoutingModule } from './job-search-routing.module';
 import { JobroomSharedModule, JobSearchSharedModule } from '../shared';
 import { JobSearchComponent } from './job-search.component';
 import { JobSearchToolbarComponent } from './job-search-toolbar/job-search-toolbar.component';
-import { JobSearchFilterComponent } from './job-search-filter/job-search-filter.component';
+import { JobSearchSidebarComponent } from './job-search-sidebar/job-search-sidebar.component';
 import { JobSearchListItemComponent } from './job-search-list-item/job-search-list-item.component';
 import { JhiLanguageService } from 'ng-jhipster';
 import { customHttpProvider } from '../blocks/interceptor/http.provider';
@@ -15,7 +15,8 @@ import { jobSearchReducer } from './state-management/reducers/job-search.reducer
 import { JobSearchEffects } from './state-management/effects/job-search.effects';
 import { JobSearchListComponent } from './job-search-list/job-search-list.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
-import { WorkingTimeFilterComponent } from './job-search-filter/working-time-filter/working-time-filter.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter/job-search-filter.component';
 
 @NgModule({
     imports: [
@@ -23,6 +24,7 @@ import { WorkingTimeFilterComponent } from './job-search-filter/working-time-fil
         EffectsModule.forFeature([JobSearchEffects]),
         StoreRouterConnectingModule,
         JobroomSharedModule,
+        ReactiveFormsModule,
         CommonModule,
         JobSearchRoutingModule,
         JobSearchSharedModule
@@ -30,11 +32,11 @@ import { WorkingTimeFilterComponent } from './job-search-filter/working-time-fil
     declarations: [
         JobSearchComponent,
         JobSearchToolbarComponent,
-        JobSearchFilterComponent,
+        JobSearchSidebarComponent,
         JobSearchListItemComponent,
         JobSearchListComponent,
         JobDetailComponent,
-        WorkingTimeFilterComponent
+        JobSearchFilterComponent
     ],
     providers: [
         customHttpProvider(),

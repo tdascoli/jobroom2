@@ -1,22 +1,5 @@
 <!-- filter -->
-<p class="text--line-height--h3">Suchergebnisse filtern</p>
-
-<div class="form-group">
-    <label for="sort" class="sr-only">Sortierung</label>
-    <select class="form-control-sm custom-select" id="sort">
-        <option selected="">Sortiere nach Datum</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-    </select>
-</div>
-
-<div class="form-group">
-    <label for="unternehmen" class="sr-only">Name des Unternehmen</label>
-    <input type="text" class="form-control form-control-sm" id="unternehmen" placeholder="Name des Unternehmen">
-</div>
-
-<jr2-working-time-filter></jr2-working-time-filter>
+<jr2-job-search-filter [searchFilter]="searchFilter$ | async"></jr2-job-search-filter>
 
 <ul class="nav filter-nav flex-column">
     <li class="nav-item">

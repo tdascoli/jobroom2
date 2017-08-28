@@ -1,54 +1,72 @@
 <div class="container">
     <div class="toolbar-collapse">
-        <div class="form-inline toolbar-form">
-            <div class="form-group form-group--wide">
-                <jr2-typeahead-multiselect [(ngModel)]="baseQueryModel"
-                                           [itemLoader]="fetchOccupationSuggestions"
-                                           [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
-            </div>
-            <div class="form-group form-group--wide form-group--icon">
-                <jr2-typeahead-multiselect [(ngModel)]="localityQueryModel"
-                                           [itemLoader]="fetchLocalitySuggestions"
-                                           [editable]="false"
-                                           [focusFirst]="true"
-                                           [placeHolder]="'job-search.toolbar.locality.placeholder' | translate"></jr2-typeahead-multiselect>
-                <jr2-geo-location-select (localitySelect)="handleLocalitySelect($event)" [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
-            </div>
-            <div class="form-group form-group--slider">
-                <label for="ex1" class="sr-only">Radius</label>
-                <div class="slider slider-horizontal" id="ex1Slider">
-                    <div class="slider-track">
-                        <div class="slider-track-low" style="left: 0px; width: 0%;"></div>
-                        <div class="slider-selection" style="left: 0%; width: 70%;"></div>
-                        <div class="slider-track-high" style="right: 0px; width: 30%;"></div>
-                    </div>
-                    <div class="tooltip tooltip-main top" role="presentation" style="left: 70%; margin-left: -66px;">
-                        <div class="tooltip-arrow"></div>
-                        <div class="tooltip-inner">Current value: 14</div>
-                    </div>
-                    <div class="tooltip tooltip-min top" role="presentation">
-                        <div class="tooltip-arrow"></div>
-                        <div class="tooltip-inner"></div>
-                    </div>
-                    <div class="tooltip tooltip-max bottom" role="presentation" style="top: 18px;">
-                        <div class="tooltip-arrow"></div>
-                        <div class="tooltip-inner"></div>
-                    </div>
-                    <div class="slider-handle min-slider-handle round" role="slider" aria-valuemin="0"
-                         aria-valuemax="20" aria-valuenow="14" aria-valuetext="Current value: 14" tabindex="0"
-                         style="left: 70%;"></div>
-                    <div class="slider-handle max-slider-handle round hide" role="slider" aria-valuemin="0"
-                         aria-valuemax="20" aria-valuenow="0" aria-valuetext="Current value: 0" tabindex="0"
-                         style="left: 0%;"></div>
+        <form [formGroup]="toolbarForm" (ngSubmit)="search(toolbarForm.value)" novalidate>
+            <div class="form-inline toolbar-form">
+                <div class="form-group form-group--wide">
+                    <jr2-typeahead-multiselect formControlName="baseQuery"
+                                               [itemLoader]="fetchOccupationSuggestions"
+                                               [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
                 </div>
-                <input id="ex1" data-slider-id="ex1Slider" type="text" aria-describedby="infoKm" data-slider-min="0"
-                       data-slider-max="20" data-slider-step="1" data-slider-value="14" data-value="14" value="14"
-                       style="display: none;">
-                <span id="infoKm" class="slider-helptext text-muted">
+                <div class="form-group form-group--wide form-group--icon">
+                    <jr2-typeahead-multiselect formControlName="localityQuery"
+                                               [itemLoader]="fetchLocalitySuggestions"
+                                               [editable]="false"
+                                               [focusFirst]="true"
+                                               [placeHolder]="'job-search.toolbar.locality.placeholder' | translate"></jr2-typeahead-multiselect>
+                    <jr2-geo-location-select
+                        (localitySelect)="handleLocalitySelect($event)"
+                        [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
+                </div>
+                <div class="form-group form-group--slider">
+                    <label for="ex1" class="sr-only">Radius</label>
+                    <div class="slider slider-horizontal" id="ex1Slider">
+                        <div class="slider-track">
+                            <div class="slider-track-low"
+                                 style="left: 0px; width: 0%;"></div>
+                            <div class="slider-selection"
+                                 style="left: 0%; width: 70%;"></div>
+                            <div class="slider-track-high"
+                                 style="right: 0px; width: 30%;"></div>
+                        </div>
+                        <div class="tooltip tooltip-main top" role="presentation"
+                             style="left: 70%; margin-left: -66px;">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner">Current value: 14</div>
+                        </div>
+                        <div class="tooltip tooltip-min top" role="presentation">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner"></div>
+                        </div>
+                        <div class="tooltip tooltip-max bottom" role="presentation"
+                             style="top: 18px;">
+                            <div class="tooltip-arrow"></div>
+                            <div class="tooltip-inner"></div>
+                        </div>
+                        <div class="slider-handle min-slider-handle round" role="slider"
+                             aria-valuemin="0"
+                             aria-valuemax="20" aria-valuenow="14"
+                             aria-valuetext="Current value: 14" tabindex="0"
+                             style="left: 70%;"></div>
+                        <div class="slider-handle max-slider-handle round hide"
+                             role="slider" aria-valuemin="0"
+                             aria-valuemax="20" aria-valuenow="0"
+                             aria-valuetext="Current value: 0" tabindex="0"
+                             style="left: 0%;"></div>
+                    </div>
+                    <input id="ex1" data-slider-id="ex1Slider" type="text"
+                           aria-describedby="infoKm" data-slider-min="0"
+                           data-slider-max="20" data-slider-step="1"
+                           data-slider-value="14" data-value="14" value="14"
+                           style="display: none;">
+                    <span id="infoKm" class="slider-helptext text-muted">
 								+ 10 km
 							</span>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i *ngIf="loading" class="fa fa-refresh fa-spin fa-3 fa-fw"></i>
+                    <span *ngIf="!loading">{{total}} Jobs</span>
+                </button>
             </div>
-            <button type="submit" class="btn btn-primary btn-lg" (click)="search()">{{total}} Jobs</button>
-        </div>
+        </form>
     </div>
 </div>

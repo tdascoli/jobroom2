@@ -9,7 +9,12 @@ import {
     getTotalJobCount,
     JobSearchState
 } from './state-management';
-import { getLocalityQuery } from './state-management/state/job-search.state';
+import {
+    getLoading,
+    getLocalityQuery,
+    getSearchQuery,
+    JobSearchQuery
+} from './state-management/state/job-search.state';
 
 @Component({
     selector: 'jr2-job-search',
@@ -19,19 +24,19 @@ import { getLocalityQuery } from './state-management/state/job-search.state';
 })
 export class JobSearchComponent {
     jobList$: Observable<Array<Job>>;
-    baseQueryModel$: Observable<Array<TypeaheadMultiselectModel>>;
-    localityQueryModel$: Observable<Array<TypeaheadMultiselectModel>>;
+    searchQuery$: Observable<JobSearchQuery>;
     baseQueryString$: Observable<string>;
     localityQueryString$: Observable<string>;
     totalCount$: Observable<number>;
+    loading$: Observable<boolean>;
 
     constructor(private store: Store<JobSearchState>) {
         this.jobList$ = store.select(getJobList);
-        this.baseQueryModel$ = store.select(getBaseQuery);
-        this.localityQueryModel$ = store.select(getLocalityQuery);
+        this.searchQuery$ = store.select(getSearchQuery);
         this.baseQueryString$ = store.select(getBaseQuery).map(queryModelToTextMapper);
         this.localityQueryString$ = store.select(getLocalityQuery).map(queryModelToTextMapper);
         this.totalCount$ = store.select(getTotalJobCount);
+        this.loading$ = store.select(getLoading);
     }
 }
 
