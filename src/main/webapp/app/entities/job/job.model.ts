@@ -15,6 +15,31 @@ export class Locality {
     }
 }
 
+export class Company {
+    constructor(public name: string,
+                public street?: string,
+                public houseNumber?: string,
+                public zipCode?: string,
+                public city?: string,
+                public countryCode?: string,
+                public postboxNumber?: number,
+                public postboxZipCode?: string,
+                public postboxCity?: string,
+                public phone?: string,
+                public email?: string,
+                public website?: string) {
+    }
+}
+
+export class Contact {
+    constructor(public title: string,
+                public firstName: string,
+                public lastName: string,
+                public phone: string,
+                public email: string) {
+    }
+}
+
 export class Job implements BaseEntity {
     constructor(public id?: number,
                 public externalId?: string,
@@ -32,11 +57,11 @@ export class Job implements BaseEntity {
                 public startDate?: any,
                 public endDate?: any,
                 public startsImmediately?: boolean,
-                public isPermanent?: boolean,
+                public permanent?: boolean,
                 public fingerPrint?: string,
                 public numberOfJobs?: number,
-                public isJobSharing?: boolean,
-                public isSuitableForDisabled?: boolean,
+                public jobSharing?: boolean,
+                public suitableForDisabled?: boolean,
                 public locality?: Locality,
                 public paymentMin?: number,
                 public paymentMax?: number,
@@ -47,29 +72,14 @@ export class Job implements BaseEntity {
                 public gender?: Gender,
                 public hasPersonalVehicle?: boolean,
                 public drivingLicenseLevel?: string,
-                public companyName?: string,
-                public companyAddressLine1?: string,
-                public companyAddressLine2?: string,
-                public companyZipCode?: string,
-                public companyCity?: string,
-                public companyCountryCode?: string,
-                public companyPostboxNumber?: number,
-                public companyPostboxZipCode?: string,
-                public companyPostboxCity?: string,
-                public companyPhone?: string,
-                public companyEmail?: string,
-                public companyWebsite?: string,
-                public contactTitle?: string,
-                public contactFirstName?: string,
-                public contactLastName?: string,
-                public contactPhone?: string,
-                public contactEmail?: string,
+                public company?: Company,
+                public contact?: Contact,
                 public professions?: BaseEntity[],
                 public languages?: BaseEntity[]) {
         this.startsImmediately = false;
-        this.isPermanent = false;
-        this.isJobSharing = false;
-        this.isSuitableForDisabled = false;
+        this.permanent = false;
+        this.jobSharing = false;
+        this.suitableForDisabled = false;
         this.hasPersonalVehicle = false;
     }
 }

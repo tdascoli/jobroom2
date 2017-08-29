@@ -12,8 +12,8 @@
 
     <div>
         <span class="text--primary-color">{{job.company.name}}</span>
-        <span class="badge badge-primary">{{job.locality.text}}</span>
-        <span class="badge badge-success" *ngIf="!job.isPermanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
+        <span class="badge badge-location">{{job.locality?.text}}</span>
+        <span class="badge badge-contract" *ngIf="job.permanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
     </div>
 
     <p>{{getShortDescription(job.description)}}</p>
