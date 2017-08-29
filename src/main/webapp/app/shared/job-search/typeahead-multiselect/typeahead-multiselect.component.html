@@ -14,8 +14,8 @@
             </div>
         </ng-template>
 
-        <input #input type="text" class="input typeahead-multiselect__input" autofocus name="inputValue"
-               [placeholder]="placeHolder"
+        <input #input class="input typeahead-multiselect__input" autofocus name="inputValue"
+               [placeholder]="showPlaceholder() ? placeHolder : ''"
                [(ngModel)]="inputValue"
                [ngbTypeahead]="wrappedItemLoader"
                [resultFormatter]="formatResultItem"

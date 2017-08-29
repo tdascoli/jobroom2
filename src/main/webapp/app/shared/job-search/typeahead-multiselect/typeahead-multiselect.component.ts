@@ -102,6 +102,10 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         $e.preventDefault();
     }
 
+    showPlaceholder(): boolean {
+        return this.selectedItems.length === 0;
+    }
+
     wrappedItemLoader = (text$: Observable<string>): Observable<ItemDisplayModel[]> => {
 
         const toDisplayModel = (m: TypeaheadMultiselectModel, idx: number, array: TypeaheadMultiselectModel[]) => {
