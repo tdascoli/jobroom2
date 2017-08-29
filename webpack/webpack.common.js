@@ -5,7 +5,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StringReplacePlugin = require('string-replace-webpack-plugin');
 const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const WebpackNotifierPlugin = require('webpack-notifier');
-const MergeJsonWebpackPlugin = require("merge-jsons-webpack-plugin")
+const MergeJsonWebpackPlugin = require("merge-jsons-webpack-plugin");
 const path = require('path');
 
 const parseVersion = require('./utils.js').parseVersion;

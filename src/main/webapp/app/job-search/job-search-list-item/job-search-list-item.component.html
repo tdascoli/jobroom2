@@ -11,11 +11,11 @@
     </div>
 
     <div>
-        <span class="text--primary-color">{{job.companyName}}</span>
+        <span class="text--primary-color">{{job.company.name}}</span>
         <span class="badge badge-primary">{{job.locality.text}}</span>
         <span class="badge badge-success" *ngIf="!job.isPermanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
     </div>
 
-    <p>{{job.description}}</p>
+    <p>{{getShortDescription(job.description)}}</p>
 
 </div>
