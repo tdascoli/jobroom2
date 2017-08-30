@@ -8,7 +8,6 @@ repositories {
     maven { url "http://repo.spring.io/milestone" }
     maven { url 'http://repo.spring.io/snapshot' }
     maven { url 'https://alvch.jfrog.io/alvch/libs-snapshots' }
-    maven { url 'https://alvch.jfrog.io/alvch/libs-releases' }
 }
 
 dependencies {
