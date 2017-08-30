@@ -9,6 +9,14 @@
                 },
                 "title": "Vertragsart"
             },
+            "sort": {
+                "label": "Sortierung",
+                "option": {
+                    "date-asc": "Sortiere nach Datum aufsteigend",
+                    "date-desc": "Sortiere nach Datum absteigend",
+                    "relevance": "Sortiere nach Relevanz"
+                }
+            },
             "title": "Suchergebnisse filtern",
             "workingTime": "Pensum"
         },

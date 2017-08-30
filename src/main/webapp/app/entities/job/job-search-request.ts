@@ -52,6 +52,7 @@ export class JobSearchRequest {
             permanent: contractTypeFlag,
             workingTimeMin: this.searchFilter.workingTime[0],
             workingTimeMax: this.searchFilter.workingTime[1],
+            sort: this.searchFilter.sort,
             page: this.page,
             size: ITEMS_PER_PAGE
         };

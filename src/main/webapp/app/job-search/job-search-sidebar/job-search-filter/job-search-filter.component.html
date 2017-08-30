@@ -1,6 +1,15 @@
 <p class="text--line-height--h3">{{'job-search.filter.title' | translate}}</p>
 
 <form [formGroup]="filterForm" novalidate>
+    <div class="form-group">
+        <label for="sort" class="sr-only">{{'job-search.filter.sort.label' | translate}}</label>
+        <select class="form-control-sm custom-select" id="sort" formControlName="sort">
+            <option *ngFor="let option of sortOptions" [ngValue]="option.value">
+                {{'job-search.filter.sort.option.'+ option.name | translate}}
+            </option>
+        </select>
+    </div>
+
     <p class="text--line-height--h4">{{'job-search.filter.contract-type.title' | translate}}</p>
 
     <div class="form-group">

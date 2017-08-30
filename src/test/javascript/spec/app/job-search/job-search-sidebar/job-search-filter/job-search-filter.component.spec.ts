@@ -1,5 +1,8 @@
 import { Observable } from 'rxjs/Observable';
-import { JobSearchFilterComponent } from '../../../../../../../main/webapp/app/job-search/job-search-sidebar/job-search-filter/job-search-filter.component';
+import {
+    JobSearchFilterComponent,
+    SORT_DATE_ASC
+} from '../../../../../../../main/webapp/app/job-search/job-search-sidebar/job-search-filter/job-search-filter.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobroomTestModule } from '../../../../test.module';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -46,14 +49,14 @@ describe('JobSearchFilterComponent', () => {
             component.filterForm.setValue({
                 contractType: ContractType.Permanent,
                 workingTime: [80, 100],
-                sort: {}
+                sort: SORT_DATE_ASC
             }, { emitEvent: true });
 
             // THEN
             expect(mockStore.dispatch).toHaveBeenCalledWith(new FilterChangedAction({
                 contractType: ContractType.Permanent,
                 workingTime: [80, 100],
-                sort: {}
+                sort: SORT_DATE_ASC
             }));
         });
     });

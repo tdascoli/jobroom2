@@ -14,6 +14,9 @@ export class SelectItem {
     }
 }
 
+export const SORT_DATE_ASC = 'registrationDate,asc';
+export const SORT_DATE_DESC = 'registrationDate,desc';
+
 @Component({
     selector: 'jr2-job-search-filter',
     templateUrl: './job-search-filter.component.html',
@@ -24,6 +27,7 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
 
     filterForm: FormGroup;
     contractTypeOptions: Array<SelectItem>;
+    sortOptions: Array<SelectItem>;
 
     private subscription: Subscription;
 
@@ -33,6 +37,12 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
         this.contractTypeOptions = Object.keys(ContractType)
             .filter((key: any) => typeof ContractType[key] === 'number')
             .map((key: any) => new SelectItem(ContractType[key], key));
+
+        this.sortOptions = [
+            new SelectItem(null, 'relevance'),
+            new SelectItem(SORT_DATE_DESC, 'date-desc'),
+            new SelectItem(SORT_DATE_ASC, 'date-asc')
+        ];
     }
 
     ngOnInit(): void {

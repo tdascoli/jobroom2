@@ -8,11 +8,6 @@ export enum ContractType {
     Permanent,
 }
 
-export enum Order {
-    Asc,
-    Desc
-}
-
 export interface JobSearchState {
     loading: boolean;
     searchError: boolean;
@@ -24,18 +19,13 @@ export interface JobSearchState {
     page: number;
 }
 
-export interface Sort {
-    field?: string;
-    order?: Order;
-}
-
 export interface JobSearchQuery {
     baseQuery: Array<TypeaheadMultiselectModel>;
     localityQuery: Array<TypeaheadMultiselectModel>;
 }
 
 export interface JobSearchFilter {
-    sort: Sort;
+    sort?: string;
     contractType: ContractType;
     workingTime: [number, number];
 }
@@ -48,7 +38,6 @@ export const initialState: JobSearchState = {
         localityQuery: []
     },
     searchFilter: {
-        sort: {},
         contractType: ContractType.All,
         workingTime: [0, 100]
     },
