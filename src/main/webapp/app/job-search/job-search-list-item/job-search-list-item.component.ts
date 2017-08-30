@@ -8,13 +8,7 @@ import { JOB_SEARCH_RESULT_TRUNCATE_DESCRIPTION } from '../../app.constants';
     styles: []
 })
 export class JobSearchListItemComponent {
-
     @Input() job: Job;
 
-    getShortDescription(description: String): String {
-        if (description && description.length >= JOB_SEARCH_RESULT_TRUNCATE_DESCRIPTION) {
-            return description.substr(0, JOB_SEARCH_RESULT_TRUNCATE_DESCRIPTION).concat('...');
-        }
-        return description;
-    }
+    maxDescriptionLength =  JOB_SEARCH_RESULT_TRUNCATE_DESCRIPTION;
 }

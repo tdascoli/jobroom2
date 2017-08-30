@@ -16,6 +16,6 @@
         <span class="badge badge-contract" *ngIf="job.permanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
     </div>
 
-    <p>{{getShortDescription(job.description)}}</p>
+    <p>{{job.description | truncateCharacters: maxDescriptionLength}}</p>
 
 </div>
