@@ -21,7 +21,9 @@ import {
     MegaMenuDirective,
     NavbarComponent,
     PageRibbonComponent,
-    ProfileService
+    ProfileService,
+    VersionComponent,
+    VersionService
 } from './layouts';
 
 import { AppRoutingModule } from './app.routing.module';
@@ -55,12 +57,14 @@ import { DEBUG_INFO_ENABLED } from './app.constants';
         NavbarComponent,
         ErrorComponent,
         PageRibbonComponent,
+        VersionComponent,
         ActiveMenuDirective,
         FooterComponent,
         MegaMenuDirective
     ],
     providers: [
         ProfileService,
+        VersionService,
         customHttpProvider(),
         PaginationConfig,
         UserRouteAccessService

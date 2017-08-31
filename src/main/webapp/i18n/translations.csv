@@ -125,7 +125,9 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,Your password is required to be at least 4 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,Your password is required.,Votre mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Robustezza della password:
-global,global.ribbon.dev,Development,Development,Développement,Development
+global,global.ribbon.dev,Local,Local,Local,Local
+global,global.ribbon.development,Development,Development,Développement,Development
+global,global.ribbon.test,Test,Test,Test,Test
 global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
 health,health.details.details,Details,Details,Détails,Dettagli
 health,health.details.error,Error,Error,Erreur,Errore

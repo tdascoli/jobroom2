@@ -8,4 +8,7 @@ export * from './navbar/mega-menu.directive';
 export * from './profiles/page-ribbon.component';
 export * from './profiles/profile.service';
 export * from './profiles/profile-info.model';
+export * from './version/version.component';
+export * from './version/version.service';
+export * from './version/version-info.model';
 export * from './layout-routing.module';

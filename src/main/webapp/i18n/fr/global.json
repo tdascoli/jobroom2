@@ -136,7 +136,9 @@
             }
         },
         "ribbon": {
-            "dev": "D\u00e9veloppement"
+            "dev": "Local",
+            "development": "D\u00e9veloppement",
+            "test": "Test"
         },
         "title": "Jobroom"
     }

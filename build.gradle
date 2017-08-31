@@ -22,8 +22,8 @@ buildscript {
 }
 
 apply plugin: 'java'
-sourceCompatibility=1.8
-targetCompatibility=1.8
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
 apply plugin: 'maven'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'war'
@@ -33,13 +33,13 @@ apply plugin: 'io.spring.dependency-management'
 apply plugin: 'com.gorylenko.gradle-git-properties'
 apply plugin: 'checkstyle'
 dependencyManagement {
-  imports {
-    mavenBom 'org.springframework.cloud:spring-cloud-dependencies:' + spring_cloud_version
-  }
+    imports {
+        mavenBom 'org.springframework.cloud:spring-cloud-dependencies:' + spring_cloud_version
+    }
 }
 defaultTasks 'bootRun'
 
-bootWar  {
+bootWar {
     mainClass = 'ch.admin.seco.jobroom.JobroomApp'
 }
 
@@ -48,7 +48,13 @@ war {
 }
 
 springBoot {
-    buildInfo()
+    buildInfo({
+        properties {
+            additional = [
+                'number': System.env.TRAVIS_JOB_ID ?: 'n/a'
+            ]
+        }
+    })
 }
 
 if (OperatingSystem.current().isWindows()) {
@@ -163,7 +169,7 @@ dependencies {
     compile "io.dropwizard.metrics:metrics-servlet:${dropwizard_metrics_version}"
     compile "io.dropwizard.metrics:metrics-json:${dropwizard_metrics_version}"
     compile "io.dropwizard.metrics:metrics-servlets:${dropwizard_metrics_version}"
-    compile ("net.logstash.logback:logstash-logback-encoder:${logstash_logback_encoder_version}") {
+    compile("net.logstash.logback:logstash-logback-encoder:${logstash_logback_encoder_version}") {
         exclude(group: 'ch.qos.logback')
     }
     compile "com.fasterxml.jackson.datatype:jackson-datatype-json-org"
@@ -173,13 +179,13 @@ dependencies {
     compile "com.fasterxml.jackson.core:jackson-annotations"
     compile "com.fasterxml.jackson.core:jackson-databind"
     compile "com.fasterxml.jackson.module:jackson-module-afterburner"
-    compile ("com.ryantenney.metrics:metrics-spring:${metrics_spring_version}")
+    compile("com.ryantenney.metrics:metrics-spring:${metrics_spring_version}")
     compile "com.hazelcast:hazelcast"
     compile "com.hazelcast:hazelcast-hibernate52:${hazelcast_hibernate52_version}"
     compile "com.hazelcast:hazelcast-spring"
     compile "javax.cache:cache-api"
     compile "org.hibernate:hibernate-core:${hibernate_version}"
-    compile ("com.zaxxer:HikariCP:${hikaricp_version}")
+    compile("com.zaxxer:HikariCP:${hikaricp_version}")
     compile "commons-codec:commons-codec"
     compile "org.apache.commons:commons-lang3:${commons_lang_version}"
     compile "commons-io:commons-io:${commons_io_version}"
@@ -187,7 +193,7 @@ dependencies {
     compile "net.jpountz.lz4:lz4:${lz4_version}"
     compile "org.hibernate:hibernate-envers"
     compile "org.hibernate:hibernate-validator"
-    compile ("org.liquibase:liquibase-core")
+    compile("org.liquibase:liquibase-core")
     compile "com.mattbertolini:liquibase-slf4j:${liquibase_slf4j_version}"
     compile "org.springframework.boot:spring-boot-actuator"
     compile "org.springframework.boot:spring-boot-autoconfigure"
@@ -197,7 +203,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-aop"
     compile "org.springframework.boot:spring-boot-starter-data-jpa"
     compile "org.springframework.boot:spring-boot-starter-security"
-    compile ("org.springframework.boot:spring-boot-starter-web") {
+    compile("org.springframework.boot:spring-boot-starter-web") {
         exclude module: 'spring-boot-starter-tomcat'
     }
     compile "org.springframework.boot:spring-boot-starter-undertow"
@@ -214,13 +220,13 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-starter-config"
     compile "org.springframework.cloud:spring-cloud-starter-feign"
     compile "org.springframework.boot:spring-boot-starter-cloud-connectors"
-    compile ("org.springframework:spring-context-support")
+    compile("org.springframework:spring-context-support")
     compile "org.springframework.security:spring-security-config"
     compile "org.springframework.security:spring-security-data"
     compile "org.springframework.security:spring-security-web"
     compile 'org.springframework.security.oauth:spring-security-oauth2'
     compile "io.jsonwebtoken:jjwt:${jjwt_version}"
-    compile ("io.springfox:springfox-swagger2:${springfox_version}") {
+    compile("io.springfox:springfox-swagger2:${springfox_version}") {
         exclude module: 'mapstruct'
     }
     compile "io.springfox:springfox-bean-validators:${springfox_version}"
@@ -231,7 +237,7 @@ dependencies {
     testCompile "com.jayway.jsonpath:json-path"
     testCompile "info.cukes:cucumber-junit:${cucumber_version}"
     testCompile "info.cukes:cucumber-spring:${cucumber_version}"
-    testCompile ("org.springframework.boot:spring-boot-starter-test") {
+    testCompile("org.springframework.boot:spring-boot-starter-test") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
     testCompile "org.springframework.security:spring-security-test"
@@ -241,7 +247,7 @@ dependencies {
     testCompile "org.mockito:mockito-core"
     testCompile "com.mattbertolini:liquibase-slf4j:${liquibase_slf4j_version}"
     testCompile "org.hamcrest:hamcrest-library"
-    optional ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
+    optional("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
@@ -272,7 +278,7 @@ if (project.hasProperty('nodeInstall')) {
 }
 
 compileJava.dependsOn processResources
-processResources.dependsOn cleanResources,bootBuildInfo
+processResources.dependsOn cleanResources, bootBuildInfo
 bootBuildInfo.mustRunAfter cleanResources
 
 afterEvaluate {
