@@ -5,7 +5,7 @@ import { VersionInfo } from './version-info.model';
 @Component({
     selector: 'jr2-version',
     template: `
-        <div class="version">Version:
+        <div class="version" *ngIf="versionInfo">Version:
             <span>{{versionInfo.version}}.{{versionInfo.buildNumber}} ({{versionInfo.buildTime | date:'short'}})</span>
         </div>`,
     styleUrls: [

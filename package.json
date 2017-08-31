@@ -21,6 +21,7 @@
     "@ngrx/router-store": "^4.0.2",
     "@ngrx/store": "^4.0.2",
     "@ngrx/store-devtools": "^4.0.0",
+    "angular2-markdown": "^1.6.0",
     "core-js": "2.4.1",
     "jasmine-marbles": "^0.1.0",
     "jquery": "3.2.1",

@@ -17,6 +17,7 @@ import { JobSearchListComponent } from './job-search-list/job-search-list.compon
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter/job-search-filter.component';
+import { MarkdownModule } from 'angular2-markdown';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter
         ReactiveFormsModule,
         CommonModule,
         JobSearchRoutingModule,
-        JobSearchSharedModule
+        JobSearchSharedModule,
+        MarkdownModule.forRoot()
     ],
     declarations: [
         JobSearchComponent,

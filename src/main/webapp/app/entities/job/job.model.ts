@@ -1,8 +1,11 @@
 import { BaseEntity } from './../../shared';
 
 const enum Gender {
-    'MALE',
-    'FEMALE'
+    MALE, FEMALE
+}
+
+const enum LanguageLevel {
+    NONE, BASIC, GOOD, VERY_GOOD
 }
 
 export class Locality {
@@ -40,6 +43,23 @@ export class Contact {
     }
 }
 
+export class Occupation {
+    constructor(public code: number,
+                public firstName: number,
+                public experienceInYears: number,
+                public educationLevel: string) {
+    }
+}
+
+export class LanguageSkill {
+    constructor(public code: string,
+                public spokenLevel: LanguageLevel,
+                public writtenLevel: LanguageLevel,
+                public isMothertongue: boolean,
+                public isLanguageStayRequired: boolean) {
+    }
+}
+
 export class Job implements BaseEntity {
     constructor(public id?: number,
                 public externalId?: string,
@@ -51,14 +71,13 @@ export class Job implements BaseEntity {
                 public cancellationDate?: any,
                 public cancellationReason?: string,
                 public title?: string,
-                public description?: any,
+                public description?: string,
                 public workingTimePercentageMin?: number,
                 public workingTimePercentageMax?: number,
                 public startDate?: any,
                 public endDate?: any,
                 public startsImmediately?: boolean,
                 public permanent?: boolean,
-                public fingerPrint?: string,
                 public numberOfJobs?: number,
                 public jobSharing?: boolean,
                 public suitableForDisabled?: boolean,
@@ -66,16 +85,13 @@ export class Job implements BaseEntity {
                 public paymentMin?: number,
                 public paymentMax?: number,
                 public currencyCode?: string,
-                public ageMin?: number,
-                public ageMax?: number,
-                public ageRestrictionReason?: string,
                 public gender?: Gender,
                 public hasPersonalVehicle?: boolean,
                 public drivingLicenseLevel?: string,
                 public company?: Company,
                 public contact?: Contact,
-                public professions?: BaseEntity[],
-                public languages?: BaseEntity[]) {
+                public occupation?: Occupation[],
+                public languages?: LanguageSkill[]) {
         this.startsImmediately = false;
         this.permanent = false;
         this.jobSharing = false;
