@@ -29,6 +29,10 @@
         "job-search-list": {
             "error-message": "Failed to load job result list!",
             "title": {
+                "many": {
+                    "with-locality": "More than {{count}} {{query}} Jobs in {{locality}}",
+                    "without-locality": "More than {{count}} {{query}} Jobs"
+                },
                 "none": {
                     "with-locality": "No {{query}} Jobs in {{locality}}",
                     "without-locality": "No {{query}} Jobs"
@@ -53,6 +57,14 @@
             },
             "occupation": {
                 "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
+            },
+            "search-button": {
+                "title": {
+                    "many": "{{count}}+ Jobs",
+                    "none": "No Jobs",
+                    "one": "1 Job",
+                    "other": "{{count}} Jobs"
+                }
             }
         }
     },

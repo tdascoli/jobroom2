@@ -12,6 +12,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { JobSearchQuery } from '../state-management/state/job-search.state';
 import { Subscription } from 'rxjs/Subscription';
 import { LocalityInputType } from '../../shared/job-search/service/locality-autocomplete';
+import { MAX_JOB_LIST_SIZE } from '../../app.constants';
 
 @Component({
     selector: 'jr2-job-search-toolbar',
@@ -19,7 +20,7 @@ import { LocalityInputType } from '../../shared/job-search/service/locality-auto
     styleUrls: ['./job-search-toolbar.component.scss']
 })
 export class JobSearchToolbarComponent implements OnInit, OnDestroy {
-    @Input() total: number;
+    @Input() totalCount: number;
     @Input() loading: boolean;
     @Input() searchQuery: JobSearchQuery;
 
@@ -65,4 +66,24 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
 
     fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(query);
+
+    getButtonValueKey() {
+        let key = 'job-search.toolbar.search-button.title';
+
+        if (this.totalCount === 0) {
+            key += '.none';
+        } else if (this.totalCount === 1) {
+            key += '.one';
+        } else if (this.totalCount > MAX_JOB_LIST_SIZE) {
+            key += '.many';
+        } else {
+            key += '.other';
+        }
+
+        return key;
+    }
+
+    getMaxCount() {
+        return Math.min(this.totalCount, MAX_JOB_LIST_SIZE);
+    }
 }

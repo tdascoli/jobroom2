@@ -62,9 +62,10 @@
 								+ 10 km
 							</span>
                 </div>
+                <!-- todo: Review this after https://github.com/alv-ch/styleguide/issues/5 is done-->
                 <button type="submit" class="btn btn-primary btn-lg">
                     <i *ngIf="loading" class="fa fa-refresh fa-spin fa-3 fa-fw"></i>
-                    <span *ngIf="!loading">{{total}} Jobs</span>
+                    <span *ngIf="!loading"  [jhiTranslate]="getButtonValueKey()" [translateValues]="{count: getMaxCount() | jr2Number}"></span>
                 </button>
             </div>
         </form>

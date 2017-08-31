@@ -1,22 +1,23 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    JobroomSharedLibsModule,
-    JobroomSharedCommonModule,
-    CSRFService,
-    AuthServerProvider,
     AccountService,
-    UserService,
-    StateStorageService,
-    LoginService,
-    LoginModalService,
-    Principal,
+    AuthServerProvider,
+    CSRFService,
     HasAnyAuthorityDirective,
     JhiLoginModalComponent,
-    StickyToolbarItemDirective
+    JobroomSharedCommonModule,
+    JobroomSharedLibsModule,
+    LoginModalService,
+    LoginService,
+    Principal,
+    StateStorageService,
+    StickyToolbarItemDirective,
+    UserService
 } from './';
 import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
+import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
 
 @NgModule({
     imports: [
@@ -27,7 +28,8 @@ import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
         StickyToolbarItemDirective,
-        LocaleAwareDatePipe
+        LocaleAwareDatePipe,
+        LocaleAwareDecimalPipe
     ],
     providers: [
         LoginService,
@@ -39,7 +41,8 @@ import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
         AuthServerProvider,
         UserService,
         DatePipe,
-        LocaleAwareDatePipe
+        LocaleAwareDatePipe,
+        LocaleAwareDecimalPipe
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
@@ -48,9 +51,11 @@ import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
         HasAnyAuthorityDirective,
         DatePipe,
         LocaleAwareDatePipe,
+        LocaleAwareDecimalPipe,
         StickyToolbarItemDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
 })
-export class JobroomSharedModule {}
+export class JobroomSharedModule {
+}

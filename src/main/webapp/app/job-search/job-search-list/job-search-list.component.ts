@@ -5,6 +5,7 @@ import { JobSearchState, LoadNextPageAction } from '../state-management';
 import { Observable } from 'rxjs/Observable';
 import { getSearchError } from '../state-management/state/job-search.state';
 import { HideJobListErrorAction } from '../state-management/actions/job-search.actions';
+import { MAX_JOB_LIST_SIZE } from '../../app.constants';
 
 @Component({
     selector: 'jr2-job-search-list',
@@ -38,6 +39,8 @@ export class JobSearchListComponent {
             key += '.none';
         } else if (this.totalCount === 1) {
             key += '.one';
+        } else if (this.totalCount > MAX_JOB_LIST_SIZE) {
+            key += '.many';
         } else {
             key += '.other';
         }
@@ -49,5 +52,9 @@ export class JobSearchListComponent {
         }
 
         return key;
+    }
+
+    getMaxCount() {
+        return Math.min(this.totalCount, MAX_JOB_LIST_SIZE);
     }
 }

@@ -182,6 +182,8 @@ job-search,job-search.filter.workingTime,Pensum,Pensum,Pensum,Pensum
 job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Unbefristet,Unbefristet,Unbefristet
 job-search,job-search.job-search-list-item.badge.temporary,Befristet,Befristet,Befristet,Befristet
 job-search,job-search.job-search-list.error-message,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!
+job-search,job-search.job-search-list.title.many.with-locality,More than {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} Jobs in {{locality}}
+job-search,job-search.job-search-list.title.many.without-locality,More than {{count}} {{query}} Jobs,More than {{count}} {{query}} Jobs,More than {{count}} {{query}} Jobs,More than {{count}} {{query}} Jobs
 job-search,job-search.job-search-list.title.none.with-locality,No {{query}} Jobs in {{locality}},No {{query}} Jobs in {{locality}},No {{query}} Jobs in {{locality}},No {{query}} Jobs in {{locality}}
 job-search,job-search.job-search-list.title.none.without-locality,No {{query}} Jobs,No {{query}} Jobs,No {{query}} Jobs,No {{query}} Jobs
 job-search,job-search.job-search-list.title.one.with-locality,1 {{query}} Job in {{locality}},1 {{query}} Job in {{locality}},1 {{query}} Job in {{locality}},1 {{query}} Job in {{locality}}
@@ -192,6 +194,10 @@ job-search,job-search.title,Job search,Job search,Job search,Job search
 job-search,job-search.toolbar.locality-select.tooltip,Select my current location,Select my current location,Select my current location,Select my current location
 job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton"
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
+job-search,job-search.toolbar.search-button.title.many,{{count}}+ Jobs,{{count}}+ Jobs,{{count}}+ Jobs,{{count}}+ Jobs
+job-search,job-search.toolbar.search-button.title.none,No Jobs,No Jobs,No Jobs,No Jobs
+job-search,job-search.toolbar.search-button.title.one,1 Job,1 Job,1 Job,1 Job
+job-search,job-search.toolbar.search-button.title.other,{{count}} Jobs,{{count}} Jobs,{{count}} Jobs,{{count}} Jobs
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Canton
 job-search,typeahead-multiselect.type.classification,Classification,Classification,Classification,Classification
 job-search,typeahead-multiselect.type.locality,Ortschaft,Ortschaft,Ortschaft,Ortschaft
