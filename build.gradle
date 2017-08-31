@@ -50,7 +50,7 @@ springBoot {
     buildInfo({
         properties {
             additional = [
-                'number': System.env.TRAVIS_JOB_ID ?: 'n/a'
+                'number': System.env.TRAVIS_JOB_NUMBER ?: 'n/a'
             ]
         }
     })
