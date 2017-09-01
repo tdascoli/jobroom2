@@ -9,6 +9,7 @@ export enum ContractType {
 }
 
 export interface JobSearchState {
+    jobListScrollY: number;
     loading: boolean;
     searchError: boolean;
     searchQuery: JobSearchQuery;
@@ -31,6 +32,7 @@ export interface JobSearchFilter {
 }
 
 export const initialState: JobSearchState = {
+    jobListScrollY: 0,
     loading: false,
     searchError: false,
     searchQuery: {
@@ -58,3 +60,4 @@ export const getSearchFilter = createSelector(getJobSearchState, (state: JobSear
 export const getContractType = createSelector(getSearchFilter, (filter: JobSearchFilter) => filter.contractType);
 export const getFilterWorkingTime = createSelector(getSearchFilter, (filter: JobSearchFilter) => filter.workingTime);
 export const getLoading = createSelector(getJobSearchState, (state: JobSearchState) => state.loading);
+export const getJobListScrollY = createSelector(getJobSearchState, (state: JobSearchState) => state.jobListScrollY);

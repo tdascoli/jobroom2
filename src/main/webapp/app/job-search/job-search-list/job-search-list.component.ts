@@ -1,18 +1,25 @@
-import { Component, Input } from '@angular/core';
+import { AfterViewInit, Component, HostListener, Input, OnDestroy } from '@angular/core';
 import { Job } from '../../entities/job/job.model';
 import { Store } from '@ngrx/store';
 import { JobSearchState, LoadNextPageAction } from '../state-management';
 import { Observable } from 'rxjs/Observable';
-import { getSearchError } from '../state-management/state/job-search.state';
-import { HideJobListErrorAction } from '../state-management/actions/job-search.actions';
+import {
+    getJobListScrollY,
+    getSearchError
+} from '../state-management/state/job-search.state';
+import {
+    HideJobListErrorAction,
+    SaveScrollYAction
+} from '../state-management/actions/job-search.actions';
 import { MAX_JOB_LIST_SIZE } from '../../app.constants';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'jr2-job-search-list',
     templateUrl: './job-search-list.component.html',
     styles: []
 })
-export class JobSearchListComponent {
+export class JobSearchListComponent implements OnDestroy, AfterViewInit {
     @Input() jobList: Array<Job>;
     @Input() totalCount: number;
     @Input() baseQueryString: string;
@@ -20,8 +27,33 @@ export class JobSearchListComponent {
 
     displayError$: Observable<boolean>;
 
+    private subscription: Subscription;
+    private scrollY = 0;
+
+    @HostListener('window:scroll')
+    private saveScrollY() {
+        this.scrollY = window.scrollY;
+    }
+
     constructor(private store: Store<JobSearchState>) {
         this.displayError$ = store.select(getSearchError);
+        this.subscription = this.store
+            .select(getJobListScrollY)
+            .subscribe((scrollY: number) => {
+                this.scrollY = scrollY;
+            });
+    }
+
+    ngAfterViewInit(): void {
+        window.scroll(0, this.scrollY);
+    }
+
+    ngOnDestroy(): void {
+        this.store.dispatch(new SaveScrollYAction(this.scrollY));
+
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 
     closeAlert() {

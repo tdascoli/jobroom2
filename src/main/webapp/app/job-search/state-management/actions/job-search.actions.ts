@@ -9,6 +9,7 @@ export const SHOW_JOB_LIST_ERROR = 'SHOW_JOB_LIST_ERROR';
 export const HIDE_JOB_LIST_ERROR = 'HIDE_JOB_LIST_ERROR';
 export const FILTER_CHANGED = 'FILTER_CHANGED';
 export const TOOLBAR_CHANGED = 'TOOLBAR_CHANGED';
+export const SAVE_SCROLL_Y = 'SAVE_SCROLL_Y';
 
 export class ToolbarChangedAction implements Action {
     readonly type = TOOLBAR_CHANGED;
@@ -34,7 +35,7 @@ export class LoadNextPageAction implements Action {
 export class JobListLoadedAction implements Action {
     readonly type = JOB_LIST_LOADED;
 
-    constructor(public payload: { jobList: Array<Job>, totalCount: number, page: number}) {
+    constructor(public payload: { jobList: Array<Job>, totalCount: number, page: number }) {
     }
 }
 
@@ -59,6 +60,13 @@ export class HideJobListErrorAction implements Action {
     }
 }
 
+export class SaveScrollYAction implements Action {
+    readonly type = SAVE_SCROLL_Y;
+
+    constructor(public payload: number) {
+    }
+}
+
 export type Actions =
     | ToolbarChangedAction
     | FilterChangedAction
@@ -67,4 +75,5 @@ export type Actions =
     | NextPageLoadedAction
     | ShowJobListErrorAction
     | HideJobListErrorAction
+    | SaveScrollYAction
     ;

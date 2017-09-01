@@ -6,6 +6,7 @@ import {
     JOB_LIST_LOADED,
     LOAD_NEXT_PAGE,
     NEXT_PAGE_LOADED,
+    SAVE_SCROLL_Y,
     SHOW_JOB_LIST_ERROR,
     TOOLBAR_CHANGED
 } from '../actions/job-search.actions';
@@ -50,6 +51,9 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
 
         case LOAD_NEXT_PAGE:
             newState = Object.assign({}, state, { page: state.page + 1 });
+            break;
+        case SAVE_SCROLL_Y:
+            newState = Object.assign({}, state, { jobListScrollY: action.payload });
             break;
 
         default:

@@ -161,6 +161,19 @@ describe('jobSearchReducer', () => {
         expect(newState.page).toEqual(1);
         verifyUnchanged(newState, state, ['page']);
     });
+
+    it('should update JobSearchState for SAVE_SCROLL_Y action', () => {
+        // GIVEN
+        const state = initialState;
+        const action = new actions.SaveScrollYAction(600);
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.jobListScrollY).toEqual(600);
+        verifyUnchanged(newState, state, ['jobListScrollY']);
+    });
 });
 
 function verifyUnchanged(newState: JobSearchState, oldState: JobSearchState, ignoreFields: Array<string>) {
