@@ -89,11 +89,18 @@
         <div class="base__related">
             <div style="position: relative;">
                 <div>
-                    <button class="btn btn-primary btn-block btn-sm">
-                        {{'job-detail.action.applyNow' | translate}}
-                    </button>
-
-                    <p></p>
+                    <p>
+                        <a *ngIf="job.applicationUrl"
+                           class="btn btn-primary btn-block btn-sm"
+                           href="{{job.applicationUrl}}" target="{{job.id}}">
+                            {{'job-detail.action.applyNow' | translate}}
+                        </a>
+                        <a *ngIf="job.externalUrl"
+                           class="btn btn-secondary btn-block btn-sm"
+                           href="{{job.externalUrl}}" target="{{job.id}}">
+                            {{'job-detail.action.showExternalPage' | translate}}
+                        </a>
+                    </p>
 
                     <ul class="nav filter-nav flex-column">
                         <li class="nav-item">

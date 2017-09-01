@@ -160,6 +160,7 @@ home,home.question,Wenn Sie Fragen zu JHipster haben:,If you have any question o
 home,home.subtitle,Dies ist Ihre Hauptseite,This is your homepage,Ceci est votre page d'accueil,Questa è la tua home page
 home,home.title,"Willkommen, Java Hipster!","Welcome, Java Hipster!","Bienvenue, Java Hipster !","Benvenuto, Java Hipster!"
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
+job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat
 job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren
 job-detail,job-detail.action.print,Drucken,Drucken,Drucken,Drucken
 job-detail,job-detail.action.saveJob,Stellenangebot speichern,Stellenangebot speichern,Stellenangebot speichern,Stellenangebot speichern

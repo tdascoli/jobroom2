@@ -2,6 +2,7 @@
     "job-detail": {
         "action": {
             "applyNow": "Jetzt Bewerben",
+            "showExternalPage": "Zum externen Stelleninserat",
             "copyLink": "Link kopieren",
             "print": "Drucken",
             "saveJob": "Stellenangebot speichern",
