@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService, TypeaheadMultiselectModel } from '../../shared/job-search';
+import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
+import { OccupationService } from '../../../shared/job-search/service/occupation.service';
 
 @Component({
     selector: 'jr2-job-search-tool',

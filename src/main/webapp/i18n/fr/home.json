@@ -1,19 +1,20 @@
 {
     "home": {
-        "github": "GitHub",
-        "like": "Si vous aimez JHipster, donnez nous une \u00e9toile sur",
-        "link": {
-            "bugtracker": "JHipster bug tracker",
-            "chat": "JHipster public chat room",
-            "follow": "Suivez @java_hipster sur Twitter",
-            "homepage": "Page d'accueil de JHipster",
-            "stackoverflow": "JHipster sur Stack Overflow"
+        "toolbar": {
+            "recruitmentAgencies": "Arbeitsvermittler",
+            "companies": "Unternehmen",
+            "jobSeekers": "Stellensuchende",
+            "title": "Job-Room bietet Leistungen f\u00fcr"
         },
-        "logged": {
-            "message": "Vous \u00eates connect\u00e9 en tant que \"{{username}}\"."
+        "title": "JobRoom",
+        "tool": {
+            "jobSearch": {
+                "title": "Finden Sie jetzt Ihren Traumjob!"
+            }
         },
-        "question": "Si vous avez des questions \u00e0 propos de JHipster :",
-        "subtitle": "Ceci est votre page d'accueil",
-        "title": "Bienvenue, Java Hipster !"
+        "homeServices": {
+            "candidateSearchTab": "Kandidaten finden",
+            "jobPublicationTab": "Job publizieren"
+        }
     }
 }

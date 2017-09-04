@@ -1,14 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { ToolsTab } from './tools-content/tools-content.component';
 
-enum Tab {
-    Jobs,
-    JobOffers,
-    Candidates
-}
-
-enum CandidateTab {
-    Search,
-    JobPublication
+enum ToolbarTab {
+    JobSeekers,
+    Companies,
+    RecruitmentAgencies
 }
 
 @Component({
@@ -17,25 +13,18 @@ enum CandidateTab {
     styleUrls: [
         'home.scss'
     ]
-
 })
 export class HomeComponent {
-    Tab: typeof Tab = Tab;
-    tab: Tab;
+    ToolbarTab: typeof ToolbarTab = ToolbarTab;
+    ToolsTab: typeof ToolsTab = ToolsTab;
 
-    CandidateTab: typeof CandidateTab = CandidateTab;
-    candidateTab: CandidateTab;
+    toolbarTab: ToolbarTab;
 
     constructor() {
-        this.tab = Tab.Jobs;
-        this.candidateTab = CandidateTab.Search;
+        this.toolbarTab = ToolbarTab.JobSeekers;
     }
 
-    select(tab: Tab): void {
-        this.tab = tab;
-    }
-
-    selectCandidateTab(candidateTab: CandidateTab): void {
-        this.candidateTab = candidateTab;
+    select(toolbarTab: ToolbarTab): void {
+        this.toolbarTab = toolbarTab;
     }
 }

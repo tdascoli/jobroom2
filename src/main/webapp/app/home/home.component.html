@@ -1,49 +1,25 @@
-<div class="jumbotron jumbotron-fluid jumbotron--has-toolbar">
-    <div class="toolbar">
-        <div class="container">
-            <div class="toolbar-collapse">
-                <ul class="toolbar-nav center toolbar-nav--has-icon">
-                    <li class="nav-title">
-                        <h2 class="light">Job-Room bietet Leistungen für</h2>
-                    </li>
-                    <li class="nav-item active show-jobs" [ngClass]="{'active': tab == Tab.Jobs}">
-                        <a (click)="select(Tab.Jobs)" class="nav-link">
-								<span class="nav-link__icon">
-									<span class="icon__stack">
-										<i class="fa fa-binoculars" aria-hidden="true"></i>
-									</span>
-								</span>
-                            Stellensuchende
-                        </a>
-                    </li>
-                    <li class="nav-item show-job-offers" [ngClass]="{'active': tab == Tab.JobOffers}">
-                        <a (click)="select(Tab.JobOffers)" class="nav-link">
-								<span class="nav-link__icon">
-									<span class="icon__stack">
-										<i class="fa fa-building" aria-hidden="true"></i>
-									</span>
-								</span>
-                            Unternehmen
-                        </a>
-                    </li>
-                    <li class="nav-item show-candidates" [ngClass]="{'active': tab == Tab.Candidates}">
-                        <a (click)="select(Tab.Candidates)" class="nav-link">
-								<span class="nav-link__icon">
-									<span class="icon__stack">
-										<i class="fa fa-eye" aria-hidden="true"></i>
-									</span>
-								</span>
-                            Arbeitsvermittler
-                        </a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+<div class="jumbotron jumbotron-fluid jumbotron--has-toolbar jumbotron--job-room">
 
-    <div class="container" [ngSwitch]="tab">
-        <div *ngSwitchCase="Tab.Jobs" id="jobs">
-            <h1 class="tool__heading">Finden Sie jetzt Ihren Traumjob!</h1>
+    <jr2-toolbar>
+        <li class="nav-title">
+            <h2 class="light">
+                {{'home.toolbar.title' | translate}}
+            </h2>
+        </li>
+        <jr2-toolbar-item [icon]="'binoculars'" [active]="toolbarTab == ToolbarTab.JobSeekers" (select)="select(ToolbarTab.JobSeekers)">
+            {{'home.toolbar.jobSeekers' | translate}}
+        </jr2-toolbar-item>
+        <jr2-toolbar-item [icon]="'building'" [active]="toolbarTab == ToolbarTab.Companies" (select)="select(ToolbarTab.Companies)">
+            {{'home.toolbar.companies' | translate}}
+        </jr2-toolbar-item>
+        <jr2-toolbar-item [icon]="'eye'" [active]="toolbarTab == ToolbarTab.RecruitmentAgencies" (select)="select(ToolbarTab.RecruitmentAgencies)">
+            {{'home.toolbar.recruitmentAgencies' | translate}}
+        </jr2-toolbar-item>
+    </jr2-toolbar>
+
+    <div class="container" [ngSwitch]="toolbarTab">
+        <div *ngSwitchCase="ToolbarTab.JobSeekers" id="job-seekers">
+            <h1 class="tool__heading">{{'home.tool.jobSearch.title' | translate}}</h1>
 
             <div class="row">
                 <div class="col-sm-4">
@@ -52,213 +28,12 @@
             </div>
         </div>
 
-        <div *ngSwitchCase="Tab.Candidates" id="candidates">
-            <div class="row">
-                <div class="col-sm-8">
+        <div *ngSwitchCase="ToolbarTab.Companies" id="companies">
+            <jr2-home-services [activeTab]="ToolsTab.JobPublication"></jr2-home-services>
+        </div>
 
-                    <ul class="nav nav-tabs nav--job-room" role="tablist">
-                        <li class="nav-item">
-                            <a class="nav-link" [ngClass]="{'active': candidateTab == CandidateTab.Search}" (click)="selectCandidateTab(CandidateTab.Search)" role="tab">
-                                Kandidaten finden
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" [ngClass]="{'active': candidateTab == CandidateTab.JobPublication}" (click)="selectCandidateTab(CandidateTab.JobPublication)" role="tab">
-                                Job publizieren
-                            </a>
-                        </li>
-                    </ul>
-
-                    <!-- Tab panes -->
-                    <div class="tab-content--job-room">
-                        <div class="tab-content" [ngSwitch]="candidateTab">
-                            <div class="tab-pane active" *ngSwitchCase="CandidateTab.Search" id="candidate-search" role="tabpanel">
-                                <fieldset class="candidate-search">
-                                    <div class="form-group">
-                                        <label for="example-text-input" class="col-form-label">Ich suche eine/n</label>
-                                        <div>
-                                            <input class="form-control" type="text" id="example-text-input"
-                                                   placeholder="Berufsbezeichung">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cs-1" class="col-form-label">Kenntnisse, Fähigkeiten, Skills</label>
-                                        <div>
-                                            <input class="form-control" type="text" id="cs-1"
-                                                   placeholder="z.B. Tiefbau">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group form-group--break">
-                                        <label for="sort" class="col-form-label">Berufserfahrung</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="sort">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cs-2" class="col-form-label">Arbeitsort</label>
-                                        <div>
-                                            <input class="form-control" type="text" id="cs-2"
-                                                   placeholder="Ort, Gemeinde, Kanton, PLZ">
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-group--break">
-                                        <label for="cs-3" class="col-form-label">Wohnort</label>
-                                        <div>
-                                            <input class="form-control" type="text" id="cs-3"
-                                                   placeholder="Ort, Gemeinde, Kanton, PLZ">
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cs-4" class="col-form-label">Verfügbarkeit</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-4">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cs-5" class="col-form-label">Arbeitspensum</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-5">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cs-6" class="col-form-label">Arbeitsform</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-6">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cs-7" class="col-form-label">Bildungsstufe</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-7">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="cs-8" class="col-form-label">Abschluss</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-8">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="form-group form-group--break">
-                                        <label for="cs-9" class="col-form-label">Führerausweiskategorie</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-9">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cs-10" class="col-form-label">Sprachkenntnisse</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-10">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <a class="btn btn-primary btn-lg" href="#">Kandidaten anzeigen (1'644)</a>
-                                </fieldset>
-
-                                <div class="candidate-search__radar">
-                                    <!--
-                                    <button type="button" class="close" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    -->
-
-                                    Diesem Job-Profil enstprechen bereits<br>
-                                    <span class="badge badge-radar">1'644</span><br>
-                                    Stellensuchenden
-                                    <a href="#">Jetzt anzeigen!</a>
-                                </div>
-                            </div>
-                            <div class="tab-pane active" *ngSwitchCase="CandidateTab.JobPublication" id="job-publication" role="tabpanel">
-                                <fieldset class="candidate-search">
-                                    <legend>Stellenbeschreibung</legend>
-
-                                    <div class="form-group">
-                                        <label for="basic-addon2">Stellenbezeichnung</label>
-                                        <div class="form-group--icon">
-                                            <input type="text" class="form-control" placeholder="z.B. Maurer"
-                                                   id="basic-addon2">
-
-                                            <a href="#" class="fa-stack form-control--icon">
-                                                <i class="fa fa-search fa-stack-1x"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div class="form-group">
-                                        <label for="cs-8" class="col-form-label">Abschluss</label>
-                                        <div>
-                                            <select class="form-control custom-select" id="cs-8">
-                                                <option selected="">keine Auswahl</option>
-                                                <option value="1">One</option>
-                                                <option value="2">Two</option>
-                                                <option value="3">Three</option>
-                                            </select>
-                                        </div>
-                                    </div>
-
-                                    <a class="btn btn-primary btn-lg" href="#">Job publizieren</a>
-                                </fieldset>
-                                <div class="candidate-search__radar">
-                                    <!--
-                                    <button type="button" class="close" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    -->
-
-                                    Diesem Job-Profil enstprechen bereits<br>
-                                    <span class="badge badge-radar">1'644</span><br>
-                                    Stellensuchenden
-                                    <a href="#">Jetzt anzeigen!</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+        <div *ngSwitchCase="ToolbarTab.RecruitmentAgencies" id="recruitment-agencies">
+            <jr2-home-services [activeTab]="ToolsTab.CandidateSearch"></jr2-home-services>
         </div>
     </div>
 </div>
