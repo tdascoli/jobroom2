@@ -7,10 +7,9 @@ import 'rxjs/add/operator/switchMap';
 @Component({
     selector: 'jr2-job-detail',
     templateUrl: './job-detail.component.html',
-    styles: [`.btn-block {
-        text-overflow: ellipsis;
-        overflow: hidden;
-    }`]
+    styleUrls: [
+        './job-detail.scss'
+    ]
 })
 export class JobDetailComponent implements OnInit {
 

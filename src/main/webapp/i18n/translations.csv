@@ -165,6 +165,8 @@ job-detail,job-detail.action.savePdf,Als PDF speichern,Als PDF speichern,Als PDF
 job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden
 job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
 job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
+job-detail,job-detail.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
+job-detail,job-detail.contactPerson.salutation.MS,Frau,Frau,Frau,Frau
 job-detail,job-detail.onlineSince,Online since,Online since,Online since,Online since
 job-detail,job-detail.otherJobsCompany,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen
 job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen

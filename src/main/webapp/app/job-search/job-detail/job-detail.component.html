@@ -8,27 +8,27 @@
 
         <div class="base__subnavbar" style="font-size: 80%;">
 
-            <div class="logo-box flex-height md-whiteframe-1dp">
+            <div class="logo-box logo-box__company flex-height md-whiteframe-1dp">
                 <div class="job-detail__content" *ngIf="job.company">
                     <address>
-                        <strong>{{ job.company.name }}</strong><br/>
-                        {{ job.company.street }} {{ job.company.houseNumber }}<br/>
-                        {{ job.company.zipCode }} {{ job.company.city }}<br/>
-                        {{ job.company.countryCode }}
+                        <h4>{{ job.company.name }}</h4>
+                        <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
+                        <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
                     </address>
 
-                    {{ job.company.phone }}<br/>
-                    {{ job.company.email }}<br/>
-                    {{ job.company.website }}
+                    <p>{{ job.company.phone }}</p>
+                    <p>{{ job.company.email }}</p>
+                    <p>{{ job.company.website }}</p>
                 </div>
 
-                <div class="job-detail__content">
-                    <strong>{{'job-detail.contactPerson' | translate}}</strong><br/>
-                    <div *ngIf="job.contact">
-                        {{ job.contact.title }}<br/>
-                        {{ job.contact.firstName }} {{ job.contact.lastName }}<br/>
-                        {{ job.contact.phone }}<br/>
-                        {{ job.contact.email }}<br/>
+                <div *ngIf="job.contact">
+                    <div class="job-detail__content">
+                    <h4>{{'job-detail.contactPerson' | translate}}</h4>
+                        <p>{{ 'job-detail.contactPerson.salutation.' +job.contact.title |
+                            translate }} {{ job.contact.firstName }}&nbsp;{{
+                            job.contact.lastName }}</p>
+                        <p>{{ job.contact.phone }}</p>
+                        <p>{{ job.contact.email }}</p>
                     </div>
                 </div>
             </div>

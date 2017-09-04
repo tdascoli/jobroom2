@@ -11,6 +11,8 @@
         },
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "contactPerson": "Ihre Kontaktperson",
+        "contactPerson.salutation.MR": "Herr",
+        "contactPerson.salutation.MS": "Frau",
         "onlineSince": "Online since",
         "otherJobsCompany": "{{count}} Jobs anzeigen",
         "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",

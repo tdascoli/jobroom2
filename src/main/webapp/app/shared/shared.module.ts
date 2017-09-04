@@ -18,6 +18,7 @@ import {
 } from './';
 import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
 import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
+import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 
 @NgModule({
     imports: [
@@ -29,7 +30,8 @@ import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
         HasAnyAuthorityDirective,
         StickyToolbarItemDirective,
         LocaleAwareDatePipe,
-        LocaleAwareDecimalPipe
+        LocaleAwareDecimalPipe,
+        SafeHtmlPipe
     ],
     providers: [
         LoginService,
@@ -42,7 +44,8 @@ import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
         UserService,
         DatePipe,
         LocaleAwareDatePipe,
-        LocaleAwareDecimalPipe
+        LocaleAwareDecimalPipe,
+        SafeHtmlPipe
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
@@ -52,6 +55,7 @@ import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
         DatePipe,
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
+        SafeHtmlPipe,
         StickyToolbarItemDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
