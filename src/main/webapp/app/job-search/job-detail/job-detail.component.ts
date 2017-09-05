@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, ParamMap, Router } from '@angular/router';
-import { JobService } from '../../entities/job/job.service';
+import { ActivatedRoute } from '@angular/router';
 import { Job } from '../../entities/job/job.model';
 import 'rxjs/add/operator/switchMap';
 
@@ -15,24 +14,10 @@ export class JobDetailComponent implements OnInit {
 
     job: Job;
 
-    constructor(private route: ActivatedRoute,
-                private router: Router,
-                private jobService: JobService) {
+    constructor(private route: ActivatedRoute) {
     }
 
     ngOnInit() {
-
-        this.route.paramMap
-            .switchMap((params: ParamMap) =>
-                this.jobService.find(params.get('id')))
-            .subscribe(
-                (job: Job) => this.job = job,
-                (err) => this.goBackToList()
-            );
+        this.job = this.route.snapshot.data['job'];
     }
-
-    goBackToList() {
-        this.router.navigate(['/job-search']);
-    }
-
 }

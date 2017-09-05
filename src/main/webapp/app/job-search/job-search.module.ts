@@ -18,6 +18,7 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter/job-search-filter.component';
 import { MarkdownModule } from 'angular2-markdown';
+import { JobDetailResolver } from './job-detail/job-detail.resolver';
 
 @NgModule({
     imports: [
@@ -42,6 +43,7 @@ import { MarkdownModule } from 'angular2-markdown';
     ],
     providers: [
         customHttpProvider(),
+        JobDetailResolver
     ]
 })
 export class JobSearchModule {
