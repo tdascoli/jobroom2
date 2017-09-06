@@ -13,7 +13,9 @@
 
     <div>
         <span class="text--primary-color">{{job.company.name}}</span>
+        <!--todo: Use generic badge classes after upgrading the style guide version-->
         <span class="badge badge-location">{{job.locality?.text}}</span>
+        <span class="badge badge-experience">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
         <span class="badge badge-contract" *ngIf="job.permanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
     </div>
 

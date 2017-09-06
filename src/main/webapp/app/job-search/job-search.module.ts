@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter/job-search-filter.component';
 import { MarkdownModule } from 'angular2-markdown';
 import { JobDetailResolver } from './job-detail/job-detail.resolver';
+import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import { JobDetailResolver } from './job-detail/job-detail.resolver';
         JobSearchListItemComponent,
         JobSearchListComponent,
         JobDetailComponent,
-        JobSearchFilterComponent
+        JobSearchFilterComponent,
+        WorkingTimeRangePipe
     ],
     providers: [
         customHttpProvider(),
