@@ -1,5 +1,5 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import {
     ContractType,
@@ -8,6 +8,7 @@ import {
 import { FilterChangedAction } from '../../state-management/actions/job-search.actions';
 import { JobSearchFilter } from '../../state-management/index';
 import { Subscription } from 'rxjs/Subscription';
+import { Observable } from 'rxjs/Observable';
 
 export class SelectItem {
     constructor(public value: any, public name: string) {
@@ -16,6 +17,8 @@ export class SelectItem {
 
 export const SORT_DATE_ASC = 'registrationDate,asc';
 export const SORT_DATE_DESC = 'registrationDate,desc';
+export const MIN_COMPANY_LENGTH = 2;
+export const COMPANY_DEBOUNCE_TIME = 500;
 
 @Component({
     selector: 'jr2-job-search-filter',
@@ -26,6 +29,7 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
     @Input() searchFilter: JobSearchFilter;
 
     filterForm: FormGroup;
+    companyName: FormControl;
     contractTypeOptions: Array<SelectItem>;
     sortOptions: Array<SelectItem>;
 
@@ -52,13 +56,26 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
             sort: [this.searchFilter.sort]
         });
 
-        this.subscription = this.filterForm.valueChanges.subscribe((formValue: any) =>
-            this.store.dispatch(new FilterChangedAction(formValue))
-        );
+        this.companyName = this.fb.control(this.searchFilter.companyName);
+
+        const filterForm$ = this.filterForm.valueChanges
+            .map((formValue: any) => Object.assign(formValue, { companyName: this.companyName.value }));
+
+        const companyName$ = this.companyName.valueChanges
+            .filter((value: string) => value.length >= MIN_COMPANY_LENGTH || value.length === 0)
+            .debounceTime(COMPANY_DEBOUNCE_TIME)
+            .distinctUntilChanged()
+            .map((companyName: string) => Object.assign(this.filterForm.value, { companyName }));
+
+        this.subscription = Observable.merge(filterForm$, companyName$)
+            .subscribe((filterValue: JobSearchFilter) =>
+                this.store.dispatch(new FilterChangedAction(filterValue)));
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 
     uncapFirst(value: string): string {

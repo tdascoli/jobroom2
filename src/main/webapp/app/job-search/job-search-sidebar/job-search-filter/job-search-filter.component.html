@@ -10,18 +10,22 @@
         </select>
     </div>
 
-    <p class="text--line-height--h4">{{'job-search.filter.contract-type.title' | translate}}</p>
+    <div class="form-group">
+        <label for="companyName" class="small">{{'job-search.filter.company-name.label' | translate}}</label>
+        <input [formControl]="companyName" class="form-control form-control-sm" id="companyName"
+               [placeholder]="'job-search.filter.company-name.label' | translate">
+    </div>
 
     <div class="form-group">
-        <select class="form-control-sm custom-select" formControlName="contractType">
+        <label for="contractType" class="small">{{'job-search.filter.contract-type.label' | translate}}</label>
+        <select class="form-control-sm custom-select" formControlName="contractType" id="contractType">
             <option *ngFor="let option of contractTypeOptions" [ngValue]="option.value">
                 {{'job-search.filter.contract-type.option.'+ uncapFirst(option.name) | translate}}
             </option>
         </select>
     </div>
-
-    <p class="text--line-height--h4">{{'job-search.filter.workingTime' | translate}}</p>
     <div class="form-group">
+        <label class="small">{{'job-search.filter.working-time.label' | translate}}</label>
         <jr2-range-input formControlName="workingTime"
                                  [min]="0" [max]="100"
                                  [step]="10"></jr2-range-input>

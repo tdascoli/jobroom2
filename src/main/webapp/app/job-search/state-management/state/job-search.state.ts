@@ -29,6 +29,7 @@ export interface JobSearchFilter {
     sort?: string;
     contractType: ContractType;
     workingTime: [number, number];
+    companyName?: string;
 }
 
 export const initialState: JobSearchState = {

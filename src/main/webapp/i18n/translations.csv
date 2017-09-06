@@ -1,6 +1,6 @@
 page,key,de,en,fr,it
 activate,activate.messages.error,"<strong>Ihr Benutzer konnte nicht aktiviert werden.</strong> Bitte benutzen Sie die Registrierungsmaske, um sich zu registrieren.",<strong>Your user could not be activated.</strong> Please use the registration form to sign up.,<strong>Votre compte utilisateur n'a pas pu être activé.</strong> Utilisez le formulaire d'enregistrement pour en créer un nouveau.,<strong>Il tuo account non può essere attivato.</strong> Si prega di usare il modulo di registrazione per iscriversi.
-activate,activate.messages.success,<strong>Ihr Benutzer wurde aktiviert.</strong> Bitte ,<strong>Your user account has been activated.</strong> Please ,<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ,<strong>Il tuo account è stato attivato.</strong> Si prega di
+activate,activate.messages.success,"<strong>Ihr Benutzer wurde aktiviert.</strong> Bitte ","<strong>Your user account has been activated.</strong> Please ","<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ",<strong>Il tuo account è stato attivato.</strong> Si prega di
 activate,activate.title,Aktivierung,Activation,Activation,Attivazione
 audits,audits.filter.button.clear,leeren,clear,Effacer,cancella
 audits,audits.filter.button.close,abschließen,close,Fermer,chiudi
@@ -110,7 +110,7 @@ global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional
 global,global.menu.language,Sprache,Language,Langue,Lingua
 global,global.messages.error.dontmatch,Das bestätigte Passwort entspricht nicht dem neuen Passwort!,The password and its confirmation do not match!,Le nouveau mot de passe et sa confirmation ne sont pas égaux !,La password e la sua conferma non corrispondono!
 global,global.messages.info.authenticated.link,anmelden,sign in,connecter,accedere
-global,global.messages.info.authenticated.prefix,Wenn Sie sich ,If you want to ,Si vous voulez vous ,Se vuoi
+global,global.messages.info.authenticated.prefix,"Wenn Sie sich ","If you want to ","Si vous voulez vous ",Se vuoi
 global,global.messages.info.authenticated.suffix," möchten, versuchen Sie es mit <br/>- Administrator (Name=""admin"" und Passwort=""admin"")<br/>- Benutzer (Name=""user"" und Passwort=""user"").",", you can try the default accounts:<br/>- Administrator (login=""admin"" and password=""admin"") <br/>- User (login=""user"" and password=""user"").",", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=""admin"" et mot de passe =""admin"") <br/> - Utilisateur (nom d'utilisateur=""user"" et mot de passe =""user"").",", puoi provare gli account di default: <br/> - Amministratore (user = ""admin"" e la password = ""admin"") <br/> - utente (user = ""user"" e la password = ""user"")"
 global,global.messages.info.register.link,Registrieren Sie sich,Register a new account,Créer un compte,Crea un account
 global,global.messages.info.register.noaccount,Sie haben noch keinen Zugang?,You don't have an account yet?,Vous n'avez pas encore de compte ?,Non hai ancora un account?
@@ -148,21 +148,21 @@ health,health.status.UP,UP,UP,DISPONIBLE,DISPONIBILE
 health,health.table.service,Dienst Name,Service name,Nom du service,Nome del servizio
 health,health.table.status,Status,Status,Etat,Stato
 health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
-home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
-home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
-home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
-home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für
-home,home.title,JobRoom,JobRoom,JobRoom,JobRoom
-home,home.tool.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
 home,home.homeServices.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidaten finden,Kandidaten finden
 home,home.homeServices.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
+home,home.title,JobRoom,JobRoom,JobRoom,JobRoom
+home,home.tool.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
+home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
+home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
+home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
+home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
-job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat
 job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren
 job-detail,job-detail.action.print,Drucken,Drucken,Drucken,Drucken
 job-detail,job-detail.action.saveJob,Stellenangebot speichern,Stellenangebot speichern,Stellenangebot speichern,Stellenangebot speichern
 job-detail,job-detail.action.savePdf,Als PDF speichern,Als PDF speichern,Als PDF speichern,Als PDF speichern
 job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden
+job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat
 job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
 job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 job-detail,job-detail.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
@@ -171,16 +171,18 @@ job-detail,job-detail.onlineSince,Online since,Online since,Online since,Online 
 job-detail,job-detail.otherJobsCompany,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen
 job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen
 job-detail,job-detail.title,Job detail,Job detail,Job detail,Job detail
+job-search,job-search.filter.company-name.label,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
+job-search,job-search.filter.company-name.placeholder,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
+job-search,job-search.filter.contract-type.label,Vertragsart,Vertragsart,Vertragsart,Vertragsart
 job-search,job-search.filter.contract-type.option.all,Alle,Alle,Alle,Alle
 job-search,job-search.filter.contract-type.option.permanent,Unbefristet,Unbefristet,Unbefristet,Unbefristet
 job-search,job-search.filter.contract-type.option.temporary,Befristet,Befristet,Befristet,Befristet
-job-search,job-search.filter.contract-type.title,Vertragsart,Vertragsart,Vertragsart,Vertragsart
 job-search,job-search.filter.sort.label,Sortierung,Sortierung,Sortierung,Sortierung
 job-search,job-search.filter.sort.option.date-asc,Sortiere nach Datum aufsteigend,Sortiere nach Datum aufsteigend,Sortiere nach Datum aufsteigend,Sortiere nach Datum aufsteigend
 job-search,job-search.filter.sort.option.date-desc,Sortiere nach Datum absteigend,Sortiere nach Datum absteigend,Sortiere nach Datum absteigend,Sortiere nach Datum absteigend
 job-search,job-search.filter.sort.option.relevance,Sortiere nach Relevanz,Sortiere nach Relevanz,Sortiere nach Relevanz,Sortiere nach Relevanz
 job-search,job-search.filter.title,Suchergebnisse filtern,Suchergebnisse filtern,Suchergebnisse filtern,Suchergebnisse filtern
-job-search,job-search.filter.workingTime,Pensum,Pensum,Pensum,Pensum
+job-search,job-search.filter.working-time.label,Pensum,Pensum,Pensum,Pensum
 job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Unbefristet,Unbefristet,Unbefristet
 job-search,job-search.job-search-list-item.badge.temporary,Befristet,Befristet,Befristet,Befristet
 job-search,job-search.job-search-list.error-message,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!
@@ -382,7 +384,7 @@ reset,reset.finish.form.button,Neues Passwort setzen,Validate new password,Réin
 reset,reset.finish.messages.error,Ihr Passwort konnte nicht zurückgesetzt werden. Zur Erinnerung Ihre Anfrage ist nur 24 Stunden gültig.,Your password couldn't be reset. Remember a password request is only valid for 24 hours.,Votre mot de passe n'a pas pu être réinitialisé. La demande de réinitialisation n'est valable que 24 heures.,La tua password potrebbe non essere ripristinata. Ricorda che la richiesta della password è valida solo per 24 ore.
 reset,reset.finish.messages.info,Wählen Sie ein neues Passwort,Choose a new password,Choisir un nouveau mot de passe,Scegliere una nuova password
 reset,reset.finish.messages.keymissing,Der Reset Schlüssel fehlt.,The reset key is missing.,La clef de réinitilisation est manquante,La chiave di reimpostazione non è presente.
-reset,reset.finish.messages.success,<strong>Ihr Passwort wurde zurückgesetzt.</strong> Bitte ,<strong>Your password has been reset.</strong> Please ,<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ,<strong>La tua password è stata reimpostata .</strong> Per favore
+reset,reset.finish.messages.success,"<strong>Ihr Passwort wurde zurückgesetzt.</strong> Bitte ","<strong>Your password has been reset.</strong> Please ","<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ",<strong>La tua password è stata reimpostata .</strong> Per favore
 reset,reset.finish.title,Passwort zurücksetzen,Reset password,Réinitialisation du mot de passe,Cambia Password
 reset,reset.request.form.button,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Reimposta Password
 reset,reset.request.messages.info,"Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",Enter the email address you used to register,Veuillez renseigner l'adresse email utilisée pour vous enregistrer,Inserisci l'indirizzo email utilizzato per la registrazione

@@ -53,6 +53,7 @@ export class JobSearchRequest {
             workingTimeMin: this.searchFilter.workingTime[0],
             workingTimeMax: this.searchFilter.workingTime[1],
             sort: this.searchFilter.sort,
+            companyName: this.searchFilter.companyName,
             page: this.page,
             size: ITEMS_PER_PAGE
         };

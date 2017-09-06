@@ -7,7 +7,7 @@
                     "permanent": "Unbefristet",
                     "temporary": "Befristet"
                 },
-                "title": "Vertragsart"
+                "label": "Vertragsart"
             },
             "sort": {
                 "label": "Sortierung",
@@ -18,7 +18,13 @@
                 }
             },
             "title": "Suchergebnisse filtern",
-            "workingTime": "Pensum"
+            "working-time": {
+                "label": "Pensum"
+            },
+            "company-name": {
+                "label": "Name des Unternehmen",
+                "placeholder": "Name des Unternehmen"
+            }
         },
         "job-search-list-item": {
             "badge": {
