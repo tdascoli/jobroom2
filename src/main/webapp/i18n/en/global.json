@@ -49,7 +49,16 @@
         },
         "userexists": "Login name already used!"
     },
-    "footer": "This is your footer",
+    "footer": {
+        "link": {
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            }
+        }
+    },
     "global": {
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "field": {

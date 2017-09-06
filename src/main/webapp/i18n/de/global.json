@@ -49,7 +49,16 @@
         },
         "userexists": "Benutzername bereits vergeben!"
     },
-    "footer": "Dies ist Ihre Fu\u00dfzeile",
+    "footer": {
+        "link": {
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            }
+        }
+    },
     "global": {
         "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
         "field": {

@@ -49,7 +49,16 @@
         },
         "userexists": "Il nome utente \u00e8 gi\u00e0 in uso!"
     },
-    "footer": "Pi\u00e8 di pagina",
+    "footer": {
+        "link": {
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            }
+        }
+    },
     "global": {
         "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
         "field": {
