@@ -35,7 +35,7 @@ export class Company {
 }
 
 export class Contact {
-    constructor(public title: string,
+    constructor(public salutation: string,
                 public firstName: string,
                 public lastName: string,
                 public phone: string,
@@ -55,8 +55,8 @@ export class LanguageSkill {
     constructor(public code: string,
                 public spokenLevel: LanguageLevel,
                 public writtenLevel: LanguageLevel,
-                public isMothertongue: boolean,
-                public isLanguageStayRequired: boolean) {
+                public mothertongue: boolean,
+                public languageStayRequired: boolean) {
     }
 }
 
@@ -88,6 +88,7 @@ export class Job implements BaseEntity {
                 public gender?: Gender,
                 public hasPersonalVehicle?: boolean,
                 public drivingLicenseLevel?: string,
+                public jobCenterCode?: string,
                 public company?: Company,
                 public contact?: Contact,
                 public occupation?: Occupation[],

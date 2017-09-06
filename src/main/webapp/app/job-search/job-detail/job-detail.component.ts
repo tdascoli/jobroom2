@@ -13,11 +13,13 @@ import 'rxjs/add/operator/switchMap';
 export class JobDetailComponent implements OnInit {
 
     job: Job;
+    jobUrl: String;
 
     constructor(private route: ActivatedRoute) {
     }
 
     ngOnInit() {
         this.job = this.route.snapshot.data['job'];
+        this.jobUrl = window.location.href;
     }
 }

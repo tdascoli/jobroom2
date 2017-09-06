@@ -5291,6 +5291,12 @@ ng2-webstorage@1.8.0:
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/ng2-webstorage/-/ng2-webstorage-1.8.0.tgz#02bac5f29cecc2b7a4dfea17d9cebc720edf6b49"
 
+ngx-clipboard@^8.0.4:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-8.0.4.tgz#97cda30d788e7dc1d280e36a7728f86600c455fd"
+  dependencies:
+    ngx-window-token "0.0.2"
+
 ngx-cookie@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ngx-cookie/-/ngx-cookie-1.0.0.tgz#004fc653febd849b4dd3ee2c63c4cf171f464da9"
@@ -5298,6 +5304,10 @@ ngx-cookie@1.0.0:
 ngx-infinite-scroll@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/ngx-infinite-scroll/-/ngx-infinite-scroll-0.5.1.tgz#dd9452c602ff7c3222f0ca168481aa14140286b7"
+
+ngx-window-token@0.0.2:
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-0.0.2.tgz#680ee986bbe6f95d07daadf154c0ecf35e589920"
 
 no-case@^2.2.0:
   version "2.3.1"

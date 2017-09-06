@@ -19,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter/job-search-filter.component';
 import { MarkdownModule } from 'angular2-markdown';
 import { JobDetailResolver } from './job-detail/job-detail.resolver';
+import { ClipboardModule } from 'ngx-clipboard';
 import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 
 @NgModule({
@@ -31,6 +32,7 @@ import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
         CommonModule,
         JobSearchRoutingModule,
         JobSearchSharedModule,
+        ClipboardModule,
         MarkdownModule.forRoot()
     ],
     declarations: [
