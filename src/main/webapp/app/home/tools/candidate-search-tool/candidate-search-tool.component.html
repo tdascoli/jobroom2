@@ -1,8 +1,10 @@
 <fieldset class="candidate-search">
   <div class="form-group">
-    <label for="example-text-input" class="col-form-label">Ich suche eine/n</label>
+      <label class="col-form-label">Ich suche eine/n</label>
     <div>
-      <input class="form-control" type="text" id="example-text-input" placeholder="Berufsbezeichung">
+        <jr2-typeahead-multiselect
+            [itemLoader]="fetchOccupationSuggestions"
+            [placeHolder]="'Beruf'"></jr2-typeahead-multiselect>
     </div>
   </div>
 

@@ -2,9 +2,11 @@
   <legend>Stellenbeschreibung</legend>
 
   <div class="form-group">
-    <label for="basic-addon2">Stellenbezeichnung</label>
+      <label>Stellenbezeichnung</label>
     <div class="form-group--icon">
-      <input type="text" class="form-control" placeholder="z.B. Maurer" id="basic-addon2">
+        <jr2-typeahead-multiselect
+            [itemLoader]="fetchOccupationSuggestions"
+            [placeHolder]="'Beruf'"></jr2-typeahead-multiselect>
 
       <a href="#" class="fa-stack form-control--icon">
         <i class="fa fa-search fa-stack-1x"></i>

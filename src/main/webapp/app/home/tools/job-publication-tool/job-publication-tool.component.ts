@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { OccupationService } from '../../../shared/job-search/service/occupation.service';
+import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 
 @Component({
-  selector: 'jr2-job-publication-tool',
-  templateUrl: './job-publication-tool.component.html',
-  styleUrls: []
+    selector: 'jr2-job-publication-tool',
+    templateUrl: './job-publication-tool.component.html',
+    styleUrls: []
 })
 export class JobPublicationToolComponent implements OnInit {
+    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
 
-  constructor() { }
+    constructor(private occupationService: OccupationService) {
+    }
 
-  ngOnInit() {
-  }
-
+    ngOnInit(): void {
+    }
 }

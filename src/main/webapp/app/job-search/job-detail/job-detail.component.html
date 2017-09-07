@@ -9,7 +9,6 @@
             <hr class="visible-print-block" />
 
             <div class="logo-box logo-box__company flex-height md-whiteframe-1dp">
-
                 <div class="job-detail__content" *ngIf="job.company">
                     <address>
                         <h4>{{ job.company.name }}</h4>
@@ -18,8 +17,10 @@
                     </address>
 
                     <p>{{ job.company.phone }}</p>
-                    <p>{{ job.company.email }}</p>
-                    <p>{{ job.company.website }}</p>
+                    <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
+                        }}</a></p>
+                    <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
+                        truncateCharacters:30 }}</a></p>
                 </div>
 
                 <div *ngIf="job.contact">
@@ -29,19 +30,20 @@
                             {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                         </p>
                         <p>{{ job.contact.phone }}</p>
-                        <p>{{ job.contact.email }}</p>
+                        <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
+                            }}</a></p>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="base__content">
-
             <div class="job-detail__title">
                 <h2 class="text--light">{{ job.title }}</h2>
                 <span class="text--primary-color">{{ job.company.name }}</span>
-                <small *ngIf="job.createdDate" class="job-detail__date">
-                    {{ 'job-detail.onlineSince' | translate }}: {{ job.createdDate | jr2Date }}
+                <small class="job-detail__date">
+                    {{'job-detail.onlineSince' | translate}} {{ job.publicationStartDate |
+                    jr2Date }}
                 </small>
             </div>
 
@@ -85,7 +87,9 @@
                 <h2>{{ 'job-detail.reference' | translate }}</h2>
                 <table class="table">
                     <tr>
-                        <td translate="job-detail.reference.responsible-job-center"></td>
+                        <td>{{ 'job-detail.reference.responsible-job-center' | translate
+                            }}">
+                        </td>
                         <td>{{ job.jobCenterCode}}</td>
                     </tr>
                     <!--<tr>-->

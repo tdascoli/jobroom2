@@ -12,12 +12,18 @@ import { OccupationService } from '../../../shared/job-search/service/occupation
 export class JobSearchToolComponent {
     queryModel: Array<TypeaheadMultiselectModel> = [];
 
-    constructor(private router: Router, private service: OccupationService) {
+    fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
+
+    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
+
+    constructor(private router: Router,
+                private occupationService: OccupationService,
+                // private localityService: LocalityService
+    ) {
     }
 
     search() {
         this.router.navigate(['/job-search']);
     }
 
-    fetchSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.service.fetchSuggestions(query);
 }

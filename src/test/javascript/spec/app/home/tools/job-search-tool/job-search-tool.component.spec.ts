@@ -3,11 +3,12 @@ import { Router } from '@angular/router';
 import { MockRouter } from '../../../../helpers/mock-route.service';
 import { JobSearchToolComponent } from '../../../../../../../main/webapp/app/home/tools/job-search-tools/job-search-tool.component';
 import { OccupationService } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation.service';
+import { LocalityService } from "../../../../../../../main/webapp/app/shared/job-search/service/locality.service";
 
 describe('JobSearchToolComponent', () => {
     const mockRouter = new MockRouter();
-    const mockOccupationService = jasmine.createSpyObj('mockOccupationService',
-        ['fetchSuggestions', 'getClassifications', 'getOccupations']);
+    const mockOccupationService = jasmine.createSpyObj('mockOccupationService', ['fetchSuggestions']);
+    const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);
 
     let component: JobSearchToolComponent;
     let fixture: ComponentFixture<JobSearchToolComponent>;
@@ -17,7 +18,8 @@ describe('JobSearchToolComponent', () => {
             declarations: [JobSearchToolComponent],
             providers: [
                 { provide: Router, useValue: mockRouter },
-                { provide: OccupationService, useValue: mockOccupationService }
+                { provide: OccupationService, useValue: mockOccupationService },
+                { provide: LocalityService, useValue: mockLocalityService }
             ]
         })
             .overrideTemplate(JobSearchToolComponent, '')
