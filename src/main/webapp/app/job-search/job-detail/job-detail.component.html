@@ -1,11 +1,9 @@
 <div class="container">
-
     <div class="breadcrumb">
         <a routerLink="/job-search">{{'job-detail.back' | translate}}</a>
     </div>
 
     <div class="base">
-
         <div class="base__subnavbar" style="font-size: 80%;">
 
             <div class="logo-box logo-box__company flex-height md-whiteframe-1dp">
@@ -23,29 +21,26 @@
 
                 <div *ngIf="job.contact">
                     <div class="job-detail__content">
-                    <h4>{{'job-detail.contactPerson' | translate}}</h4>
+                        <h4>{{'job-detail.contactPerson' | translate}}</h4>
                         <p><span *ngIf="job.contact.salutation">{{ 'job-detail.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
-                           {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}</p>
+                            {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
+                        </p>
                         <p>{{ job.contact.phone }}</p>
                         <p>{{ job.contact.email }}</p>
                     </div>
                 </div>
             </div>
-
         </div>
 
         <div class="base__content">
 
             <div class="job-detail__title">
                 <h2 class="text--light">{{ job.title }}</h2>
-                <span class="text--primary-color">{{ job.company?.name }}</span>
-                <small *ngIf="job.publicationStartDate" class="job-detail__date">
-                    {{'job-detail.onlineSince' | translate}} {{ job?.publicationStartDate
-                    | jr2Date }}
+                <span class="text--primary-color">{{ job.company.name }}</span>
+                <small *ngIf="job.createdDate" class="job-detail__date">
+                    {{ 'job-detail.onlineSince' | translate }}: {{ job.createdDate | jr2Date }}
                 </small>
             </div>
-
-            <p></p>
 
             <div class="job-detail__content">
                 <span *ngIf="job.locality" class="badge badge-location">{{ job.locality.zipCode }} {{ job.locality.text }} ({{ job.locality.cantonCode }})</span>
@@ -63,24 +58,61 @@
             <div class="job-detail__content">
                 <markdown [data]="job.description"></markdown>
             </div>
+            <table class="table">
+                <tr>
+                    <td>{{ 'job-detail.startsImmediately' | translate }}:</td>
+                    <td>{{ 'job-detail.startsImmediately.' + job.startsImmediately | translate }}</td>
+                </tr>
+            </table>
+            <div *ngIf="job.languages">
+                <h2>{{ 'job-detail.languages' | translate }}</h2>
+                <table class="table">
+                    <tr>
+                        <th>{{ 'job-detail.language' | translate }}</th>
+                        <th>{{ 'job-detail.language.written' | translate }}</th>
+                        <th>{{ 'job-detail.language.spoken' | translate }}</th>
+                    </tr>
+                    <tr *ngFor="let language of job.languages">
+                        <td>{{ 'job-detail.language.' + language.code | translate }}</td>
+                        <td><span *ngIf="language.writtenLevel">{{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span></td>
+                        <td><span *ngIf="language.spokenLevel">{{ 'job-detail.language.level.' + language.spokenLevel | translate}}</span></td>
+                    </tr>
+                </table>
+            </div>
+            <div *ngIf="job.jobCenterCode">
+                <h2>{{ 'job-detail.reference' | translate }}</h2>
+                <table class="table">
+                    <tr>
+                        <td translate="job-detail.reference.responsible-job-center"></td>
+                        <td>{{ job.jobCenterCode}}</td>
+                    </tr>
+                    <!--<tr>-->
+                    <!--<td>{{'job-detail.reference.phone'|translate}}:</td>-->
+                    <!--<td>+41 41 728 25 88</td>-->
+                    <!--</tr>-->
+                    <tr>
+                        <td>{{'job-detail.reference.job-id'|translate}}:</td>
+                        <td>{{ job.externalId }}</td>
+                    </tr>
+                </table>
+            </div>
             <!-- /job description -->
 
             <!--<div class="job-detail__features">-->
-                <!--<div class="logo-box flex-height md-whiteframe-1dp">-->
-                    <!--<h4>{{ job.company.name }}</h4>-->
-                    <!--<h4 class="text&#45;&#45;light">{{ job.company?.zipCode }} {{-->
-                        <!--job.company?.city }}</h4>-->
-                    <!--<a href="#" [jhiTranslate]="'job-detail.otherJobsCompany'"-->
-                       <!--[translateValues]="{count: 12}"></a>-->
-                <!--</div>-->
-
-                <!--<div class="logo-box flex-height md-whiteframe-1dp">-->
-                    <!--<h4>{{ job.title }}</h4>-->
-                    <!--<h4 class="text&#45;&#45;light">{{ job.locality.zipCode }} {{-->
-                        <!--job.locality.text }} ({{ job.locality.cantonCode }})</h4>-->
-                    <!--<a href="#" [jhiTranslate]="'job-detail.otherJobsEquivalent'"-->
-                       <!--[translateValues]="{count: 144}"></a>-->
-                <!--</div>-->
+            <!--<div class="logo-box flex-height md-whiteframe-1dp">-->
+            <!--<h4>{{ job.company.name }}</h4>-->
+            <!--<h4 class="text&#45;&#45;light">{{ job.company?.zipCode }} {{-->
+            <!--job.company?.city }}</h4>-->
+            <!--<a href="#" [jhiTranslate]="'job-detail.otherJobsCompany'"-->
+            <!--[translateValues]="{count: 12}"></a>-->
+            <!--</div>-->
+            <!--<div class="logo-box flex-height md-whiteframe-1dp">-->
+            <!--<h4>{{ job.title }}</h4>-->
+            <!--<h4 class="text&#45;&#45;light">{{ job.locality.zipCode }} {{-->
+            <!--job.locality.text }} ({{ job.locality.cantonCode }})</h4>-->
+            <!--<a href="#" [jhiTranslate]="'job-detail.otherJobsEquivalent'"-->
+            <!--[translateValues]="{count: 144}"></a>-->
+            <!--</div>-->
             <!--</div>-->
 
         </div>
@@ -103,34 +135,33 @@
 
                     <ul class="nav filter-nav flex-column">
                         <!--<li class="nav-item">-->
-                            <!--<a class="nav-link" href="#"><i class="fa fa-star-o"-->
-                                                            <!--aria-hidden="true"></i>-->
-                                <!--{{'job-detail.action.saveJob' | translate}}</a>-->
+                        <!--<a class="nav-link" href="#"><i class="fa fa-star-o"-->
+                        <!--aria-hidden="true"></i>-->
+                        <!--{{'job-detail.action.saveJob' | translate}}</a>-->
                         <!--</li>-->
                         <li class="nav-item">
-                            <a class="nav-link" [class.active]= "isCopied" ngxClipboard [cbContent]="jobUrl" (cbOnSuccess)="isCopied = true">
+                            <a class="nav-link" [class.active]="isCopied" ngxClipboard
+                               [cbContent]="jobUrl" (cbOnSuccess)="isCopied = true">
                                 <i class="fa fa-share" aria-hidden="true"></i>
                                 {{'job-detail.action.copyLink' | translate}}</a>
                         </li>
                         <!--<li class="nav-item">-->
-                            <!--<a class="nav-link" href="#"><i class="fa fa-envelope"-->
-                                                            <!--aria-hidden="true"></i>-->
-                                <!--{{'job-detail.action.sendEmail' | translate}}</a>-->
+                        <!--<a class="nav-link" href="#"><i class="fa fa-envelope"-->
+                        <!--aria-hidden="true"></i>-->
+                        <!--{{'job-detail.action.sendEmail' | translate}}</a>-->
                         <!--</li>-->
                         <li class="nav-item">
                             <a class="nav-link"><i class="fa fa-print" aria-hidden="true"></i>
                                 {{'job-detail.action.print' | translate}}</a>
                         </li>
                         <!--<li class="nav-item">-->
-                            <!--<a class="nav-link" href="#"><i class="fa fa-file-pdf-o"-->
-                                                            <!--aria-hidden="true"></i>-->
-                                <!--{{'job-detail.action.savePdf' | translate}}</a>-->
+                        <!--<a class="nav-link" href="#"><i class="fa fa-file-pdf-o"-->
+                        <!--aria-hidden="true"></i>-->
+                        <!--{{'job-detail.action.savePdf' | translate}}</a>-->
                         <!--</li>-->
                     </ul>
                 </div>
             </div>
         </div>
-
     </div>
-
 </div>

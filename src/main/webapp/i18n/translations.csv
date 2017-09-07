@@ -168,10 +168,62 @@ job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Sucherg
 job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 job-detail,job-detail.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
 job-detail,job-detail.contactPerson.salutation.MS,Frau,Frau,Frau,Frau
-job-detail,job-detail.onlineSince,Online since,Online since,Online since,Online since
+job-detail,job-detail.onlineSince,Vakant seit,Vakant seit,Vakant seit,Vakant seit
 job-detail,job-detail.otherJobsCompany,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen
 job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen
 job-detail,job-detail.title,Job detail,Job detail,Job detail,Job detail
+job-detail,job-detail.startsImmediately,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
+job-detail,job-detail.startsImmediately.true,ab sofort,ab sofort,ab sofort,ab sofort
+job-detail,job-detail.startsImmediately.false,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung
+job-detail,job-detail.reference,Referenz,Referenz,Referenz,Referenz
+job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV
+job-detail,job-detail.reference.job-id,Stellennummer,Stellennummer,Stellennummer,Stellennummer
+job-detail,job-detail.languages,Sprachen,Sprachen,Sprachen,Sprachen
+job-detail,job-detail.language,Sprache,Sprache,Sprache,Sprache
+job-detail,job-detail.language.spoken,mündlich,mündlich,mündlich,mündlich
+job-detail,job-detail.language.written,schriftlich,schriftlich,schriftlich,schriftlich
+job-detail,job-detail.language.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
+job-detail,job-detail.language.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
+job-detail,job-detail.language.level.GOOD,Gut,Gut,Gut,Gut
+job-detail,job-detail.language.level.VERY_GOOD,Sehr Gut,Sehr Gut,Sehr Gut,Sehr Gut
+job-detail,job-detail.language.de,Deutsch,Deutsch,Deutsch,Deutsch
+job-detail,job-detail.language.fr,Französisch,Französisch,Französisch,Französisch
+job-detail,job-detail.language.it,Italienisch,Italienisch,Italienisch,Italienisch
+job-detail,job-detail.language.rm,Rätoromanisch,Rätoromanisch,Rätoromanisch,Rätoromanisch
+job-detail,job-detail.language.en,Englisch,Englisch,Englisch,Englisch
+job-detail,job-detail.language.es,Spanisch,Spanisch,Spanisch,Spanisch
+job-detail,job-detail.language.pt,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
+job-detail,job-detail.language.tr,Türkisch,Türkisch,Türkisch,Türkisch
+job-detail,job-detail.language.el,Griechisch,Griechisch,Griechisch,Griechisch
+job-detail,job-detail.language.hu,Ungarisch,Ungarisch,Ungarisch,Ungarisch
+job-detail,job-detail.language.pl,Polnisch,Polnisch,Polnisch,Polnisch
+job-detail,job-detail.language.cs,Tschechisch,Tschechisch,Tschechisch,Tschechisch
+job-detail,job-detail.language.sr,Serbisch,Serbisch,Serbisch,Serbisch
+job-detail,job-detail.language.nl,Holändisch,Holändisch,Holändisch,Holändisch
+job-detail,job-detail.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
+job-detail,job-detail.language.he,Hebräisch,Hebräisch,Hebräisch,Hebräisch
+job-detail,job-detail.language.ru,Russisch,Russisch,Russisch,Russisch
+job-detail,job-detail.language.sv,Schwedisch,Schwedisch,Schwedisch,Schwedisch
+job-detail,job-detail.language.ja,Japanisch,Japanisch,Japanisch,Japanisch
+job-detail,job-detail.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
+job-detail,job-detail.language.sl,Slowenisch,Slowenisch,Slowenisch,Slowenisch
+job-detail,job-detail.language.hr,Kroatisch,Kroatisch,Kroatisch,Kroatisch
+job-detail,job-detail.language.da,Dänisch,Dänisch,Dänisch,Dänisch
+job-detail,job-detail.language.ta,Tamil,Tamil,Tamil,Tamil
+job-detail,job-detail.language.sq,Albanisch,Albanisch,Albanisch,Albanisch
+job-detail,job-detail.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
+job-detail,job-detail.language.mk,Makedonisch,Makedonisch,Makedonisch,Makedonisch
+job-detail,job-detail.language.bs,Bosnisch,Bosnisch,Bosnisch,Bosnisch
+job-detail,job-detail.language.bg,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
+job-detail,job-detail.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
+job-detail,job-detail.language.sk,Slowakisch,Slowakisch,Slowakisch,Slowakisch
+job-detail,job-detail.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
+job-detail,job-detail.language.th,Thai,Thai,Thai,Thai
+job-detail,job-detail.language.fi,Finnisch,Finnisch,Finnisch,Finnisch
+job-detail,job-detail.language.km,Kambodschanisch,Kambodschanisch,Kambodschanisch,Kambodschanisch
+job-detail,job-detail.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vietnamesisch
+job-detail,job-detail.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch
+job-detail,job-detail.language.99,Andere,Andere,Andere,Andere
 job-search,job-search.filter.company-name.label,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
 job-search,job-search.filter.company-name.placeholder,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
 job-search,job-search.filter.contract-type.label,Vertragsart,Vertragsart,Vertragsart,Vertragsart
