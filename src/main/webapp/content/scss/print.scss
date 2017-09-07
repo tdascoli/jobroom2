@@ -1,0 +1,62 @@
+@media print {
+
+    jhi-footer, jhi-page-ribbon, .base__related, .breadcrumb, .header {
+        display: none;
+    }
+
+    jhi-main {
+        display: block;
+        flex-direction: unset;
+    }
+
+    jr2-job-detail {
+        flex: unset;
+    }
+
+    .container {
+        width: 100%;
+        padding: 30px !important;
+    }
+
+    .base {
+        display: table;
+        font-size: 10pt;
+    }
+
+    .base__content {
+        display: table-header-group;
+        max-width: 100% !important;
+    }
+
+    .base__subnavbar {
+        display: table-row-group;
+        max-width: 100% !important;
+        font-size: 100% !important;
+    }
+
+    .logo-box {
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+    }
+
+    .text--primary-color {
+        color: black;
+    }
+
+    .badge {
+        background-color: white;
+    }
+
+    .job-detail__title, .job-detail__content {
+        flex: 1 0 auto;
+    }
+
+    .md-whiteframe-1dp {
+        box-shadow: none !important;
+    }
+
+    h2::first-letter {
+        margin-top: 0;
+    }
+}

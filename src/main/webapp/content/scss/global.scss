@@ -197,6 +197,12 @@ ui bootstrap tweaks
 }
 
 /*=================================================================================
+Print configuration
+=================================================================================== */
+
+@import 'print.scss';
+
+/*=================================================================================
 Style guide customization
 =================================================================================== */
 .header {
@@ -213,7 +219,7 @@ Style guide customization
 }
 
 /* ########################################## */
-/* Will be fixed in a next styleguide release */
+/* Temporary fixes styleguide issues */
 
 html, body, jhi-main {
     height: 100%;
@@ -232,6 +238,16 @@ jhi-home {
 
 jr2-job-detail {
     flex: 1 0 auto;
+}
+
+// issue #19
+a:not([href]):not([tabindex]) {
+    color: #007ab1;
+    cursor: pointer;
+
+    &:hover {
+        color: #007ab1;
+    }
 }
 
 /* ########################################## */

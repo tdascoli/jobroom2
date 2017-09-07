@@ -22,4 +22,8 @@ export class JobDetailComponent implements OnInit {
         this.job = this.route.snapshot.data['job'];
         this.jobUrl = window.location.href;
     }
+
+    printJob() {
+        window.print();
+    }
 }

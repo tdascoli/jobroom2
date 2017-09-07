@@ -6,7 +6,10 @@
     <div class="base">
         <div class="base__subnavbar" style="font-size: 80%;">
 
+            <hr class="visible-print-block" />
+
             <div class="logo-box logo-box__company flex-height md-whiteframe-1dp">
+
                 <div class="job-detail__content" *ngIf="job.company">
                     <address>
                         <h4>{{ job.company.name }}</h4>
@@ -151,7 +154,8 @@
                         <!--{{'job-detail.action.sendEmail' | translate}}</a>-->
                         <!--</li>-->
                         <li class="nav-item">
-                            <a class="nav-link"><i class="fa fa-print" aria-hidden="true"></i>
+                            <a class="nav-link" (click)="printJob()">
+                                <i class="fa fa-print" aria-hidden="true"></i>
                                 {{'job-detail.action.print' | translate}}</a>
                         </li>
                         <!--<li class="nav-item">-->
