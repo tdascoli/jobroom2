@@ -22,6 +22,11 @@ export class ItemDisplayModel {
     }
 }
 
+enum Key {
+    Tab = 9,
+    Enter = 13,
+}
+
 @Component({
     selector: 'jr2-typeahead-multiselect',
     templateUrl: './typeahead-multiselect.component.html',
@@ -80,7 +85,31 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         this.inputEl.nativeElement.focus();
     }
 
-    selectFreeText($e) {
+    focusInput() {
+        this.inputEl.nativeElement.focus();
+    }
+
+    handleKeyDown(event: KeyboardEvent) {
+        if (event.which === Key.Enter || event.which === Key.Tab) {
+            this.selectFreeText();
+
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    }
+
+    getInputWidth() {
+        const value = this.inputEl.nativeElement.value || '';
+        if (value.length > 0) {
+            return `${value.length}em`;
+        } else if (this.selectedItems.length > 0) {
+            return '0.5em';
+        } else {
+            return '100%';
+        }
+    }
+
+    selectFreeText() {
         const freeText = new TypeaheadMultiselectModel('free-text', this.inputValue, this.inputValue);
         if (this.editable && !this.exists(freeText) && freeText.code.length > 2) {
             const newItems = [...this.selectedItems, freeText];
@@ -92,14 +121,15 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         }
     }
 
-    selectItem($e) {
-        const newItems = [...this.selectedItems, $e.item.model];
+    selectItem(event: any) {
+        const newItems = [...this.selectedItems, event.item.model];
 
         this._onChange(newItems);
         this.writeValue(newItems);
 
         this.inputEl.nativeElement.value = '';
-        $e.preventDefault();
+        this.inputValue = '';
+        event.preventDefault();
     }
 
     showPlaceholder(): boolean {

@@ -50,7 +50,7 @@ describe('TypeaheadMultiselectComponent', () => {
 
             // WHEN
             component.inputValue = 'free text value';
-            component.selectFreeText({});
+            component.selectFreeText();
 
             // THAN
             expect(component.selectedItems.length).toEqual(2);
@@ -64,7 +64,7 @@ describe('TypeaheadMultiselectComponent', () => {
 
             // WHEN
             component.inputValue = 'free text value';
-            component.selectFreeText({});
+            component.selectFreeText();
 
             // THAN
             expect(component.selectedItems.length).toEqual(1);
