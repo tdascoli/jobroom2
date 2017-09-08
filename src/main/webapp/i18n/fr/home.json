@@ -1,10 +1,8 @@
 {
     "home": {
-        "toolbar": {
-            "recruitmentAgencies": "Arbeitsvermittler",
-            "companies": "Unternehmen",
-            "jobSeekers": "Stellensuchende",
-            "title": "Job-Room bietet Leistungen f\u00fcr"
+        "homeServices": {
+            "candidateSearchTab": "Kandidaten finden",
+            "jobPublicationTab": "Job publizieren"
         },
         "title": "JobRoom",
         "tool": {
@@ -12,9 +10,11 @@
                 "title": "Finden Sie jetzt Ihren Traumjob!"
             }
         },
-        "homeServices": {
-            "candidateSearchTab": "Kandidaten finden",
-            "jobPublicationTab": "Job publizieren"
+        "toolbar": {
+            "companies": "Unternehmen",
+            "jobSeekers": "Stellensuchende",
+            "recruitmentAgencies": "Arbeitsvermittler",
+            "title": "Job-Room bietet Leistungen f\u00fcr"
         }
     }
 }

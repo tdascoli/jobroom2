@@ -48,13 +48,12 @@
             <div class="job-detail__content">
                 <span *ngIf="job.locality" class="badge badge-location">{{ job.locality.zipCode }} {{ job.locality.text }} ({{ job.locality.cantonCode }})</span>
 
-                <!-- ####################### -->
-                <!-- Badge names will be fixed in a next styleguide release -->
-                <span *ngIf="job.workingTimePercentageMin && job.workingTimePercentageMax"
-                      class="badge badge-experience">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
-                <span *ngIf="job.permanent" class="badge badge-contract">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
-                <span *ngIf="!job.permanent" class="badge badge-contract">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
-                <!-- ####################### -->
+                <div class="job-detail__content">
+                    <span *ngIf="job.locality" class="badge badge-blue">{{ job.locality.zipCode }} {{ job.locality.text }} ({{ job.locality.cantonCode }})</span>
+                    <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
+                    <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
+                    <span *ngIf="!job.permanent" class="badge badge-yellow">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
+                </div>
             </div>
 
             <!-- job description -->

@@ -3,30 +3,34 @@ import {
     Component,
     EventEmitter,
     Input,
+    OnDestroy,
     OnInit,
     Output,
 } from '@angular/core';
 import { LocalityService } from '../service/locality.service';
 import { GeoPoint, LocalitySuggestion } from '../service/locality-autocomplete';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'jr2-geo-location-select',
     templateUrl: './geo-location-select.component.html',
     styleUrls: ['./geo-location-select.component.scss']
 })
-export class GeoLocationSelectComponent implements OnInit {
+export class GeoLocationSelectComponent implements OnInit, OnDestroy {
+    @Output() localitySelect = new EventEmitter<LocalitySuggestion>();
+    @Input() tooltip;
+
     private geoPoint: GeoPoint;
     private loading = false;
-    @Output() localitySelect = new EventEmitter<LocalitySuggestion>();
     private lastLocality: LocalitySuggestion;
-    @Input() tooltip;
+    private subscription: Subscription;
 
     constructor(private localityService: LocalityService,
                 private changeDetectorRef: ChangeDetectorRef) {
     }
 
     ngOnInit(): void {
-        this.localityService.getCurrentPosition()
+        this.subscription = this.localityService.getCurrentPosition()
             .subscribe((p: GeoPoint) => {
                 this.geoPoint = p;
                 this.changeDetectorRef.markForCheck();
@@ -34,6 +38,10 @@ export class GeoLocationSelectComponent implements OnInit {
                 // Nothing to do, the selector button stays hidden.
             });
 
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 
     getLocation() {

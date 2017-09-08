@@ -11,7 +11,7 @@
         }
         padding: 0;
         border: 0;
-        width: 385px;
+        width: 100%;
     }
 
     //TODO make colors customizable
@@ -40,44 +40,9 @@
         background-color: $additional-accent-green;
         border-color: $additional-accent-green;
     }
-
-    .typeahead-multiselect__tag {
-        margin: 0 0 0.2rem 0.2rem;
-
-        .remove-button {
-            margin-left: 0.3rem;
-            cursor: pointer;
-        }
-    }
-
-    .typeahead-multiselect__type-label {
-        float: right;
-        font-size: 0.8rem;
-        color: $main-color-gray-light-50;
-        margin: -0.5rem -20px 0.5rem 0;
-    }
 }
 
 :host /deep/ ngb-typeahead-window {
-    max-height: 400px;
-    overflow-y: auto;
-
-    .dropdown-item {
-        margin: 0;
-        padding: 3px 1.5rem;
-        color: $main-color-black !important;
-        font-weight: $text-weight-light;
-        font-size: 1rem;
-
-        &.active {
-            background-color: $main-color-gray-100;
-            color: $main-accent-color !important;
-        }
-
-        .fist-in-group-item {
-            border-top: 1px solid $main-color-gray-light-400;
-            padding: 0.5rem 0 0 0;
-        }
-    }
+    max-width: 485px;
 }
 

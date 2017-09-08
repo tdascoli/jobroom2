@@ -5,18 +5,15 @@
                                            [innerHtml]="job.title | safeHtml"></a></h4>
         <div>
             <small style="vertical-align: text-top;">{{job.registrationDate | jr2Date}}</small>
-            <!--<div style="display: inline-block; padding: 0 10px; font-size: 1.25em;" class="text&#45;&#45;primary-color">-->
-            <!--<i class="fa fa-star-o" aria-hidden="true"></i>-->
-            <!--</div>-->
         </div>
     </div>
 
     <div>
         <span class="text--primary-color">{{job.company.name}}</span>
-        <!--todo: Use generic badge classes after upgrading the style guide version-->
-        <span class="badge badge-location">{{job.locality?.text}}</span>
-        <span class="badge badge-experience">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
-        <span class="badge badge-contract" *ngIf="job.permanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
+        <span class="badge badge-blue">{{job.locality?.text}}</span>
+        <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
+        <span class="badge badge-green" *ngIf="job.permanent">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
+        <span class="badge badge-yellow" *ngIf="!job.permanent">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
     </div>
 
     <div class="line-clamp" [innerHtml]="job.description | safeHtml"></div>

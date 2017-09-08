@@ -70,7 +70,9 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     getButtonValueKey() {
         let key = 'job-search.toolbar.search-button.title';
 
-        if (this.totalCount === 0) {
+        if (this.loading) {
+            key += '.loading';
+        } else if (this.totalCount === 0) {
             key += '.none';
         } else if (this.totalCount === 1) {
             key += '.one';

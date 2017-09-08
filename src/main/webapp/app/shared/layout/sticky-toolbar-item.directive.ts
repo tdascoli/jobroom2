@@ -24,24 +24,14 @@ export class StickyToolbarItemDirective implements OnInit, OnDestroy {
     ngOnInit() {
         const headerEl = <HTMLDivElement>document.querySelector('.header');
         if (headerEl) {
-            headerEl.classList.add('header--with-toolbar');
-
-            const toolbarEl = <HTMLDivElement>headerEl.querySelector('.toolbar');
-            if (toolbarEl) {
-                toolbarEl.appendChild(this.el);
-            }
+            headerEl.classList.add('has-toolbar');
         }
     }
 
     ngOnDestroy(): void {
         const headerEl = <HTMLDivElement>document.querySelector('.header');
         if (headerEl) {
-            headerEl.classList.remove('header--with-toolbar');
-
-            const toolbarEl = <HTMLDivElement>headerEl.querySelector('.toolbar');
-            if (toolbarEl) {
-                toolbarEl.removeChild(this.el);
-            }
+            headerEl.classList.remove('has-toolbar');
         }
     }
 }

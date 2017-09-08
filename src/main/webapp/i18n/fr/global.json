@@ -51,11 +51,11 @@
     },
     "footer": {
         "link": {
-            "seco": {
-                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
-            },
             "legal": {
                 "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
             }
         }
     },
