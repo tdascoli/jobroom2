@@ -83,25 +83,24 @@
                     </tr>
                 </table>
             </div>
-            <div *ngIf="job.jobCenterCode">
+            <div *ngIf="jobCenter$ | async">
                 <h2>{{ 'job-detail.reference' | translate }}</h2>
                 <table class="table">
                     <tr>
-                        <td>{{ 'job-detail.reference.responsible-job-center' | translate
-                            }}">
-                        </td>
-                        <td>{{ job.jobCenterCode}}</td>
+                        <td>{{ 'job-detail.reference.responsible-job-center' | translate }}</td>
+                        <td>{{ (jobCenter$ | async).address.name }}</td>
                     </tr>
-                    <!--<tr>-->
-                    <!--<td>{{'job-detail.reference.phone'|translate}}:</td>-->
-                    <!--<td>+41 41 728 25 88</td>-->
-                    <!--</tr>-->
+                    <tr>
+                        <td>{{'job-detail.reference.phone'|translate}}:</td>
+                        <td>{{ (jobCenter$ | async).phone }}</td>
+                    </tr>
                     <tr>
                         <td>{{'job-detail.reference.job-id'|translate}}:</td>
                         <td>{{ job.externalId }}</td>
                     </tr>
                 </table>
             </div>
+
             <!-- /job description -->
 
             <!--<div class="job-detail__features">-->

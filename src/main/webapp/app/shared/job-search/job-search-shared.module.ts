@@ -3,6 +3,7 @@ import { OccupationService } from './service/occupation.service';
 import { TypeaheadMultiselectComponent } from './typeahead-multiselect/typeahead-multiselect.component';
 import { JobroomSharedLibsModule } from '../shared-libs.module';
 import { LocalityService, NAVIGATOR_TOKEN } from './service/locality.service';
+import { ReferenceService } from './service/reference.service';
 import { GeoLocationSelectComponent } from './geo-location-select/geo-location-select.component';
 import { RangeInputComponent } from './range-input/range-input.component';
 
@@ -29,6 +30,7 @@ export function navigatorFactory(): NavigatorGeolocation {
     providers: [
         OccupationService,
         LocalityService,
+        ReferenceService,
         { provide: NAVIGATOR_TOKEN, useFactory: navigatorFactory }
     ]
 })

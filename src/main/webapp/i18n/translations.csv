@@ -220,6 +220,7 @@ job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,{{co
 job-detail,job-detail.reference,Referenz,Referenz,Referenz,Referenz
 job-detail,job-detail.reference.job-id,Stellennummer,Stellennummer,Stellennummer,Stellennummer
 job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV
+job-detail,job-detail.reference.phone,Telefon,Telefon,Telefon,Telefon
 job-detail,job-detail.startsImmediately,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
 job-detail,job-detail.startsImmediately.false,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung
 job-detail,job-detail.startsImmediately.true,ab sofort,ab sofort,ab sofort,ab sofort
