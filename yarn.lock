@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@alv-ch/alv-styleguide@^0.0.6":
-  version "0.0.6"
-  resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.6.tgz#6758084ea50386e02882e55c65982caaec3c7f88"
+"@alv-ch/alv-styleguide@^0.0.8":
+  version "0.0.8"
+  resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.8.tgz#e4e83bdebc4f4c82f44cd9ef7217627fd5805858"
   dependencies:
     bootstrap "4.0.0-beta"
     bootstrap-drawer "1.0.6"
@@ -759,6 +759,10 @@ bootstrap-drawer@1.0.6:
   dependencies:
     bootstrap "3.x"
     jquery "2.x"
+
+bootstrap-slider@^9.8.1:
+  version "9.8.1"
+  resolved "https://registry.yarnpkg.com/bootstrap-slider/-/bootstrap-slider-9.8.1.tgz#8667d81ffb261538df776fc6f7bd77ec1990fc6e"
 
 bootstrap@3.x:
   version "3.3.7"

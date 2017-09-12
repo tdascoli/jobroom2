@@ -2,7 +2,6 @@
     <div class="container">
         <form [formGroup]="toolbarForm" (ngSubmit)="search(toolbarForm.value)" novalidate
               class="form-inline toolbar-form job-search__form">
-            <div class="form-inline toolbar-form">
                 <div class="form-group form-group--wide">
                     <jr2-typeahead-multiselect formControlName="baseQuery"
                                                [itemLoader]="fetchOccupationSuggestions"
@@ -24,7 +23,6 @@
                           [translateValues]="{count: getMaxCount() | jr2Number}">
                     </span>
                 </button>
-            </div>
         </form>
     </div>
 </div>
