@@ -1,5 +1,5 @@
 import { AfterViewInit, Component, HostListener, Input, OnDestroy } from '@angular/core';
-import { Job } from '../../entities/job/job.model';
+import { Job } from '../services';
 import { Store } from '@ngrx/store';
 import { JobSearchState, LoadNextPageAction } from '../state-management';
 import { Observable } from 'rxjs/Observable';

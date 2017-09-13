@@ -4,7 +4,6 @@ import {
     JobSearchState
 } from '../../../../../../../main/webapp/app/job-search/state-management';
 import { TestBed } from '@angular/core/testing';
-import { JobService } from '../../../../../../../main/webapp/app/entities/job/job.service';
 import { MockRouter } from '../../../../helpers/mock-route.service';
 import { Router } from '@angular/router';
 import { Store, StoreModule } from '@ngrx/store';
@@ -19,6 +18,7 @@ import {
     JOB_SEARCH_DEBOUNCE,
     JOB_SEARCH_SCHEDULER
 } from '../../../../../../../main/webapp/app/job-search/state-management/effects/job-search.effects';
+import { JobService } from '../../../../../../../main/webapp/app/job-search/services';
 
 describe('JobSearchEffects', () => {
     let effects: JobSearchEffects;
@@ -54,7 +54,12 @@ describe('JobSearchEffects', () => {
 
         it('should return new JobListLoadedAction if store is in initial state', () => {
             const jobList = [
-                { id: 0, title: 'title-0' }
+                {
+                    id: '0',
+                    externalId: 'extId0',
+                    title: 'title-0',
+                    publicationEndDate: new Date()
+                }
             ];
             const responseWrapper = new ResponseWrapper(new Headers({ 'X-Total-Count': '100' }), jobList, 200);
 
@@ -74,7 +79,14 @@ describe('JobSearchEffects', () => {
 
         it('should not return anything if store is not in initial state', () => {
             const loadJobListAction = new actions.JobListLoadedAction({
-                jobList: [{ id: 0, title: 'title-0' }],
+                jobList: [
+                    {
+                        id: '0',
+                        externalId: 'extId0',
+                        title: 'title-0',
+                        publicationEndDate: new Date()
+                    }
+                ],
                 totalCount: 100,
                 page: 1
             });
@@ -95,9 +107,24 @@ describe('JobSearchEffects', () => {
                 localityQuery: []
             });
             const jobList = [
-                { id: 0, title: 'title-0' },
-                { id: 1, title: 'title-1' },
-                { id: 2, title: 'title-2' }
+                {
+                    id: '0',
+                    externalId: 'extId0',
+                    title: 'title-0',
+                    publicationEndDate: new Date()
+                },
+                {
+                    id: '1',
+                    externalId: 'extId1',
+                    title: 'title-1',
+                    publicationEndDate: new Date()
+                },
+                {
+                    id: '2',
+                    externalId: 'extId2',
+                    title: 'title-2',
+                    publicationEndDate: new Date()
+                }
             ];
             const responseWrapper = new ResponseWrapper(new Headers({ 'X-Total-Count': '100' }), jobList, 200);
 
@@ -135,9 +162,24 @@ describe('JobSearchEffects', () => {
     describe('loadNextPage$', () => {
         it('should return a new NextPageLoadedAction with the loaded jobs on success', () => {
             const jobList = [
-                { id: 0, title: 'title-0' },
-                { id: 1, title: 'title-1' },
-                { id: 2, title: 'title-2' }
+                {
+                    id: '0',
+                    externalId: 'extId0',
+                    title: 'title-0',
+                    publicationEndDate: new Date()
+                },
+                {
+                    id: '1',
+                    externalId: 'extId1',
+                    title: 'title-1',
+                    publicationEndDate: new Date()
+                },
+                {
+                    id: '2',
+                    externalId: 'extId2',
+                    title: 'title-2',
+                    publicationEndDate: new Date()
+                }
             ];
             const responseWrapper = new ResponseWrapper(new Headers({ 'X-Total-Count': '100' }), jobList, 200);
             const action = new actions.LoadNextPageAction();

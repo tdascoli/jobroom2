@@ -21,6 +21,7 @@ import { MarkdownModule } from 'angular2-markdown';
 import { JobDetailResolver } from './job-detail/job-detail.resolver';
 import { ClipboardModule } from 'ngx-clipboard';
 import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
+import { JobService } from './services';
 
 @NgModule({
     imports: [
@@ -47,7 +48,8 @@ import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
     ],
     providers: [
         customHttpProvider(),
-        JobDetailResolver
+        JobDetailResolver,
+        JobService
     ]
 })
 export class JobSearchModule {

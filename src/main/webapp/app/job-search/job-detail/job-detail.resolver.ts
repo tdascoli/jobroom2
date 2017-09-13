@@ -4,10 +4,10 @@ import {
     Router,
     RouterStateSnapshot
 } from '@angular/router';
-import { Job } from '../../entities/job/job.model';
+
 import { Observable } from 'rxjs/Observable';
-import { JobService } from '../../entities/job/job.service';
 import { Injectable } from '@angular/core';
+import { Job, JobService } from '../services';
 
 @Injectable()
 export class JobDetailResolver implements Resolve<Job> {

@@ -1,5 +1,5 @@
 import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
-import { Job } from '../../../entities/job/job.model';
+import { Job } from '../../services';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export enum ContractType {

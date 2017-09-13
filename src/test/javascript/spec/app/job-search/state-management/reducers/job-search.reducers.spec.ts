@@ -66,9 +66,24 @@ describe('jobSearchReducer', () => {
         // GIVEN
         const state = initialState;
         const jobList = [
-            { id: 0, title: 'title-0' },
-            { id: 1, title: 'title-1' },
-            { id: 2, title: 'title-2' }
+            {
+                id: '0',
+                externalId: 'extId0',
+                title: 'title-0',
+                publicationEndDate: new Date()
+            },
+            {
+                id: '1',
+                externalId: 'extId1',
+                title: 'title-1',
+                publicationEndDate: new Date()
+            },
+            {
+                id: '2',
+                externalId: 'extId2',
+                title: 'title-2',
+                publicationEndDate: new Date()
+            }
         ];
         const action = new actions.JobListLoadedAction({
             jobList,
@@ -99,17 +114,47 @@ describe('jobSearchReducer', () => {
         // GIVEN
         const state = initialState;
         const initialJobList = [
-            { id: 0, title: 'title-0' },
-            { id: 1, title: 'title-1' },
-            { id: 2, title: 'title-2' }
+            {
+                id: '0',
+                externalId: 'extId0',
+                title: 'title-0',
+                publicationEndDate: new Date()
+            },
+            {
+                id: '1',
+                externalId: 'extId1',
+                title: 'title-1',
+                publicationEndDate: new Date()
+            },
+            {
+                id: '2',
+                externalId: 'extId2',
+                title: 'title-2',
+                publicationEndDate: new Date()
+            }
         ];
 
         state.jobList.push(...initialJobList);
 
         const jobList = [
-            { id: 3, title: 'title-3' },
-            { id: 4, title: 'title-4' },
-            { id: 5, title: 'title-5' }
+            {
+                id: '3',
+                externalId: 'extId3',
+                title: 'title-3',
+                publicationEndDate: new Date()
+            },
+            {
+                id: '4',
+                externalId: 'extId4',
+                title: 'title-4',
+                publicationEndDate: new Date()
+            },
+            {
+                id: '5',
+                externalId: 'extId5',
+                title: 'title-5',
+                publicationEndDate: new Date()
+            }
         ];
 
         const action = new actions.NextPageLoadedAction(jobList);

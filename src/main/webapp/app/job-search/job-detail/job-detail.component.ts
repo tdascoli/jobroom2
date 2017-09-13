@@ -1,12 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { Job } from '../../entities/job/job.model';
 import {
     JobCenter,
     ReferenceService
 } from '../../shared/job-search/service/reference.service';
-import 'rxjs/add/operator/switchMap';
+import { Job } from '../services';
 
 @Component({
     selector: 'jr2-job-detail',

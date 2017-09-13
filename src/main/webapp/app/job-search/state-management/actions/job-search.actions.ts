@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { JobSearchFilter, JobSearchQuery } from '../state/job-search.state';
-import { Job } from '../../../entities/job/job.model';
+import { Job } from '../../services';
 
 export const LOAD_NEXT_PAGE = 'LOAD_NEXT_PAGE';
 export const JOB_LIST_LOADED = 'JOB_LIST_LOADED';

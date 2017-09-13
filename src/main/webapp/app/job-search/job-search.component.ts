@@ -1,5 +1,4 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { Job } from '../entities/job/job.model';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
@@ -15,6 +14,7 @@ import {
     getSearchQuery,
     JobSearchQuery
 } from './state-management/state/job-search.state';
+import { Job } from './services';
 
 @Component({
     selector: 'jr2-job-search',

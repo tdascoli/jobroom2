@@ -1,10 +1,9 @@
 import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { JobService } from '../../../entities/job/job.service';
+import { JobSearchRequest, JobService } from '../../services';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { ResponseWrapper } from '../../../shared/model/response-wrapper.model';
-import { JobSearchRequest } from '../../../entities/job/job-search-request';
 import { getJobSearchState, JobSearchState, LOAD_NEXT_PAGE } from '../index';
 import {
     FILTER_CHANGED,
@@ -18,6 +17,7 @@ import {
 import { ROUTER_NAVIGATION } from '@ngrx/router-store';
 import { Scheduler } from 'rxjs/Scheduler';
 import { async } from 'rxjs/scheduler/async';
+import { createJobSearchRequest } from '../util/search-request-mapper';
 
 export const JOB_SEARCH_DEBOUNCE = new InjectionToken<number>('JOB_SEARCH_DEBOUNCE');
 export const JOB_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('JOB_SEARCH_SCHEDULER');
@@ -84,17 +84,17 @@ function toJobListLoadedAction(response: ResponseWrapper): JobListLoadedAction {
 }
 
 function toInitialSearchRequest(state: JobSearchState): JobSearchRequest {
-    return new JobSearchRequest(state.searchQuery, state.searchFilter, state.page);
+    return createJobSearchRequest(state.searchQuery, state.searchFilter, state.page);
 }
 
 function toNextPageRequest(state: JobSearchState): JobSearchRequest {
-    return new JobSearchRequest(state.searchQuery, state.searchFilter, state.page);
+    return createJobSearchRequest(state.searchQuery, state.searchFilter, state.page);
 }
 
 function toJobSearchRequest(action: LoadJobTriggerAction, state: JobSearchState): JobSearchRequest {
     if (action.type === TOOLBAR_CHANGED) {
-        return new JobSearchRequest(action.payload, state.searchFilter);
+        return createJobSearchRequest(action.payload, state.searchFilter);
     } else {
-        return new JobSearchRequest(state.searchQuery, action.payload);
+        return createJobSearchRequest(state.searchQuery, action.payload);
     }
 }
