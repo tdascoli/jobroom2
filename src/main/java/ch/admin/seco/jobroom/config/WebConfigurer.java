@@ -26,6 +26,7 @@ import org.springframework.boot.web.server.MimeMappings;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.ServletContextInitializer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
+import org.springframework.cloud.commons.httpclient.ApacheHttpClientConnectionManagerFactory;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
@@ -109,6 +110,12 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
             source.registerCorsConfiguration("/*/api/**", config);
         }
         return new CorsFilter(source);
+    }
+
+    // TODO: remove when https://github.com/spring-cloud/spring-cloud-commons/issues/251 is solved
+    @Bean
+    public ApacheHttpClientConnectionManagerFactory apacheHttpClientConnectionManagerFactory() {
+        return new DefaultApacheHttpClientConnectionManagerFactory();
     }
 
     @Autowired(required = false)
