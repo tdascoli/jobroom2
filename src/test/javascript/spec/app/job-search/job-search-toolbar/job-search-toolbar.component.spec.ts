@@ -15,9 +15,8 @@ import { LocalityInputType } from '../../../../../../main/webapp/app/shared/job-
 
 describe('JobSearchToolbarComponent', () => {
     const mockOccupationService = jasmine.createSpyObj('mockOccupationService',
-        ['fetchSuggestions', 'getClassifications', 'getOccupations']);
+        ['fetchSuggestions', 'getOccupations']);
 
-    mockOccupationService.getClassifications.and.returnValue(Observable.of([new TypeaheadMultiselectModel('classification', 'c1', 'C1')]));
     mockOccupationService.getOccupations.and.returnValue(Observable.of([new TypeaheadMultiselectModel('occupation', 'o1', 'O1')]));
 
     const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);

@@ -76,4 +76,53 @@ describe('OccupationService', () => {
                 ]);
             })));
     });
+
+    describe('getOccupations', () => {
+        let lastConnection;
+
+        beforeEach(inject([MockBackend], (mockBackend: MockBackend) => {
+            mockBackend.connections.subscribe((connection: any) => lastConnection = connection);
+        }));
+
+        it('should call http.get with the correct URL and parameters',
+            inject([OccupationService], (service: OccupationService) => {
+
+                // WHEN
+                service.getOccupations('info');
+
+                // THEN
+                const urlArray = lastConnection.request.url.split(/[?&]/);
+                expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/occupations/synonym']));
+                expect(urlArray).toEqual(arrayContaining(['prefix=info']));
+                expect(urlArray).toEqual(arrayContaining(['resultSize=10']));
+                expect(urlArray).toEqual(arrayContaining(['language=de']));
+            }));
+
+        it('should map the OccupationAutocomplete.occupations response to an array of TypeaheadMultiselectModel',
+            fakeAsync(inject([OccupationService], (service: OccupationService) => {
+                // GIVEN
+                const suggestResponse: OccupationAutocomplete = {
+                    occupations: [
+                        { code: '00', name: 'Informatiker' },
+                        { code: '01', name: 'Bioinformatiker' },
+                    ],
+                    classifications: [
+                        { code: '10', name: 'Berufe der Informatik' }
+                    ]
+                };
+
+                // WHEN
+                let model: Array<TypeaheadMultiselectModel>;
+                service.getOccupations('info').subscribe((res: any) => model = res);
+                lastConnection.mockRespond(createJsonResponse(suggestResponse));
+                tick();
+
+                // THEN
+                expect(model.length).toEqual(2);
+                expect(model).toEqual([
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '00', 'Informatiker', 0),
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '01', 'Bioinformatiker', 0),
+                ]);
+            })));
+    });
 });

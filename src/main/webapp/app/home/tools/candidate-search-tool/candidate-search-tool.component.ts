@@ -9,7 +9,7 @@ import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-
   styleUrls: []
 })
 export class CandidateSearchToolComponent implements OnInit {
-    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
+    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.getOccupations(query);
 
     constructor(private occupationService: OccupationService) {
     }
