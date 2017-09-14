@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import {
@@ -14,13 +14,17 @@ import { Job } from '../services';
         './job-detail.scss'
     ]
 })
-export class JobDetailComponent implements OnInit {
+export class JobDetailComponent implements OnInit, AfterViewInit {
 
     job: Job;
     jobCenter$: Observable<JobCenter>;
     jobUrl: String;
 
     constructor(private route: ActivatedRoute, private referenceService: ReferenceService) {
+    }
+
+    ngAfterViewInit(): void {
+        window.scroll(0, 0);
     }
 
     ngOnInit() {
