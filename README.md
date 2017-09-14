@@ -4,7 +4,7 @@
 [![Coverage Status](https://codecov.io/github/alv-ch/jobroom2/coverage.svg?branch=develop)](https://codecov.io/github/alv-ch/jobroom2?branch=develop)
 [![Quality Gate](https://sonarqube.com/api/badges/gate?key=ch.admin.seco.jobroom:jobroom)](https://sonarcloud.io/dashboard?id=ch.admin.seco.jobroom:jobroom)
 
-This application was generated using JHipster 4.5.5, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.5](https://jhipster.github.io/documentation-archive/v4.5.5).
+This application was generated using JHipster 4.8.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.5](https://jhipster.github.io/documentation-archive/v4.5.5).
 
 This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
@@ -42,6 +42,26 @@ specifying a newer version in [package.json](package.json). You can also run `ya
 Add the `help` flag on any command to see how you can use it. For example, `yarn help update`.
 
 The `yarn run` command will list all of the scripts available to run for this project.
+
+### Service workers
+
+Service workers are commented by default, to enable them please uncomment the following code.
+
+* The service worker registering script in index.html
+```
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+        .register('./sw.js')
+        .then(function() { console.log('Service Worker Registered'); });
+    }
+</script>
+```
+* The copy file option in webpack-common.js
+```js
+{ from: './src/main/webapp/sw.js', to: 'sw.js' },
+```
+Note: Add the respective scripts/assets in `sw.js` that is needed to be cached.
 
 ### Managing dependencies
 
@@ -134,6 +154,7 @@ Where a single translation file is like:
 The tasks must be executed manually. If you change either a translation JSON or the csv file make sure that the changes are synchronized
 and everything is committed into git.   
 
+
 ## Building for production
 
 To optimize the jobroom application for production, run:
@@ -201,15 +222,15 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
-[JHipster Homepage and latest documentation]: https://jhipster.github.io
-[JHipster 4.5.5 archive]: https://jhipster.github.io/documentation-archive/v4.5.5
-[Doing microservices with JHipster]: https://jhipster.github.io/documentation-archive/v4.5.5/microservices-architecture/
-[Using JHipster in development]: https://jhipster.github.io/documentation-archive/v4.5.5/development/
-[Service Discovery and Configuration with the JHipster-Registry]: https://jhipster.github.io/documentation-archive/v4.5.5/microservices-architecture/#jhipster-registry
-[Using Docker and Docker-Compose]: https://jhipster.github.io/documentation-archive/v4.5.5/docker-compose
-[Using JHipster in production]: https://jhipster.github.io/documentation-archive/v4.5.5/production/
-[Running tests page]: https://jhipster.github.io/documentation-archive/v4.5.5/running-tests/
-[Setting up Continuous Integration]: https://jhipster.github.io/documentation-archive/v4.5.5/setting-up-ci/
+[JHipster Homepage and latest documentation]: http://www.jhipster.tech
+[JHipster 4.8.1 archive]: http://www.jhipster.tech/documentation-archive/v4.8.1
+[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.8.1/microservices-architecture/
+[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.8.1/development/
+[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.8.1/microservices-architecture/#jhipster-registry
+[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.8.1/docker-compose
+[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.8.1/production/
+[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.8.1/running-tests/
+[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.8.1/setting-up-ci/
 
 [Gatling]: http://gatling.io/
 [Node.js]: https://nodejs.org/

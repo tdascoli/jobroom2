@@ -17,7 +17,6 @@ import ch.admin.seco.jobroom.repository.PersistenceAuditEventRepository;
  * Service for managing audit events.
  * <p>
  * This is the default implementation to support SpringBoot Actuator AuditEventRepository
- * </p>
  */
 @Service
 @Transactional

@@ -9,11 +9,13 @@ import javax.validation.constraints.NotNull;
 import org.springframework.dao.ConcurrencyFailureException;
 import org.springframework.http.HttpStatus;
 import org.springframework.security.access.AccessDeniedException;
+import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.support.MissingServletRequestPartException;
 
 @RestController
 public class ExceptionTranslatorTestController {
@@ -34,10 +36,20 @@ public class ExceptionTranslatorTestController {
 
     @GetMapping("/test/parameterized-error2")
     public void parameterizedError2() {
-        Map<String, String> params = new HashMap<>();
+        Map<String, Object> params = new HashMap<>();
         params.put("foo", "foo_value");
         params.put("bar", "bar_value");
         throw new CustomParameterizedException("test parameterized error", params);
+    }
+
+    @GetMapping("/test/missing-servlet-request-part")
+    public void missingServletRequestPartException() throws Exception {
+        throw new MissingServletRequestPartException("missing Servlet request part");
+    }
+
+    @GetMapping("/test/missing-servlet-request-parameter")
+    public void missingServletRequestParameterException() throws Exception {
+        throw new MissingServletRequestParameterException("missing Servlet request parameter", "parameter type");
     }
 
     @GetMapping("/test/access-denied")

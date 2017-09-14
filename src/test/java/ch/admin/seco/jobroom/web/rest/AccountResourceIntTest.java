@@ -412,7 +412,6 @@ public class AccountResourceIntTest {
 
         Optional<User> userDup = userRepository.findOneByLogin("badguy");
         assertThat(userDup.isPresent()).isTrue();
-
         assertThat(userDup.get().getAuthorities()).hasSize(1)
             .containsExactly(authorityRepository.getOne(AuthoritiesConstants.USER));
     }
@@ -620,7 +619,7 @@ public class AccountResourceIntTest {
         user.setEmail("change-password@example.com");
         userRepository.saveAndFlush(user);
 
-        restMvc.perform(post("/api/account/change_password").content("new password"))
+        restMvc.perform(post("/api/account/change-password").content("new password"))
             .andExpect(status().isOk());
 
         User updatedUser = userRepository.findOneByLogin("change-password").orElse(null);
@@ -637,7 +636,7 @@ public class AccountResourceIntTest {
         user.setEmail("change-password-too-small@example.com");
         userRepository.saveAndFlush(user);
 
-        restMvc.perform(post("/api/account/change_password").content("new"))
+        restMvc.perform(post("/api/account/change-password").content("new"))
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-too-small").orElse(null);
@@ -654,7 +653,7 @@ public class AccountResourceIntTest {
         user.setEmail("change-password-too-long@example.com");
         userRepository.saveAndFlush(user);
 
-        restMvc.perform(post("/api/account/change_password").content(RandomStringUtils.random(101)))
+        restMvc.perform(post("/api/account/change-password").content(RandomStringUtils.random(101)))
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-too-long").orElse(null);
@@ -671,7 +670,7 @@ public class AccountResourceIntTest {
         user.setEmail("change-password-empty@example.com");
         userRepository.saveAndFlush(user);
 
-        restMvc.perform(post("/api/account/change_password").content(RandomStringUtils.random(0)))
+        restMvc.perform(post("/api/account/change-password").content(RandomStringUtils.random(0)))
             .andExpect(status().isBadRequest());
 
         User updatedUser = userRepository.findOneByLogin("change-password-empty").orElse(null);
@@ -688,7 +687,7 @@ public class AccountResourceIntTest {
         user.setEmail("password-reset@example.com");
         userRepository.saveAndFlush(user);
 
-        restMvc.perform(post("/api/account/reset_password/init")
+        restMvc.perform(post("/api/account/reset-password/init")
             .content("password-reset@example.com"))
             .andExpect(status().isOk());
     }
@@ -696,7 +695,7 @@ public class AccountResourceIntTest {
     @Test
     public void testRequestPasswordResetWrongEmail() throws Exception {
         restMvc.perform(
-            post("/api/account/reset_password/init")
+            post("/api/account/reset-password/init")
                 .content("password-reset-wrong-email@example.com"))
             .andExpect(status().isBadRequest());
     }
@@ -717,7 +716,7 @@ public class AccountResourceIntTest {
         keyAndPassword.setNewPassword("new password");
 
         restMvc.perform(
-            post("/api/account/reset_password/finish")
+            post("/api/account/reset-password/finish")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(keyAndPassword)))
             .andExpect(status().isOk());
@@ -742,7 +741,7 @@ public class AccountResourceIntTest {
         keyAndPassword.setNewPassword("foo");
 
         restMvc.perform(
-            post("/api/account/reset_password/finish")
+            post("/api/account/reset-password/finish")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(keyAndPassword)))
             .andExpect(status().isBadRequest());
@@ -760,7 +759,7 @@ public class AccountResourceIntTest {
         keyAndPassword.setNewPassword("new password");
 
         restMvc.perform(
-            post("/api/account/reset_password/finish")
+            post("/api/account/reset-password/finish")
                 .contentType(TestUtil.APPLICATION_JSON_UTF8)
                 .content(TestUtil.convertObjectToJsonBytes(keyAndPassword)))
             .andExpect(status().isInternalServerError());

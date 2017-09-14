@@ -1,6 +1,13 @@
 {
     "error": {
-        "403": "Sie haben nicht die n\u00f6tigen Berechtigungen diese Seite anzuzeigen.",
-        "title": "Fehlerseite!"
+        "concurrencyFailure": "Another user modified this data at the same time as you. Your changes were rejected.",
+        "http": {
+            "400": "Bad request.",
+            "403": "Sie haben nicht die n\u00f6tigen Berechtigungen diese Seite anzuzeigen.",
+            "405": "The HTTP verb you used is not supported for this URL.",
+            "500": "Internal server error."
+        },
+        "title": "Fehlerseite!",
+        "validation": "Validation error on the server."
     }
 }

@@ -19,6 +19,13 @@ export class JobDetailComponent implements OnInit, AfterViewInit {
     job: Job;
     jobCenter$: Observable<JobCenter>;
     jobUrl: String;
+    isCopied: boolean;
+
+    // After upgrading the jhipster version tslint fails with the following message:
+    // ERROR: /home/mabi/development/projects/seco/jobroom2/src/main/webapp/app/job-search/job-detail/job-detail.component.html[91, 32]:
+    // The property "async" that you're trying to access does not exist in the class declaration.
+    // This is a temporary workaround to solve the linting failure above.
+    async: any;
 
     constructor(private route: ActivatedRoute, private referenceService: ReferenceService) {
     }

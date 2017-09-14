@@ -36,7 +36,7 @@ import ch.admin.seco.jobroom.security.SecurityUtils;
  */
 public class RateLimitingFilter extends ZuulFilter {
 
-    public static final String GATEWAY_RATE_LIMITING_CACHE_NAME = "gateway-rate-limiting";
+    public final static String GATEWAY_RATE_LIMITING_CACHE_NAME = "gateway-rate-limiting";
     private final Logger log = LoggerFactory.getLogger(RateLimitingFilter.class);
     private final JHipsterProperties jHipsterProperties;
 
@@ -112,11 +112,8 @@ public class RateLimitingFilter extends ZuulFilter {
         }
     }
 
-    /**
+    /*
      * The ID that will identify the limit: the user login or the user IP address.
-     *
-     * @param httpServletRequest servletRequest
-     * @return login id or ip
      */
     private String getId(HttpServletRequest httpServletRequest) {
         String login = SecurityUtils.getCurrentUserLogin();

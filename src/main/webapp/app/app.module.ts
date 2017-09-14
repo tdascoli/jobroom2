@@ -35,6 +35,8 @@ import { DEBUG_INFO_ENABLED } from './app.constants';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
+// jhipster-needle-angular-add-module-import JHipster will add new module here
+
 @NgModule({
     imports: [
         BrowserModule,

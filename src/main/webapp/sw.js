@@ -1,5 +1,5 @@
-var dataCacheName = '"Jobroom-v1';
-var cacheName = '"Jobroom-1';
+var dataCacheName = 'Jobroom-v1';
+var cacheName = 'Jobroom-1';
 var filesToCache = [
     '/',
     '/index.html'

@@ -29,7 +29,7 @@ import ch.admin.seco.jobroom.web.rest.vm.LoggerVM;
  * @see LogsResource
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = JobroomApp.class)
+@SpringBootTest(classes = JobroomApp.class, properties = "eureka.client.enabled=true")
 public class LogsResourceIntTest {
 
     private MockMvc restLogsMockMvc;

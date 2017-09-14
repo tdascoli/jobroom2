@@ -21,7 +21,7 @@ describe('Component Tests', () => {
                     ActivateService,
                     {
                         provide: ActivatedRoute,
-                        useValue: new MockActivatedRoute({'key': 'ABC123'})
+                        useValue: new MockActivatedRoute({ 'key': 'ABC123' })
                     },
                     {
                         provide: LoginModalService,
@@ -33,7 +33,7 @@ describe('Component Tests', () => {
         }));
 
         beforeEach(() => {
-            let fixture = TestBed.createComponent(ActivateComponent);
+            const fixture = TestBed.createComponent(ActivateComponent);
             comp = fixture.componentInstance;
         });
 

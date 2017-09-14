@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.EntityGraph;
@@ -33,6 +34,7 @@ public interface UserRepository extends JpaRepository<User, UUID> {
     User findOneWithAuthoritiesById(UUID id);
 
     @EntityGraph(attributePaths = "authorities")
+    @Cacheable(cacheNames = "users")
     Optional<User> findOneWithAuthoritiesByLogin(String login);
 
     Page<User> findAllByLoginNot(Pageable pageable, String login);

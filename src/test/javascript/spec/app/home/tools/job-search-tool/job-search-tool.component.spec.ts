@@ -4,7 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MockRouter } from '../../../../helpers/mock-route.service';
 import { JobSearchToolComponent } from '../../../../../../../main/webapp/app/home/tools/job-search-tools/job-search-tool.component';
 import { OccupationService } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation.service';
-import { LocalityService } from "../../../../../../../main/webapp/app/shared/job-search/service/locality.service";
+import { LocalityService } from '../../../../../../../main/webapp/app/shared/job-search/service/locality.service';
 
 describe('JobSearchToolComponent', () => {
     const mockRouter = new MockRouter();

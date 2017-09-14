@@ -1,10 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import {ToolbarItemComponent} from "../../../../../../main/webapp/app/home/toolbar-item/toolbar-item.component";
-
+import { ToolbarItemComponent } from '../../../../../../main/webapp/app/home/toolbar-item/toolbar-item.component';
 
 describe('ToolbarItemComponent', () => {
-    let component:ToolbarItemComponent;
-    let fixture:ComponentFixture<ToolbarItemComponent>;
+    let component: ToolbarItemComponent;
+    let fixture: ComponentFixture<ToolbarItemComponent>;
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({

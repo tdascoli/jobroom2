@@ -20,8 +20,9 @@ export class GeoLocationSelectComponent implements OnInit, OnDestroy {
     @Output() localitySelect = new EventEmitter<LocalitySuggestion>();
     @Input() tooltip;
 
+    loading = false;
+
     private geoPoint: GeoPoint;
-    private loading = false;
     private lastLocality: LocalitySuggestion;
     private subscription: Subscription;
 

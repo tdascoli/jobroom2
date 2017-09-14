@@ -10,11 +10,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class TokenRelayFilter extends ZuulFilter {
     @Override
-    public boolean shouldFilter() {
-        return true;
-    }
-
-    @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
 
@@ -23,6 +18,11 @@ public class TokenRelayFilter extends ZuulFilter {
         headers.remove("authorization");
 
         return null;
+    }
+
+    @Override
+    public boolean shouldFilter() {
+        return true;
     }
 
     @Override

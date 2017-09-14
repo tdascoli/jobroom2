@@ -1,41 +1,31 @@
 const webpack = require('webpack');
-const CommonsChunkPlugin = require('webpack/lib/optimize/CommonsChunkPlugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const StringReplacePlugin = require('string-replace-webpack-plugin');
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
-const WebpackNotifierPlugin = require('webpack-notifier');
 const MergeJsonWebpackPlugin = require("merge-jsons-webpack-plugin");
-const path = require('path');
 
-const parseVersion = require('./utils.js').parseVersion;
+const utils = require('./utils.js');
 
 module.exports = (options) => {
     const DATAS = {
-        VERSION: `'${parseVersion()}'`,
-        DEBUG_INFO_ENABLED: options.env === 'dev'
+        VERSION: `'${utils.parseVersion()}'`,
+        DEBUG_INFO_ENABLED: options.env === 'development',
+        // The root URL for API calls, ending with a '/' - for example: `"http://api.jhipster.tech:8081/"`
+        // In `prod` mode, you will need to enable CORS on your API server
+        // (see the `jhipster.cors` common JHipster property in the `application-*.yml` configurations)
+        SERVER_API_URL: `"/"`
     };
     return {
-        entry: {
-            'polyfills': './src/main/webapp/app/polyfills',
-            'global': './src/main/webapp/content/scss/global.scss',
-            'main': './src/main/webapp/app/app.main'
-        },
         resolve: {
             extensions: ['.ts', '.js'],
             modules: ['node_modules']
         },
+        stats: {
+            children: false
+        },
         module: {
             rules: [
                 { test: /bootstrap\/dist\/js\/umd\//, loader: 'imports-loader?jQuery=jquery' },
-                {
-                    test: /\.ts$/,
-                    loaders: [
-                        'angular2-template-loader',
-                        'awesome-typescript-loader'
-                    ],
-                    exclude: ['node_modules/generator-jhipster']
-                },
                 {
                     test: /\.html$/,
                     loader: 'html-loader',
@@ -47,24 +37,6 @@ module.exports = (options) => {
                         minifyCSS:false
                     },
                     exclude: ['./src/main/webapp/index.html']
-                },
-                {
-                    test: /\.scss$/,
-                    loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
-                    exclude: /(vendor\.scss|global\.scss)/
-                },
-                {
-                    test: /(vendor\.scss|global\.scss)/,
-                    loaders: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
-                },
-                {
-                    test: /\.css$/,
-                    loaders: ['to-string-loader', 'css-loader'],
-                    exclude: /(vendor\.css|global\.css)/
-                },
-                {
-                    test: /(vendor\.css|global\.css)/,
-                    loaders: ['style-loader', 'css-loader']
                 },
                 {
                     test: /\.(jpe?g|png|gif|svg|woff2?|ttf|eot)$/i,
@@ -86,16 +58,39 @@ module.exports = (options) => {
             ]
         },
         plugins: [
-            new CommonsChunkPlugin({
-                names: ['manifest', 'polyfills'].reverse()
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'NODE_ENV': JSON.stringify(options.env)
+                }
             }),
-            new webpack.DllReferencePlugin({
-                context: './',
-                manifest: require(path.resolve('./build/www/vendor.json'))
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'polyfills',
+                chunks: ['polyfills']
             }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: 'vendor',
+                chunks: ['main'],
+                minChunks: module => utils.isExternalLib(module)
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: ['polyfills', 'vendor'].reverse()
+            }),
+            new webpack.optimize.CommonsChunkPlugin({
+                name: ['manifest'],
+                minChunks: Infinity,
+            }),
+            /**
+             * See: https://github.com/angular/angular/issues/11580
+             */
+            new webpack.ContextReplacementPlugin(
+                /angular(\\|\/)core(\\|\/)@angular/,
+                utils.root('src/main/webapp/app'), {}
+            ),
             new CopyWebpackPlugin([
                 { from: './node_modules/core-js/client/shim.min.js', to: 'core-js-shim.min.js' },
-                { from: './node_modules/swagger-ui/dist', to: 'swagger-ui/dist' },
+                { from: './node_modules/swagger-ui/dist/css', to: 'swagger-ui/dist/css' },
+                { from: './node_modules/swagger-ui/dist/lib', to: 'swagger-ui/dist/lib' },
+                { from: './node_modules/swagger-ui/dist/swagger-ui.min.js', to: 'swagger-ui/dist/swagger-ui.min.js' },
                 { from: './src/main/webapp/swagger-ui/', to: 'swagger-ui' },
                 { from: './src/main/webapp/favicon.ico', to: 'favicon.ico' },
                 { from: './src/main/webapp/manifest.webapp', to: 'manifest.webapp' },
@@ -109,10 +104,10 @@ module.exports = (options) => {
             new MergeJsonWebpackPlugin({
                 output: {
                     groupBy: [
-                        { pattern: "./src/main/webapp/i18n/de/*.json", fileName: "./build/www/i18n/de.json" },
-                        { pattern: "./src/main/webapp/i18n/en/*.json", fileName: "./build/www/i18n/en.json" },
-                        { pattern: "./src/main/webapp/i18n/fr/*.json", fileName: "./build/www/i18n/fr.json" },
-                        { pattern: "./src/main/webapp/i18n/it/*.json", fileName: "./build/www/i18n/it.json" }
+                        { pattern: "./src/main/webapp/i18n/de/*.json", fileName: "./i18n/de.json" },
+                        { pattern: "./src/main/webapp/i18n/en/*.json", fileName: "./i18n/en.json" },
+                        { pattern: "./src/main/webapp/i18n/fr/*.json", fileName: "./i18n/fr.json" },
+                        { pattern: "./src/main/webapp/i18n/it/*.json", fileName: "./i18n/it.json" }
                         // jhipster-needle-i18n-language-webpack - JHipster will add/remove languages in this array
                     ]
                 }
@@ -122,14 +117,7 @@ module.exports = (options) => {
                 chunksSortMode: 'dependency',
                 inject: 'body'
             }),
-            new AddAssetHtmlPlugin([
-                { filepath: path.resolve('./build/www/vendor.dll.js'), includeSourcemap: false }
-            ]),
-            new StringReplacePlugin(),
-            new WebpackNotifierPlugin({
-                title: 'JHipster',
-                contentImage: path.join(__dirname, 'logo-jhipster.png')
-            })
+            new StringReplacePlugin()
         ]
     };
 };
