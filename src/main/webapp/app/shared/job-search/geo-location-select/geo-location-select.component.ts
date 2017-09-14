@@ -50,16 +50,17 @@ export class GeoLocationSelectComponent implements OnInit, OnDestroy {
             setTimeout(() => {
                 this.localityService.getNearestLocality(this.geoPoint)
                     .subscribe((locality: LocalitySuggestion) => {
-                        this.localitySelect.emit(locality);
-                        this.lastLocality = locality;
-                        this.loading = false;
-                        this.changeDetectorRef.markForCheck();
-                    }, (error: any) => {
-                        this.loading = false;
-                        this.changeDetectorRef.markForCheck();
-                    });
+                            this.localitySelect.emit(locality);
+                            this.lastLocality = locality;
+                        }, (error: any) => {
+                        },
+                        () => {
+                            this.loading = false;
+                            this.changeDetectorRef.markForCheck();
+                        });
             }, 500);
         }
+        return false;
     }
 
     isVisible(): boolean {

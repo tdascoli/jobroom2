@@ -1,5 +1,6 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { JobroomSharedModule, JobSearchSharedModule } from '../shared';
 import { HOME_ROUTE, HomeComponent } from './';
 import { JobSearchToolComponent } from './tools/job-search-tools/job-search-tool.component';
@@ -13,6 +14,7 @@ import { ToolsContentComponent } from './tools-content/tools-content.component';
     imports: [
         JobroomSharedModule,
         JobSearchSharedModule,
+        ReactiveFormsModule,
         RouterModule.forRoot([HOME_ROUTE], { useHash: true })
     ],
     declarations: [
