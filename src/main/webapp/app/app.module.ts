@@ -32,6 +32,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { DEBUG_INFO_ENABLED } from './app.constants';
+import { CandidateSearchModule } from './candidate-search/candidate-search.module';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
@@ -49,6 +50,7 @@ import { DEBUG_INFO_ENABLED } from './app.constants';
         JobroomAccountModule,
         JobroomEntityModule,
         JobSearchModule,
+        CandidateSearchModule,
         StoreModule.forRoot({}),
         DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
         EffectsModule.forRoot([])
