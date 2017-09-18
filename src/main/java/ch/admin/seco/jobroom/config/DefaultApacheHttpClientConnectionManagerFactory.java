@@ -48,19 +48,19 @@ public class DefaultApacheHttpClientConnectionManagerFactory
             registryBuilder = RegistryBuilder.<ConnectionSocketFactory>create()
                 .register(HTTP_SCHEME, PlainConnectionSocketFactory.INSTANCE);
         }
-        try {
-            final SSLContext sslContext = SSLContext.getInstance("SSL");
-            if (disableSslValidation) {
+        if (disableSslValidation) {
+            try {
+                final SSLContext sslContext = SSLContext.getInstance("SSL");
                 sslContext.init(null, new TrustManager[] {new DisabledValidationTrustManager()}, new SecureRandom());
                 registryBuilder.register(HTTPS_SCHEME, new SSLConnectionSocketFactory(
                     sslContext, NoopHostnameVerifier.INSTANCE));
-            } else {
-                sslContext.init(null, null, new SecureRandom());
-                registryBuilder.register(HTTPS_SCHEME, new SSLConnectionSocketFactory(sslContext));
+            } catch (NoSuchAlgorithmException | KeyManagementException e) {
+                LOG.warn("Error creating SSLContext", e);
             }
-        } catch (NoSuchAlgorithmException | KeyManagementException e) {
-            LOG.warn("Error creating SSLContext", e);
+        } else {
+            registryBuilder.register(HTTPS_SCHEME, SSLConnectionSocketFactory.getSocketFactory());
         }
+
         final Registry<ConnectionSocketFactory> registry = registryBuilder.build();
 
         PoolingHttpClientConnectionManager connectionManager = new PoolingHttpClientConnectionManager(

@@ -33,6 +33,7 @@ module.exports = (config) => {
         // possible values: 'dots', 'progress'
         // available reporters: https://npmjs.org/browse/keyword/karma-reporter
         reporters: ['dots', 'junit', 'progress', 'karma-remap-istanbul', 'notify'],
+        // reporters: ['progress', 'coverage'],
 
         junitReporter: {
             outputFile: '../../../../build/test-results/karma/TESTS-results.xml'
@@ -43,10 +44,10 @@ module.exports = (config) => {
             reportSuccess: true // Default: true, will notify when a suite was successful
         },
 
-
         remapIstanbulReporter: {
             reports: { // eslint-disable-line
-                'html': 'build/test-results/coverage',
+                'lcovonly': 'build/test-results/coverages/lcov.info',
+                'html': 'build/test-results/coverages',
                 'text-summary': null
             }
         },
@@ -77,4 +78,4 @@ module.exports = (config) => {
         // if true, Karma captures browsers, runs the tests and exits
         singleRun: !WATCH
     });
-};
+}
