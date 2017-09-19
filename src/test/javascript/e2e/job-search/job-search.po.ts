@@ -1,17 +1,5 @@
 import { browser, by, element, ElementArrayFinder, ElementFinder } from 'protractor';
 
-export class JobSearchPage {
-
-    navigateTo() {
-        return browser.get('/#/job-search');
-    }
-
-    occupationAutocomplete() {
-        return new OccupationAutocomplete();
-    }
-
-}
-
 export class OccupationAutocomplete {
     component: ElementFinder;
 
@@ -37,5 +25,16 @@ export class OccupationAutocomplete {
 
     dropdownItem(text: string) {
         return this.suggestBox().all(by.cssContainingText('ngb-highlight', text)).first();
+    }
+}
+
+export class JobSearchPage {
+
+    navigateTo() {
+        return browser.get('/#/job-search');
+    }
+
+    occupationAutocomplete() {
+        return new OccupationAutocomplete();
     }
 }

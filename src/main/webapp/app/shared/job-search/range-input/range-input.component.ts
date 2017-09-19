@@ -1,17 +1,15 @@
 import { ChangeDetectorRef, Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 
-const RANGE_INPUT_COMPONENT_CONTROL_VALUE_ACCESSOR: any = {
-    provide: NG_VALUE_ACCESSOR,
-    useExisting: forwardRef(() => RangeInputComponent),
-    multi: true
-};
-
 @Component({
     selector: 'jr2-range-input',
     templateUrl: './range-input.component.html',
     styleUrls: ['./range-input.component.scss'],
-    providers: [RANGE_INPUT_COMPONENT_CONTROL_VALUE_ACCESSOR]
+    providers: [{
+        provide: NG_VALUE_ACCESSOR,
+        useExisting: forwardRef(() => RangeInputComponent),
+        multi: true
+    }]
 })
 export class RangeInputComponent implements OnInit, ControlValueAccessor {
     @Input() min: number;
