@@ -1,135 +1,161 @@
-<fieldset class="candidate-search">
-  <div class="form-group">
-      <label class="col-form-label">Ich suche eine/n</label>
-    <div>
-        <jr2-typeahead-multiselect
-            [itemLoader]="fetchOccupationSuggestions"
-            [placeHolder]="'Beruf'"></jr2-typeahead-multiselect>
-    </div>
-  </div>
+<fieldset class="candidate-search-off">
+    <form [formGroup]="candidateSearchForm" novalidate class="container mt-3">
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right" translate="candidate-search.occupation.label"></label>
+            <div class="col-4">
+                <jr2-typeahead-multiselect
+                    formControlName="occupation"
+                    [itemLoader]="fetchOccupationSuggestions"
+                    [placeHolder]="'Beruf'"></jr2-typeahead-multiselect>
+            </div>
+        </div>
 
-  <div class="form-group">
-    <label for="cs-1" class="col-form-label">Kenntnisse, Fähigkeiten, Skills</label>
-    <div>
-      <input class="form-control" type="text" id="cs-1" placeholder="z.B. Tiefbau">
-    </div>
-  </div>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.keywords.label"></label>
+            <div class="col-4">
+                <input class="form-control" type="text" placeholder="z.B. Tiefbau">
+            </div>
+        </div>
 
-  <div class="form-group form-group--break">
-    <label for="sort" class="col-form-label">Berufserfahrung</label>
-    <div>
-      <select class="form-control custom-select" id="sort">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
+        <div class="form-group form-group--break row">
+            <label class="col-form-label col-4 text-right" translate="candidate-search.experience.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let experience of experiences | keys"
+                            value="{{experience.value}}"
+                            label="{{'candidate-search.experience.' + experience.value | translate}}">
+                    </option>
+                </select>
+            </div>
+        </div>
 
-  <div class="form-group">
-    <label for="cs-2" class="col-form-label">Arbeitsort</label>
-    <div>
-      <input class="form-control" type="text" id="cs-2" placeholder="Ort, Gemeinde, Kanton, PLZ">
-    </div>
-  </div>
-  <div class="form-group form-group--break">
-    <label for="cs-3" class="col-form-label">Wohnort</label>
-    <div>
-      <input class="form-control" type="text" id="cs-3" placeholder="Ort, Gemeinde, Kanton, PLZ">
-    </div>
-  </div>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right" translate="candidate-search.workLocation.label"></label>
+            <div class="col-4">
+                <jr2-typeahead-multiselect
+                    formControlName="workLocation"
+                    [itemLoader]="fetchLocalitySuggestions"
+                    [placeHolder]="'Ort, Gemeinde, Kanton'"></jr2-typeahead-multiselect>
+            </div>
+        </div>
 
-  <div class="form-group">
-    <label for="cs-4" class="col-form-label">Verfügbarkeit</label>
-    <div>
-      <select class="form-control custom-select" id="cs-4">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="cs-5" class="col-form-label">Arbeitspensum</label>
-    <div>
-      <select class="form-control custom-select" id="cs-5">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="cs-6" class="col-form-label">Arbeitsform</label>
-    <div>
-      <select class="form-control custom-select" id="cs-6">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="cs-7" class="col-form-label">Bildungsstufe</label>
-    <div>
-      <select class="form-control custom-select" id="cs-7">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group">
-    <label for="cs-8" class="col-form-label">Abschluss</label>
-    <div>
-      <select class="form-control custom-select" id="cs-8">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <div class="form-group form-group--break">
-    <label for="cs-9" class="col-form-label">Führerausweiskategorie</label>
-    <div>
-      <select class="form-control custom-select" id="cs-9">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right" translate="candidate-search.residenceLocation.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let greaterRegion of greaterRegions | keys"
+                            value="{{greaterRegion.value}}"
+                            label="{{'global.reference.greaterRegion.' + greaterRegion.value | translate}}">
+                    </option>
+                </select>
+            </div>
+        </div>
 
-  <div class="form-group">
-    <label for="cs-10" class="col-form-label">Sprachkenntnisse</label>
-    <div>
-      <select class="form-control custom-select" id="cs-10">
-        <option selected="">keine Auswahl</option>
-        <option value="1">One</option>
-        <option value="2">Two</option>
-        <option value="3">Three</option>
-      </select>
-    </div>
-  </div>
-  <a class="btn btn-primary btn-lg" (click)="search()">Kandidaten anzeigen (1'644)</a>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.availability.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let availability of availabilities | keys"
+                            value="{{availability.value}}"
+                            label="{{'candidate-search.availability.' + availability.value | translate}}">
+                </select>
+
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.workload.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let workLoad of [100,90,80,70,60,50,40,30,20,10]"
+                            value="{{workLoad}}"
+                            label="{{workLoad}}%">
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="cs-6" class="col-form-label col-4 text-right"
+                   translate="candidate-search.workForm.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let workForm of workForms | keys"
+                            value="{{workForm.value}}"
+                            label="{{'candidate-search.workForm.' + workForm.value | translate}}">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.education.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let education of educations | keys"
+                            value="{{education.value}}"
+                            label="{{'candidate-search.education.' + education.value | translate}}">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.graduation.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let graduation of graduations | keys"
+                            value="{{graduation.value}}"
+                            label="{{'candidate-search.graduation.' + graduation.value | translate}}">
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group form-group--break row">
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.drivingLicenceCategory.label"></label>
+            <div class="col-4">
+                <select class="form-control custom-select">
+                    <option selected="" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys"
+                            value="{{drivingLicenceCategory.value}}"
+                            label="{{drivingLicenceCategory.value}}">
+                    </option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label for="cs-10" class="col-form-label col-4 text-right">Sprachkenntnisse</label>
+            <div>
+                <select class="form-control custom-select" id="cs-10">
+                    <option selected="">keine Auswahl</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                </select>
+            </div>
+        </div>
+        <a class="btn btn-primary btn-lg" (click)="search()">Kandidaten anzeigen (1'644)</a>
+    </form>
 </fieldset>
 
 <div class="candidate-search__radar">
-  <!--
-                    <button type="button" class="close" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    -->
+    <!--
+                      <button type="button" class="close" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                      </button>
+                      -->
 
-  Diesem Job-Profil enstprechen bereits<br>
-  <span class="badge badge-radar">1'644</span><br>
-  Stellensuchenden
-  <a href="#">Jetzt anzeigen!</a>
+    Diesem Job-Profil enstprechen bereits<br>
+    <span class="badge badge-radar">1'644</span><br>
+    Stellensuchenden
+    <a href="#">Jetzt anzeigen!</a>
 </div>

@@ -149,6 +149,45 @@
             "development": "D\u00e9veloppement",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "reference": {
+            "greaterRegion": {
+                "1": "grande regione 1 (GE, VD, FR, NE, VS, JU)",
+                "2": "grande regione 2 (BE, SO, BS, BL, AG)",
+                "3": "grande regione 3 (UR, SZ, OW, NW, LU, ZG)",
+                "4": "grande regione 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
+                "5": "grande regione 5 (TI)",
+                "6": "Grande regione 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
+                "99": "estero",
+                "AG": "Argovia",
+                "AI": "Appenzello Interno",
+                "AR": "Appenzello Esterno",
+                "BE": "Berna",
+                "BL": "Basilea-Campagna",
+                "BS": "Basilea-Citt\u00e0",
+                "CH": "Svizzera",
+                "FL": "F\u00fcrstentum Liechtenstein",
+                "FR": "Friburgo",
+                "GE": "Ginevra",
+                "GL": "Glarona",
+                "GR": "Grigioni",
+                "JU": "Giura",
+                "LU": "Lucerna",
+                "NE": "Neuch\u00e2tel",
+                "NW": "Nidwaldo",
+                "OW": "Obwaldo",
+                "SG": "San Gallo",
+                "SH": "Sciaffusa",
+                "SO": "Soletta",
+                "SZ": "Svitto",
+                "TG": "Turgovia",
+                "TI": "Ticino",
+                "UR": "Uri",
+                "VD": "Vaud",
+                "VS": "Vallese",
+                "ZG": "Zugo",
+                "ZH": "Zurigo"
+            }
+        }
     }
 }

@@ -25,7 +25,7 @@ env:
   - secure: Dc5ljX42EOCiN9s7eCZuwJtowaiqg11FLeAXKcSJAAjzCCp838AUp5xKXMeOkBbPOngGfMZWX+TaEG0Qom0TU26FzDYahnAcBnibWDqAOOVoTPC9XHLEKXUDb+sCvHLnKfHvN7J/F05j8txb6NgQG0oi/fijbxmvH/0LDC1QWFc=
 addons:
   ssh_known_hosts:
-  - 159.100.254.166
+  - dev.job-room.ch
 before_install:
 - chmod +x gradlew
 - jdk_switcher use oraclejdk8
@@ -60,7 +60,7 @@ deploy:
     tags: true
 #Uncomment gatling task when at least one test exists
 #after_deploy:
-#- sleep 90 && baseURL=http://159.100.254.166:8080 ./gradlew -b e2e.gradle gatlingRunAll --stacktrace
+#- sleep 90 && baseURL=https://dev.job-room.ch:8443 ./gradlew -b e2e.gradle gatlingRunAll --stacktrace
 notifications:
   webhooks:
     on_success: change

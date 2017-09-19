@@ -4,7 +4,7 @@
 [![Coverage Status](https://codecov.io/github/alv-ch/jobroom2/coverage.svg?branch=develop)](https://codecov.io/github/alv-ch/jobroom2?branch=develop)
 [![Quality Gate](https://sonarqube.com/api/badges/gate?key=ch.admin.seco.jobroom:jobroom)](https://sonarcloud.io/dashboard?id=ch.admin.seco.jobroom:jobroom)
 
-This application was generated using JHipster 4.8.0, you can find documentation and help at [https://jhipster.github.io/documentation-archive/v4.5.5](https://jhipster.github.io/documentation-archive/v4.5.5).
+This application was generated using JHipster 4.8.2, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.8.2](http://www.jhipster.tech/documentation-archive/v4.8.2).
 
 This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
@@ -188,11 +188,11 @@ and can be run by starting Spring Boot in one terminal (`./gradlew bootRun`) and
 
 Performance tests are run against the DEV enviroment by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling) and can be run with:
 
-    baseURL=http://159.100.254.166:8080 ./gradlew -b e2e.gradle gatlingRunAll
+    baseURL=https://dev.job-room.ch:8443 ./gradlew -b e2e.gradle gatlingRunAll
 
 or run individual test
 
-    baseURL=http://159.100.254.166:8080 ./gradlew -b e2e.gradle gatlingRun -PgatlingSimulationClass=JobGatlingTest
+    baseURL=https://dev.job-room.ch:8443 ./gradlew -b e2e.gradle gatlingRun -PgatlingSimulationClass=JobGatlingTest
 
 For more information, refer to the [Running tests page][].
 
@@ -223,14 +223,14 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
 [JHipster Homepage and latest documentation]: http://www.jhipster.tech
-[JHipster 4.8.1 archive]: http://www.jhipster.tech/documentation-archive/v4.8.1
-[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.8.1/microservices-architecture/
-[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.8.1/development/
-[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.8.1/microservices-architecture/#jhipster-registry
-[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.8.1/docker-compose
-[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.8.1/production/
-[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.8.1/running-tests/
-[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.8.1/setting-up-ci/
+[JHipster 4.8.2 archive]: http://www.jhipster.tech/documentation-archive/v4.8.2
+[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.8.2/microservices-architecture/
+[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.8.2/development/
+[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.8.2/microservices-architecture/#jhipster-registry
+[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.8.2/docker-compose
+[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.8.2/production/
+[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.8.2/running-tests/
+[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.8.2/setting-up-ci/
 
 [Gatling]: http://gatling.io/
 [Node.js]: https://nodejs.org/

@@ -149,6 +149,45 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "reference": {
+            "greaterRegion": {
+                "1": "grande r\u00e9gion 1 (GE, VD, FR, NE, VS, JU)",
+                "2": "grande r\u00e9gion 2 (BE, SO, BS, BL, AG)",
+                "3": "grande r\u00e9gion 3 (UR, SZ, OW, NW, LU, ZG)",
+                "4": "grande r\u00e9gion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
+                "5": "grande r\u00e9gion 5 (TI)",
+                "6": "Grande r\u00e9gion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
+                "99": "\u00e9tranger",
+                "AG": "Argovie",
+                "AI": "Appenzell Rhodes-Int\u00e9rieures",
+                "AR": "Appenzell Rhodes-Ext\u00e9rieures",
+                "BE": "Berne",
+                "BL": "B\u00e2le-Campagne",
+                "BS": "B\u00e2le-Ville",
+                "CH": "Suisse",
+                "FL": "F\u00fcrstentum Liechtenstein",
+                "FR": "Fribourg",
+                "GE": "Gen\u00e8ve",
+                "GL": "Glaris",
+                "GR": "Grisons",
+                "JU": "Jura",
+                "LU": "Lucerne",
+                "NE": "Neuch\u00e2tel",
+                "NW": "Nidwald",
+                "OW": "Obwald",
+                "SG": "St-Gall",
+                "SH": "Schaffhouse",
+                "SO": "Soleure",
+                "SZ": "Schwyz",
+                "TG": "Thurgovie",
+                "TI": "Tessin",
+                "UR": "Uri",
+                "VD": "Vaud",
+                "VS": "Valais",
+                "ZG": "Zoug",
+                "ZH": "Zurich"
+            }
+        }
     }
 }

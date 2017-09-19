@@ -1,7 +1,7 @@
 export interface CandidateSearchRequest {
     occupation: string,
     skills: Array<string>,
-    experience: string,
+    experience: Experience,
     workplace: string,
     residence: string,
     availability: Availability,
@@ -19,8 +19,12 @@ export interface LanguageSkill {
     written: CEFR_Level
 }
 
+export enum Experience {
+    LESS_THAN_A_YEAR, MORE_THAN_A_YEAR, MORE_THAN_3_YEARS
+}
+
 export enum Availability {
-    IMMEDIATELY, BY_ARRANGEMENT
+    IMMEDIATE, BY_ARRANGEMENT
 }
 
 export enum WorkForm {
@@ -32,7 +36,7 @@ export enum ISCED_1997 {
 }
 
 export enum Graduation {
-
+    CH, ACCEPTED, NOT_ACCEPTED, NONE
 }
 
 export enum DrivingLicenceCategory {
@@ -41,4 +45,8 @@ export enum DrivingLicenceCategory {
 
 export enum CEFR_Level {
     NONE, BASIC, INTERMEDIATE, PROFICIENT
+}
+
+export enum GreaterRegion {
+    _1, _2, _3, _4, _5, _6, _99, AG, AI, AR, BE, BL, BS, CH, FL, FR, GE, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG, ZH
 }

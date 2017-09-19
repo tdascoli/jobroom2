@@ -17,8 +17,8 @@ import {
 })
 export class JobSearchToolComponent implements OnInit {
     jobSearchForm: FormGroup;
-    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
-    fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(query);
+    fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(prefix);
+    fetchLocalitySuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(prefix);
 
     constructor(private router: Router,
                 private occupationService: OccupationService,

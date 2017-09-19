@@ -28,7 +28,7 @@ export class LocalityService {
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
 
-        params.set('prefix', `${prefix}`);
+        params.set('prefix', prefix);
         params.set('resultSize', DEFAULT_RESPONSE_SIZE);
 
         return this.http.get(LOCALITIES_URL, options)
