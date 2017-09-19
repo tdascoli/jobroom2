@@ -49,7 +49,12 @@ describe('JobSearchEffects', () => {
 
     describe('routerNavigation$', () => {
         const action = {
-            type: ROUTER_NAVIGATION
+            type: ROUTER_NAVIGATION,
+            payload: {
+                event: {
+                    url: '/job-search'
+                }
+            }
         };
 
         it('should return new JobListLoadedAction if store is in initial state', () => {
@@ -96,6 +101,20 @@ describe('JobSearchEffects', () => {
 
             const expected = cold('-');
 
+            expect(effects.routerNavigation$).toBeObservable(expected);
+        });
+
+        it('should not do anything on a not job-search page', () => {
+            const navigationAction = Object.assign(action, {
+                payload: {
+                    event: {
+                        url: '/not-job-search'
+                    }
+                }
+            });
+
+            actions$ = hot('-a', { a: navigationAction });
+            const expected = cold('------');
             expect(effects.routerNavigation$).toBeObservable(expected);
         });
     });
