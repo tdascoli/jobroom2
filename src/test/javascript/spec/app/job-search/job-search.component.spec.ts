@@ -5,7 +5,7 @@ import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
 
 describe('JobSearchComponent', () => {
-    const mockStore = jasmine.createSpyObj('mockStore', ['select']);
+    const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
     mockStore.select.and.returnValue(Observable.of([]));
 
     let component: JobSearchComponent;

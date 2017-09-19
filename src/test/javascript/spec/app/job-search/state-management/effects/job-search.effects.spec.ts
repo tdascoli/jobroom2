@@ -8,9 +8,9 @@ import { MockRouter } from '../../../../helpers/mock-route.service';
 import { Router } from '@angular/router';
 import { Store, StoreModule } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
-import { ROUTER_NAVIGATION } from '@ngrx/router-store';
 import { cold, getTestScheduler, hot } from 'jasmine-marbles';
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
+import { InitJobSearchAction } from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
 import { Headers } from '@angular/http';
@@ -47,15 +47,8 @@ describe('JobSearchEffects', () => {
         store = TestBed.get(Store);
     });
 
-    describe('routerNavigation$', () => {
-        const action = {
-            type: ROUTER_NAVIGATION,
-            payload: {
-                event: {
-                    url: '/job-search'
-                }
-            }
-        };
+    describe('initJobSearch', () => {
+        const action = new InitJobSearchAction();
 
         it('should return new JobListLoadedAction if store is in initial state', () => {
             const jobList = [
@@ -79,7 +72,7 @@ describe('JobSearchEffects', () => {
             });
             const expected = cold('--b', { b: jobListLoadedAction });
 
-            expect(effects.routerNavigation$).toBeObservable(expected);
+            expect(effects.initJobSearch$).toBeObservable(expected);
         });
 
         it('should not return anything if store is not in initial state', () => {
@@ -101,21 +94,7 @@ describe('JobSearchEffects', () => {
 
             const expected = cold('-');
 
-            expect(effects.routerNavigation$).toBeObservable(expected);
-        });
-
-        it('should not do anything on a not job-search page', () => {
-            const navigationAction = Object.assign(action, {
-                payload: {
-                    event: {
-                        url: '/not-job-search'
-                    }
-                }
-            });
-
-            actions$ = hot('-a', { a: navigationAction });
-            const expected = cold('------');
-            expect(effects.routerNavigation$).toBeObservable(expected);
+            expect(effects.initJobSearch$).toBeObservable(expected);
         });
     });
 

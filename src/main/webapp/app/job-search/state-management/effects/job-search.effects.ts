@@ -8,21 +8,16 @@ import { getJobSearchState, JobSearchState, LOAD_NEXT_PAGE } from '../index';
 import {
     FILTER_CHANGED,
     FilterChangedAction,
+    INIT_JOB_SEARCH,
     JobListLoadedAction,
     NextPageLoadedAction,
     ShowJobListErrorAction,
     TOOLBAR_CHANGED,
     ToolbarChangedAction
 } from '../actions/job-search.actions';
-import {
-    ROUTER_NAVIGATION,
-    RouterNavigationAction,
-    RouterNavigationPayload
-} from '@ngrx/router-store';
 import { Scheduler } from 'rxjs/Scheduler';
 import { async } from 'rxjs/scheduler/async';
 import { createJobSearchRequest } from '../util/search-request-mapper';
-import { RouterStateSnapshot } from '@angular/router';
 
 export const JOB_SEARCH_DEBOUNCE = new InjectionToken<number>('JOB_SEARCH_DEBOUNCE');
 export const JOB_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('JOB_SEARCH_SCHEDULER');
@@ -33,12 +28,10 @@ type LoadJobTriggerAction = ToolbarChangedAction | FilterChangedAction;
 export class JobSearchEffects {
 
     @Effect()
-    routerNavigation$: Observable<Action> = this.actions
-        .ofType(ROUTER_NAVIGATION)
-        .map((action: RouterNavigationAction) => action.payload)
-        .filter((payload: RouterNavigationPayload<RouterStateSnapshot>) => payload.event.url === '/job-search')
+    initJobSearch$: Observable<Action> = this.actions
+        .ofType(INIT_JOB_SEARCH)
         .withLatestFrom(this.store.select(getJobSearchState))
-        .switchMap(([payload, state]) => {
+        .switchMap(([action, state]) => {
             if (state.initialState) {
                 return this.jobSearchService.search(toInitialSearchRequest(state))
                     .map(toJobListLoadedAction)

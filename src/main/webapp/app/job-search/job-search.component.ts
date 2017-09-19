@@ -15,6 +15,7 @@ import {
     JobSearchQuery
 } from './state-management/state/job-search.state';
 import { Job } from './services';
+import { InitJobSearchAction } from './state-management/actions/job-search.actions';
 
 @Component({
     selector: 'jr2-job-search',
@@ -31,6 +32,8 @@ export class JobSearchComponent {
     loading$: Observable<boolean>;
 
     constructor(private store: Store<JobSearchState>) {
+        this.store.dispatch(new InitJobSearchAction());
+
         this.jobList$ = store.select(getJobList);
         this.searchQuery$ = store.select(getSearchQuery);
         this.baseQueryString$ = store.select(getBaseQuery).map(queryModelToTextMapper);
