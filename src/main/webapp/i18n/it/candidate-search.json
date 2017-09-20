@@ -1,57 +1,57 @@
 {
     "candidate-search": {
-        "no-selection": "",
-        "occupation": {
-            "label": "Ich suche eine/n"
-        },
-        "keywords": {
-            "label": "Suchbegriffe"
-        },
-        "experience": {
-            "label": "Berufserfahrung",
-            "LESS_THAN_A_YEAR": "weniger als 1 Jahr",
-            "MORE_THAN_A_YEAR": "mehr als 1 Jahr",
-            "MORE_THAN_3_YEARS": "mehr als 3 Jahre"
-        },
-        "workload": {
-            "label": "Arbeitspensum"
-        },
-        "workLocation": {
-            "label": "Arbeitsort"
-        },
-        "residenceLocation": {
-            "label": "Wohnort"
-        },
         "availability": {
-            "label": "Verf\u00fcgbarkeit",
+            "BY_ARRANGEMENT": "Auf Vereinbarung",
             "IMMEDIATE": "Ab Sofort",
-            "BY_ARRANGEMENT": "Auf Vereinbarung"
+            "label": "Verf\u00fcgbarkeit"
         },
-        "workForm": {
-            "label": "Arbeitsform",
-            "SUNDAY_AND_HOLIDAYS": "Sonn- und Feiertagsarbeit",
-            "SHIFT_WORK": "Schichtarbeit",
-            "NIGHT_WORK": "Nachtarbeit",
-            "HOME_WORK": "Heimarbeit"
+        "drivingLicenceCategory": {
+            "label": "F\u00fchrerausweiskategorie"
         },
         "education": {
-            "label": "Bildungsstufe",
             "ISCED1": "Primarstufe - ISCED 1",
             "ISCED2": "Sekundarstufe I - ISCED 2",
             "ISCED3": "Sekundarstufe II - ISCED 3",
             "ISCED4": "Zweitausbildung nicht terti\u00e4re Stufe - ISCED 4",
             "ISCED5": "Terti\u00e4rstufe I - ISCED 5",
-            "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
+            "ISCED6": "Terti\u00e4rstufe II - ISCED 6",
+            "label": "Bildungsstufe"
+        },
+        "experience": {
+            "LESS_THAN_A_YEAR": "weniger als 1 Jahr",
+            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
+            "MORE_THAN_A_YEAR": "mehr als 1 Jahr",
+            "label": "Berufserfahrung"
         },
         "graduation": {
-            "label": "Abschluss",
-            "CH": "CH-Abschluss",
             "ACCEPTED": "CH-Abschluss oder CH anerkannt",
+            "CH": "CH-Abschluss",
+            "NONE": "kein Abschluss",
             "NOT_ACCEPTED": "Abschluss CH oder ausl\u00e4ndisch",
-            "NONE": "kein Abschluss"
+            "label": "Abschluss"
         },
-        "drivingLicenceCategory": {
-            "label": "F\u00fchrerausweiskategorie"
+        "keywords": {
+            "label": "Suchbegriffe"
+        },
+        "no-selection": "",
+        "occupation": {
+            "label": "Ich suche eine/n"
+        },
+        "residenceLocation": {
+            "label": "Wohnort"
+        },
+        "workForm": {
+            "HOME_WORK": "Heimarbeit",
+            "NIGHT_WORK": "Nachtarbeit",
+            "SHIFT_WORK": "Schichtarbeit",
+            "SUNDAY_AND_HOLIDAYS": "Sonn- und Feiertagsarbeit",
+            "label": "Arbeitsform"
+        },
+        "workLocation": {
+            "label": "Arbeitsort"
+        },
+        "workload": {
+            "label": "Arbeitspensum"
         }
     }
 }

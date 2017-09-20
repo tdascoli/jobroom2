@@ -1,5 +1,4 @@
-import { KeysPipe } from "../../../../../../main/webapp/app/shared/pipes/enum-keys.pipe";
-
+import { KeysPipe } from '../../../../../../main/webapp/app/shared/pipes/enum-keys.pipe';
 
 describe('KeysPipe', () => {
     let pipe: KeysPipe;

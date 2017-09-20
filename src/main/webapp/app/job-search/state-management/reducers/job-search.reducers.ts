@@ -57,7 +57,7 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
             break;
 
         default:
-            newState = Object.assign({}, state);
+            newState = state;
     }
 
     return newState;

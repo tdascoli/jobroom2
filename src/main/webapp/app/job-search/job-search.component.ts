@@ -9,6 +9,7 @@ import {
     JobSearchState
 } from './state-management';
 import {
+    getInitialState,
     getLoading,
     getLocalityQuery,
     getSearchQuery,
@@ -30,6 +31,7 @@ export class JobSearchComponent {
     localityQueryString$: Observable<string>;
     totalCount$: Observable<number>;
     loading$: Observable<boolean>;
+    initialized$: Observable<boolean>;
 
     constructor(private store: Store<JobSearchState>) {
         this.store.dispatch(new InitJobSearchAction());
@@ -40,6 +42,7 @@ export class JobSearchComponent {
         this.localityQueryString$ = store.select(getLocalityQuery).map(queryModelToTextMapper);
         this.totalCount$ = store.select(getTotalJobCount);
         this.loading$ = store.select(getLoading);
+        this.initialized$ = store.select(getInitialState).map((initialState: boolean) => !initialState);
     }
 }
 

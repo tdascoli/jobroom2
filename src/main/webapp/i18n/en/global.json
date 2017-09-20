@@ -144,12 +144,6 @@
                 }
             }
         },
-        "ribbon": {
-            "dev": "Local",
-            "development": "Development",
-            "test": "Test"
-        },
-        "title": "Jobroom",
         "reference": {
             "greaterRegion": {
                 "1": "grande r\u00e9gion 1 (GE, VD, FR, NE, VS, JU)",
@@ -188,6 +182,12 @@
                 "ZG": "Zoug",
                 "ZH": "Zurich"
             }
-        }
+        },
+        "ribbon": {
+            "dev": "Local",
+            "development": "Development",
+            "test": "Test"
+        },
+        "title": "Jobroom"
     }
 }

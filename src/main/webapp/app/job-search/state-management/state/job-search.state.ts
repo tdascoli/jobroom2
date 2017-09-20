@@ -62,3 +62,4 @@ export const getContractType = createSelector(getSearchFilter, (filter: JobSearc
 export const getFilterWorkingTime = createSelector(getSearchFilter, (filter: JobSearchFilter) => filter.workingTime);
 export const getLoading = createSelector(getJobSearchState, (state: JobSearchState) => state.loading);
 export const getJobListScrollY = createSelector(getJobSearchState, (state: JobSearchState) => state.jobListScrollY);
+export const getInitialState = createSelector(getJobSearchState, (state: JobSearchState) => state.initialState);

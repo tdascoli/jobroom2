@@ -1,5 +1,5 @@
 <div>
-    <form [formGroup]="jobSearchForm" novalidate>
+    <form [formGroup]="jobSearchForm" novalidate (submit)="search(jobSearchForm.value)">
         <div class="form-group form-group--wide">
             <jr2-typeahead-multiselect
                 formControlName="baseQuery"
@@ -19,8 +19,8 @@
                 (localitySelect)="handleLocalitySelect($event)"
                 [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
         </div>
-        <a class="btn btn-primary btn-lg btn-block" (click)="search()">
-            Traumjob finden!
-        </a>
+        <button class="btn btn-primary btn-lg btn-block">
+            {{'home.tools.job-search.search-button.title' | translate }}
+        </button>
     </form>
 </div>

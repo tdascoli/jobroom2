@@ -28,7 +28,7 @@ type LoadJobTriggerAction = ToolbarChangedAction | FilterChangedAction;
 export class JobSearchEffects {
 
     @Effect()
-    initJobSearch$: Observable<Action> = this.actions
+    initJobSearch$: Observable<Action> = this.actions$
         .ofType(INIT_JOB_SEARCH)
         .withLatestFrom(this.store.select(getJobSearchState))
         .switchMap(([action, state]) => {
@@ -43,7 +43,7 @@ export class JobSearchEffects {
         });
 
     @Effect()
-    loadJobList$: Observable<Action> = this.actions
+    loadJobList$: Observable<Action> = this.actions$
         .ofType(TOOLBAR_CHANGED, FILTER_CHANGED)
         .debounceTime(this.debounce || 300, this.scheduler || async)
         .withLatestFrom(this.store.select(getJobSearchState))
@@ -54,7 +54,7 @@ export class JobSearchEffects {
         );
 
     @Effect()
-    loadNextPage$: Observable<Action> = this.actions
+    loadNextPage$: Observable<Action> = this.actions$
         .ofType(LOAD_NEXT_PAGE)
         .withLatestFrom(this.store.select(getJobSearchState))
         .switchMap(([action, state]) =>
@@ -63,7 +63,7 @@ export class JobSearchEffects {
                 .catch((err: any) => Observable.of(new ShowJobListErrorAction(err)))
         );
 
-    constructor(private actions: Actions,
+    constructor(private actions$: Actions,
                 private jobSearchService: JobService,
                 private store: Store<JobSearchState>,
                 @Optional()

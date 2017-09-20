@@ -15,6 +15,37 @@ audits,audits.table.header.date,Datum,Date,Date,Data
 audits,audits.table.header.principal,Benutzer,User,Utilisateur,Utente
 audits,audits.table.header.status,Stand,State,Status,Stato
 audits,audits.title,Audits,Audits,Audits,Cambiamenti
+candidate-search,candidate-search.availability.BY_ARRANGEMENT,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung
+candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Ab Sofort,Ab Sofort,Ab Sofort
+candidate-search,candidate-search.availability.label,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit
+candidate-search,candidate-search.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
+candidate-search,candidate-search.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
+candidate-search,candidate-search.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2
+candidate-search,candidate-search.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3
+candidate-search,candidate-search.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4
+candidate-search,candidate-search.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5
+candidate-search,candidate-search.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6
+candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
+candidate-search,candidate-search.experience.LESS_THAN_A_YEAR,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr
+candidate-search,candidate-search.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre
+candidate-search,candidate-search.experience.MORE_THAN_A_YEAR,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
+candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
+candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt
+candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,CH-Abschluss,CH-Abschluss
+candidate-search,candidate-search.graduation.NONE,kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
+candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch
+candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
+candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
+candidate-search,candidate-search.no-selection,,,,
+candidate-search,candidate-search.occupation.label,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n
+candidate-search,candidate-search.residenceLocation.label,Wohnort,Wohnort,Wohnort,Wohnort
+candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
+candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
+candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Schichtarbeit,Schichtarbeit,Schichtarbeit
+candidate-search,candidate-search.workForm.SUNDAY_AND_HOLIDAYS,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit
+candidate-search,candidate-search.workForm.label,Arbeitsform,Arbeitsform,Arbeitsform,Arbeitsform
+candidate-search,candidate-search.workLocation.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
+candidate-search,candidate-search.workload.label,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
 configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filtrer (par préfixe),Filtro (per prefisso)
 configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
@@ -131,6 +162,41 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,Your password is required to be at least 4 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,Your password is required.,Votre mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Robustezza della password:
+global,global.reference.greaterRegion.1,"Grossregion 1 (GE, VD, FR, NE, VS, JU)","grande région 1 (GE, VD, FR, NE, VS, JU)","grande regione 1 (GE, VD, FR, NE, VS, JU)","Grossregion 1 (GE, VD, FR, NE, VS, JU)"
+global,global.reference.greaterRegion.2,"Grossregion 2 (BE, SO, BS, BL, AG)","grande région 2 (BE, SO, BS, BL, AG)","grande regione 2 (BE, SO, BS, BL, AG)","Grossregion 2 (BE, SO, BS, BL, AG)"
+global,global.reference.greaterRegion.3,"Grossregion 3 (UR, SZ, OW, NW, LU, ZG)","grande région 3 (UR, SZ, OW, NW, LU, ZG)","grande regione 3 (UR, SZ, OW, NW, LU, ZG)","Grossregion 3 (UR, SZ, OW, NW, LU, ZG)"
+global,global.reference.greaterRegion.4,"Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","grande région 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","grande regione 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)"
+global,global.reference.greaterRegion.5,Grossregion 5 (TI),grande région 5 (TI),grande regione 5 (TI),Grossregion 5 (TI)
+global,global.reference.greaterRegion.6,"Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grande région 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grande regione 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)"
+global,global.reference.greaterRegion.99,Ausland,étranger,estero,Ausland
+global,global.reference.greaterRegion.AG,Aargau,Argovie,Argovia,Aargau
+global,global.reference.greaterRegion.AI,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno,Appenzell Innerrhoden
+global,global.reference.greaterRegion.AR,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno,Appenzell Ausserrhoden
+global,global.reference.greaterRegion.BE,Bern,Berne,Berna,Bern
+global,global.reference.greaterRegion.BL,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna,Basel-Landschaft
+global,global.reference.greaterRegion.BS,Basel-Stadt,Bâle-Ville,Basilea-Città,Basel-Stadt
+global,global.reference.greaterRegion.CH,Schweiz,Suisse,Svizzera,Schweiz
+global,global.reference.greaterRegion.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein
+global,global.reference.greaterRegion.FR,Freiburg,Fribourg,Friburgo,Freiburg
+global,global.reference.greaterRegion.GE,Genf,Genève,Ginevra,Genf
+global,global.reference.greaterRegion.GL,Glarus,Glaris,Glarona,Glarus
+global,global.reference.greaterRegion.GR,Graubünden,Grisons,Grigioni,Graubünden
+global,global.reference.greaterRegion.JU,Jura,Jura,Giura,Jura
+global,global.reference.greaterRegion.LU,Luzern,Lucerne,Lucerna,Luzern
+global,global.reference.greaterRegion.NE,Neuenburg,Neuchâtel,Neuchâtel,Neuenburg
+global,global.reference.greaterRegion.NW,Nidwalden,Nidwald,Nidwaldo,Nidwalden
+global,global.reference.greaterRegion.OW,Obwalden,Obwald,Obwaldo,Obwalden
+global,global.reference.greaterRegion.SG,St. Gallen,St-Gall,San Gallo,St. Gallen
+global,global.reference.greaterRegion.SH,Schaffhausen,Schaffhouse,Sciaffusa,Schaffhausen
+global,global.reference.greaterRegion.SO,Solothurn,Soleure,Soletta,Solothurn
+global,global.reference.greaterRegion.SZ,Schwyz,Schwyz,Svitto,Schwyz
+global,global.reference.greaterRegion.TG,Thurgau,Thurgovie,Turgovia,Thurgau
+global,global.reference.greaterRegion.TI,Tessin,Tessin,Ticino,Tessin
+global,global.reference.greaterRegion.UR,Uri,Uri,Uri,Uri
+global,global.reference.greaterRegion.VD,Waadt,Vaud,Vaud,Waadt
+global,global.reference.greaterRegion.VS,Wallis,Valais,Vallese,Wallis
+global,global.reference.greaterRegion.ZG,Zug,Zoug,Zugo,Zug
+global,global.reference.greaterRegion.ZH,Zürich,Zurich,Zurigo,Zürich
 global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Development,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test
@@ -155,43 +221,6 @@ health,health.table.service,Dienst Name,Service name,Nom du service,Nome del ser
 health,health.table.status,Status,Status,Etat,Stato
 health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
 home,home.homeServices.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidaten finden,Kandidaten finden
-
-
-candidate-search,candidate-search.no-selection,,,,
-candidate-search,candidate-search.occupation.label,"Ich suche eine/n","Ich suche eine/n","Ich suche eine/n","Ich suche eine/n"
-candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
-candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
-candidate-search,candidate-search.experience.LESS_THAN_A_YEAR,"weniger als 1 Jahr","weniger als 1 Jahr","weniger als 1 Jahr","weniger als 1 Jahr"
-candidate-search,candidate-search.experience.MORE_THAN_A_YEAR,"mehr als 1 Jahr","mehr als 1 Jahr","mehr als 1 Jahr","mehr als 1 Jahr"
-candidate-search,candidate-search.experience.MORE_THAN_3_YEARS,"mehr als 3 Jahre","mehr als 3 Jahre","mehr als 3 Jahre","mehr als 3 Jahre"
-candidate-search,candidate-search.workload.label,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
-candidate-search,candidate-search.workLocation.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
-candidate-search,candidate-search.residenceLocation.label,Wohnort,Wohnort,Wohnort,Wohnort
-
-candidate-search,candidate-search.availability.label,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit
-candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Ab Sofort,Ab Sofort,Ab Sofort
-candidate-search,candidate-search.availability.BY_ARRANGEMENT,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung
-
-candidate-search,candidate-search.workForm.label,Arbeitsform,Arbeitsform,Arbeitsform,Arbeitsform
-candidate-search,candidate-search.workForm.SUNDAY_AND_HOLIDAYS,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit
-candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Schichtarbeit,Schichtarbeit,Schichtarbeit
-candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
-candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
-
-candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
-candidate-search,candidate-search.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
-candidate-search,candidate-search.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2
-candidate-search,candidate-search.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3
-candidate-search,candidate-search.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4
-candidate-search,candidate-search.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5
-candidate-search,candidate-search.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6
-candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
-candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,CH-Abschluss,CH-Abschluss
-candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt
-candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch
-candidate-search,candidate-search.graduation.NONE,kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
-candidate-search,candidate-search.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
-
 home,home.homeServices.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.title,JobRoom,JobRoom,JobRoom,JobRoom
 home,home.tool.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
@@ -199,6 +228,7 @@ home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
 home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
 home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für
+home,home.tools.job-search.search-button.title,Traumjob finden!,Traumjob finden!,Traumjob finden!,Traumjob finden!
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
 job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren
 job-detail,job-detail.action.print,Drucken,Drucken,Drucken,Drucken
@@ -531,41 +561,3 @@ user-management,userManagement.lastName,Nachname,Last name,Nom,Cognome
 user-management,userManagement.login,Login,Login,Login,Login
 user-management,userManagement.profiles,Profile,Profiles,Droits,Profili
 user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,An user is updated with identifier {{ param }},L'utilisateur {{ param }} a été mis à jour.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}
-
-
-global,global.reference.greaterRegion.1,"Grossregion 1 (GE, VD, FR, NE, VS, JU)","grande région 1 (GE, VD, FR, NE, VS, JU)","grande regione 1 (GE, VD, FR, NE, VS, JU)","Grossregion 1 (GE, VD, FR, NE, VS, JU)"
-global,global.reference.greaterRegion.2,"Grossregion 2 (BE, SO, BS, BL, AG)","grande région 2 (BE, SO, BS, BL, AG)","grande regione 2 (BE, SO, BS, BL, AG)","Grossregion 2 (BE, SO, BS, BL, AG)"
-global,global.reference.greaterRegion.3,"Grossregion 3 (UR, SZ, OW, NW, LU, ZG)","grande région 3 (UR, SZ, OW, NW, LU, ZG)","grande regione 3 (UR, SZ, OW, NW, LU, ZG)","Grossregion 3 (UR, SZ, OW, NW, LU, ZG)"
-global,global.reference.greaterRegion.4,"Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","grande région 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","grande regione 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)"
-global,global.reference.greaterRegion.5,"Grossregion 5 (TI)","grande région 5 (TI)","grande regione 5 (TI)","Grossregion 5 (TI)"
-global,global.reference.greaterRegion.6,"Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grande région 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grande regione 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)"
-global,global.reference.greaterRegion.99,Ausland,étranger,estero,Ausland
-global,global.reference.greaterRegion.AG,Aargau,Argovie,Argovia,Aargau
-global,global.reference.greaterRegion.AI,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno,Appenzell Innerrhoden
-global,global.reference.greaterRegion.AR,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno,Appenzell Ausserrhoden
-global,global.reference.greaterRegion.BE,Bern,Berne,Berna,Bern
-global,global.reference.greaterRegion.BL,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna,Basel-Landschaft
-global,global.reference.greaterRegion.BS,Basel-Stadt,Bâle-Ville,Basilea-Città,Basel-Stadt
-global,global.reference.greaterRegion.CH,Schweiz,Suisse,Svizzera,Schweiz
-global,global.reference.greaterRegion.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein
-global,global.reference.greaterRegion.FR,Freiburg,Fribourg,Friburgo,Freiburg
-global,global.reference.greaterRegion.GE,Genf,Genève,Ginevra,Genf
-global,global.reference.greaterRegion.GL,Glarus,Glaris,Glarona,Glarus
-global,global.reference.greaterRegion.GR,Graubünden,Grisons,Grigioni,Graubünden
-global,global.reference.greaterRegion.JU,Jura,Jura,Giura,Jura
-global,global.reference.greaterRegion.LU,Luzern,Lucerne,Lucerna,Luzern
-global,global.reference.greaterRegion.NE,Neuenburg,Neuchâtel,Neuchâtel,Neuenburg
-global,global.reference.greaterRegion.NW,Nidwalden,Nidwald,Nidwaldo,Nidwalden
-global,global.reference.greaterRegion.OW,Obwalden,Obwald,Obwaldo,Obwalden
-global,global.reference.greaterRegion.SG,St. Gallen,St-Gall,San Gallo,St. Gallen
-global,global.reference.greaterRegion.SH,Schaffhausen,Schaffhouse,Sciaffusa,Schaffhausen
-global,global.reference.greaterRegion.SO,Solothurn,Soleure,Soletta,Solothurn
-global,global.reference.greaterRegion.SZ,Schwyz,Schwyz,Svitto,Schwyz
-global,global.reference.greaterRegion.TG,Thurgau,Thurgovie,Turgovia,Thurgau
-global,global.reference.greaterRegion.TI,Tessin,Tessin,Ticino,Tessin
-global,global.reference.greaterRegion.UR,Uri,Uri,Uri,Uri
-global,global.reference.greaterRegion.VD,Waadt,Vaud,Vaud,Waadt
-global,global.reference.greaterRegion.VS,Wallis,Valais,Vallese,Wallis
-global,global.reference.greaterRegion.ZG,Zug,Zoug,Zugo,Zug
-global,global.reference.greaterRegion.ZH,Zürich,Zurich,Zurigo,Zürich
-

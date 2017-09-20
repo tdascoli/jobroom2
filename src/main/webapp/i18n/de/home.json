@@ -15,6 +15,13 @@
             "jobSeekers": "Stellensuchende",
             "recruitmentAgencies": "Arbeitsvermittler",
             "title": "Job-Room bietet Leistungen f\u00fcr"
+        },
+        "tools": {
+            "job-search": {
+                "search-button": {
+                    "title": "Traumjob finden!"
+                }
+            }
         }
     }
 }

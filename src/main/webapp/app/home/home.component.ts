@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ToolsTab } from './tools-content/tools-content.component';
+import { Store } from '@ngrx/store';
+import { getJobSearchToolState, JobSearchToolState } from './state-management';
+import { Observable } from 'rxjs/Observable';
 
 enum ToolbarTab {
     JobSeekers,
@@ -20,8 +23,11 @@ export class HomeComponent {
 
     toolbarTab: ToolbarTab;
 
-    constructor() {
+    jobSearchToolModel$: Observable<JobSearchToolState>;
+
+    constructor(private store: Store<JobSearchToolState>) {
         this.toolbarTab = ToolbarTab.JobSeekers;
+        this.jobSearchToolModel$ = store.select(getJobSearchToolState);
     }
 
     select(toolbarTab: ToolbarTab): void {
