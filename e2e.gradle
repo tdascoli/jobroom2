@@ -1,41 +1,43 @@
 apply plugin: 'scala'
 
 repositories {
-    mavenLocal()
-    mavenCentral()
+    jcenter()
+    maven { url 'http://repo.spring.io/milestone' }
 }
 
 dependencies {
     compile "ch.qos.logback:logback-classic:1.2.3"
+    testCompile "org.springframework.boot:spring-boot:${spring_boot_version}"
     testCompile "io.gatling.highcharts:gatling-charts-highcharts:2.2.3"
 }
 
 sourceSets {
     test {
         scala {
-            srcDirs = ['src/test/gatling/simulations']
-            output.classesDir = 'build/test-classes'
+            srcDirs = ['src/test/gatling/user-files/simulations']
+            output.dir(file('build/test-classes'))
         }
     }
 }
 
-task manifestJar(dependsOn:'compileTestScala',type: Jar) {
-    dependsOn configurations.testCompile
+task manifestJar(dependsOn: 'compileTestScala', type: Jar) {
     archiveName 'gatlingBooter.jar'
     doFirst {
         manifest {
             // uri is just needed for Windows-compatibility
-            attributes 'Class-Path': configurations.testCompile.files.collect{ project.uri(it) }.join(' ')
+            attributes 'Class-Path': configurations.testCompile.files.collect {
+                project.uri(it)
+            }.join(' ')
         }
     }
 }
 
-task gatlingRun(dependsOn:'manifestJar') {
+task gatlingRun(dependsOn: 'manifestJar') {
     group = 'gatling'
     description = 'Run a single Gatling simulation. You must write the name of your Gatling simulation.'
 
     doLast {
-        def String gatlingSimulationClass = "WriteTheNameOfYourGatlingSimulation"
+        String gatlingSimulationClass = "WriteTheNameOfYourGatlingSimulation"
         if (project.hasProperty('gatlingSimulationClass')) {
             gatlingSimulationClass = project.property('gatlingSimulationClass')
         }
@@ -49,18 +51,15 @@ task gatlingRunAll(dependsOn: 'manifestJar') {
     description = 'Run all available Gatling simulations.'
 
     doLast {
-        FileTree tree = fileTree(dir: './src/test/gatling/simulations')
+        FileTree tree = fileTree(dir: './src/test/gatling/user-files/simulations')
         tree.include '**/*.scala'
-        tree.each {File file ->
+        tree.each { File file ->
             def simulationClassName = file.name.replaceFirst(".scala", "")
-            createGatlingRunTask(simulationClassName).dependsOn('manifestJar').execute();
+            println simulationClassName
+            createGatlingRunTask(simulationClassName).dependsOn('manifestJar').execute()
         }
     }
 }
-
-compileScala.enabled = false
-compileJava.enabled false
-compileTestJava.enabled false
 
 def createGatlingRunTask(def gatlingSimulationClassName) {
     return tasks.create("gatlingRun${gatlingSimulationClassName}", JavaExec) {
@@ -69,15 +68,17 @@ def createGatlingRunTask(def gatlingSimulationClassName) {
 
         final def sourceSet = sourceSets.test
 
-        def String gatlingDataFolder = "$project.rootDir.absolutePath/src/test/gatling/data"
-        def String gatlingReportsFolder = "$project.buildDir.absolutePath/reports/gatling"
-        def String gatlingBodiesFolder = "$project.rootDir.absolutePath/src/test/gatling/bodies"
-        def String gatlingSimulationsFolder = "$project.rootDir.absolutePath/src/test/gatling/simulations"
+        String gatlingDataFolder = "$project.rootDir.absolutePath/src/test/gatling/user-files/data"
+        String gatlingReportsFolder = "$project.buildDir.absolutePath/reports/gatling"
+        String gatlingBodiesFolder = "$project.rootDir.absolutePath/src/test/gatling/user-files/bodies"
+        String gatlingSimulationsFolder = "$project.rootDir.absolutePath/src/test/gatling/user-files/simulations"
+
 
         classpath sourceSet.output + files(manifestJar.archivePath) + files("src/test/gatling/conf")
+
         main = "io.gatling.app.Gatling"
 
-        environment GATLING_HOME:''
+        environment GATLING_HOME: ''
 
         args '-df', gatlingDataFolder
         args '-rf', gatlingReportsFolder
@@ -87,3 +88,6 @@ def createGatlingRunTask(def gatlingSimulationClassName) {
         args '-s', gatlingSimulationClassName
     }
 }
+
+compileJava.enabled false
+compileTestJava.enabled false
