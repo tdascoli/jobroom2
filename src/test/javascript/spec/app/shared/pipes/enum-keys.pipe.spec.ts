@@ -13,10 +13,10 @@ describe('KeysPipe', () => {
         }
 
         const expectedResult = [
-            { key: '0', value: 'A' },
-            { key: '1', value: 'B' },
-            { key: '2', value: 'C' },
-            { key: '3', value: 'D' },
+            { key: 0, value: 'A' },
+            { key: 1, value: 'B' },
+            { key: 2, value: 'C' },
+            { key: 3, value: 'D' },
         ];
         expect(pipe.transform(ENUM, null)).toEqual(expectedResult);
     });
@@ -27,10 +27,10 @@ describe('KeysPipe', () => {
         }
 
         const expectedResult = [
-            { key: '0', value: '1' },
-            { key: '1', value: '2' },
-            { key: '2', value: '3' },
-            { key: '3', value: '4' },
+            { key: 0, value: '1' },
+            { key: 1, value: '2' },
+            { key: 2, value: '3' },
+            { key: 3, value: '4' },
         ];
         expect(pipe.transform(ENUM, null)).toEqual(expectedResult);
     });

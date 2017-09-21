@@ -2,7 +2,6 @@ import { Observable } from 'rxjs/Observable';
 import {
     COMPANY_DEBOUNCE_TIME,
     JobSearchFilterComponent,
-    SORT_DATE_ASC
 } from '../../../../../../../main/webapp/app/job-search/job-search-sidebar/job-search-filter/job-search-filter.component';
 import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core/testing';
 import { JobroomTestModule } from '../../../../test.module';
@@ -10,7 +9,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import {
     ContractType,
-    initialState
+    initialState, Sort
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import { FilterChangedAction } from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 
@@ -48,16 +47,16 @@ describe('JobSearchFilterComponent', () => {
         it('should subscribe to filterForm value changes', () => {
             // WHEN
             component.filterForm.setValue({
-                contractType: ContractType.Permanent,
+                contractType: ContractType.PERMANENT,
                 workingTime: [80, 100],
-                sort: SORT_DATE_ASC
+                sort: Sort.DATE_ASC
             }, { emitEvent: true });
 
             // THEN
             expect(mockStore.dispatch).toHaveBeenCalledWith(new FilterChangedAction({
-                contractType: ContractType.Permanent,
+                contractType: ContractType.PERMANENT,
                 workingTime: [80, 100],
-                sort: SORT_DATE_ASC,
+                sort: Sort.DATE_ASC,
                 companyName: null
             }));
         });
@@ -69,9 +68,9 @@ describe('JobSearchFilterComponent', () => {
 
             // THEN
             expect(mockStore.dispatch).toHaveBeenCalledWith(new FilterChangedAction({
-                contractType: ContractType.All,
+                contractType: ContractType.ALL,
                 workingTime: [0, 100],
-                sort: null,
+                sort: Sort.RELEVANCE_DESC,
                 companyName: 'ab'
             }));
         }));
@@ -83,7 +82,7 @@ describe('JobSearchFilterComponent', () => {
 
             // THEN
             expect(mockStore.dispatch).not.toHaveBeenCalledWith(new FilterChangedAction({
-                contractType: ContractType.All,
+                contractType: ContractType.ALL,
                 workingTime: [0, 100],
                 sort: null,
                 companyName: 'a'

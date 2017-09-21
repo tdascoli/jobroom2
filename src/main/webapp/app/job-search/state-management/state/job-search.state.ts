@@ -2,10 +2,16 @@ import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-
 import { Job } from '../../services';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
+export enum Sort {
+    RELEVANCE_DESC,
+    DATE_ASC,
+    DATE_DESC
+}
+
 export enum ContractType {
-    All,
-    Temporary,
-    Permanent,
+    ALL,
+    TEMPORARY,
+    PERMANENT,
 }
 
 export interface JobSearchState {
@@ -26,7 +32,7 @@ export interface JobSearchQuery {
 }
 
 export interface JobSearchFilter {
-    sort?: string;
+    sort: Sort;
     contractType: ContractType;
     workingTime: [number, number];
     companyName?: string;
@@ -41,8 +47,9 @@ export const initialState: JobSearchState = {
         localityQuery: []
     },
     searchFilter: {
-        contractType: ContractType.All,
-        workingTime: [0, 100]
+        contractType: ContractType.ALL,
+        workingTime: [0, 100],
+        sort: Sort.RELEVANCE_DESC
     },
     totalJobCount: 0,
     page: 0,

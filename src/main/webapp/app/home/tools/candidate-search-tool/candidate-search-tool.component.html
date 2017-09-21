@@ -24,7 +24,7 @@
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let experience of experiences | keys"
-                            value="{{experience.value}}"
+                            [ngValue]="experience.value"
                             label="{{'candidate-search.experience.' + experience.value | translate}}">
                     </option>
                 </select>
@@ -47,7 +47,7 @@
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let greaterRegion of greaterRegions | keys"
-                            value="{{greaterRegion.value}}"
+                            [ngValue]="greaterRegion.value"
                             label="{{'global.reference.greaterRegion.' + greaterRegion.value | translate}}">
                     </option>
                 </select>
@@ -61,7 +61,7 @@
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let availability of availabilities | keys"
-                            value="{{availability.value}}"
+                            [ngValue]="availability.value"
                             label="{{'candidate-search.availability.' + availability.value | translate}}">
                 </select>
 
@@ -80,13 +80,13 @@
             </div>
         </div>
         <div class="form-group row">
-            <label for="cs-6" class="col-form-label col-4 text-right"
+            <label class="col-form-label col-4 text-right"
                    translate="candidate-search.workForm.label"></label>
             <div class="col-4">
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let workForm of workForms | keys"
-                            value="{{workForm.value}}"
+                            [ngValue]="workForm.value"
                             label="{{'candidate-search.workForm.' + workForm.value | translate}}">
                     </option>
                 </select>
@@ -99,7 +99,7 @@
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let education of educations | keys"
-                            value="{{education.value}}"
+                            [ngValue]="education.value"
                             label="{{'candidate-search.education.' + education.value | translate}}">
                     </option>
                 </select>
@@ -112,7 +112,7 @@
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let graduation of graduations | keys"
-                            value="{{graduation.value}}"
+                            [ngValue]="graduation.value"
                             label="{{'candidate-search.graduation.' + graduation.value | translate}}">
                     </option>
                 </select>
@@ -125,7 +125,7 @@
                 <select class="form-control custom-select">
                     <option selected="" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys"
-                            value="{{drivingLicenceCategory.value}}"
+                            [ngValue]="drivingLicenceCategory.value"
                             label="{{drivingLicenceCategory.value}}">
                     </option>
                 </select>

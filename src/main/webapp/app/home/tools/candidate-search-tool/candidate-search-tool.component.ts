@@ -24,7 +24,7 @@ export class CandidateSearchToolComponent implements OnInit {
     educations = ISCED_1997;
     workForms = WorkForm;
     graduations = Graduation;
-    drivingLicenceCategories = DrivingLicenceCategory
+    drivingLicenceCategories = DrivingLicenceCategory;
 
     constructor(private occupationService: OccupationService,
                 private localityService: LocalityService,

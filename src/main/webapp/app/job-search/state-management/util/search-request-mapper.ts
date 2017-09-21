@@ -1,38 +1,33 @@
-import { ContractType, JobSearchFilter, JobSearchQuery } from '../state/job-search.state';
+import {
+    ContractType,
+    JobSearchFilter,
+    JobSearchQuery,
+    Sort
+} from '../state/job-search.state';
 import { JobSearchRequest } from '../../services/job-search-request';
 import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 import { OccupationInputType } from '../../../shared/job-search/service/occupation-autocomplete';
 import { LocalityInputType } from '../../../shared/job-search/service/locality-autocomplete';
 import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
 
+const toCode = (value: TypeaheadMultiselectModel) => value.code;
+const toLabel = (value: TypeaheadMultiselectModel) => value.label;
+const byValue = (type: string) => (value: TypeaheadMultiselectModel) => value.type === type;
+
 export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter: JobSearchFilter, page = 0): JobSearchRequest {
-    const keywords = searchQuery.baseQuery
-        .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.FREE_TEXT)
-        .map((value: TypeaheadMultiselectModel) => value.label);
-    const occupations = searchQuery.baseQuery
-        .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.OCCUPATION)
-        .map((value: TypeaheadMultiselectModel) => value.code);
-    const classifications = searchQuery.baseQuery
-        .filter((value: TypeaheadMultiselectModel) => value.type === OccupationInputType.CLASSIFICATION)
-        .map((value: TypeaheadMultiselectModel) => value.code);
+    const { baseQuery, localityQuery } = searchQuery;
+    const { companyName } = searchFilter;
 
-    const localities = searchQuery.localityQuery
-        .filter((value: TypeaheadMultiselectModel) => value.type === LocalityInputType.LOCALITY)
-        .map((value: TypeaheadMultiselectModel) => value.code);
-    const cantons = searchQuery.localityQuery
-        .filter((value: TypeaheadMultiselectModel) => value.type === LocalityInputType.CANTON)
-        .map((value: TypeaheadMultiselectModel) => value.code);
+    const keywords = baseQuery.filter(byValue(OccupationInputType.FREE_TEXT)).map(toLabel);
+    const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION)).map(toCode);
+    const classifications = baseQuery.filter(byValue(OccupationInputType.CLASSIFICATION)).map(toCode);
 
+    const localities = localityQuery.filter(byValue(LocalityInputType.LOCALITY)).map(toCode);
+    const cantons = localityQuery.filter(byValue(LocalityInputType.CANTON)).map(toCode);
+
+    const permanent = mapContractType(searchFilter.contractType);
+    const sort = mapSort(searchFilter.sort);
     const regions = [];
-
-    let contractTypeFlag;
-    if (searchFilter.contractType === ContractType.Permanent) {
-        contractTypeFlag = true;
-    } else if (searchFilter.contractType === ContractType.Temporary) {
-        contractTypeFlag = false;
-    } else {
-        contractTypeFlag = null;
-    }
 
     return {
         keywords,
@@ -41,12 +36,38 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
         localities,
         regions,
         cantons,
-        permanent: contractTypeFlag,
+        permanent,
         workingTimeMin: searchFilter.workingTime[0],
         workingTimeMax: searchFilter.workingTime[1],
-        sort: searchFilter.sort,
-        companyName: searchFilter.companyName,
+        sort,
+        companyName,
         page,
         size: ITEMS_PER_PAGE
     };
+}
+
+function mapContractType(contractType: ContractType): boolean {
+    let contractTypeFlag;
+    if (contractType === ContractType.PERMANENT) {
+        contractTypeFlag = true;
+    } else if (contractType === ContractType.TEMPORARY) {
+        contractTypeFlag = false;
+    } else {
+        contractTypeFlag = null;
+    }
+
+    return contractTypeFlag;
+}
+
+function mapSort(sort: Sort): string {
+    let sortString;
+    if (sort === Sort.DATE_ASC) {
+        sortString = 'registrationDate,asc';
+    } else if (sort === Sort.DATE_DESC) {
+        sortString = 'registrationDate,desc';
+    } else {
+        sortString = null;
+    }
+
+    return sortString;
 }

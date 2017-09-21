@@ -4,8 +4,8 @@
     <div class="form-group">
         <label for="sort" class="sr-only">{{'job-search.filter.sort.label' | translate}}</label>
         <select class="form-control-sm custom-select" id="sort" formControlName="sort">
-            <option *ngFor="let option of sortOptions" [ngValue]="option.value">
-                {{'job-search.filter.sort.option.'+ option.name | translate}}
+            <option *ngFor="let sort of sortOptions | keys" [ngValue]="sort.key">
+                {{'job-search.filter.sort.option.'+ sort.value | translate}}
             </option>
         </select>
     </div>
@@ -19,8 +19,8 @@
     <div class="form-group">
         <label for="contractType" class="small">{{'job-search.filter.contract-type.label' | translate}}</label>
         <select class="form-control-sm custom-select" formControlName="contractType" id="contractType">
-            <option *ngFor="let option of contractTypeOptions" [ngValue]="option.value">
-                {{'job-search.filter.contract-type.option.'+ uncapFirst(option.name) | translate}}
+            <option *ngFor="let contractType of contractTypes | keys" [ngValue]="contractType.key">
+                {{'job-search.filter.contract-type.option.'+ contractType.value | translate}}
             </option>
         </select>
     </div>

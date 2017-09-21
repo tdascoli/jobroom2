@@ -4,7 +4,7 @@ import {
     initialState,
     JobSearchFilter,
     JobSearchQuery,
-    JobSearchState
+    JobSearchState, Sort
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
@@ -48,8 +48,9 @@ describe('jobSearchReducer', () => {
         // GIVEN
         const state = initialState;
         const searchFilter: JobSearchFilter = {
-            contractType: ContractType.Permanent,
-            workingTime: [80, 100]
+            contractType: ContractType.PERMANENT,
+            workingTime: [80, 100],
+            sort: Sort.DATE_ASC
         };
         const action = new actions.FilterChangedAction(searchFilter);
 

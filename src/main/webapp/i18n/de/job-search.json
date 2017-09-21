@@ -8,17 +8,17 @@
             "contract-type": {
                 "label": "Vertragsart",
                 "option": {
-                    "all": "Alle",
-                    "permanent": "Unbefristet",
-                    "temporary": "Befristet"
+                    "ALL": "Alle",
+                    "PERMANENT": "Unbefristet",
+                    "TEMPORARY": "Befristet"
                 }
             },
             "sort": {
                 "label": "Sortierung",
                 "option": {
-                    "date-asc": "Sortiere nach Datum aufsteigend",
-                    "date-desc": "Sortiere nach Datum absteigend",
-                    "relevance": "Sortiere nach Relevanz"
+                    "DATE_ASC": "Sortiere nach Datum aufsteigend",
+                    "DATE_DESC": "Sortiere nach Datum absteigend",
+                    "RELEVANCE_DESC": "Sortiere nach Relevanz"
                 }
             },
             "title": "Suchergebnisse filtern",
