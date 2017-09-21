@@ -22,12 +22,11 @@ import { JobDetailResolver } from './job-detail/job-detail.resolver';
 import { ClipboardModule } from 'ngx-clipboard';
 import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
-import { HomeEffects } from './state-management/effects/home.effects';
 
 @NgModule({
     imports: [
         StoreModule.forFeature('jobSearch', jobSearchReducer),
-        EffectsModule.forFeature([JobSearchEffects, HomeEffects]),
+        EffectsModule.forFeature([JobSearchEffects]),
         StoreRouterConnectingModule,
         JobroomSharedModule,
         ReactiveFormsModule,

@@ -1,5 +1,5 @@
 import { initialState, JobSearchToolState } from '../state/job-search-tool.state';
-import { Actions, JOB_SEARCH_TOOL_SUBMITTED } from '../actions/job-search-tool.actions';
+import { Actions, JOB_SEARCH_TOOL_SUBMITTED } from '../index';
 
 export function jobSearchToolReducer(state = initialState, action: Actions): JobSearchToolState {
     let newState;

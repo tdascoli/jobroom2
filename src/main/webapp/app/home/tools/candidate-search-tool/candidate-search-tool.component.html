@@ -1,7 +1,12 @@
 <fieldset class="candidate-search-off">
-    <form [formGroup]="candidateSearchForm" novalidate class="container mt-3">
+    <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)"
+          novalidate class="container mt-3">
+        <!--todo: review translations-->
+
         <div class="form-group row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.occupation.label"></label>
+            <label class="col-form-label col-4 text-right"
+                   translate="candidate-search.occupation.label"></label>
+            <!--todo: show only the occupations-->
             <div class="col-4">
                 <jr2-typeahead-multiselect
                     formControlName="occupation"
@@ -12,150 +17,37 @@
 
         <div class="form-group row">
             <label class="col-form-label col-4 text-right"
-                   translate="candidate-search.keywords.label"></label>
+                   translate="candidate-search.residenceLocation.label"></label>
             <div class="col-4">
-                <input class="form-control" type="text" placeholder="z.B. Tiefbau">
-            </div>
-        </div>
-
-        <div class="form-group form-group--break row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.experience.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let experience of experiences | keys"
-                            [ngValue]="experience.value"
-                            label="{{'candidate-search.experience.' + experience.value | translate}}">
-                    </option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.workLocation.label"></label>
-            <div class="col-4">
-                <jr2-typeahead-multiselect
-                    formControlName="workLocation"
-                    [itemLoader]="fetchLocalitySuggestions"
-                    [placeHolder]="'Ort, Gemeinde, Kanton'"></jr2-typeahead-multiselect>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.residenceLocation.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
+                <select formControlName="residence" class="form-control custom-select">
+                    <option selected=""
+                            translate="candidate-search.no-selection"></option>
                     <option *ngFor="let greaterRegion of greaterRegions | keys"
-                            [ngValue]="greaterRegion.value"
-                            label="{{'global.reference.greaterRegion.' + greaterRegion.value | translate}}">
+                            [ngValue]="greaterRegion.key">
+                        {{'global.reference.greaterRegion.' + greaterRegion.value |
+                        translate}}
                     </option>
                 </select>
             </div>
         </div>
 
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right"
-                   translate="candidate-search.availability.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let availability of availabilities | keys"
-                            [ngValue]="availability.value"
-                            label="{{'candidate-search.availability.' + availability.value | translate}}">
-                </select>
-
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right"
-                   translate="candidate-search.workload.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let workLoad of [100,90,80,70,60,50,40,30,20,10]"
-                            value="{{workLoad}}"
-                            label="{{workLoad}}%">
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right"
-                   translate="candidate-search.workForm.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let workForm of workForms | keys"
-                            [ngValue]="workForm.value"
-                            label="{{'candidate-search.workForm.' + workForm.value | translate}}">
-                    </option>
-                </select>
-            </div>
-        </div>
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right"
-                   translate="candidate-search.education.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let education of educations | keys"
-                            [ngValue]="education.value"
-                            label="{{'candidate-search.education.' + education.value | translate}}">
-                    </option>
-                </select>
-            </div>
-        </div>
         <div class="form-group row">
             <label class="col-form-label col-4 text-right"
                    translate="candidate-search.graduation.label"></label>
             <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
+                <select formControlName="graduation" class="form-control custom-select">
+                    <option selected=""
+                            translate="candidate-search.no-selection"></option>
                     <option *ngFor="let graduation of graduations | keys"
-                            [ngValue]="graduation.value"
-                            label="{{'candidate-search.graduation.' + graduation.value | translate}}">
+                            [ngValue]="graduation.key">
+                        {{'candidate-search.graduation.' + graduation.value | translate}}
                     </option>
                 </select>
             </div>
         </div>
-        <div class="form-group form-group--break row">
-            <label class="col-form-label col-4 text-right"
-                   translate="candidate-search.drivingLicenceCategory.label"></label>
-            <div class="col-4">
-                <select class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys"
-                            [ngValue]="drivingLicenceCategory.value"
-                            label="{{drivingLicenceCategory.value}}">
-                    </option>
-                </select>
-            </div>
-        </div>
-
-        <div class="form-group row">
-            <label for="cs-10" class="col-form-label col-4 text-right">Sprachkenntnisse</label>
-            <div>
-                <select class="form-control custom-select" id="cs-10">
-                    <option selected="">keine Auswahl</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-        </div>
-        <a class="btn btn-primary btn-lg" (click)="search()">Kandidaten anzeigen (1'644)</a>
+        <button class="btn btn-primary btn-lg btn-block">
+            <!--todo: add i18n-->
+            Kandidaten anzeigen
+        </button>
     </form>
 </fieldset>
-
-<div class="candidate-search__radar">
-    <!--
-                      <button type="button" class="close" aria-label="Close">
-                          <span aria-hidden="true">&times;</span>
-                      </button>
-                      -->
-
-    Diesem Job-Profil enstprechen bereits<br>
-    <span class="badge badge-radar">1'644</span><br>
-    Stellensuchenden
-    <a href="#">Jetzt anzeigen!</a>
-</div>

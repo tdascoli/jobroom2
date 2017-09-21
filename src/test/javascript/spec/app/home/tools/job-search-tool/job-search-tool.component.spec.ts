@@ -10,7 +10,6 @@ import { Store } from '@ngrx/store';
 import { initialState } from '../../../../../../../main/webapp/app/home/state-management/state/job-search-tool.state';
 
 describe('JobSearchToolComponent', () => {
-    const mockRouter = new MockRouter();
     const mockOccupationService = jasmine.createSpyObj('mockOccupationService', ['fetchSuggestions']);
     const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);
 
@@ -25,7 +24,6 @@ describe('JobSearchToolComponent', () => {
             imports: [ReactiveFormsModule],
             declarations: [JobSearchToolComponent],
             providers: [
-                { provide: Router, useValue: mockRouter },
                 { provide: OccupationService, useValue: mockOccupationService },
                 { provide: LocalityService, useValue: mockLocalityService },
                 { provide: Store, useValue: mockStore }

@@ -9,6 +9,3 @@ export class JobSearchToolSubmittedAction implements Action {
     constructor(public payload: JobSearchToolState) {
     }
 }
-
-export type Actions =
-    | JobSearchToolSubmittedAction;

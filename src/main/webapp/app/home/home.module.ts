@@ -10,7 +10,8 @@ import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarItemComponent } from './toolbar-item/toolbar-item.component';
 import { ToolsContentComponent } from './tools-content/tools-content.component';
 import { StoreModule } from '@ngrx/store';
-import { homeReducers } from './state-management';
+import { homeReducers, HomeEffects } from './state-management';
+import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { homeReducers } from './state-management';
         JobSearchSharedModule,
         ReactiveFormsModule,
         StoreModule.forFeature('home', homeReducers),
+        EffectsModule.forFeature([HomeEffects]),
         RouterModule.forRoot([HOME_ROUTE], { useHash: true })
     ],
     declarations: [
