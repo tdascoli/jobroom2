@@ -4,6 +4,7 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const Visualizer = require('webpack-visualizer-plugin');
 const ngcWebpack = require('ngc-webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const path = require('path');
 
 const utils = require('./utils.js');
@@ -37,7 +38,8 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
                         configFileName: 'tsconfig-aot.json'
                     },
                 },
-                { loader: 'angular2-template-loader' }
+                { loader: 'angular2-template-loader' },
+                { loader: 'angular-router-loader?aot=true&genDir=build/aot' }
             ],
             exclude: ['node_modules/generator-jhipster']
         },
@@ -107,6 +109,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
         new webpack.LoaderOptionsPlugin({
             minimize: true,
             debug: false
-        })
+        }),
+        new BundleAnalyzerPlugin()
     ]
 });

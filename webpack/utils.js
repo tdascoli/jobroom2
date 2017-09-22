@@ -1,10 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
+const vendorLibs = [
+    '@angular/common',
+    '@angular/compiler',
+    '@angular/core',
+    '@angular/forms',
+    '@angular/http',
+    '@angular/platform-browser',
+    '@angular/platform-browser-dynamic',
+    '@angular/router',
+    '@ng-bootstrap/ng-bootstrap',
+    'ngx-infinite-scroll',
+    'jquery',
+    'ng-jhipster',
+    'ng2-webstorage',
+    'ngx-cookie',
+    'rxjs',
+    '@ngrx',
+    '@ngx-translate'
+];
+
 module.exports = {
     parseVersion,
     root,
-    isExternalLib
+    isExternalLib,
+    isVendorLib
 };
 
 // Returns the second occurrence of the version number from `build.gradle` file
@@ -17,8 +38,8 @@ function parseVersion() {
 const _root = path.resolve(__dirname, '..');
 
 function root(args) {
-  args = Array.prototype.slice.call(arguments, 0);
-  return path.join.apply(path, [_root].concat(args));
+    args = Array.prototype.slice.call(arguments, 0);
+    return path.join.apply(path, [_root].concat(args));
 }
 
 function isExternalLib(module, check = /node_modules/) {
@@ -27,4 +48,16 @@ function isExternalLib(module, check = /node_modules/) {
         return false;
     }
     return req.search(check) >= 0;
+}
+
+
+function isVendorLib(module) {
+    const req = module.userRequest;
+    if (typeof req !== 'string') {
+        return false;
+    }
+
+    return vendorLibs
+        .map(item => req.search(new RegExp(item)) >= 0)
+        .reduce((acc, curr) => acc || curr)
 }

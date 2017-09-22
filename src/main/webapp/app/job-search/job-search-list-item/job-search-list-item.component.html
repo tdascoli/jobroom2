@@ -1,7 +1,7 @@
 <div class="logo-box flex-height result-list__item md-whiteframe-1dp">
 
     <div class="d-flex w-100 justify-content-between mb-1">
-        <h4 class="text--primary-color"><a [routerLink]="['/job-detail', job.id]"
+        <h4 class="text--primary-color"><a [routerLink]="['job-detail', job.id]"
                                            [innerHtml]="job.title | safeHtml"></a></h4>
         <div>
             <small style="vertical-align: text-top;">{{job.registrationDate | jr2Date}}</small>

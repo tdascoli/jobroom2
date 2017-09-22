@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { JobSearchRoutingModule } from './job-search-routing.module';
 import { JobroomSharedModule, JobSearchSharedModule } from '../shared';
 import { JobSearchComponent } from './job-search.component';
 import { JobSearchToolbarComponent } from './job-search-toolbar/job-search-toolbar.component';
@@ -22,6 +21,8 @@ import { JobDetailResolver } from './job-detail/job-detail.resolver';
 import { ClipboardModule } from 'ngx-clipboard';
 import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
+import { RouterModule } from '@angular/router';
+import { JOB_SEARCH_ROUTES } from './job-search.routes';
 
 @NgModule({
     imports: [
@@ -31,7 +32,7 @@ import { JobService } from './services';
         JobroomSharedModule,
         ReactiveFormsModule,
         CommonModule,
-        JobSearchRoutingModule,
+        RouterModule.forChild(JOB_SEARCH_ROUTES),
         JobSearchSharedModule,
         ClipboardModule,
         MarkdownModule.forRoot()

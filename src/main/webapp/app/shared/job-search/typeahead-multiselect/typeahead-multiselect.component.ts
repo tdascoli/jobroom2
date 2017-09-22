@@ -5,7 +5,7 @@ import {
     Input,
     ViewChild
 } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TypeaheadMultiselectModel } from './typeahead-multiselect-model';
 

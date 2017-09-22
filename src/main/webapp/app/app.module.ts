@@ -5,7 +5,6 @@ import { BrowserModule } from '@angular/platform-browser';
 import { Ng2Webstorage } from 'ng2-webstorage';
 
 import { JobroomSharedModule, UserRouteAccessService } from './shared';
-import { JobroomHomeModule } from './home/home.module';
 import { JobroomAdminModule } from './admin/admin.module';
 import { JobroomAccountModule } from './account/account.module';
 import { JobroomEntityModule } from './entities/entity.module';
@@ -26,33 +25,29 @@ import {
     VersionService
 } from './layouts';
 
-import { AppRoutingModule } from './app.routing.module';
-import { JobSearchModule } from './job-search/job-search.module';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { DEBUG_INFO_ENABLED } from './app.constants';
-import { CandidateSearchModule } from './candidate-search/candidate-search.module';
+// import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+// import { DEBUG_INFO_ENABLED } from './app.constants';
+import { RouterModule } from '@angular/router';
+import { APP_ROUTES } from './app.routes';
 
-// jhipster-needle-angular-add-module-import JHipster will add new module here
+import 'rxjs/add/operator/map';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
 @NgModule({
     imports: [
         BrowserModule,
-        AppRoutingModule,
+        RouterModule.forRoot(APP_ROUTES, { useHash: true }),
         LayoutRoutingModule,
         Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
         JobroomSharedModule,
-        JobroomHomeModule,
         JobroomAdminModule,
         JobroomAccountModule,
         JobroomEntityModule,
-        JobSearchModule,
-        CandidateSearchModule,
         StoreModule.forRoot({}),
-        DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
+        // DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
         EffectsModule.forRoot([])
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
