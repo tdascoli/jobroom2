@@ -1,19 +1,17 @@
 {
     "home": {
+        "title": "JobRoom",
         "tools": {
+            "jobSearch": {
+                "title": "Finden Sie jetzt Ihren Traumjob!"
+            },
             "candidateSearchTab": "Kandidaten finden",
-            "jobPublicationTab": "Job publizieren",
             "job-search": {
                 "search-button": {
                     "title": "Traumjob finden!"
                 }
-            }
-        },
-        "title": "JobRoom",
-        "tool": {
-            "jobSearch": {
-                "title": "Finden Sie jetzt Ihren Traumjob!"
-            }
+            },
+            "jobPublicationTab": "Job publizieren"
         },
         "toolbar": {
             "companies": "Unternehmen",
