@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
-import { Observable } from 'rxjs/Rx';
+import { Observable } from 'rxjs/Observable';
 import { JhiDateUtils } from 'ng-jhipster';
 import { ResponseWrapper } from '../../shared';
 import { TranslateService } from '@ngx-translate/core';

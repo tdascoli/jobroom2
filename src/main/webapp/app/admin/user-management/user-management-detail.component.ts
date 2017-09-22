@@ -1,6 +1,6 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs/Rx';
+import { Subscription } from 'rxjs/Subscription';
 
 import { User, UserService } from '../../shared';
 
@@ -13,10 +13,8 @@ export class UserMgmtDetailComponent implements OnInit, OnDestroy {
     user: User;
     private subscription: Subscription;
 
-    constructor(
-        private userService: UserService,
-        private route: ActivatedRoute
-    ) {
+    constructor(private userService: UserService,
+                private route: ActivatedRoute) {
     }
 
     ngOnInit() {

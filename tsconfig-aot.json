@@ -18,6 +18,7 @@
     "files": [
         "src/main/webapp/app/app.module.ts",
         "src/main/webapp/app/app.main-aot.ts",
+        "src/main/webapp/app/admin/admin.module.ts",
         "src/main/webapp/app/home/home.module.ts",
         "src/main/webapp/app/job-search/job-search.module.ts",
         "src/main/webapp/app/candidate-search/candidate-search.module.ts"

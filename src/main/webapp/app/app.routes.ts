@@ -3,6 +3,10 @@ import { Routes } from '@angular/router';
 export const APP_ROUTES: Routes = [
     { path: '', redirectTo: 'home', pathMatch: 'full' },
     {
+        path: 'admin',
+        loadChildren: './admin/admin.module#JobroomAdminModule'
+    },
+    {
         path: 'home',
         loadChildren: './home/home.module#JobroomHomeModule'
     },

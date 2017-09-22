@@ -16,7 +16,7 @@ const vendorLibs = [
     'ng-jhipster',
     'ng2-webstorage',
     'ngx-cookie',
-    'rxjs',
+    //'rxjs',
     '@ngrx',
     '@ngx-translate'
 ];
@@ -56,6 +56,8 @@ function isVendorLib(module) {
     if (typeof req !== 'string') {
         return false;
     }
+
+    //console.log(req);
 
     return vendorLibs
         .map(item => req.search(new RegExp(item)) >= 0)

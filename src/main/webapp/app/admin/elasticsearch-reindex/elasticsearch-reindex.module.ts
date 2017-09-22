@@ -16,8 +16,7 @@ const ADMIN_ROUTES = [
 
 @NgModule({
     imports: [
-        JobroomSharedModule,
-        RouterModule.forRoot(ADMIN_ROUTES, { useHash: true })
+        JobroomSharedModule
     ],
     declarations: [
         ElasticsearchReindexComponent,

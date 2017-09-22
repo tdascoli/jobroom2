@@ -26,13 +26,13 @@ import { JOB_SEARCH_ROUTES } from './job-search.routes';
 
 @NgModule({
     imports: [
+        RouterModule.forChild(JOB_SEARCH_ROUTES),
         StoreModule.forFeature('jobSearch', jobSearchReducer),
         EffectsModule.forFeature([JobSearchEffects]),
         StoreRouterConnectingModule,
         JobroomSharedModule,
         ReactiveFormsModule,
         CommonModule,
-        RouterModule.forChild(JOB_SEARCH_ROUTES),
         JobSearchSharedModule,
         ClipboardModule,
         MarkdownModule.forRoot()

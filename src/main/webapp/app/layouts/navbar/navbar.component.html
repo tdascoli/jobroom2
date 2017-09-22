@@ -71,7 +71,7 @@
 
                                     <div *jhiHasAnyAuthority="'ROLE_ADMIN'">
                                         <span class="dropdown-title">Admin</span>
-                                        <a class="dropdown-item" routerLink="gateway"
+                                        <a class="dropdown-item" [routerLink]="['admin', 'gateway']"
                                            routerLinkActive="active">
                                             <i class="fa fa-fw fa-road"
                                                aria-hidden="true"></i>
@@ -80,7 +80,7 @@
                                         </a>
 
                                         <a class="dropdown-item"
-                                           routerLink="user-management"
+                                           [routerLink]="['admin', 'user-management']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-user"
@@ -89,7 +89,7 @@
                                                 jhiTranslate="global.menu.admin.userManagement">User management</span>
                                         </a>
 
-                                        <a class="dropdown-item" routerLink="jhi-metrics"
+                                        <a class="dropdown-item" [routerLink]="['admin', 'jhi-metrics']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-tachometer"
@@ -97,7 +97,7 @@
                                             <span
                                                 jhiTranslate="global.menu.admin.metrics">Metrics</span>
                                         </a>
-                                        <a class="dropdown-item" routerLink="jhi-health"
+                                        <a class="dropdown-item" [routerLink]="['admin', 'jhi-health']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-heart"
@@ -105,7 +105,7 @@
                                             <span jhiTranslate="global.menu.admin.health">Health</span>
                                         </a>
                                         <a class="dropdown-item"
-                                           routerLink="jhi-configuration"
+                                           [routerLink]="['admin', 'jhi-configuration']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-list"
@@ -113,14 +113,14 @@
                                             <span
                                                 jhiTranslate="global.menu.admin.configuration">Configuration</span>
                                         </a>
-                                        <a class="dropdown-item" routerLink="audits"
+                                        <a class="dropdown-item" [routerLink]="['admin', 'audits']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-bell"
                                                aria-hidden="true"></i>
                                             <span jhiTranslate="global.menu.admin.audits">Audits</span>
                                         </a>
-                                        <a class="dropdown-item" routerLink="logs"
+                                        <a class="dropdown-item" [routerLink]="['admin', 'logs']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-tasks"
@@ -128,7 +128,7 @@
                                             <span jhiTranslate="global.menu.admin.logs">Logs</span>
                                         </a>
 
-                                        <a class="dropdown-item" routerLink="docs"
+                                        <a class="dropdown-item" [routerLink]="['admin', 'docs']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()"
                                            *ngIf="swaggerEnabled">
@@ -139,7 +139,7 @@
                                         </a>
 
                                         <a class="dropdown-item"
-                                           routerLink="elasticsearch-reindex"
+                                           [routerLink]="['admin', 'elasticsearch-reindex']"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
                                             <i class="fa fa-fw fa-search"

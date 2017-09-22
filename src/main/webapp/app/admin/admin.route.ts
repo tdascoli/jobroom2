@@ -4,15 +4,16 @@ import {
     auditsRoute,
     configurationRoute,
     docsRoute,
+    gatewayRoute,
     healthRoute,
     logsRoute,
     metricsRoute,
-    gatewayRoute,
-    userMgmtRoute,
-    userDialogRoute
+    userDialogRoute,
+    userMgmtRoute
 } from './';
 
 import { UserRouteAccessService } from '../shared';
+import { elasticsearchReindexRoute } from './elasticsearch-reindex/elasticsearch-reindex.route';
 
 const ADMIN_ROUTES = [
     auditsRoute,
@@ -20,6 +21,7 @@ const ADMIN_ROUTES = [
     docsRoute,
     healthRoute,
     logsRoute,
+    elasticsearchReindexRoute,
     gatewayRoute,
     ...userMgmtRoute,
     metricsRoute
