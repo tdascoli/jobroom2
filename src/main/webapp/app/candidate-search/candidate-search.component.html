@@ -1,8 +1,10 @@
 <div class="container">
-
     <div class="base">
-        <p>
-            Candidate search
-        </p>
+        <div class="base__subnavbar">
+            <jr2-candidate-search-filter [searchFilter]="searchFilter$ | async"></jr2-candidate-search-filter>
+        </div>
+
+        <div class="base__content--wide">
+        </div>
     </div>
 </div>

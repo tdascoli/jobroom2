@@ -4,6 +4,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Action } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as jobSearch from '../../../job-search/state-management/actions/job-search.actions';
+import * as candidateSearch from '../../../candidate-search/state-management/actions/candidate-search.actions';
 import {
     JOB_SEARCH_TOOL_SUBMITTED,
     JobSearchToolSubmittedAction
@@ -22,10 +23,11 @@ export class HomeEffects {
         .do((action: JobSearchToolSubmittedAction) => this.router.navigate(['/job-search']))
         .map((action: JobSearchToolSubmittedAction) => new jobSearch.ToolbarChangedAction(action.payload));
 
-    @Effect({ dispatch: false })
+    @Effect()
     candidateSearchToolSubmitted$: Observable<Action> = this.actions$
         .ofType(CANDIDATE_SEARCH_TOOL_SUBMITTED)
-        .do((action: CandidateSearchToolSubmittedAction) => this.router.navigate(['/candidate-search']));
+        .do((action: CandidateSearchToolSubmittedAction) => this.router.navigate(['/candidate-search']))
+        .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.InitCandidateSearchAction(action.payload));
 
     constructor(private actions$: Actions, private router: Router) {
     }

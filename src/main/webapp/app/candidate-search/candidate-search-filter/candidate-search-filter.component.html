@@ -1,0 +1,26 @@
+<p class="text--line-height--h3">{{'candidate-search.filter.title' | translate}}</p>
+
+<form [formGroup]="filterForm" novalidate>
+
+    <div class="form-group">
+        <label for="residence" class="small" translate="candidate-search.residenceLocation.label"></label>
+        <select formControlName="residence" id="residence" class="form-control-sm custom-select">
+            <option selected="" translate="candidate-search.no-selection"></option>
+            <option *ngFor="let greaterRegion of greaterRegions | keys" [ngValue]="greaterRegion.key">
+                {{'global.reference.greaterRegion.' + greaterRegion.value | translate}}
+            </option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="graduation" class="small" translate="candidate-search.graduation.label"></label>
+        <select formControlName="graduation" id="graduation" class="form-control-sm custom-select">
+            <option selected="" translate="candidate-search.no-selection"></option>
+            <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key">
+                {{'candidate-search.graduation.' + graduation.value | translate}}
+            </option>
+        </select>
+    </div>
+
+    <!--todo: add other filters-->
+</form>

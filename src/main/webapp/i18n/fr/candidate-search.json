@@ -52,6 +52,9 @@
         },
         "workload": {
             "label": "Arbeitspensum"
+        },
+        "filter": {
+            "title": "Kandidaten suchen"
         }
     }
 }
