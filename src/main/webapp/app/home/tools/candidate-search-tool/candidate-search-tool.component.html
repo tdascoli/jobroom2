@@ -1,44 +1,46 @@
-<fieldset class="candidate-search-off">
-    <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate class="container mt-3">
-        <!--todo: review translations-->
+<div class="tab-content--job-room">
+    <fieldset class="candidate-search-off">
+        <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate class="container mt-3">
+            <!--todo: review translations-->
 
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.occupation.label"></label>
-            <!--todo: show only the occupations-->
-            <div class="col-4">
-                <jr2-typeahead-multiselect formControlName="occupation"
-                                           [itemLoader]="fetchOccupationSuggestions"
-                                           [placeHolder]="'Beruf'">
-                </jr2-typeahead-multiselect>
+            <div class="form-group row">
+                <label class="col-form-label col-4 text-right" translate="candidate-search.occupation.label"></label>
+                <!--todo: show only the occupations-->
+                <div class="col-4">
+                    <jr2-typeahead-multiselect formControlName="occupation"
+                                               [itemLoader]="fetchOccupationSuggestions"
+                                               [placeHolder]="'Beruf'">
+                    </jr2-typeahead-multiselect>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.residenceLocation.label"></label>
-            <div class="col-4">
-                <select formControlName="residence" class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let greaterRegion of greaterRegions | keys" [ngValue]="greaterRegion.key">
-                        {{'global.reference.greaterRegion.' + greaterRegion.value | translate}}
-                    </option>
-                </select>
+            <div class="form-group row">
+                <label class="col-form-label col-4 text-right" translate="candidate-search.residenceLocation.label"></label>
+                <div class="col-4">
+                    <select formControlName="residence" class="form-control custom-select">
+                        <option selected="" translate="candidate-search.no-selection"></option>
+                        <option *ngFor="let greaterRegion of greaterRegions | keys" [ngValue]="greaterRegion.key">
+                            {{'global.reference.greaterRegion.' + greaterRegion.value | translate}}
+                        </option>
+                    </select>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group row">
-            <label class="col-form-label col-4 text-right" translate="candidate-search.graduation.label"></label>
-            <div class="col-4">
-                <select formControlName="graduation" class="form-control custom-select">
-                    <option selected="" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key">
-                        {{'candidate-search.graduation.' + graduation.value | translate}}
-                    </option>
-                </select>
+            <div class="form-group row">
+                <label class="col-form-label col-4 text-right" translate="candidate-search.graduation.label"></label>
+                <div class="col-4">
+                    <select formControlName="graduation" class="form-control custom-select">
+                        <option selected="" translate="candidate-search.no-selection"></option>
+                        <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key">
+                            {{'candidate-search.graduation.' + graduation.value | translate}}
+                        </option>
+                    </select>
+                </div>
             </div>
-        </div>
-        <button class="btn btn-primary btn-lg btn-block">
-            <!--todo: add i18n-->
-            Kandidaten anzeigen
-        </button>
-    </form>
-</fieldset>
+            <button class="btn btn-primary btn-lg btn-block">
+                <!--todo: add i18n-->
+                Kandidaten anzeigen
+            </button>
+        </form>
+    </fieldset>
+</div>

@@ -6,21 +6,24 @@
                 {{'home.toolbar.title' | translate}}
             </h2>
         </li>
-        <jr2-toolbar-item [icon]="'binoculars'" [active]="toolbarTab == ToolbarTab.JobSeekers" (select)="select(ToolbarTab.JobSeekers)">
+        <jr2-toolbar-item [icon]="'binoculars'" [active]="(activeToolbarItem$ | async) == ToolbarItem.JOB_SEEKERS"
+                          (select)="selectToolbarItem(ToolbarItem.JOB_SEEKERS)">
             {{'home.toolbar.jobSeekers' | translate}}
         </jr2-toolbar-item>
-        <jr2-toolbar-item [icon]="'building'" [active]="toolbarTab == ToolbarTab.Companies" (select)="select(ToolbarTab.Companies)">
+        <jr2-toolbar-item [icon]="'building'" [active]="(activeToolbarItem$ | async) == ToolbarItem.COMPANIES"
+                          (select)="selectToolbarItem(ToolbarItem.COMPANIES)">
             {{'home.toolbar.companies' | translate}}
         </jr2-toolbar-item>
-        <jr2-toolbar-item [icon]="'eye'" [active]="toolbarTab == ToolbarTab.RecruitmentAgencies" (select)="select(ToolbarTab.RecruitmentAgencies)">
+        <jr2-toolbar-item [icon]="'eye'" [active]="(activeToolbarItem$ | async) == ToolbarItem.RECRUITMENT_AGENCIES"
+                          (select)="selectToolbarItem(ToolbarItem.RECRUITMENT_AGENCIES)">
             {{'home.toolbar.recruitmentAgencies' | translate}}
         </jr2-toolbar-item>
     </jr2-toolbar>
 
-    <div class="container" [ngSwitch]="toolbarTab">
-        <div *ngSwitchCase="ToolbarTab.JobSeekers" id="job-seekers">
-            <h1 class="tool__heading">{{'home.tool.jobSearch.title' | translate}}</h1>
+    <div class="container" [ngSwitch]="activeToolbarItem$ | async">
 
+        <div *ngSwitchCase="ToolbarItem.JOB_SEEKERS" id="job-seekers">
+            <h1 class="tool__heading">{{'home.tools.jobSearch.title' | translate}}</h1>
             <div class="row">
                 <div class="col-sm-4">
                     <jr2-job-search-tool [jobSearchToolModel]="jobSearchToolModel$ | async"></jr2-job-search-tool>
@@ -28,12 +31,43 @@
             </div>
         </div>
 
-        <div *ngSwitchCase="ToolbarTab.Companies" id="companies">
-            <jr2-home-services [activeTab]="ToolsTab.JobPublication"></jr2-home-services>
+        <div *ngSwitchCase="ToolbarItem.COMPANIES" id="companies">
+            <div class="row">
+                <div class="col-sm-8">
+                    <ngb-tabset type="tabs nav--job-room" (tabChange)="selectCompaniesTab($event)" [activeId]="activeCompanyTabId$ | async">
+                        <ngb-tab [title]="'home.tools.jobPublicationTab'| translate" id="company-job-publication">
+                            <ng-template ngbTabContent>
+                                <jr2-job-publication-tool></jr2-job-publication-tool>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab [title]="'home.tools.candidateSearchTab' | translate" id="company-candidate-search">
+                            <ng-template ngbTabContent>
+                                <jr2-candidate-search-tool></jr2-candidate-search-tool>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
         </div>
 
-        <div *ngSwitchCase="ToolbarTab.RecruitmentAgencies" id="recruitment-agencies">
-            <jr2-home-services [activeTab]="ToolsTab.CandidateSearch"></jr2-home-services>
+        <div *ngSwitchCase="ToolbarItem.RECRUITMENT_AGENCIES" id="agencies">
+            <div class="row">
+                <div class="col-sm-8">
+                    <ngb-tabset type="tabs nav--job-room" (tabChange)="selectRecruitmentAgenciesTab($event)" [activeId]="activeAgencyTabId$ | async">
+                        <ngb-tab [title]="'home.tools.candidateSearchTab'| translate" id="agency-candidate-search">
+                            <ng-template ngbTabContent>
+                                <jr2-candidate-search-tool></jr2-candidate-search-tool>
+                            </ng-template>
+                        </ngb-tab>
+                        <ngb-tab [title]="'home.tools.jobPublicationTab' | translate" id="agency-job-publication">
+                            <ng-template ngbTabContent>
+                                <jr2-job-publication-tool></jr2-job-publication-tool>
+                            </ng-template>
+                        </ngb-tab>
+                    </ngb-tabset>
+                </div>
+            </div>
         </div>
+
     </div>
 </div>

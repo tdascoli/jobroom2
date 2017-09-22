@@ -23,6 +23,9 @@
             "MORE_THAN_A_YEAR": "mehr als 1 Jahr",
             "label": "Berufserfahrung"
         },
+        "filter": {
+            "title": "Kandidaten suchen"
+        },
         "graduation": {
             "ACCEPTED": "CH-Abschluss oder CH anerkannt",
             "CH": "CH-Abschluss",
@@ -52,9 +55,6 @@
         },
         "workload": {
             "label": "Arbeitspensum"
-        },
-        "filter": {
-            "title": "Kandidaten suchen"
         }
     }
 }

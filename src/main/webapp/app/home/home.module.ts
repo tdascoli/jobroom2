@@ -8,9 +8,8 @@ import { CandidateSearchToolComponent } from './tools/candidate-search-tool/cand
 import { JobPublicationToolComponent } from './tools/job-publication-tool/job-publication-tool.component';
 import { ToolbarComponent } from './toolbar/toolbar.component';
 import { ToolbarItemComponent } from './toolbar-item/toolbar-item.component';
-import { ToolsContentComponent } from './tools-content/tools-content.component';
 import { StoreModule } from '@ngrx/store';
-import { homeReducers, HomeEffects } from './state-management';
+import { HomeEffects, homeReducers } from './state-management';
 import { EffectsModule } from '@ngrx/effects';
 
 @NgModule({
@@ -28,8 +27,7 @@ import { EffectsModule } from '@ngrx/effects';
         CandidateSearchToolComponent,
         JobPublicationToolComponent,
         ToolbarComponent,
-        ToolbarItemComponent,
-        ToolsContentComponent
+        ToolbarItemComponent
     ],
     entryComponents: [],
     providers: [],

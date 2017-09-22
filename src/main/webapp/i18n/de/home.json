@@ -1,8 +1,13 @@
 {
     "home": {
-        "homeServices": {
+        "tools": {
             "candidateSearchTab": "Kandidaten finden",
-            "jobPublicationTab": "Job publizieren"
+            "jobPublicationTab": "Job publizieren",
+            "job-search": {
+                "search-button": {
+                    "title": "Traumjob finden!"
+                }
+            }
         },
         "title": "JobRoom",
         "tool": {
@@ -15,13 +20,6 @@
             "jobSeekers": "Stellensuchende",
             "recruitmentAgencies": "Arbeitsvermittler",
             "title": "Job-Room bietet Leistungen f\u00fcr"
-        },
-        "tools": {
-            "job-search": {
-                "search-button": {
-                    "title": "Traumjob finden!"
-                }
-            }
         }
     }
 }

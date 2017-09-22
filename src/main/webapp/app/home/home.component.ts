@@ -1,14 +1,21 @@
 import { Component } from '@angular/core';
-import { ToolsTab } from './tools-content/tools-content.component';
 import { Store } from '@ngrx/store';
-import { getJobSearchToolState, JobSearchToolState } from './state-management';
 import { Observable } from 'rxjs/Observable';
-
-enum ToolbarTab {
-    JobSeekers,
-    Companies,
-    RecruitmentAgencies
-}
+import {
+    getActiveAgencyTabId,
+    getActiveCompanyTabId,
+    getActiveToolbarItem,
+    getJobSearchToolState,
+    HomeState,
+    JobSearchToolState
+} from './state-management';
+import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import {
+    SelectAgencyTabAction,
+    SelectCompanyTabAction,
+    SelectToolbarItemAction
+} from './state-management/actions/layout.actions';
+import { ToolbarItem } from './state-management/state/layout.state';
 
 @Component({
     selector: 'jhi-home',
@@ -18,19 +25,29 @@ enum ToolbarTab {
     ]
 })
 export class HomeComponent {
-    ToolbarTab: typeof ToolbarTab = ToolbarTab;
-    ToolsTab: typeof ToolsTab = ToolsTab;
+    ToolbarItem: typeof ToolbarItem = ToolbarItem;
 
-    toolbarTab: ToolbarTab;
-
+    activeToolbarItem$: Observable<ToolbarItem>;
     jobSearchToolModel$: Observable<JobSearchToolState>;
+    activeCompanyTabId$: Observable<string>;
+    activeAgencyTabId$: Observable<string>;
 
-    constructor(private store: Store<JobSearchToolState>) {
-        this.toolbarTab = ToolbarTab.JobSeekers;
+    constructor(private store: Store<HomeState>) {
         this.jobSearchToolModel$ = store.select(getJobSearchToolState);
+        this.activeToolbarItem$ = store.select(getActiveToolbarItem);
+        this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
+        this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
     }
 
-    select(toolbarTab: ToolbarTab): void {
-        this.toolbarTab = toolbarTab;
+    selectToolbarItem(toolbarItem: ToolbarItem): void {
+        this.store.dispatch(new SelectToolbarItemAction(toolbarItem));
+    }
+
+    selectCompaniesTab(event: NgbTabChangeEvent): void {
+        this.store.dispatch(new SelectCompanyTabAction(event.nextId));
+    }
+
+    selectRecruitmentAgenciesTab(event: NgbTabChangeEvent): void {
+        this.store.dispatch(new SelectAgencyTabAction(event.nextId));
     }
 }
