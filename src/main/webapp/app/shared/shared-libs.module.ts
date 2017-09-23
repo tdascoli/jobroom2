@@ -2,34 +2,47 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { CommonModule } from '@angular/common';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { JhiLanguageService, NgJhipsterModule } from 'ng-jhipster';
-import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CookieModule } from 'ngx-cookie';
 import { Jobroom2LanguageService } from './language/jobroom2-language.service';
+import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap/timepicker/timepicker.module';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
+import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap/tabset/tabset.module';
+import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap/tooltip/tooltip.module';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap/typeahead/typeahead.module';
+import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
 
 @NgModule({
     imports: [
-        NgbModule.forRoot(),
+        NgbTimepickerModule.forRoot(),
+        NgbModalModule.forRoot(),
+        NgbTabsetModule.forRoot(),
+        NgbTypeaheadModule.forRoot(),
+        NgbAlertModule.forRoot(),
+        NgbTooltipModule.forRoot(),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
             alertAsToast: false,
             i18nEnabled: true,
             defaultI18nLang: 'de'
         }),
-        InfiniteScrollModule,
         CookieModule.forRoot()
     ],
     exports: [
         FormsModule,
         HttpModule,
         CommonModule,
-        NgbModule,
-        NgJhipsterModule,
-        InfiniteScrollModule
+        NgbTimepickerModule,
+        NgbModalModule,
+        NgbTabsetModule,
+        NgbTypeaheadModule,
+        NgbAlertModule,
+        NgbTooltipModule,
+        NgJhipsterModule
     ],
     providers: [
         { provide: JhiLanguageService, useClass: Jobroom2LanguageService },
     ]
 })
-export class JobroomSharedLibsModule {}
+export class JobroomSharedLibsModule {
+}

@@ -23,6 +23,7 @@ import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
 import { RouterModule } from '@angular/router';
 import { JOB_SEARCH_ROUTES } from './job-search.routes';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import { JOB_SEARCH_ROUTES } from './job-search.routes';
         CommonModule,
         JobSearchSharedModule,
         ClipboardModule,
-        MarkdownModule.forRoot()
+        MarkdownModule.forRoot(),
+        InfiniteScrollModule
     ],
     declarations: [
         JobSearchComponent,
@@ -45,7 +47,7 @@ import { JOB_SEARCH_ROUTES } from './job-search.routes';
         JobSearchListComponent,
         JobDetailComponent,
         JobSearchFilterComponent,
-        WorkingTimeRangePipe
+        WorkingTimeRangePipe,
     ],
     providers: [
         customHttpProvider(),

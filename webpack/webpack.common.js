@@ -70,7 +70,7 @@ module.exports = (options) => {
             new webpack.optimize.CommonsChunkPlugin({
                 name: 'vendor',
                 chunks: ['main'],
-                minChunks: module => utils.isVendorLib(module)
+                minChunks: module => utils.isExternalLib(module)
             }),
             new webpack.optimize.CommonsChunkPlugin({
                 name: ['polyfills', 'vendor'].reverse()

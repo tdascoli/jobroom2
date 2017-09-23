@@ -14,4 +14,8 @@ Print configuration
 
 @import 'print.scss';
 
+$fa-font-path: "~@alv-ch/alv-styleguide/build/fonts";
+@import '~@alv-ch/alv-styleguide/build/scss/alv-ch';
+
+@import '~prismjs/themes/prism.css';
 /* jhipster-needle-scss-add-main JHipster will add new css style */
