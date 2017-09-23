@@ -57,7 +57,7 @@ import 'rxjs/add/observable/throw';
         JobroomAccountModule,
         JobroomEntityModule,
         StoreModule.forRoot({}),
-        DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
+        // DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
         EffectsModule.forRoot([])
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],

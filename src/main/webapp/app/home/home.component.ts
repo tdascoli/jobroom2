@@ -9,7 +9,7 @@ import {
     HomeState,
     JobSearchToolState
 } from './state-management';
-import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap/tabset/tabset.module';
 import {
     SelectAgencyTabAction,
     SelectCompanyTabAction,

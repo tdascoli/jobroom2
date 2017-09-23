@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 
 import { JhiHealthService } from './health.service';
 import { JhiHealthModalComponent } from './health-modal.component';

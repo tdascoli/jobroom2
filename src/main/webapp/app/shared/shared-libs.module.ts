@@ -5,17 +5,17 @@ import { CommonModule } from '@angular/common';
 import { JhiLanguageService, NgJhipsterModule } from 'ng-jhipster';
 import { CookieModule } from 'ngx-cookie';
 import { Jobroom2LanguageService } from './language/jobroom2-language.service';
-import { NgbTimepickerModule } from '@ng-bootstrap/ng-bootstrap/timepicker/timepicker.module';
 import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap/modal/modal.module';
 import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap/tabset/tabset.module';
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap/tooltip/tooltip.module';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap/typeahead/typeahead.module';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
-import { NgbDatepickerModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDatepickerModule } from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker.module';
+import { NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap/pagination/pagination.module';
 
 @NgModule({
     imports: [
-        NgbTimepickerModule.forRoot(),
+        // NgbTimepickerModule.forRoot(),
         NgbModalModule.forRoot(),
         NgbTabsetModule.forRoot(),
         NgbTypeaheadModule.forRoot(),
@@ -35,7 +35,7 @@ import { NgbDatepickerModule, NgbPaginationModule } from '@ng-bootstrap/ng-boots
         FormsModule,
         HttpModule,
         CommonModule,
-        NgbTimepickerModule,
+        // NgbTimepickerModule,
         NgbModalModule,
         NgbTabsetModule,
         NgbTypeaheadModule,

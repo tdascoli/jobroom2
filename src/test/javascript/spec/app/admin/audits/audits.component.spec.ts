@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed, async } from '@angular/core/testing';
 import { DatePipe } from '@angular/common';
-import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap';
+import { NgbPaginationConfig } from '@ng-bootstrap/ng-bootstrap/pagination/pagination.module';
 import { JhiParseLinks } from 'ng-jhipster';
 import { JobroomTestModule } from '../../../test.module';
 import { PaginationConfig } from '../../../../../../main/webapp/app/blocks/config/uib-pagination.config';
