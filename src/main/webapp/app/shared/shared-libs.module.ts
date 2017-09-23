@@ -11,6 +11,7 @@ import { NgbTabsetModule } from '@ng-bootstrap/ng-bootstrap/tabset/tabset.module
 import { NgbTooltipModule } from '@ng-bootstrap/ng-bootstrap/tooltip/tooltip.module';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap/typeahead/typeahead.module';
 import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
+import { NgbDatepickerModule, NgbPaginationModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
     imports: [
@@ -20,6 +21,8 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
         NgbTypeaheadModule.forRoot(),
         NgbAlertModule.forRoot(),
         NgbTooltipModule.forRoot(),
+        NgbPaginationModule.forRoot(),
+        NgbDatepickerModule.forRoot(),
         NgJhipsterModule.forRoot({
             // set below to true to make alerts look like toast
             alertAsToast: false,
@@ -38,7 +41,9 @@ import { NgbAlertModule } from '@ng-bootstrap/ng-bootstrap/alert/alert.module';
         NgbTypeaheadModule,
         NgbAlertModule,
         NgbTooltipModule,
-        NgJhipsterModule
+        NgJhipsterModule,
+        NgbPaginationModule,
+        NgbDatepickerModule
     ],
     providers: [
         { provide: JhiLanguageService, useClass: Jobroom2LanguageService },
