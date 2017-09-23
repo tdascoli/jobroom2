@@ -42,6 +42,7 @@ import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/do';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/observable/merge';
+import 'rxjs/add/observable/fromPromise';
 import 'rxjs/add/observable/throw';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here

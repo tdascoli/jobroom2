@@ -20,14 +20,18 @@ export class HomeEffects {
     @Effect()
     jobSearchToolSubmitted$: Observable<Action> = this.actions$
         .ofType(JOB_SEARCH_TOOL_SUBMITTED)
-        .do((action: JobSearchToolSubmittedAction) => this.router.navigate(['/job-search']))
-        .map((action: JobSearchToolSubmittedAction) => new jobSearch.ToolbarChangedAction(action.payload));
+        .switchMap((action: JobSearchToolSubmittedAction) =>
+            Observable.fromPromise(this.router.navigate(['/job-search']))
+                .map((p) => new jobSearch.ToolbarChangedAction(action.payload))
+        );
 
     @Effect()
     candidateSearchToolSubmitted$: Observable<Action> = this.actions$
         .ofType(CANDIDATE_SEARCH_TOOL_SUBMITTED)
-        .do((action: CandidateSearchToolSubmittedAction) => this.router.navigate(['/candidate-search']))
-        .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.InitCandidateSearchAction(action.payload));
+        .switchMap((action: CandidateSearchToolSubmittedAction) =>
+            Observable.fromPromise(this.router.navigate(['/candidate-search']))
+                .map((p) => new candidateSearch.InitCandidateSearchAction(action.payload))
+        );
 
     constructor(private actions$: Actions, private router: Router) {
     }
