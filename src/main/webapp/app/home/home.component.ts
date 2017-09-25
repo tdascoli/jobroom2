@@ -2,9 +2,11 @@ import { Component } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import {
+    CandidateSearchToolState,
     getActiveAgencyTabId,
     getActiveCompanyTabId,
     getActiveToolbarItem,
+    getCandidateSearchToolState,
     getJobSearchToolState,
     HomeState,
     JobSearchToolState
@@ -29,11 +31,13 @@ export class HomeComponent {
 
     activeToolbarItem$: Observable<ToolbarItem>;
     jobSearchToolModel$: Observable<JobSearchToolState>;
+    candidateSearchToolModel$: Observable<CandidateSearchToolState>;
     activeCompanyTabId$: Observable<string>;
     activeAgencyTabId$: Observable<string>;
 
     constructor(private store: Store<HomeState>) {
         this.jobSearchToolModel$ = store.select(getJobSearchToolState);
+        this.candidateSearchToolModel$ = store.select(getCandidateSearchToolState);
         this.activeToolbarItem$ = store.select(getActiveToolbarItem);
         this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);

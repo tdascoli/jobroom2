@@ -5,6 +5,7 @@ import { LocalityService } from '../../../../../../../main/webapp/app/shared/job
 import { ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
+import { initialState } from '../../../../../../../main/webapp/app/home/state-management/state/candidate-search-tool.state';
 
 describe('CandidateSearchToolComponent', () => {
     let component: CandidateSearchToolComponent;
@@ -32,6 +33,7 @@ describe('CandidateSearchToolComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(CandidateSearchToolComponent);
         component = fixture.componentInstance;
+        component.candidateSearchToolModel = initialState;
         fixture.detectChanges();
     });
 

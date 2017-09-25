@@ -42,7 +42,7 @@
                         </ngb-tab>
                         <ngb-tab [title]="'home.tools.candidateSearchTab' | translate" id="company-candidate-search">
                             <ng-template ngbTabContent>
-                                <jr2-candidate-search-tool></jr2-candidate-search-tool>
+                                <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"></jr2-candidate-search-tool>
                             </ng-template>
                         </ngb-tab>
                     </ngb-tabset>
@@ -56,7 +56,7 @@
                     <ngb-tabset type="tabs nav--job-room" (tabChange)="selectRecruitmentAgenciesTab($event)" [activeId]="activeAgencyTabId$ | async">
                         <ngb-tab [title]="'home.tools.candidateSearchTab'| translate" id="agency-candidate-search">
                             <ng-template ngbTabContent>
-                                <jr2-candidate-search-tool></jr2-candidate-search-tool>
+                                <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"></jr2-candidate-search-tool>
                             </ng-template>
                         </ngb-tab>
                         <ngb-tab [title]="'home.tools.jobPublicationTab' | translate" id="agency-job-publication">

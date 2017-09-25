@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/job-search/service/occupation.service';
@@ -16,6 +16,8 @@ import { CandidateSearchToolSubmittedAction } from '../../state-management/actio
     templateUrl: './candidate-search-tool.component.html'
 })
 export class CandidateSearchToolComponent implements OnInit {
+    @Input() candidateSearchToolModel: CandidateSearchToolState;
+
     candidateSearchForm: FormGroup;
 
     greaterRegions = GreaterRegion;
@@ -28,9 +30,9 @@ export class CandidateSearchToolComponent implements OnInit {
 
     ngOnInit(): void {
         this.candidateSearchForm = this.fb.group({
-            occupation: [],
-            residence: [],
-            graduation: []
+            occupation: [this.candidateSearchToolModel.occupation],
+            residence: [this.candidateSearchToolModel.residence],
+            graduation: [this.candidateSearchToolModel.graduation]
         });
     }
 

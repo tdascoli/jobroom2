@@ -12,9 +12,10 @@ export * from './actions/layout.actions';
 export * from './reducers/home.reducers';
 export * from './reducers/job-search-tool.reducers';
 export * from './reducers/layout.reducers';
-export * from './state/job-search-tool.state';
+export { JobSearchToolState } from './state/job-search-tool.state';
 export * from './effects/home.effects';
 export * from './state/home.state';
+export { CandidateSearchToolState } from './state/candidate-search-tool.state';
 
 export type Actions =
     | JobSearchToolSubmittedAction
