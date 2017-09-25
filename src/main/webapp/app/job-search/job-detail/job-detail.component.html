@@ -38,6 +38,22 @@
                         </div>
                     </div>
                 </div>
+
+                <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                    <div class="job-detail__content">
+                        <address>
+                            <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
+                            <p>{{jobCenter.address.name}}, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</p>
+                            <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
+                            <p>{{'job-detail.reference.phone' | translate}} {{jobCenter.phone}}</p>
+                        </address>
+
+                        <ng-container *ngIf="job.externalId">
+                            <h4>{{'job-detail.reference.job-id' | translate}}:</h4>
+                            <p>AVAM: {{job.externalId}}</p>
+                        </ng-container>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -80,24 +96,6 @@
                         <span *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span>
                     </dd>
                 </dl>
-            </div>
-
-            <div *ngIf="jobCenter$ | async" class="job-detail__content">
-                <h2>{{ 'job-detail.reference' | translate }}</h2>
-                <table class="table">
-                    <tr>
-                        <td>{{ 'job-detail.reference.responsible-job-center' | translate }}</td>
-                        <td>{{ (jobCenter$ | async).address.name }}</td>
-                    </tr>
-                    <tr>
-                        <td>{{'job-detail.reference.phone'|translate}}:</td>
-                        <td>{{ (jobCenter$ | async).phone }}</td>
-                    </tr>
-                    <tr>
-                        <td>{{'job-detail.reference.job-id'|translate}}:</td>
-                        <td>{{ job.externalId }}</td>
-                    </tr>
-                </table>
             </div>
 
             <!-- /job description -->
