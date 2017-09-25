@@ -71,6 +71,10 @@
         "startsImmediately.false": "nach Vereinbarung",
         "startsImmediately.true": "ab sofort",
         "title": "Job detail",
-        "info-box": "Cette annonce a été trouvée sur un site externe. L'assurance-chômage et le service public de l'emploi fournissent ce résultat de recherche en tant que service supplémentaire, mais n'a aucune influence sur son contenu et sa qualité."
+        "info-box": "Cette annonce a été trouvée sur un site externe. L'assurance-chômage et le service public de l'emploi fournissent ce résultat de recherche en tant que service supplémentaire, mais n'a aucune influence sur son contenu et sa qualité.",
+        "application": {
+            "title": "Bewerbungsformen",
+            "hints": "Ergänzende Angaben"
+        }
     }
 }

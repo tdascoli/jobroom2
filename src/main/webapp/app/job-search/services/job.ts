@@ -55,6 +55,14 @@ export interface LanguageSkill {
     languageStayRequired: boolean;
 }
 
+export interface Application {
+    emailEnabled: boolean;
+    hints: string;
+    mailEnabled: boolean;
+    phoneEnabled: boolean;
+    url: string;
+}
+
 export interface Job {
     id: string;
     externalId: string;
@@ -88,4 +96,5 @@ export interface Job {
     contact?: Contact;
     occupation?: Occupation[];
     languages?: LanguageSkill[];
+    application?: Application;
 }

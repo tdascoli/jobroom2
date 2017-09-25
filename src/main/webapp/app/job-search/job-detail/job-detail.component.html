@@ -86,6 +86,7 @@
                 <markdown [data]="job.description"></markdown>
             </div>
 
+            <!-- Languages -->
             <div *ngIf="job.languages && job.languages.length" class="job-detail__content">
                 <h4 class="job-detail__content__title">{{ 'job-detail.languages' | translate }}</h4>
 
@@ -95,6 +96,16 @@
                         <span *ngIf="language.spokenLevel">{{ 'job-detail.language.spoken' | translate }}: {{ 'job-detail.language.level.' + language.spokenLevel | translate}}, </span>
                         <span *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span>
                     </dd>
+                </dl>
+            </div>
+
+            <!-- Application -->
+            <div *ngIf="job.application" class="job-detail__content">
+                <h4 class="job-detail__content__title">{{ 'job-detail.application.title' | translate }}</h4>
+
+                <dl class="row">
+                    <dt class="col-md-4 text-md-right">{{ 'job-detail.application.hints' | translate}}</dt>
+                    <dd class="col-md-8">{{job.application.hints}}</dd>
                 </dl>
             </div>
 

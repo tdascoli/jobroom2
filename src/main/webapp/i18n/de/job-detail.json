@@ -71,6 +71,10 @@
         "startsImmediately.false": "nach Vereinbarung",
         "startsImmediately.true": "ab Sofort",
         "title": "Job detail",
-        "info-box": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität."
+        "info-box": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.",
+        "application": {
+            "title": "Bewerbungsformen",
+            "hints": "Ergänzende Angaben"
+        }
     }
 }

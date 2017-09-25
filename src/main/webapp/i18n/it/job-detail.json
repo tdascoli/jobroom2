@@ -71,6 +71,10 @@
         "startsImmediately.false": "nach Vereinbarung",
         "startsImmediately.true": "ab sofort",
         "title": "Job detail",
-        "info-box": "Questo annuncio è stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualità."
+        "info-box": "Questo annuncio è stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualità.",
+        "application": {
+            "title": "Bewerbungsformen",
+            "hints": "Ergänzende Angaben"
+        }
     }
 }
