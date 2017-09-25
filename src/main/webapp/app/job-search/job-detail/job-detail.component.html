@@ -70,22 +70,19 @@
                 <markdown [data]="job.description"></markdown>
             </div>
 
-            <div *ngIf="job.languages">
-                <h2>{{ 'job-detail.languages' | translate }}</h2>
-                <table class="table">
-                    <tr>
-                        <th>{{ 'job-detail.language' | translate }}</th>
-                        <th>{{ 'job-detail.language.written' | translate }}</th>
-                        <th>{{ 'job-detail.language.spoken' | translate }}</th>
-                    </tr>
-                    <tr *ngFor="let language of job.languages">
-                        <td>{{ 'job-detail.language.' + language.code | translate }}</td>
-                        <td><span *ngIf="language.writtenLevel">{{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span></td>
-                        <td><span *ngIf="language.spokenLevel">{{ 'job-detail.language.level.' + language.spokenLevel | translate}}</span></td>
-                    </tr>
-                </table>
+            <div *ngIf="job.languages && job.languages.length" class="job-detail__content">
+                <h4 class="job-detail__content__title">{{ 'job-detail.languages' | translate }}</h4>
+
+                <dl class="row" *ngFor="let language of job.languages">
+                    <dt class="col-md-4 text-md-right">{{ 'job-detail.language.' + language.code | translate }}</dt>
+                    <dd class="col-md-8">
+                        <span *ngIf="language.spokenLevel">{{ 'job-detail.language.spoken' | translate }}: {{ 'job-detail.language.level.' + language.spokenLevel | translate}}, </span>
+                        <span *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span>
+                    </dd>
+                </dl>
             </div>
-            <div *ngIf="jobCenter$ | async">
+
+            <div *ngIf="jobCenter$ | async" class="job-detail__content">
                 <h2>{{ 'job-detail.reference' | translate }}</h2>
                 <table class="table">
                     <tr>
