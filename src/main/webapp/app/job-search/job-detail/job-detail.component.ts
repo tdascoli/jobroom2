@@ -46,7 +46,7 @@ export class JobDetailComponent implements OnInit, AfterViewInit {
     }
 
     private isShowInfoBox(): boolean {
-        return this.job.externalId.startsWith('AVAM');
+        return !!this.job.externalUrl;
     }
 
     printJob() {
