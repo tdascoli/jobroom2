@@ -9,10 +9,15 @@
             "sendEmail": "Per E-Mail versenden",
             "showExternalPage": "Zum externen Stelleninserat"
         },
+        "application": {
+            "hints": "Hints",
+            "title": "Application"
+        },
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "contactPerson": "Ihre Kontaktperson",
         "contactPerson.salutation.MR": "Herr",
         "contactPerson.salutation.MS": "Frau",
+        "info-box": "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.",
         "language": "Sprache",
         "language.99": "Andere",
         "language.ar": "Arabisch",
@@ -34,9 +39,8 @@
         "language.km": "Kambodschanisch",
         "language.ku": "Kurdisch",
         "language.level.BASIC": "Grundkentnisse",
-        "language.level.GOOD": "Gut",
         "language.level.NONE": "keine Kentnisse",
-        "language.level.VERY_GOOD": "Sehr Gut",
+        "language.level.INTERMEDIATE": "Intermediate",
         "language.level.PROFICIENT": "Proficient",
         "language.lt": "Litauisch",
         "language.mk": "Makedonisch",
@@ -70,11 +74,6 @@
         "startsImmediately": "Stellenantritt",
         "startsImmediately.false": "nach Vereinbarung",
         "startsImmediately.true": "ab sofort",
-        "title": "Job detail",
-        "info-box": "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.",
-        "application": {
-            "title": "Application",
-            "hints": "Hints"
-        }
+        "title": "Job detail"
     }
 }
