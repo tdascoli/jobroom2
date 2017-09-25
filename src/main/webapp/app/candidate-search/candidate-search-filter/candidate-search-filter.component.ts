@@ -5,7 +5,15 @@ import {
 } from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { Graduation, GreaterRegion } from '../services/candidate-search-request';
+import {
+    Availability,
+    DrivingLicenceCategory,
+    Experience,
+    Graduation,
+    GreaterRegion,
+    ISCED_1997,
+    WorkForm
+} from '../services/candidate-search-request';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -18,6 +26,12 @@ export class CandidateSearchFilterComponent implements OnInit {
 
     greaterRegions = GreaterRegion;
     graduations = Graduation;
+    experiences = Experience;
+    availabilities = Availability;
+    educationLevels = ISCED_1997;
+    workForms = WorkForm;
+    drivingLicenceCategories = DrivingLicenceCategory;
+
     filterForm: FormGroup;
 
     constructor(private store: Store<CandidateSearchState>,
@@ -28,7 +42,16 @@ export class CandidateSearchFilterComponent implements OnInit {
         this.filterForm = this.fb.group({
             occupation: [this.searchFilter.occupation],
             residence: [this.searchFilter.residence],
-            graduation: [this.searchFilter.graduation]
+            skills: [[...this.searchFilter.skills]],
+            experience: [this.searchFilter.experience],
+            workplace: [this.searchFilter.workplace],
+            availability: [this.searchFilter.availability],
+            workload: [this.searchFilter.workload],
+            workForm: [this.searchFilter.workForm],
+            educationLevel: [this.searchFilter.educationLevel],
+            graduation: [this.searchFilter.graduation],
+            drivingLicenceCategory: [this.searchFilter.drivingLicenceCategory],
+            languageSkills: [[...this.searchFilter.languageSkills]]
         });
     }
 }

@@ -1,4 +1,4 @@
-import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 
 export interface JobSearchToolState {
     baseQuery: Array<TypeaheadMultiselectModel>;

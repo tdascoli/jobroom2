@@ -9,7 +9,7 @@ export interface CandidateSearchRequest {
     workSystem: WorkForm,
     educationLevel: ISCED_1997,
     graduation: Graduation,
-    drivingLicenseCategory: DrivingLicenceCategory
+    drivingLicenceCategory: DrivingLicenceCategory
     languageSkills: Array<LanguageSkill>
 }
 

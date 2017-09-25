@@ -4,7 +4,6 @@ import { JobroomTestModule } from '../../../test.module';
 import { Observable } from 'rxjs/Observable';
 import {
     OccupationService,
-    TypeaheadMultiselectModel
 } from '../../../../../../main/webapp/app/shared/job-search';
 import { Store } from '@ngrx/store';
 import { LocalityService } from '../../../../../../main/webapp/app/shared/job-search/service/locality.service';
@@ -12,6 +11,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ToolbarChangedAction } from '../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { initialState } from '../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import { LocalityInputType } from '../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
+import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components';
 
 describe('JobSearchToolbarComponent', () => {
     const mockOccupationService = jasmine.createSpyObj('mockOccupationService',

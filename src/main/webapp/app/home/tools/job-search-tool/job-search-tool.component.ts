@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 import { OccupationService } from '../../../shared/job-search/service/occupation.service';
 import { LocalityService } from '../../../shared/job-search/service/locality.service';
 import {

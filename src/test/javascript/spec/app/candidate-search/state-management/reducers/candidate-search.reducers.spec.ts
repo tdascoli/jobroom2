@@ -20,8 +20,8 @@ describe('candidateSearchReducer', () => {
         const newState = candidateSearchReducer(initialState, action);
 
         // THEN
-        expect(newState).toEqual({
-            searchFilter: searchFilterModel
-        });
+        expect(newState.searchFilter.occupation).toEqual('test');
+        expect(newState.searchFilter.residence).toEqual(GreaterRegion.BS);
+        expect(newState.searchFilter.graduation).toEqual(Graduation.ACCEPTED);
     });
 });

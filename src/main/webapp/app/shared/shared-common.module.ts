@@ -1,13 +1,14 @@
-import { NgModule, LOCALE_ID } from '@angular/core';
+import { LOCALE_ID, NgModule } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 
 import {
-    JobroomSharedLibsModule,
-    JhiLanguageHelper,
     FindLanguageFromKeyPipe,
     JhiAlertComponent,
-    JhiAlertErrorComponent
+    JhiAlertErrorComponent,
+    JhiLanguageHelper,
+    JobroomSharedLibsModule
 } from './';
+import { RangeInputComponent, TypeaheadMultiselectComponent } from './input-components';
 
 @NgModule({
     imports: [
@@ -16,7 +17,9 @@ import {
     declarations: [
         FindLanguageFromKeyPipe,
         JhiAlertComponent,
-        JhiAlertErrorComponent
+        JhiAlertErrorComponent,
+        TypeaheadMultiselectComponent,
+        RangeInputComponent
     ],
     providers: [
         JhiLanguageHelper,
@@ -30,7 +33,10 @@ import {
         JobroomSharedLibsModule,
         FindLanguageFromKeyPipe,
         JhiAlertComponent,
-        JhiAlertErrorComponent
+        JhiAlertErrorComponent,
+        TypeaheadMultiselectComponent,
+        RangeInputComponent
     ]
 })
-export class JobroomSharedCommonModule {}
+export class JobroomSharedCommonModule {
+}

@@ -2,8 +2,8 @@ import { initialState } from '../../../../../../../main/webapp/app/home/state-ma
 import { jobSearchToolReducer } from '../../../../../../../main/webapp/app/home/state-management/reducers/job-search-tool.reducers';
 import { JobSearchToolSubmittedAction } from '../../../../../../../main/webapp/app/home/state-management/actions/job-search-tool.actions';
 import { LocalityInputType } from '../../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
-import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
 import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation-autocomplete';
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 
 describe('jobSearchToolReducer', () => {
     it('should update JobSearchToolState for JOB_SEARCH_TOOL_SUBMITTED action', () => {

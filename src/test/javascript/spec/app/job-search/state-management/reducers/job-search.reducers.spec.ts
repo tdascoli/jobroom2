@@ -7,7 +7,7 @@ import {
     JobSearchState, Sort
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
-import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 
 describe('jobSearchReducer', () => {
     it('should not change state for undefined action', () => {

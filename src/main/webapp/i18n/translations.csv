@@ -18,6 +18,22 @@ audits,audits.title,Audits,Audits,Audits,Cambiamenti
 candidate-search,candidate-search.availability.BY_ARRANGEMENT,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung
 candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Ab Sofort,Ab Sofort,Ab Sofort
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit
+candidate-search,candidate-search.drivingLicenceCategory.A,A,A,A,A
+candidate-search,candidate-search.drivingLicenceCategory.A1,A1,A1,A1,A1
+candidate-search,candidate-search.drivingLicenceCategory.B,B,B,B,B
+candidate-search,candidate-search.drivingLicenceCategory.B1,B1,B1,B1,B1
+candidate-search,candidate-search.drivingLicenceCategory.BE,BE,BE,BE,BE
+candidate-search,candidate-search.drivingLicenceCategory.C,C,C,C,C
+candidate-search,candidate-search.drivingLicenceCategory.C1,C1,C1,C1,C1
+candidate-search,candidate-search.drivingLicenceCategory.C1E,C1E,C1E,C1E,C1E
+candidate-search,candidate-search.drivingLicenceCategory.CE,CE,CE,CE,CE
+candidate-search,candidate-search.drivingLicenceCategory.D,D,D,D,D
+candidate-search,candidate-search.drivingLicenceCategory.D1,D1,D1,D1,D1
+candidate-search,candidate-search.drivingLicenceCategory.D1E,D1E,D1E,D1E,D1E
+candidate-search,candidate-search.drivingLicenceCategory.DE,DE,DE,DE,DE
+candidate-search,candidate-search.drivingLicenceCategory.F,F,F,F,F
+candidate-search,candidate-search.drivingLicenceCategory.G,G,G,G,G
+candidate-search,candidate-search.drivingLicenceCategory.M,M,M,M,M
 candidate-search,candidate-search.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
 candidate-search,candidate-search.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
 candidate-search,candidate-search.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2

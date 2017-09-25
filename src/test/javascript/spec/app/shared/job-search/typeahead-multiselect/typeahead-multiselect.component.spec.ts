@@ -5,7 +5,7 @@ import {
     ItemDisplayModel,
     TypeaheadMultiselectComponent,
     TypeaheadMultiselectModel
-} from '../../../../../../../main/webapp/app/shared/job-search';
+} from '../../../../../../../main/webapp/app/shared/input-components';
 
 describe('TypeaheadMultiselectComponent', () => {
 

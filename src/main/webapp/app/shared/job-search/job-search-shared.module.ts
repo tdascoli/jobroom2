@@ -1,11 +1,9 @@
 import { NgModule } from '@angular/core';
 import { OccupationService } from './service/occupation.service';
-import { TypeaheadMultiselectComponent } from './typeahead-multiselect/typeahead-multiselect.component';
 import { JobroomSharedLibsModule } from '../shared-libs.module';
 import { LocalityService, NAVIGATOR_TOKEN } from './service/locality.service';
 import { ReferenceService } from './service/reference.service';
 import { GeoLocationSelectComponent } from './geo-location-select/geo-location-select.component';
-import { RangeInputComponent } from './range-input/range-input.component';
 
 declare const navigator: NavigatorGeolocation;
 
@@ -18,14 +16,10 @@ export function navigatorFactory(): NavigatorGeolocation {
         JobroomSharedLibsModule
     ],
     exports: [
-        TypeaheadMultiselectComponent,
-        GeoLocationSelectComponent,
-        RangeInputComponent
+        GeoLocationSelectComponent
     ],
     declarations: [
-        TypeaheadMultiselectComponent,
-        GeoLocationSelectComponent,
-        RangeInputComponent
+        GeoLocationSelectComponent
     ],
     providers: [
         OccupationService,

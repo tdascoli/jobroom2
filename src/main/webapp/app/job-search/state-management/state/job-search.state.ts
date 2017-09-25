@@ -1,4 +1,4 @@
-import { TypeaheadMultiselectModel } from '../../../shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 import { Job } from '../../services';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 

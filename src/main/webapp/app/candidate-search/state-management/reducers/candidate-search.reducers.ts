@@ -5,9 +5,8 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
     let newState;
     switch (action.type) {
         case INIT_CANDIDATE_SEARCH:
-            newState = Object.assign({}, {
-                searchFilter: action.payload
-            });
+            const searchFilter = Object.assign({}, state.searchFilter, action.payload);
+            newState = Object.assign({}, state, { searchFilter });
             break;
 
         default:

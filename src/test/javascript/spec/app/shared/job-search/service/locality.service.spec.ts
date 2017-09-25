@@ -7,7 +7,7 @@ import {
     LocalityAutocomplete,
     LocalityInputType
 } from '../../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
-import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/job-search/typeahead-multiselect/typeahead-multiselect-model';
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 import { Response, ResponseOptions } from '@angular/http';
 import { NAVIGATOR_TOKEN } from '../../../../../../../main/webapp/app/shared/job-search/service/locality.service';
 import arrayContaining = jasmine.arrayContaining;

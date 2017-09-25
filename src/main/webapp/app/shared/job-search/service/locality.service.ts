@@ -1,7 +1,6 @@
 import { Inject, Injectable, InjectionToken } from '@angular/core';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadMultiselectModel } from '../typeahead-multiselect/typeahead-multiselect-model';
 import {
     CantonSuggestion,
     GeoPoint,
@@ -10,6 +9,7 @@ import {
     LocalitySuggestion
 } from './locality-autocomplete';
 import { Observer } from 'rxjs/Observer';
+import { TypeaheadMultiselectModel } from '../../input-components';
 
 const LOCALITIES_URL = 'referenceservice/api/_search/localities';
 const DEFAULT_RESPONSE_SIZE = '10';

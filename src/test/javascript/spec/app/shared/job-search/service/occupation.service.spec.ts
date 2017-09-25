@@ -7,9 +7,9 @@ import {
     OccupationAutocomplete,
     OccupationInputType,
     OccupationService,
-    TypeaheadMultiselectModel
 } from '../../../../../../../main/webapp/app/shared/job-search';
 import arrayContaining = jasmine.arrayContaining;
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 
 describe('OccupationService', () => {
 

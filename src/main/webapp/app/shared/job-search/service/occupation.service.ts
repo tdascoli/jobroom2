@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
-import { TypeaheadMultiselectModel } from '../typeahead-multiselect/typeahead-multiselect-model';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import { TranslateService } from '@ngx-translate/core';
 import {
@@ -9,6 +8,7 @@ import {
     OccupationInputType,
     OccupationSuggestion
 } from './occupation-autocomplete';
+import { TypeaheadMultiselectModel } from '../../input-components';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations/synonym';

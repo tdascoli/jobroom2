@@ -6,6 +6,22 @@
             "label": "Verf\u00fcgbarkeit"
         },
         "drivingLicenceCategory": {
+            "A": "A",
+            "A1": "A1",
+            "B": "B",
+            "B1": "B1",
+            "BE": "BE",
+            "C": "C",
+            "C1": "C1",
+            "C1E": "C1E",
+            "CE": "CE",
+            "D": "D",
+            "D1": "D1",
+            "D1E": "D1E",
+            "DE": "DE",
+            "F": "F",
+            "G": "G",
+            "M": "M",
             "label": "F\u00fchrerausweiskategorie"
         },
         "education": {
