@@ -16,3 +16,15 @@
 td:first-of-type {
     width: 200px;
 }
+
+.job-detail__title h2 {
+    height: auto;
+    margin-bottom: auto;
+}
+
+@media screen and (min-width: 480px) {
+    .sticky-top {
+        top: 155px;
+    }
+}
+

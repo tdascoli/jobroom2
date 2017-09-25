@@ -9,10 +9,15 @@
             "sendEmail": "Per E-Mail versenden",
             "showExternalPage": "Zum externen Stelleninserat"
         },
+        "application": {
+            "hints": "Erg\u00e4nzende Angaben",
+            "title": "Bewerbungsformen"
+        },
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "contactPerson": "Ihre Kontaktperson",
         "contactPerson.salutation.MR": "Herr",
         "contactPerson.salutation.MS": "Frau",
+        "info-box": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und \u00f6ffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zus\u00e4tzliche Dienstleistung zur Verf\u00fcgung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualit\u00e4t.",
         "language": "Sprache",
         "language.99": "Andere",
         "language.ar": "Arabisch",
@@ -34,9 +39,9 @@
         "language.km": "Kambodschanisch",
         "language.ku": "Kurdisch",
         "language.level.BASIC": "Grundkentnisse",
-        "language.level.GOOD": "Gut",
         "language.level.NONE": "keine Kentnisse",
-        "language.level.VERY_GOOD": "Sehr Gut",
+        "language.level.INTERMEDIATE": "Fortgeschritten",
+        "language.level.PROFICIENT": "Professionell",
         "language.lt": "Litauisch",
         "language.mk": "Makedonisch",
         "language.nl": "Hol\u00e4ndisch",
@@ -58,7 +63,7 @@
         "language.vi": "Vietnamesisch",
         "language.written": "schriftlich",
         "language.zh": "Chinesisch",
-        "languages": "Sprachen",
+        "languages": "Sprachkenntnisse",
         "onlineSince": "Vakant seit",
         "otherJobsCompany": "{{count}} Jobs anzeigen",
         "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",
@@ -68,7 +73,7 @@
         "reference.responsible-job-center": "Zust\u00e4ndiges RAV",
         "startsImmediately": "Stellenantritt",
         "startsImmediately.false": "nach Vereinbarung",
-        "startsImmediately.true": "ab sofort",
+        "startsImmediately.true": "ab Sofort",
         "title": "Job detail"
     }
 }

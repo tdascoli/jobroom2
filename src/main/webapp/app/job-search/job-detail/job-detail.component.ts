@@ -20,6 +20,7 @@ export class JobDetailComponent implements OnInit, AfterViewInit {
     jobCenter$: Observable<JobCenter>;
     jobUrl: String;
     isCopied: boolean;
+    showInfoBox: boolean;
 
     // After upgrading the jhipster version tslint fails with the following message:
     // ERROR: /home/mabi/development/projects/seco/jobroom2/src/main/webapp/app/job-search/job-detail/job-detail.component.html[91, 32]:
@@ -40,6 +41,12 @@ export class JobDetailComponent implements OnInit, AfterViewInit {
             this.jobCenter$ = this.referenceService.resolveJobCenter(this.job.jobCenterCode);
         }
         this.jobUrl = window.location.href;
+
+        this.showInfoBox = this.isShowInfoBox();
+    }
+
+    private isShowInfoBox(): boolean {
+        return this.job.externalId.startsWith('AVAM');
     }
 
     printJob() {

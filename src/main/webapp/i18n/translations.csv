@@ -253,10 +253,13 @@ job-detail,job-detail.action.saveJob,Stellenangebot speichern,Stellenangebot spe
 job-detail,job-detail.action.savePdf,Als PDF speichern,Als PDF speichern,Als PDF speichern,Als PDF speichern
 job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden
 job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat
+job-detail,job-detail.application.hints,Ergänzende Angaben,Hints,Ergänzende Angaben,Ergänzende Angaben
+job-detail,job-detail.application.title,Bewerbungsformen,Application,Bewerbungsformen,Bewerbungsformen
 job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
 job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 job-detail,job-detail.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
 job-detail,job-detail.contactPerson.salutation.MS,Frau,Frau,Frau,Frau
+job-detail,job-detail.info-box,"Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.","This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.","Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.","Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?."
 job-detail,job-detail.language,Sprache,Sprache,Sprache,Sprache
 job-detail,job-detail.language.99,Andere,Andere,Andere,Andere
 job-detail,job-detail.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
@@ -278,9 +281,9 @@ job-detail,job-detail.language.ja,Japanisch,Japanisch,Japanisch,Japanisch
 job-detail,job-detail.language.km,Kambodschanisch,Kambodschanisch,Kambodschanisch,Kambodschanisch
 job-detail,job-detail.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
 job-detail,job-detail.language.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
-job-detail,job-detail.language.level.GOOD,Gut,Gut,Gut,Gut
 job-detail,job-detail.language.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
-job-detail,job-detail.language.level.VERY_GOOD,Sehr Gut,Sehr Gut,Sehr Gut,Sehr Gut
+job-detail,job-detail.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Fortgeschritten
+job-detail,job-detail.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
 job-detail,job-detail.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
 job-detail,job-detail.language.mk,Makedonisch,Makedonisch,Makedonisch,Makedonisch
 job-detail,job-detail.language.nl,Holändisch,Holändisch,Holändisch,Holändisch
@@ -302,7 +305,7 @@ job-detail,job-detail.language.tr,Türkisch,Türkisch,Türkisch,Türkisch
 job-detail,job-detail.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vietnamesisch
 job-detail,job-detail.language.written,schriftlich,schriftlich,schriftlich,schriftlich
 job-detail,job-detail.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
-job-detail,job-detail.languages,Sprachen,Sprachen,Sprachen,Sprachen
+job-detail,job-detail.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Sprachen
 job-detail,job-detail.onlineSince,Vakant seit,Vakant seit,Vakant seit,Vakant seit
 job-detail,job-detail.otherJobsCompany,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen
 job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen
@@ -312,7 +315,7 @@ job-detail,job-detail.reference.phone,Telefon,Telefon,Telefon,Telefon
 job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV
 job-detail,job-detail.startsImmediately,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
 job-detail,job-detail.startsImmediately.false,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung
-job-detail,job-detail.startsImmediately.true,ab sofort,ab sofort,ab sofort,ab sofort
+job-detail,job-detail.startsImmediately.true,ab Sofort,ab sofort,ab sofort,ab sofort
 job-detail,job-detail.title,Job detail,Job detail,Job detail,Job detail
 job-search,job-search.filter.company-name.label,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
 job-search,job-search.filter.company-name.placeholder,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
