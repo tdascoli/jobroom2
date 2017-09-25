@@ -69,6 +69,7 @@
         "startsImmediately": "Stellenantritt",
         "startsImmediately.false": "nach Vereinbarung",
         "startsImmediately.true": "ab sofort",
-        "title": "Job detail"
+        "title": "Job detail",
+        "info-box": "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality."
     }
 }

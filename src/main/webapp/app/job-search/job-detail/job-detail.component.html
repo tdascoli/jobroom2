@@ -1,43 +1,49 @@
-<div class="container">
-    <div class="breadcrumb">
-        <a routerLink="/job-search">{{'job-detail.back' | translate}}</a>
-    </div>
+<div class="container mt-md-5">
+    <div class="row base">
+        <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
 
-    <div class="base">
-        <div class="base__subnavbar" style="font-size: 80%;">
+            <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
+                <li class="page-item">
+                    <a class="page-link" routerLink="/job-search">{{'job-detail.back' | translate}}</a>
+                </li>
+            </ul>
 
-            <hr class="visible-print-block" />
+            <hr class="visible-print-block d-none"/>
 
-            <div class="logo-box logo-box__company flex-height md-whiteframe-1dp">
-                <div class="job-detail__content" *ngIf="job.company">
-                    <address>
-                        <h4>{{ job.company.name }}</h4>
-                        <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
-                        <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
-                    </address>
+            <div class="sticky-top">
+                <div class="job-detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                    <div class="job-detail__content" *ngIf="job.company">
+                        <address>
+                            <h4>{{ job.company.name }}</h4>
+                            <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
+                            <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
+                        </address>
 
-                    <p>{{ job.company.phone }}</p>
-                    <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
-                        }}</a></p>
-                    <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
-                        truncateCharacters:30 }}</a></p>
-                </div>
-
-                <div *ngIf="job.contact">
-                    <div class="job-detail__content">
-                        <h4>{{'job-detail.contactPerson' | translate}}</h4>
-                        <p><span *ngIf="job.contact.salutation">{{ 'job-detail.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
-                            {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
-                        </p>
-                        <p>{{ job.contact.phone }}</p>
+                        <p>{{ job.company.phone }}</p>
                         <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
                             }}</a></p>
+                        <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
+                            truncateCharacters:30 }}</a></p>
+                    </div>
+
+                    <div *ngIf="job.contact">
+                        <div class="job-detail__content">
+                            <h4>{{'job-detail.contactPerson' | translate}}</h4>
+                            <p><span *ngIf="job.contact.salutation">{{ 'job-detail.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
+                                {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
+                            </p>
+                            <p>{{ job.contact.phone }}</p>
+                            <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
+                                }}</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="base__content">
+        <div class="col-12 col-md-8 order-3 base__content">
+            <ngb-alert *ngIf="showInfoBox" [type]="'info'" (close)="showInfoBox = false">{{ 'job-detail.info-box' | translate }}</ngb-alert>
+
             <div class="job-detail__title">
                 <h2 class="text--light">{{ job.title }}</h2>
                 <span class="text--primary-color">{{ job.company.name }}</span>
@@ -55,6 +61,7 @@
                     <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
                     <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
                     <span *ngIf="!job.permanent" class="badge badge-yellow">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
+                    <span class="badge badge-yellow">{{'job-detail.startsImmediately.' +  job.startsImmediately | translate}}</span>
                 </div>
             </div>
 
@@ -62,12 +69,7 @@
             <div class="job-detail__content">
                 <markdown [data]="job.description"></markdown>
             </div>
-            <table class="table">
-                <tr>
-                    <td>{{ 'job-detail.startsImmediately' | translate }}:</td>
-                    <td>{{ 'job-detail.startsImmediately.' + job.startsImmediately | translate }}</td>
-                </tr>
-            </table>
+
             <div *ngIf="job.languages">
                 <h2>{{ 'job-detail.languages' | translate }}</h2>
                 <table class="table">
@@ -122,8 +124,8 @@
 
         </div>
 
-        <div class="base__related">
-            <div style="position: relative;">
+        <div class="col-12 col-md order-12 base__related">
+            <div class="sticky-top">
                 <div>
                     <p>
                         <a *ngIf="job.applicationUrl"

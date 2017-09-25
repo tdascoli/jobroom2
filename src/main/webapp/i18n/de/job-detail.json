@@ -68,7 +68,8 @@
         "reference.responsible-job-center": "Zust\u00e4ndiges RAV",
         "startsImmediately": "Stellenantritt",
         "startsImmediately.false": "nach Vereinbarung",
-        "startsImmediately.true": "ab sofort",
-        "title": "Job detail"
+        "startsImmediately.true": "ab Sofort",
+        "title": "Job detail",
+        "info-box": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität."
     }
 }
