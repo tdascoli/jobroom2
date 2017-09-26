@@ -10,7 +10,7 @@ describe('candidateSearchReducer', () => {
     it('should update CandidateSearchState for INIT_CANDIDATE_SEARCH action', () => {
         // GIVEN
         const searchFilterModel = {
-            occupation: 'test',
+            occupation: { code: '11', name: 'test' },
             residence: GreaterRegion.BS,
             graduation: Graduation.ACCEPTED,
         };
@@ -20,7 +20,7 @@ describe('candidateSearchReducer', () => {
         const newState = candidateSearchReducer(initialState, action);
 
         // THEN
-        expect(newState.searchFilter.occupation).toEqual('test');
+        expect(newState.searchFilter.occupation).toEqual({ code: '11', name: 'test' });
         expect(newState.searchFilter.residence).toEqual(GreaterRegion.BS);
         expect(newState.searchFilter.graduation).toEqual(Graduation.ACCEPTED);
     });

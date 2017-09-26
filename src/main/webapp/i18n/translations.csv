@@ -55,6 +55,7 @@ candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss
 candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
 candidate-search,candidate-search.no-selection,,,,
 candidate-search,candidate-search.occupation.label,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n
+candidate-search,candidate-search.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-search,candidate-search.residenceLocation.label,Wohnort,Wohnort,Wohnort,Wohnort
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
 candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
@@ -246,6 +247,7 @@ home,home.tools.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidate
 home,home.tools.job-search.search-button.title,Traumjob finden!,Traumjob finden!,Traumjob finden!,Traumjob finden!
 home,home.tools.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
+"job-detail           "," job-detail.external-job-disclaimer                      ","Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.                                                                                                                                                              ","This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.                                                                                                                                                                                                                    ","Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.                                                                                                                                                                                           ","Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?."
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
 job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren
 job-detail,job-detail.action.print,Drucken,Drucken,Drucken,Drucken
@@ -259,7 +261,6 @@ job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Sucherg
 job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 job-detail,job-detail.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
 job-detail,job-detail.contactPerson.salutation.MS,Frau,Frau,Frau,Frau
-job-detail           , job-detail.external-job-disclaimer                      , "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität."                                                                                                                                                              , "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality."                                                                                                                                                                                                                    , "Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?."                                                                                                                                                                                           , "Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?."
 job-detail,job-detail.language,Sprache,Sprache,Sprache,Sprache
 job-detail,job-detail.language.99,Andere,Andere,Andere,Andere
 job-detail,job-detail.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
@@ -281,8 +282,8 @@ job-detail,job-detail.language.ja,Japanisch,Japanisch,Japanisch,Japanisch
 job-detail,job-detail.language.km,Kambodschanisch,Kambodschanisch,Kambodschanisch,Kambodschanisch
 job-detail,job-detail.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
 job-detail,job-detail.language.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
-job-detail,job-detail.language.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
 job-detail,job-detail.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Fortgeschritten
+job-detail,job-detail.language.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
 job-detail,job-detail.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
 job-detail,job-detail.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
 job-detail,job-detail.language.mk,Makedonisch,Makedonisch,Makedonisch,Makedonisch

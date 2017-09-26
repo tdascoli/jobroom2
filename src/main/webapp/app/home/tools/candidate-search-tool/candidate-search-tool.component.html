@@ -4,13 +4,15 @@
             <!--todo: review translations-->
 
             <div class="form-group row">
-                <label class="col-form-label col-4 text-right" translate="candidate-search.occupation.label"></label>
-                <!--todo: show only the occupations-->
+                <label class="col-form-label col-4 text-right" for="occupation-input" translate="candidate-search.occupation.label"></label>
+
                 <div class="col-4">
-                    <jr2-typeahead-multiselect formControlName="occupation"
-                                               [itemLoader]="fetchOccupationSuggestions"
-                                               [placeHolder]="'Beruf'">
-                    </jr2-typeahead-multiselect>
+                    <input id="occupation-input" formControlName="occupation" class="form-control"
+                           [ngbTypeahead]="fetchOccupationSuggestions"
+                           [editable]="false"
+                           [placeholder]="'candidate-search.occupation.placeholder' | translate"
+                           [inputFormatter]="occupationFormatter"
+                           [resultFormatter]="occupationFormatter">
                 </div>
             </div>
 

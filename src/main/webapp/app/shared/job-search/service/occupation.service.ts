@@ -40,9 +40,9 @@ export class OccupationService {
             .catch(this.handleError);
     }
 
-    getOccupations(query: string): Observable<TypeaheadMultiselectModel[]> {
+    getOccupations(query: string): Observable<OccupationSuggestion[]> {
         return this.fetchSuggestionsInternal(query)
-            .map((occupationAutocomplete) => OccupationService.mapOccupationSuggestions(occupationAutocomplete.occupations))
+            .map((occupationAutocomplete) => occupationAutocomplete.occupations)
             .catch(this.handleError);
     }
 

@@ -11,7 +11,7 @@ describe('candidateSearchToolReducer', () => {
     it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
         // GIVEN
         const searchModel = {
-            occupation: 'test',
+            occupation: { code: '11', name: 'test' },
             residence: GreaterRegion.BS,
             graduation: Graduation.ACCEPTED,
         };

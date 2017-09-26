@@ -9,13 +9,16 @@ import {
     LanguageSkill,
     WorkForm
 } from '../../services/candidate-search-request';
+import { OccupationSuggestion } from '../../../shared/job-search/service/occupation-autocomplete';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter
 }
 
+// todo: move OccupationSuggestion to a reference-service module
+
 export interface CandidateSearchFilter {
-    occupation?: string,
+    occupation?: OccupationSuggestion,
     skills: Array<string>,
     experience?: Experience,
     workplace?: string,

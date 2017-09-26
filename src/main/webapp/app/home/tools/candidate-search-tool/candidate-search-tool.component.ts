@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/job-search/service/occupation.service';
-import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 import {
     Graduation,
     GreaterRegion
@@ -10,6 +9,7 @@ import {
 import { Store } from '@ngrx/store';
 import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
 import { CandidateSearchToolSubmittedAction } from '../../state-management/actions/candidate-search-tool.actions';
+import { OccupationSuggestion } from '../../../shared/job-search/service/occupation-autocomplete';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -36,7 +36,11 @@ export class CandidateSearchToolComponent implements OnInit {
         });
     }
 
-    fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.getOccupations(prefix);
+    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
+        .filter((prefix: string) => prefix.length > 2)
+        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
+
+    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
 
     search(formValue: any) {
         this.store.dispatch(new CandidateSearchToolSubmittedAction(formValue));

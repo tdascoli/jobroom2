@@ -54,7 +54,8 @@
         },
         "no-selection": "",
         "occupation": {
-            "label": "Ich suche eine/n"
+            "label": "Ich suche eine/n",
+            "placeholder": "Berufsbezeichnung"
         },
         "residenceLocation": {
             "label": "Wohnort"

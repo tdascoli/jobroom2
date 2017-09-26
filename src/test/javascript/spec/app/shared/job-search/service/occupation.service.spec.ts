@@ -8,8 +8,9 @@ import {
     OccupationInputType,
     OccupationService,
 } from '../../../../../../../main/webapp/app/shared/job-search';
-import arrayContaining = jasmine.arrayContaining;
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
+import { OccupationSuggestion } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation-autocomplete';
+import arrayContaining = jasmine.arrayContaining;
 
 describe('OccupationService', () => {
 
@@ -112,7 +113,7 @@ describe('OccupationService', () => {
                 };
 
                 // WHEN
-                let model: Array<TypeaheadMultiselectModel>;
+                let model: Array<OccupationSuggestion>;
                 service.getOccupations('info').subscribe((res: any) => model = res);
                 lastConnection.mockRespond(createJsonResponse(suggestResponse));
                 tick();
@@ -120,8 +121,8 @@ describe('OccupationService', () => {
                 // THEN
                 expect(model.length).toEqual(2);
                 expect(model).toEqual([
-                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '00', 'Informatiker', 0),
-                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '01', 'Bioinformatiker', 0),
+                    { code: '00', name: 'Informatiker' },
+                    { code: '01', name: 'Bioinformatiker' },
                 ]);
             })));
     });
