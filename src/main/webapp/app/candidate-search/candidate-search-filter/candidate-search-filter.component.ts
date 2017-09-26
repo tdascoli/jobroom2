@@ -14,6 +14,9 @@ import {
     ISCED_1997,
     WorkForm
 } from '../services/candidate-search-request';
+import { Observable } from 'rxjs/Observable';
+import { OccupationSuggestion } from '../../shared/job-search/service/occupation-autocomplete';
+import { OccupationService } from '../../shared/job-search/service/occupation.service';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -34,7 +37,8 @@ export class CandidateSearchFilterComponent implements OnInit {
 
     filterForm: FormGroup;
 
-    constructor(private store: Store<CandidateSearchState>,
+    constructor(private occupationService: OccupationService,
+                private store: Store<CandidateSearchState>,
                 private fb: FormBuilder) {
     }
 
@@ -54,4 +58,10 @@ export class CandidateSearchFilterComponent implements OnInit {
             languageSkills: [[...this.searchFilter.languageSkills]]
         });
     }
+
+    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
+        .filter((prefix: string) => prefix.length > 2)
+        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
+
+    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
 }

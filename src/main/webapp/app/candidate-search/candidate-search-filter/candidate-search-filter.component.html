@@ -2,7 +2,16 @@
 
 <form [formGroup]="filterForm" novalidate>
 
-    <!--todo: occupation-->
+    <div class="form-group">
+        <label for="occupation-input" class="small" translate="candidate-search.occupation.label"></label>
+        <input id="occupation-input" formControlName="occupation" class="form-control form-control-sm"
+               [ngbTypeahead]="fetchOccupationSuggestions"
+               [editable]="false"
+               [placeholder]="'candidate-search.occupation.placeholder' | translate"
+               [inputFormatter]="occupationFormatter"
+               [resultFormatter]="occupationFormatter">
+    </div>
+
     <!--todo: skills-->
 
     <div class="form-group">
