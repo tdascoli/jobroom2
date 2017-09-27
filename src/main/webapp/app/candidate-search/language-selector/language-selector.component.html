@@ -1,0 +1,56 @@
+<div *ngFor="let languageSkill of selectedLanguageSkills; let i = index; let first = first" [ngClass]="{'language-selector-item': !first && i > 0}">
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label class="sr-only" [for]="'language-' + i" translate="candidate-search.languageSkills.language.label"></label>
+                <select [id]="'language-' + i" class="form-control-sm custom-select" [ngModel]="languageSkill.code" (ngModelChange)="changeLanguage(i, $event)">
+                    <option [ngValue]="null">{{'candidate-search.languageSkills.language.no-selection'| translate}}</option>
+                    <option *ngFor="let languageOption of getLanguageOptions(languageSkill.code)" [ngValue]="languageOption">
+                        {{'global.reference.language.'+languageOption | translate}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col-auto">
+            <div class="form-group">
+                <button class="btn btn-primary btn-sm" (click)="removeByIndex(i)" [title]="'candidate-search.languageSkills.button.remove.title'| translate">
+                    <i class="fa fa-minus" aria-hidden="true"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-row">
+        <div class="col">
+            <div class="form-group">
+                <label class="sr-only" [for]="'spoken-' + i" translate="candidate-search.languageSkills.spoken.label"></label>
+                <select [id]="'spoken-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.spoken"
+                        (ngModelChange)="changeSpokenLevel(i, $event)">
+                    <option [ngValue]="null">{{'candidate-search.languageSkills.spoken.no-selection'| translate}}</option>
+                    <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
+                        {{'candidate-search.languageSkills.level.'+languageLevel.value | translate}}
+                    </option>
+                </select>
+            </div>
+        </div>
+        <div class="col">
+            <div class="form-group">
+                <label class="sr-only" [for]="'written-' + i" translate="candidate-search.languageSkills.written.label"></label>
+                <select [id]="'written-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.written"
+                        (ngModelChange)="changeWrittenLevel(i, $event)">
+                    <option [ngValue]="null">{{'candidate-search.languageSkills.written.no-selection'| translate}}</option>
+                    <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
+                        {{'candidate-search.languageSkills.level.'+languageLevel.value | translate}}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="button-bar" *ngIf="isAddEnabled()">
+    <button class="btn btn-primary btn-sm" (click)="addNewLanguageSkill()"><i class="fa fa-plus" aria-hidden="true"></i>
+        {{'candidate-search.languageSkills.button.add.title'| translate}}
+    </button>
+</div>
+

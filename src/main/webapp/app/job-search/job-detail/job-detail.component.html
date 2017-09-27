@@ -92,7 +92,7 @@
                 <h4 class="job-detail__content__title">{{ 'job-detail.languages' | translate }}</h4>
 
                 <dl class="row" *ngFor="let language of job.languages">
-                    <dt class="col-md-4 text-md-right">{{ 'job-detail.language.' + language.code | translate }}</dt>
+                    <dt class="col-md-4 text-md-right">{{ 'global.reference.language.' + language.code | translate }}</dt>
                     <dd class="col-md-8">
                         <span *ngIf="language.spokenLevel">{{ 'job-detail.language.spoken' | translate }}: {{ 'job-detail.language.level.' + language.spokenLevel | translate}}, </span>
                         <span *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span>

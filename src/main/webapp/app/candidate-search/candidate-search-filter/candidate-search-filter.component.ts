@@ -17,6 +17,7 @@ import {
 import { Observable } from 'rxjs/Observable';
 import { OccupationSuggestion } from '../../shared/job-search/service/occupation-autocomplete';
 import { OccupationService } from '../../shared/job-search/service/occupation.service';
+import { LanguageSkillService } from '../services/language-skill.service';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -37,7 +38,8 @@ export class CandidateSearchFilterComponent implements OnInit {
 
     filterForm: FormGroup;
 
-    constructor(private occupationService: OccupationService,
+    constructor(private languageSkillService: LanguageSkillService,
+                private occupationService: OccupationService,
                 private store: Store<CandidateSearchState>,
                 private fb: FormBuilder) {
     }
@@ -57,6 +59,10 @@ export class CandidateSearchFilterComponent implements OnInit {
             drivingLicenceCategory: [this.searchFilter.drivingLicenceCategory],
             languageSkills: [[...this.searchFilter.languageSkills]]
         });
+    }
+
+    getLanguageOptions(): Observable<Array<string>> {
+        return this.languageSkillService.getLanguages();
     }
 
     fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$

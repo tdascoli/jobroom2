@@ -9,6 +9,8 @@ import { candidateSearchReducer } from './state-management/reducers/candidate-se
 import { CandidateSearchFilterComponent } from './candidate-search-filter/candidate-search-filter.component';
 import { JobroomSharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LanguageSelectorComponent } from './language-selector/language-selector.component';
+import { LanguageSkillService } from './services/language-skill.service';
 
 @NgModule({
     imports: [
@@ -21,7 +23,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     ],
     declarations: [
         CandidateSearchComponent,
-        CandidateSearchFilterComponent
+        CandidateSearchFilterComponent,
+        LanguageSelectorComponent
+    ],
+    providers: [
+        LanguageSkillService
     ]
 })
 export class CandidateSearchModule {

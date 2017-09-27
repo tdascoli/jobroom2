@@ -53,6 +53,19 @@ candidate-search,candidate-search.graduation.NONE,kein Abschluss,kein Abschluss,
 candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch
 candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
 candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
+candidate-search,candidate-search.languageSkills.button.add.title,Add,Add,Add,Add
+candidate-search,candidate-search.languageSkills.button.remove.title,Remove,Remove,Remove,Remove
+candidate-search,candidate-search.languageSkills.label,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse
+candidate-search,candidate-search.languageSkills.language.label,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse
+candidate-search,candidate-search.languageSkills.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
+candidate-search,candidate-search.languageSkills.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
+candidate-search,candidate-search.languageSkills.level.INTERMEDIATE,Fortgeschritten,Fortgeschritten,Fortgeschritten,Fortgeschritten
+candidate-search,candidate-search.languageSkills.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
+candidate-search,candidate-search.languageSkills.level.PROFICIENT,Professionell,Professionell,Professionell,Professionell
+candidate-search,candidate-search.languageSkills.spoken.label,mündlich,mündlich,mündlich,mündlich
+candidate-search,candidate-search.languageSkills.spoken.no-selection,mündlich,mündlich,mündlich,mündlich
+candidate-search,candidate-search.languageSkills.written.label,schriftlich,schriftlich,schriftlich,schriftlich
+candidate-search,candidate-search.languageSkills.written.no-selection,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.no-selection,,,,
 candidate-search,candidate-search.occupation.label,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n
 candidate-search,candidate-search.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
@@ -215,6 +228,40 @@ global,global.reference.greaterRegion.VD,Waadt,Vaud,Vaud,Waadt
 global,global.reference.greaterRegion.VS,Wallis,Valais,Vallese,Wallis
 global,global.reference.greaterRegion.ZG,Zug,Zoug,Zugo,Zug
 global,global.reference.greaterRegion.ZH,Zürich,Zurich,Zurigo,Zürich
+global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
+global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
+global,global.reference.language.ch-de,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
+global,global.reference.language.cs,Tschechisch,Tschechisch,Tschechisch,Tschechisch
+global,global.reference.language.da,Dänisch,Dänisch,Dänisch,Dänisch
+global,global.reference.language.de,Deutsch,Deutsch,Deutsch,Deutsch
+global,global.reference.language.en,Englisch,Englisch,Englisch,Englisch
+global,global.reference.language.es,Spanisch,Spanisch,Spanisch,Spanisch
+global,global.reference.language.fi,Finnisch,Finnisch,Finnisch,Finnisch
+global,global.reference.language.fr,Französisch,Französisch,Französisch,Französisch
+global,global.reference.language.gr,Griechisch,Griechisch,Griechisch,Griechisch
+global,global.reference.language.hr,Kroatisch,Kroatisch,Kroatisch,Kroatisch
+global,global.reference.language.hu,Ungarisch,Ungarisch,Ungarisch,Ungarisch
+global,global.reference.language.it,Italienisch,Italienisch,Italienisch,Italienisch
+global,global.reference.language.jp,Japanisch,Japanisch,Japanisch,Japanisch
+global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
+global,global.reference.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
+global,global.reference.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
+global,global.reference.language.ne,Holländisch,Holländisch,Holländisch,Holländisch
+global,global.reference.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
+global,global.reference.language.po,Polnisch,Polnisch,Polnisch,Polnisch
+global,global.reference.language.pr,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
+global,global.reference.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch
+global,global.reference.language.ru,Russisch,Russisch,Russisch,Russisch
+global,global.reference.language.sk,Slowakisch,Slowakisch,Slowakisch,Slowakisch
+global,global.reference.language.sl,Slowenisch,Slowenisch,Slowenisch,Slowenisch
+global,global.reference.language.sq,Albanisch,Albanisch,Albanisch,Albanisch
+global,global.reference.language.sr,Serbisch,Serbisch,Serbisch,Serbisch
+global,global.reference.language.sv,Schwedisch,Schwedisch,Schwedisch,Schwedisch
+global,global.reference.language.ta,Tamil,Tamil,Tamil,Tamil
+global,global.reference.language.th,Thai,Thai,Thai,Thai
+global,global.reference.language.tr,Türkisch,Türkisch,Türkisch,Türkisch
+global,global.reference.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vietnamesisch
+global,global.reference.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
 global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Development,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test

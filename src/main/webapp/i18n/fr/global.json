@@ -1,65 +1,80 @@
 {
-    "entity": {
-        "action": {
-            "addblob": "Ajouter blob",
-            "addimage": "Ajouter image",
-            "back": "Retour",
-            "cancel": "Annuler",
-            "delete": "Supprimer",
-            "edit": "Editer",
-            "open": "Ouvrir",
-            "save": "Sauvegarder",
-            "view": "Voir"
-        },
-        "delete": {
-            "title": "Confirmation de suppression"
-        },
-        "detail": {
-            "field": "Champs",
-            "value": "Valeur"
-        },
-        "validation": {
-            "datetimelocal": "Ce champ doit \u00eatre une date et une heure.",
-            "max": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}}.",
-            "maxbytes": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}} bytes.",
-            "maxlength": "Ce champ doit faire moins de {{max}} caract\u00e8res.",
-            "min": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}}.",
-            "minbytes": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}} bytes.",
-            "minlength": "Ce champ doit faire au minimum {{min}} caract\u00e8res.",
-            "number": "Ce champ doit \u00eatre un nombre.",
-            "pattern": "Ce champ doit suivre l'expression r\u00e9guli\u00e8re {{pattern}}.",
-            "required": "Ce champ est obligatoire."
-        }
-    },
-    "error": {
-        "NotNull": "Le champ {{fieldName}} ne peut pas \u00eatre vide !",
-        "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimum et maximum !",
-        "emailexists": "Email d\u00e9j\u00e0 utilis\u00e9 !",
-        "idexists": "Une nouvelle entit\u00e9 {{entityName}} ne peut pas avoir d'ID !",
-        "internalServerError": "Erreur interne du serveur",
-        "server": {
-            "not": {
-                "reachable": "Serveur inaccessible"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Non trouv\u00e9"
-            }
-        },
-        "userexists": "Login d\u00e9j\u00e0 utilis\u00e9 !"
-    },
-    "footer": {
-        "link": {
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
-            }
-        }
-    },
     "global": {
+        "reference": {
+            "language": {
+                "ar": "Arabisch",
+                "bs": "Bulgarisch",
+                "ch-de": "CH-Deutsch",
+                "cs": "Tschechisch",
+                "da": "D\u00e4nisch",
+                "de": "Deutsch",
+                "en": "Englisch",
+                "es": "Spanisch",
+                "fi": "Finnisch",
+                "fr": "Franz\u00f6sisch",
+                "gr": "Griechisch",
+                "hr": "Kroatisch",
+                "hu": "Ungarisch",
+                "it": "Italienisch",
+                "jp": "Japanisch",
+                "km": "Khmer",
+                "ku": "Kurdisch",
+                "lt": "Litauisch",
+                "ne": "Holl\u00e4ndisch",
+                "no": "Norwegisch",
+                "po": "Polnisch",
+                "pr": "Portugiesisch",
+                "ro": "Rum\u00e4nisch",
+                "ru": "Russisch",
+                "sk": "Slowakisch",
+                "sl": "Slowenisch",
+                "sq": "Albanisch",
+                "sr": "Serbisch",
+                "sv": "Schwedisch",
+                "ta": "Tamil",
+                "th": "Thai",
+                "tr": "T\u00fcrkisch",
+                "vi": "Vietnamesisch",
+                "zh": "Chinesisch"
+            },
+            "greaterRegion": {
+                "1": "grande regione 1 (GE, VD, FR, NE, VS, JU)",
+                "2": "grande regione 2 (BE, SO, BS, BL, AG)",
+                "3": "grande regione 3 (UR, SZ, OW, NW, LU, ZG)",
+                "4": "grande regione 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
+                "5": "grande regione 5 (TI)",
+                "6": "Grande regione 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
+                "99": "estero",
+                "AG": "Argovia",
+                "AI": "Appenzello Interno",
+                "AR": "Appenzello Esterno",
+                "BE": "Berna",
+                "BL": "Basilea-Campagna",
+                "BS": "Basilea-Citt\u00e0",
+                "CH": "Svizzera",
+                "FL": "F\u00fcrstentum Liechtenstein",
+                "FR": "Friburgo",
+                "GE": "Ginevra",
+                "GL": "Glarona",
+                "GR": "Grigioni",
+                "JU": "Giura",
+                "LU": "Lucerna",
+                "NE": "Neuch\u00e2tel",
+                "NW": "Nidwaldo",
+                "OW": "Obwaldo",
+                "SG": "San Gallo",
+                "SH": "Sciaffusa",
+                "SO": "Soletta",
+                "SZ": "Svitto",
+                "TG": "Turgovia",
+                "TI": "Ticino",
+                "UR": "Uri",
+                "VD": "Vaud",
+                "VS": "Vallese",
+                "ZG": "Zugo",
+                "ZH": "Zurigo"
+            }
+        },
         "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre \u00e0 jour votre navigateur</a> pour une meilleure exp\u00e9rience.",
         "field": {
             "id": "ID"
@@ -144,50 +159,71 @@
                 }
             }
         },
-        "reference": {
-            "greaterRegion": {
-                "1": "grande regione 1 (GE, VD, FR, NE, VS, JU)",
-                "2": "grande regione 2 (BE, SO, BS, BL, AG)",
-                "3": "grande regione 3 (UR, SZ, OW, NW, LU, ZG)",
-                "4": "grande regione 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
-                "5": "grande regione 5 (TI)",
-                "6": "Grande regione 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
-                "99": "estero",
-                "AG": "Argovia",
-                "AI": "Appenzello Interno",
-                "AR": "Appenzello Esterno",
-                "BE": "Berna",
-                "BL": "Basilea-Campagna",
-                "BS": "Basilea-Citt\u00e0",
-                "CH": "Svizzera",
-                "FL": "F\u00fcrstentum Liechtenstein",
-                "FR": "Friburgo",
-                "GE": "Ginevra",
-                "GL": "Glarona",
-                "GR": "Grigioni",
-                "JU": "Giura",
-                "LU": "Lucerna",
-                "NE": "Neuch\u00e2tel",
-                "NW": "Nidwaldo",
-                "OW": "Obwaldo",
-                "SG": "San Gallo",
-                "SH": "Sciaffusa",
-                "SO": "Soletta",
-                "SZ": "Svitto",
-                "TG": "Turgovia",
-                "TI": "Ticino",
-                "UR": "Uri",
-                "VD": "Vaud",
-                "VS": "Vallese",
-                "ZG": "Zugo",
-                "ZH": "Zurigo"
-            }
-        },
         "ribbon": {
             "dev": "Local",
             "development": "D\u00e9veloppement",
             "test": "Test"
         },
         "title": "Jobroom"
+    },
+    "entity": {
+        "action": {
+            "addblob": "Ajouter blob",
+            "addimage": "Ajouter image",
+            "back": "Retour",
+            "cancel": "Annuler",
+            "delete": "Supprimer",
+            "edit": "Editer",
+            "open": "Ouvrir",
+            "save": "Sauvegarder",
+            "view": "Voir"
+        },
+        "delete": {
+            "title": "Confirmation de suppression"
+        },
+        "detail": {
+            "field": "Champs",
+            "value": "Valeur"
+        },
+        "validation": {
+            "datetimelocal": "Ce champ doit \u00eatre une date et une heure.",
+            "max": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}}.",
+            "maxbytes": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}} bytes.",
+            "maxlength": "Ce champ doit faire moins de {{max}} caract\u00e8res.",
+            "min": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}}.",
+            "minbytes": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}} bytes.",
+            "minlength": "Ce champ doit faire au minimum {{min}} caract\u00e8res.",
+            "number": "Ce champ doit \u00eatre un nombre.",
+            "pattern": "Ce champ doit suivre l'expression r\u00e9guli\u00e8re {{pattern}}.",
+            "required": "Ce champ est obligatoire."
+        }
+    },
+    "error": {
+        "NotNull": "Le champ {{fieldName}} ne peut pas \u00eatre vide !",
+        "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimum et maximum !",
+        "emailexists": "Email d\u00e9j\u00e0 utilis\u00e9 !",
+        "idexists": "Une nouvelle entit\u00e9 {{entityName}} ne peut pas avoir d'ID !",
+        "internalServerError": "Erreur interne du serveur",
+        "server": {
+            "not": {
+                "reachable": "Serveur inaccessible"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Non trouv\u00e9"
+            }
+        },
+        "userexists": "Login d\u00e9j\u00e0 utilis\u00e9 !"
+    },
+    "footer": {
+        "link": {
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            }
+        }
     }
 }

@@ -52,6 +52,35 @@
         "keywords": {
             "label": "Suchbegriffe"
         },
+        "languageSkills": {
+            "button": {
+                "add": {
+                    "title": "Add"
+                },
+                "remove": {
+                    "title": "Remove"
+                }
+            },
+            "label": "Sprachkentnisse",
+            "language": {
+                "label": "Sprachkentnisse",
+                "no-selection": "Keine Auswahl"
+            },
+            "level": {
+                "BASIC": "Grundkentnisse",
+                "INTERMEDIATE": "Fortgeschritten",
+                "NONE": "keine Kentnisse",
+                "PROFICIENT": "Professionell"
+            },
+            "spoken": {
+                "label": "m\u00fcndlich",
+                "no-selection": "m\u00fcndlich"
+            },
+            "written": {
+                "label": "schriftlich",
+                "no-selection": "schriftlich"
+            }
+        },
         "no-selection": "",
         "occupation": {
             "label": "Ich suche eine/n",
