@@ -3,7 +3,7 @@ import {
     CandidateSearchFilter,
     CandidateSearchState
 } from '../state-management/state/candidate-search.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import {
     Availability,
@@ -18,6 +18,7 @@ import { Observable } from 'rxjs/Observable';
 import { OccupationSuggestion } from '../../shared/job-search/service/occupation-autocomplete';
 import { OccupationService } from '../../shared/job-search/service/occupation.service';
 import { LanguageSkillService } from '../services/language-skill.service';
+import { isNullOrUndefined } from 'util';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -37,6 +38,9 @@ export class CandidateSearchFilterComponent implements OnInit {
     drivingLicenceCategories = DrivingLicenceCategory;
 
     filterForm: FormGroup;
+    occupationControl: FormControl;
+    experienceControl: FormControl;
+    graduationControl: FormControl;
 
     constructor(private languageSkillService: LanguageSkillService,
                 private occupationService: OccupationService,
@@ -45,20 +49,40 @@ export class CandidateSearchFilterComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.occupationControl = new FormControl(this.searchFilter.occupation);
+        this.experienceControl = new FormControl(this.searchFilter.experience);
+        this.graduationControl = new FormControl(this.searchFilter.graduation);
+
         this.filterForm = this.fb.group({
-            occupation: [this.searchFilter.occupation],
+            occupation: this.occupationControl,
             residence: [this.searchFilter.residence],
             skills: [[...this.searchFilter.skills]],
-            experience: [this.searchFilter.experience],
+            experience: this.experienceControl,
             workplace: [this.searchFilter.workplace],
             availability: [this.searchFilter.availability],
             workload: [this.searchFilter.workload],
             workForm: [this.searchFilter.workForm],
             educationLevel: [this.searchFilter.educationLevel],
-            graduation: [this.searchFilter.graduation],
+            graduation: this.graduationControl,
             drivingLicenceCategory: [this.searchFilter.drivingLicenceCategory],
             languageSkills: [[...this.searchFilter.languageSkills]]
         });
+        this.disableDependedFields();
+    }
+
+    private disableDependedFields() {
+        this.experienceControl.disable();
+        this.graduationControl.disable();
+
+        this.occupationControl.valueChanges.subscribe((value) => {
+            if (isNullOrUndefined(value)) {
+                this.experienceControl.disable();
+                this.graduationControl.disable();
+            } else {
+                this.experienceControl.enable();
+                this.graduationControl.enable();
+            }
+        })
     }
 
     getLanguageOptions(): Observable<Array<string>> {

@@ -16,7 +16,7 @@
 
     <div class="form-group">
         <label for="experience" class="small" translate="candidate-search.experience.label"></label>
-        <select formControlName="residence" id="experience" class="form-control-sm custom-select">
+        <select formControlName="experience" id="experience" class="form-control-sm custom-select">
             <option selected="" translate="candidate-search.no-selection"></option>
             <option *ngFor="let experience of experiences | keys" [ngValue]="experience.key">
                 {{'candidate-search.experience.' + experience.value | translate}}
