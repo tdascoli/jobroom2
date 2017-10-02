@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { CandidateSearchToolComponent } from '../../../../../../../main/webapp/app/home/tools/candidate-search-tool/candidate-search-tool.component';
-import { OccupationService } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation.service';
-import { LocalityService } from '../../../../../../../main/webapp/app/shared/job-search/service/locality.service';
+import { OccupationService } from '../../../../../../../main/webapp/app/shared/reference-service/occupation.service';
+import { LocalityService } from '../../../../../../../main/webapp/app/shared/reference-service/locality.service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';

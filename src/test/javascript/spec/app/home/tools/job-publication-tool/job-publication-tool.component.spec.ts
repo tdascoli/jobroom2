@@ -1,6 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobPublicationToolComponent } from '../../../../../../../main/webapp/app/home/tools/job-publication-tool/job-publication-tool.component';
-import { OccupationService } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation.service';
+import { OccupationService } from '../../../../../../../main/webapp/app/shared/reference-service/occupation.service';
 
 describe('JobPublicationToolComponent', () => {
     let component: JobPublicationToolComponent;

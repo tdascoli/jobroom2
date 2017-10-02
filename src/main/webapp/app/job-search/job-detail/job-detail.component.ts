@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import {
     JobCenter,
     ReferenceService
-} from '../../shared/job-search/service/reference.service';
+} from '../../shared/reference-service/reference.service';
 import { Job } from '../services';
 
 @Component({

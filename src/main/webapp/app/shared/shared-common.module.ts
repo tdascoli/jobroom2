@@ -8,7 +8,7 @@ import {
     JhiLanguageHelper,
     JobroomSharedLibsModule
 } from './';
-import { RangeInputComponent, TypeaheadMultiselectComponent } from './input-components';
+import { RangeInputComponent, TypeaheadMultiselectComponent, TypeaheadSingleselectComponent } from './input-components';
 
 @NgModule({
     imports: [
@@ -19,7 +19,8 @@ import { RangeInputComponent, TypeaheadMultiselectComponent } from './input-comp
         JhiAlertComponent,
         JhiAlertErrorComponent,
         TypeaheadMultiselectComponent,
-        RangeInputComponent
+        RangeInputComponent,
+        TypeaheadSingleselectComponent
     ],
     providers: [
         JhiLanguageHelper,
@@ -35,7 +36,8 @@ import { RangeInputComponent, TypeaheadMultiselectComponent } from './input-comp
         JhiAlertComponent,
         JhiAlertErrorComponent,
         TypeaheadMultiselectComponent,
-        RangeInputComponent
+        RangeInputComponent,
+        TypeaheadSingleselectComponent
     ]
 })
 export class JobroomSharedCommonModule {

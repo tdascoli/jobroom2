@@ -10,7 +10,7 @@ import { JobSearchState, ToolbarChangedAction } from '../state-management';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { JobSearchQuery } from '../state-management/state/job-search.state';
 import { Subscription } from 'rxjs/Subscription';
-import { LocalityInputType } from '../../shared/job-search/service/locality-autocomplete';
+import { LocalityInputType } from '../../shared/reference-service/locality-autocomplete';
 import { MAX_JOB_LIST_SIZE } from '../../app.constants';
 import { TypeaheadMultiselectModel } from '../../shared/input-components';
 

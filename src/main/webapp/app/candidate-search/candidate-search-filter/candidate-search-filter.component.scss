@@ -1,0 +1,9 @@
+@import '../../../content/scss/jbr2_variables.scss';
+
+:host /deep/ .typeahead-singleselect__type-label--canton {
+    background-color: $main-accent-color-400;
+}
+
+:host /deep/ .typeahead-singleselect__type-label--locality {
+    background-color: $additional-accent-green;
+}

@@ -7,14 +7,8 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { TypeaheadMultiselectModel } from './typeahead-multiselect-model';
-
-export class ItemDisplayModel {
-    constructor(public model: TypeaheadMultiselectModel,
-                public first = false,
-                public firstInGroup = false) {
-    }
-}
+import { TypeaheadMultiselectModel } from '../typeahead-multiselect-model';
+import { TypeaheadItemDisplayModel } from '../typeahead-item-display-model';
 
 enum Key {
     Tab = 9,
@@ -134,14 +128,14 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         return this.selectedItems.length === 0;
     }
 
-    wrappedItemLoader = (text$: Observable<string>): Observable<ItemDisplayModel[]> => {
+    wrappedItemLoader = (text$: Observable<string>): Observable<TypeaheadItemDisplayModel[]> => {
 
         const toDisplayModel = (m: TypeaheadMultiselectModel, idx: number, array: TypeaheadMultiselectModel[]) => {
             let fistInGroup = false;
             if (idx === 0 || m.type !== array[idx - 1].type) {
                 fistInGroup = true;
             }
-            return new ItemDisplayModel(m, idx === 0, fistInGroup);
+            return new TypeaheadItemDisplayModel(m, idx === 0, fistInGroup);
         };
 
         const toDisplayModelArray = (items: TypeaheadMultiselectModel[]) => items
@@ -153,14 +147,14 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
             .filter((query: string) => query.length > 2)
             .switchMap((query: string) => this.itemLoader(query))
             .map(toDisplayModelArray);
-    }
+    };
 
     private exists(model: TypeaheadMultiselectModel) {
         return !!this.selectedItems.find((i: TypeaheadMultiselectModel) => model.equals(i));
     }
 
     private _onChange = (_: any) => {
-    }
+    };
     private _onTouched = () => {
     }
 

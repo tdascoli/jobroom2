@@ -7,8 +7,8 @@ import {
     OnInit,
     Output,
 } from '@angular/core';
-import { LocalityService } from '../service/locality.service';
-import { GeoPoint, LocalitySuggestion } from '../service/locality-autocomplete';
+import { LocalityService } from '../../reference-service/locality.service';
+import { GeoPoint, LocalitySuggestion } from '../../reference-service/locality-autocomplete';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({

@@ -6,8 +6,8 @@ import {
 } from '../state/job-search.state';
 import { JobSearchRequest } from '../../services/job-search-request';
 import { TypeaheadMultiselectModel } from '../../../shared/input-components';
-import { OccupationInputType } from '../../../shared/job-search/service/occupation-autocomplete';
-import { LocalityInputType } from '../../../shared/job-search/service/locality-autocomplete';
+import { OccupationInputType } from '../../../shared/reference-service/occupation-autocomplete';
+import { LocalityInputType } from '../../../shared/reference-service/locality-autocomplete';
 import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
 
 const toCode = (value: TypeaheadMultiselectModel) => value.code;

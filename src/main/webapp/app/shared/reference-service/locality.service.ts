@@ -9,7 +9,7 @@ import {
     LocalitySuggestion
 } from './locality-autocomplete';
 import { Observer } from 'rxjs/Observer';
-import { TypeaheadMultiselectModel } from '../../input-components';
+import { TypeaheadMultiselectModel } from '../input-components';
 
 const LOCALITIES_URL = 'referenceservice/api/_search/localities';
 const DEFAULT_RESPONSE_SIZE = '10';

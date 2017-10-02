@@ -2,10 +2,10 @@ import { async, ComponentFixture, fakeAsync, TestBed, tick } from '@angular/core
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import {
-    ItemDisplayModel,
+    TypeaheadItemDisplayModel,
     TypeaheadMultiselectComponent,
     TypeaheadMultiselectModel
-} from '../../../../../../../main/webapp/app/shared/input-components';
+} from '../../../../../../../../main/webapp/app/shared/input-components';
 
 describe('TypeaheadMultiselectComponent', () => {
 
@@ -157,10 +157,10 @@ describe('TypeaheadMultiselectComponent', () => {
 
             // THAN
             expect(loadedItems).toEqual([
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type', 'code2', 'label2', 0), true, true),
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type', 'code3', 'label3', 1), false, false),
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type', 'code1', 'label1', 2), false, false),
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type', 'code0', 'label0', 3), false, false)
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code2', 'label2', 0), true, true),
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code3', 'label3', 1), false, false),
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code1', 'label1', 2), false, false),
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code0', 'label0', 3), false, false)
             ]);
         }));
 
@@ -182,10 +182,10 @@ describe('TypeaheadMultiselectComponent', () => {
 
             // THAN
             expect(loadedItems).toEqual([
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type0', 'code0', 'label0', 0), true, true),
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type0', 'code1', 'label1', 0), false, false),
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type1', 'code2', 'label2', 1), false, true),
-                new ItemDisplayModel(new TypeaheadMultiselectModel('type1', 'code3', 'label3', 1), false, false)
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type0', 'code0', 'label0', 0), true, true),
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type0', 'code1', 'label1', 0), false, false),
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type1', 'code2', 'label2', 1), false, true),
+                new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type1', 'code3', 'label3', 1), false, false)
             ]);
         }));
     });

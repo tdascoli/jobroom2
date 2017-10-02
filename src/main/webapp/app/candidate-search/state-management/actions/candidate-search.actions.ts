@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { OccupationSuggestion } from '../../../shared/job-search/service/occupation-autocomplete';
+import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 
 export const INIT_CANDIDATE_SEARCH = 'INIT_CANDIDATE_SEARCH';
 

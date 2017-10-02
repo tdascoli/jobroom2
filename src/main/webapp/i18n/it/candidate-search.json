@@ -39,6 +39,9 @@
             "MORE_THAN_A_YEAR": "mehr als 1 Jahr",
             "label": "Berufserfahrung"
         },
+        "workplace": {
+            "label": "Arbeitsort"
+        },
         "filter": {
             "title": "Kandidaten suchen"
         },

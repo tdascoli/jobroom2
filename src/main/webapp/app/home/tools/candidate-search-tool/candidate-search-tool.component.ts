@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../../shared/job-search/service/occupation.service';
+import { OccupationService } from '../../../shared/reference-service/occupation.service';
 import {
     Graduation,
     GreaterRegion
@@ -9,7 +9,7 @@ import {
 import { Store } from '@ngrx/store';
 import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
 import { CandidateSearchToolSubmittedAction } from '../../state-management/actions/candidate-search-tool.actions';
-import { OccupationSuggestion } from '../../../shared/job-search/service/occupation-autocomplete';
+import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 
 @Component({
     selector: 'jr2-candidate-search-tool',

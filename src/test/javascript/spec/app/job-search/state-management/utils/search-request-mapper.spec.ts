@@ -7,8 +7,8 @@ import {
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import { JobSearchRequest } from '../../../../../../../main/webapp/app/job-search/services/job-search-request';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
-import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation-autocomplete';
-import { LocalityInputType } from '../../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
+import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
+import { LocalityInputType } from '../../../../../../../main/webapp/app/shared/reference-service/locality-autocomplete';
 
 describe('createJobSearchRequest', () => {
     const defaultQuery: JobSearchQuery = {

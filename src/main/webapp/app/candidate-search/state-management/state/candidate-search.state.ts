@@ -9,7 +9,7 @@ import {
     LanguageSkill,
     WorkForm
 } from '../../services/candidate-search-request';
-import { OccupationSuggestion } from '../../../shared/job-search/service/occupation-autocomplete';
+import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter

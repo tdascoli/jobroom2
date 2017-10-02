@@ -1,15 +1,15 @@
 import { inject, TestBed } from '@angular/core/testing';
-import { JobroomTestModule } from '../../../../test.module';
-import { LocalityService } from '../../../../../../../main/webapp/app/shared/index';
+import { JobroomTestModule } from '../../../test.module';
+import { LocalityService } from '../../../../../../main/webapp/app/shared/index';
 import { MockBackend } from '@angular/http/testing';
 import {
     GeoPoint,
     LocalityAutocomplete,
     LocalityInputType
-} from '../../../../../../../main/webapp/app/shared/job-search/service/locality-autocomplete';
-import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
+} from '../../../../../../main/webapp/app/shared/reference-service/locality-autocomplete';
+import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components';
 import { Response, ResponseOptions } from '@angular/http';
-import { NAVIGATOR_TOKEN } from '../../../../../../../main/webapp/app/shared/job-search/service/locality.service';
+import { NAVIGATOR_TOKEN } from '../../../../../../main/webapp/app/shared/reference-service/locality.service';
 import arrayContaining = jasmine.arrayContaining;
 
 describe('LocalityService', () => {

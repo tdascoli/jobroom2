@@ -1,0 +1,19 @@
+<div
+    class="typeahead-singleselect d-flex flex-row flex-wrap form-control form-control-sm">
+
+    <ng-template #template let-result="result" let-term="term" let-formatter="formatter">
+        <div *ngIf="result.firstInGroup" class="pull-right" [ngClass]="getTypeClass(result.model)">
+            {{'typeahead-multiselect.type.' + result.model.type | translate}}
+        </div>
+        <div [ngClass]="{'fist-in-group-item': result.firstInGroup && !result.first}">
+            <ngb-highlight [result]="formatter(result.model)" [term]="term"></ngb-highlight>
+        </div>
+    </ng-template>
+
+    <input #input class="input typeahead-singleselect__input"
+           [resultTemplate]="template"
+           [ngbTypeahead]="wrappedItemLoader"
+           [resultFormatter]="formatResultItem"
+           [inputFormatter]="formatInputValue"
+           [editable]="editable"/>
+</div>

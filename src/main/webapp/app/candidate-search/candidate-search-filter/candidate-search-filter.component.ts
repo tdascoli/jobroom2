@@ -15,15 +15,16 @@ import {
     WorkForm
 } from '../services/candidate-search-request';
 import { Observable } from 'rxjs/Observable';
-import { OccupationSuggestion } from '../../shared/job-search/service/occupation-autocomplete';
-import { OccupationService } from '../../shared/job-search/service/occupation.service';
+import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
+import { OccupationService } from '../../shared/reference-service/occupation.service';
+import { LocalityService } from '../../shared/reference-service/locality.service';
 import { LanguageSkillService } from '../services/language-skill.service';
 import { isNullOrUndefined } from 'util';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
     templateUrl: './candidate-search-filter.component.html',
-    styles: []
+    styleUrls: ['./candidate-search-filter.component.scss']
 })
 export class CandidateSearchFilterComponent implements OnInit {
     @Input()
@@ -44,6 +45,7 @@ export class CandidateSearchFilterComponent implements OnInit {
 
     constructor(private languageSkillService: LanguageSkillService,
                 private occupationService: OccupationService,
+                private localityService: LocalityService,
                 private store: Store<CandidateSearchState>,
                 private fb: FormBuilder) {
     }
@@ -94,4 +96,6 @@ export class CandidateSearchFilterComponent implements OnInit {
         .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
 
     occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
+
+    fetchLocalitySuggestions = (prefix: string) => this.localityService.fetchSuggestions(prefix)
 }

@@ -8,7 +8,7 @@ import {
     OccupationInputType,
     OccupationSuggestion
 } from './occupation-autocomplete';
-import { TypeaheadMultiselectModel } from '../../input-components';
+import { TypeaheadMultiselectModel } from '../input-components';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations/synonym';

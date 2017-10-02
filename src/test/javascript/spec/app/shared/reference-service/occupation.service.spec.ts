@@ -2,14 +2,14 @@ import { fakeAsync, inject, TestBed, tick } from '@angular/core/testing';
 import { MockBackend } from '@angular/http/testing';
 import { TranslateService } from '@ngx-translate/core';
 import { Response, ResponseOptions } from '@angular/http';
-import { JobroomTestModule } from '../../../../test.module';
+import { JobroomTestModule } from '../../../test.module';
 import {
     OccupationAutocomplete,
     OccupationInputType,
     OccupationService,
-} from '../../../../../../../main/webapp/app/shared/job-search';
-import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
-import { OccupationSuggestion } from '../../../../../../../main/webapp/app/shared/job-search/service/occupation-autocomplete';
+} from '../../../../../../main/webapp/app/shared/job-search';
+import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components';
+import { OccupationSuggestion } from '../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
 import arrayContaining = jasmine.arrayContaining;
 
 describe('OccupationService', () => {

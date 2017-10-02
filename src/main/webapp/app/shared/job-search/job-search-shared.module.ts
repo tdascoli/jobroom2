@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
-import { OccupationService } from './service/occupation.service';
+import { OccupationService } from '../reference-service/occupation.service';
 import { JobroomSharedLibsModule } from '../shared-libs.module';
-import { LocalityService, NAVIGATOR_TOKEN } from './service/locality.service';
-import { ReferenceService } from './service/reference.service';
+import { LocalityService, NAVIGATOR_TOKEN } from '../reference-service/locality.service';
+import { ReferenceService } from '../reference-service/reference.service';
 import { GeoLocationSelectComponent } from './geo-location-select/geo-location-select.component';
 
 declare const navigator: NavigatorGeolocation;

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../../shared/job-search/service/occupation.service';
+import { OccupationService } from '../../../shared/reference-service/occupation.service';
 import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 
 @Component({
