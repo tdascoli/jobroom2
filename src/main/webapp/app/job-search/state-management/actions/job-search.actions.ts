@@ -11,6 +11,11 @@ export const HIDE_JOB_LIST_ERROR = 'HIDE_JOB_LIST_ERROR';
 export const FILTER_CHANGED = 'FILTER_CHANGED';
 export const TOOLBAR_CHANGED = 'TOOLBAR_CHANGED';
 export const SAVE_SCROLL_Y = 'SAVE_SCROLL_Y';
+export const LOAD_NEXT_JOB = 'LOAD_NEXT_JOB';
+export const LOAD_PREVIOUS_JOB = 'LOAD_PREVIOUS_JOB';
+export const SELECT_JOB = 'SELECT_JOB';
+export const NEXT_JOB_LOADED = 'NEXT_JOB_LOADED';
+export const NEXT_JOB_ERROR = 'NEXT_JOB_ERROR';
 
 export class InitJobSearchAction implements Action {
     readonly type = INIT_JOB_SEARCH;
@@ -72,6 +77,37 @@ export class SaveScrollYAction implements Action {
     }
 }
 
+export class LoadNextJobAction implements Action {
+    readonly type = LOAD_NEXT_JOB;
+}
+
+export class LoadPreviousJobAction implements Action {
+    readonly type = LOAD_PREVIOUS_JOB;
+}
+
+export class SelectJobAction implements Action {
+    readonly type = SELECT_JOB;
+
+    constructor(public payload: SelectedJob) {
+    }
+}
+
+export class NextJobLoadedAction implements Action {
+    readonly type = NEXT_JOB_LOADED;
+
+    constructor(public payload: SelectedJob) {
+    }
+}
+
+export class NextJobErrorAction implements Action {
+    readonly type = NEXT_JOB_ERROR;
+}
+
+export interface SelectedJob {
+    job: Job;
+    index: number;
+}
+
 export type Actions =
     | InitJobSearchAction
     | ToolbarChangedAction
@@ -82,4 +118,9 @@ export type Actions =
     | ShowJobListErrorAction
     | HideJobListErrorAction
     | SaveScrollYAction
+    | LoadNextJobAction
+    | NextJobLoadedAction
+    | NextJobErrorAction
+    | LoadPreviousJobAction
+    | SelectJobAction
     ;

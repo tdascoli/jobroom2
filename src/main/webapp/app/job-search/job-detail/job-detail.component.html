@@ -1,16 +1,15 @@
 <div class="container mt-md-5">
     <div class="row base">
         <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
-
-            <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
-                <li class="page-item">
-                    <a class="page-link" routerLink="/job-search">{{'job-detail.back' | translate}}</a>
-                </li>
-            </ul>
-
-            <hr class="visible-print-block d-none"/>
-
             <div class="sticky-top">
+                <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
+                    <li class="page-item">
+                        <a class="page-link" routerLink="/job-search">{{'job-detail.back' | translate}}</a>
+                    </li>
+                </ul>
+
+                <hr class="visible-print-block d-none"/>
+
                 <div class="job-detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
                     <div class="job-detail__content" *ngIf="job.company">
                         <address>
@@ -19,7 +18,7 @@
                             <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
                         </address>
 
-                        <p>{{ job.company.phone }}</p>
+                        <p><a href="tel:{{job.company.phone}}">{{ job.company.phone }}</a></p>
                         <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
                             }}</a></p>
                         <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
@@ -32,7 +31,7 @@
                             <p><span *ngIf="job.contact.salutation">{{ 'job-detail.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
                                 {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                             </p>
-                            <p>{{ job.contact.phone }}</p>
+                            <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone }}</a></p>
                             <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
                                 }}</a></p>
                         </div>
@@ -45,7 +44,7 @@
                             <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
                             <p>{{jobCenter.address.name}}, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</p>
                             <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
-                            <p>{{'job-detail.reference.phone' | translate}} {{jobCenter.phone}}</p>
+                            <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a></p>
                         </address>
 
                         <ng-container *ngIf="job.externalId">
@@ -88,23 +87,39 @@
             <div *ngIf="job.languages && job.languages.length" class="job-detail__content">
                 <h4 class="job-detail__content__title">{{ 'job-detail.languages' | translate }}</h4>
 
-                <dl class="row" *ngFor="let language of job.languages">
-                    <dt class="col-md-4 text-md-right">{{ 'global.reference.language.' + language.code | translate }}</dt>
-                    <dd class="col-md-8">
-                        <span *ngIf="language.spokenLevel">{{ 'job-detail.language.spoken' | translate }}: {{ 'job-detail.language.level.' + language.spokenLevel | translate}}, </span>
-                        <span *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</span>
-                    </dd>
-                </dl>
+                <div class="content__item" *ngFor="let language of job.languages">
+                    <strong>{{ 'global.reference.language.' + language.code | translate }}</strong>
+                    <span>
+                        <ng-container *ngIf="language.spokenLevel">{{ 'job-detail.language.spoken' | translate }}: {{ 'job-detail.language.level.' + language.spokenLevel | translate}}, </ng-container>
+                        <ng-container *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</ng-container>
+                    </span>
+                </div>
             </div>
 
             <!-- Application -->
             <div *ngIf="job.application" class="job-detail__content">
                 <h4 class="job-detail__content__title">{{ 'job-detail.application.title' | translate }}</h4>
 
-                <dl class="row">
-                    <dt class="col-md-4 text-md-right">{{ 'job-detail.application.hints' | translate}}</dt>
-                    <dd class="col-md-8">{{job.application.hints}}</dd>
-                </dl>
+                <div *ngIf="job.application.mailEnabled" class="content__item">
+                    <strong>{{ 'job-detail.application.mail' | translate}}</strong>
+                    <span>{{ 'job-detail.application.mail.text' | translate}}</span>
+                </div>
+                <div *ngIf="job.application.emailEnabled" class="content__item">
+                    <strong>{{ 'job-detail.application.email' | translate}}</strong>
+                    <span>
+                        <a href="mailto:{{job.contact?.email || job.company?.email}}">{{job.contact?.email || job.company?.email}}</a>
+                    </span>
+                </div>
+                <div *ngIf="job.application.phoneEnabled" class="content__item">
+                    <strong>{{ 'job-detail.application.phone' | translate}}</strong>
+                    <span><a href="tel:{{job.contact?.phone || job.company?.phone}}">
+                        {{job.contact?.phone || job.company?.phone}}
+                    </a></span>
+                </div>
+                <div *ngIf="job.application.hints" class="content__item">
+                    <strong>{{ 'job-detail.application.hints' | translate}}</strong>
+                    <span>{{job.application.hints}}</span>
+                </div>
             </div>
 
             <!-- /job description -->
@@ -130,49 +145,60 @@
 
         <div class="col-12 col-md order-12 base__related">
             <div class="sticky-top">
-                <div>
-                    <p>
-                        <a *ngIf="job.applicationUrl"
-                           class="btn btn-primary btn-block btn-sm"
-                           href="{{job.applicationUrl}}" target="{{job.id}}">
-                            {{'job-detail.action.applyNow' | translate}}
+                <ul *ngIf="jobNavigationEnabled$ | async" class="pagination pagination--block pagination-alv">
+                    <li class="page-item" [ngClass]="{'invisible': firstJob}">
+                        <a class="page-link" (click)="previousJob()">
+                            <i class="fa fa-chevron-left" aria-hidden="true"></i> {{ 'navigation.previous' | translate }}
                         </a>
-                        <a *ngIf="job.externalUrl"
-                           class="btn btn-secondary btn-block btn-sm"
-                           href="{{job.externalUrl}}" target="{{job.id}}">
-                            {{'job-detail.action.showExternalPage' | translate}}
+                    </li>
+                    <li class="page-item" [ngClass]="{'invisible': lastJob}">
+                        <a class="page-link" (click)="nextJob()">
+                            {{ 'navigation.next' | translate }} <i class="fa fa-chevron-right" aria-hidden="true"></i>
                         </a>
-                    </p>
+                    </li>
+                </ul>
 
-                    <ul class="nav filter-nav flex-column">
-                        <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="#"><i class="fa fa-star-o"-->
-                        <!--aria-hidden="true"></i>-->
-                        <!--{{'job-detail.action.saveJob' | translate}}</a>-->
-                        <!--</li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" [class.active]="isCopied" ngxClipboard
-                               [cbContent]="jobUrl" (cbOnSuccess)="isCopied = true">
-                                <i class="fa fa-share" aria-hidden="true"></i>
-                                {{'job-detail.action.copyLink' | translate}}</a>
-                        </li>
-                        <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="#"><i class="fa fa-envelope"-->
-                        <!--aria-hidden="true"></i>-->
-                        <!--{{'job-detail.action.sendEmail' | translate}}</a>-->
-                        <!--</li>-->
-                        <li class="nav-item">
-                            <a class="nav-link" (click)="printJob()">
-                                <i class="fa fa-print" aria-hidden="true"></i>
-                                {{'job-detail.action.print' | translate}}</a>
-                        </li>
-                        <!--<li class="nav-item">-->
-                        <!--<a class="nav-link" href="#"><i class="fa fa-file-pdf-o"-->
-                        <!--aria-hidden="true"></i>-->
-                        <!--{{'job-detail.action.savePdf' | translate}}</a>-->
-                        <!--</li>-->
-                    </ul>
-                </div>
+                <p>
+                    <a *ngIf="job.applicationUrl"
+                       class="btn btn-primary btn-block btn-sm"
+                       href="{{job.applicationUrl}}" target="{{job.id}}">
+                        {{'job-detail.action.applyNow' | translate}}
+                    </a>
+                    <a *ngIf="job.externalUrl"
+                       class="btn btn-secondary btn-block btn-sm"
+                       href="{{job.externalUrl}}" target="{{job.id}}">
+                        {{'job-detail.action.showExternalPage' | translate}}
+                    </a>
+                </p>
+
+                <ul class="nav filter-nav flex-column">
+                    <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="#"><i class="fa fa-star-o"-->
+                    <!--aria-hidden="true"></i>-->
+                    <!--{{'job-detail.action.saveJob' | translate}}</a>-->
+                    <!--</li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" [class.active]="isCopied" ngxClipboard
+                           [cbContent]="jobUrl" (cbOnSuccess)="isCopied = true">
+                            <i class="fa fa-share" aria-hidden="true"></i>
+                            {{'job-detail.action.copyLink' | translate}}</a>
+                    </li>
+                    <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="#"><i class="fa fa-envelope"-->
+                    <!--aria-hidden="true"></i>-->
+                    <!--{{'job-detail.action.sendEmail' | translate}}</a>-->
+                    <!--</li>-->
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="printJob()">
+                            <i class="fa fa-print" aria-hidden="true"></i>
+                            {{'job-detail.action.print' | translate}}</a>
+                    </li>
+                    <!--<li class="nav-item">-->
+                    <!--<a class="nav-link" href="#"><i class="fa fa-file-pdf-o"-->
+                    <!--aria-hidden="true"></i>-->
+                    <!--{{'job-detail.action.savePdf' | translate}}</a>-->
+                    <!--</li>-->
+                </ul>
             </div>
         </div>
     </div>

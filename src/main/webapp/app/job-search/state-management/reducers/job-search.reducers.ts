@@ -4,9 +4,9 @@ import {
     FILTER_CHANGED,
     HIDE_JOB_LIST_ERROR,
     JOB_LIST_LOADED,
-    LOAD_NEXT_PAGE,
+    LOAD_NEXT_PAGE, NEXT_JOB_LOADED,
     NEXT_PAGE_LOADED,
-    SAVE_SCROLL_Y,
+    SAVE_SCROLL_Y, SELECT_JOB, SelectJobAction,
     SHOW_JOB_LIST_ERROR,
     TOOLBAR_CHANGED
 } from '../actions/job-search.actions';
@@ -31,7 +31,8 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
                 searchError: false,
                 page: action.payload.page,
                 initialState: false,
-                loading: false
+                loading: false,
+                jobNavigationEnabled: true
             });
             break;
 
@@ -52,8 +53,22 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
         case LOAD_NEXT_PAGE:
             newState = Object.assign({}, state, { page: state.page + 1 });
             break;
+
         case SAVE_SCROLL_Y:
             newState = Object.assign({}, state, { jobListScrollY: action.payload });
+            break;
+
+        case SELECT_JOB:
+            newState = Object.assign({}, state, {
+                selectedJobIndex: action.payload.index
+            });
+            break;
+
+        case NEXT_JOB_LOADED:
+            newState = Object.assign({}, state, {
+                nextJob: action.payload.job,
+                selectedJobIndex: action.payload.index
+            });
             break;
 
         default:

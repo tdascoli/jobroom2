@@ -101,13 +101,15 @@ describe('jobSearchReducer', () => {
         expect(newState.page).toEqual(1);
         expect(newState.initialState).toBeFalsy();
         expect(newState.loading).toBeFalsy();
+        expect(newState.jobNavigationEnabled).toBeTruthy();
 
         verifyUnchanged(newState, state, [
             'jobList',
             'totalJobCount',
             'page',
             'initialState',
-            'loading'
+            'loading',
+            'jobNavigationEnabled'
         ]);
     });
 

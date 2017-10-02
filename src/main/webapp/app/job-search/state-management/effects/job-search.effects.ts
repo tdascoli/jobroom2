@@ -9,8 +9,11 @@ import {
     FILTER_CHANGED,
     FilterChangedAction,
     INIT_JOB_SEARCH,
-    JobListLoadedAction,
-    NextPageLoadedAction,
+    JobListLoadedAction, LOAD_NEXT_JOB, LOAD_PREVIOUS_JOB, LoadNextJobAction,
+    LoadNextPageAction, LoadPreviousJobAction, NEXT_JOB_LOADED,
+    NEXT_PAGE_LOADED, NextJobErrorAction,
+    NextJobLoadedAction,
+    NextPageLoadedAction, SelectedJob,
     ShowJobListErrorAction,
     TOOLBAR_CHANGED,
     ToolbarChangedAction
@@ -18,6 +21,8 @@ import {
 import { Scheduler } from 'rxjs/Scheduler';
 import { async } from 'rxjs/scheduler/async';
 import { createJobSearchRequest } from '../util/search-request-mapper';
+import { Router } from '@angular/router';
+import { Job } from '../../services/job';
 
 export const JOB_SEARCH_DEBOUNCE = new InjectionToken<number>('JOB_SEARCH_DEBOUNCE');
 export const JOB_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('JOB_SEARCH_SCHEDULER');
@@ -63,6 +68,25 @@ export class JobSearchEffects {
                 .catch((err: any) => Observable.of(new ShowJobListErrorAction(err)))
         );
 
+    @Effect()
+    loadNextJob$: Observable<Action> = this.actions$
+        .ofType(LOAD_NEXT_JOB, LOAD_PREVIOUS_JOB)
+        .distinctUntilChanged()
+        .withLatestFrom(this.store.select(getJobSearchState))
+        .switchMap(([action, state]) =>
+            this.getNextJob(state, action as LoadNextJobAction | LoadPreviousJobAction))
+        .map((selectedJob: SelectedJob) => selectedJob
+            ? new NextJobLoadedAction(selectedJob)
+            : new NextJobErrorAction());
+
+    @Effect({ dispatch: false })
+    nextJobLoaded$: Observable<Action> = this.actions$
+        .ofType(NEXT_JOB_LOADED)
+        .do((action: NextJobLoadedAction) => {
+            const job = action.payload.job;
+            this.router.navigate(['/job-detail', job.id])
+        });
+
     constructor(private actions$: Actions,
                 private jobSearchService: JobService,
                 private store: Store<JobSearchState>,
@@ -71,7 +95,27 @@ export class JobSearchEffects {
                 private debounce,
                 @Optional()
                 @Inject(JOB_SEARCH_SCHEDULER)
-                private scheduler: Scheduler) {
+                private scheduler: Scheduler,
+                private router: Router) {
+    }
+
+    private getNextJob(state: JobSearchState,
+                       loadJobAction: LoadNextJobAction | LoadPreviousJobAction): Observable<SelectedJob> {
+        const nextJobIndex = state.selectedJobIndex
+            + (loadJobAction instanceof LoadPreviousJobAction ? -1 : 1);
+        const nextJob = state.jobList[nextJobIndex];
+
+        if (nextJob) {
+            return Observable.of({ job: nextJob, index: nextJobIndex });
+        } else {
+            this.store.dispatch(new LoadNextPageAction());
+
+            return this.actions$
+                .ofType(NEXT_PAGE_LOADED)
+                .take(1)
+                .map((action: NextPageLoadedAction) =>
+                    ({ job: action.payload[0], index: nextJobIndex }));
+        }
     }
 }
 

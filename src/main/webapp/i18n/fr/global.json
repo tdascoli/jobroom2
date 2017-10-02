@@ -225,5 +225,9 @@
             "test": "Test"
         },
         "title": "Jobroom"
+    },
+    "navigation": {
+        "previous": "Bisherige",
+        "next": "N\u00e4chster"
     }
 }

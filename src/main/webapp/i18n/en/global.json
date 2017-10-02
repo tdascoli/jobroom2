@@ -225,5 +225,9 @@
             "test": "Test"
         },
         "title": "Jobroom"
+    },
+    "navigation": {
+        "previous": "Previous",
+        "next": "Next"
     }
 }
