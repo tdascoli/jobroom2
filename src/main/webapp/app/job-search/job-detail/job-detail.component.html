@@ -58,8 +58,9 @@
         </div>
 
         <div class="col-12 col-md-8 order-3 base__content">
-            <ngb-alert *ngIf="showInfoBox" [type]="'info'" (close)="showInfoBox = false"><span
-                translate="job-detail.external-job-disclaimer"></span></ngb-alert>
+            <ngb-alert *ngIf="showExternalJobDisclaimer" [type]="'info'" (close)="showExternalJobDisclaimer = false">
+                {{'job-detail.external-job-disclaimer' | translate}}
+            </ngb-alert>
 
             <div class="job-detail__title">
                 <h2 class="text--light">{{ job.title }}</h2>

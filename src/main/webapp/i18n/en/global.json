@@ -1,80 +1,65 @@
 {
-    "global": {
-        "reference": {
-            "language": {
-                "ar": "Arabisch",
-                "bs": "Bulgarisch",
-                "ch-de": "CH-Deutsch",
-                "cs": "Tschechisch",
-                "da": "D\u00e4nisch",
-                "de": "Deutsch",
-                "en": "Englisch",
-                "es": "Spanisch",
-                "fi": "Finnisch",
-                "fr": "Franz\u00f6sisch",
-                "gr": "Griechisch",
-                "hr": "Kroatisch",
-                "hu": "Ungarisch",
-                "it": "Italienisch",
-                "jp": "Japanisch",
-                "km": "Khmer",
-                "ku": "Kurdisch",
-                "lt": "Litauisch",
-                "ne": "Holl\u00e4ndisch",
-                "no": "Norwegisch",
-                "po": "Polnisch",
-                "pr": "Portugiesisch",
-                "ro": "Rum\u00e4nisch",
-                "ru": "Russisch",
-                "sk": "Slowakisch",
-                "sl": "Slowenisch",
-                "sq": "Albanisch",
-                "sr": "Serbisch",
-                "sv": "Schwedisch",
-                "ta": "Tamil",
-                "th": "Thai",
-                "tr": "T\u00fcrkisch",
-                "vi": "Vietnamesisch",
-                "zh": "Chinesisch"
-            },
-            "greaterRegion": {
-                "1": "grande r\u00e9gion 1 (GE, VD, FR, NE, VS, JU)",
-                "2": "grande r\u00e9gion 2 (BE, SO, BS, BL, AG)",
-                "3": "grande r\u00e9gion 3 (UR, SZ, OW, NW, LU, ZG)",
-                "4": "grande r\u00e9gion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
-                "5": "grande r\u00e9gion 5 (TI)",
-                "6": "Grande r\u00e9gion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
-                "99": "\u00e9tranger",
-                "AG": "Argovie",
-                "AI": "Appenzell Rhodes-Int\u00e9rieures",
-                "AR": "Appenzell Rhodes-Ext\u00e9rieures",
-                "BE": "Berne",
-                "BL": "B\u00e2le-Campagne",
-                "BS": "B\u00e2le-Ville",
-                "CH": "Suisse",
-                "FL": "F\u00fcrstentum Liechtenstein",
-                "FR": "Fribourg",
-                "GE": "Gen\u00e8ve",
-                "GL": "Glaris",
-                "GR": "Grisons",
-                "JU": "Jura",
-                "LU": "Lucerne",
-                "NE": "Neuch\u00e2tel",
-                "NW": "Nidwald",
-                "OW": "Obwald",
-                "SG": "St-Gall",
-                "SH": "Schaffhouse",
-                "SO": "Soleure",
-                "SZ": "Schwyz",
-                "TG": "Thurgovie",
-                "TI": "Tessin",
-                "UR": "Uri",
-                "VD": "Vaud",
-                "VS": "Valais",
-                "ZG": "Zoug",
-                "ZH": "Zurich"
+    "entity": {
+        "action": {
+            "addblob": "Add blob",
+            "addimage": "Add image",
+            "back": "Back",
+            "cancel": "Cancel",
+            "delete": "Delete",
+            "edit": "Edit",
+            "open": "Open",
+            "save": "Save",
+            "view": "View"
+        },
+        "delete": {
+            "title": "Confirm delete operation"
+        },
+        "detail": {
+            "field": "Field",
+            "value": "Value"
+        },
+        "validation": {
+            "datetimelocal": "This field should be a date and time.",
+            "max": "This field cannot be more than {{ max }}.",
+            "maxbytes": "This field cannot be more than {{ max }} bytes.",
+            "maxlength": "This field cannot be longer than {{ max }} characters.",
+            "min": "This field should be at least {{ min }}.",
+            "minbytes": "This field should be at least {{ min }} bytes.",
+            "minlength": "This field is required to be at least {{ min }} characters.",
+            "number": "This field should be a number.",
+            "pattern": "This field should follow pattern for {{ pattern }}.",
+            "required": "This field is required."
+        }
+    },
+    "error": {
+        "NotNull": "Field {{ fieldName }} cannot be empty!",
+        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
+        "emailexists": "Email is already in use!",
+        "idexists": "A new {{ entityName }} cannot already have an ID",
+        "internalServerError": "Internal server error",
+        "server": {
+            "not": {
+                "reachable": "Server not reachable"
             }
         },
+        "url": {
+            "not": {
+                "found": "Not found"
+            }
+        },
+        "userexists": "Login name already used!"
+    },
+    "footer": {
+        "link": {
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            }
+        }
+    },
+    "global": {
         "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
         "field": {
             "id": "ID"
@@ -159,71 +144,86 @@
                 }
             }
         },
+        "reference": {
+            "greaterRegion": {
+                "1": "grande r\u00e9gion 1 (GE, VD, FR, NE, VS, JU)",
+                "2": "grande r\u00e9gion 2 (BE, SO, BS, BL, AG)",
+                "3": "grande r\u00e9gion 3 (UR, SZ, OW, NW, LU, ZG)",
+                "4": "grande r\u00e9gion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
+                "5": "grande r\u00e9gion 5 (TI)",
+                "6": "Grande r\u00e9gion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
+                "99": "\u00e9tranger",
+                "AG": "Argovie",
+                "AI": "Appenzell Rhodes-Int\u00e9rieures",
+                "AR": "Appenzell Rhodes-Ext\u00e9rieures",
+                "BE": "Berne",
+                "BL": "B\u00e2le-Campagne",
+                "BS": "B\u00e2le-Ville",
+                "CH": "Suisse",
+                "FL": "F\u00fcrstentum Liechtenstein",
+                "FR": "Fribourg",
+                "GE": "Gen\u00e8ve",
+                "GL": "Glaris",
+                "GR": "Grisons",
+                "JU": "Jura",
+                "LU": "Lucerne",
+                "NE": "Neuch\u00e2tel",
+                "NW": "Nidwald",
+                "OW": "Obwald",
+                "SG": "St-Gall",
+                "SH": "Schaffhouse",
+                "SO": "Soleure",
+                "SZ": "Schwyz",
+                "TG": "Thurgovie",
+                "TI": "Tessin",
+                "UR": "Uri",
+                "VD": "Vaud",
+                "VS": "Valais",
+                "ZG": "Zoug",
+                "ZH": "Zurich"
+            },
+            "language": {
+                "ar": "Arabisch",
+                "bs": "Bulgarisch",
+                "ch-de": "CH-Deutsch",
+                "cs": "Tschechisch",
+                "da": "D\u00e4nisch",
+                "de": "Deutsch",
+                "en": "Englisch",
+                "es": "Spanisch",
+                "fi": "Finnisch",
+                "fr": "Franz\u00f6sisch",
+                "gr": "Griechisch",
+                "hr": "Kroatisch",
+                "hu": "Ungarisch",
+                "it": "Italienisch",
+                "jp": "Japanisch",
+                "km": "Khmer",
+                "ku": "Kurdisch",
+                "lt": "Litauisch",
+                "ne": "Holl\u00e4ndisch",
+                "no": "Norwegisch",
+                "po": "Polnisch",
+                "pr": "Portugiesisch",
+                "ro": "Rum\u00e4nisch",
+                "ru": "Russisch",
+                "sk": "Slowakisch",
+                "sl": "Slowenisch",
+                "sq": "Albanisch",
+                "sr": "Serbisch",
+                "sv": "Schwedisch",
+                "ta": "Tamil",
+                "th": "Thai",
+                "tr": "T\u00fcrkisch",
+                "vi": "Vietnamesisch",
+                "zh": "Chinesisch"
+            }
+        },
         "ribbon": {
             "dev": "Local",
             "development": "Development",
             "test": "Test"
         },
         "title": "Jobroom"
-    },
-    "entity": {
-        "action": {
-            "addblob": "Add blob",
-            "addimage": "Add image",
-            "back": "Back",
-            "cancel": "Cancel",
-            "delete": "Delete",
-            "edit": "Edit",
-            "open": "Open",
-            "save": "Save",
-            "view": "View"
-        },
-        "delete": {
-            "title": "Confirm delete operation"
-        },
-        "detail": {
-            "field": "Field",
-            "value": "Value"
-        },
-        "validation": {
-            "datetimelocal": "This field should be a date and time.",
-            "max": "This field cannot be more than {{ max }}.",
-            "maxbytes": "This field cannot be more than {{ max }} bytes.",
-            "maxlength": "This field cannot be longer than {{ max }} characters.",
-            "min": "This field should be at least {{ min }}.",
-            "minbytes": "This field should be at least {{ min }} bytes.",
-            "minlength": "This field is required to be at least {{ min }} characters.",
-            "number": "This field should be a number.",
-            "pattern": "This field should follow pattern for {{ pattern }}.",
-            "required": "This field is required."
-        }
-    },
-    "error": {
-        "NotNull": "Field {{ fieldName }} cannot be empty!",
-        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
-        "emailexists": "Email is already in use!",
-        "idexists": "A new {{ entityName }} cannot already have an ID",
-        "internalServerError": "Internal server error",
-        "server": {
-            "not": {
-                "reachable": "Server not reachable"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Not found"
-            }
-        },
-        "userexists": "Login name already used!"
-    },
-    "footer": {
-        "link": {
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
-            }
-        }
     }
 }

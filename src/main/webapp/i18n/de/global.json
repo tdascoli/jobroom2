@@ -1,80 +1,65 @@
 {
-    "global": {
-        "reference": {
-            "language": {
-                "ar": "Arabisch",
-                "bs": "Bulgarisch",
-                "ch-de": "CH-Deutsch",
-                "cs": "Tschechisch",
-                "da": "D\u00e4nisch",
-                "de": "Deutsch",
-                "en": "Englisch",
-                "es": "Spanisch",
-                "fi": "Finnisch",
-                "fr": "Franz\u00f6sisch",
-                "gr": "Griechisch",
-                "hr": "Kroatisch",
-                "hu": "Ungarisch",
-                "it": "Italienisch",
-                "jp": "Japanisch",
-                "km": "Khmer",
-                "ku": "Kurdisch",
-                "lt": "Litauisch",
-                "ne": "Holl\u00e4ndisch",
-                "no": "Norwegisch",
-                "po": "Polnisch",
-                "pr": "Portugiesisch",
-                "ro": "Rum\u00e4nisch",
-                "ru": "Russisch",
-                "sk": "Slowakisch",
-                "sl": "Slowenisch",
-                "sq": "Albanisch",
-                "sr": "Serbisch",
-                "sv": "Schwedisch",
-                "ta": "Tamil",
-                "th": "Thai",
-                "tr": "T\u00fcrkisch",
-                "vi": "Vietnamesisch",
-                "zh": "Chinesisch"
-            },
-            "greaterRegion": {
-                "1": "Grossregion 1 (GE, VD, FR, NE, VS, JU)",
-                "2": "Grossregion 2 (BE, SO, BS, BL, AG)",
-                "3": "Grossregion 3 (UR, SZ, OW, NW, LU, ZG)",
-                "4": "Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
-                "5": "Grossregion 5 (TI)",
-                "6": "Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
-                "99": "Ausland",
-                "AG": "Aargau",
-                "AI": "Appenzell Innerrhoden",
-                "AR": "Appenzell Ausserrhoden",
-                "BE": "Bern",
-                "BL": "Basel-Landschaft",
-                "BS": "Basel-Stadt",
-                "CH": "Schweiz",
-                "FL": "F\u00fcrstentum Liechtenstein",
-                "FR": "Freiburg",
-                "GE": "Genf",
-                "GL": "Glarus",
-                "GR": "Graub\u00fcnden",
-                "JU": "Jura",
-                "LU": "Luzern",
-                "NE": "Neuenburg",
-                "NW": "Nidwalden",
-                "OW": "Obwalden",
-                "SG": "St. Gallen",
-                "SH": "Schaffhausen",
-                "SO": "Solothurn",
-                "SZ": "Schwyz",
-                "TG": "Thurgau",
-                "TI": "Tessin",
-                "UR": "Uri",
-                "VD": "Waadt",
-                "VS": "Wallis",
-                "ZG": "Zug",
-                "ZH": "Z\u00fcrich"
+    "entity": {
+        "action": {
+            "addblob": "Blob hinzuf\u00fcgen",
+            "addimage": "Bild hinzuf\u00fcgen",
+            "back": "Zur\u00fcck",
+            "cancel": "Abbrechen",
+            "delete": "L\u00f6schen",
+            "edit": "Bearbeiten",
+            "open": "Open",
+            "save": "Speichern",
+            "view": "Details"
+        },
+        "delete": {
+            "title": "L\u00f6schen best\u00e4tigen"
+        },
+        "detail": {
+            "field": "Feld",
+            "value": "Wert"
+        },
+        "validation": {
+            "datetimelocal": "Dieses Feld muss eine Datums- und Zeitangabe enthalten.",
+            "max": "Dieses Feld muss kleiner als {{max}} sein.",
+            "maxbytes": "Dieses Feld sollte nicht mehr als {{max}} bytes haben.",
+            "maxlength": "Dieses Feld darf max. {{max}} Zeichen lang sein.",
+            "min": "Dieses Feld muss gr\u00f6\u00dfer als {{min}} sein.",
+            "minbytes": "Dieses Feld sollte mehr als {{min}} bytes haben.",
+            "minlength": "Dieses Feld muss mind. {{min}} Zeichen lang sein.",
+            "number": "Dieses Feld muss eine Zahl sein.",
+            "pattern": "Dieses Feld muss das Muster {{pattern}} erf\u00fcllen.",
+            "required": "Dieses Feld wird ben\u00f6tigt."
+        }
+    },
+    "error": {
+        "NotNull": "Feld {{fieldName}} kann nicht leer sein!",
+        "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
+        "emailexists": "Email wird bereits verwendet!",
+        "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
+        "internalServerError": "Internal server error",
+        "server": {
+            "not": {
+                "reachable": "Server ist nicht erreichbar"
             }
         },
+        "url": {
+            "not": {
+                "found": "Nicht gefunden"
+            }
+        },
+        "userexists": "Benutzername bereits vergeben!"
+    },
+    "footer": {
+        "link": {
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            }
+        }
+    },
+    "global": {
         "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
         "field": {
             "id": "ID"
@@ -159,71 +144,86 @@
                 }
             }
         },
+        "reference": {
+            "greaterRegion": {
+                "1": "Grossregion 1 (GE, VD, FR, NE, VS, JU)",
+                "2": "Grossregion 2 (BE, SO, BS, BL, AG)",
+                "3": "Grossregion 3 (UR, SZ, OW, NW, LU, ZG)",
+                "4": "Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
+                "5": "Grossregion 5 (TI)",
+                "6": "Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
+                "99": "Ausland",
+                "AG": "Aargau",
+                "AI": "Appenzell Innerrhoden",
+                "AR": "Appenzell Ausserrhoden",
+                "BE": "Bern",
+                "BL": "Basel-Landschaft",
+                "BS": "Basel-Stadt",
+                "CH": "Schweiz",
+                "FL": "F\u00fcrstentum Liechtenstein",
+                "FR": "Freiburg",
+                "GE": "Genf",
+                "GL": "Glarus",
+                "GR": "Graub\u00fcnden",
+                "JU": "Jura",
+                "LU": "Luzern",
+                "NE": "Neuenburg",
+                "NW": "Nidwalden",
+                "OW": "Obwalden",
+                "SG": "St. Gallen",
+                "SH": "Schaffhausen",
+                "SO": "Solothurn",
+                "SZ": "Schwyz",
+                "TG": "Thurgau",
+                "TI": "Tessin",
+                "UR": "Uri",
+                "VD": "Waadt",
+                "VS": "Wallis",
+                "ZG": "Zug",
+                "ZH": "Z\u00fcrich"
+            },
+            "language": {
+                "ar": "Arabisch",
+                "bs": "Bulgarisch",
+                "ch-de": "CH-Deutsch",
+                "cs": "Tschechisch",
+                "da": "D\u00e4nisch",
+                "de": "Deutsch",
+                "en": "Englisch",
+                "es": "Spanisch",
+                "fi": "Finnisch",
+                "fr": "Franz\u00f6sisch",
+                "gr": "Griechisch",
+                "hr": "Kroatisch",
+                "hu": "Ungarisch",
+                "it": "Italienisch",
+                "jp": "Japanisch",
+                "km": "Khmer",
+                "ku": "Kurdisch",
+                "lt": "Litauisch",
+                "ne": "Holl\u00e4ndisch",
+                "no": "Norwegisch",
+                "po": "Polnisch",
+                "pr": "Portugiesisch",
+                "ro": "Rum\u00e4nisch",
+                "ru": "Russisch",
+                "sk": "Slowakisch",
+                "sl": "Slowenisch",
+                "sq": "Albanisch",
+                "sr": "Serbisch",
+                "sv": "Schwedisch",
+                "ta": "Tamil",
+                "th": "Thai",
+                "tr": "T\u00fcrkisch",
+                "vi": "Vietnamesisch",
+                "zh": "Chinesisch"
+            }
+        },
         "ribbon": {
             "dev": "Local",
             "development": "Development",
             "test": "Test"
         },
         "title": "Jobroom"
-    },
-    "entity": {
-        "action": {
-            "addblob": "Blob hinzuf\u00fcgen",
-            "addimage": "Bild hinzuf\u00fcgen",
-            "back": "Zur\u00fcck",
-            "cancel": "Abbrechen",
-            "delete": "L\u00f6schen",
-            "edit": "Bearbeiten",
-            "open": "Open",
-            "save": "Speichern",
-            "view": "Details"
-        },
-        "delete": {
-            "title": "L\u00f6schen best\u00e4tigen"
-        },
-        "detail": {
-            "field": "Feld",
-            "value": "Wert"
-        },
-        "validation": {
-            "datetimelocal": "Dieses Feld muss eine Datums- und Zeitangabe enthalten.",
-            "max": "Dieses Feld muss kleiner als {{max}} sein.",
-            "maxbytes": "Dieses Feld sollte nicht mehr als {{max}} bytes haben.",
-            "maxlength": "Dieses Feld darf max. {{max}} Zeichen lang sein.",
-            "min": "Dieses Feld muss gr\u00f6\u00dfer als {{min}} sein.",
-            "minbytes": "Dieses Feld sollte mehr als {{min}} bytes haben.",
-            "minlength": "Dieses Feld muss mind. {{min}} Zeichen lang sein.",
-            "number": "Dieses Feld muss eine Zahl sein.",
-            "pattern": "Dieses Feld muss das Muster {{pattern}} erf\u00fcllen.",
-            "required": "Dieses Feld wird ben\u00f6tigt."
-        }
-    },
-    "error": {
-        "NotNull": "Feld {{fieldName}} kann nicht leer sein!",
-        "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
-        "emailexists": "Email wird bereits verwendet!",
-        "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
-        "internalServerError": "Internal server error",
-        "server": {
-            "not": {
-                "reachable": "Server ist nicht erreichbar"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Nicht gefunden"
-            }
-        },
-        "userexists": "Benutzername bereits vergeben!"
-    },
-    "footer": {
-        "link": {
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
-            }
-        }
     }
 }
