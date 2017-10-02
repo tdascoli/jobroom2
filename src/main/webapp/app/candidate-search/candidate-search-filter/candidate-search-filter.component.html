@@ -12,7 +12,11 @@
                [resultFormatter]="occupationFormatter">
     </div>
 
-    <!--todo: skills-->
+    <div class="form-group">
+        <label class="small" translate="candidate-search.skills.label"></label>
+        <jr2-multiselect id="skills" formControlName="skills" [placeholder]="'candidate-search.skills.placeholder' | translate" class="form-control form-control-sm">
+        </jr2-multiselect>
+    </div>
 
     <div class="form-group">
         <label for="experience" class="small" translate="candidate-search.experience.label"></label>
@@ -26,7 +30,7 @@
 
     <div class="form-group">
         <label class="small" translate="candidate-search.workplace.label"></label>
-        <jr2-typeahead-singleselect [itemLoader]="fetchLocalitySuggestions" [editable]="false"></jr2-typeahead-singleselect>
+        <jr2-typeahead-singleselect [placeholder]="'candidate-search.workplace.placeholder' | translate" [itemLoader]="fetchLocalitySuggestions" [editable]="false"></jr2-typeahead-singleselect>
     </div>
 
     <div class="form-group">

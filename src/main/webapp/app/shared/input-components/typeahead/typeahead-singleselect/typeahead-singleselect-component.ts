@@ -15,6 +15,7 @@ import { TypeaheadItemDisplayModel } from '../typeahead-item-display-model';
     }]
 })
 export class TypeaheadSingleselectComponent {
+    @Input() placeholder = '';
     @Input() itemLoader: (text: string) => Observable<TypeaheadMultiselectModel[]>;
     @Input() editable = true;
 

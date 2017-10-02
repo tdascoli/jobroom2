@@ -1,0 +1,11 @@
+<div class="input input-multiselect d-flex flex-row flex-wrap" (click)="focusInput()">
+    <span class="badge input-multiselect__tag" *ngFor="let item of selectedItems">
+    {{item}}<i class="fa fa-times remove-button" aria-hidden="true" (click)="removeItem(item)"></i>
+    </span>
+
+    <input [id]="id" #input class="input input-multiselect__input" autofocus name="inputValue"
+           (keydown)="handleKeyDown($event)"
+           (blur)="handleBlur($event)"
+           [placeholder]="showPlaceholder() ? placeholder : ''"
+           [style.width]="getInputWidth()" [disabled]="disabled || selectedItems.length === maxItemNum"/>
+</div>

@@ -1,0 +1,26 @@
+@import '~@alv-ch/alv-styleguide/build/scss/mixins/alv-border';
+@import '~@alv-ch/alv-styleguide/build/scss/alv-ch_variables';
+
+/*todo: review styles*/
+.input-multiselect {
+    .remove-button {
+        margin-left: 0.3rem;
+        cursor: pointer;
+    }
+    .input-multiselect__input {
+        &:focus {
+            border: none;
+            box-shadow: none;
+            outline: none;
+        }
+        padding: 0;
+        border: 0;
+        width: 100%;
+    }
+    .input-multiselect__tag {
+        margin: 0 0.2rem 0.2rem 0;
+        @include alv-border-radius(0.5rem);
+        background-color: $additional-accent-amber;
+        border-color: $additional-accent-amber;
+    }
+}

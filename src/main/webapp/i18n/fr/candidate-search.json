@@ -39,9 +39,6 @@
             "MORE_THAN_A_YEAR": "mehr als 1 Jahr",
             "label": "Berufserfahrung"
         },
-        "workplace": {
-            "label": "Arbeitsort"
-        },
         "filter": {
             "title": "Kandidaten suchen"
         },
@@ -89,9 +86,18 @@
             "label": "Ich suche eine/n",
             "placeholder": "Berufsbezeichnung"
         },
+        "workplace": {
+            "placeholder": "Ort, Gemeinde, Kanton",
+            "label": "Arbeitsort"
+        },
         "residenceLocation": {
             "label": "Wohnort"
         },
+        "skills": {
+            "label": "Kenntnisse, F\u00e4higkeiten, Skills",
+            "placeholder": "z.B. Tiefbau"
+        },
+        "title": "Candidate search",
         "workForm": {
             "HOME_WORK": "Heimarbeit",
             "NIGHT_WORK": "Nachtarbeit",

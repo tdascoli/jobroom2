@@ -27,6 +27,7 @@ enum Key {
 })
 export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     @Input() itemLoader: (text: string) => Observable<TypeaheadMultiselectModel[]>;
+    // todo: use lower case as other input components
     @Input() placeHolder: string;
     @Input() editable = true;
     @Input() focusFirst = false;

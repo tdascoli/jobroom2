@@ -1,6 +1,5 @@
 {
     "job-detail": {
-        "external-job-disclaimer": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und \u00f6ffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zus\u00e4tzliche Dienstleistung zur Verf\u00fcgung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualit\u00e4t.                                                                                                                                                              ",
         "action": {
             "applyNow": "Jetzt Bewerben",
             "copyLink": "Link kopieren",
@@ -18,6 +17,7 @@
         "contactPerson": "Ihre Kontaktperson",
         "contactPerson.salutation.MR": "Herr",
         "contactPerson.salutation.MS": "Frau",
+        "external-job-disclaimer": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und \u00f6ffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zus\u00e4tzliche Dienstleistung zur Verf\u00fcgung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualit\u00e4t.                                                                                                                                                              ",
         "language": "Sprache",
         "language.99": "Andere",
         "language.ar": "Arabisch",
