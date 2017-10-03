@@ -24,7 +24,8 @@ td:first-of-type {
 
 @media screen and (min-width: 480px) {
     .sticky-top {
-        top: 135px;
+        position: -webkit-sticky;  // required for Safari
+        top: 155px;
     }
 }
 
