@@ -4,7 +4,7 @@ import { JobSearchRequest, JobService } from '../../services';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { ResponseWrapper } from '../../../shared/model/response-wrapper.model';
-import { getJobSearchState, JobSearchState, LOAD_NEXT_PAGE } from '../index';
+import { getJobSearchState, JobSearchState, LOAD_NEXT_PAGE, SHOW_JOB_LIST_ERROR } from '../index';
 import {
     FILTER_CHANGED,
     FilterChangedAction,
@@ -22,7 +22,6 @@ import { Scheduler } from 'rxjs/Scheduler';
 import { async } from 'rxjs/scheduler/async';
 import { createJobSearchRequest } from '../util/search-request-mapper';
 import { Router } from '@angular/router';
-import { Job } from '../../services/job';
 
 export const JOB_SEARCH_DEBOUNCE = new InjectionToken<number>('JOB_SEARCH_DEBOUNCE');
 export const JOB_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('JOB_SEARCH_SCHEDULER');
@@ -75,7 +74,7 @@ export class JobSearchEffects {
         .withLatestFrom(this.store.select(getJobSearchState))
         .switchMap(([action, state]) =>
             this.getNextJob(state, action as LoadNextJobAction | LoadPreviousJobAction))
-        .map((selectedJob: SelectedJob) => selectedJob
+        .map((selectedJob: SelectedJob) => selectedJob && selectedJob.job
             ? new NextJobLoadedAction(selectedJob)
             : new NextJobErrorAction());
 
@@ -110,11 +109,15 @@ export class JobSearchEffects {
         } else {
             this.store.dispatch(new LoadNextPageAction());
 
-            return this.actions$
+            return Observable.merge(
+                this.actions$
                 .ofType(NEXT_PAGE_LOADED)
-                .take(1)
                 .map((action: NextPageLoadedAction) =>
-                    ({ job: action.payload[0], index: nextJobIndex }));
+                    ({ job: action.payload[0], index: nextJobIndex })),
+                this.actions$
+                    .ofType(SHOW_JOB_LIST_ERROR)
+                    .map((action: ShowJobListErrorAction) => null))
+                .take(1);
         }
     }
 }

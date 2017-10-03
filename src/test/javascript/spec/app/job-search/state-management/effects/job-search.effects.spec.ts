@@ -205,4 +205,122 @@ describe('JobSearchEffects', () => {
             expect(effects.loadNextPage$).toBeObservable(expected);
         });
     });
+
+    describe('loadNextJob$', () => {
+        const job1 = {
+            id: '0',
+            externalId: 'extId0',
+            title: 'title-0',
+            publicationEndDate: new Date()
+        };
+        const job2 = {
+            id: '1',
+            externalId: 'extId1',
+            title: 'title-1',
+            publicationEndDate: new Date()
+        };
+
+        it('should return NextJobLoadedAction on success', () => {
+            const loadJobListAction = new actions.JobListLoadedAction({
+                jobList: [job1, job2],
+                totalCount: 100,
+                page: 0
+            });
+            store.dispatch(loadJobListAction);
+            store.dispatch(new actions.SelectJobAction({ job: job1, index: 0 }));
+
+            const action = new actions.LoadNextJobAction();
+            actions$ = hot('-a', { a: action });
+
+            const nextJobLoadedAction = new actions.NextJobLoadedAction({
+                job: job2,
+                index: 1
+            });
+            const expected = cold('-b', { b: nextJobLoadedAction});
+
+            expect(effects.loadNextJob$).toBeObservable(expected);
+        });
+
+        it('should return NextJobLoadedAction with previous job on success', () => {
+            const loadJobListAction = new actions.JobListLoadedAction({
+                jobList: [job1, job2],
+                totalCount: 100,
+                page: 0
+            });
+            store.dispatch(loadJobListAction);
+            store.dispatch(new actions.SelectJobAction({ job: job2, index: 1 }));
+
+            const action = new actions.LoadPreviousJobAction();
+            actions$ = hot('-a', { a: action });
+
+            const nextJobLoadedAction = new actions.NextJobLoadedAction({
+                job: job1,
+                index: 0
+            });
+            const expected = cold('-b', { b: nextJobLoadedAction});
+
+            expect(effects.loadNextJob$).toBeObservable(expected);
+        });
+
+        it('should return NextJobLoadedAction from the next page on success', () => {
+            const loadJobListAction = new actions.JobListLoadedAction({
+                jobList: [job1],
+                totalCount: 100,
+                page: 0
+            });
+            store.dispatch(loadJobListAction);
+            store.dispatch(new actions.SelectJobAction({ job: job1, index: 0 }));
+
+            const nextPage = [job2];
+            const loadNextJobAction = new actions.LoadNextJobAction();
+            const nextPageLoadedAction = new actions.NextPageLoadedAction(nextPage);
+            actions$ = hot('-a-c', { a: loadNextJobAction, c: nextPageLoadedAction });
+
+            const nextJobLoadedAction = new actions.NextJobLoadedAction({
+                job: job2,
+                index: 1
+            });
+            const expected = cold('---b', { b: nextJobLoadedAction});
+
+            expect(effects.loadNextJob$).toBeObservable(expected);
+        });
+
+        it('should return NextJobErrorAction on error', () => {
+            const loadJobListAction = new actions.JobListLoadedAction({
+                jobList: [job1],
+                totalCount: 100,
+                page: 0
+            });
+            store.dispatch(loadJobListAction);
+            store.dispatch(new actions.SelectJobAction({ job: job2, index: 1 }));
+
+            const loadNextJobAction = new actions.LoadNextJobAction();
+            const nextPageLoadedAction = new actions.NextPageLoadedAction([]);
+            actions$ = hot('-a-c', { a: loadNextJobAction, c: nextPageLoadedAction });
+
+            const error = new actions.NextJobErrorAction();
+            const expected = cold('---b', { b: error});
+
+            expect(effects.loadNextJob$).toBeObservable(expected);
+        });
+
+        it('should return NextJobErrorAction on search error', () => {
+            const loadJobListAction = new actions.JobListLoadedAction({
+                jobList: [job1],
+                totalCount: 100,
+                page: 0
+            });
+            store.dispatch(loadJobListAction);
+            store.dispatch(new actions.SelectJobAction({ job: job2, index: 1 }));
+
+            const loadNextJobAction = new actions.LoadNextJobAction();
+            const showJobListErrorAction = new actions.ShowJobListErrorAction({});
+            actions$ = hot('-a-c', { a: loadNextJobAction, c: showJobListErrorAction });
+
+            const error = new actions.NextJobErrorAction();
+            const expected = cold('---b', { b: error});
+
+            expect(effects.loadNextJob$).toBeObservable(expected);
+        });
+    });
 });

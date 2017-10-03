@@ -222,6 +222,40 @@ describe('jobSearchReducer', () => {
         expect(newState.jobListScrollY).toEqual(600);
         verifyUnchanged(newState, state, ['jobListScrollY']);
     });
+
+    it('should update JobSearchState for SELECT_JOB', () => {
+        //GIVEN
+        const state = initialState;
+        const action = new actions.SelectJobAction({ job: null, index: 1});
+
+        //WHEN
+        const newState = jobSearchReducer(state, action);
+
+        //THEN
+        expect(newState.selectedJobIndex).toEqual(1);
+    });
+
+    it('should update JobSearchState for NEXT_JOB_LOADED', () => {
+        //GIVEN
+        const state = initialState;
+        const nextJob = {
+            id: '0',
+            externalId: 'extId0',
+            title: 'title-0',
+            publicationEndDate: new Date()
+        };
+        const action = new actions.NextJobLoadedAction({
+            job: nextJob,
+            index: 1
+        });
+
+        //WHEN
+        const newState = jobSearchReducer(state, action);
+
+        //THEN
+        expect(newState.selectedJobIndex).toEqual(1);
+        expect(newState.nextJob).toEqual(nextJob);
+    });
 });
 
 function verifyUnchanged(newState: JobSearchState, oldState: JobSearchState, ignoreFields: Array<string>) {
