@@ -73,10 +73,7 @@ export class CandidateSearchFilterComponent implements OnInit {
     }
 
     private disableDependedFields() {
-        this.experienceControl.disable();
-        this.graduationControl.disable();
-
-        this.occupationControl.valueChanges.subscribe((value) => {
+        const disableFields = (value: string) => {
             if (isNullOrUndefined(value)) {
                 this.experienceControl.disable();
                 this.graduationControl.disable();
@@ -84,7 +81,10 @@ export class CandidateSearchFilterComponent implements OnInit {
                 this.experienceControl.enable();
                 this.graduationControl.enable();
             }
-        })
+        };
+
+        disableFields(this.occupationControl.value);
+        this.occupationControl.valueChanges.subscribe(disableFields)
     }
 
     getLanguageOptions(): Observable<Array<string>> {
