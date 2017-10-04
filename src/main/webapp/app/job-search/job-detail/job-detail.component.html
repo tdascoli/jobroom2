@@ -71,7 +71,7 @@
             </div>
 
             <div class="job-detail__content">
-                <span *ngIf="job.locality" class="badge badge-blue">{{ job.locality.zipCode }} {{ job.locality.text }} ({{ job.locality.cantonCode }})</span>
+                <jr2-job-locality [locality]="job.locality"></jr2-job-locality>
                 <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
                 <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
                 <span *ngIf="!job.permanent" class="badge badge-yellow">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>

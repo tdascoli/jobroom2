@@ -22,6 +22,7 @@ import { JobDetailResolver } from './job-detail/job-detail.resolver';
 import { ClipboardModule } from 'ngx-clipboard';
 import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
+import { JobLocalityComponent } from './job-locality/job-locality.component';
 
 @NgModule({
     imports: [
@@ -44,7 +45,8 @@ import { JobService } from './services';
         JobSearchListComponent,
         JobDetailComponent,
         JobSearchFilterComponent,
-        WorkingTimeRangePipe
+        WorkingTimeRangePipe,
+        JobLocalityComponent
     ],
     providers: [
         customHttpProvider(),
