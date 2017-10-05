@@ -33,9 +33,22 @@ services:
             - SPRING_CLOUD_CONFIG_URI=https://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
             - SPRING_CLOUD_CONFIG_LABEL=master
             - SLEEP=40
-            - LIQUIBASE_DROPFIRST=false
+            - LIQUIBASE_DROPFIRST=true
         ports:
             - 8445:8445
+        volumes:
+            - ./config:/config
+    candidateservice-app:
+        build: dockerfiles/candidateservice
+        environment:
+            - JAVA_OPTS=-Xmx512m -Xms256m -Djavax.net.ssl.trustStore=/config/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit
+            - SPRING_PROFILES_ACTIVE=development,swagger
+            - SPRING_CLOUD_CONFIG_URI=https://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
+            - SPRING_CLOUD_CONFIG_LABEL=master
+            - SLEEP=40
+            - LIQUIBASE_DROPFIRST=true
+        ports:
+            - 8446:8446
         volumes:
             - ./config:/config
     jobroom-postgresql:
@@ -57,7 +70,7 @@ services:
         volumes:
             - ./config:/config
     jobroom-kibana:
-        image: kibana:5.4
+        image: kibana:5
         ports:
           - 5601:5601
         environment:
@@ -65,7 +78,7 @@ services:
         links:
           - jobroom-elasticsearch:elasticsearch
     jobroom-elasticsearch:
-        image: elasticsearch:5.4
+        image: elasticsearch:5
         cap_add:
             - IPC_LOCK
         ports:

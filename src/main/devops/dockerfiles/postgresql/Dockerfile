@@ -1,8 +1,8 @@
 # vim:set ft=dockerfile:
-FROM postgres:9.6.2
+FROM postgres:9.6.5
 
 ENV  POSTGRES_USER=jobroom
-ENV  POSTGRES_PASSWORD=
+ENV  POSTGRES_PASSWORD=s3cr3t
 
 # Custom initialization scripts
 COPY ./create_user.sh   /docker-entrypoint-initdb.d/10-create_user.sh
