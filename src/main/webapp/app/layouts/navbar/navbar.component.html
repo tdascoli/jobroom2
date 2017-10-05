@@ -16,7 +16,7 @@
         </a>
 
         <div class="ml-auto">
-            <div class="drawer fold" aria-labelledby="drawer" >
+            <div class="drawer fold" aria-labelledby="drawer">
                 <div class="drawer-contents">
                     <div class="drawer-heading">
                         <button aria-foldedopen="false"
@@ -33,8 +33,8 @@
 
                     <ul class="navbar-nav">
                         <li class="nav-item megamenu dropdown dropdown--canvas" [ngClass]="{show: !isNavbarCollapsed}" jhiMegaMenu>
-                            <a class="nav-link dropdown-toggle active" href="#"
-                               role="button"  (click)="toggleNavbar()"
+                            <a class="nav-link dropdown-toggle active" href="javascript:void(0);"
+                               role="button" (click)="toggleNavbar()"
                                aria-haspopup="true" aria-expanded="false">
                                 <i class="fa fa-bars" aria-hidden="true"></i>
                                 Job-Room
@@ -174,15 +174,33 @@
                                 <span class="d-sm-none">zu</span>amstat
                             </a>
                         </li>
-                        <li class="nav-item d-none d-sm-block">
-                            <a class="nav-link nav-link--login" (click)="login()"
-                               *ngIf="!isAuthenticated()">
+                        <li class="nav-item d-none d-sm-block" *ngIf="!isAuthenticated()">
+                            <a class="nav-link nav-link--login" (click)="login()" jhiTranslate="global.menu.account.login">
                                 Login
                             </a>
-                            <a class="nav-link nav-link--login" (click)="logout()"
-                               *ngIf="isAuthenticated()">
-                                Logout
+
+                        </li>
+                        <li ngbDropdown class="nav-item d-none d-sm-block dropdown" *ngIf="isAuthenticated()">
+                            <a ngbDropdownToggle class="nav-link nav-link--account dropdown-toggle" href="javascript:void(0);" id="account-menu">
+                                {{account.firstName}} {{account.lastName}}
                             </a>
+                            <ul class="dropdown-menu dropdown-menu-right dropdown-menu--account" ngbDropdownMenu>
+                                <li>
+                                    <a class="dropdown-item dropdown-item--account" routerLink="settings" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <span jhiTranslate="global.menu.account.settings">Settings</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item dropdown-item--account" routerLink="password" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <span jhiTranslate="global.menu.account.password">Password</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a class="dropdown-item dropdown-item--account" id="logout" routerLinkActive="active" (click)="logout()">
+                                        <span jhiTranslate="global.menu.account.logout">Sign out</span>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
                         <li class="nav-item d-none d-sm-block">
                             <ul class="navbar-nav navbar--language-switcher">
