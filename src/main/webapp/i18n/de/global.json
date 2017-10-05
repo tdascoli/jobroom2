@@ -51,13 +51,19 @@
     },
     "footer": {
         "link": {
+            "seco": {
+                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+            },
             "legal": {
                 "text": "Rechtliche Grundlagen"
             },
-            "seco": {
-                "text": "Staatssekretariat f\u00fcr Wirtschaft SECO"
+            "abbreviation": {
+                "text": "Abk\u00fcrzungen"
             }
         }
+    },
+    "header": {
+        "title": "Arbeitslosenversicherung ALV"
     },
     "global": {
         "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",

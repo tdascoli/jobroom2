@@ -19,3 +19,29 @@ Print configuration
 button.close {
     cursor: pointer;
 }
+
+html, body {
+    margin: 0px;
+}
+
+div.main {
+    min-height: 100vh;
+    margin-bottom: -61px;
+}
+
+div.main:after {
+    content: "";
+    display: block;
+}
+
+footer,
+.footer,
+div.main:after {
+    height: 61px;
+}
+
+footer,
+.footer {
+    bottom: 0;
+    width: 100%;
+}

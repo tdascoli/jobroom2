@@ -142,8 +142,10 @@ global,error.internalServerError,Internal server error,Internal server error,Err
 global,error.server.not.reachable,Server ist nicht erreichbar,Server not reachable,Serveur inaccessible,Server non raggiungibile
 global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
 global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Login déjà utilisé !,Il nome utente è già in uso!
+global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV
 global,footer.link.legal.text,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen
-global,footer.link.seco.text,Staatssekretariat für Wirtschaft SECO,Staatssekretariat für Wirtschaft SECO,Staatssekretariat für Wirtschaft SECO,Staatssekretariat für Wirtschaft SECO
+global,footer.link.abbreviation.text,Abkürzungen,Abkürzungen,Abkürzungen,Abkürzungen
+global,header.title,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
 global,global.field.id,ID,ID,ID,ID
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
