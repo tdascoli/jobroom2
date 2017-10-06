@@ -82,15 +82,7 @@
             }
         },
         "no-selection": "",
-        "occupation": {
-            "label": "Ich suche eine/n",
-            "placeholder": "Berufsbezeichnung"
-        },
-        "residenceLocation": {
-            "label": "Wohnort"
-        },
         "skills": {
-            "label": "Kenntnisse, F\u00e4higkeiten, Skills",
             "placeholder": "z.B. Tiefbau"
         },
         "title": "Candidate search",

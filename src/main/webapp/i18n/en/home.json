@@ -17,6 +17,12 @@
             "jobPublicationTab": "Job publizieren",
             "jobSearch": {
                 "title": "Finden Sie jetzt Ihren Traumjob!"
+            },
+            "candidate-search": {
+                "title": "Finden Sie passende Kandidaten",
+                "search-button": {
+                    "title": "Kandidaten anzeigen"
+                }
             }
         }
     }

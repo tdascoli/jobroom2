@@ -2,8 +2,8 @@ import { initialState } from '../../../../../../../main/webapp/app/home/state-ma
 import { CandidateSearchToolSubmittedAction } from '../../../../../../../main/webapp/app/home/state-management/actions/candidate-search-tool.actions';
 
 import {
-    Graduation,
-    GreaterRegion
+    Canton,
+    Graduation
 } from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
 import { candidateSearchToolReducer } from '../../../../../../../main/webapp/app/home/state-management/reducers/candidate-search-tool.reducers';
 
@@ -12,7 +12,7 @@ describe('candidateSearchToolReducer', () => {
         // GIVEN
         const searchModel = {
             occupation: { code: '11', name: 'test' },
-            residence: GreaterRegion.BS,
+            residence: Canton.BS,
             graduation: Graduation.ACCEPTED,
         };
         const action = new CandidateSearchToolSubmittedAction(searchModel);

@@ -1,6 +1,6 @@
 import {
-    Graduation,
-    GreaterRegion
+    Canton,
+    Graduation
 } from '../../../candidate-search/services/candidate-search-request';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 
@@ -8,7 +8,7 @@ import { OccupationSuggestion } from '../../../shared/reference-service/occupati
 
 export interface CandidateSearchToolState {
     occupation?: OccupationSuggestion,
-    residence?: GreaterRegion,
+    residence?: Canton,
     graduation?: Graduation,
 }
 

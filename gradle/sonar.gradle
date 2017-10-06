@@ -5,7 +5,6 @@ sonarqube {
         property "sonar.host.url", 'https://sonarcloud.io'
         property "sonar.organization", 'alvchbot-github'
         property "sonar.login", System.env.SONARQUBE_LOGIN
-//        property "sonar.login", "0737a751397d2b05b3bab2e13f1ec63632698928"
         property "sonar.sources", files(sourceSets.main.allSource.srcDirs,  fileTree(dir: 'src/main/webapp/app', include: '**/*', exclude: '*-aot.ts'))
         property "sonar.java.binaries", sourceSets.main.output.classesDirs
         property "sonar.java.test.binaries", sourceSets.test.output.classesDirs

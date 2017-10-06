@@ -47,6 +47,6 @@ export enum CEFR_Level {
     NONE, BASIC, INTERMEDIATE, PROFICIENT
 }
 
-export enum GreaterRegion {
-    _1, _2, _3, _4, _5, _6, _99, AG, AI, AR, BE, BL, BS, CH, FL, FR, GE, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG, ZH
+export enum Canton {
+    AG, AI, AR, BE, BL, BS, CH, FL, FR, GE, GL, GR, JU, LU, NE, NW, OW, SG, SH, SO, SZ, TG, TI, UR, VD, VS, ZG, ZH
 }

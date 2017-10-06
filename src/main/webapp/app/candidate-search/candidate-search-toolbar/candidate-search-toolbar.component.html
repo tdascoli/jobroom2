@@ -13,19 +13,22 @@
             </div>
             <div class="form-group form-group--wide">
                 <select formControlName="residence" class="form-control form-control-lg custom-select">
-                    <option selected="" value="null" translate="candidate-search.toolbar.residence.placeholder"></option>
-                    <option *ngFor="let greaterRegion of greaterRegions | keys" [ngValue]="greaterRegion.key">
-                        {{'global.reference.greaterRegion.' + greaterRegion.value | translate}}
+                    <option selected="" value="null"
+                            translate="candidate-search.toolbar.residence.placeholder"></option>
+                    <option *ngFor="let canton of cantons | keys" [ngValue]="canton.key"
+                            translate="{{'global.reference.canton.' + canton.value}}">
                     </option>
                 </select>
             </div>
 
             <div class="form-group form-group--wide">
-                <label for="graduation" class="sr-only">{{ 'candidate-search.toolbar.graduation.label' | translate}}</label>
+                <label for="graduation" class="sr-only">{{ 'candidate-search.toolbar.graduation.label' |
+                    translate}}</label>
                 <select formControlName="graduation" class="form-control form-control-lg custom-select" id="graduation">
                     <option selected="" value="null" translate="candidate-search.toolbar.graduation.default"></option>
                     <option *ngFor="let graduation of graduationOptions | keys"
-                            [ngValue]="graduation.key">{{'candidate-search.graduation.' + graduation.value | translate}}</option>
+                            [ngValue]="graduation.key">{{'candidate-search.graduation.' + graduation.value | translate}}
+                    </option>
                 </select>
             </div>
 

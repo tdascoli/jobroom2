@@ -1,12 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
-import {
-    CandidateSearchFilter} from '../state-management/state/candidate-search.state';
+import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import {
     Availability,
+    Canton,
     DrivingLicenceCategory,
     Experience,
-    GreaterRegion,
     ISCED_1997,
     WorkForm
 } from '../services/candidate-search-request';
@@ -23,7 +22,7 @@ export class CandidateSearchFilterComponent implements OnInit {
     @Input()
     searchFilter: CandidateSearchFilter;
 
-    greaterRegions = GreaterRegion;
+    cantons = Canton;
     experiences = Experience;
     availabilities = Availability;
     educationLevels = ISCED_1997;

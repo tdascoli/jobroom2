@@ -3,8 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/reference-service/occupation.service';
 import {
-    Graduation,
-    GreaterRegion
+    Canton,
+    Graduation
 } from '../../../candidate-search/services/candidate-search-request';
 import { Store } from '@ngrx/store';
 import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
@@ -13,14 +13,15 @@ import { OccupationSuggestion } from '../../../shared/reference-service/occupati
 
 @Component({
     selector: 'jr2-candidate-search-tool',
-    templateUrl: './candidate-search-tool.component.html'
+    templateUrl: './candidate-search-tool.component.html',
+    styleUrls: ['./candidate-search-tool.component.scss']
 })
 export class CandidateSearchToolComponent implements OnInit {
     @Input() candidateSearchToolModel: CandidateSearchToolState;
 
     candidateSearchForm: FormGroup;
 
-    greaterRegions = GreaterRegion;
+    cantons = Canton;
     graduations = Graduation;
 
     constructor(private occupationService: OccupationService,

@@ -7,3 +7,7 @@
 .toolbar-form .form-group {
     max-width: 25%;
 }
+
+:host /deep/ .form-inline .form-control {
+    width: 100%;
+}

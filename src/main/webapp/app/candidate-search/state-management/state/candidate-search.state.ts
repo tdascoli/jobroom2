@@ -1,10 +1,10 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import {
     Availability,
+    Canton,
     DrivingLicenceCategory,
     Experience,
     Graduation,
-    GreaterRegion,
     ISCED_1997,
     LanguageSkill,
     WorkForm
@@ -24,7 +24,7 @@ export interface CandidateSearchFilter {
     skills: Array<string>,
     experience?: Experience,
     workplace?: string,
-    residence?: GreaterRegion,
+    residence?: Canton,
     availability?: Availability,
     workload: [number, number];
     workForm?: WorkForm,

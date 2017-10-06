@@ -67,10 +67,6 @@ candidate-search,candidate-search.languageSkills.spoken.no-selection,mündlich,m
 candidate-search,candidate-search.languageSkills.written.label,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.languageSkills.written.no-selection,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.no-selection,,,,
-candidate-search,candidate-search.occupation.label,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n,Ich suche eine/n
-candidate-search,candidate-search.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
-candidate-search,candidate-search.residenceLocation.label,Wohnort,Wohnort,Wohnort,Wohnort
-candidate-search,candidate-search.skills.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
 candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau
 candidate-search,candidate-search.title,Candidate search,Candidate search,Candidate search,Candidate search
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
@@ -209,41 +205,34 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,Your password is required to be at least 4 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,Your password is required.,Votre mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Robustezza della password:
-global,global.reference.greaterRegion.1,"Grossregion 1 (GE, VD, FR, NE, VS, JU)","grande région 1 (GE, VD, FR, NE, VS, JU)","grande regione 1 (GE, VD, FR, NE, VS, JU)","Grossregion 1 (GE, VD, FR, NE, VS, JU)"
-global,global.reference.greaterRegion.2,"Grossregion 2 (BE, SO, BS, BL, AG)","grande région 2 (BE, SO, BS, BL, AG)","grande regione 2 (BE, SO, BS, BL, AG)","Grossregion 2 (BE, SO, BS, BL, AG)"
-global,global.reference.greaterRegion.3,"Grossregion 3 (UR, SZ, OW, NW, LU, ZG)","grande région 3 (UR, SZ, OW, NW, LU, ZG)","grande regione 3 (UR, SZ, OW, NW, LU, ZG)","Grossregion 3 (UR, SZ, OW, NW, LU, ZG)"
-global,global.reference.greaterRegion.4,"Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","grande région 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","grande regione 4 (ZH, SH, TG, SG, AI, AR, GL, GR)","Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)"
-global,global.reference.greaterRegion.5,Grossregion 5 (TI),grande région 5 (TI),grande regione 5 (TI),Grossregion 5 (TI)
-global,global.reference.greaterRegion.6,"Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grande région 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grande regione 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)","Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)"
-global,global.reference.greaterRegion.99,Ausland,étranger,estero,Ausland
-global,global.reference.greaterRegion.AG,Aargau,Argovie,Argovia,Aargau
-global,global.reference.greaterRegion.AI,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno,Appenzell Innerrhoden
-global,global.reference.greaterRegion.AR,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno,Appenzell Ausserrhoden
-global,global.reference.greaterRegion.BE,Bern,Berne,Berna,Bern
-global,global.reference.greaterRegion.BL,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna,Basel-Landschaft
-global,global.reference.greaterRegion.BS,Basel-Stadt,Bâle-Ville,Basilea-Città,Basel-Stadt
-global,global.reference.greaterRegion.CH,Schweiz,Suisse,Svizzera,Schweiz
-global,global.reference.greaterRegion.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein
-global,global.reference.greaterRegion.FR,Freiburg,Fribourg,Friburgo,Freiburg
-global,global.reference.greaterRegion.GE,Genf,Genève,Ginevra,Genf
-global,global.reference.greaterRegion.GL,Glarus,Glaris,Glarona,Glarus
-global,global.reference.greaterRegion.GR,Graubünden,Grisons,Grigioni,Graubünden
-global,global.reference.greaterRegion.JU,Jura,Jura,Giura,Jura
-global,global.reference.greaterRegion.LU,Luzern,Lucerne,Lucerna,Luzern
-global,global.reference.greaterRegion.NE,Neuenburg,Neuchâtel,Neuchâtel,Neuenburg
-global,global.reference.greaterRegion.NW,Nidwalden,Nidwald,Nidwaldo,Nidwalden
-global,global.reference.greaterRegion.OW,Obwalden,Obwald,Obwaldo,Obwalden
-global,global.reference.greaterRegion.SG,St. Gallen,St-Gall,San Gallo,St. Gallen
-global,global.reference.greaterRegion.SH,Schaffhausen,Schaffhouse,Sciaffusa,Schaffhausen
-global,global.reference.greaterRegion.SO,Solothurn,Soleure,Soletta,Solothurn
-global,global.reference.greaterRegion.SZ,Schwyz,Schwyz,Svitto,Schwyz
-global,global.reference.greaterRegion.TG,Thurgau,Thurgovie,Turgovia,Thurgau
-global,global.reference.greaterRegion.TI,Tessin,Tessin,Ticino,Tessin
-global,global.reference.greaterRegion.UR,Uri,Uri,Uri,Uri
-global,global.reference.greaterRegion.VD,Waadt,Vaud,Vaud,Waadt
-global,global.reference.greaterRegion.VS,Wallis,Valais,Vallese,Wallis
-global,global.reference.greaterRegion.ZG,Zug,Zoug,Zugo,Zug
-global,global.reference.greaterRegion.ZH,Zürich,Zurich,Zurigo,Zürich
+global,global.reference.canton.AG,Aargau,Argovie,Argovia,Aargau
+global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno,Appenzell Innerrhoden
+global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno,Appenzell Ausserrhoden
+global,global.reference.canton.BE,Bern,Berne,Berna,Bern
+global,global.reference.canton.BL,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna,Basel-Landschaft
+global,global.reference.canton.BS,Basel-Stadt,Bâle-Ville,Basilea-Città,Basel-Stadt
+global,global.reference.canton.CH,Schweiz,Suisse,Svizzera,Schweiz
+global,global.reference.canton.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein
+global,global.reference.canton.FR,Freiburg,Fribourg,Friburgo,Freiburg
+global,global.reference.canton.GE,Genf,Genève,Ginevra,Genf
+global,global.reference.canton.GL,Glarus,Glaris,Glarona,Glarus
+global,global.reference.canton.GR,Graubünden,Grisons,Grigioni,Graubünden
+global,global.reference.canton.JU,Jura,Jura,Giura,Jura
+global,global.reference.canton.LU,Luzern,Lucerne,Lucerna,Luzern
+global,global.reference.canton.NE,Neuenburg,Neuchâtel,Neuchâtel,Neuenburg
+global,global.reference.canton.NW,Nidwalden,Nidwald,Nidwaldo,Nidwalden
+global,global.reference.canton.OW,Obwalden,Obwald,Obwaldo,Obwalden
+global,global.reference.canton.SG,St. Gallen,St-Gall,San Gallo,St. Gallen
+global,global.reference.canton.SH,Schaffhausen,Schaffhouse,Sciaffusa,Schaffhausen
+global,global.reference.canton.SO,Solothurn,Soleure,Soletta,Solothurn
+global,global.reference.canton.SZ,Schwyz,Schwyz,Svitto,Schwyz
+global,global.reference.canton.TG,Thurgau,Thurgovie,Turgovia,Thurgau
+global,global.reference.canton.TI,Tessin,Tessin,Ticino,Tessin
+global,global.reference.canton.UR,Uri,Uri,Uri,Uri
+global,global.reference.canton.VD,Waadt,Vaud,Vaud,Waadt
+global,global.reference.canton.VS,Wallis,Valais,Vallese,Wallis
+global,global.reference.canton.ZG,Zug,Zoug,Zugo,Zug
+global,global.reference.canton.ZH,Zürich,Zurich,Zurigo,Zürich
 global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
 global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
 global,global.reference.language.ch-de,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
@@ -312,6 +301,8 @@ home,home.tools.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidate
 home,home.tools.job-search.search-button.title,Traumjob finden!,Traumjob finden!,Traumjob finden!,Traumjob finden!
 home,home.tools.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
+home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten
+home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen
 job-detail,job-detail.external-job-disclaimer,"Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.","This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.","Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.","Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?."
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
 job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren

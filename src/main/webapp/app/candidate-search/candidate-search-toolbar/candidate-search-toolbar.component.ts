@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../shared/reference-service/occupation.service';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
-import { Graduation, GreaterRegion } from '../services/candidate-search-request';
+import { Canton, Graduation } from '../services/candidate-search-request';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
 
@@ -22,7 +22,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     maxCandidateListSize: number = MAX_CANDIDATE_LIST_SIZE;
     graduationOptions = Graduation;
-    greaterRegions = GreaterRegion;
+    cantons = Canton;
 
     toolbarForm: FormGroup;
 

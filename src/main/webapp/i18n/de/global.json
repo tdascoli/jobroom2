@@ -151,14 +151,7 @@
             }
         },
         "reference": {
-            "greaterRegion": {
-                "1": "Grossregion 1 (GE, VD, FR, NE, VS, JU)",
-                "2": "Grossregion 2 (BE, SO, BS, BL, AG)",
-                "3": "Grossregion 3 (UR, SZ, OW, NW, LU, ZG)",
-                "4": "Grossregion 4 (ZH, SH, TG, SG, AI, AR, GL, GR)",
-                "5": "Grossregion 5 (TI)",
-                "6": "Grossregion 6 (AG, GL, SG, SH, SZ, TG, ZG, ZH)",
-                "99": "Ausland",
+            "canton": {
                 "AG": "Aargau",
                 "AI": "Appenzell Innerrhoden",
                 "AR": "Appenzell Ausserrhoden",
