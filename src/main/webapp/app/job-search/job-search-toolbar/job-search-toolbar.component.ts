@@ -25,6 +25,7 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     @Input() searchQuery: JobSearchQuery;
 
     toolbarForm: FormGroup;
+    maxJobListSize: number = MAX_JOB_LIST_SIZE;
 
     private subscription: Subscription;
 
@@ -66,26 +67,4 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
 
     fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(query);
-
-    getButtonValueKey() {
-        let key = 'job-search.toolbar.search-button.title';
-
-        if (this.loading) {
-            key += '.loading';
-        } else if (this.totalCount === 0) {
-            key += '.none';
-        } else if (this.totalCount === 1) {
-            key += '.one';
-        } else if (this.totalCount > MAX_JOB_LIST_SIZE) {
-            key += '.many';
-        } else {
-            key += '.other';
-        }
-
-        return key;
-    }
-
-    getMaxCount() {
-        return Math.min(this.totalCount, MAX_JOB_LIST_SIZE);
-    }
 }

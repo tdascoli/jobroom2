@@ -11,3 +11,4 @@ export const VERSION = _VERSION;
 export const DEBUG_INFO_ENABLED = _DEBUG_INFO_ENABLED;
 export const SERVER_API_URL = _SERVER_API_URL;
 export const MAX_JOB_LIST_SIZE = 500;
+export const MAX_CANDIDATE_LIST_SIZE = 500;

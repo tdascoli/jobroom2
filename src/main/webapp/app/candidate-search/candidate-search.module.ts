@@ -11,6 +11,8 @@ import { JobroomSharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { LanguageSkillService } from './services/language-skill.service';
+import { CandidateSearchToolbarComponent } from './candidate-search-toolbar/candidate-search-toolbar.component';
+import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.module';
 
 @NgModule({
     imports: [
@@ -19,12 +21,14 @@ import { LanguageSkillService } from './services/language-skill.service';
         JobroomSharedModule,
         CommonModule,
         ReactiveFormsModule,
-        CandidateSearchRoutingModule
+        CandidateSearchRoutingModule,
+        JobSearchSharedModule
     ],
     declarations: [
         CandidateSearchComponent,
         CandidateSearchFilterComponent,
-        LanguageSelectorComponent
+        LanguageSelectorComponent,
+        CandidateSearchToolbarComponent
     ],
     providers: [
         LanguageSkillService

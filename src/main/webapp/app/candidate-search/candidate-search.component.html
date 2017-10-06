@@ -1,3 +1,9 @@
+<jr2-candidate-search-toolbar [totalCount]="totalCount$ | async"
+                              [loading]="loading$ | async"
+                              [searchFilter]="searchFilter$ | async"
+                              (searchCandidates)="searchCandidates($event)"
+                              jhiStickyToolbarItem></jr2-candidate-search-toolbar>
+
 <div class="container">
     <div class="base">
         <div class="base__subnavbar">

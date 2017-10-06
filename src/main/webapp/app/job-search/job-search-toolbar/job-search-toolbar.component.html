@@ -17,12 +17,11 @@
                         (localitySelect)="handleLocalitySelect($event)"
                         [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
                 </div>
-                <button class="btn btn-primary btn-lg"
-                        [ngClass]="{'btn-await btn-await--inverse': loading}">
-                    <span [jhiTranslate]="getButtonValueKey()"
-                          [translateValues]="{count: getMaxCount() | jr2Number}">
-                    </span>
-                </button>
+
+                <jr2-search-button [loading]="loading"
+                                   [maxSearchSize]="maxJobListSize"
+                                   [titleTranslation]="'job-search.toolbar.search-button.title'"
+                                   [totalCount]="totalCount"></jr2-search-button>
         </form>
     </div>
 </div>

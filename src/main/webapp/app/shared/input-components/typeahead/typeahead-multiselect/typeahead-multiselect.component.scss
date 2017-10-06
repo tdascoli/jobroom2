@@ -1,6 +1,7 @@
 @import '../../../../../content/scss/jbr2_variables.scss';
 
 .typeahead-multiselect {
+    width: 100%;
 
     .typeahead-multiselect__input {
         &:focus {
@@ -10,6 +11,10 @@
         }
         padding: 0;
         border: 0;
+        width: 100%;
+    }
+
+    input {
         width: 100%;
     }
 
@@ -47,5 +52,9 @@
     button.dropdown-item {
         width: 100%;
     }
+}
+
+:host {
+    width: 100%;
 }
 

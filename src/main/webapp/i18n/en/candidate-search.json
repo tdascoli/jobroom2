@@ -86,10 +86,6 @@
             "label": "Ich suche eine/n",
             "placeholder": "Berufsbezeichnung"
         },
-        "workplace": {
-            "placeholder": "Ort, Gemeinde, Kanton",
-            "label": "Arbeitsort"
-        },
         "residenceLocation": {
             "label": "Wohnort"
         },
@@ -110,6 +106,31 @@
         },
         "workload": {
             "label": "Arbeitspensum"
+        },
+        "workplace": {
+            "label": "Arbeitsort",
+            "placeholder": "Ort, Gemeinde, Kanton"
+        },
+        "toolbar": {
+            "occupation": {
+                "placeholder": "Berufsbezeichnung, F\u00e4higkeiten, Skills"
+            },
+            "residence": {
+                "placeholder": "Wohnort: Kanton"
+            },
+            "graduation": {
+                "label": "Abschluss",
+                "default": "Abschluss ausw\u00e4hlen..."
+            },
+            "search-button": {
+                "title": {
+                    "loading": "Loading",
+                    "many": "{{count}}+ Candidates",
+                    "none": "No Candidates",
+                    "one": "1 Candidate",
+                    "other": "{{count}} Candidates"
+                }
+            }
         }
     }
 }

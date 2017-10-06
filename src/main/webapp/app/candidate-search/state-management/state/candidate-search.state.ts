@@ -12,7 +12,9 @@ import {
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 
 export interface CandidateSearchState {
-    searchFilter: CandidateSearchFilter
+    searchFilter: CandidateSearchFilter;
+    loading: boolean;
+    totalCandidatesCount: number;
 }
 
 // todo: move OccupationSuggestion to a reference-service module
@@ -37,8 +39,12 @@ export const initialState: CandidateSearchState = {
         skills: [],
         languageSkills: [],
         workload: [0, 100]
-    }
+    },
+    loading: false,
+    totalCandidatesCount: 0
 };
 
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
 export const getSearchFilter = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchFilter);
+export const getLoading = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.loading);
+export const getTotalCandidatesCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidatesCount);

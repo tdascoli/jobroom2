@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@alv-ch/alv-styleguide@^0.0.8":
+"@alv-ch/alv-styleguide@0.0.8":
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.8.tgz#e4e83bdebc4f4c82f44cd9ef7217627fd5805858"
   dependencies:

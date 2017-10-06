@@ -82,6 +82,15 @@ candidate-search,candidate-search.workLocation.label,Arbeitsort,Arbeitsort,Arbei
 candidate-search,candidate-search.workload.label,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
 candidate-search,candidate-search.workplace.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
 candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton"
+candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills"
+candidate-search,candidate-search.toolbar.residence.placeholder,"Wohnort: Kanton","Wohnort: Kanton","Wohnort: Kanton","Wohnort: Kanton"
+candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
+candidate-search,candidate-search.toolbar.graduation.default,"Abschluss auswählen...","Abschluss auswählen...","Abschluss auswählen...","Abschluss auswählen..."
+candidate-search,candidate-search.toolbar.search-button.title.loading,Loading,Loading,Loading,Loading
+candidate-search,candidate-search.toolbar.search-button.title.many,{{count}}+ Kandidaten,{{count}}+ Candidates,{{count}}+ Kandidaten,{{count}}+ Kandidaten
+candidate-search,candidate-search.toolbar.search-button.title.none,No Kandidaten,No Candidates,No Kandidaten,No Kandidaten
+candidate-search,candidate-search.toolbar.search-button.title.one,1 der Kandidat,1 Candidate,1 der Kandidat,1 der Kandidat
+candidate-search,candidate-search.toolbar.search-button.title.other,{{count}} Kandidaten,{{count}} Candidates,{{count}} Kandidaten,{{count}} Kandidaten
 configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filtrer (par préfixe),Filtro (per prefisso)
 configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
