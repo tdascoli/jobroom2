@@ -2,6 +2,7 @@ package ch.admin.seco.jobroom.web.rest;
 
 import java.util.Collections;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 
@@ -19,6 +20,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
+import org.springframework.security.web.authentication.WebAuthenticationDetails;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -49,10 +51,11 @@ public class UserJWTController {
 
     @PostMapping("/authenticate")
     @Timed
-    public ResponseEntity authorize(@Valid @RequestBody LoginVM loginVM, HttpServletResponse response) {
+    public ResponseEntity authorize(@Valid @RequestBody LoginVM loginVM, HttpServletRequest request, HttpServletResponse response) {
 
         UsernamePasswordAuthenticationToken authenticationToken =
             new UsernamePasswordAuthenticationToken(loginVM.getUsername(), loginVM.getPassword());
+        authenticationToken.setDetails(new WebAuthenticationDetails(request));
 
         try {
             Authentication authentication = this.authenticationManager.authenticate(authenticationToken);
@@ -70,10 +73,12 @@ public class UserJWTController {
 
     @PostMapping(value = "/authenticate", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @Timed
-    public ResponseEntity authorizeOauth(@RequestParam String username, @RequestParam String password, HttpServletResponse response) {
+    public ResponseEntity authorizeOauth(@RequestParam String username, @RequestParam String password,
+        HttpServletRequest request, HttpServletResponse response) {
 
         UsernamePasswordAuthenticationToken authenticationToken =
             new UsernamePasswordAuthenticationToken(username, password);
+        authenticationToken.setDetails(new WebAuthenticationDetails(request));
 
         try {
             Authentication authentication = this.authenticationManager.authenticate(authenticationToken);
