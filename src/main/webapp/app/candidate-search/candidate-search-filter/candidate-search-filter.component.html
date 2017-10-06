@@ -3,22 +3,6 @@
 <form [formGroup]="filterForm" novalidate>
 
     <div class="form-group">
-        <label for="occupation-input" class="small" translate="candidate-search.occupation.label"></label>
-        <input id="occupation-input" formControlName="occupation" class="form-control form-control-sm"
-               [ngbTypeahead]="fetchOccupationSuggestions"
-               [editable]="false"
-               [placeholder]="'candidate-search.occupation.placeholder' | translate"
-               [inputFormatter]="occupationFormatter"
-               [resultFormatter]="occupationFormatter">
-    </div>
-
-    <div class="form-group">
-        <label class="small" translate="candidate-search.skills.label"></label>
-        <jr2-multiselect id="skills" formControlName="skills" [placeholder]="'candidate-search.skills.placeholder' | translate" class="form-control form-control-sm">
-        </jr2-multiselect>
-    </div>
-
-    <div class="form-group">
         <label for="experience" class="small" translate="candidate-search.experience.label"></label>
         <select formControlName="experience" id="experience" class="form-control-sm custom-select">
             <option selected="" translate="candidate-search.no-selection"></option>
@@ -31,16 +15,6 @@
     <div class="form-group">
         <label class="small" translate="candidate-search.workplace.label"></label>
         <jr2-typeahead-singleselect [placeholder]="'candidate-search.workplace.placeholder' | translate" [itemLoader]="fetchLocalitySuggestions" [editable]="false"></jr2-typeahead-singleselect>
-    </div>
-
-    <div class="form-group">
-        <label for="residence" class="small" translate="candidate-search.residenceLocation.label"></label>
-        <select formControlName="residence" id="residence" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
-            <option *ngFor="let greaterRegion of greaterRegions | keys" [ngValue]="greaterRegion.key">
-                {{'global.reference.greaterRegion.' + greaterRegion.value | translate}}
-            </option>
-        </select>
     </div>
 
     <div class="form-group">
@@ -59,11 +33,17 @@
     </div>
 
     <div class="form-group">
-        <label for="workForm" class="small" translate="candidate-search.workForm.label"></label>
-        <select formControlName="workForm" id="workForm" class="form-control-sm custom-select">
+        <label class="small" translate="candidate-search.languageSkills.label"></label>
+        <jr2-language-selector formControlName="languageSkills" [languageOptions]="getLanguageOptions() | async">
+        </jr2-language-selector>
+    </div>
+
+    <div class="form-group">
+        <label for="drivingLicenceCategory" class="small" translate="candidate-search.drivingLicenceCategory.label"></label>
+        <select formControlName="drivingLicenceCategory" id="drivingLicenceCategory" class="form-control-sm custom-select">
             <option selected="" translate="candidate-search.no-selection"></option>
-            <option *ngFor="let workForm of workForms | keys" [ngValue]="workForm.key">
-                {{'candidate-search.workForm.' + workForm.value | translate}}
+            <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys" [ngValue]="drivingLicenceCategory.key">
+                {{'candidate-search.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
             </option>
         </select>
     </div>
@@ -79,28 +59,12 @@
     </div>
 
     <div class="form-group">
-        <label for="drivingLicenceCategory" class="small" translate="candidate-search.drivingLicenceCategory.label"></label>
-        <select formControlName="drivingLicenceCategory" id="drivingLicenceCategory" class="form-control-sm custom-select">
+        <label for="workForm" class="small" translate="candidate-search.workForm.label"></label>
+        <select formControlName="workForm" id="workForm" class="form-control-sm custom-select">
             <option selected="" translate="candidate-search.no-selection"></option>
-            <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys" [ngValue]="drivingLicenceCategory.key">
-                {{'candidate-search.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
+            <option *ngFor="let workForm of workForms | keys" [ngValue]="workForm.key">
+                {{'candidate-search.workForm.' + workForm.value | translate}}
             </option>
         </select>
-    </div>
-
-    <div class="form-group">
-        <label for="graduation" class="small" translate="candidate-search.graduation.label"></label>
-        <select formControlName="graduation" id="graduation" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
-            <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key">
-                {{'candidate-search.graduation.' + graduation.value | translate}}
-            </option>
-        </select>
-    </div>
-
-    <div class="form-group">
-        <label class="small" translate="candidate-search.languageSkills.label"></label>
-        <jr2-language-selector formControlName="languageSkills" [languageOptions]="getLanguageOptions() | async">
-        </jr2-language-selector>
     </div>
 </form>
