@@ -12,7 +12,7 @@
             }
         },
         "password": {
-            "forgot": "Sie haben Ihr Passwort vergessen?"
+            "forgot": "Passwort vergessen?"
         },
         "title": "Anmeldung"
     }
