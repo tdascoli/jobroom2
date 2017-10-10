@@ -2,15 +2,15 @@
 # yarn lockfile v1
 
 
-"@alv-ch/alv-styleguide@0.0.8":
-  version "0.0.8"
-  resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.8.tgz#e4e83bdebc4f4c82f44cd9ef7217627fd5805858"
+"@alv-ch/alv-styleguide@0.0.9":
+  version "0.0.9"
+  resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.9.tgz#ceaeddfaa12d4b3cc3ae5c05e80a68054802ff9e"
   dependencies:
     bootstrap "4.0.0-beta"
     bootstrap-drawer "1.0.6"
     font-awesome "4.7.0"
     jquery "^3.0.0"
-    scrolltofixed "1.0.6"
+    smartbanner.js "1.7.0"
 
 "@angular/cli@1.2.6":
   version "1.2.6"
@@ -5886,10 +5886,10 @@ ngc-webpack@3.1.1:
     ts-node "^3.2.0"
 
 ngx-clipboard@^8.0.4:
-  version "8.0.4"
-  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-8.0.4.tgz#97cda30d788e7dc1d280e36a7728f86600c455fd"
+  version "8.1.0"
+  resolved "https://registry.yarnpkg.com/ngx-clipboard/-/ngx-clipboard-8.1.0.tgz#9b931dd7b4f0cad85bdf971978ddc60f9efb877d"
   dependencies:
-    ngx-window-token "0.0.2"
+    ngx-window-token "0.0.3"
 
 ngx-cookie@1.0.0:
   version "1.0.0"
@@ -5899,9 +5899,9 @@ ngx-infinite-scroll@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/ngx-infinite-scroll/-/ngx-infinite-scroll-0.5.1.tgz#dd9452c602ff7c3222f0ca168481aa14140286b7"
 
-ngx-window-token@0.0.2:
-  version "0.0.2"
-  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-0.0.2.tgz#680ee986bbe6f95d07daadf154c0ecf35e589920"
+ngx-window-token@0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/ngx-window-token/-/ngx-window-token-0.0.3.tgz#43c67f04d387b6dc9fd41b2d2366779e5915b979"
 
 no-case@^2.2.0:
   version "2.3.2"
@@ -7634,10 +7634,6 @@ script-loader@^0.7.0:
   dependencies:
     raw-loader "~0.5.1"
 
-scrolltofixed@1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/scrolltofixed/-/scrolltofixed-1.0.6.tgz#2db222f1eaa178b7814ed49e64356b8025bbca25"
-
 scss-tokenizer@^0.2.3:
   version "0.2.3"
   resolved "https://registry.yarnpkg.com/scss-tokenizer/-/scss-tokenizer-0.2.3.tgz#8eb06db9a9723333824d3f5530641149847ce5d1"
@@ -7899,6 +7895,10 @@ sinon@^2.3.6:
 slide@^1.1.5:
   version "1.1.6"
   resolved "https://registry.yarnpkg.com/slide/-/slide-1.1.6.tgz#56eb027d65b4d2dce6cb2e2d32c4d4afc9e1d707"
+
+smartbanner.js@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/smartbanner.js/-/smartbanner.js-1.7.0.tgz#2534375c96548919eb1ff038f14eca8df950d980"
 
 snapdragon-node@^2.0.1:
   version "2.1.1"

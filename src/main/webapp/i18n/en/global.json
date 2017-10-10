@@ -181,7 +181,16 @@
                 "ZG": "Zoug",
                 "ZH": "Zurich"
             },
+            "languages": "Sprachkenntnisse",
             "language": {
+                "level": {
+                    "BASIC": "Grundkentnisse",
+                    "INTERMEDIATE": "Intermediate",
+                    "NONE": "keine Kentnisse",
+                    "PROFICIENT": "Proficient"
+                },
+                "spoken": "m\u00fcndlich",
+                "written": "schriftlich",
                 "ar": "Arabisch",
                 "bs": "Bulgarisch",
                 "ch-de": "CH-Deutsch",
@@ -217,6 +226,10 @@
                 "vi": "Vietnamesisch",
                 "zh": "Chinesisch"
             }
+        },
+        "gender": {
+            "MALE": "m\u00e4nnlich",
+            "FEMALE": "weiblich"
         },
         "ribbon": {
             "dev": "Local",

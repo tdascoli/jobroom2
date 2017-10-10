@@ -54,13 +54,15 @@ export class JobDetailComponent implements OnInit, OnDestroy, AfterViewInit {
     }
 
     ngOnInit() {
-        this.route.data.subscribe((data) => this.job = data['job']);
-        if (this.job.jobCenterCode) {
-            this.jobCenter$ = this.referenceService.resolveJobCenter(this.job.jobCenterCode);
-        }
-        this.jobUrl = window.location.href;
+        this.route.data.subscribe((data) => {
+            this.job = data['job'];
+            this.jobCenter$ = this.job.jobCenterCode
+                ? this.referenceService.resolveJobCenter(this.job.jobCenterCode)
+                : Observable.empty();
+            this.showExternalJobDisclaimer = !!this.job.externalUrl;
+        });
 
-        this.showExternalJobDisclaimer = !!this.job.externalUrl;
+        this.jobUrl = window.location.href;
     }
 
     ngOnDestroy(): void {

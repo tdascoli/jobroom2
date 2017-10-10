@@ -13,6 +13,9 @@ import { LanguageSelectorComponent } from './language-selector/language-selector
 import { LanguageSkillService } from './services/language-skill.service';
 import { CandidateSearchToolbarComponent } from './candidate-search-toolbar/candidate-search-toolbar.component';
 import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.module';
+import { CandidateDetailComponent } from './candidate-detail/candidate-detail.component';
+import { CandidateDetailResolver } from './candidate-detail/candidate-detail.resolver';
+import { CandidateService } from './services/candidate.service';
 
 @NgModule({
     imports: [
@@ -28,10 +31,13 @@ import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.mo
         CandidateSearchComponent,
         CandidateSearchFilterComponent,
         LanguageSelectorComponent,
-        CandidateSearchToolbarComponent
+        CandidateSearchToolbarComponent,
+        CandidateDetailComponent
     ],
     providers: [
-        LanguageSkillService
+        LanguageSkillService,
+        CandidateDetailResolver,
+        CandidateService
     ]
 })
 export class CandidateSearchModule {

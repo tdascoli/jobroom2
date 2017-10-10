@@ -22,10 +22,4 @@ td:first-of-type {
     margin-bottom: auto;
 }
 
-@media screen and (min-width: 480px) {
-    .sticky-top {
-        position: -webkit-sticky;  // required for Safari
-        top: 155px;
-    }
-}
 

@@ -45,3 +45,12 @@ footer,
     bottom: 0;
     width: 100%;
 }
+
+
+@media screen and (min-width: 480px) {
+    .base__sticky-panel {
+        position: sticky;
+        position: -webkit-sticky;  // required for Safari
+        top: 155px;
+    }
+}

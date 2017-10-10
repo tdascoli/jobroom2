@@ -1,7 +1,7 @@
 <div class="container mt-md-5">
     <div class="row base">
         <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
-            <div class="sticky-top">
+            <div class="base__sticky-panel">
                 <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
                     <li class="page-item">
                         <a class="page-link" routerLink="/job-search">{{'job-detail.back' | translate}}</a>
@@ -84,17 +84,7 @@
             </div>
 
             <!-- Languages -->
-            <div *ngIf="job.languages && job.languages.length" class="job-detail__content">
-                <h4 class="job-detail__content__title">{{ 'job-detail.languages' | translate }}</h4>
-
-                <div class="content__item" *ngFor="let language of job.languages">
-                    <strong>{{ 'global.reference.language.' + language.code | translate }}</strong>
-                    <span>
-                        <ng-container *ngIf="language.spokenLevel">{{ 'job-detail.language.spoken' | translate }}: {{ 'job-detail.language.level.' + language.spokenLevel | translate}}, </ng-container>
-                        <ng-container *ngIf="language.writtenLevel">{{ 'job-detail.language.written' | translate }}: {{ 'job-detail.language.level.' + language.writtenLevel | translate}}</ng-container>
-                    </span>
-                </div>
-            </div>
+            <jr2-languages [languages]="job.languages"></jr2-languages>
 
             <!-- Application -->
             <div *ngIf="job.application" class="job-detail__content">
@@ -144,7 +134,7 @@
         </div>
 
         <div class="col-12 col-md order-12 base__related">
-            <div class="sticky-top">
+            <div class="base__sticky-panel">
                 <ul *ngIf="jobNavigationEnabled$ | async" class="pagination pagination--block pagination-alv">
                     <li class="page-item" [ngClass]="{'invisible': firstJob}">
                         <a class="page-link" (click)="previousJob()">

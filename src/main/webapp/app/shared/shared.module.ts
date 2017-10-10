@@ -20,6 +20,7 @@ import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
 import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { KeysPipe } from './pipes/enum-keys.pipe';
+import { LanguageComponent } from './components/language/language.component';
 
 @NgModule({
     imports: [
@@ -33,7 +34,8 @@ import { KeysPipe } from './pipes/enum-keys.pipe';
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
-        KeysPipe
+        KeysPipe,
+        LanguageComponent
     ],
     providers: [
         LoginService,
@@ -60,7 +62,8 @@ import { KeysPipe } from './pipes/enum-keys.pipe';
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
         KeysPipe,
-        StickyToolbarItemDirective
+        StickyToolbarItemDirective,
+        LanguageComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

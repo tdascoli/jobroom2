@@ -1,0 +1,171 @@
+<div class="container mt-md-5">
+    <div class="row base">
+        <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
+            <div class="base__sticky-panel">
+                <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
+                    <li class="page-item">
+                        <a class="page-link" routerLink="/candidate-search">{{'candidate-detail.back' | translate}}</a>
+                    </li>
+                </ul>
+
+                <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
+                    <div class="job-detail__subtitle">{{ 'candidate-detail.job-center.title' | translate }}</div>
+
+                    <div class="job-detail__content">
+                        <address>
+                            <p>
+                                <strong>{{ jobCenter.address.name }}</strong><br/>
+                                {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}<br/>
+                                {{jobCenter.address.zipCode}} {{jobCenter.address.city}}
+                            </p>
+                        </address>
+
+                        <p>
+                            {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a><br/>
+                            {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="candidateProfile$ | async as candidateProfile" class="col-12 col-md-8 order-3 base__content">
+            <div class="job-detail__title">
+                <h2 class="text--light">Title</h2>
+            </div>
+
+            <div class="candidate-detail__content">
+                <span class="badge badge-blue">
+                    {{ 'global.reference.canton.' + candidateProfile.residenceCantonCode | translate}}
+                </span>
+                <span class="badge badge-gray">{{ candidateProfile.workLoad }}%</span>
+                <span class="badge badge-green">Anstellungsdauer</span>
+                <span class="badge badge-yellow">
+                    {{ 'candidate-search.availability.' + candidateProfile.availability | translate}}
+                </span>
+            </div>
+
+            <!-- Occupation -->
+            <div *ngIf="candidateProfile.jobExperiences.length" class="candidate-detail__content">
+                <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
+
+                <div *ngFor="let jobExperience of candidateProfile.jobExperiences; let first = first" class="candidate-detail__content candidate-detail--occupation">
+                    <div class="content__item">
+                        <strong>
+                            {{ (first ? 'candidate-detail.job-experience.last-job.label' : 'candidate-detail.job-experience.job.label') | translate}}
+                        </strong>
+                        <span class="text--bold">{{ getOccupationLabel(jobExperience.occupationCode) }}</span>
+                    </div>
+                    <div *ngIf="jobExperience.graduation" class="content__item">
+                        <strong>{{ 'candidate-detail.job-experience.graduation.label' | translate }}</strong>
+                        <span>{{ 'candidate-search.graduation.' + jobExperience.graduation | translate }}</span>
+                    </div>
+                    <div *ngIf="jobExperience.experience" class="content__item">
+                        <strong>{{ 'candidate-detail.job-experience.experience.label' | translate }}</strong>
+                        <span>{{ 'candidate-search.experience.' + jobExperience.experience | translate }}</span>
+                    </div>
+                    <div *ngIf="jobExperience.description" class="content__item">
+                        <strong>{{ 'candidate-detail.job-experience.description.label' | translate }}</strong>
+                        <span>{{ jobExperience.description }}</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Languages -->
+            <jr2-languages [languages]="candidateProfile.languages"
+                           [containerClass]="'candidate-detail__content'"
+                           [titleClass]="'candidate-detail__content__title'"></jr2-languages>
+
+            <!-- Additional information -->
+            <div class="candidate-detail__content">
+                <h4 class="candidate-detail__content__title">
+                    {{ 'candidate-detail.additional-information.title' | translate }}
+                </h4>
+                <div class="content__item">
+                    <strong>{{ 'candidate-detail.additional-information.workForm.label' | translate }}</strong>
+                    <span>{{ candidateProfile.workForm.length ? candidateProfile.workForm.join(', ') : ('candidate-detail.additional-information.no-information' | translate) }}</span>
+                </div>
+                <div class="content__item">
+                    <strong>{{ 'candidate-detail.additional-information.gender.label' | translate }}</strong>
+                    <span>{{ 'global.gender.' + candidateProfile.gender | translate }}</span>
+                </div>
+                <div class="content__item">
+                    <strong>{{ 'candidate-detail.additional-information.highestEducationLevel.label' | translate }}</strong>
+                    <span>{{ candidateProfile.highestEducationLevel }}</span>
+                </div>
+                <div class="content__item">
+                    <!-- TODO -->
+                    <strong>{{ 'candidate-detail.additional-information.education.label' | translate }}</strong>
+                    <span>
+                        Sek. II - Berufsmaturität od. äq.<br />
+                        Sek. II - Berufliche Grundbildung EFZ od. äq. <br />
+                        Sek. I - obligatorische Schule
+                    </span>
+                </div>
+                <div class="content__item">
+                    <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>
+                    <span>
+                        <p>{{ candidateProfile.preferredWorkRegions }}</p>
+                        <p>
+                            <ng-container *ngFor="let canton of candidateProfile.preferredWorkCantons; let last = last">
+                                {{ 'global.reference.canton.' + canton | translate }}{{ last ? '' : ', '}}
+                            </ng-container>
+                        </p>
+                    </span>
+                </div>
+                <div class="content__item">
+                    <strong>{{ 'candidate-detail.additional-information.drivingCategories.label' | translate }}</strong>
+                    <span>{{ candidateProfile.drivingCategories.join(', ') }}</span>
+                </div>
+            </div>
+
+            <div *jhiHasAnyAuthority="['ROLE_PUBLIC_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']"
+                 class="candidate-detail__content">
+                <ng-container *ngIf="candidateProtectedData$ | async as candidateProtectedData">
+                    <h4 class="candidate-detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
+                    <div class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.name.label' | translate }}</strong>
+                        <span>{{ candidateProtectedData.firstName }} {{ candidateProtectedData.lastName }}</span>
+                    </div>
+                    <div class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.nationality.label' | translate }}</strong>
+                        <span>{{ candidateProtectedData.nationalityCode }}</span>
+                    </div>
+                    <div class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
+                        <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
+                    </div>
+                    <div class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
+                        <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
+                    </div>
+                    <div class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>
+                        <span><a href="mailto:{{candidateProtectedData.email}}">{{candidateProtectedData.email}}</a></span>
+                    </div>
+                </ng-container>
+            </div>
+        </div>
+
+        <div class="col-12 col-md order-12 base__related">
+            <div class="base__sticky-panel">
+                <button class="btn btn-primary btn-block btn-sm">Kandidat als Link versenden</button>
+
+                <ul class="nav filter-nav flex-column">
+                    <li *jhiHasAnyAuthority="['ROLE_PUBLIC_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
+                        <a class="nav-link"><i class="fa fa-star-o" aria-hidden="true"></i> Kandidat speichern</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link"><i class="fa fa-share" aria-hidden="true"></i> Link kopieren</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="printCandidateDetails()"><i class="fa fa-print" aria-hidden="true"></i> Drucken</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+

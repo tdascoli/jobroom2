@@ -4,7 +4,7 @@ import { JobroomTestModule } from '../../../test.module';
 import {
     CEFR_Level,
     LanguageSkill
-} from '../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
+} from '../../../../../../main/webapp/app/shared/model/shared-types';
 
 describe('LanguageSelectorComponent', () => {
     let component: LanguageSelectorComponent;

@@ -1,0 +1,75 @@
+{
+    "candidate-detail": {
+        "back": "Zur\u00fcck zu den Suchergebnissen",
+        "job-experience": {
+            "title": "Berufliche Qualifikation",
+            "last-job": {
+                "label": "Zuletzt ausge\u00fcbter Beruf"
+            },
+            "job": {
+                "label": "Berufsbezeichnung"
+            },
+            "graduation": {
+                "label": "Abschluss zum Beruf"
+            },
+            "experience": {
+                "label": "Erfahrungsjahre auf dem Beruf"
+            },
+            "description": {
+                "label": "Kenntnisse, F\u00e4higkeiten, Skills"
+            }
+        },
+        "additional-information": {
+            "title": "Weitere Angaben",
+            "workForm": {
+                "label": "Arbeitsform"
+            },
+            "no-information": "Keine Angaben",
+            "gender": {
+                "label": "Geschlecht"
+            },
+            "highestEducationLevel": {
+                "label": "H\u00f6chste Bildungsstufe"
+            },
+            "education": {
+                "label": "Ausbildung"
+            },
+            "preferredWorkRegions": {
+                "label": "Gesuchte Arbeitsregion/en"
+            },
+            "drivingCategories": {
+                "label": "F\u00fchrerausweiskategorien"
+            }
+        },
+        "personal-information": {
+            "title": "Personalien / Kontaktdaten des Kandidaten",
+            "name": {
+                "label": "Name / Vorname"
+            },
+            "nationality": {
+                "label": "Staatsangeh\u00f6rigkeit"
+            },
+            "address": {
+                "label": "Adresse"
+            },
+            "phone": {
+                "label": "Telefon"
+            },
+            "mobile": {
+                "label": "Mobile"
+            },
+            "e-mail": {
+                "label": "E-Mail"
+            }
+        },
+        "job-center": {
+            "title": "Weitere Ausk\u00fcnfte erteilt",
+            "phone": {
+                "label": "Telefon"
+            },
+            "email": {
+                "label": "E-Mail"
+            }
+        }
+    }
+}

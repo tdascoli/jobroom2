@@ -1,10 +1,7 @@
-const enum Gender {
-    MALE, FEMALE
-}
-
-const enum LanguageLevel {
-    NONE, BASIC, GOOD, VERY_GOOD
-}
+import {
+    CEFR_Level, Contact, Gender,
+    LanguageSkill
+} from '../../shared/model/shared-types';
 
 export interface Locality {
     text?: string;
@@ -30,14 +27,6 @@ export interface Company {
     website?: string;
 }
 
-export interface Contact {
-    salutation?: string;
-    firstName?: string;
-    lastName?: string;
-    phone?: string;
-    email?: string;
-}
-
 export interface Occupation {
     code: number;
     classificationCode: number;
@@ -45,14 +34,6 @@ export interface Occupation {
     relation: string;
     experience: string;
     educationLevel: string;
-}
-
-export interface LanguageSkill {
-    code: string;
-    spokenLevel?: LanguageLevel;
-    writtenLevel?: LanguageLevel;
-    mothertongue: boolean;
-    languageStayRequired: boolean;
 }
 
 export interface Application {

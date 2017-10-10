@@ -6,10 +6,10 @@ import {
     Experience,
     Graduation,
     ISCED_1997,
-    LanguageSkill,
     WorkForm
 } from '../../services/candidate-search-request';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
+import { LanguageSkill } from '../../../shared/model/shared-types';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter;

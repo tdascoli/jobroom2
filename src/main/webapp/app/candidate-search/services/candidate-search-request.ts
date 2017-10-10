@@ -1,3 +1,5 @@
+import { LanguageSkill } from '../../shared/model/shared-types';
+
 export interface CandidateSearchRequest {
     occupation: string,
     skills: Array<string>,
@@ -11,12 +13,6 @@ export interface CandidateSearchRequest {
     graduation: Graduation,
     drivingLicenceCategory: DrivingLicenceCategory
     languageSkills: Array<LanguageSkill>
-}
-
-export interface LanguageSkill {
-    code: string,
-    spoken: CEFR_Level,
-    written: CEFR_Level
 }
 
 export enum Experience {
@@ -41,10 +37,6 @@ export enum Graduation {
 
 export enum DrivingLicenceCategory {
     A, A1, B, B1, BE, C, C1, C1E, CE, D, D1, D1E, DE, F, G, M
-}
-
-export enum CEFR_Level {
-    NONE, BASIC, INTERMEDIATE, PROFICIENT
 }
 
 export enum Canton {
