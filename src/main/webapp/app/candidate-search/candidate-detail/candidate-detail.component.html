@@ -39,7 +39,7 @@
                     {{ 'global.reference.canton.' + candidateProfile.residenceCantonCode | translate}}
                 </span>
                 <span class="badge badge-gray">{{ candidateProfile.workLoad }}%</span>
-                <span class="badge badge-green">Anstellungsdauer</span>
+                <jr2-work-period [jobExperiences]="candidateProfile.jobExperiences"></jr2-work-period>
                 <span class="badge badge-yellow">
                     {{ 'candidate-search.availability.' + candidateProfile.availability | translate}}
                 </span>
@@ -54,7 +54,7 @@
                         <strong>
                             {{ (first ? 'candidate-detail.job-experience.last-job.label' : 'candidate-detail.job-experience.job.label') | translate}}
                         </strong>
-                        <span class="text--bold">{{ getOccupationLabel(jobExperience.occupationCode) }}</span>
+                        <span class="text--bold">{{ jobExperience.occupation }}</span>
                     </div>
                     <div *ngIf="jobExperience.graduation" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.graduation.label' | translate }}</strong>
@@ -95,18 +95,19 @@
                     <span>{{ candidateProfile.highestEducationLevel }}</span>
                 </div>
                 <div class="content__item">
-                    <!-- TODO -->
                     <strong>{{ 'candidate-detail.additional-information.education.label' | translate }}</strong>
                     <span>
-                        Sek. II - Berufsmaturität od. äq.<br />
-                        Sek. II - Berufliche Grundbildung EFZ od. äq. <br />
-                        Sek. I - obligatorische Schule
+                        <!-- TODO -->
                     </span>
                 </div>
                 <div class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>
                     <span>
-                        <p>{{ candidateProfile.preferredWorkRegions }}</p>
+                        <p>
+                            <ng-container *ngFor="let region of candidateProfile.preferredWorkRegions; let last = last">
+                                {{ region }}{{ last ? '' : ', '}}
+                            </ng-container>
+                        </p>
                         <p>
                             <ng-container *ngFor="let canton of candidateProfile.preferredWorkCantons; let last = last">
                                 {{ 'global.reference.canton.' + canton | translate }}{{ last ? '' : ', '}}
@@ -150,17 +151,23 @@
 
         <div class="col-12 col-md order-12 base__related">
             <div class="base__sticky-panel">
-                <button class="btn btn-primary btn-block btn-sm">Kandidat als Link versenden</button>
+                <button class="btn btn-primary btn-block btn-sm">{{ 'candidate-detail.candidate-link' | translate }}</button>
 
                 <ul class="nav filter-nav flex-column">
                     <li *jhiHasAnyAuthority="['ROLE_PUBLIC_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
-                        <a class="nav-link"><i class="fa fa-star-o" aria-hidden="true"></i> Kandidat speichern</a>
+                        <a class="nav-link">
+                            <i class="fa fa-star-o" aria-hidden="true"></i> {{ 'candidate-detail.candidate-save' | translate }}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link"><i class="fa fa-share" aria-hidden="true"></i> Link kopieren</a>
+                        <a class="nav-link">
+                            <i class="fa fa-share" aria-hidden="true"></i> {{ 'candidate-detail.candidate-copy-link' | translate }}
+                        </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="printCandidateDetails()"><i class="fa fa-print" aria-hidden="true"></i> Drucken</a>
+                        <a class="nav-link" (click)="printCandidateDetails()">
+                            <i class="fa fa-print" aria-hidden="true"></i> {{ 'candidate-detail.candidate-print' | translate }}
+                        </a>
                     </li>
                 </ul>
             </div>

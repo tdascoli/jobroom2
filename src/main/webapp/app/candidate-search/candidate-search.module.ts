@@ -16,6 +16,7 @@ import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.mo
 import { CandidateDetailComponent } from './candidate-detail/candidate-detail.component';
 import { CandidateDetailResolver } from './candidate-detail/candidate-detail.resolver';
 import { CandidateService } from './services/candidate.service';
+import { WorkPeriodComponent } from './work-period/work-period.component';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import { CandidateService } from './services/candidate.service';
         CandidateSearchFilterComponent,
         LanguageSelectorComponent,
         CandidateSearchToolbarComponent,
-        CandidateDetailComponent
+        CandidateDetailComponent,
+        WorkPeriodComponent
     ],
     providers: [
         LanguageSkillService,

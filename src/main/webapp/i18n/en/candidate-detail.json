@@ -70,6 +70,10 @@
             "email": {
                 "label": "E-Mail"
             }
-        }
+        },
+        "candidate-link": "Kandidat als Link versenden",
+        "candidate-save": "Kandidat speichern",
+        "candidate-copy-link": "Link kopieren",
+        "candidate-print": "Drucken"
     }
 }

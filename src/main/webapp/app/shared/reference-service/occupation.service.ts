@@ -12,6 +12,13 @@ import { TypeaheadMultiselectModel } from '../input-components';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations/synonym';
+const OCCUPATIONS_URL = 'referenceservice/api/occupations';
+
+export interface Occupation {
+    code: number;
+    id: string;
+    labels: any[];
+}
 
 @Injectable()
 export class OccupationService {
@@ -44,6 +51,16 @@ export class OccupationService {
         return this.fetchSuggestionsInternal(query)
             .map((occupationAutocomplete) => occupationAutocomplete.occupations)
             .catch(this.handleError);
+    }
+
+    findOccupationByCode(code: number): Observable<Occupation> {
+        const params: URLSearchParams = new URLSearchParams();
+        params.set('code', code.toString());
+        const options = new BaseRequestOptions();
+        options.params = params;
+
+        return this.http.get(OCCUPATIONS_URL, options)
+            .map((res: Response) => res.json() as Occupation);
     }
 
     private fetchSuggestionsInternal(query: string): Observable<OccupationAutocomplete> {

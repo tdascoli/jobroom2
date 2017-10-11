@@ -11,6 +11,7 @@ import {
 import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components';
 import { OccupationSuggestion } from '../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
 import arrayContaining = jasmine.arrayContaining;
+import { Occupation } from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
 
 describe('OccupationService', () => {
 
@@ -125,5 +126,48 @@ describe('OccupationService', () => {
                     { code: '01', name: 'Bioinformatiker' },
                 ]);
             })));
+    });
+
+    describe('findOccupationByCode', () => {
+        let lastConnection;
+
+        beforeEach(inject([MockBackend], (mockBackend: MockBackend) => {
+            mockBackend.connections.subscribe((connection: any) => lastConnection = connection);
+        }));
+
+        it('should call http.get with the correct URL and parameters',
+            inject([OccupationService], (service: OccupationService) => {
+
+                // WHEN
+                service.findOccupationByCode(2242422);
+
+                // THEN
+                const urlArray = lastConnection.request.url.split(/[?&]/);
+                expect(urlArray).toEqual(arrayContaining(['referenceservice/api/occupations']));
+                expect(urlArray).toEqual(arrayContaining(['code=2242422']));
+            })
+        );
+
+        it('should map the response to Occupation',
+            fakeAsync(inject([OccupationService], (service: OccupationService) => {
+                // GIVEN
+                const suggestResponse: Occupation = {
+                    code: 2242422,
+                    id: 'id1',
+                    labels: [{
+                        en: 'Label'
+                    }]
+                };
+
+                // WHEN
+                let model: Occupation;
+                service.findOccupationByCode(2242422).subscribe((res: any) => model = res);
+                lastConnection.mockRespond(createJsonResponse(suggestResponse));
+                tick();
+
+                // THEN
+                expect(model).toEqual(suggestResponse);
+            }))
+        );
     });
 });

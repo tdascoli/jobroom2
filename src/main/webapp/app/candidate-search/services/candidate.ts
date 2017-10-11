@@ -44,6 +44,7 @@ enum Degree {
 
 export interface JobExperience {
     occupationCode: number;
+    occupation: string;
     experience: Experience;
     graduation: Graduation;
     degree: Degree;

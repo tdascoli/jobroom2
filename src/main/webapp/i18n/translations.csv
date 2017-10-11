@@ -112,6 +112,10 @@ candidate-detail,candidate-detail.personal-information.e-mail.label,E-Mail,E-Mai
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
+candidate-detail,candidate-detail.candidate-link,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden
+candidate-detail,candidate-detail.candidate-save,Kandidat speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
+candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopieren,Link kopieren,Link kopieren
+candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
 configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filtrer (par préfixe),Filtro (per prefisso)
 configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
