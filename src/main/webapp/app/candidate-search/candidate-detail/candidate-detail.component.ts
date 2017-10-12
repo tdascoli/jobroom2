@@ -20,6 +20,8 @@ export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewIni
     candidateProfile$: Observable<CandidateProfile>;
     jobCenter$: Observable<JobCenter>;
     candidateProtectedData$: Observable<Candidate>;
+    candidateUrl: string;
+    isCopied: boolean;
 
     private unsubscribe$ = new Subject<void>();
 
@@ -43,6 +45,8 @@ export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewIni
         this.candidateProtectedData$ = this.candidateProfile$
             .map((candidateProfile) => candidateProfile.id)
             .flatMap((id) => this.candidateService.findCandidate(id));
+
+        this.candidateUrl = window.location.href;
     }
 
     ngOnDestroy(): void {

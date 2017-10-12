@@ -17,6 +17,7 @@ import { CandidateDetailComponent } from './candidate-detail/candidate-detail.co
 import { CandidateDetailResolver } from './candidate-detail/candidate-detail.resolver';
 import { CandidateService } from './services/candidate.service';
 import { WorkPeriodComponent } from './work-period/work-period.component';
+import { ClipboardModule } from 'ngx-clipboard';
 
 @NgModule({
     imports: [
@@ -26,7 +27,8 @@ import { WorkPeriodComponent } from './work-period/work-period.component';
         CommonModule,
         ReactiveFormsModule,
         CandidateSearchRoutingModule,
-        JobSearchSharedModule
+        JobSearchSharedModule,
+        ClipboardModule
     ],
     declarations: [
         CandidateSearchComponent,
