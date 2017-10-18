@@ -3,7 +3,10 @@ import { CandidateProfile } from '../services/candidate';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { Store } from '@ngrx/store';
 import { CandidateSearchState } from '../state-management/state/candidate-search.state';
-import { HideCandidateListErrorAction } from '../state-management/actions/candidate-search.actions';
+import {
+    HideCandidateListErrorAction,
+    LoadNextPageAction
+} from '../state-management/actions/candidate-search.actions';
 
 @Component({
     selector: 'jr2-candidate-search-list',
@@ -47,6 +50,6 @@ export class CandidateSearchListComponent {
     }
 
     onScroll(event: any) {
-        // todo: Implement infinite scrolling (https://alv-ch.atlassian.net/browse/JR2-319)
+        this.store.dispatch(new LoadNextPageAction());
     }
 }

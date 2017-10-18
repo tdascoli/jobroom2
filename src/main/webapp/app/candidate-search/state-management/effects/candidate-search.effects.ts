@@ -6,16 +6,15 @@ import {
     getCandidateSearchState
 } from '../state/candidate-search.state';
 import { Scheduler } from 'rxjs/Scheduler';
-import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import {
     CandidateProfileListLoadedAction,
     INIT_CANDIDATE_SEARCH,
+    LOAD_NEXT_PAGE,
+    NextPageLoadedAction,
     SEARCH_CANDIDATES,
     SearchCandidatesAction,
-    SELECT_PROFILE_CANDIDATE,
-    SelectCandidateProfileAction,
-    ShowCandidateListErrorAction
+    ShowCandidateListErrorAction,
 } from '../actions/candidate-search.actions';
 import { CandidateService } from '../../services/candidate.service';
 import { CandidateSearchRequest } from '../../services/candidate-search-request';
@@ -54,6 +53,16 @@ export class CandidateSearchEffects {
                 .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
         );
 
+    @Effect()
+    loadNextPage$: Observable<Action> = this.actions$
+        .ofType(LOAD_NEXT_PAGE)
+        .withLatestFrom(this.store.select(getCandidateSearchState))
+        .switchMap(([action, state]) =>
+            this.candidateService.search(toNextPageRequest(state))
+                .map((response: ResponseWrapper) => new NextPageLoadedAction(response.json))
+                .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
+        );
+
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,
                 private candidateService: CandidateService,
@@ -62,8 +71,7 @@ export class CandidateSearchEffects {
                 private debounce,
                 @Optional()
                 @Inject(CANDIDATE_SEARCH_SCHEDULER)
-                private scheduler: Scheduler,
-                private router: Router) {
+                private scheduler: Scheduler) {
     }
 }
 
@@ -73,6 +81,10 @@ function toInitialSearchRequest(state: CandidateSearchState): CandidateSearchReq
 
 function toSearchRequest(action: SearchCandidatesAction, state: CandidateSearchState): CandidateSearchRequest {
     return createCandidateSearchRequest(action.payload, state.page);
+}
+
+function toNextPageRequest(state: CandidateSearchState): CandidateSearchRequest {
+    return createCandidateSearchRequest(state.searchFilter, state.page + 1);
 }
 
 function toCandidateProfileListLoadedAction(response: ResponseWrapper): CandidateProfileListLoadedAction {

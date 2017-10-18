@@ -85,6 +85,39 @@ describe('candidateSearchReducer', () => {
         expect(newState.loading).toBeTruthy();
         verifyUnchanged(newState, state, ['loading', 'searchFilter']);
     });
+
+    it('should update CandidateSearchState for NEXT_PAGE_LOADED action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, {
+            candidateProfileList: [
+                createCandidateProfile('c0'),
+                createCandidateProfile('c1'),
+                createCandidateProfile('c2')
+            ],
+            page: 1
+        });
+        const action = new actions.NextPageLoadedAction([
+            createCandidateProfile('c3'),
+            createCandidateProfile('c4'),
+            createCandidateProfile('c5'),
+        ]);
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.page).toEqual(2);
+        expect(newState.loading).toBeFalsy();
+        expect(newState.candidateProfileList).toEqual([
+            createCandidateProfile('c0'),
+            createCandidateProfile('c1'),
+            createCandidateProfile('c2'),
+            createCandidateProfile('c3'),
+            createCandidateProfile('c4'),
+            createCandidateProfile('c5'),
+        ]);
+        verifyUnchanged(newState, state, ['page', 'loading', 'candidateProfileList']);
+    });
 });
 
 function verifyUnchanged<T>(newState: T, oldState: T, ignoreFields: Array<string>) {

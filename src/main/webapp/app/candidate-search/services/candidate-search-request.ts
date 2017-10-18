@@ -13,7 +13,9 @@ export interface CandidateSearchRequest {
     educationLevel: ISCED_1997,
     graduation: Graduation,
     drivingLicenceCategory: DrivingLicenceCategory
-    languageSkills: Array<LanguageSkill>
+    languageSkills: Array<LanguageSkill>,
+    page: number,
+    size: number,
 }
 
 export enum Experience {

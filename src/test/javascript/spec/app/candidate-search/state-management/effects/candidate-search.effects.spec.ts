@@ -17,7 +17,6 @@ import * as actions from '../../../../../../../main/webapp/app/candidate-search/
 import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
 import { createCandidateProfile } from '../utils';
 import { Headers } from '@angular/http';
-import { ReplaySubject } from 'rxjs/ReplaySubject';
 
 describe('CandidateSearchEffects', () => {
     let effects: CandidateSearchEffects;
@@ -113,7 +112,7 @@ describe('CandidateSearchEffects', () => {
             expect(effects.loadCandidateList$).toBeObservable(expected);
         });
 
-        it('should return a new CandidateProfileListLoadedAction with the loaded jobs on success', () => {
+        it('should return a new CandidateProfileListLoadedAction on success', () => {
             const action = new actions.SearchCandidatesAction({});
             const candidateProfileList = [
                 createCandidateProfile('c1'),
@@ -126,14 +125,48 @@ describe('CandidateSearchEffects', () => {
             const response = cold('-a|', { a: responseWrapper });
             mockCandidateService.search.and.returnValue(response);
 
-            const jobListLoadedAction = new actions.CandidateProfileListLoadedAction({
+            const profileListLoadedAction = new actions.CandidateProfileListLoadedAction({
                 candidateProfileList,
                 totalCandidateCount: 100,
                 page: 0
             });
-            const expected = cold('-----b', { b: jobListLoadedAction });
+            const expected = cold('-----b', { b: profileListLoadedAction });
 
             expect(effects.loadCandidateList$).toBeObservable(expected);
+        });
+    });
+
+    describe('loadNextPage$', () => {
+        it('should return a new ShowCandidateListErrorAction on error', () => {
+            const action = new actions.LoadNextPageAction();
+
+            actions$ = hot('-a---', { a: action });
+            const response = cold('-#|', {}, 'error');
+            mockCandidateService.search.and.returnValue(response);
+
+            const showCandidateListErrorAction = new actions.ShowCandidateListErrorAction('error');
+            const expected = cold('--b', { b: showCandidateListErrorAction });
+
+            expect(effects.loadNextPage$).toBeObservable(expected);
+        });
+
+        it('should return a new NextPageLoadedAction on success', () => {
+            const action = new actions.LoadNextPageAction();
+            const candidateProfileList = [
+                createCandidateProfile('c1'),
+                createCandidateProfile('c2'),
+                createCandidateProfile('c3')
+            ];
+            const responseWrapper = new ResponseWrapper(new Headers({ 'X-Total-Count': '100' }), candidateProfileList, 200);
+
+            actions$ = hot('-a---', { a: action });
+            const response = cold('-a|', { a: responseWrapper });
+            mockCandidateService.search.and.returnValue(response);
+
+            const pageLoadedAction = new actions.NextPageLoadedAction(candidateProfileList);
+            const expected = cold('--b', { b: pageLoadedAction });
+
+            expect(effects.loadNextPage$).toBeObservable(expected);
         });
     });
 });

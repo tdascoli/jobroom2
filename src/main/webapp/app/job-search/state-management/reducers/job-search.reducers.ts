@@ -4,9 +4,11 @@ import {
     FILTER_CHANGED,
     HIDE_JOB_LIST_ERROR,
     JOB_LIST_LOADED,
-    LOAD_NEXT_PAGE, NEXT_JOB_LOADED,
+    LOAD_NEXT_PAGE,
+    NEXT_JOB_LOADED,
     NEXT_PAGE_LOADED,
-    SAVE_SCROLL_Y, SELECT_JOB, SelectJobAction,
+    SAVE_SCROLL_Y,
+    SELECT_JOB,
     SHOW_JOB_LIST_ERROR,
     TOOLBAR_CHANGED
 } from '../actions/job-search.actions';
@@ -50,6 +52,7 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
             newState = Object.assign({}, state, { searchError: false });
             break;
 
+        // todo: Increment the page on NEXT_PAGE_LOADED action
         case LOAD_NEXT_PAGE:
             newState = Object.assign({}, state, { page: state.page + 1 });
             break;
