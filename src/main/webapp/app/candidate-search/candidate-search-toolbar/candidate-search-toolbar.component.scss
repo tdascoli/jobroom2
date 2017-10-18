@@ -8,6 +8,29 @@
     max-width: 25%;
 }
 
+:host /deep/ .dropdown-menu a {
+    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 1.125rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #333333;
+    text-align: left;
+}
+
 :host /deep/ .form-inline .form-control {
+    width: 100%;
+}
+
+:host /deep/ button.dropdown-toggle {
+    margin: 0;
+    height: calc(2.875rem + 2px);
+    text-align: start;
+    //hide arrow
+    &:after {
+        display: none;
+    }
+}
+
+ss-multiselect-dropdown {
     width: 100%;
 }

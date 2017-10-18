@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
     CandidateSearchFilter,
@@ -19,7 +19,8 @@ import { CandidateProfile } from './services/candidate';
 @Component({
     selector: 'jr2-candidate-search',
     templateUrl: './candidate-search.component.html',
-    styles: []
+    styles: [],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CandidateSearchComponent {
     searchFilter$: Observable<CandidateSearchFilter>;

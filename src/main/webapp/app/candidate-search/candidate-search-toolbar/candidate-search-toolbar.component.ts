@@ -3,9 +3,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../shared/reference-service/occupation.service';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
-import { Canton, Graduation } from '../services/candidate-search-request';
+import { Graduation } from '../services/candidate-search-request';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
+import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
+import { CantonService } from '../services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -23,13 +25,22 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     maxCandidateListSize: number = MAX_CANDIDATE_LIST_SIZE;
     graduationOptions = Graduation;
-    cantons = Canton;
+
+    cantonOptions$: Observable<IMultiSelectOption[]>;
+    multiSelectSettings: IMultiSelectSettings = {
+        buttonClasses: 'form-control form-control-lg custom-select',
+        containerClasses: '',
+        checkedStyle: 'fontawesome',
+        isLazyLoad: true,
+        dynamicTitleMaxItems: 1
+    };
 
     toolbarForm: FormGroup;
 
     private subscription: Subscription;
 
     constructor(private occupationService: OccupationService,
+                private cantonService: CantonService,
                 private fb: FormBuilder) {
     }
 
@@ -39,6 +50,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             residence: [this.searchFilter.residence],
             graduation: [this.searchFilter.graduation]
         });
+        this.cantonOptions$ = this.cantonService.getCantonOptions();
 
         this.subscription = this.toolbarForm.valueChanges.subscribe((formValue: any) =>
             this.search(formValue)

@@ -37,7 +37,8 @@
     "@ngrx/router-store": "^4.0.2",
     "@ngrx/store": "^4.0.2",
     "@ngrx/store-devtools": "^4.0.0",
-    "angular2-markdown": "^1.6.0"
+    "angular2-markdown": "^1.6.0",
+    "angular-2-dropdown-multiselect": "^1.6.0"
   },
   "devDependencies": {
     "@angular/cli": "1.2.6",

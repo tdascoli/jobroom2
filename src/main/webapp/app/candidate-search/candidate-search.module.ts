@@ -21,6 +21,8 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { CandidateSearchListComponent } from './candidate-search-list/candidate-search-list.component';
 import { CandidateSearchListItemComponent } from './candidate-search-list-item/candidate-search-list-item.component';
 import { CandidateSearchEffects } from './state-management/effects/candidate-search.effects';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { CantonService } from './services/canton.service';
 
 @NgModule({
     imports: [
@@ -31,7 +33,8 @@ import { CandidateSearchEffects } from './state-management/effects/candidate-sea
         ReactiveFormsModule,
         CandidateSearchRoutingModule,
         JobSearchSharedModule,
-        ClipboardModule
+        ClipboardModule,
+        MultiselectDropdownModule
     ],
     declarations: [
         CandidateSearchListComponent,
@@ -46,7 +49,8 @@ import { CandidateSearchEffects } from './state-management/effects/candidate-sea
     providers: [
         LanguageSkillService,
         CandidateDetailResolver,
-        CandidateService
+        CandidateService,
+        CantonService
     ]
 })
 export class CandidateSearchModule {

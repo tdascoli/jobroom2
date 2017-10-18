@@ -27,7 +27,7 @@ export interface CandidateSearchFilter {
     skills?: Array<string>,
     experience?: Experience,
     workplace?: string,
-    residence?: Canton,
+    residence?: Array<Canton>,
     availability?: Availability,
     workload?: [number, number];
     workForm?: WorkForm,

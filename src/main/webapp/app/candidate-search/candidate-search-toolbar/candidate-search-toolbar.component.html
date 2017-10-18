@@ -12,13 +12,10 @@
                        [resultFormatter]="occupationFormatter">
             </div>
             <div class="form-group form-group--wide">
-                <select formControlName="residence" class="form-control form-control-lg custom-select">
-                    <option selected="" value="null"
-                            translate="candidate-search.toolbar.residence.placeholder"></option>
-                    <option *ngFor="let canton of cantons | keys" [ngValue]="canton.key"
-                            translate="{{'global.reference.canton.' + canton.value}}">
-                    </option>
-                </select>
+                <ss-multiselect-dropdown [options]="cantonOptions$ | async"
+                                         [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
+                                         [settings]="multiSelectSettings"
+                                         formControlName="residence"></ss-multiselect-dropdown>
             </div>
 
             <div class="form-group form-group--wide">

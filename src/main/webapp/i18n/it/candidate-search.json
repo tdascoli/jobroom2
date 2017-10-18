@@ -129,7 +129,8 @@
                 "placeholder": "Berufsbezeichnung, F\u00e4higkeiten, Skills"
             },
             "residence": {
-                "placeholder": "Wohnort: Kanton"
+                "placeholder": "Wohnort: Kanton",
+                "selected": "Kantone"
             },
             "graduation": {
                 "label": "Abschluss",

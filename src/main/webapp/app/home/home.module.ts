@@ -11,6 +11,7 @@ import { ToolbarItemComponent } from './toolbar-item/toolbar-item.component';
 import { StoreModule } from '@ngrx/store';
 import { HomeEffects, homeReducers } from './state-management';
 import { EffectsModule } from '@ngrx/effects';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 
 @NgModule({
     imports: [
@@ -19,7 +20,8 @@ import { EffectsModule } from '@ngrx/effects';
         ReactiveFormsModule,
         StoreModule.forFeature('home', homeReducers),
         EffectsModule.forFeature([HomeEffects]),
-        RouterModule.forRoot([HOME_ROUTE], { useHash: true })
+        RouterModule.forRoot([HOME_ROUTE], { useHash: true }),
+        MultiselectDropdownModule
     ],
     declarations: [
         HomeComponent,

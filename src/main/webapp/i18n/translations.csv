@@ -111,6 +111,7 @@ candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswähle
 candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
 candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills"
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
+candidate-search,candidate-search.toolbar.residence.selected,Kantone,Kantone,Kantone,Kantone
 candidate-search,candidate-search.toolbar.search-button.title.loading,Loading,Loading,Loading,Loading
 candidate-search,candidate-search.toolbar.search-button.title.many,{{count}}+ Kandidaten,{{count}}+ Candidates,{{count}}+ Kandidaten,{{count}}+ Kandidaten
 candidate-search,candidate-search.toolbar.search-button.title.none,No Kandidaten,No Candidates,No Kandidaten,No Kandidaten

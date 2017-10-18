@@ -6,7 +6,7 @@ import { OccupationSuggestion } from '../../../shared/reference-service/occupati
 
 export interface CandidateSearchToolState {
     occupation?: OccupationSuggestion,
-    residence?: Canton,
+    residence?: Array<Canton>,
     graduation?: Graduation,
 }
 

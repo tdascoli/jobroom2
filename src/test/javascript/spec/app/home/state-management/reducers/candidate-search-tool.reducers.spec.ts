@@ -12,7 +12,7 @@ describe('candidateSearchToolReducer', () => {
         // GIVEN
         const searchModel = {
             occupation: { code: '11', name: 'test' },
-            residence: Canton.BS,
+            residence: new Array(Canton.BS),
             graduation: Graduation.ACCEPTED,
         };
         const action = new CandidateSearchToolSubmittedAction(searchModel);
