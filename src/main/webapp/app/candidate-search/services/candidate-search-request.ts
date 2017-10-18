@@ -1,5 +1,6 @@
 import { LanguageSkill } from '../../shared/model/shared-types';
 
+/*fixme: The rest endpoint expects strings instead of the enum value. Review alo the optional values*/
 export interface CandidateSearchRequest {
     occupation: string,
     skills: Array<string>,

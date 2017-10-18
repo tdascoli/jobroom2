@@ -71,4 +71,3 @@ export interface CandidateProfile {
     jobCenterCode: string;
     jobAdvisor: Contact;
 }
-

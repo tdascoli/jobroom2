@@ -1,27 +1,96 @@
 import { candidateSearchReducer } from '../../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
 import { initialState } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
-import {
-    Canton,
-    Graduation
-} from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
-import { InitCandidateSearchAction } from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
+import * as actions from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
+import { CandidateProfile } from '../../../../../../../main/webapp/app/candidate-search/services/candidate';
+import { createCandidateProfile } from '../utils';
 
 describe('candidateSearchReducer', () => {
-    it('should update CandidateSearchState for INIT_CANDIDATE_SEARCH action', () => {
+    it('should not update CandidateSearchState for INIT_CANDIDATE_SEARCH action', () => {
         // GIVEN
-        const searchFilterModel = {
-            occupation: { code: '11', name: 'test' },
-            residence: Canton.BS,
-            graduation: Graduation.ACCEPTED,
-        };
-        const action = new InitCandidateSearchAction(searchFilterModel);
+        const state = Object.assign({}, initialState);
+        const action = new actions.InitCandidateSearchAction();
 
         // WHEN
         const newState = candidateSearchReducer(initialState, action);
 
         // THEN
-        expect(newState.searchFilter.occupation).toEqual({ code: '11', name: 'test' });
-        expect(newState.searchFilter.residence).toEqual(Canton.BS);
-        expect(newState.searchFilter.graduation).toEqual(Graduation.ACCEPTED);
+        verifyUnchanged(newState, state, []);
+    });
+
+    it('should update CandidateSearchState for CANDIDATE_LIST_LOADED action', () => {
+        // GIVEN
+        const candidateProfileList: Array<CandidateProfile> = [createCandidateProfile('c1'), createCandidateProfile('c2'), createCandidateProfile('c3')];
+        const state = Object.assign({}, initialState, { candidateProfileList: [createCandidateProfile('c0')] });
+        const action = new actions.CandidateProfileListLoadedAction({
+            candidateProfileList,
+            totalCandidateCount: 100,
+            page: 2
+        });
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.candidateProfileList).toEqual([
+            createCandidateProfile('c1'),
+            createCandidateProfile('c2'),
+            createCandidateProfile('c3'),
+        ]);
+        expect(newState.totalCandidateCount).toEqual(100);
+        expect(newState.page).toEqual(2);
+        expect(newState.loading).toBeFalsy();
+        expect(newState.searchError).toBeFalsy();
+        expect(newState.initialState).toBeFalsy();
+        verifyUnchanged(newState, state, ['candidateProfileList', 'totalCandidateCount', 'page', 'loading', 'searchError', 'initialState']);
+    });
+
+    it('should update CandidateSearchState for SHOW_CANDIDATE_LIST_ERROR action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState);
+        const action = new actions.ShowCandidateListErrorAction('some error');
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchError).toBeTruthy();
+        verifyUnchanged(newState, state, ['searchError']);
+    });
+
+    it('should update CandidateSearchState for HIDE_CANDIDATE_LIST_ERROR action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, { searchError: true });
+        const action = new actions.HideCandidateListErrorAction();
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchError).toBeFalsy();
+        verifyUnchanged(newState, state, ['searchError']);
+    });
+
+    it('should update CandidateSearchState for SEARCH_CANDIDATES action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, { searchError: true });
+        const action = new actions.SearchCandidatesAction({
+            workplace: 'BE',
+        });
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchFilter.workplace).toEqual('BE');
+        expect(newState.loading).toBeTruthy();
+        verifyUnchanged(newState, state, ['loading', 'searchFilter']);
     });
 });
+
+function verifyUnchanged<T>(newState: T, oldState: T, ignoreFields: Array<string>) {
+    Object.keys(newState)
+        .filter((key: string) => ignoreFields.indexOf(key) < 0)
+        .forEach((key: string) => {
+            expect(newState[key]).toEqual(oldState[key]);
+        });
+}

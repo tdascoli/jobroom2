@@ -27,7 +27,7 @@ export class HomeEffects {
     candidateSearchToolSubmitted$: Observable<Action> = this.actions$
         .ofType(CANDIDATE_SEARCH_TOOL_SUBMITTED)
         .do((action: CandidateSearchToolSubmittedAction) => this.router.navigate(['/candidate-search']))
-        .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.InitCandidateSearchAction(action.payload));
+        .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.SearchCandidatesAction(action.payload));
 
     constructor(private actions$: Actions, private router: Router) {
     }

@@ -1,6 +1,6 @@
 page,key,de,en,fr,it
 activate,activate.messages.error,"<strong>Ihr Benutzer konnte nicht aktiviert werden.</strong> Bitte benutzen Sie die Registrierungsmaske, um sich zu registrieren.",<strong>Your user could not be activated.</strong> Please use the registration form to sign up.,<strong>Votre compte utilisateur n'a pas pu être activé.</strong> Utilisez le formulaire d'enregistrement pour en créer un nouveau.,<strong>Il tuo account non può essere attivato.</strong> Si prega di usare il modulo di registrazione per iscriversi.
-activate,activate.messages.success,<strong>Ihr Benutzer wurde aktiviert.</strong> Bitte ,<strong>Your user account has been activated.</strong> Please ,<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ,<strong>Il tuo account è stato attivato.</strong> Si prega di
+activate,activate.messages.success,"<strong>Ihr Benutzer wurde aktiviert.</strong> Bitte ","<strong>Your user account has been activated.</strong> Please ","<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ",<strong>Il tuo account è stato attivato.</strong> Si prega di
 activate,activate.title,Aktivierung,Activation,Activation,Attivazione
 audits,audits.filter.button.clear,leeren,clear,Effacer,cancella
 audits,audits.filter.button.close,abschließen,close,Fermer,chiudi
@@ -15,9 +15,47 @@ audits,audits.table.header.date,Datum,Date,Date,Data
 audits,audits.table.header.principal,Benutzer,User,Utilisateur,Utente
 audits,audits.table.header.status,Stand,State,Status,Stato
 audits,audits.title,Audits,Audits,Audits,Cambiamenti
+candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Führerausweiskategorien,Führerausweiskategorien,Führerausweiskategorien
+candidate-detail,candidate-detail.additional-information.education.label,Ausbildung,Ausbildung,Ausbildung,Ausbildung
+candidate-detail,candidate-detail.additional-information.gender.label,Geschlecht,Geschlecht,Geschlecht,Geschlecht
+candidate-detail,candidate-detail.additional-information.highestEducationLevel.label,Höchste Bildungsstufe,Höchste Bildungsstufe,Höchste Bildungsstufe,Höchste Bildungsstufe
+candidate-detail,candidate-detail.additional-information.no-information,Keine Angaben,Keine Angaben,Keine Angaben,Keine Angaben
+candidate-detail,candidate-detail.additional-information.preferredWorkRegions.label,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en
+candidate-detail,candidate-detail.additional-information.title,Weitere Angaben,Weitere Angaben,Weitere Angaben,Weitere Angaben
+candidate-detail,candidate-detail.additional-information.workForm.label,Arbeitsform,Arbeitsform,Arbeitsform,Arbeitsform
+candidate-detail,candidate-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
+candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopieren,Link kopieren,Link kopieren
+candidate-detail,candidate-detail.candidate-link,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden
+candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
+candidate-detail,candidate-detail.candidate-save,Kandidat speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
+candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
+candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
+candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
+candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
+candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf
+candidate-detail,candidate-detail.job-experience.graduation.label,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf
+candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
+candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf
+candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation
+candidate-detail,candidate-detail.personal-information.address.label,Adresse,Adresse,Adresse,Adresse
+candidate-detail,candidate-detail.personal-information.e-mail.label,E-Mail,E-Mail,E-Mail,E-Mail
+candidate-detail,candidate-detail.personal-information.mobile.label,Mobile,Mobile,Mobile,Mobile
+candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname,Name / Vorname,Name / Vorname,Name / Vorname
+candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Staatsangehörigkeit,Staatsangehörigkeit,Staatsangehörigkeit
+candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telefon,Telefon,Telefon
+candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personalien / Kontaktdaten des Kandidaten,Personalien / Kontaktdaten des Kandidaten,Personalien / Kontaktdaten des Kandidaten
 candidate-search,candidate-search.availability.BY_ARRANGEMENT,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung
 candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Ab Sofort,Ab Sofort,Ab Sofort
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit
+candidate-search,candidate-search.candidate-search-list.error-message,Failed to load candidate result list!,Failed to load candidate result list!,Failed to load candidate result list!,Failed to load candidate result list!
+candidate-search,candidate-search.candidate-search-list.title.many.with-locality,More than {{count}} {{query}} Candidates in {{locality}},More than {{count}} {{query}} Candidates in {{locality}},More than {{count}} {{query}} Candidates in {{locality}},More than {{count}} {{query}} Candidates in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.many.without-locality,More than {{count}} {{query}} Candidates,More than {{count}} {{query}} Candidates,More than {{count}} {{query}} Candidates,More than {{count}} {{query}} Candidates
+candidate-search,candidate-search.candidate-search-list.title.none.with-locality,No {{query}} Candidates in {{locality}},No {{query}} Candidates in {{locality}},No {{query}} Candidates in {{locality}},No {{query}} Candidates in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.none.without-locality,No {{query}} Candidates,No {{query}} Candidates,No {{query}} Candidates,No {{query}} Candidates
+candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 {{query}} Candidate in {{locality}},1 {{query}} Candidate in {{locality}},1 {{query}} Candidate in {{locality}},1 {{query}} Candidate in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.one.without-locality,1 {{query}} Candidate,1 {{query}} Candidate,1 {{query}} Candidate,1 {{query}} Candidate
+candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates
 candidate-search,candidate-search.drivingLicenceCategory.A,A,A,A,A
 candidate-search,candidate-search.drivingLicenceCategory.A1,A1,A1,A1,A1
 candidate-search,candidate-search.drivingLicenceCategory.B,B,B,B,B
@@ -69,6 +107,15 @@ candidate-search,candidate-search.languageSkills.written.no-selection,schriftlic
 candidate-search,candidate-search.no-selection,,,,
 candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau
 candidate-search,candidate-search.title,Candidate search,Candidate search,Candidate search,Candidate search
+candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...
+candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
+candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills"
+candidate-search,candidate-search.toolbar.residence.placeholder,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
+candidate-search,candidate-search.toolbar.search-button.title.loading,Loading,Loading,Loading,Loading
+candidate-search,candidate-search.toolbar.search-button.title.many,{{count}}+ Kandidaten,{{count}}+ Candidates,{{count}}+ Kandidaten,{{count}}+ Kandidaten
+candidate-search,candidate-search.toolbar.search-button.title.none,No Kandidaten,No Candidates,No Kandidaten,No Kandidaten
+candidate-search,candidate-search.toolbar.search-button.title.one,1 der Kandidat,1 Candidate,1 der Kandidat,1 der Kandidat
+candidate-search,candidate-search.toolbar.search-button.title.other,{{count}} Kandidaten,{{count}} Candidates,{{count}} Kandidaten,{{count}} Kandidaten
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
 candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
 candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Schichtarbeit,Schichtarbeit,Schichtarbeit
@@ -78,44 +125,6 @@ candidate-search,candidate-search.workLocation.label,Arbeitsort,Arbeitsort,Arbei
 candidate-search,candidate-search.workload.label,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
 candidate-search,candidate-search.workplace.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
 candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton"
-candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills"
-candidate-search,candidate-search.toolbar.residence.placeholder,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
-candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
-candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...
-candidate-search,candidate-search.toolbar.search-button.title.loading,Loading,Loading,Loading,Loading
-candidate-search,candidate-search.toolbar.search-button.title.many,{{count}}+ Kandidaten,{{count}}+ Candidates,{{count}}+ Kandidaten,{{count}}+ Kandidaten
-candidate-search,candidate-search.toolbar.search-button.title.none,No Kandidaten,No Candidates,No Kandidaten,No Kandidaten
-candidate-search,candidate-search.toolbar.search-button.title.one,1 der Kandidat,1 Candidate,1 der Kandidat,1 der Kandidat
-candidate-search,candidate-search.toolbar.search-button.title.other,{{count}} Kandidaten,{{count}} Candidates,{{count}} Kandidaten,{{count}} Kandidaten
-candidate-detail,candidate-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
-candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation
-candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf
-candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
-candidate-detail,candidate-detail.job-experience.graduation.label,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf
-candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf
-candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
-candidate-detail,candidate-detail.additional-information.title,Weitere Angaben,Weitere Angaben,Weitere Angaben,Weitere Angaben
-candidate-detail,candidate-detail.additional-information.workForm.label,Arbeitsform,Arbeitsform,Arbeitsform,Arbeitsform
-candidate-detail,candidate-detail.additional-information.no-information,Keine Angaben,Keine Angaben,Keine Angaben,Keine Angaben
-candidate-detail,candidate-detail.additional-information.gender.label,Geschlecht,Geschlecht,Geschlecht,Geschlecht
-candidate-detail,candidate-detail.additional-information.highestEducationLevel.label,Höchste Bildungsstufe,Höchste Bildungsstufe,Höchste Bildungsstufe,Höchste Bildungsstufe
-candidate-detail,candidate-detail.additional-information.education.label,Ausbildung,Ausbildung,Ausbildung,Ausbildung
-candidate-detail,candidate-detail.additional-information.preferredWorkRegions.label,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en
-candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Führerausweiskategorien,Führerausweiskategorien,Führerausweiskategorien
-candidate-detail,candidate-detail.personal-information.title,"Personalien / Kontaktdaten des Kandidaten","Personalien / Kontaktdaten des Kandidaten","Personalien / Kontaktdaten des Kandidaten","Personalien / Kontaktdaten des Kandidaten"
-candidate-detail,candidate-detail.personal-information.name.label,"Name / Vorname","Name / Vorname","Name / Vorname","Name / Vorname"
-candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Staatsangehörigkeit,Staatsangehörigkeit,Staatsangehörigkeit
-candidate-detail,candidate-detail.personal-information.address.label,Adresse,Adresse,Adresse,Adresse
-candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telefon,Telefon,Telefon
-candidate-detail,candidate-detail.personal-information.mobile.label,Mobile,Mobile,Mobile,Mobile
-candidate-detail,candidate-detail.personal-information.e-mail.label,E-Mail,E-Mail,E-Mail,E-Mail
-candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
-candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
-candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
-candidate-detail,candidate-detail.candidate-link,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden
-candidate-detail,candidate-detail.candidate-save,Kandidat speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
-candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopieren,Link kopieren,Link kopieren
-candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
 configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filtrer (par préfixe),Filtro (per prefisso)
 configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
@@ -176,10 +185,9 @@ global,error.internalServerError,Internal server error,Internal server error,Err
 global,error.server.not.reachable,Server ist nicht erreichbar,Server not reachable,Serveur inaccessible,Server non raggiungibile
 global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
 global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Login déjà utilisé !,Il nome utente è già in uso!
-global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV
-global,footer.link.legal.text,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen
 global,footer.link.abbreviation.text,Abkürzungen,Abkürzungen,Abkürzungen,Abkürzungen
-global,header.title,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV
+global,footer.link.legal.text,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen
+global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
 global,global.field.id,ID,ID,ID,ID
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
@@ -190,6 +198,8 @@ global,global.form.newpassword,Neues Passwort,New password,Nouveau mot de passe,
 global,global.form.newpassword.placeholder,Neues Passwort,New password,Nouveau mot de passe,Nuova password
 global,global.form.username,Benutzername,Username,Nom d'utilisateur,Utente
 global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom d'utilisateur,Il tuo nome utente
+global,global.gender.FEMALE,weiblich,weiblich,weiblich,weiblich
+global,global.gender.MALE,männlich,männlich,männlich,männlich
 global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} items.,Mostra {{first}} - {{second}} di {{total}} articoli.
 global,global.menu.account.login,Anmelden,Sign in,S'authentifier,Accesso
 global,global.menu.account.logout,Abmelden,Sign out,Déconnexion,Esci
@@ -219,7 +229,7 @@ global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional
 global,global.menu.language,Sprache,Language,Langue,Lingua
 global,global.messages.error.dontmatch,Das bestätigte Passwort entspricht nicht dem neuen Passwort!,The password and its confirmation do not match!,Le nouveau mot de passe et sa confirmation ne sont pas égaux !,La password e la sua conferma non corrispondono!
 global,global.messages.info.authenticated.link,anmelden,sign in,connecter,accedere
-global,global.messages.info.authenticated.prefix,Wenn Sie sich ,If you want to ,Si vous voulez vous ,Se vuoi
+global,global.messages.info.authenticated.prefix,"Wenn Sie sich ","If you want to ","Si vous voulez vous ",Se vuoi
 global,global.messages.info.authenticated.suffix," möchten, versuchen Sie es mit <br/>- Administrator (Name=""admin"" und Passwort=""admin"")<br/>- Benutzer (Name=""user"" und Passwort=""user"").",", you can try the default accounts:<br/>- Administrator (login=""admin"" and password=""admin"") <br/>- User (login=""user"" and password=""user"").",", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=""admin"" et mot de passe =""admin"") <br/> - Utilisateur (nom d'utilisateur=""user"" et mot de passe =""user"").",", puoi provare gli account di default: <br/> - Amministratore (user = ""admin"" e la password = ""admin"") <br/> - utente (user = ""user"" e la password = ""user"")"
 global,global.messages.info.register.link,Registrieren Sie sich,Register a new account,Créer un compte,Crea un account
 global,global.messages.info.register.noaccount,Sie haben noch keinen Zugang?,You don't have an account yet?,Vous n'avez pas encore de compte ?,Non hai ancora un account?
@@ -262,13 +272,6 @@ global,global.reference.canton.VD,Waadt,Vaud,Vaud,Waadt
 global,global.reference.canton.VS,Wallis,Valais,Vallese,Wallis
 global,global.reference.canton.ZG,Zug,Zoug,Zugo,Zug
 global,global.reference.canton.ZH,Zürich,Zurich,Zurigo,Zürich
-global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Sprachen
-global,global.reference.language.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
-global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Fortgeschritten
-global,global.reference.language.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
-global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
-global,global.reference.language.spoken,mündlich,mündlich,mündlich,mündlich
-global,global.reference.language.written,schriftlich,schriftlich,schriftlich,schriftlich
 global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
 global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
 global,global.reference.language.ch-de,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
@@ -286,6 +289,10 @@ global,global.reference.language.it,Italienisch,Italienisch,Italienisch,Italieni
 global,global.reference.language.jp,Japanisch,Japanisch,Japanisch,Japanisch
 global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
 global,global.reference.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
+global,global.reference.language.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
+global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Fortgeschritten
+global,global.reference.language.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
+global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
 global,global.reference.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
 global,global.reference.language.ne,Holländisch,Holländisch,Holländisch,Holländisch
 global,global.reference.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
@@ -295,6 +302,7 @@ global,global.reference.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch
 global,global.reference.language.ru,Russisch,Russisch,Russisch,Russisch
 global,global.reference.language.sk,Slowakisch,Slowakisch,Slowakisch,Slowakisch
 global,global.reference.language.sl,Slowenisch,Slowenisch,Slowenisch,Slowenisch
+global,global.reference.language.spoken,mündlich,mündlich,mündlich,mündlich
 global,global.reference.language.sq,Albanisch,Albanisch,Albanisch,Albanisch
 global,global.reference.language.sr,Serbisch,Serbisch,Serbisch,Serbisch
 global,global.reference.language.sv,Schwedisch,Schwedisch,Schwedisch,Schwedisch
@@ -302,15 +310,16 @@ global,global.reference.language.ta,Tamil,Tamil,Tamil,Tamil
 global,global.reference.language.th,Thai,Thai,Thai,Thai
 global,global.reference.language.tr,Türkisch,Türkisch,Türkisch,Türkisch
 global,global.reference.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vietnamesisch
+global,global.reference.language.written,schriftlich,schriftlich,schriftlich,schriftlich
 global,global.reference.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
-global,global.gender.MALE,männlich,männlich,männlich,männlich
-global,global.gender.FEMALE,weiblich,weiblich,weiblich,weiblich
+global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Sprachen
 global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Development,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test
 global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
-global,navigation.previous,Bisherige,Previous,Bisherige,Bisherige
+global,header.title,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV
 global,navigation.next,Nächster,Next,Nächster,Nächster
+global,navigation.previous,Bisherige,Previous,Bisherige,Bisherige
 health,health.details.details,Details,Details,Détails,Dettagli
 health,health.details.error,Error,Error,Erreur,Errore
 health,health.details.name,Name,Name,Nom,Nome
@@ -335,13 +344,12 @@ home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
 home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
 home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für
+home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen
+home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten
 home,home.tools.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidaten finden,Kandidaten finden
 home,home.tools.job-search.search-button.title,Traumjob finden!,Traumjob finden!,Traumjob finden!,Traumjob finden!
 home,home.tools.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
-home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten
-home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen
-job-detail,job-detail.external-job-disclaimer,"Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.","This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.","Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.","Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?."
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
 job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren
 job-detail,job-detail.action.print,Drucken,Drucken,Drucken,Drucken
@@ -349,12 +357,12 @@ job-detail,job-detail.action.saveJob,Stellenangebot speichern,Stellenangebot spe
 job-detail,job-detail.action.savePdf,Als PDF speichern,Als PDF speichern,Als PDF speichern,Als PDF speichern
 job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden
 job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat
+job-detail,job-detail.application.email,Per E-Mail,E-Mail,Per E-Mail,Per E-Mail
 job-detail,job-detail.application.hints,Ergänzende Angaben,Hints,Ergänzende Angaben,Ergänzende Angaben
-job-detail,job-detail.application.title,Bewerbungsformen,Application,Bewerbungsformen,Bewerbungsformen
 job-detail,job-detail.application.mail,Per Post,For Mail,Per Post,Per Post
 job-detail,job-detail.application.mail.text,siehe Adresse des Unternehmens,See company address,siehe Adresse des Unternehmens,siehe Adresse des Unternehmens
-job-detail,job-detail.application.email,Per E-Mail,E-Mail,Per E-Mail,Per E-Mail
 job-detail,job-detail.application.phone,Telefonisch,Phone,Telefonisch,Telefonisch
+job-detail,job-detail.application.title,Bewerbungsformen,Application,Bewerbungsformen,Bewerbungsformen
 job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
 job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 job-detail,job-detail.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
@@ -585,7 +593,7 @@ reset,reset.finish.form.button,Neues Passwort setzen,Validate new password,Réin
 reset,reset.finish.messages.error,Ihr Passwort konnte nicht zurückgesetzt werden. Zur Erinnerung Ihre Anfrage ist nur 24 Stunden gültig.,Your password couldn't be reset. Remember a password request is only valid for 24 hours.,Votre mot de passe n'a pas pu être réinitialisé. La demande de réinitialisation n'est valable que 24 heures.,La tua password potrebbe non essere ripristinata. Ricorda che la richiesta della password è valida solo per 24 ore.
 reset,reset.finish.messages.info,Wählen Sie ein neues Passwort,Choose a new password,Choisir un nouveau mot de passe,Scegliere una nuova password
 reset,reset.finish.messages.keymissing,Der Reset Schlüssel fehlt.,The reset key is missing.,La clef de réinitilisation est manquante,La chiave di reimpostazione non è presente.
-reset,reset.finish.messages.success,<strong>Ihr Passwort wurde zurückgesetzt.</strong> Bitte ,<strong>Your password has been reset.</strong> Please ,<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ,<strong>La tua password è stata reimpostata .</strong> Per favore
+reset,reset.finish.messages.success,"<strong>Ihr Passwort wurde zurückgesetzt.</strong> Bitte ","<strong>Your password has been reset.</strong> Please ","<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ",<strong>La tua password è stata reimpostata .</strong> Per favore
 reset,reset.finish.title,Passwort zurücksetzen,Reset password,Réinitialisation du mot de passe,Cambia Password
 reset,reset.request.form.button,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Reimposta Password
 reset,reset.request.messages.info,"Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",Enter the email address you used to register,Veuillez renseigner l'adresse email utilisée pour vous enregistrer,Inserisci l'indirizzo email utilizzato per la registrazione

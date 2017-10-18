@@ -1,0 +1,139 @@
+import {
+    CANDIDATE_SEARCH_DEBOUNCE,
+    CANDIDATE_SEARCH_SCHEDULER,
+    CandidateSearchEffects
+} from '../../../../../../../main/webapp/app/candidate-search/state-management/effects/candidate-search.effects';
+import { Observable } from 'rxjs/Observable';
+import { CandidateSearchState } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
+import { Store, StoreModule } from '@ngrx/store';
+import { MockRouter } from '../../../../helpers/mock-route.service';
+import { TestBed } from '@angular/core/testing';
+import { provideMockActions } from '@ngrx/effects/testing';
+import { CandidateService } from '../../../../../../../main/webapp/app/candidate-search/services/candidate.service';
+import { candidateSearchReducer } from '../../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
+import { Router } from '@angular/router';
+import { cold, getTestScheduler, hot } from 'jasmine-marbles';
+import * as actions from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
+import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
+import { createCandidateProfile } from '../utils';
+import { Headers } from '@angular/http';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+
+describe('CandidateSearchEffects', () => {
+    let effects: CandidateSearchEffects;
+    let actions$: Observable<any>;
+    let store: Store<CandidateSearchState>;
+
+    const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['search']);
+    const mockRouter = new MockRouter();
+
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            imports: [
+                StoreModule.forRoot({ candidateSearch: candidateSearchReducer })
+            ],
+            providers: [
+                CandidateSearchEffects,
+                provideMockActions(() => actions$),
+                { provide: CandidateService, useValue: mockCandidateService },
+                { provide: Router, useValue: mockRouter },
+                { provide: CANDIDATE_SEARCH_SCHEDULER, useFactory: getTestScheduler },
+                { provide: CANDIDATE_SEARCH_DEBOUNCE, useValue: 30 }
+            ],
+        });
+
+        effects = TestBed.get(CandidateSearchEffects);
+        store = TestBed.get(Store);
+    });
+
+    describe('initCandidateSearch$', () => {
+        const action = new actions.InitCandidateSearchAction();
+
+        it('should return new CandidateProfileListLoadedAction if store is in initial state', () => {
+            const candidateProfileList = [
+                createCandidateProfile('c1'),
+                createCandidateProfile('c2'),
+                createCandidateProfile('c3')
+            ];
+            const responseWrapper = new ResponseWrapper(new Headers({ 'X-Total-Count': '100' }), candidateProfileList, 200);
+
+            actions$ = hot('-a', { a: action });
+            const response = cold('-a|', { a: responseWrapper });
+            mockCandidateService.search.and.returnValue(response);
+
+            const candidateListLoadedAction = new actions.CandidateProfileListLoadedAction({
+                candidateProfileList,
+                totalCandidateCount: 100,
+                page: 0
+            });
+            const expected = cold('--b', { b: candidateListLoadedAction });
+
+            expect(effects.initCandidateSearch$).toBeObservable(expected);
+        });
+
+        it('should not return anything if store is not in initial state', () => {
+            const candidateListLoadedAction = new actions.CandidateProfileListLoadedAction({
+                candidateProfileList: [],
+                totalCandidateCount: 100,
+                page: 0
+            });
+
+            store.dispatch(candidateListLoadedAction);
+
+            actions$ = hot('-a', { a: action });
+
+            const expected = cold('-');
+
+            expect(effects.initCandidateSearch$).toBeObservable(expected);
+        });
+
+        it('should return a new ShowCandidateListErrorAction on error', () => {
+            actions$ = hot('-a---', { a: action });
+            const response = cold('-#|', {}, 'error');
+            mockCandidateService.search.and.returnValue(response);
+
+            const showCandidateListErrorAction = new actions.ShowCandidateListErrorAction('error');
+            const expected = cold('--b', { b: showCandidateListErrorAction });
+
+            expect(effects.initCandidateSearch$).toBeObservable(expected);
+        });
+    });
+
+    describe('loadCandidateList$', () => {
+        it('should return a new ShowCandidateListErrorAction on error', () => {
+            const action = new actions.SearchCandidatesAction({});
+
+            actions$ = hot('-a---', { a: action });
+            const response = cold('-#|', {}, 'error');
+            mockCandidateService.search.and.returnValue(response);
+
+            const showCandidateListErrorAction = new actions.ShowCandidateListErrorAction('error');
+            const expected = cold('-----b', { b: showCandidateListErrorAction });
+
+            expect(effects.loadCandidateList$).toBeObservable(expected);
+        });
+
+        it('should return a new CandidateProfileListLoadedAction with the loaded jobs on success', () => {
+            const action = new actions.SearchCandidatesAction({});
+            const candidateProfileList = [
+                createCandidateProfile('c1'),
+                createCandidateProfile('c2'),
+                createCandidateProfile('c3')
+            ];
+            const responseWrapper = new ResponseWrapper(new Headers({ 'X-Total-Count': '100' }), candidateProfileList, 200);
+
+            actions$ = hot('-a---', { a: action });
+            const response = cold('-a|', { a: responseWrapper });
+            mockCandidateService.search.and.returnValue(response);
+
+            const jobListLoadedAction = new actions.CandidateProfileListLoadedAction({
+                candidateProfileList,
+                totalCandidateCount: 100,
+                page: 0
+            });
+            const expected = cold('-----b', { b: jobListLoadedAction });
+
+            expect(effects.loadCandidateList$).toBeObservable(expected);
+        });
+    });
+});

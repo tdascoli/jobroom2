@@ -7,10 +7,15 @@
 <div class="container">
     <div class="base">
         <div class="base__subnavbar">
-            <jr2-candidate-search-filter [searchFilter]="searchFilter$ | async"></jr2-candidate-search-filter>
+            <jr2-candidate-search-filter [searchFilter]="searchFilter$ | async"
+                                         (searchCandidates)="searchCandidates($event)"></jr2-candidate-search-filter>
         </div>
 
         <div class="base__content--wide">
+            <jr2-candidate-search-list [profileList]="candidateProfileList$ | async"
+                                       [occupationName]="occupationName$ | async"
+                                       [totalCount]="totalCount$ | async"
+                                       [showError]="showError$ | async"></jr2-candidate-search-list>
         </div>
     </div>
 </div>

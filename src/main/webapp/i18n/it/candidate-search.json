@@ -1,5 +1,26 @@
 {
     "candidate-search": {
+        "candidate-search-list": {
+            "error-message": "Failed to load candidate result list!",
+            "title": {
+                "many": {
+                    "with-locality": "More than {{count}} {{query}} Candidates in {{locality}}",
+                    "without-locality": "More than {{count}} {{query}} Candidates"
+                },
+                "none": {
+                    "with-locality": "No {{query}} Candidates in {{locality}}",
+                    "without-locality": "No {{query}} Candidates"
+                },
+                "one": {
+                    "with-locality": "1 {{query}} Candidate in {{locality}}",
+                    "without-locality": "1 {{query}} Candidate"
+                },
+                "other": {
+                    "with-locality": "{{count}} {{query}} Candidates in {{locality}}",
+                    "without-locality": "{{count}} {{query}} Candidates"
+                }
+            }
+        },
         "availability": {
             "BY_ARRANGEMENT": "Auf Vereinbarung",
             "IMMEDIATE": "Ab Sofort",

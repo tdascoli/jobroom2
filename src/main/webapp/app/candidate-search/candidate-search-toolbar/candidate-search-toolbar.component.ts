@@ -6,6 +6,7 @@ import { CandidateSearchFilter } from '../state-management/state/candidate-searc
 import { Canton, Graduation } from '../services/candidate-search-request';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -26,6 +27,8 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     toolbarForm: FormGroup;
 
+    private subscription: Subscription;
+
     constructor(private occupationService: OccupationService,
                 private fb: FormBuilder) {
     }
@@ -36,9 +39,14 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             residence: [this.searchFilter.residence],
             graduation: [this.searchFilter.graduation]
         });
+
+        this.subscription = this.toolbarForm.valueChanges.subscribe((formValue: any) =>
+            this.search(formValue)
+        );
     }
 
     ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 
     fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
@@ -48,6 +56,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
 
     search(formValue: any): void {
-        this.searchCandidates.emit(formValue);
+        const searchFilter = Object.assign({}, this.searchFilter, formValue);
+        this.searchCandidates.emit(searchFilter);
     }
 }

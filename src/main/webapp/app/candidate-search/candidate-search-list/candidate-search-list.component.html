@@ -1,0 +1,9 @@
+<div infiniteScroll [infiniteScrollDistance]="1" (scrolled)="onScroll($event)" [infiniteScrollDisabled]="getMaxCount() <= profileList.length">
+    <ngb-alert *ngIf="showError" [type]="'danger'" (close)="closeAlert()">{{ 'candidate-search.candidate-search-list.error-message' | translate}}
+    </ngb-alert>
+
+    <h3 class="text--light" *ngIf="!showError" [jhiTranslate]="getTitleKey()" [translateValues]="{count: getMaxCount()| jr2Number, query: occupationName, locality: ''}"></h3>
+
+    <jr2-candidate-search-list-item *ngFor="let profile of profileList" [profile]="profile"></jr2-candidate-search-list-item>
+
+</div>

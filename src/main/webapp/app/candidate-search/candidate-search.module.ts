@@ -18,11 +18,14 @@ import { CandidateDetailResolver } from './candidate-detail/candidate-detail.res
 import { CandidateService } from './services/candidate.service';
 import { WorkPeriodComponent } from './work-period/work-period.component';
 import { ClipboardModule } from 'ngx-clipboard';
+import { CandidateSearchListComponent } from './candidate-search-list/candidate-search-list.component';
+import { CandidateSearchListItemComponent } from './candidate-search-list-item/candidate-search-list-item.component';
+import { CandidateSearchEffects } from './state-management/effects/candidate-search.effects';
 
 @NgModule({
     imports: [
         StoreModule.forFeature('candidateSearch', candidateSearchReducer),
-        EffectsModule.forFeature([]),
+        EffectsModule.forFeature([CandidateSearchEffects]),
         JobroomSharedModule,
         CommonModule,
         ReactiveFormsModule,
@@ -31,6 +34,8 @@ import { ClipboardModule } from 'ngx-clipboard';
         ClipboardModule
     ],
     declarations: [
+        CandidateSearchListComponent,
+        CandidateSearchListItemComponent,
         CandidateSearchComponent,
         CandidateSearchFilterComponent,
         LanguageSelectorComponent,

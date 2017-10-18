@@ -10,28 +10,31 @@ import {
 } from '../../services/candidate-search-request';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { LanguageSkill } from '../../../shared/model/shared-types';
+import { CandidateProfile } from '../../services/candidate';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter;
+    searchError: boolean;
     loading: boolean;
-    totalCandidatesCount: number;
+    page: number;
+    totalCandidateCount: number;
+    candidateProfileList: Array<CandidateProfile>;
+    initialState: boolean;
 }
-
-// todo: move OccupationSuggestion to a reference-service module
 
 export interface CandidateSearchFilter {
     occupation?: OccupationSuggestion,
-    skills: Array<string>,
+    skills?: Array<string>,
     experience?: Experience,
     workplace?: string,
     residence?: Canton,
     availability?: Availability,
-    workload: [number, number];
+    workload?: [number, number];
     workForm?: WorkForm,
     educationLevel?: ISCED_1997,
     graduation?: Graduation,
     drivingLicenceCategory?: DrivingLicenceCategory
-    languageSkills: Array<LanguageSkill>
+    languageSkills?: Array<LanguageSkill>
 }
 
 export const initialState: CandidateSearchState = {
@@ -41,10 +44,16 @@ export const initialState: CandidateSearchState = {
         workload: [0, 100]
     },
     loading: false,
-    totalCandidatesCount: 0
+    totalCandidateCount: 0,
+    page: 0,
+    candidateProfileList: [],
+    initialState: true,
+    searchError: false
 };
 
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
+export const getCandidateProfileList = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.candidateProfileList);
 export const getSearchFilter = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchFilter);
 export const getLoading = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.loading);
-export const getTotalCandidatesCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidatesCount);
+export const getSearchError = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchError);
+export const getTotalCandidateCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidateCount);
