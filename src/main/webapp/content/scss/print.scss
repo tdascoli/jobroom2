@@ -1,7 +1,7 @@
 @media print {
 
-    jhi-footer, jhi-page-ribbon, .base__related, .breadcrumb, .header {
-        display: none;
+    jhi-footer, jhi-page-ribbon, .base__related, .breadcrumb, .header, .pagination {
+        display: none !important;
     }
 
     jhi-main {
@@ -9,13 +9,18 @@
         flex-direction: unset;
     }
 
-    jr2-job-detail {
+    jr2-job-detail, jr2-candidate-detail {
         flex: unset;
+    }
+
+    div.main {
+        min-height: unset !important;
     }
 
     .container {
         width: 100%;
         padding: 30px !important;
+        margin-left: 0px;
     }
 
     .base {
@@ -34,10 +39,46 @@
         font-size: 100% !important;
     }
 
-    .logo-box {
-        display: flex;
-        flex-direction: row;
+    .job-detail__title, .job-detail__content {
+        flex: 1 0 auto;
+    }
+
+    .candidate-detail__content *, .job-detail__content * {
+        background-color: white !important;
+    }
+
+    .candidate-detail__content .content__item {
+        display: table;
+        width: 100%;
+    }
+
+    .candidate-detail__content .content__item strong {
+        display: table-cell;
+        width: 40%;
+    }
+
+    .candidate-detail__content .content__item span {
+        display: table-cell;
+        width: 60%;
+        padding-left: 10px;
+    }
+
+    .candidate-detail__content__title, .job-detail__content__title {
+        font-weight: unset;
+    }
+
+    .alv-logo-box {
+        margin-top: 20px;
         background-color: white;
+        padding: 0px;
+
+        .candidate-detail__content, .job-detail__content {
+            font-size: 10pt;
+        }
+
+        .candidate-detail__subtitle {
+            font-size: 1.25rem;
+        }
     }
 
     .text--primary-color {
@@ -46,10 +87,6 @@
 
     .badge {
         background-color: white;
-    }
-
-    .job-detail__title, .job-detail__content {
-        flex: 1 0 auto;
     }
 
     .md-whiteframe-1dp {
