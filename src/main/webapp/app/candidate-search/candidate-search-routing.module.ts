@@ -14,7 +14,7 @@ const routes: Routes = [
         }
     },
     {
-        path: 'candidate-search/:id',
+        path: 'candidate-detail/:id',
         component: CandidateDetailComponent,
         resolve: {
             candidateProfile: CandidateDetailResolver

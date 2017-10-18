@@ -24,9 +24,6 @@ export interface JobSearchState {
     totalJobCount: number;
     initialState: boolean;
     page: number;
-    selectedJobIndex: number;
-    nextJob: Job;
-    jobNavigationEnabled: boolean;
 }
 
 export interface JobSearchQuery {
@@ -57,17 +54,12 @@ export const initialState: JobSearchState = {
     totalJobCount: 0,
     page: 0,
     jobList: [],
-    nextJob: null,
-    jobNavigationEnabled: false,
-    selectedJobIndex: -1,
     initialState: true
 };
 
 export const getJobSearchState = createFeatureSelector<JobSearchState>('jobSearch');
 export const getTotalJobCount = createSelector(getJobSearchState, (state: JobSearchState) => state.totalJobCount);
 export const getJobList = createSelector(getJobSearchState, (state: JobSearchState) => state.jobList);
-export const getSelectedJobIndex = createSelector(getJobSearchState, (state: JobSearchState) => state.selectedJobIndex);
-export const getJobNavigationEnabled = createSelector(getJobSearchState, (state: JobSearchState) => state.jobNavigationEnabled);
 export const getSearchQuery = createSelector(getJobSearchState, (state: JobSearchState) => state.searchQuery);
 export const getBaseQuery = createSelector(getSearchQuery, (searchQuery: JobSearchQuery) => searchQuery.baseQuery);
 export const getLocalityQuery = createSelector(getSearchQuery, (searchQuery: JobSearchQuery) => searchQuery.localityQuery);

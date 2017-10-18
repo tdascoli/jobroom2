@@ -5,29 +5,31 @@ import { cold } from 'jasmine-marbles';
 import { ReferenceService } from '../../../../../../main/webapp/app/shared/reference-service/reference.service';
 import { CandidateService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.service';
 import { OccupationService } from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
-import { TranslateService } from "@ngx-translate/core";
+import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
+import { StoreModule } from '@ngrx/store';
+import { candidateSearchReducer } from '../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
 
 describe('CandidateDetailComponent', () => {
     let component: CandidateDetailComponent;
     let fixture: ComponentFixture<CandidateDetailComponent>;
 
-    let candidateProfile: any = {
+    const candidateProfile: any = {
         jobExperiences: [
             {
                 occupationCode: 22222
             }
         ]
     };
-    let mockActivatedRoute: any = { data: Observable.of({ 'candidateProfile': candidateProfile }) };
-    let mockReferenceService = jasmine.createSpyObj('mockReferenceService', ['resolveJobCenter']);
-    let mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['findCandidate']);
-    let mockOccupationService = jasmine.createSpyObj('mockOccupationService', ['findOccupationByCode']);
+    const mockActivatedRoute: any = { data: Observable.of({ 'candidateProfile': candidateProfile }) };
+    const mockReferenceService = jasmine.createSpyObj('mockReferenceService', ['resolveJobCenter']);
+    const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['findCandidate']);
+    const mockOccupationService = jasmine.createSpyObj('mockOccupationService', ['findOccupationByCode']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [JobroomTestModule],
+            imports: [JobroomTestModule, StoreModule.forRoot({ candidateSearch: candidateSearchReducer })],
             declarations: [CandidateDetailComponent],
             providers: [
                 { provide: ActivatedRoute, useValue: mockActivatedRoute },
@@ -48,8 +50,8 @@ describe('CandidateDetailComponent', () => {
 
     it('should populate occupationLabels',
         inject([TranslateService], (mockTranslateService: any) => {
-            //given
-            let occupation$ = cold('-a', { a: {
+            // GIVEN
+            const occupation$ = cold('-a', { a: {
                 code: 22222,
                 labels: {
                     en: 'Text'
@@ -60,10 +62,10 @@ describe('CandidateDetailComponent', () => {
             mockTranslateService.currentLang = 'en';
             mockTranslateService.onLangChange = cold('-b', { b: { lang: 'en' } });
 
-            //when
+            // WHEN
             fixture.detectChanges();
 
-            //then
+            // THEN
             fixture.whenStable().then(() => {
                 expect(candidateProfile.jobExperiences[0].occupation).toEqual('Text')
             });

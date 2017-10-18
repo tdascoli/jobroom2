@@ -3,6 +3,6 @@
 
     <h3 class="text--light" *ngIf="!(displayError$ | async)" [jhiTranslate]="getTitleKey()" [translateValues]="{count: getMaxCount() | jr2Number, query: baseQueryString, locality: localityQueryString}"></h3>
 
-    <jr2-job-search-list-item *ngFor="let job of jobList; let i = index" [job]="job" [index]="i"></jr2-job-search-list-item>
+    <jr2-job-search-list-item *ngFor="let job of jobList" [job]="job"></jr2-job-search-list-item>
 
 </div>

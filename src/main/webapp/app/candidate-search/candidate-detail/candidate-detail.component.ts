@@ -10,6 +10,11 @@ import { CandidateService } from '../services/candidate.service';
 import { OccupationService } from '../../shared/index';
 import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs/Subject';
+import { Store } from '@ngrx/store';
+import {
+    CandidateSearchState, getCandidateProfileList,
+    getTotalCandidateCount
+} from '../state-management/state/candidate-search.state';
 
 @Component({
     selector: 'jr2-candidate-detail',
@@ -20,6 +25,8 @@ export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewIni
     candidateProfile$: Observable<CandidateProfile>;
     jobCenter$: Observable<JobCenter>;
     candidateProtectedData$: Observable<Candidate>;
+    candidateProfiles$: Observable<Array<CandidateProfile>>;
+    candidateProfileListTotalSize$: Observable<number>;
     candidateUrl: string;
     isCopied: boolean;
 
@@ -29,7 +36,8 @@ export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewIni
                 private referenceService: ReferenceService,
                 private candidateService: CandidateService,
                 private occupationService: OccupationService,
-                private translateService: TranslateService) {
+                private translateService: TranslateService,
+                private store: Store<CandidateSearchState>) {
     }
 
     ngOnInit() {
@@ -47,6 +55,9 @@ export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewIni
             .flatMap((id) => this.candidateService.findCandidate(id));
 
         this.candidateUrl = window.location.href;
+
+        this.candidateProfiles$ = this.store.select(getCandidateProfileList);
+        this.candidateProfileListTotalSize$ = this.store.select(getTotalCandidateCount);
     }
 
     ngOnDestroy(): void {
@@ -59,7 +70,6 @@ export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewIni
         this.candidateProfile$
             .subscribe((candidateProfile) =>
                 this.populateOccupationName(candidateProfile));
-
     }
 
     private populateOccupationName(candidateProfile: CandidateProfile): void {

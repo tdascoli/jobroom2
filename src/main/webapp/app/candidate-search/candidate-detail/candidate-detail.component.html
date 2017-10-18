@@ -151,6 +151,11 @@
 
         <div class="col-12 col-md order-12 base__related">
             <div class="base__sticky-panel">
+                <jr2-details-page-pagination [currentItem]="candidateProfile$ | async"
+                                             [itemsList]="candidateProfiles$ | async"
+                                             [feature]="'candidate-detail'"
+                                             [totalSize]="candidateProfileListTotalSize$ | async"></jr2-details-page-pagination>
+
                 <button class="btn btn-primary btn-block btn-sm">{{ 'candidate-detail.candidate-link' | translate }}</button>
 
                 <ul class="nav filter-nav flex-column">

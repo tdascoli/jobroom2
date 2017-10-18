@@ -1,6 +1,6 @@
 import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { JobSearchRequest, JobService } from '../../services';
+import { JobSearchRequest, JobService, Job } from '../../services';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { ResponseWrapper } from '../../../shared/model/response-wrapper.model';
@@ -9,11 +9,10 @@ import {
     FILTER_CHANGED,
     FilterChangedAction,
     INIT_JOB_SEARCH,
-    JobListLoadedAction, LOAD_NEXT_JOB, LOAD_PREVIOUS_JOB, LoadNextJobAction,
-    LoadNextPageAction, LoadPreviousJobAction, NEXT_JOB_LOADED,
-    NEXT_PAGE_LOADED, NextJobErrorAction,
-    NextJobLoadedAction,
-    NextPageLoadedAction, SelectedJob,
+    JobListLoadedAction,
+    LoadNextPageAction,
+    NEXT_PAGE_LOADED,
+    NextPageLoadedAction,
     ShowJobListErrorAction,
     TOOLBAR_CHANGED,
     ToolbarChangedAction
@@ -22,11 +21,19 @@ import { Scheduler } from 'rxjs/Scheduler';
 import { async } from 'rxjs/scheduler/async';
 import { createJobSearchRequest } from '../util/search-request-mapper';
 import { Router } from '@angular/router';
+import {
+    NEXT_ITEM_LOADED,
+    NextItemLoadedAction,
+    LOAD_NEXT_ITEMS_PAGE, NextItemsPageLoadedAction, LoadNextItemsPageErrorAction,
+} from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
+import { LoadNextItemsPageAction } from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 
 export const JOB_SEARCH_DEBOUNCE = new InjectionToken<number>('JOB_SEARCH_DEBOUNCE');
 export const JOB_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('JOB_SEARCH_SCHEDULER');
 
 type LoadJobTriggerAction = ToolbarChangedAction | FilterChangedAction;
+
+const JOB_DETAIL_FEATURE = 'job-detail';
 
 @Injectable()
 export class JobSearchEffects {
@@ -68,22 +75,31 @@ export class JobSearchEffects {
         );
 
     @Effect()
-    loadNextJob$: Observable<Action> = this.actions$
-        .ofType(LOAD_NEXT_JOB, LOAD_PREVIOUS_JOB)
-        .distinctUntilChanged()
-        .withLatestFrom(this.store.select(getJobSearchState))
-        .switchMap(([action, state]) =>
-            this.getNextJob(state, action as LoadNextJobAction | LoadPreviousJobAction))
-        .map((selectedJob: SelectedJob) => selectedJob && selectedJob.job
-            ? new NextJobLoadedAction(selectedJob)
-            : new NextJobErrorAction());
+    nextItemsPageLoaded$: Observable<Action> = this.actions$
+        .ofType(LOAD_NEXT_ITEMS_PAGE)
+        .filter((action: NextItemLoadedAction) => action.payload.feature === JOB_DETAIL_FEATURE)
+        .switchMap((loadNextItemsAction: LoadNextItemsPageAction) => {
+            this.store.dispatch(new LoadNextPageAction());
+
+            return Observable.merge(
+                this.actions$
+                    .ofType(NEXT_PAGE_LOADED)
+                    .map((action: NextPageLoadedAction) => action.payload[0]),
+                this.actions$
+                    .ofType(SHOW_JOB_LIST_ERROR)
+                    .map((action: ShowJobListErrorAction) => null))
+                .take(1);
+        })
+        .map((selectedJob: Job) => selectedJob
+            ? new NextItemsPageLoadedAction({ item: selectedJob, feature: JOB_DETAIL_FEATURE })
+            : new LoadNextItemsPageErrorAction({ feature: JOB_DETAIL_FEATURE }));
 
     @Effect({ dispatch: false })
     nextJobLoaded$: Observable<Action> = this.actions$
-        .ofType(NEXT_JOB_LOADED)
-        .do((action: NextJobLoadedAction) => {
-            const job = action.payload.job;
-            this.router.navigate(['/job-detail', job.id])
+        .ofType(NEXT_ITEM_LOADED)
+        .filter((action: NextItemLoadedAction) => action.payload.feature === JOB_DETAIL_FEATURE)
+        .do((action: NextItemLoadedAction) => {
+            this.router.navigate(['/job-detail', action.payload.item.id])
         });
 
     constructor(private actions$: Actions,
@@ -96,29 +112,6 @@ export class JobSearchEffects {
                 @Inject(JOB_SEARCH_SCHEDULER)
                 private scheduler: Scheduler,
                 private router: Router) {
-    }
-
-    private getNextJob(state: JobSearchState,
-                       loadJobAction: LoadNextJobAction | LoadPreviousJobAction): Observable<SelectedJob> {
-        const nextJobIndex = state.selectedJobIndex
-            + (loadJobAction instanceof LoadPreviousJobAction ? -1 : 1);
-        const nextJob = state.jobList[nextJobIndex];
-
-        if (nextJob) {
-            return Observable.of({ job: nextJob, index: nextJobIndex });
-        } else {
-            this.store.dispatch(new LoadNextPageAction());
-
-            return Observable.merge(
-                this.actions$
-                .ofType(NEXT_PAGE_LOADED)
-                .map((action: NextPageLoadedAction) =>
-                    ({ job: action.payload[0], index: nextJobIndex })),
-                this.actions$
-                    .ofType(SHOW_JOB_LIST_ERROR)
-                    .map((action: ShowJobListErrorAction) => null))
-                .take(1);
-        }
     }
 }
 

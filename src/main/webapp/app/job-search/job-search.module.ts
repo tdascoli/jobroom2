@@ -23,11 +23,12 @@ import { ClipboardModule } from 'ngx-clipboard';
 import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
 import { JobLocalityComponent } from './job-locality/job-locality.component';
+import { DetailsPagePaginationEffects } from '../shared/components/details-page-pagination/state-management/effects/details-page-pagination.effects';
 
 @NgModule({
     imports: [
         StoreModule.forFeature('jobSearch', jobSearchReducer),
-        EffectsModule.forFeature([JobSearchEffects]),
+        EffectsModule.forFeature([JobSearchEffects, DetailsPagePaginationEffects]),
         StoreRouterConnectingModule,
         JobroomSharedModule,
         ReactiveFormsModule,

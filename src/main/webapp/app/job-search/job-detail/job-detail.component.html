@@ -135,18 +135,11 @@
 
         <div class="col-12 col-md order-12 base__related">
             <div class="base__sticky-panel">
-                <ul *ngIf="jobNavigationEnabled$ | async" class="pagination pagination--block pagination-alv">
-                    <li class="page-item" [ngClass]="{'invisible': firstJob}">
-                        <a class="page-link" (click)="previousJob()">
-                            <i class="fa fa-chevron-left" aria-hidden="true"></i> {{ 'navigation.previous' | translate }}
-                        </a>
-                    </li>
-                    <li class="page-item" [ngClass]="{'invisible': lastJob}">
-                        <a class="page-link" (click)="nextJob()">
-                            {{ 'navigation.next' | translate }} <i class="fa fa-chevron-right" aria-hidden="true"></i>
-                        </a>
-                    </li>
-                </ul>
+                <jr2-details-page-pagination [currentItem]="job"
+                                             [itemsList]="jobList$ | async"
+                                             [feature]="'job-detail'"
+                                             [totalSize]="jobListTotalSize$ | async">
+                </jr2-details-page-pagination>
 
                 <p>
                     <a *ngIf="job.applicationUrl"

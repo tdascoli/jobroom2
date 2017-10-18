@@ -1,4 +1,4 @@
-<div class="logo-box flex-height result-list__item md-whiteframe-1dp" (click)="selectJob()">
+<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/job-detail', job.id]">
 
     <div class="d-flex w-100 justify-content-between mb-1">
         <h4 class="text--primary-color"><span [innerHtml]="job.title | safeHtml"></span></h4>

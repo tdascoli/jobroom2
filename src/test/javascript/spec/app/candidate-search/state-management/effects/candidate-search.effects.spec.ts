@@ -17,6 +17,14 @@ import * as actions from '../../../../../../../main/webapp/app/candidate-search/
 import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
 import { createCandidateProfile } from '../utils';
 import { Headers } from '@angular/http';
+import {
+    LoadNextItemsPageAction, LoadNextItemsPageErrorAction,
+    NextItemsPageLoadedAction
+} from '../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
+import {
+    NextPageLoadedAction,
+    ShowCandidateListErrorAction
+} from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
 
 describe('CandidateSearchEffects', () => {
     let effects: CandidateSearchEffects;
@@ -167,6 +175,50 @@ describe('CandidateSearchEffects', () => {
             const expected = cold('--b', { b: pageLoadedAction });
 
             expect(effects.loadNextPage$).toBeObservable(expected);
+        });
+    });
+
+    describe('nextItemsPageLoaded$', () => {
+        const candidateProfile1 =  createCandidateProfile('c1');
+        const candidateProfileList = [candidateProfile1];
+
+        it('should return NextItemsPageLoadedAction on success', () => {
+            const loadNextItemsPageAction = new LoadNextItemsPageAction({
+                feature: 'candidate-detail'
+            });
+            const nextPageLoadedAction = new NextPageLoadedAction(candidateProfileList);
+
+            actions$ = hot('-a-b', {
+                a: loadNextItemsPageAction,
+                b: nextPageLoadedAction
+            });
+
+            const nextItemsPageLoadedAction = new NextItemsPageLoadedAction({
+                feature: 'candidate-detail',
+                item: candidateProfile1
+            });
+            const expected = cold('---b', { b: nextItemsPageLoadedAction });
+
+            expect(effects.nextItemsPageLoaded$).toBeObservable(expected);
+        });
+
+        it('should return ShowCandidateListErrorAction on error', () => {
+            const loadNextItemsPageAction = new LoadNextItemsPageAction({
+                feature: 'candidate-detail'
+            });
+            const showCandidateListErrorAction = new ShowCandidateListErrorAction({});
+
+            actions$ = hot('-a-b', {
+                a: loadNextItemsPageAction,
+                b: showCandidateListErrorAction
+            });
+
+            const loadNextItemsPageErrorAction = new LoadNextItemsPageErrorAction({
+                feature: 'candidate-detail'
+            });
+            const expected = cold('---b', { b: loadNextItemsPageErrorAction });
+
+            expect(effects.nextItemsPageLoaded$).toBeObservable(expected);
         });
     });
 });

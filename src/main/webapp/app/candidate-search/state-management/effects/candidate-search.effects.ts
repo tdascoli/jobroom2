@@ -10,10 +10,10 @@ import { Observable } from 'rxjs/Observable';
 import {
     CandidateProfileListLoadedAction,
     INIT_CANDIDATE_SEARCH,
-    LOAD_NEXT_PAGE,
+    LOAD_NEXT_PAGE, LoadNextPageAction, NEXT_PAGE_LOADED,
     NextPageLoadedAction,
     SEARCH_CANDIDATES,
-    SearchCandidatesAction,
+    SearchCandidatesAction, SHOW_CANDIDATE_LIST_ERROR,
     ShowCandidateListErrorAction,
 } from '../actions/candidate-search.actions';
 import { CandidateService } from '../../services/candidate.service';
@@ -21,9 +21,18 @@ import { CandidateSearchRequest } from '../../services/candidate-search-request'
 import { ResponseWrapper } from '../../../shared/index';
 import { createCandidateSearchRequest } from '../util/search-request-mapper';
 import { async } from 'rxjs/scheduler/async';
+import {
+    LOAD_NEXT_ITEMS_PAGE, LoadNextItemsPageAction, NEXT_ITEM_LOADED,
+    NextItemLoadedAction,
+    NextItemsPageLoadedAction,
+} from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
+import { Router } from '@angular/router';
+import { CandidateProfile } from '../../services/candidate';
+import { LoadNextItemsPageErrorAction } from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 
 export const CANDIDATE_SEARCH_DEBOUNCE = new InjectionToken<number>('CANDIDATE_SEARCH_DEBOUNCE');
 export const CANDIDATE_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('CANDIDATE_SEARCH_SCHEDULER');
+const CANDIDATE_DETAIL_FEATURE = 'candidate-detail';
 
 @Injectable()
 export class CandidateSearchEffects {
@@ -63,6 +72,34 @@ export class CandidateSearchEffects {
                 .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
         );
 
+    @Effect()
+    nextItemsPageLoaded$: Observable<Action> = this.actions$
+       .ofType(LOAD_NEXT_ITEMS_PAGE)
+       .filter((action: NextItemLoadedAction) => action.payload.feature === CANDIDATE_DETAIL_FEATURE)
+       .switchMap((loadNextItemsAction: LoadNextItemsPageAction) => {
+           this.store.dispatch(new LoadNextPageAction());
+
+           return Observable.merge(
+               this.actions$
+                   .ofType(NEXT_PAGE_LOADED)
+                   .map((action: NextPageLoadedAction) => action.payload[0]),
+               this.actions$
+                   .ofType(SHOW_CANDIDATE_LIST_ERROR)
+                   .map((action: ShowCandidateListErrorAction) => null))
+               .take(1);
+       })
+       .map((candidateProfile: CandidateProfile) => candidateProfile
+           ? new NextItemsPageLoadedAction({ item: candidateProfile, feature: CANDIDATE_DETAIL_FEATURE })
+           : new LoadNextItemsPageErrorAction({ feature: CANDIDATE_DETAIL_FEATURE }));
+
+    @Effect({ dispatch: false })
+    nextJobLoaded$: Observable<Action> = this.actions$
+        .ofType(NEXT_ITEM_LOADED)
+        .filter((action: NextItemLoadedAction) => action.payload.feature === CANDIDATE_DETAIL_FEATURE)
+        .do((action: NextItemLoadedAction) => {
+            this.router.navigate(['/candidate-detail', action.payload.item.id])
+        });
+
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,
                 private candidateService: CandidateService,
@@ -71,7 +108,8 @@ export class CandidateSearchEffects {
                 private debounce,
                 @Optional()
                 @Inject(CANDIDATE_SEARCH_SCHEDULER)
-                private scheduler: Scheduler) {
+                private scheduler: Scheduler,
+                private router: Router) {
     }
 }
 

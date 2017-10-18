@@ -21,6 +21,8 @@ import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { KeysPipe } from './pipes/enum-keys.pipe';
 import { LanguageComponent } from './components/language/language.component';
+import { DetailsPagePaginationControlsComponent } from './components/details-page-pagination-controls/details-page-pagination-controls.component';
+import { DetailsPagePaginationComponent } from './components/details-page-pagination/details-page-pagination.component';
 
 @NgModule({
     imports: [
@@ -35,7 +37,9 @@ import { LanguageComponent } from './components/language/language.component';
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
         KeysPipe,
-        LanguageComponent
+        LanguageComponent,
+        DetailsPagePaginationControlsComponent,
+        DetailsPagePaginationComponent
     ],
     providers: [
         LoginService,
@@ -63,7 +67,9 @@ import { LanguageComponent } from './components/language/language.component';
         SafeHtmlPipe,
         KeysPipe,
         StickyToolbarItemDirective,
-        LanguageComponent
+        LanguageComponent,
+        DetailsPagePaginationControlsComponent,
+        DetailsPagePaginationComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
