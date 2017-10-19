@@ -2,7 +2,10 @@ import { Injectable } from '@angular/core';
 import { Candidate, CandidateProfile } from './candidate';
 import { Observable } from 'rxjs/Observable';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
-import { CandidateSearchRequest } from './candidate-search-request';
+import {
+    CandidateSearchRequest,
+    CandidateLanguageSkill
+} from './candidate-search-request';
 import { ResponseWrapper } from '../../shared/model/response-wrapper.model';
 import { JhiDateUtils } from 'ng-jhipster';
 
@@ -11,6 +14,34 @@ export class CandidateService {
 
     private resourceUrl = 'candidateservice/api/candidates';
     private searchUrl = 'candidateservice/api/_search/candidates';
+
+    private static isLanguageSkill(arg: any): arg is CandidateLanguageSkill {
+        return arg.code !== undefined;
+    }
+
+    private static convertArrayToParams(params: URLSearchParams, value: Array<any>, key: string): void {
+        value.forEach((v: any, index: number) => {
+            if (typeof v === 'object') {
+                CandidateService.convertObjectToParams(params, v, key, index);
+            } else {
+                params.append(key, v);
+            }
+        });
+    }
+
+    private static convertObjectToParams(params: URLSearchParams, obj: any, key: string, index?: number): void {
+        for (const property in obj) {
+            if (obj.hasOwnProperty(property)) {
+                let param: string;
+                if (CandidateService.isLanguageSkill(obj)) {
+                    param = key + '[' + index + '].' + property;
+                } else {
+                    param = key + '.' + property;
+                }
+                params.set(param, obj[property])
+            }
+        }
+    }
 
     constructor(private http: Http,
                 private dateUtils: JhiDateUtils) {
@@ -47,9 +78,9 @@ export class CandidateService {
         Object.keys(req).forEach((key: string) => {
             const value = req[key];
             if (Array.isArray(value)) {
-                value.forEach((v: any) => {
-                    params.append(key, v);
-                });
+                CandidateService.convertArrayToParams(params, value, key);
+            } else if (typeof value === 'object') {
+                CandidateService.convertObjectToParams(params, value, key);
             } else {
                 params.set(key, value);
             }
