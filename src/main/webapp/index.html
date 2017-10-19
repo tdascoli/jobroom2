@@ -18,12 +18,17 @@
     <![endif]-->
     <jhi-main></jhi-main>
     <script>
-        // load shim for IE
+        // load shim and zonejs (only for IE)
         if (window.navigator.userAgent.indexOf('Trident/') > 0) {
-            var script = document.createElement('script');
-            script.src = 'core-js-shim.min.js';
-            script.type = 'text/javascript';
-            document.getElementsByTagName('head')[0].appendChild(script)
+            var shim = document.createElement('script');
+            shim.src = 'core-js-shim.min.js';
+            shim.type = 'text/javascript';
+            document.getElementsByTagName('head')[0].appendChild(shim);
+
+            var zonejs = document.createElement('script');
+            zonejs.src = 'zone.min.js';
+            zonejs.type = 'text/javascript';
+            document.getElementsByTagName('head')[0].appendChild(zonejs);
         }
     </script>
     <noscript>
