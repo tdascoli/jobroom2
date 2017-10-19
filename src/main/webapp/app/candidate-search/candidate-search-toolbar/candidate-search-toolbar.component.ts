@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../shared/reference-service/occupation.service';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
@@ -36,6 +36,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     };
 
     toolbarForm: FormGroup;
+    residence: FormControl;
 
     private subscription: Subscription;
 
@@ -45,16 +46,25 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
+        this.residence = this.fb.control(this.searchFilter.residence);
         this.toolbarForm = this.fb.group({
             occupation: [this.searchFilter.occupation],
-            residence: [this.searchFilter.residence],
             graduation: [this.searchFilter.graduation]
         });
+
         this.cantonOptions$ = this.cantonService.getCantonOptions();
 
-        this.subscription = this.toolbarForm.valueChanges.subscribe((formValue: any) =>
-            this.search(formValue)
-        );
+        // todo: Review this:
+        // Residence input triggers a value change event on language change,
+        // that's why distinctUntilChanged is used.
+        const residence$ = this.residence.valueChanges
+            .distinctUntilChanged()
+            .map((residence: string) => Object.assign(this.toolbarForm.value, { residence }));
+
+        this.subscription = Observable.merge(this.toolbarForm.valueChanges, residence$)
+            .subscribe((formValue: any) =>
+                this.search(formValue)
+            );
     }
 
     ngOnDestroy(): void {

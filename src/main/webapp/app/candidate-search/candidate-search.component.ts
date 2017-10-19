@@ -28,7 +28,6 @@ export class CandidateSearchComponent {
     loading$: Observable<boolean>;
     showError$: Observable<boolean>;
     candidateProfileList$: Observable<Array<CandidateProfile>>;
-    occupationName$: Observable<string>;
 
     constructor(private store: Store<CandidateSearchState>) {
         this.store.dispatch(new InitCandidateSearchAction());
@@ -38,8 +37,6 @@ export class CandidateSearchComponent {
         this.showError$ = store.select(getSearchError);
         this.totalCount$ = store.select(getTotalCandidateCount);
         this.candidateProfileList$ = store.select(getCandidateProfileList);
-        this.occupationName$ = this.searchFilter$.map((filter: CandidateSearchFilter) =>
-            filter.occupation ? filter.occupation.name : '')
     }
 
     searchCandidates(filter: CandidateSearchFilter): void {

@@ -1,8 +1,11 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { CandidateProfile } from '../services/candidate';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { Store } from '@ngrx/store';
-import { CandidateSearchState } from '../state-management/state/candidate-search.state';
+import {
+    CandidateSearchFilter,
+    CandidateSearchState
+} from '../state-management/state/candidate-search.state';
 import {
     HideCandidateListErrorAction,
     LoadNextPageAction
@@ -13,13 +16,25 @@ import {
     templateUrl: './candidate-search-list.component.html',
     styles: []
 })
-export class CandidateSearchListComponent {
+export class CandidateSearchListComponent implements OnInit {
     @Input() profileList: Array<CandidateProfile>;
     @Input() totalCount: number;
     @Input() showError: boolean;
-    @Input() occupationName: string;
+    @Input() searchFilter: CandidateSearchFilter;
+    occupationName: string;
+    occupationCode: string;
 
     constructor(private store: Store<CandidateSearchState>) {
+    }
+
+    ngOnInit(): void {
+        const occupation = this.searchFilter.occupation;
+        if (occupation) {
+            this.occupationCode = occupation.code;
+            this.occupationName = occupation.name;
+        } else {
+            this.occupationName = '';
+        }
     }
 
     closeAlert() {

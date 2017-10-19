@@ -1,22 +1,23 @@
 <div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/candidate-detail', profile.id]">
 
-    <!--fixme: Implement candidate list item -->
-
     <div class="d-flex w-100 justify-content-between mb-1">
-        <h4 class="text--primary-color">Dummy Data (100%)</h4>
-        <div>
-            <small style="vertical-align: text-top;">10.04.2017</small>
-        </div>
+        <h4 class="text--primary-color" *ngIf="validExperienceData">{{ (jobExperience$ | async)?.occupation}}</h4>
     </div>
 
     <div>
-        <span class="badge badge-blue">ZÜRICH</span>
-        <span class="badge badge-gray">ERFAHRUNG +3 JAHRE</span>
-        <span class="badge badge-green">UNBEFRISTET</span>
+        <span class="badge badge-gray">
+            {{ profile.workLoad }}%
+        </span>
+        <span class="badge badge-blue">
+            {{ 'global.reference.canton.' + profile.residenceCantonCode | translate}}
+        </span>
+        <span class="badge badge-gray" *ngIf="occupationCode && validExperienceData">
+            {{ 'candidate-search.experience.' + (jobExperience$ | async)?.experience | translate }}
+        </span>
+        <span class="badge badge-yellow">
+            {{ 'candidate-search.availability.' + profile.availability | translate}}
+        </span>
     </div>
 
-    <div class="line-clamp">Lorem ipsum dolor sit amet, option vocibus docendi ex duo, at pri tale dico dolorem. Ignota mucius ocurreret sea eu, duo id timeam
-        inciderint. Clita propriae suscipiantur his te. Animal mediocrem te nec, vidit utroque et duo, in nec etiam invenire volutpat. Graece meliore
-        vituperatoribus eum ne. Per eu latine tincidunt.
-    </div>
+    <div class="line-clamp" *ngIf="validExperienceData" [innerHtml]="(jobExperience$ | async)?.description | safeHtml"></div>
 </div>

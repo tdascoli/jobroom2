@@ -20,8 +20,13 @@ export interface Occupation {
     labels: any[];
 }
 
+interface OccupationCache {
+    [key: string]: Occupation
+}
+
 @Injectable()
 export class OccupationService {
+    private occupationCache: OccupationCache = {};
 
     private static mapOccupationSuggestions(occupationSuggestions: OccupationSuggestion[]): TypeaheadMultiselectModel[] {
         return occupationSuggestions
@@ -54,13 +59,20 @@ export class OccupationService {
     }
 
     findOccupationByCode(code: number): Observable<Occupation> {
+        const cachedOccupation = this.occupationCache[code];
+        if (cachedOccupation) {
+            return Observable.of(this.occupationCache[code]);
+        }
+
         const params: URLSearchParams = new URLSearchParams();
         params.set('code', code.toString());
         const options = new BaseRequestOptions();
         options.params = params;
 
         return this.http.get(OCCUPATIONS_URL, options)
-            .map((res: Response) => res.json() as Occupation);
+            .map((res: Response) => res.json() as Occupation)
+            .do((occupation: Occupation) => this.occupationCache[occupation.code] = occupation)
+            .map((occupation: Occupation) => occupation)
     }
 
     private fetchSuggestionsInternal(query: string): Observable<OccupationAutocomplete> {

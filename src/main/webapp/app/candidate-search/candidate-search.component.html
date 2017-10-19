@@ -13,7 +13,7 @@
 
         <div class="base__content--wide">
             <jr2-candidate-search-list [profileList]="candidateProfileList$ | async"
-                                       [occupationName]="occupationName$ | async"
+                                       [searchFilter]="searchFilter$ | async"
                                        [totalCount]="totalCount$ | async"
                                        [showError]="showError$ | async"></jr2-candidate-search-list>
         </div>

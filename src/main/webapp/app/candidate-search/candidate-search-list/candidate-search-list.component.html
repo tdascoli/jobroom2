@@ -4,6 +4,6 @@
 
     <h3 class="text--light" *ngIf="!showError" [jhiTranslate]="getTitleKey()" [translateValues]="{count: getMaxCount()| jr2Number, query: occupationName, locality: ''}"></h3>
 
-    <jr2-candidate-search-list-item *ngFor="let profile of profileList" [profile]="profile"></jr2-candidate-search-list-item>
+    <jr2-candidate-search-list-item *ngFor="let profile of profileList" [profile]="profile" [occupationCode]="occupationCode"></jr2-candidate-search-list-item>
 
 </div>

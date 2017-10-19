@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnDestroy, OnInit } from '@angular/core';
+import {
+    AfterViewInit,
+    ChangeDetectionStrategy,
+    Component,
+    OnDestroy,
+    OnInit
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Candidate, CandidateProfile } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
@@ -12,14 +18,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { Subject } from 'rxjs/Subject';
 import { Store } from '@ngrx/store';
 import {
-    CandidateSearchState, getCandidateProfileList,
+    CandidateSearchState,
+    getCandidateProfileList,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 
 @Component({
     selector: 'jr2-candidate-detail',
     templateUrl: './candidate-detail.component.html',
-    styleUrls: ['./candidate-detail.component.scss']
+    styleUrls: ['./candidate-detail.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CandidateDetailComponent implements OnInit, OnDestroy, AfterViewInit {
     candidateProfile$: Observable<CandidateProfile>;

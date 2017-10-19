@@ -15,7 +15,7 @@
                 <ss-multiselect-dropdown [options]="cantonOptions$ | async"
                                          [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
                                          [settings]="multiSelectSettings"
-                                         formControlName="residence"></ss-multiselect-dropdown>
+                                         [formControl]="residence"></ss-multiselect-dropdown>
             </div>
 
             <div class="form-group form-group--wide">
