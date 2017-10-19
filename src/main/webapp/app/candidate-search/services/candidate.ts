@@ -1,6 +1,9 @@
 import { Contact, Gender, LanguageSkill } from '../../shared/model/shared-types';
 import {
-    Availability, Experience, Graduation, ISCED_1997,
+    Availability,
+    Experience,
+    Graduation,
+    ISCED_1997,
 } from './candidate-search-request';
 
 export interface Address {

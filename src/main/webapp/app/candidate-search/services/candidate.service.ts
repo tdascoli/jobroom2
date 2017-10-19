@@ -3,17 +3,21 @@ import { Candidate, CandidateProfile } from './candidate';
 import { Observable } from 'rxjs/Observable';
 import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
 import {
-    CandidateSearchRequest,
-    CandidateLanguageSkill
+    CandidateLanguageSkill,
+    CandidateSearchRequest
 } from './candidate-search-request';
-import { ResponseWrapper } from '../../shared/model/response-wrapper.model';
-import { JhiDateUtils } from 'ng-jhipster';
+import { ResponseWrapper } from '../../shared';
 
 @Injectable()
 export class CandidateService {
 
     private resourceUrl = 'candidateservice/api/candidates';
     private searchUrl = 'candidateservice/api/_search/candidates';
+    private countUrl = 'candidateservice/api/_count/candidates';
+
+    private static convertResponse(res: Response): ResponseWrapper {
+        return new ResponseWrapper(res.headers, res.json(), res.status);
+    }
 
     private static isLanguageSkill(arg: any): arg is CandidateLanguageSkill {
         return arg.code !== undefined;
@@ -43,8 +47,7 @@ export class CandidateService {
         }
     }
 
-    constructor(private http: Http,
-                private dateUtils: JhiDateUtils) {
+    constructor(private http: Http) {
     }
 
     findCandidate(id: string): Observable<Candidate> {
@@ -64,14 +67,24 @@ export class CandidateService {
     }
 
     search(req: CandidateSearchRequest): Observable<ResponseWrapper> {
-        const options: BaseRequestOptions = new BaseRequestOptions();
+        const options = new BaseRequestOptions();
         options.params = this.toURLSearchParams(req);
 
         return this.http.get(this.searchUrl, options)
-            .map((res: Response) => this.convertResponse(res));
+            .map((res: Response) => CandidateService.convertResponse(res));
     }
 
-    // todo: Remove duplicated code (see: job.service.ts)
+    count(req: any): Observable<number> {
+        const options = new BaseRequestOptions();
+        options.params = this.toURLSearchParams(req);
+
+        return this.http.get(this.countUrl, options)
+            .map((res: Response) => CandidateService.convertResponse(res))
+            .map((wrapper: ResponseWrapper) => {
+                return Number.parseInt(wrapper.json.totalCount)
+            });
+    }
+
     private toURLSearchParams(req: CandidateSearchRequest): URLSearchParams {
         const params: URLSearchParams = new URLSearchParams();
 
@@ -87,28 +100,5 @@ export class CandidateService {
         });
 
         return params;
-    }
-
-    private convertResponse(res: Response): ResponseWrapper {
-        const jsonResponse = res.json();
-        for (let i = 0; i < jsonResponse.length; i++) {
-            this.convertItemFromServer(jsonResponse[i]);
-        }
-        return new ResponseWrapper(res.headers, jsonResponse, res.status);
-    }
-
-    private convertItemFromServer(entity: any) {
-        entity.publicationStartDate = this.dateUtils
-            .convertLocalDateFromServer(entity.publicationStartDate);
-        entity.publicationEndDate = this.dateUtils
-            .convertLocalDateFromServer(entity.publicationEndDate);
-        entity.registrationDate = this.dateUtils
-            .convertLocalDateFromServer(entity.registrationDate);
-        entity.cancellationDate = this.dateUtils
-            .convertLocalDateFromServer(entity.cancellationDate);
-        entity.startDate = this.dateUtils
-            .convertLocalDateFromServer(entity.startDate);
-        entity.endDate = this.dateUtils
-            .convertLocalDateFromServer(entity.endDate);
     }
 }

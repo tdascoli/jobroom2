@@ -20,12 +20,9 @@ import { Subscription } from 'rxjs/Subscription';
     styleUrls: ['./candidate-search-filter.component.scss']
 })
 export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
-    @Input()
-    searchFilter: CandidateSearchFilter;
-    @Output()
-    searchCandidates = new EventEmitter<CandidateSearchFilter>();
+    @Input() searchFilter: CandidateSearchFilter;
+    @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
-    cantons = Canton;
     experiences = Experience;
     availabilities = Availability;
     educationLevels = ISCED_1997;

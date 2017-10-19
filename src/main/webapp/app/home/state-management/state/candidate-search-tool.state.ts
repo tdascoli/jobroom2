@@ -8,6 +8,9 @@ export interface CandidateSearchToolState {
     occupation?: OccupationSuggestion,
     residence?: Array<Canton>,
     graduation?: Graduation,
+    totalCount: number,
 }
 
-export const initialState: CandidateSearchToolState = {};
+export const initialState: CandidateSearchToolState = {
+    totalCount: 0
+};

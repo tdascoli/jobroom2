@@ -22,15 +22,15 @@
 
             <div class="form-group">
                 <select formControlName="graduation" class="form-control custom-select">
-                    <option selected="" value="null" translate="candidate-search.toolbar.graduation.default"></option>
-                    <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key"
+                    <option [ngValue]="null" translate="candidate-search.toolbar.graduation.default"></option>
+                    <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.value"
                             translate="{{'candidate-search.graduation.' + graduation.value}}">
                     </option>
                 </select>
             </div>
             <button class="btn btn-primary btn-lg btn-block">
                 <span translate="home.tools.candidate-search.search-button.title"></span>
-                <span>(123)</span>
+                <span>({{candidateSearchToolModel.totalCount}})</span>
             </button>
         </form>
     </fieldset>

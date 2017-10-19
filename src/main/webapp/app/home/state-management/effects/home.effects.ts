@@ -10,9 +10,13 @@ import {
     JobSearchToolSubmittedAction
 } from '../actions/job-search-tool.actions';
 import {
+    CANDIDATE_SEARCH_TOOL_COUNT,
     CANDIDATE_SEARCH_TOOL_SUBMITTED,
+    CandidateSearchToolCountAction,
+    CandidateSearchToolCountedAction,
     CandidateSearchToolSubmittedAction
 } from '../actions/candidate-search-tool.actions';
+import { CandidateService } from '../../../candidate-search/services/candidate.service';
 
 @Injectable()
 export class HomeEffects {
@@ -29,6 +33,14 @@ export class HomeEffects {
         .do((action: CandidateSearchToolSubmittedAction) => this.router.navigate(['/candidate-search']))
         .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.SearchCandidatesAction(action.payload));
 
-    constructor(private actions$: Actions, private router: Router) {
+    @Effect()
+    candidateSearchToolCountUpdate$: Observable<Action> = this.actions$
+        .ofType(CANDIDATE_SEARCH_TOOL_COUNT)
+        .switchMap((action: CandidateSearchToolCountAction) => this.candidateService.count(action.payload)
+            .map((totalCount: number) => new CandidateSearchToolCountedAction(totalCount))
+            .catch((err: any) => Observable.of(new CandidateSearchToolCountedAction(0)))
+        );
+
+    constructor(private actions$: Actions, private router: Router, private candidateService: CandidateService) {
     }
 }

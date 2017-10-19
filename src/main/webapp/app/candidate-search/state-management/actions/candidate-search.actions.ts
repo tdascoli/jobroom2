@@ -9,6 +9,7 @@ export const NEXT_PAGE_LOADED = 'CANDIDATES:NEXT_PAGE_LOADED';
 export const CANDIDATE_LIST_LOADED = 'CANDIDATES:CANDIDATE_LIST_LOADED';
 export const SHOW_CANDIDATE_LIST_ERROR = 'CANDIDATES:SHOW_CANDIDATE_LIST_ERROR';
 export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
+export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
@@ -60,6 +61,13 @@ export class HideCandidateListErrorAction implements Action {
     }
 }
 
+export class CountCandidatesAction implements Action {
+    readonly type = COUNT_CANDIDATES;
+
+    constructor(public payload: CandidateSearchFilter) {
+    }
+}
+
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
@@ -68,4 +76,5 @@ export type Actions =
     | CandidateProfileListLoadedAction
     | ShowCandidateListErrorAction
     | HideCandidateListErrorAction
+    | CountCandidatesAction
     ;

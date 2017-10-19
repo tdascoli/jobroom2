@@ -4,11 +4,18 @@ import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/reference-service/occupation.service';
 import { Graduation } from '../../../candidate-search/services/candidate-search-request';
 import { Store } from '@ngrx/store';
-import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
-import { CandidateSearchToolSubmittedAction } from '../../state-management/actions/candidate-search-tool.actions';
+import {
+    CandidateSearchToolState,
+    initialState
+} from '../../state-management/state/candidate-search-tool.state';
+import {
+    CandidateSearchToolCountAction,
+    CandidateSearchToolSubmittedAction
+} from '../../state-management/actions/candidate-search-tool.actions';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../../../candidate-search/services/canton.service';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -18,6 +25,8 @@ import { CantonService } from '../../../candidate-search/services/canton.service
 export class CandidateSearchToolComponent implements OnInit {
 
     @Input() candidateSearchToolModel: CandidateSearchToolState;
+
+    private subscription: Subscription;
 
     candidateSearchForm: FormGroup;
     graduations = Graduation;
@@ -43,6 +52,12 @@ export class CandidateSearchToolComponent implements OnInit {
             graduation: [this.candidateSearchToolModel.graduation]
         });
         this.cantonOptions$ = this.cantonService.getCantonOptions();
+
+        this.store.dispatch(new CandidateSearchToolCountAction(initialState));
+        this.subscription = this.candidateSearchForm.valueChanges.subscribe((formValue: any) => {
+                return this.count(formValue);
+            }
+        );
     }
 
     fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
@@ -53,5 +68,9 @@ export class CandidateSearchToolComponent implements OnInit {
 
     search(formValue: any) {
         this.store.dispatch(new CandidateSearchToolSubmittedAction(formValue));
+    }
+
+    count(formValue: any) {
+        this.store.dispatch(new CandidateSearchToolCountAction(formValue));
     }
 }

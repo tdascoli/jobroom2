@@ -1,5 +1,9 @@
 import { JobSearchToolSubmittedAction } from './actions/job-search-tool.actions';
-import { CandidateSearchToolSubmittedAction } from './actions/candidate-search-tool.actions';
+import {
+    CandidateSearchToolCountAction,
+    CandidateSearchToolCountedAction,
+    CandidateSearchToolSubmittedAction
+} from './actions/candidate-search-tool.actions';
 import {
     SelectAgencyTabAction,
     SelectCompanyTabAction,
@@ -20,6 +24,8 @@ export { CandidateSearchToolState } from './state/candidate-search-tool.state';
 export type Actions =
     | JobSearchToolSubmittedAction
     | CandidateSearchToolSubmittedAction
+    | CandidateSearchToolCountAction
+    | CandidateSearchToolCountedAction
     | SelectToolbarItemAction
     | SelectCompanyTabAction
     | SelectAgencyTabAction
