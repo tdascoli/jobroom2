@@ -20,6 +20,7 @@ export interface CandidateSearchState {
     totalCandidateCount: number;
     candidateProfileList: Array<CandidateProfile>;
     initialState: boolean;
+    candidateListScrollY: number;
 }
 
 export interface CandidateSearchFilter {
@@ -48,7 +49,8 @@ export const initialState: CandidateSearchState = {
     page: 0,
     candidateProfileList: [],
     initialState: true,
-    searchError: false
+    searchError: false,
+    candidateListScrollY: 0
 };
 
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
@@ -57,3 +59,4 @@ export const getSearchFilter = createSelector(getCandidateSearchState, (state: C
 export const getLoading = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.loading);
 export const getSearchError = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchError);
 export const getTotalCandidateCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidateCount);
+export const getCandidateListScrollY = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.candidateListScrollY);

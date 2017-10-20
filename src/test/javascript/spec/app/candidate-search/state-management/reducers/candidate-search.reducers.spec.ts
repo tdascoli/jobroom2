@@ -24,7 +24,7 @@ describe('candidateSearchReducer', () => {
         const action = new actions.CandidateProfileListLoadedAction({
             candidateProfileList,
             totalCandidateCount: 100,
-            page: 2
+            page: 0
         });
 
         // WHEN
@@ -37,11 +37,20 @@ describe('candidateSearchReducer', () => {
             createCandidateProfile('c3'),
         ]);
         expect(newState.totalCandidateCount).toEqual(100);
-        expect(newState.page).toEqual(2);
+        expect(newState.page).toEqual(0);
         expect(newState.loading).toBeFalsy();
         expect(newState.searchError).toBeFalsy();
         expect(newState.initialState).toBeFalsy();
-        verifyUnchanged(newState, state, ['candidateProfileList', 'totalCandidateCount', 'page', 'loading', 'searchError', 'initialState']);
+        expect(newState.candidateListScrollY).toBe(0);
+        verifyUnchanged(newState, state, [
+            'candidateProfileList',
+            'totalCandidateCount',
+            'page',
+            'loading',
+            'searchError',
+            'initialState',
+            'candidateListScrollY'
+        ]);
     });
 
     it('should update CandidateSearchState for SHOW_CANDIDATE_LIST_ERROR action', () => {
@@ -117,6 +126,19 @@ describe('candidateSearchReducer', () => {
             createCandidateProfile('c5'),
         ]);
         verifyUnchanged(newState, state, ['page', 'loading', 'candidateProfileList']);
+    });
+
+    it('should update CandidateSearchState for SAVE_SCROLL_Y action', () => {
+        // GIVEN
+        const state = initialState;
+        const action = new actions.SaveScrollYAction(600);
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.candidateListScrollY).toEqual(600);
+        verifyUnchanged(newState, state, ['candidateListScrollY']);
     });
 });
 

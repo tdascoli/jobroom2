@@ -12,7 +12,8 @@ import { cold, getTestScheduler, hot } from 'jasmine-marbles';
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import {
     InitJobSearchAction,
-    NextPageLoadedAction, ShowJobListErrorAction
+    NextPageLoadedAction,
+    ShowJobListErrorAction
 } from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
@@ -25,7 +26,6 @@ import { JobService } from '../../../../../../../main/webapp/app/job-search/serv
 import {
     LoadNextItemsPageAction,
     LoadNextItemsPageErrorAction,
-    NextItemLoadedAction,
     NextItemsPageLoadedAction
 } from '../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 
@@ -216,7 +216,7 @@ describe('JobSearchEffects', () => {
     });
 
     describe('nextItemsPageLoaded$', () => {
-        const job1 =  {
+        const job1 = {
             id: '0',
             externalId: 'extId0',
             title: 'title-0',

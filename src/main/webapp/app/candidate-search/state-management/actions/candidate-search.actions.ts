@@ -10,6 +10,7 @@ export const CANDIDATE_LIST_LOADED = 'CANDIDATES:CANDIDATE_LIST_LOADED';
 export const SHOW_CANDIDATE_LIST_ERROR = 'CANDIDATES:SHOW_CANDIDATE_LIST_ERROR';
 export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
 export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
+export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
@@ -68,6 +69,13 @@ export class CountCandidatesAction implements Action {
     }
 }
 
+export class SaveScrollYAction implements Action {
+    readonly type = SAVE_SCROLL_Y;
+
+    constructor(public payload: number) {
+    }
+}
+
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
@@ -77,4 +85,5 @@ export type Actions =
     | ShowCandidateListErrorAction
     | HideCandidateListErrorAction
     | CountCandidatesAction
+    | SaveScrollYAction
     ;

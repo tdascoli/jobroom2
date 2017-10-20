@@ -48,7 +48,7 @@ describe('candidateSearchToolReducer', () => {
 
     it('should update CandidateSearchToolState.totalCount for CANDIDATE_SEARCH_TOOL_COUNTED action', () => {
         // GIVEN
-        const totalCount: number = 15;
+        const totalCount = 15;
         const action = new CandidateSearchToolCountedAction(totalCount);
 
         // WHEN

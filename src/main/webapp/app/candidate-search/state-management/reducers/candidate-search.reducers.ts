@@ -4,6 +4,7 @@ import {
     CANDIDATE_LIST_LOADED,
     HIDE_CANDIDATE_LIST_ERROR,
     NEXT_PAGE_LOADED,
+    SAVE_SCROLL_Y,
     SEARCH_CANDIDATES,
     SHOW_CANDIDATE_LIST_ERROR
 } from '../actions/candidate-search.actions';
@@ -19,7 +20,8 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
                 page,
                 loading: false,
                 searchError: false,
-                initialState: false
+                initialState: false,
+                candidateListScrollY: 0
             });
             break;
 
@@ -44,6 +46,9 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
                 page: state.page + 1,
                 loading: false
             });
+            break;
+        case SAVE_SCROLL_Y:
+            newState = Object.assign({}, state, { candidateListScrollY: action.payload });
             break;
 
         default:

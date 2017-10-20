@@ -10,10 +10,13 @@ import { Observable } from 'rxjs/Observable';
 import {
     CandidateProfileListLoadedAction,
     INIT_CANDIDATE_SEARCH,
-    LOAD_NEXT_PAGE, LoadNextPageAction, NEXT_PAGE_LOADED,
+    LOAD_NEXT_PAGE,
+    LoadNextPageAction,
+    NEXT_PAGE_LOADED,
     NextPageLoadedAction,
     SEARCH_CANDIDATES,
-    SearchCandidatesAction, SHOW_CANDIDATE_LIST_ERROR,
+    SearchCandidatesAction,
+    SHOW_CANDIDATE_LIST_ERROR,
     ShowCandidateListErrorAction,
 } from '../actions/candidate-search.actions';
 import { CandidateService } from '../../services/candidate.service';
@@ -22,13 +25,16 @@ import { ResponseWrapper } from '../../../shared/index';
 import { createCandidateSearchRequest } from '../util/search-request-mapper';
 import { async } from 'rxjs/scheduler/async';
 import {
-    LOAD_NEXT_ITEMS_PAGE, LoadNextItemsPageAction, NEXT_ITEM_LOADED,
+    LOAD_NEXT_ITEMS_PAGE,
+    LoadNextItemsPageAction,
+    LoadNextItemsPageErrorAction,
+    NEXT_ITEM_LOADED,
     NextItemLoadedAction,
     NextItemsPageLoadedAction,
 } from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 import { Router } from '@angular/router';
 import { CandidateProfile } from '../../services/candidate';
-import { LoadNextItemsPageErrorAction } from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
+import { WINDOW } from '../../../shared/shared-libs.module';
 
 export const CANDIDATE_SEARCH_DEBOUNCE = new InjectionToken<number>('CANDIDATE_SEARCH_DEBOUNCE');
 export const CANDIDATE_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('CANDIDATE_SEARCH_SCHEDULER');
@@ -55,9 +61,9 @@ export class CandidateSearchEffects {
     loadCandidateList$: Observable<Action> = this.actions$
         .ofType(SEARCH_CANDIDATES)
         .debounceTime(this.debounce || 300, this.scheduler || async)
-        .withLatestFrom(this.store.select(getCandidateSearchState))
-        .switchMap(([action, state]) =>
-            this.candidateService.search(toSearchRequest(action as SearchCandidatesAction, state))
+        .do((action) => this.window.scroll(0, 0))
+        .switchMap((action: SearchCandidatesAction) =>
+            this.candidateService.search(toSearchRequest(action))
                 .map(toCandidateProfileListLoadedAction)
                 .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
         );
@@ -74,23 +80,26 @@ export class CandidateSearchEffects {
 
     @Effect()
     nextItemsPageLoaded$: Observable<Action> = this.actions$
-       .ofType(LOAD_NEXT_ITEMS_PAGE)
-       .filter((action: NextItemLoadedAction) => action.payload.feature === CANDIDATE_DETAIL_FEATURE)
-       .switchMap((loadNextItemsAction: LoadNextItemsPageAction) => {
-           this.store.dispatch(new LoadNextPageAction());
+        .ofType(LOAD_NEXT_ITEMS_PAGE)
+        .filter((action: NextItemLoadedAction) => action.payload.feature === CANDIDATE_DETAIL_FEATURE)
+        .switchMap((loadNextItemsAction: LoadNextItemsPageAction) => {
+            this.store.dispatch(new LoadNextPageAction());
 
-           return Observable.merge(
-               this.actions$
-                   .ofType(NEXT_PAGE_LOADED)
-                   .map((action: NextPageLoadedAction) => action.payload[0]),
-               this.actions$
-                   .ofType(SHOW_CANDIDATE_LIST_ERROR)
-                   .map((action: ShowCandidateListErrorAction) => null))
-               .take(1);
-       })
-       .map((candidateProfile: CandidateProfile) => candidateProfile
-           ? new NextItemsPageLoadedAction({ item: candidateProfile, feature: CANDIDATE_DETAIL_FEATURE })
-           : new LoadNextItemsPageErrorAction({ feature: CANDIDATE_DETAIL_FEATURE }));
+            return Observable.merge(
+                this.actions$
+                    .ofType(NEXT_PAGE_LOADED)
+                    .map((action: NextPageLoadedAction) => action.payload[0]),
+                this.actions$
+                    .ofType(SHOW_CANDIDATE_LIST_ERROR)
+                    .map((action: ShowCandidateListErrorAction) => null))
+                .take(1);
+        })
+        .map((candidateProfile: CandidateProfile) => candidateProfile
+            ? new NextItemsPageLoadedAction({
+                item: candidateProfile,
+                feature: CANDIDATE_DETAIL_FEATURE
+            })
+            : new LoadNextItemsPageErrorAction({ feature: CANDIDATE_DETAIL_FEATURE }));
 
     @Effect({ dispatch: false })
     nextJobLoaded$: Observable<Action> = this.actions$
@@ -109,16 +118,18 @@ export class CandidateSearchEffects {
                 @Optional()
                 @Inject(CANDIDATE_SEARCH_SCHEDULER)
                 private scheduler: Scheduler,
+                @Inject(WINDOW)
+                private window: Window,
                 private router: Router) {
     }
 }
 
 function toInitialSearchRequest(state: CandidateSearchState): CandidateSearchRequest {
-    return createCandidateSearchRequest(state.searchFilter, state.page);
+    return createCandidateSearchRequest(state.searchFilter, 0);
 }
 
-function toSearchRequest(action: SearchCandidatesAction, state: CandidateSearchState): CandidateSearchRequest {
-    return createCandidateSearchRequest(action.payload, state.page);
+function toSearchRequest(action: SearchCandidatesAction): CandidateSearchRequest {
+    return createCandidateSearchRequest(action.payload, 0);
 }
 
 function toNextPageRequest(state: CandidateSearchState): CandidateSearchRequest {

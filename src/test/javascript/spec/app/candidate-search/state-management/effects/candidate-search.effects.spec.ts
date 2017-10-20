@@ -14,17 +14,20 @@ import { candidateSearchReducer } from '../../../../../../../main/webapp/app/can
 import { Router } from '@angular/router';
 import { cold, getTestScheduler, hot } from 'jasmine-marbles';
 import * as actions from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
-import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
-import { createCandidateProfile } from '../utils';
-import { Headers } from '@angular/http';
-import {
-    LoadNextItemsPageAction, LoadNextItemsPageErrorAction,
-    NextItemsPageLoadedAction
-} from '../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 import {
     NextPageLoadedAction,
     ShowCandidateListErrorAction
 } from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
+import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared/model/response-wrapper.model';
+import { createCandidateProfile } from '../utils';
+import { Headers } from '@angular/http';
+import {
+    LoadNextItemsPageAction,
+    LoadNextItemsPageErrorAction,
+    NextItemsPageLoadedAction
+} from '../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
+import { WINDOW } from '../../../../../../../main/webapp/app/shared/shared-libs.module';
+import { ReplaySubject } from 'rxjs';
 
 describe('CandidateSearchEffects', () => {
     let effects: CandidateSearchEffects;
@@ -33,6 +36,8 @@ describe('CandidateSearchEffects', () => {
 
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['search']);
     const mockRouter = new MockRouter();
+
+    const mockWindow = jasmine.createSpyObj('mockWindow', ['scroll']);
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -45,7 +50,8 @@ describe('CandidateSearchEffects', () => {
                 { provide: CandidateService, useValue: mockCandidateService },
                 { provide: Router, useValue: mockRouter },
                 { provide: CANDIDATE_SEARCH_SCHEDULER, useFactory: getTestScheduler },
-                { provide: CANDIDATE_SEARCH_DEBOUNCE, useValue: 30 }
+                { provide: CANDIDATE_SEARCH_DEBOUNCE, useValue: 30 },
+                { provide: WINDOW, useValue: mockWindow }
             ],
         });
 
@@ -142,6 +148,19 @@ describe('CandidateSearchEffects', () => {
 
             expect(effects.loadCandidateList$).toBeObservable(expected);
         });
+
+        it('should call window.scroll(0,0) ', () => {
+            // GIVEN
+            const action = new actions.SearchCandidatesAction({});
+            actions$ = new ReplaySubject(1);
+
+            // WHEN
+            (actions$ as ReplaySubject<any>).next(action);
+            effects.loadCandidateList$.subscribe();
+
+            // THEN
+            expect(mockWindow.scroll).toHaveBeenCalledWith(0, 0);
+        });
     });
 
     describe('loadNextPage$', () => {
@@ -179,7 +198,7 @@ describe('CandidateSearchEffects', () => {
     });
 
     describe('nextItemsPageLoaded$', () => {
-        const candidateProfile1 =  createCandidateProfile('c1');
+        const candidateProfile1 = createCandidateProfile('c1');
         const candidateProfileList = [candidateProfile1];
 
         it('should return NextItemsPageLoadedAction on success', () => {
