@@ -16,7 +16,6 @@ import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.mo
 import { CandidateDetailComponent } from './candidate-detail/candidate-detail.component';
 import { CandidateDetailResolver } from './candidate-detail/candidate-detail.resolver';
 import { CandidateService } from './services/candidate.service';
-import { WorkPeriodComponent } from './work-period/work-period.component';
 import { DetailsPagePaginationEffects } from '../shared/components/details-page-pagination/state-management/effects/details-page-pagination.effects';
 import { ClipboardModule } from 'ngx-clipboard';
 import { CandidateSearchListComponent } from './candidate-search-list/candidate-search-list.component';
@@ -44,8 +43,7 @@ import { CantonService } from './services/canton.service';
         CandidateSearchFilterComponent,
         LanguageSelectorComponent,
         CandidateSearchToolbarComponent,
-        CandidateDetailComponent,
-        WorkPeriodComponent
+        CandidateDetailComponent
     ],
     providers: [
         LanguageSkillService,
