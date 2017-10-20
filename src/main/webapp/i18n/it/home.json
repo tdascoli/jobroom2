@@ -8,6 +8,12 @@
             "title": "Job-Room bietet Leistungen f\u00fcr"
         },
         "tools": {
+            "candidate-search": {
+                "search-button": {
+                    "title": "Kandidaten anzeigen"
+                },
+                "title": "Finden Sie passende Kandidaten"
+            },
             "candidateSearchTab": "Kandidaten finden",
             "job-search": {
                 "search-button": {
@@ -17,12 +23,6 @@
             "jobPublicationTab": "Job publizieren",
             "jobSearch": {
                 "title": "Finden Sie jetzt Ihren Traumjob!"
-            },
-            "candidate-search": {
-                "title": "Finden Sie passende Kandidaten",
-                "search-button": {
-                    "title": "Kandidaten anzeigen"
-                }
             }
         }
     }

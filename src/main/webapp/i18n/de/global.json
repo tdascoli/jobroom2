@@ -51,19 +51,16 @@
     },
     "footer": {
         "link": {
-            "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+            "abbreviation": {
+                "text": "Abk\u00fcrzungen"
             },
             "legal": {
                 "text": "Rechtliche Grundlagen"
             },
-            "abbreviation": {
-                "text": "Abk\u00fcrzungen"
+            "seco": {
+                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
             }
         }
-    },
-    "header": {
-        "title": "Arbeitslosenversicherung ALV"
     },
     "global": {
         "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
@@ -79,6 +76,10 @@
             "newpassword.placeholder": "Neues Passwort",
             "username": "Benutzername",
             "username.placeholder": "Ihr Benutzername"
+        },
+        "gender": {
+            "FEMALE": "weiblich",
+            "MALE": "m\u00e4nnlich"
         },
         "item-count": "Ergebnis {{first}} - {{second}} von {{total}} Elemente.",
         "menu": {
@@ -181,16 +182,130 @@
                 "ZG": "Zug",
                 "ZH": "Z\u00fcrich"
             },
-            "languages": "Sprachkenntnisse",
+            "region": {
+                "ZH12": "Stadt Z\u00fcrich",
+                "NW01": "Nidwalden, ganzer Kanton",
+                "FR04": "La Sarine",
+                "VS02": "Brig-Glis",
+                "JU01": "Delsberg",
+                "BE10": "Laufental",
+                "BS01": "Basel-Stadt, ganzer Kanton",
+                "TI02": "Locarno, Vallemaggio",
+                "AG01": "Aarau",
+                "ZH01": "Dietikon",
+                "BE02": "Frutigen",
+                "AG02": "Baden",
+                "GR08": "Hinterrhein",
+                "SZ01": "Schwyz, ganzer Kanton",
+                "SG05": "Region Sargans",
+                "SO02": "Bucheggberg",
+                "GR12": "Glenner",
+                "BL01": "Basel-Landschaft, Suchregion 01",
+                "TI03": "Lugano",
+                "BE08": "Aarberg, Biel, B\u00fcren, Erlach, Nidau",
+                "UR01": "Uri, ganzer Kanton",
+                "SG08": "Region Oberuzwil",
+                "ZH10": "Pf\u00e4ffikon",
+                "BE05": "Interlaken, Oberhasli",
+                "VS06": "Sitten, H\u00e9r\u00e9mence",
+                "ZH07": "B\u00fclach",
+                "TG02": "Bischofszell",
+                "GR03": "Oberlandquart",
+                "VD04": "Aubonne, Nyon, Rolle, La Vall\u00e9e",
+                "TG01": "Arbon",
+                "BL03": "Sissach",
+                "AG10": "Wohlen",
+                "ZH06": "Dielsdorf",
+                "AG09": "Wettingen",
+                "GR13": "Vorderrhein",
+                "AG03": "Brugg",
+                "LU01": "Hochdorf, Luzern",
+                "NE02": "La Chaux-de-Fonds, Le Locle, Val de Travers",
+                "ZH05": "Affoltern",
+                "FR06": "Sense/Singine",
+                "JU02": "Pruntrut",
+                "GR10": "Heinzenberg",
+                "JU03": "Freiberge",
+                "BE06": "Burgdorf, Signau, Trachselwald",
+                "VD05": "Aigle, Pays-d'Enhaut, Vevey",
+                "BE07": "Aarwangen, Wangen",
+                "TG05": "Kreuzlingen",
+                "GR14": "M\u00fcnstertal",
+                "FR05": "See/Lac",
+                "GR05": "Maloja",
+                "ZG01": "Zug, ganzer Kanton",
+                "BE01": "Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen",
+                "LU03": "Willisau",
+                "VD01": "Lausanne",
+                "SO03": "Balsthal-G\u00e4u, G\u00f6sgen, Olten",
+                "TI01": "Blenio, Leventina, Riviera",
+                "AG06": "Menziken",
+                "TI04": "Basso Mendrisiotto",
+                "SO05": "Dorneck, Thierstein",
+                "GR11": "Imboden",
+                "FR02": "La Gl\u00e2ne",
+                "GR04": "Inn",
+                "ZH11": "Hinwil",
+                "VS05": "Siders",
+                "FR03": "La Gruy\u00e8re",
+                "VS01": "Fiesch, M\u00fcnster, Ulrichen",
+                "FR07": "La Veveyse",
+                "ZH04": "Meilen",
+                "TG08": "Weinfelden",
+                "ZH09": "Winterthur",
+                "GR01": "Plessur, Chur",
+                "BL02": "Liestal",
+                "SG07": "Region Wattwil",
+                "SG01": "Region St. Gallen",
+                "SO04": "Balsthal-Tal",
+                "AG11": "Zofingen",
+                "AI01": "Appenzell-I.Rh, ganzer Kanton",
+                "SG03": "Region Heerbrugg",
+                "GL01": "Glarus, ganzer Kanton",
+                "SG02": "Region Rorschach",
+                "SG04": "Region Buchs",
+                "VS07": "Martigny",
+                "AG08": "Rheinfelden",
+                "FR01": "La Broye",
+                "TG03": "Diessenhofen",
+                "SG06": "Region Rapperswil",
+                "BE03": "Niedersimmental, Thun",
+                "NE01": "Boudry, Neuenburg, Val-de-Ruz",
+                "A": "Ausland",
+                "AG07": "Muri",
+                "SH01": "Schaffhausen, ganzer Kanton",
+                "GE01": "Genf, ganzer Kanton",
+                "AG12": "Zurzach",
+                "GR06": "Bernina",
+                "VS03": "Visp, Raron",
+                "TG07": "Steckborn",
+                "GR07": "Albula",
+                "VD03": "Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon",
+                "ZH08": "Andelfingen",
+                "AG04": "Frick",
+                "GR09": "Moesa",
+                "VS04": "Leukerbad",
+                "ZH02": "Uster",
+                "GL02": "Glarus",
+                "LU02": "Sursee",
+                "AR01": "Appenzell-A.Rh, ganzer Kanton",
+                "BL04": "Waldenburg",
+                "OW01": "Obwalden, ganzer Kanton",
+                "ZH03": "Horgen",
+                "BL05": "Laufen",
+                "TI06": "Bellinzonese",
+                "BE04": "Obersimmental, Saanen",
+                "VD02": "Cossonay, Echallens, Lavaux, Morges, Oron",
+                "LU04": "Entlebuch",
+                "SO01": "Kriegstetten, Lebern, Solothurn",
+                "AG05": "Lenzburg",
+                "TG04": "Frauenfeld",
+                "VS08": "Monthey, Saint-Maurice",
+                "BE09": "Courtelary, Neuenstadt, M\u00fcnster",
+                "TG06": "M\u00fcnchenwil",
+                "GR02": "Unterlandquart"
+            },
             "language": {
-                "level": {
-                    "BASIC": "Grundkentnisse",
-                    "INTERMEDIATE": "Fortgeschritten",
-                    "NONE": "keine Kentnisse",
-                    "PROFICIENT": "Professionell"
-                },
-                "spoken": "m\u00fcndlich",
-                "written": "schriftlich",
                 "ar": "Arabisch",
                 "bs": "Bulgarisch",
                 "ch-de": "CH-Deutsch",
@@ -208,6 +323,12 @@
                 "jp": "Japanisch",
                 "km": "Khmer",
                 "ku": "Kurdisch",
+                "level": {
+                    "BASIC": "Grundkentnisse",
+                    "INTERMEDIATE": "Fortgeschritten",
+                    "NONE": "keine Kentnisse",
+                    "PROFICIENT": "Professionell"
+                },
                 "lt": "Litauisch",
                 "ne": "Holl\u00e4ndisch",
                 "no": "Norwegisch",
@@ -217,6 +338,7 @@
                 "ru": "Russisch",
                 "sk": "Slowakisch",
                 "sl": "Slowenisch",
+                "spoken": "m\u00fcndlich",
                 "sq": "Albanisch",
                 "sr": "Serbisch",
                 "sv": "Schwedisch",
@@ -224,12 +346,10 @@
                 "th": "Thai",
                 "tr": "T\u00fcrkisch",
                 "vi": "Vietnamesisch",
+                "written": "schriftlich",
                 "zh": "Chinesisch"
-            }
-        },
-        "gender": {
-            "MALE": "m\u00e4nnlich",
-            "FEMALE": "weiblich"
+            },
+            "languages": "Sprachkenntnisse"
         },
         "ribbon": {
             "dev": "Local",
@@ -238,8 +358,11 @@
         },
         "title": "Jobroom"
     },
+    "header": {
+        "title": "Arbeitslosenversicherung ALV"
+    },
     "navigation": {
-        "previous": "Bisherige",
-        "next": "N\u00e4chster"
+        "next": "N\u00e4chster",
+        "previous": "Bisherige"
     }
 }

@@ -1,6 +1,5 @@
 {
     "job-detail": {
-        "external-job-disclaimer": "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.                                                                                                                                                                                                                    ",
         "action": {
             "applyNow": "Jetzt Bewerben",
             "copyLink": "Link kopieren",
@@ -11,17 +10,18 @@
             "showExternalPage": "Zum externen Stelleninserat"
         },
         "application": {
+            "email": "E-Mail",
             "hints": "Hints",
-            "title": "Application",
             "mail": "For Mail",
             "mail.text": "See company address",
-            "email": "E-Mail",
-            "phone": "Phone"
+            "phone": "Phone",
+            "title": "Application"
         },
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "contactPerson": "Ihre Kontaktperson",
         "contactPerson.salutation.MR": "Herr",
         "contactPerson.salutation.MS": "Frau",
+        "external-job-disclaimer": "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.                                                                                                                                                                                                                    ",
         "onlineSince": "Vakant seit",
         "otherJobsCompany": "{{count}} Jobs anzeigen",
         "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",

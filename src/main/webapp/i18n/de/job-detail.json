@@ -1,6 +1,5 @@
 {
     "job-detail": {
-        "external-job-disclaimer": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und \u00f6ffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zus\u00e4tzliche Dienstleistung zur Verf\u00fcgung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualit\u00e4t.                                                                                                                                                              ",
         "action": {
             "applyNow": "Jetzt Bewerben",
             "copyLink": "Link kopieren",
@@ -11,17 +10,18 @@
             "showExternalPage": "Zum externen Stelleninserat"
         },
         "application": {
+            "email": "Per E-Mail",
             "hints": "Erg\u00e4nzende Angaben",
-            "title": "Bewerbungsformen",
             "mail": "Per Post",
             "mail.text": "siehe Adresse des Unternehmens",
-            "email": "Per E-Mail",
-            "phone": "Telefonisch"
+            "phone": "Telefonisch",
+            "title": "Bewerbungsformen"
         },
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "contactPerson": "Ihre Kontaktperson",
         "contactPerson.salutation.MR": "Herr",
         "contactPerson.salutation.MS": "Frau",
+        "external-job-disclaimer": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und \u00f6ffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zus\u00e4tzliche Dienstleistung zur Verf\u00fcgung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualit\u00e4t.                                                                                                                                                              ",
         "onlineSince": "Vakant seit",
         "otherJobsCompany": "{{count}} Jobs anzeigen",
         "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",

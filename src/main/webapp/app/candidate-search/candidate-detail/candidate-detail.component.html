@@ -99,15 +99,16 @@
                         <!-- TODO -->
                     </span>
                 </div>
-                <div class="content__item">
+                <div *ngIf="candidateProfile.preferredWorkRegions || candidateProfile.preferredWorkCantons"
+                     class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>
                     <span>
-                        <p>
+                        <p *ngIf="candidateProfile.preferredWorkRegions?.length">
                             <ng-container *ngFor="let region of candidateProfile.preferredWorkRegions; let last = last">
-                                {{ region }}{{ last ? '' : ', '}}
+                                {{ 'global.reference.region.' + region | translate }}{{ last ? '' : ', '}}
                             </ng-container>
                         </p>
-                        <p>
+                        <p *ngIf="candidateProfile.preferredWorkCantons?.length">
                             <ng-container *ngFor="let canton of candidateProfile.preferredWorkCantons; let last = last">
                                 {{ 'global.reference.canton.' + canton | translate }}{{ last ? '' : ', '}}
                             </ng-container>

@@ -1,6 +1,5 @@
 {
     "job-detail": {
-        "external-job-disclaimer": "Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.                                                                                                                                                                                           ",
         "action": {
             "applyNow": "Jetzt Bewerben",
             "copyLink": "Link kopieren",
@@ -11,17 +10,18 @@
             "showExternalPage": "Zum externen Stelleninserat"
         },
         "application": {
+            "email": "Per E-Mail",
             "hints": "Erg\u00e4nzende Angaben",
-            "title": "Bewerbungsformen",
             "mail": "Per Post",
             "mail.text": "siehe Adresse des Unternehmens",
-            "email": "Per E-Mail",
-            "phone": "Telefonisch"
+            "phone": "Telefonisch",
+            "title": "Bewerbungsformen"
         },
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "contactPerson": "Ihre Kontaktperson",
         "contactPerson.salutation.MR": "Herr",
         "contactPerson.salutation.MS": "Frau",
+        "external-job-disclaimer": "Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.                                                                                                                                                                                           ",
         "onlineSince": "Vakant seit",
         "otherJobsCompany": "{{count}} Jobs anzeigen",
         "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",

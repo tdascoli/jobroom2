@@ -1,79 +1,79 @@
 {
     "candidate-detail": {
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "job-experience": {
-            "title": "Berufliche Qualifikation",
-            "last-job": {
-                "label": "Zuletzt ausge\u00fcbter Beruf"
-            },
-            "job": {
-                "label": "Berufsbezeichnung"
-            },
-            "graduation": {
-                "label": "Abschluss zum Beruf"
-            },
-            "experience": {
-                "label": "Erfahrungsjahre auf dem Beruf"
-            },
-            "description": {
-                "label": "Kenntnisse, F\u00e4higkeiten, Skills"
-            }
-        },
         "additional-information": {
-            "title": "Weitere Angaben",
-            "workForm": {
-                "label": "Arbeitsform"
+            "drivingCategories": {
+                "label": "F\u00fchrerausweiskategorien"
             },
-            "no-information": "Keine Angaben",
+            "education": {
+                "label": "Ausbildung"
+            },
             "gender": {
                 "label": "Geschlecht"
             },
             "highestEducationLevel": {
                 "label": "H\u00f6chste Bildungsstufe"
             },
-            "education": {
-                "label": "Ausbildung"
-            },
+            "no-information": "Keine Angaben",
             "preferredWorkRegions": {
                 "label": "Gesuchte Arbeitsregion/en"
             },
-            "drivingCategories": {
-                "label": "F\u00fchrerausweiskategorien"
+            "title": "Weitere Angaben",
+            "workForm": {
+                "label": "Arbeitsform"
             }
         },
+        "back": "Zur\u00fcck zu den Suchergebnissen",
+        "candidate-copy-link": "Link kopieren",
+        "candidate-link": "Kandidat als Link versenden",
+        "candidate-print": "Drucken",
+        "candidate-save": "Kandidat speichern",
+        "job-center": {
+            "email": {
+                "label": "E-Mail"
+            },
+            "phone": {
+                "label": "Telefon"
+            },
+            "title": "Weitere Ausk\u00fcnfte erteilt"
+        },
+        "job-experience": {
+            "description": {
+                "label": "Kenntnisse, F\u00e4higkeiten, Skills"
+            },
+            "experience": {
+                "label": "Erfahrungsjahre auf dem Beruf"
+            },
+            "graduation": {
+                "label": "Abschluss zum Beruf"
+            },
+            "job": {
+                "label": "Berufsbezeichnung"
+            },
+            "last-job": {
+                "label": "Zuletzt ausge\u00fcbter Beruf"
+            },
+            "title": "Berufliche Qualifikation"
+        },
         "personal-information": {
-            "title": "Personalien / Kontaktdaten des Kandidaten",
+            "address": {
+                "label": "Adresse"
+            },
+            "e-mail": {
+                "label": "E-Mail"
+            },
+            "mobile": {
+                "label": "Mobile"
+            },
             "name": {
                 "label": "Name / Vorname"
             },
             "nationality": {
                 "label": "Staatsangeh\u00f6rigkeit"
             },
-            "address": {
-                "label": "Adresse"
-            },
             "phone": {
                 "label": "Telefon"
             },
-            "mobile": {
-                "label": "Mobile"
-            },
-            "e-mail": {
-                "label": "E-Mail"
-            }
-        },
-        "job-center": {
-            "title": "Weitere Ausk\u00fcnfte erteilt",
-            "phone": {
-                "label": "Telefon"
-            },
-            "email": {
-                "label": "E-Mail"
-            }
-        },
-        "candidate-link": "Kandidat als Link versenden",
-        "candidate-save": "Kandidat speichern",
-        "candidate-copy-link": "Link kopieren",
-        "candidate-print": "Drucken"
+            "title": "Personalien / Kontaktdaten des Kandidaten"
+        }
     }
 }

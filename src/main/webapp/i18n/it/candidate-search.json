@@ -1,5 +1,10 @@
 {
     "candidate-search": {
+        "availability": {
+            "BY_ARRANGEMENT": "Auf Vereinbarung",
+            "IMMEDIATE": "Ab Sofort",
+            "label": "Verf\u00fcgbarkeit"
+        },
         "candidate-search-list": {
             "error-message": "Failed to load candidate result list!",
             "title": {
@@ -20,11 +25,6 @@
                     "without-locality": "{{count}} {{query}} Candidates"
                 }
             }
-        },
-        "availability": {
-            "BY_ARRANGEMENT": "Auf Vereinbarung",
-            "IMMEDIATE": "Ab Sofort",
-            "label": "Verf\u00fcgbarkeit"
         },
         "drivingLicenceCategory": {
             "A": "A",
@@ -107,6 +107,28 @@
             "placeholder": "z.B. Tiefbau"
         },
         "title": "Candidate search",
+        "toolbar": {
+            "graduation": {
+                "default": "Abschluss ausw\u00e4hlen...",
+                "label": "Abschluss"
+            },
+            "occupation": {
+                "placeholder": "Berufsbezeichnung, F\u00e4higkeiten, Skills"
+            },
+            "residence": {
+                "placeholder": "Wohnort: Kanton",
+                "selected": "Kantone"
+            },
+            "search-button": {
+                "title": {
+                    "loading": "Loading",
+                    "many": "{{count}}+ Kandidaten",
+                    "none": "No Kandidaten",
+                    "one": "1 der Kandidat",
+                    "other": "{{count}} Kandidaten"
+                }
+            }
+        },
         "workForm": {
             "HOME_WORK": "Heimarbeit",
             "NIGHT_WORK": "Nachtarbeit",
@@ -123,28 +145,6 @@
         "workplace": {
             "label": "Arbeitsort",
             "placeholder": "Ort, Gemeinde, Kanton"
-        },
-        "toolbar": {
-            "occupation": {
-                "placeholder": "Berufsbezeichnung, F\u00e4higkeiten, Skills"
-            },
-            "residence": {
-                "placeholder": "Wohnort: Kanton",
-                "selected": "Kantone"
-            },
-            "graduation": {
-                "label": "Abschluss",
-                "default": "Abschluss ausw\u00e4hlen..."
-            },
-            "search-button": {
-                "title": {
-                    "loading": "Loading",
-                    "many": "{{count}}+ Kandidaten",
-                    "none": "No Kandidaten",
-                    "one": "1 der Kandidat",
-                    "other": "{{count}} Kandidaten"
-                }
-            }
         }
     }
 }
