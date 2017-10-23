@@ -85,20 +85,20 @@
                     <strong>{{ 'candidate-detail.additional-information.workForm.label' | translate }}</strong>
                     <span>{{ candidateProfile.workForm.length ? candidateProfile.workForm.join(', ') : ('candidate-detail.additional-information.no-information' | translate) }}</span>
                 </div>
-                <div class="content__item">
+                <div *ngIf="candidateProfile.gender" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.gender.label' | translate }}</strong>
                     <span>{{ 'global.gender.' + candidateProfile.gender | translate }}</span>
                 </div>
-                <div class="content__item">
+                <div *ngIf="candidateProfile.highestEducationLevel" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.highestEducationLevel.label' | translate }}</strong>
                     <span>{{ candidateProfile.highestEducationLevel }}</span>
                 </div>
-                <div class="content__item">
+                <!--TODO-->
+                <!-- <div class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.education.label' | translate }}</strong>
                     <span>
-                        <!-- TODO -->
                     </span>
-                </div>
+                </div>-->
                 <div *ngIf="candidateProfile.preferredWorkRegions || candidateProfile.preferredWorkCantons"
                      class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>
@@ -115,7 +115,7 @@
                         </p>
                     </span>
                 </div>
-                <div class="content__item">
+                <div *ngIf="candidateProfile.drivingCategories?.length" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.drivingCategories.label' | translate }}</strong>
                     <span>{{ candidateProfile.drivingCategories.join(', ') }}</span>
                 </div>
@@ -125,23 +125,23 @@
                  class="candidate-detail__content">
                 <ng-container *ngIf="candidateProtectedData$ | async as candidateProtectedData">
                     <h4 class="candidate-detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
-                    <div class="content__item">
+                    <div *ngIf="candidateProtectedData.firstName || candidateProtectedData.lastName" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.name.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.firstName }} {{ candidateProtectedData.lastName }}</span>
                     </div>
-                    <div class="content__item">
+                    <div *ngIf="candidateProtectedData.nationalityCode" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.nationality.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.nationalityCode }}</span>
                     </div>
-                    <div class="content__item">
+                    <div *ngIf="candidateProtectedData.address" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
                         <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
                     </div>
-                    <div class="content__item">
+                    <div *ngIf="candidateProtectedData.phone" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
                         <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
                     </div>
-                    <div class="content__item">
+                    <div *ngIf="candidateProtectedData.email" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>
                         <span><a href="mailto:{{candidateProtectedData.email}}">{{candidateProtectedData.email}}</a></span>
                     </div>
