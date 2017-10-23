@@ -23,7 +23,7 @@
             <div class="form-group">
                 <select formControlName="graduation" class="form-control custom-select">
                     <option [ngValue]="null" translate="candidate-search.toolbar.graduation.default"></option>
-                    <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.value"
+                    <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key"
                             translate="{{'candidate-search.graduation.' + graduation.value}}">
                     </option>
                 </select>

@@ -17,6 +17,7 @@ import {
     CandidateSearchToolSubmittedAction
 } from '../actions/candidate-search-tool.actions';
 import { CandidateService } from '../../../candidate-search/services/candidate.service';
+import { createCandidateSearchRequestFromToolState } from '../../../candidate-search/state-management/util/search-request-mapper';
 
 @Injectable()
 export class HomeEffects {
@@ -34,11 +35,14 @@ export class HomeEffects {
         .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.SearchCandidatesAction(action.payload));
 
     @Effect()
-    candidateSearchToolCountUpdate$: Observable<Action> = this.actions$
+    candidateSearchToolCount$: Observable<Action> = this.actions$
         .ofType(CANDIDATE_SEARCH_TOOL_COUNT)
-        .switchMap((action: CandidateSearchToolCountAction) => this.candidateService.count(action.payload)
-            .map((totalCount: number) => new CandidateSearchToolCountedAction(totalCount))
-            .catch((err: any) => Observable.of(new CandidateSearchToolCountedAction(0)))
+        .switchMap((action: CandidateSearchToolCountAction) => {
+            const req = createCandidateSearchRequestFromToolState(action.payload);
+            return this.candidateService.count(req)
+                    .map((totalCount: number) => new CandidateSearchToolCountedAction(totalCount))
+                    .catch((err: any) => Observable.of(new CandidateSearchToolCountedAction(0)))
+            }
         );
 
     constructor(private actions$: Actions, private router: Router, private candidateService: CandidateService) {

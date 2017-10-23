@@ -24,7 +24,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
     maxCandidateListSize: number = MAX_CANDIDATE_LIST_SIZE;
-    graduationOptions = Graduation;
+    graduations = Graduation;
 
     cantonOptions$: Observable<IMultiSelectOption[]>;
     multiSelectSettings: IMultiSelectSettings = {

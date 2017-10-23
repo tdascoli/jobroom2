@@ -22,7 +22,7 @@ import {
 import { CandidateService } from '../../services/candidate.service';
 import { CandidateSearchRequest } from '../../services/candidate-search-request';
 import { ResponseWrapper } from '../../../shared/index';
-import { createCandidateSearchRequest } from '../util/search-request-mapper';
+import { createCandidateSearchRequestFromFilter } from '../util/search-request-mapper';
 import { async } from 'rxjs/scheduler/async';
 import {
     LOAD_NEXT_ITEMS_PAGE,
@@ -125,15 +125,15 @@ export class CandidateSearchEffects {
 }
 
 function toInitialSearchRequest(state: CandidateSearchState): CandidateSearchRequest {
-    return createCandidateSearchRequest(state.searchFilter, 0);
+    return createCandidateSearchRequestFromFilter(state.searchFilter, 0);
 }
 
 function toSearchRequest(action: SearchCandidatesAction): CandidateSearchRequest {
-    return createCandidateSearchRequest(action.payload, 0);
+    return createCandidateSearchRequestFromFilter(action.payload, 0);
 }
 
 function toNextPageRequest(state: CandidateSearchState): CandidateSearchRequest {
-    return createCandidateSearchRequest(state.searchFilter, state.page + 1);
+    return createCandidateSearchRequestFromFilter(state.searchFilter, state.page + 1);
 }
 
 function toCandidateProfileListLoadedAction(response: ResponseWrapper): CandidateProfileListLoadedAction {

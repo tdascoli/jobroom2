@@ -1,4 +1,4 @@
-import { URLSearchParams, BaseRequestOptions } from '@angular/http';
+import { BaseRequestOptions, URLSearchParams } from '@angular/http';
 
 export const createRequestOption = (req?: any): BaseRequestOptions => {
     const options: BaseRequestOptions = new BaseRequestOptions();
@@ -14,4 +14,11 @@ export const createRequestOption = (req?: any): BaseRequestOptions => {
         options.params = params;
     }
     return options;
+};
+
+export const createPageableURLSearchParams = (req?: any): URLSearchParams => {
+    const params: URLSearchParams = new URLSearchParams();
+    params.set('page', req.page);
+    params.set('size', req.size);
+    return params;
 };

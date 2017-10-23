@@ -11,7 +11,7 @@ import {
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { LanguageSkill } from '../../../shared/model/shared-types';
 import { CandidateProfile } from '../../services/candidate';
-import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
+import { TypeaheadItemDisplayModel } from '../../../shared/input-components/typeahead/typeahead-item-display-model';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter;
@@ -28,7 +28,7 @@ export interface CandidateSearchFilter {
     occupation?: OccupationSuggestion,
     skills?: Array<string>,
     experience?: Experience,
-    workplace?: TypeaheadMultiselectModel,
+    workplace?: TypeaheadItemDisplayModel,
     residence?: Array<Canton>,
     availability?: Availability,
     workload?: [number, number];

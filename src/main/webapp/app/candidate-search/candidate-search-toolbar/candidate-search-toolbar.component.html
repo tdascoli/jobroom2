@@ -22,7 +22,7 @@
                     translate}}</label>
                 <select formControlName="graduation" class="form-control form-control-lg custom-select" id="graduation">
                     <option selected="" value="null" translate="candidate-search.toolbar.graduation.default"></option>
-                    <option *ngFor="let graduation of graduationOptions | keys"
+                    <option *ngFor="let graduation of graduations | keys"
                             [ngValue]="graduation.key">{{'candidate-search.graduation.' + graduation.value | translate}}
                     </option>
                 </select>

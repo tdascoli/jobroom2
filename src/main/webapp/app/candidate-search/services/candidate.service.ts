@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Candidate, CandidateProfile } from './candidate';
 import { Observable } from 'rxjs/Observable';
-import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
-import {
-    CandidateLanguageSkill,
-    CandidateSearchRequest
-} from './candidate-search-request';
+import { BaseRequestOptions, Http, Response } from '@angular/http';
+import { CandidateSearchRequest } from './candidate-search-request';
 import { ResponseWrapper } from '../../shared';
+import { createPageableURLSearchParams } from '../../shared/model/request-util';
 
 @Injectable()
 export class CandidateService {
@@ -17,34 +15,6 @@ export class CandidateService {
 
     private static convertResponse(res: Response): ResponseWrapper {
         return new ResponseWrapper(res.headers, res.json(), res.status);
-    }
-
-    private static isLanguageSkill(arg: any): arg is CandidateLanguageSkill {
-        return arg.code !== undefined;
-    }
-
-    private static convertArrayToParams(params: URLSearchParams, value: Array<any>, key: string): void {
-        value.forEach((v: any, index: number) => {
-            if (typeof v === 'object') {
-                CandidateService.convertObjectToParams(params, v, key, index);
-            } else {
-                params.append(key, v);
-            }
-        });
-    }
-
-    private static convertObjectToParams(params: URLSearchParams, obj: any, key: string, index?: number): void {
-        for (const property in obj) {
-            if (obj.hasOwnProperty(property)) {
-                let param: string;
-                if (CandidateService.isLanguageSkill(obj)) {
-                    param = key + '[' + index + '].' + property;
-                } else {
-                    param = key + '.' + property;
-                }
-                params.set(param, obj[property])
-            }
-        }
     }
 
     constructor(private http: Http) {
@@ -68,37 +38,17 @@ export class CandidateService {
 
     search(req: CandidateSearchRequest): Observable<ResponseWrapper> {
         const options = new BaseRequestOptions();
-        options.params = this.toURLSearchParams(req);
+        options.params = createPageableURLSearchParams(req);
 
-        return this.http.get(this.searchUrl, options)
+        return this.http.post(this.searchUrl, req, options)
             .map((res: Response) => CandidateService.convertResponse(res));
     }
 
-    count(req: any): Observable<number> {
-        const options = new BaseRequestOptions();
-        options.params = this.toURLSearchParams(req);
-
-        return this.http.get(this.countUrl, options)
+    count(req: CandidateSearchRequest): Observable<number> {
+        return this.http.post(this.countUrl, req)
             .map((res: Response) => CandidateService.convertResponse(res))
             .map((wrapper: ResponseWrapper) => {
                 return Number.parseInt(wrapper.json.totalCount)
             });
-    }
-
-    private toURLSearchParams(req: CandidateSearchRequest): URLSearchParams {
-        const params: URLSearchParams = new URLSearchParams();
-
-        Object.keys(req).forEach((key: string) => {
-            const value = req[key];
-            if (Array.isArray(value)) {
-                CandidateService.convertArrayToParams(params, value, key);
-            } else if (typeof value === 'object') {
-                CandidateService.convertObjectToParams(params, value, key);
-            } else {
-                params.set(key, value);
-            }
-        });
-
-        return params;
     }
 }

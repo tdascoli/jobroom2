@@ -42,7 +42,7 @@ describe('HomeEffects', () => {
         store = TestBed.get(Store);
     });
 
-    describe('candidateSearchToolCountUpdate$', () => {
+    describe('candidateSearchToolCount$', () => {
         const action = new CandidateSearchToolCountAction(initialState);
 
         it('should return new CandidateSearchToolCountedAction with totalCount on success', () => {
@@ -55,7 +55,7 @@ describe('HomeEffects', () => {
             const countUpdatedAction = new CandidateSearchToolCountedAction(totalCount);
             const expected = cold('--b', { b: countUpdatedAction });
 
-            expect(effects.candidateSearchToolCountUpdate$).toBeObservable(expected);
+            expect(effects.candidateSearchToolCount$).toBeObservable(expected);
         });
 
         it('should return new CandidateSearchToolCountedAction with zero totalCount on exception', () => {
@@ -66,7 +66,7 @@ describe('HomeEffects', () => {
             const countUpdatedAction = new CandidateSearchToolCountedAction(0);
             const expected = cold('--b', { b: countUpdatedAction });
 
-            expect(effects.candidateSearchToolCountUpdate$).toBeObservable(expected);
+            expect(effects.candidateSearchToolCount$).toBeObservable(expected);
         })
     })
 });

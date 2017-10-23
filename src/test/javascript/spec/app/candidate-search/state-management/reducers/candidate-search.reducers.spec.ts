@@ -4,6 +4,7 @@ import * as actions from '../../../../../../../main/webapp/app/candidate-search/
 import { CandidateProfile } from '../../../../../../../main/webapp/app/candidate-search/services/candidate';
 import { createCandidateProfile } from '../utils';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/index';
+import { TypeaheadItemDisplayModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-item-display-model';
 
 describe('candidateSearchReducer', () => {
     it('should not update CandidateSearchState for INIT_CANDIDATE_SEARCH action', () => {
@@ -84,14 +85,14 @@ describe('candidateSearchReducer', () => {
         // GIVEN
         const state = Object.assign({}, initialState, { searchError: true });
         const action = new actions.SearchCandidatesAction({
-            workplace: new TypeaheadMultiselectModel('type', 'code', 'label'),
+            workplace: new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true)
         });
 
         // WHEN
         const newState = candidateSearchReducer(state, action);
 
         // THEN
-        expect(newState.searchFilter.workplace).toEqual(new TypeaheadMultiselectModel('type', 'code', 'label'));
+        expect(newState.searchFilter.workplace).toEqual(new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true));
         expect(newState.loading).toBeTruthy();
         verifyUnchanged(newState, state, ['loading', 'searchFilter']);
     });
