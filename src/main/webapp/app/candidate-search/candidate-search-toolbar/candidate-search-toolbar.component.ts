@@ -62,6 +62,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             .map((residence: string) => Object.assign(this.toolbarForm.value, { residence }));
 
         this.subscription = Observable.merge(this.toolbarForm.valueChanges, residence$)
+            .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
             .subscribe((formValue: any) =>
                 this.search(formValue)
             );
