@@ -40,9 +40,7 @@ enum Degree {
     BACHELOR_UNIVERSITY,
     MASTER_FACHHOCHSCHULE,
     MASTER_UNIVERSITY,
-    DOKTORAT,
-    UNBEKANNT,
-    NA
+    DOKTORAT
 }
 
 export interface JobExperience {
@@ -52,7 +50,7 @@ export interface JobExperience {
     graduation: Graduation;
     degree: Degree;
     education: ISCED_1997;
-    description: string;
+    remark: string;
 }
 
 export interface CandidateProfile {

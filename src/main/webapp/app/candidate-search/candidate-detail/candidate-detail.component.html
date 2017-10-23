@@ -63,9 +63,9 @@
                         <strong>{{ 'candidate-detail.job-experience.experience.label' | translate }}</strong>
                         <span>{{ 'candidate-search.experience.' + jobExperience.experience | translate }}</span>
                     </div>
-                    <div *ngIf="jobExperience.description" class="content__item">
+                    <div *ngIf="jobExperience.remark" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.description.label' | translate }}</strong>
-                        <span>{{ jobExperience.description }}</span>
+                        <span>{{ jobExperience.remark }}</span>
                     </div>
                 </div>
             </div>
