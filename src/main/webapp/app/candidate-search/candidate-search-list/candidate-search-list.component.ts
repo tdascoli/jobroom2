@@ -81,7 +81,7 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
             key += '.other';
         }
 
-        if (this.residenceFilterString.length > 0) {
+        if (this.residenceFilterString && this.residenceFilterString.length > 0) {
             key += '.with-locality';
         } else {
             key += '.without-locality';
