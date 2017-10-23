@@ -17,7 +17,7 @@ const OCCUPATIONS_URL = 'referenceservice/api/occupations';
 export interface Occupation {
     code: number;
     id: string;
-    labels: any[];
+    labels: any;
 }
 
 interface OccupationCache {

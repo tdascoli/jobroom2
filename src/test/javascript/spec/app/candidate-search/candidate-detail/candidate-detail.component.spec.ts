@@ -1,10 +1,12 @@
 import { CandidateDetailComponent } from '../../../../../../main/webapp/app/candidate-search/candidate-detail/candidate-detail.component';
-import { async, ComponentFixture, inject, TestBed } from '@angular/core/testing';
+import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobroomTestModule } from '../../../test.module';
 import { cold } from 'jasmine-marbles';
 import { ReferenceService } from '../../../../../../main/webapp/app/shared/reference-service/reference.service';
 import { CandidateService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.service';
-import { OccupationService } from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
+import {
+    OccupationService
+} from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -36,7 +38,10 @@ describe('CandidateDetailComponent', () => {
                 { provide: ReferenceService, useValue: mockReferenceService },
                 { provide: CandidateService, useValue: mockCandidateService },
                 { provide: OccupationService, useValue: mockOccupationService },
-                { provide: TranslateService, useValue: {} },
+                { provide: TranslateService, useValue: {
+                    currentLang: 'en',
+                    onLangChange: Observable.never()
+                } },
             ]
         })
             .overrideTemplate(CandidateDetailComponent, '')
@@ -48,27 +53,37 @@ describe('CandidateDetailComponent', () => {
         component = fixture.componentInstance;
     });
 
-    it('should populate occupationLabels',
-        inject([TranslateService], (mockTranslateService: any) => {
-            // GIVEN
-            const occupation$ = cold('-a', { a: {
+    it('should be created', () => {
+        expect(component).toBeTruthy();
+    });
+
+    it('should populate occupationLabels', () => {
+        // GIVEN
+        const occupation$ = cold('-a', {
+            a: {
+                id: '22222',
                 code: 22222,
                 labels: {
                     en: 'Text'
                 }
-            } });
-            mockOccupationService.findOccupationByCode.and.returnValue(occupation$);
+            }
+        });
+        mockOccupationService.findOccupationByCode.and.returnValue(occupation$);
 
-            mockTranslateService.currentLang = 'en';
-            mockTranslateService.onLangChange = cold('-b', { b: { lang: 'en' } });
+        // WHEN
+        fixture.detectChanges();
 
-            // WHEN
-            fixture.detectChanges();
+        // THEN
+        const expected = cold('-b', {
+            b: [{
+                occupationCode: 22222,
+                occupationLabels: {
+                    en: 'Text'
+                },
+                occupation: 'Text'
+            }]
+        });
 
-            // THEN
-            fixture.whenStable().then(() => {
-                expect(candidateProfile.jobExperiences[0].occupation).toEqual('Text')
-            });
-        })
-    );
+        expect(component.jobExperiences$).toBeObservable(expected);
+    })
 });

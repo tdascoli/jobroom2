@@ -48,7 +48,7 @@
             <div *ngIf="candidateProfile.jobExperiences.length" class="candidate-detail__content">
                 <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
 
-                <div *ngFor="let jobExperience of candidateProfile.jobExperiences; let first = first" class="candidate-detail__content candidate-detail--occupation">
+                <div *ngFor="let jobExperience of jobExperiences$ | async; let first = first" class="candidate-detail__content candidate-detail--occupation">
                     <div class="content__item">
                         <strong>
                             {{ (first ? 'candidate-detail.job-experience.last-job.label' : 'candidate-detail.job-experience.job.label') | translate}}
