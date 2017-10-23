@@ -16,6 +16,8 @@ const DEFAULT_RESPONSE_SIZE = '10';
 
 export const NAVIGATOR_TOKEN = new InjectionToken<NavigatorGeolocation>('NavigatorGeolocation');
 
+export type LocalityResultMapper<T> = (LocalityAutocomplete) => T;
+
 @Injectable()
 export class LocalityService {
 
@@ -23,7 +25,7 @@ export class LocalityService {
                 @Inject(NAVIGATOR_TOKEN) private navigator: NavigatorGeolocation) {
     }
 
-    fetchSuggestions(prefix: string): Observable<TypeaheadMultiselectModel[]> {
+    fetchSuggestions<T = TypeaheadMultiselectModel[]>(prefix: string, resultMapper?: LocalityResultMapper<T>): Observable<T> {
         const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
@@ -31,20 +33,13 @@ export class LocalityService {
         params.set('prefix', prefix);
         params.set('resultSize', DEFAULT_RESPONSE_SIZE);
 
+        const _resultMapper = resultMapper
+            ? resultMapper
+            : defaultLocalityAutocompleteMapper as LocalityResultMapper<any>;
+
         return this.http.get(LOCALITIES_URL, options)
-            .map((res: Response) => {
-                const jsonResponse = <LocalityAutocomplete>res.json();
-
-                const localities = jsonResponse.localities
-                    .map((o: LocalitySuggestion) =>
-                        new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, String(o.communalCode), o.city, 0));
-
-                const cantons = jsonResponse.cantons
-                    .map((o: CantonSuggestion) =>
-                        new TypeaheadMultiselectModel(LocalityInputType.CANTON, String(o.code), o.name + ' (' + o.code + ')', 0));
-
-                return [...localities, ...cantons];
-            })
+            .map((res: Response) => res.json())
+            .map(_resultMapper)
             .catch(this.handleError);
     }
 
@@ -83,4 +78,16 @@ export class LocalityService {
         // todo: Error handling concept is not defined yet
         return Observable.of([]);
     }
+}
+
+function defaultLocalityAutocompleteMapper(localityAutocomplete: LocalityAutocomplete): TypeaheadMultiselectModel[] {
+    const localities = localityAutocomplete.localities
+        .map((o: LocalitySuggestion) =>
+            new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, String(o.communalCode), o.city, 0));
+
+    const cantons = localityAutocomplete.cantons
+        .map((o: CantonSuggestion) =>
+            new TypeaheadMultiselectModel(LocalityInputType.CANTON, String(o.code), o.name + ' (' + o.code + ')', 0));
+
+    return [...localities, ...cantons];
 }

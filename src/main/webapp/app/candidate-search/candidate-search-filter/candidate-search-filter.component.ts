@@ -3,7 +3,6 @@ import { CandidateSearchFilter } from '../state-management/state/candidate-searc
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
     Availability,
-    Canton,
     DrivingLicenceCategory,
     Experience,
     ISCED_1997,
@@ -13,6 +12,13 @@ import { Observable } from 'rxjs/Observable';
 import { LocalityService } from '../../shared/reference-service/locality.service';
 import { LanguageSkillService } from '../services/language-skill.service';
 import { Subscription } from 'rxjs/Subscription';
+import {
+    CantonSuggestion,
+    LocalityAutocomplete,
+    LocalityInputType,
+    LocalitySuggestion
+} from '../../shared/reference-service/locality-autocomplete';
+import { TypeaheadMultiselectModel } from '../../shared/input-components/index';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -64,5 +70,18 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
         return this.languageSkillService.getLanguages();
     }
 
-    fetchLocalitySuggestions = (prefix: string) => this.localityService.fetchSuggestions(prefix)
+    fetchLocalitySuggestions = (prefix: string) =>
+        this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
+}
+
+function customLocalityAutocompleteMapper(localityAutocomplete: LocalityAutocomplete): TypeaheadMultiselectModel[] {
+    const localities = localityAutocomplete.localities
+        .map((o: LocalitySuggestion) =>
+            new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, `${o.cantonCode}:${o.regionCode}`, o.city, 0));
+
+    const cantons = localityAutocomplete.cantons
+        .map((o: CantonSuggestion) =>
+            new TypeaheadMultiselectModel(LocalityInputType.CANTON, String(o.code), o.name + ' (' + o.code + ')', 1));
+
+    return [...localities, ...cantons];
 }

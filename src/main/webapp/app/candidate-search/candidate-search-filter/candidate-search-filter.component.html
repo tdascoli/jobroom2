@@ -14,7 +14,10 @@
 
     <div class="form-group">
         <label class="small" translate="candidate-search.workplace.label"></label>
-        <jr2-typeahead-singleselect [placeholder]="'candidate-search.workplace.placeholder' | translate" [itemLoader]="fetchLocalitySuggestions" [editable]="false"></jr2-typeahead-singleselect>
+        <jr2-typeahead-singleselect formControlName="workplace"
+                                    [placeholder]="'candidate-search.workplace.placeholder' | translate"
+                                    [itemLoader]="fetchLocalitySuggestions"
+                                    [editable]="false"></jr2-typeahead-singleselect>
     </div>
 
     <div class="form-group">

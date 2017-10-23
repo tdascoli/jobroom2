@@ -78,6 +78,7 @@ describe('JobSearchToolbarComponent', () => {
                 city: 'Bern',
                 communalCode: 351,
                 cantonCode: 'BE',
+                regionCode: 'BE01'
             });
 
             // THEN
@@ -99,6 +100,7 @@ describe('JobSearchToolbarComponent', () => {
                 city: 'Biel',
                 communalCode: 371,
                 cantonCode: 'BE',
+                regionCode: 'BE08'
             });
 
             // THEN
