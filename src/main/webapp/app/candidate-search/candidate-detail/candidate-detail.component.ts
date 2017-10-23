@@ -89,9 +89,16 @@ export class CandidateDetailComponent implements OnInit {
             return Object.assign({}, jobExperience, {
                 occupation: jobExperience.occupationLabels[lang]
                     ? jobExperience.occupationLabels[lang]
-                    : jobExperience.occupationCode
+                    : this.getFallbackOccupationLabel(jobExperience)
             });
         }
+    }
+
+    private getFallbackOccupationLabel(jobExperience: EnrichedJobExperience): string {
+        const fallbackLang = 'de';
+        return jobExperience.occupationLabels[fallbackLang]
+            ? jobExperience.occupationLabels[fallbackLang]
+            : jobExperience.occupationCode;
     }
 
     printCandidateDetails(): void {

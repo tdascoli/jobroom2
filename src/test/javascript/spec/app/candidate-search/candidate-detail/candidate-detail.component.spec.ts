@@ -85,5 +85,35 @@ describe('CandidateDetailComponent', () => {
         });
 
         expect(component.jobExperiences$).toBeObservable(expected);
+    });
+
+    it('should populate occupationLabel with fallback', () => {
+        // GIVEN
+        const occupation$ = cold('-a', {
+            a: {
+                id: '22222',
+                code: 22222,
+                labels: {
+                    de: 'TextDE'
+                }
+            }
+        });
+        mockOccupationService.findOccupationByCode.and.returnValue(occupation$);
+
+        // WHEN
+        fixture.detectChanges();
+
+        // THEN
+        const expected = cold('-b', {
+            b: [{
+                occupationCode: 22222,
+                occupationLabels: {
+                    de: 'TextDE'
+                },
+                occupation: 'TextDE'
+            }]
+        });
+
+        expect(component.jobExperiences$).toBeObservable(expected);
     })
 });
