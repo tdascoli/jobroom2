@@ -61,7 +61,8 @@
             "label": "Berufserfahrung"
         },
         "filter": {
-            "title": "Kandidaten suchen"
+            "title": "Kandidaten suchen",
+            "candidate-search-link": "Suche als Link versenden"
         },
         "graduation": {
             "ACCEPTED": "CH-Abschluss oder CH anerkannt",

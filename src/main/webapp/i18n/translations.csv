@@ -85,6 +85,7 @@ candidate-search,candidate-search.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,
 candidate-search,candidate-search.experience.MORE_THAN_A_YEAR,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
 candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen
+candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
 candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt
 candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,CH-Abschluss,CH-Abschluss
 candidate-search,candidate-search.graduation.NONE,kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss

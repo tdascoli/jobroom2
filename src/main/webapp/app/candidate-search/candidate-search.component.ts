@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Location } from '@angular/common';
 import {
     CandidateSearchFilter,
     CandidateSearchState,
@@ -18,6 +19,7 @@ import { CandidateProfile } from './services/candidate';
 import { OccupationSuggestion } from '../shared/reference-service/occupation-autocomplete';
 import { CantonService } from './services/canton.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import { getSearchByUrlParams } from './state-management/state/candidate-search.state';
 
 @Component({
     selector: 'jr2-candidate-search',
@@ -25,7 +27,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
     styles: [],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CandidateSearchComponent {
+export class CandidateSearchComponent implements OnInit, OnDestroy {
     searchFilter$: Observable<CandidateSearchFilter>;
     totalCount$: Observable<number>;
     loading$: Observable<boolean>;
@@ -35,8 +37,12 @@ export class CandidateSearchComponent {
     occupationName$: Observable<string>;
     residenceFilterString$: Observable<string>;
 
+    private subscription;
+
     constructor(private store: Store<CandidateSearchState>,
-                private cantonService: CantonService) {
+                private cantonService: CantonService,
+                private location: Location) {
+
         this.store.dispatch(new InitCandidateSearchAction());
 
         this.searchFilter$ = store.select(getSearchFilter);
@@ -53,6 +59,19 @@ export class CandidateSearchComponent {
         this.residenceFilterString$ = this.store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));
+    }
+
+    ngOnInit(): void {
+        this.subscription = this.store.select(getSearchByUrlParams).subscribe((searchByUrlParams: boolean) => {
+                if (searchByUrlParams) {
+                    this.location.replaceState('/candidate-search');
+                }
+            }
+        );
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 
     searchCandidates(filter: CandidateSearchFilter): void {

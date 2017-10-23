@@ -5,6 +5,7 @@ import { BaseRequestOptions, Http, Response } from '@angular/http';
 import { CandidateSearchRequest } from './candidate-search-request';
 import { ResponseWrapper } from '../../shared';
 import { createPageableURLSearchParams } from '../../shared/model/request-util';
+import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 
 @Injectable()
 export class CandidateService {
@@ -50,5 +51,13 @@ export class CandidateService {
             .map((wrapper: ResponseWrapper) => {
                 return Number.parseInt(wrapper.json.totalCount)
             });
+    }
+
+    encodeURISearchFilter(filter: CandidateSearchFilter): string {
+        return encodeURI(JSON.stringify(filter));
+    }
+
+    decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
+        return JSON.parse(decodeURIComponent(URISearchFilter));
     }
 }

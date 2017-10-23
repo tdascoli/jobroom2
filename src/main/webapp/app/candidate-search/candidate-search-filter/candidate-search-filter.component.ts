@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
+import { CandidateSearchFilter, CandidateSearchState, getSearchFilter } from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
     Availability,
@@ -19,6 +19,8 @@ import {
     LocalitySuggestion
 } from '../../shared/reference-service/locality-autocomplete';
 import { TypeaheadMultiselectModel } from '../../shared/input-components/index';
+import { CandidateService } from '../services/candidate.service';
+import { Store } from '@ngrx/store';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -35,12 +37,16 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     workForms = WorkForm;
     drivingLicenceCategories = DrivingLicenceCategory;
     filterForm: FormGroup;
+    candidateSearchUrl: string;
 
-    private subscription: Subscription;
+    private formChangesSubscription: Subscription;
+    private searchFilterSubscription: Subscription;
 
     constructor(private languageSkillService: LanguageSkillService,
                 private localityService: LocalityService,
-                private fb: FormBuilder) {
+                private fb: FormBuilder,
+                private candidateService: CandidateService,
+                private store: Store<CandidateSearchState>) {
     }
 
     ngOnInit(): void {
@@ -55,15 +61,21 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
             languageSkills: [[...this.searchFilter.languageSkills || []]]
         });
 
-        this.subscription = this.filterForm.valueChanges.subscribe((formValue: any) => {
+        this.formChangesSubscription = this.filterForm.valueChanges.subscribe((formValue: any) => {
                 const searchFilter = Object.assign({}, this.searchFilter, formValue);
                 this.searchCandidates.emit(searchFilter)
+            }
+        );
+
+        this.searchFilterSubscription = this.store.select(getSearchFilter).subscribe((filter: CandidateSearchFilter) => {
+                this.candidateSearchUrl = window.location.href + '/?searchFilter=' + this.candidateService.encodeURISearchFilter(filter);
             }
         );
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+        this.formChangesSubscription.unsubscribe();
+        this.searchFilterSubscription.unsubscribe();
     }
 
     getLanguageOptions(): Observable<Array<string>> {
