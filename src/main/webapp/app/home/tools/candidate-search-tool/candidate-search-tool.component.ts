@@ -54,7 +54,9 @@ export class CandidateSearchToolComponent implements OnInit {
         this.cantonOptions$ = this.cantonService.getCantonOptions();
 
         this.store.dispatch(new CandidateSearchToolCountAction(initialState));
-        this.subscription = this.candidateSearchForm.valueChanges.subscribe((formValue: any) => {
+        this.subscription = this.candidateSearchForm.valueChanges
+            .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
+            .subscribe((formValue: any) => {
                 return this.count(formValue);
             }
         );

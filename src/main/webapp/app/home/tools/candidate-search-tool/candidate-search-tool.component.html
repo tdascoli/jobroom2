@@ -7,7 +7,6 @@
             <div class="form-group">
                 <input id="occupation-input" formControlName="occupation" class="form-control"
                        [ngbTypeahead]="fetchOccupationSuggestions"
-                       [editable]="false"
                        [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
                        [inputFormatter]="occupationFormatter"
                        [resultFormatter]="occupationFormatter">
