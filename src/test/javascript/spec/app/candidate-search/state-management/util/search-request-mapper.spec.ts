@@ -26,7 +26,7 @@ import {
 import {
     TypeaheadItemDisplayModel,
     TypeaheadMultiselectModel
-} from "../../../../../../../main/webapp/app/shared/input-components/index";
+} from '../../../../../../../main/webapp/app/shared/input-components/index';
 
 describe('createCandidateSearchRequestFromFilter', () => {
 

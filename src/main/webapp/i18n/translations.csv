@@ -80,9 +80,9 @@ candidate-search,candidate-search.education.ISCED4,Zweitausbildung nicht tertiä
 candidate-search,candidate-search.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5
 candidate-search,candidate-search.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6
 candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
-candidate-search,candidate-search.experience.LESS_THAN_A_YEAR,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr
+candidate-search,candidate-search.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr
+candidate-search,candidate-search.experience.MORE_THAN_1_YEAR,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
 candidate-search,candidate-search.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre
-candidate-search,candidate-search.experience.MORE_THAN_A_YEAR,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
 candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
@@ -274,127 +274,6 @@ global,global.reference.canton.VD,Waadt,Vaud,Vaud,Waadt
 global,global.reference.canton.VS,Wallis,Valais,Vallese,Wallis
 global,global.reference.canton.ZG,Zug,Zoug,Zugo,Zug
 global,global.reference.canton.ZH,Zürich,Zurich,Zurigo,Zürich
-global,global.reference.region.ZH12,Stadt Zürich,Stadt Zürich,ville de Zurich,città di Zurigo
-global,global.reference.region.NW01,"Nidwalden, ganzer Kanton","Nidwalden, ganzer Kanton","Nidwalden, tout le canton","Nidwalden, tuttu il cantone"
-global,global.reference.region.FR04,La Sarine,La Sarine,La Sarine,La Sarine
-global,global.reference.region.VS02,Brig-Glis,Brig-Glis,Brig-Glis,Brig-Glis
-global,global.reference.region.JU01,Delsberg,Delsberg,Delémont,Delémont
-global,global.reference.region.BE10,Laufental,Laufental,Laufental,Laufental
-global,global.reference.region.BS01,"Basel-Stadt, ganzer Kanton","Basel-Stadt, ganzer Kanton","Bâle-Ville, tout le canton","Basilea-Città, tutto il cantone"
-global,global.reference.region.TI02,"Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio"
-global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
-global,global.reference.region.ZH01,Dietikon,Dietikon,Dietikon,Dietikon
-global,global.reference.region.BE02,Frutigen,Frutigen,Frutigen,Frutigen
-global,global.reference.region.AG02,Baden,Baden,Baden,Baden
-global,global.reference.region.GR08,Hinterrhein,Hinterrhein,Hinterrhein,Hinterrhein
-global,global.reference.region.SZ01,"Schwyz, ganzer Kanton","Schwyz, ganzer Kanton","Schwyz, tout le canton","Svitto, tutto il cantone"
-global,global.reference.region.SG05,Region Sargans,Region Sargans,Région Sargans,Regione Sargans
-global,global.reference.region.SO02,Bucheggberg,Bucheggberg,Bucheggberg,Bucheggberg
-global,global.reference.region.GR12,Glenner,Glenner,Glenner,Glenner
-global,global.reference.region.BL01,"Basel-Landschaft, Suchregion 01","Basel-Landschaft, Suchregion 01","Bâle-Campagne, région de recherche 01","Basilea-Campagna, regione ricerca 01"
-global,global.reference.region.TI03,Lugano,Lugano,Lugano,Lugano
-global,global.reference.region.BE08,"Aarberg, Biel, Büren, Erlach, Nidau","Aarberg, Biel, Büren, Erlach, Nidau","Aarberg, Bienne, Büren, Erlach, Nidau","Aarberg, Bienna, Büren, Erlach, Nidau"
-global,global.reference.region.UR01,"Uri, ganzer Kanton","Uri, ganzer Kanton","Uri, tout le canton","Uri, tutto il cantone"
-global,global.reference.region.SG08,Region Oberuzwil,Region Oberuzwil,Région Oberuzwil,Regione Oberuzwil
-global,global.reference.region.ZH10,Pfäffikon,Pfäffikon,Pfäffikon,Pfäffikon
-global,global.reference.region.BE05,"Interlaken, Oberhasli","Interlaken, Oberhasli","Interlaken, Oberhasli","Interlaken, Oberhasli"
-global,global.reference.region.VS06,"Sitten, Hérémence","Sitten, Hérémence","Sion, Hérémence","Sion, Hérémence"
-global,global.reference.region.ZH07,Bülach,Bülach,Bülach,Bülach
-global,global.reference.region.TG02,Bischofszell,Bischofszell,Bischofszell,Bischofszell
-global,global.reference.region.GR03,Oberlandquart,Oberlandquart,Oberlandquart,Oberlandquart
-global,global.reference.region.VD04,"Aubonne, Nyon, Rolle, La Vallée","Aubonne, Nyon, Rolle, La Vallée","Aubonne, Nyon, Rolle, La Vallée","Aubonne, Nyon, Rolle, La Vallée"
-global,global.reference.region.TG01,Arbon,Arbon,Arbon,Arbon
-global,global.reference.region.BL03,Sissach,Sissach,Sissach,Sissach
-global,global.reference.region.AG10,Wohlen,Wohlen,Wohlen,Wohlen
-global,global.reference.region.ZH06,Dielsdorf,Dielsdorf,Dielsdorf,Dielsdorf
-global,global.reference.region.AG09,Wettingen,Wettingen,Wettingen,Wettingen
-global,global.reference.region.GR13,Vorderrhein,Vorderrhein,Vorderrhein,Vorderrhein
-global,global.reference.region.AG03,Brugg,Brugg,Brugg,Brugg
-global,global.reference.region.LU01,"Hochdorf, Luzern","Hochdorf, Luzern","Hochdorf, Lucerne","Hochdorf, Lucerna"
-global,global.reference.region.NE02,"La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers"
-global,global.reference.region.ZH05,Affoltern,Affoltern,Affoltern,Affoltern
-global,global.reference.region.FR06,Sense/Singine,Sense/Singine,Sense/Singine,Sense/Singine
-global,global.reference.region.JU02,Pruntrut,Pruntrut,Porrentruy,Porrentruy
-global,global.reference.region.GR10,Heinzenberg,Heinzenberg,Heinzenberg,Heinzenberg
-global,global.reference.region.JU03,Freiberge,Freiberge,Les Franches-Montagnes,Les Franchen-Montagnes
-global,global.reference.region.BE06,"Burgdorf, Signau, Trachselwald","Burgdorf, Signau, Trachselwald","Berthoud, Signau, Trachselwald","Burgdorf, Signau, Trachselwald"
-global,global.reference.region.VD05,"Aigle, Pays-d'Enhaut, Vevey","Aigle, Pays-d'Enhaut, Vevey","Aigle, Pays-d'Enhaut, Vevey","Aigle, Pays-d'Enhaut, Vevey"
-global,global.reference.region.BE07,"Aarwangen, Wangen","Aarwangen, Wangen","Aarwangen, Wangen","Aarwangen, Wangen"
-global,global.reference.region.TG05,Kreuzlingen,Kreuzlingen,Kreuzlingen,Kreuzlingen
-global,global.reference.region.GR14,Münstertal,Münstertal,Münstertal,Münstertal
-global,global.reference.region.FR05,See/Lac,See/Lac,See/Lac,See/Lac
-global,global.reference.region.GR05,Maloja,Maloja,Maloja,Maloja
-global,global.reference.region.ZG01,"Zug, ganzer Kanton","Zug, ganzer Kanton","Zoug, tout le canton","Zugo, tutto il cantone"
-global,global.reference.region.BE01,"Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen"
-global,global.reference.region.LU03,Willisau,Willisau,Willisau,Willisau
-global,global.reference.region.VD01,Lausanne,Lausanne,Lausanne,Losanna
-global,global.reference.region.SO03,"Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten"
-global,global.reference.region.TI01,"Blenio, Leventina, Riviera","Blenio, Leventina, Riviera","Blenio, Leventina, Riviera","Blenio, Leventina, Riviera"
-global,global.reference.region.AG06,Menziken,Menziken,Menziken,Menziken
-global,global.reference.region.TI04,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto
-global,global.reference.region.SO05,"Dorneck, Thierstein","Dorneck, Thierstein","Dorneck, Thierstein","Dorneck, Thierstein"
-global,global.reference.region.GR11,Imboden,Imboden,Imboden,Imboden
-global,global.reference.region.FR02,La Glâne,La Glâne,La Glâne,La Glâne
-global,global.reference.region.GR04,Inn,Inn,Inn,Inn
-global,global.reference.region.ZH11,Hinwil,Hinwil,Hinwil,Hinwil
-global,global.reference.region.VS05,Siders,Siders,Sierre,Sierre
-global,global.reference.region.FR03,La Gruyère,La Gruyère,La Gruyère,La Gruyère
-global,global.reference.region.VS01,"Fiesch, Münster, Ulrichen","Fiesch, Münster, Ulrichen","Fiesch, Münster, Ulrichen","Fiesch, Münster, Ulrichen"
-global,global.reference.region.FR07,La Veveyse,La Veveyse,La Veveyse,La Veveyse
-global,global.reference.region.ZH04,Meilen,Meilen,Meilen,Meilen
-global,global.reference.region.TG08,Weinfelden,Weinfelden,Weinfelden,Weinfelden
-global,global.reference.region.ZH09,Winterthur,Winterthur,Winterthur,Winterthur
-global,global.reference.region.GR01,"Plessur, Chur","Plessur, Chur","Plessur, Coire","Plessur, Coira"
-global,global.reference.region.BL02,Liestal,Liestal,Liestal,Liestal
-global,global.reference.region.SG07,Region Wattwil,Region Wattwil,Région Wattwil,Regione Wattwil
-global,global.reference.region.SG01,Region St. Gallen,Region St. Gallen,Région St-Gall,Regione S. Gallo
-global,global.reference.region.SO04,Balsthal-Tal,Balsthal-Tal,Balsthal-Tal,Balsthal-Tal
-global,global.reference.region.AG11,Zofingen,Zofingen,Zofingen,Zofingen
-global,global.reference.region.AI01,"Appenzell-I.Rh, ganzer Kanton","Appenzell-I.Rh, ganzer Kanton","Appenzell-I.Rh, tout le canton","Appenzell-I.Rh, tutto il cantone"
-global,global.reference.region.SG03,Region Heerbrugg,Region Heerbrugg,Région Heerbrugg,Regione Heerbrugg
-global,global.reference.region.GL01,"Glarus, ganzer Kanton","Glarus, ganzer Kanton","Glaris, tout le canton","Glarona, tutto il cantone"
-global,global.reference.region.SG02,Region Rorschach,Region Rorschach,Région Rorschach,Regione Rorschach
-global,global.reference.region.SG04,Region Buchs,Region Buchs,Région Buchs,Regione Buchs
-global,global.reference.region.VS07,Martigny,Martigny,Martigny,Martigny
-global,global.reference.region.AG08,Rheinfelden,Rheinfelden,Rheinfelden,Rheinfelden
-global,global.reference.region.FR01,La Broye,La Broye,La Broye,La Broye
-global,global.reference.region.TG03,Diessenhofen,Diessenhofen,Diessenhofen,Diessenhofen
-global,global.reference.region.SG06,Region Rapperswil,Region Rapperswil,Région Rapperswil,Regione Rapperswil
-global,global.reference.region.BE03,"Niedersimmental, Thun","Niedersimmental, Thun","Niedersimmental, Thoune","Niedersimmental, Thun"
-global,global.reference.region.NE01,"Boudry, Neuenburg, Val-de-Ruz","Boudry, Neuenburg, Val-de-Ruz","Boudry, Neuchâtel, Val-de-Ruz","Boudry, Neuchâtel, Val-de-Ruz"
-global,global.reference.region.A,Ausland,Ausland,étranger,esteroLU05
-global,global.reference.region.AG07,Muri,Muri,Muri,Muri
-global,global.reference.region.SH01,"Schaffhausen, ganzer Kanton","Schaffhausen, ganzer Kanton","Schaffhouse, tout le canton","Sciaffusa, tutto il cantone"
-global,global.reference.region.GE01,"Genf, ganzer Kanton","Genf, ganzer Kanton","Genève, tout le canton","Ginevra, tutto il cantone"
-global,global.reference.region.AG12,Zurzach,Zurzach,Zurzach,Zurzach
-global,global.reference.region.GR06,Bernina,Bernina,Bernina,Bernina
-global,global.reference.region.VS03,"Visp, Raron","Visp, Raron","Viège, Raron","Visp, Raron"
-global,global.reference.region.TG07,Steckborn,Steckborn,Steckborn,Steckborn
-global,global.reference.region.GR07,Albula,Albula,Albula,Albula
-global,global.reference.region.VD03,"Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon"
-global,global.reference.region.ZH08,Andelfingen,Andelfingen,Andelfingen,Andelfingen
-global,global.reference.region.AG04,Frick,Frick,Frick,Frick
-global,global.reference.region.GR09,Moesa,Moesa,Moesa,Moesa
-global,global.reference.region.VS04,Leukerbad,Leukerbad,Leukerbad,Leukerbad
-global,global.reference.region.ZH02,Uster,Uster,Uster,Uster
-global,global.reference.region.GL02,Glarus,Glarus,Glaris,Glarona
-global,global.reference.region.LU02,Sursee,Sursee,Sursee,Sursee
-global,global.reference.region.AR01,"Appenzell-A.Rh, ganzer Kanton","Appenzell-A.Rh, ganzer Kanton","Appenzell-A.Rh, tout le canton","Appenzell-A.Rh, tutto il cantone"
-global,global.reference.region.BL04,Waldenburg,Waldenburg,Waldenburg,Waldenburg
-global,global.reference.region.OW01,"Obwalden, ganzer Kanton","Obwalden, ganzer Kanton","Obwalden, tout le canton","Obwalden, tutto il cantone"
-global,global.reference.region.ZH03,Horgen,Horgen,Horgen,Horgen
-global,global.reference.region.BL05,Laufen,Laufen,Laufen,Laufen
-global,global.reference.region.TI06,Bellinzonese,Bellinzonese,Bellinzonese,Bellinzonese
-global,global.reference.region.BE04,"Obersimmental, Saanen","Obersimmental, Saanen","Obersimmental, Saanen","Obersimmental, Saanen"
-global,global.reference.region.VD02,"Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron"
-global,global.reference.region.LU04,Entlebuch,Entlebuch,Entlebuch,Entlebuch
-global,global.reference.region.SO01,"Kriegstetten, Lebern, Solothurn","Kriegstetten, Lebern, Solothurn","Kriegstetten, Lebern, Soleure","Kriegstetten, Lebern, Soletta"
-global,global.reference.region.AG05,Lenzburg,Lenzburg,Lenzburg,Lenzburg
-global,global.reference.region.TG04,Frauenfeld,Frauenfeld,Frauenfeld,Frauenfeld
-global,global.reference.region.VS08,"Monthey, Saint-Maurice","Monthey, Saint-Maurice","Monthey, Saint-Maurice","Monthey, Saint-Maurice"
-global,global.reference.region.BE09,"Courtelary, Neuenstadt, Münster","Courtelary, Neuenstadt, Münster","Courtelary, La Neuveville, Moutier","Courtelary, La Neuveville, Moutier"
-global,global.reference.region.TG06,Münchenwil,Münchenwil,Münchenwil,Münchenwil
-global,global.reference.region.GR02,Unterlandquart,Unterlandquart,Unterlandquart,Unterlandquart
 global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
 global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
 global,global.reference.language.ch-de,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
@@ -436,6 +315,127 @@ global,global.reference.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vi
 global,global.reference.language.written,schriftlich,schriftlich,schriftlich,schriftlich
 global,global.reference.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
 global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Sprachen
+global,global.reference.region.A,Ausland,Ausland,étranger,esteroLU05
+global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
+global,global.reference.region.AG02,Baden,Baden,Baden,Baden
+global,global.reference.region.AG03,Brugg,Brugg,Brugg,Brugg
+global,global.reference.region.AG04,Frick,Frick,Frick,Frick
+global,global.reference.region.AG05,Lenzburg,Lenzburg,Lenzburg,Lenzburg
+global,global.reference.region.AG06,Menziken,Menziken,Menziken,Menziken
+global,global.reference.region.AG07,Muri,Muri,Muri,Muri
+global,global.reference.region.AG08,Rheinfelden,Rheinfelden,Rheinfelden,Rheinfelden
+global,global.reference.region.AG09,Wettingen,Wettingen,Wettingen,Wettingen
+global,global.reference.region.AG10,Wohlen,Wohlen,Wohlen,Wohlen
+global,global.reference.region.AG11,Zofingen,Zofingen,Zofingen,Zofingen
+global,global.reference.region.AG12,Zurzach,Zurzach,Zurzach,Zurzach
+global,global.reference.region.AI01,"Appenzell-I.Rh, ganzer Kanton","Appenzell-I.Rh, ganzer Kanton","Appenzell-I.Rh, tout le canton","Appenzell-I.Rh, tutto il cantone"
+global,global.reference.region.AR01,"Appenzell-A.Rh, ganzer Kanton","Appenzell-A.Rh, ganzer Kanton","Appenzell-A.Rh, tout le canton","Appenzell-A.Rh, tutto il cantone"
+global,global.reference.region.BE01,"Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen"
+global,global.reference.region.BE02,Frutigen,Frutigen,Frutigen,Frutigen
+global,global.reference.region.BE03,"Niedersimmental, Thun","Niedersimmental, Thun","Niedersimmental, Thoune","Niedersimmental, Thun"
+global,global.reference.region.BE04,"Obersimmental, Saanen","Obersimmental, Saanen","Obersimmental, Saanen","Obersimmental, Saanen"
+global,global.reference.region.BE05,"Interlaken, Oberhasli","Interlaken, Oberhasli","Interlaken, Oberhasli","Interlaken, Oberhasli"
+global,global.reference.region.BE06,"Burgdorf, Signau, Trachselwald","Burgdorf, Signau, Trachselwald","Berthoud, Signau, Trachselwald","Burgdorf, Signau, Trachselwald"
+global,global.reference.region.BE07,"Aarwangen, Wangen","Aarwangen, Wangen","Aarwangen, Wangen","Aarwangen, Wangen"
+global,global.reference.region.BE08,"Aarberg, Biel, Büren, Erlach, Nidau","Aarberg, Biel, Büren, Erlach, Nidau","Aarberg, Bienne, Büren, Erlach, Nidau","Aarberg, Bienna, Büren, Erlach, Nidau"
+global,global.reference.region.BE09,"Courtelary, Neuenstadt, Münster","Courtelary, Neuenstadt, Münster","Courtelary, La Neuveville, Moutier","Courtelary, La Neuveville, Moutier"
+global,global.reference.region.BE10,Laufental,Laufental,Laufental,Laufental
+global,global.reference.region.BL01,"Basel-Landschaft, Suchregion 01","Basel-Landschaft, Suchregion 01","Bâle-Campagne, région de recherche 01","Basilea-Campagna, regione ricerca 01"
+global,global.reference.region.BL02,Liestal,Liestal,Liestal,Liestal
+global,global.reference.region.BL03,Sissach,Sissach,Sissach,Sissach
+global,global.reference.region.BL04,Waldenburg,Waldenburg,Waldenburg,Waldenburg
+global,global.reference.region.BL05,Laufen,Laufen,Laufen,Laufen
+global,global.reference.region.BS01,"Basel-Stadt, ganzer Kanton","Basel-Stadt, ganzer Kanton","Bâle-Ville, tout le canton","Basilea-Città, tutto il cantone"
+global,global.reference.region.FR01,La Broye,La Broye,La Broye,La Broye
+global,global.reference.region.FR02,La Glâne,La Glâne,La Glâne,La Glâne
+global,global.reference.region.FR03,La Gruyère,La Gruyère,La Gruyère,La Gruyère
+global,global.reference.region.FR04,La Sarine,La Sarine,La Sarine,La Sarine
+global,global.reference.region.FR05,See/Lac,See/Lac,See/Lac,See/Lac
+global,global.reference.region.FR06,Sense/Singine,Sense/Singine,Sense/Singine,Sense/Singine
+global,global.reference.region.FR07,La Veveyse,La Veveyse,La Veveyse,La Veveyse
+global,global.reference.region.GE01,"Genf, ganzer Kanton","Genf, ganzer Kanton","Genève, tout le canton","Ginevra, tutto il cantone"
+global,global.reference.region.GL01,"Glarus, ganzer Kanton","Glarus, ganzer Kanton","Glaris, tout le canton","Glarona, tutto il cantone"
+global,global.reference.region.GL02,Glarus,Glarus,Glaris,Glarona
+global,global.reference.region.GR01,"Plessur, Chur","Plessur, Chur","Plessur, Coire","Plessur, Coira"
+global,global.reference.region.GR02,Unterlandquart,Unterlandquart,Unterlandquart,Unterlandquart
+global,global.reference.region.GR03,Oberlandquart,Oberlandquart,Oberlandquart,Oberlandquart
+global,global.reference.region.GR04,Inn,Inn,Inn,Inn
+global,global.reference.region.GR05,Maloja,Maloja,Maloja,Maloja
+global,global.reference.region.GR06,Bernina,Bernina,Bernina,Bernina
+global,global.reference.region.GR07,Albula,Albula,Albula,Albula
+global,global.reference.region.GR08,Hinterrhein,Hinterrhein,Hinterrhein,Hinterrhein
+global,global.reference.region.GR09,Moesa,Moesa,Moesa,Moesa
+global,global.reference.region.GR10,Heinzenberg,Heinzenberg,Heinzenberg,Heinzenberg
+global,global.reference.region.GR11,Imboden,Imboden,Imboden,Imboden
+global,global.reference.region.GR12,Glenner,Glenner,Glenner,Glenner
+global,global.reference.region.GR13,Vorderrhein,Vorderrhein,Vorderrhein,Vorderrhein
+global,global.reference.region.GR14,Münstertal,Münstertal,Münstertal,Münstertal
+global,global.reference.region.JU01,Delsberg,Delsberg,Delémont,Delémont
+global,global.reference.region.JU02,Pruntrut,Pruntrut,Porrentruy,Porrentruy
+global,global.reference.region.JU03,Freiberge,Freiberge,Les Franches-Montagnes,Les Franchen-Montagnes
+global,global.reference.region.LU01,"Hochdorf, Luzern","Hochdorf, Luzern","Hochdorf, Lucerne","Hochdorf, Lucerna"
+global,global.reference.region.LU02,Sursee,Sursee,Sursee,Sursee
+global,global.reference.region.LU03,Willisau,Willisau,Willisau,Willisau
+global,global.reference.region.LU04,Entlebuch,Entlebuch,Entlebuch,Entlebuch
+global,global.reference.region.NE01,"Boudry, Neuenburg, Val-de-Ruz","Boudry, Neuenburg, Val-de-Ruz","Boudry, Neuchâtel, Val-de-Ruz","Boudry, Neuchâtel, Val-de-Ruz"
+global,global.reference.region.NE02,"La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers"
+global,global.reference.region.NW01,"Nidwalden, ganzer Kanton","Nidwalden, ganzer Kanton","Nidwalden, tout le canton","Nidwalden, tuttu il cantone"
+global,global.reference.region.OW01,"Obwalden, ganzer Kanton","Obwalden, ganzer Kanton","Obwalden, tout le canton","Obwalden, tutto il cantone"
+global,global.reference.region.SG01,Region St. Gallen,Region St. Gallen,Région St-Gall,Regione S. Gallo
+global,global.reference.region.SG02,Region Rorschach,Region Rorschach,Région Rorschach,Regione Rorschach
+global,global.reference.region.SG03,Region Heerbrugg,Region Heerbrugg,Région Heerbrugg,Regione Heerbrugg
+global,global.reference.region.SG04,Region Buchs,Region Buchs,Région Buchs,Regione Buchs
+global,global.reference.region.SG05,Region Sargans,Region Sargans,Région Sargans,Regione Sargans
+global,global.reference.region.SG06,Region Rapperswil,Region Rapperswil,Région Rapperswil,Regione Rapperswil
+global,global.reference.region.SG07,Region Wattwil,Region Wattwil,Région Wattwil,Regione Wattwil
+global,global.reference.region.SG08,Region Oberuzwil,Region Oberuzwil,Région Oberuzwil,Regione Oberuzwil
+global,global.reference.region.SH01,"Schaffhausen, ganzer Kanton","Schaffhausen, ganzer Kanton","Schaffhouse, tout le canton","Sciaffusa, tutto il cantone"
+global,global.reference.region.SO01,"Kriegstetten, Lebern, Solothurn","Kriegstetten, Lebern, Solothurn","Kriegstetten, Lebern, Soleure","Kriegstetten, Lebern, Soletta"
+global,global.reference.region.SO02,Bucheggberg,Bucheggberg,Bucheggberg,Bucheggberg
+global,global.reference.region.SO03,"Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten"
+global,global.reference.region.SO04,Balsthal-Tal,Balsthal-Tal,Balsthal-Tal,Balsthal-Tal
+global,global.reference.region.SO05,"Dorneck, Thierstein","Dorneck, Thierstein","Dorneck, Thierstein","Dorneck, Thierstein"
+global,global.reference.region.SZ01,"Schwyz, ganzer Kanton","Schwyz, ganzer Kanton","Schwyz, tout le canton","Svitto, tutto il cantone"
+global,global.reference.region.TG01,Arbon,Arbon,Arbon,Arbon
+global,global.reference.region.TG02,Bischofszell,Bischofszell,Bischofszell,Bischofszell
+global,global.reference.region.TG03,Diessenhofen,Diessenhofen,Diessenhofen,Diessenhofen
+global,global.reference.region.TG04,Frauenfeld,Frauenfeld,Frauenfeld,Frauenfeld
+global,global.reference.region.TG05,Kreuzlingen,Kreuzlingen,Kreuzlingen,Kreuzlingen
+global,global.reference.region.TG06,Münchenwil,Münchenwil,Münchenwil,Münchenwil
+global,global.reference.region.TG07,Steckborn,Steckborn,Steckborn,Steckborn
+global,global.reference.region.TG08,Weinfelden,Weinfelden,Weinfelden,Weinfelden
+global,global.reference.region.TI01,"Blenio, Leventina, Riviera","Blenio, Leventina, Riviera","Blenio, Leventina, Riviera","Blenio, Leventina, Riviera"
+global,global.reference.region.TI02,"Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio"
+global,global.reference.region.TI03,Lugano,Lugano,Lugano,Lugano
+global,global.reference.region.TI04,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto
+global,global.reference.region.TI06,Bellinzonese,Bellinzonese,Bellinzonese,Bellinzonese
+global,global.reference.region.UR01,"Uri, ganzer Kanton","Uri, ganzer Kanton","Uri, tout le canton","Uri, tutto il cantone"
+global,global.reference.region.VD01,Lausanne,Lausanne,Lausanne,Losanna
+global,global.reference.region.VD02,"Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron"
+global,global.reference.region.VD03,"Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon"
+global,global.reference.region.VD04,"Aubonne, Nyon, Rolle, La Vallée","Aubonne, Nyon, Rolle, La Vallée","Aubonne, Nyon, Rolle, La Vallée","Aubonne, Nyon, Rolle, La Vallée"
+global,global.reference.region.VD05,"Aigle, Pays-d'Enhaut, Vevey","Aigle, Pays-d'Enhaut, Vevey","Aigle, Pays-d'Enhaut, Vevey","Aigle, Pays-d'Enhaut, Vevey"
+global,global.reference.region.VS01,"Fiesch, Münster, Ulrichen","Fiesch, Münster, Ulrichen","Fiesch, Münster, Ulrichen","Fiesch, Münster, Ulrichen"
+global,global.reference.region.VS02,Brig-Glis,Brig-Glis,Brig-Glis,Brig-Glis
+global,global.reference.region.VS03,"Visp, Raron","Visp, Raron","Viège, Raron","Visp, Raron"
+global,global.reference.region.VS04,Leukerbad,Leukerbad,Leukerbad,Leukerbad
+global,global.reference.region.VS05,Siders,Siders,Sierre,Sierre
+global,global.reference.region.VS06,"Sitten, Hérémence","Sitten, Hérémence","Sion, Hérémence","Sion, Hérémence"
+global,global.reference.region.VS07,Martigny,Martigny,Martigny,Martigny
+global,global.reference.region.VS08,"Monthey, Saint-Maurice","Monthey, Saint-Maurice","Monthey, Saint-Maurice","Monthey, Saint-Maurice"
+global,global.reference.region.ZG01,"Zug, ganzer Kanton","Zug, ganzer Kanton","Zoug, tout le canton","Zugo, tutto il cantone"
+global,global.reference.region.ZH01,Dietikon,Dietikon,Dietikon,Dietikon
+global,global.reference.region.ZH02,Uster,Uster,Uster,Uster
+global,global.reference.region.ZH03,Horgen,Horgen,Horgen,Horgen
+global,global.reference.region.ZH04,Meilen,Meilen,Meilen,Meilen
+global,global.reference.region.ZH05,Affoltern,Affoltern,Affoltern,Affoltern
+global,global.reference.region.ZH06,Dielsdorf,Dielsdorf,Dielsdorf,Dielsdorf
+global,global.reference.region.ZH07,Bülach,Bülach,Bülach,Bülach
+global,global.reference.region.ZH08,Andelfingen,Andelfingen,Andelfingen,Andelfingen
+global,global.reference.region.ZH09,Winterthur,Winterthur,Winterthur,Winterthur
+global,global.reference.region.ZH10,Pfäffikon,Pfäffikon,Pfäffikon,Pfäffikon
+global,global.reference.region.ZH11,Hinwil,Hinwil,Hinwil,Hinwil
+global,global.reference.region.ZH12,Stadt Zürich,Stadt Zürich,ville de Zurich,città di Zurigo
 global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Development,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test

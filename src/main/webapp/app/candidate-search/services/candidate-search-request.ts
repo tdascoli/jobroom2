@@ -29,7 +29,7 @@ export interface CandidateLanguageSkill {
 }
 
 export enum Experience {
-    LESS_THAN_A_YEAR, MORE_THAN_A_YEAR, MORE_THAN_3_YEARS
+    LESS_THAN_1_YEAR, MORE_THAN_1_YEAR, MORE_THAN_3_YEARS
 }
 
 export enum Availability {
