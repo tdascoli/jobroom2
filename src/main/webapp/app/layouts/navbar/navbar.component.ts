@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { JhiEventManager, JhiLanguageService } from 'ng-jhipster';
@@ -37,7 +37,8 @@ export class NavbarComponent implements OnInit {
                 private principal: Principal,
                 private loginModalService: LoginModalService,
                 private profileService: ProfileService,
-                private router: Router) {
+                private router: Router,
+                private elRef: ElementRef) {
         this.version = VERSION ? 'v' + VERSION : '';
         this.isNavbarCollapsed = true;
     }
@@ -56,6 +57,17 @@ export class NavbarComponent implements OnInit {
             this.inProduction = profileInfo.inProduction;
             this.swaggerEnabled = profileInfo.swaggerEnabled;
         });
+    }
+
+    @HostListener('document:click', ['$event.target'])
+    onClick(targetElement: HTMLElement): void {
+        if (!targetElement) {
+            return;
+        }
+
+        if (!this.elRef.nativeElement.contains(targetElement)) {
+            this.collapseNavbar();
+        }
     }
 
     changeLanguage(languageKey: string) {
