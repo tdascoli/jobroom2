@@ -10,7 +10,7 @@ import { Observable } from 'rxjs/Observable';
 @Component({
     selector: 'jr2-job-search-sidebar',
     templateUrl: './job-search-sidebar.component.html',
-    styles: []
+    styleUrls: ['./job-search-sidebar.component.scss']
 })
 export class JobSearchSidebarComponent {
     searchFilter$: Observable<JobSearchFilter>;
