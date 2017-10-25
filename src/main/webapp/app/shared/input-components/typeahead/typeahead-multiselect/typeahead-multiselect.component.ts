@@ -1,7 +1,7 @@
 import {
     ChangeDetectorRef,
-    Component,
-    forwardRef,
+    Component, ElementRef,
+    forwardRef, HostListener,
     Input,
     ViewChild
 } from '@angular/core';
@@ -36,7 +36,8 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     inputValue: string;
     selectedItems: Array<TypeaheadMultiselectModel> = [];
 
-    constructor(private changeDetectorRef: ChangeDetectorRef) {
+    constructor(private changeDetectorRef: ChangeDetectorRef,
+                private elRef: ElementRef) {
     }
 
     registerOnChange(fn: (value: any) => any): void {
@@ -120,8 +121,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         this._onChange(newItems);
         this.writeValue(newItems);
 
-        this.inputEl.nativeElement.value = '';
-        this.inputValue = '';
+        this.clearInput();
         event.preventDefault();
     }
 
@@ -157,6 +157,21 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     private _onChange = (_: any) => {
     };
     private _onTouched = () => {
+    };
+
+    @HostListener('document:click', ['$event.target'])
+    onClick(targetElement: HTMLElement): void {
+        if (!targetElement) {
+            return;
+        }
+
+        if (!this.elRef.nativeElement.contains(targetElement)) {
+            this.clearInput();
+        }
     }
 
+    private clearInput(): void {
+        this.inputEl.nativeElement.value = '';
+        this.inputValue = '';
+    }
 }
