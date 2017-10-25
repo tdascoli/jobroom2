@@ -104,13 +104,12 @@
                     <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>
                     <span>
                         <p *ngIf="candidateProfile.preferredWorkRegions?.length">
-                            <ng-container *ngFor="let region of candidateProfile.preferredWorkRegions; let last = last">
-                                {{ 'global.reference.region.' + region | translate }}{{ last ? '' : ', '}}
-                            </ng-container>
-                        </p>
+                            <ng-container *ngFor="let region of preferredWorkRegions$ | async | orderBy; let last = last">
+                                {{ region }}{{ last ? '' : ', '}}
+                            </ng-container>x
                         <p *ngIf="candidateProfile.preferredWorkCantons?.length">
-                            <ng-container *ngFor="let canton of candidateProfile.preferredWorkCantons; let last = last">
-                                {{ 'global.reference.canton.' + canton | translate }}{{ last ? '' : ', '}}
+                            <ng-container *ngFor="let canton of preferredWorkCantons$ | async | orderBy; let last = last">
+                                {{ canton }}{{ last ? '' : ', '}}
                             </ng-container>
                         </p>
                     </span>

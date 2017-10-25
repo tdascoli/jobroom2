@@ -1,7 +1,4 @@
-import {
-    Component,
-    OnInit
-} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Candidate, CandidateProfile, JobExperience } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
@@ -38,6 +35,8 @@ export class CandidateDetailComponent implements OnInit {
     candidateProfileListTotalSize$: Observable<number>;
     candidateUrl: string;
     isCopied: boolean;
+    preferredWorkRegions$: Observable<Array<string>>;
+    preferredWorkCantons$: Observable<Array<string>>;
 
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
@@ -76,6 +75,7 @@ export class CandidateDetailComponent implements OnInit {
             .flatMap((experiences) => Observable.combineLatest(experiences.map(this.enrichWithLabels.bind(this))))
             .combineLatest(currentLanguage$)
             .map(([experiences, lang]) => experiences.map(this.enrichWithCurrentLabel(lang)));
+        this.populatePreferredWorkLocations();
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {
@@ -99,6 +99,25 @@ export class CandidateDetailComponent implements OnInit {
         return jobExperience.occupationLabels[fallbackLang]
             ? jobExperience.occupationLabels[fallbackLang]
             : jobExperience.occupationCode;
+    }
+
+    private populatePreferredWorkLocations(): void {
+        this.preferredWorkRegions$ = this.candidateProfile$
+            .flatMap((candidateProfile) => this.translateValues(candidateProfile.preferredWorkRegions,
+                'global.reference.region.'));
+        this.preferredWorkCantons$ = this.candidateProfile$
+            .flatMap((candidateProfile) => this.translateValues(candidateProfile.preferredWorkCantons,
+                'global.reference.canton.'));
+    }
+
+    private translateValues(values: Array<string>, keyPrefix: string): Observable<Array<string>> {
+        // TODO: implement translation pipe
+        if (values && values.length) {
+            const keys = values.map((value) => keyPrefix.concat(value));
+            return this.translateService.stream(keys)
+                .map((translations) => keys.map((key) => translations[key]));
+        }
+        return Observable.of([]);
     }
 
     printCandidateDetails(): void {
