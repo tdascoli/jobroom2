@@ -3,8 +3,7 @@ import { Job } from '../services';
 
 @Component({
     selector: 'jr2-job-search-list-item',
-    templateUrl: './job-search-list-item.component.html',
-    styleUrls: ['./job-search-list-item.scss']
+    templateUrl: './job-search-list-item.component.html'
 })
 export class JobSearchListItemComponent {
     @Input() job: Job;
