@@ -5,9 +5,6 @@
     </div>
 
     <div>
-        <span class="badge badge-gray">
-            {{ profile.workLoad }}%
-        </span>
         <span class="badge badge-blue">
             {{ 'global.reference.canton.' + profile.residenceCantonCode | translate}}
         </span>
@@ -16,6 +13,9 @@
         </span>
         <span class="badge badge-yellow">
             {{ 'candidate-search.availability.' + profile.availability | translate}}
+        </span>
+        <span class="badge badge-gray">
+            {{ profile.workLoad }}%
         </span>
     </div>
 
