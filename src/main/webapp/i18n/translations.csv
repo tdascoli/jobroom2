@@ -246,34 +246,34 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,Your password is required to be at least 4 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,Your password is required.,Votre mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Robustezza della password:
-global,global.reference.canton.AG,Aargau,Argovie,Argovia,Aargau
-global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno,Appenzell Innerrhoden
-global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno,Appenzell Ausserrhoden
-global,global.reference.canton.BE,Bern,Berne,Berna,Bern
-global,global.reference.canton.BL,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna,Basel-Landschaft
-global,global.reference.canton.BS,Basel-Stadt,Bâle-Ville,Basilea-Città,Basel-Stadt
-global,global.reference.canton.CH,Schweiz,Suisse,Svizzera,Schweiz
+global,global.reference.canton.AG,Aargau,Aargau,Argovie,Argovia
+global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
+global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
+global,global.reference.canton.BE,Bern,Bern,Berne,Berna
+global,global.reference.canton.BL,Basel-Landschaft,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna
+global,global.reference.canton.BS,Basel-Stadt,Basel-Stadt,Bâle-Ville,Basilea-Città
+global,global.reference.canton.CH,Schweiz,Schweiz,Suisse,Svizzera
 global,global.reference.canton.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein
-global,global.reference.canton.FR,Freiburg,Fribourg,Friburgo,Freiburg
-global,global.reference.canton.GE,Genf,Genève,Ginevra,Genf
-global,global.reference.canton.GL,Glarus,Glaris,Glarona,Glarus
-global,global.reference.canton.GR,Graubünden,Grisons,Grigioni,Graubünden
-global,global.reference.canton.JU,Jura,Jura,Giura,Jura
-global,global.reference.canton.LU,Luzern,Lucerne,Lucerna,Luzern
-global,global.reference.canton.NE,Neuenburg,Neuchâtel,Neuchâtel,Neuenburg
-global,global.reference.canton.NW,Nidwalden,Nidwald,Nidwaldo,Nidwalden
-global,global.reference.canton.OW,Obwalden,Obwald,Obwaldo,Obwalden
-global,global.reference.canton.SG,St. Gallen,St-Gall,San Gallo,St. Gallen
-global,global.reference.canton.SH,Schaffhausen,Schaffhouse,Sciaffusa,Schaffhausen
-global,global.reference.canton.SO,Solothurn,Soleure,Soletta,Solothurn
-global,global.reference.canton.SZ,Schwyz,Schwyz,Svitto,Schwyz
-global,global.reference.canton.TG,Thurgau,Thurgovie,Turgovia,Thurgau
-global,global.reference.canton.TI,Tessin,Tessin,Ticino,Tessin
+global,global.reference.canton.FR,Freiburg,Freiburg,Fribourg,Friburgo
+global,global.reference.canton.GE,Genf,Genf,Genève,Ginevra
+global,global.reference.canton.GL,Glarus,Glarus,Glaris,Glarona
+global,global.reference.canton.GR,Graubünden,Graubünden,Grisons,Grigioni
+global,global.reference.canton.JU,Jura,Jura,Jura,Giura
+global,global.reference.canton.LU,Luzern,Luzern,Lucerne,Lucerna
+global,global.reference.canton.NE,Neuenburg,Neuenburg,Neuchâtel,Neuchâtel
+global,global.reference.canton.NW,Nidwalden,Nidwalden,Nidwald,Nidwaldo
+global,global.reference.canton.OW,Obwalden,Obwalden,Obwald,Obwaldo
+global,global.reference.canton.SG,St. Gallen,St. Gallen,St-Gall,San Gallo
+global,global.reference.canton.SH,Schaffhausen,Schaffhausen,Schaffhouse,Sciaffusa
+global,global.reference.canton.SO,Solothurn,Solothurn,Soleure,Soletta
+global,global.reference.canton.SZ,Schwyz,Schwyz,Schwyz,Svitto
+global,global.reference.canton.TG,Thurgau,Thurgau,Thurgovie,Turgovia
+global,global.reference.canton.TI,Tessin,Tessin,Tessin,Ticino
 global,global.reference.canton.UR,Uri,Uri,Uri,Uri
-global,global.reference.canton.VD,Waadt,Vaud,Vaud,Waadt
-global,global.reference.canton.VS,Wallis,Valais,Vallese,Wallis
-global,global.reference.canton.ZG,Zug,Zoug,Zugo,Zug
-global,global.reference.canton.ZH,Zürich,Zurich,Zurigo,Zürich
+global,global.reference.canton.VD,Waadt,Waadt,Vaud,Vaud
+global,global.reference.canton.VS,Wallis,Wallis,Valais,Vallese
+global,global.reference.canton.ZG,Zug,Zug,Zoug,Zugo
+global,global.reference.canton.ZH,Zürich,Zurich,Zurich,Zurigo
 global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
 global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
 global,global.reference.language.ch-de,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch

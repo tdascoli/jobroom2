@@ -56,8 +56,8 @@
         },
         "experience": {
             "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
-            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
             "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
+            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
             "label": "Berufserfahrung"
         },
         "filter": {
