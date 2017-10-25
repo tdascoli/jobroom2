@@ -58,11 +58,12 @@
             "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
             "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
             "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
+            "NONE": "keine Erfahrung",
             "label": "Berufserfahrung"
         },
         "filter": {
-            "title": "Kandidaten suchen",
-            "candidate-search-link": "Suche als Link versenden"
+            "candidate-search-link": "Suche als Link versenden",
+            "title": "Kandidaten suchen"
         },
         "graduation": {
             "ACCEPTED": "CH-Abschluss oder CH anerkannt",

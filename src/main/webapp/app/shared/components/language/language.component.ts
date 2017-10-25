@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { LanguageSkill } from '../../model/shared-types';
 
 @Component({
@@ -8,7 +8,9 @@ import { LanguageSkill } from '../../model/shared-types';
             <h4 [class]="titleClass">{{ 'global.reference.languages' | translate }}</h4>
 
             <div [class]="itemClass" *ngFor="let language of languages">
-                <strong>{{ 'global.reference.language.' + language.code | translate }}</strong>
+                <strong>
+                    {{ 'global.reference.language.' + language.code | lowercase | translate }}
+                </strong>
                 <span>
                     <ng-container *ngIf="language.spokenLevel">
                         {{ 'global.reference.language.spoken' | translate }}: {{ 'global.reference.language.level.' + language.spokenLevel | translate}}, </ng-container>

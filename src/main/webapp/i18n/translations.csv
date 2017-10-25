@@ -28,6 +28,7 @@ candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopiere
 candidate-detail,candidate-detail.candidate-link,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden,Kandidat als Link versenden
 candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
 candidate-detail,candidate-detail.candidate-save,Kandidat speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
+candidate-detail,candidate-detail.candidate-send-link,Link versenden,Link versenden,Link versenden,Link versenden
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
@@ -83,9 +84,10 @@ candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bi
 candidate-search,candidate-search.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr
 candidate-search,candidate-search.experience.MORE_THAN_1_YEAR,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
 candidate-search,candidate-search.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre
+candidate-search,candidate-search.experience.NONE,keine Erfahrung,keine Erfahrung,keine Erfahrung,keine Erfahrung
 candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
-candidate-search,candidate-search.filter.title,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
+candidate-search,candidate-search.filter.title,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen
 candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt
 candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,CH-Abschluss,CH-Abschluss
 candidate-search,candidate-search.graduation.NONE,kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
@@ -276,10 +278,10 @@ global,global.reference.canton.ZG,Zug,Zug,Zoug,Zugo
 global,global.reference.canton.ZH,Zürich,Zurich,Zurich,Zurigo
 global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
 global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
-global,global.reference.language.ch-de,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
 global,global.reference.language.cs,Tschechisch,Tschechisch,Tschechisch,Tschechisch
 global,global.reference.language.da,Dänisch,Dänisch,Dänisch,Dänisch
 global,global.reference.language.de,Deutsch,Deutsch,Deutsch,Deutsch
+global,global.reference.language.de-ch,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
 global,global.reference.language.en,Englisch,Englisch,Englisch,Englisch
 global,global.reference.language.es,Spanisch,Spanisch,Spanisch,Spanisch
 global,global.reference.language.fi,Finnisch,Finnisch,Finnisch,Finnisch
@@ -299,7 +301,7 @@ global,global.reference.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
 global,global.reference.language.ne,Holländisch,Holländisch,Holländisch,Holländisch
 global,global.reference.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
 global,global.reference.language.po,Polnisch,Polnisch,Polnisch,Polnisch
-global,global.reference.language.pr,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
+global,global.reference.language.pt,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
 global,global.reference.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch
 global,global.reference.language.ru,Russisch,Russisch,Russisch,Russisch
 global,global.reference.language.sk,Slowakisch,Slowakisch,Slowakisch,Slowakisch
