@@ -105,7 +105,7 @@ candidate-search,candidate-search.languageSkills.spoken.label,mündlich,mündlic
 candidate-search,candidate-search.languageSkills.spoken.no-selection,mündlich,mündlich,mündlich,mündlich
 candidate-search,candidate-search.languageSkills.written.label,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.languageSkills.written.no-selection,schriftlich,schriftlich,schriftlich,schriftlich
-candidate-search,candidate-search.no-selection,,,,
+candidate-search,candidate-search.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
 candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau
 candidate-search,candidate-search.title,Candidate search,Candidate search,Candidate search,Candidate search
 candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...

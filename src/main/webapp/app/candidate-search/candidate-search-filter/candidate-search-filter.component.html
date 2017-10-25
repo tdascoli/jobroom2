@@ -5,7 +5,7 @@
     <div class="form-group">
         <label for="experience" class="small" translate="candidate-search.experience.label"></label>
         <select formControlName="experience" id="experience" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
+            <option selected="" value="null" translate="candidate-search.no-selection"></option>
             <option *ngFor="let experience of experiences | keys" [ngValue]="experience.key">
                 {{'candidate-search.experience.' + experience.value | translate}}
             </option>
@@ -23,7 +23,7 @@
     <div class="form-group">
         <label for="availability" class="small" translate="candidate-search.availability.label"></label>
         <select formControlName="availability" id="availability" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
+            <option selected="" value="null" translate="candidate-search.no-selection"></option>
             <option *ngFor="let availability of availabilities | keys" [ngValue]="availability.key">
                 {{'candidate-search.availability.' + availability.value | translate}}
             </option>
@@ -44,7 +44,7 @@
     <div class="form-group">
         <label for="drivingLicenceCategory" class="small" translate="candidate-search.drivingLicenceCategory.label"></label>
         <select formControlName="drivingLicenceCategory" id="drivingLicenceCategory" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
+            <option selected="" value="null" translate="candidate-search.no-selection"></option>
             <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys" [ngValue]="drivingLicenceCategory.key">
                 {{'candidate-search.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
             </option>
@@ -54,7 +54,7 @@
     <div class="form-group">
         <label for="educationLevel" class="small" translate="candidate-search.education.label"></label>
         <select formControlName="educationLevel" id="educationLevel" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
+            <option selected="" value="null" translate="candidate-search.no-selection"></option>
             <option *ngFor="let educationLevel of educationLevels | keys" [ngValue]="educationLevel.key">
                 {{'candidate-search.education.' + educationLevel.value | translate}}
             </option>
@@ -64,7 +64,7 @@
     <div class="form-group">
         <label for="workForm" class="small" translate="candidate-search.workForm.label"></label>
         <select formControlName="workForm" id="workForm" class="form-control-sm custom-select">
-            <option selected="" translate="candidate-search.no-selection"></option>
+            <option selected="" value="null" translate="candidate-search.no-selection"></option>
             <option *ngFor="let workForm of workForms | keys" [ngValue]="workForm.key">
                 {{'candidate-search.workForm.' + workForm.value | translate}}
             </option>

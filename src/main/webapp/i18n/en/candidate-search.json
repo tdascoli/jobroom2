@@ -103,7 +103,7 @@
                 "no-selection": "schriftlich"
             }
         },
-        "no-selection": "",
+        "no-selection": "Keine Auswahl",
         "skills": {
             "placeholder": "z.B. Tiefbau"
         },
