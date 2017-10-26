@@ -31,7 +31,7 @@
 
         <div *ngIf="candidateProfile$ | async as candidateProfile" class="col-12 col-md-8 order-3 base__content">
             <div class="candidate-detail__title">
-                <h2 class="text--light">Title</h2>
+                <h2 class="text--light">{{ (relevantJobExperience$ | async)?.occupation }}</h2>
             </div>
 
             <div class="candidate-detail__content">

@@ -20,7 +20,8 @@ describe('CandidateDetailComponent', () => {
     const candidateProfile: any = {
         jobExperiences: [
             {
-                occupationCode: 22222
+                occupationCode: 22222,
+                wanted: true
             }
         ]
     };
@@ -80,7 +81,8 @@ describe('CandidateDetailComponent', () => {
                 occupationLabels: {
                     en: 'Text'
                 },
-                occupation: 'Text'
+                occupation: 'Text',
+                wanted: true
             }]
         });
 
@@ -110,7 +112,8 @@ describe('CandidateDetailComponent', () => {
                 occupationLabels: {
                     de: 'TextDE'
                 },
-                occupation: 'TextDE'
+                occupation: 'TextDE',
+                wanted: true
             }]
         });
 

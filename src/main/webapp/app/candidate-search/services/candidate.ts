@@ -51,6 +51,8 @@ export interface JobExperience {
     degree: Degree;
     education: ISCED_1997;
     remark: string;
+    lastJob: boolean;
+    wanted: boolean;
 }
 
 export interface CandidateProfile {

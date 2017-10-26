@@ -11,8 +11,9 @@ import { OccupationService } from '../../shared/index';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import {
+    CandidateSearchFilter,
     CandidateSearchState,
-    getCandidateProfileList,
+    getCandidateProfileList, getSearchFilter,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Occupation } from '../../shared/reference-service/occupation.service';
@@ -33,6 +34,7 @@ export class CandidateDetailComponent implements OnInit {
     candidateProtectedData$: Observable<Candidate>;
     candidateProfiles$: Observable<Array<CandidateProfile>>;
     candidateProfileListTotalSize$: Observable<number>;
+    relevantJobExperience$: Observable<JobExperience>;
     candidateUrl: string;
     isCopied: boolean;
     preferredWorkRegions$: Observable<Array<string>>;
@@ -74,7 +76,18 @@ export class CandidateDetailComponent implements OnInit {
             .map((profile: CandidateProfile) => profile.jobExperiences)
             .flatMap((experiences) => Observable.combineLatest(experiences.map(this.enrichWithLabels.bind(this))))
             .combineLatest(currentLanguage$)
-            .map(([experiences, lang]) => experiences.map(this.enrichWithCurrentLabel(lang)));
+            .map(([experiences, lang]) => experiences.map(this.enrichWithCurrentLabel(lang)))
+            .map((experiences) => experiences
+                .filter((experience) => experience.wanted)
+                .sort((a, b) => +b.lastJob - +a.lastJob));
+
+        const occupationCode$ = this.store.select(getSearchFilter)
+            .map((searchFilter: CandidateSearchFilter) => searchFilter.occupation ? searchFilter.occupation.code : null);
+
+        this.relevantJobExperience$ = this.jobExperiences$
+            .combineLatest(occupationCode$)
+            .map(([jobExperiences, occupationCode]) =>
+                this.candidateService.getRelevantJobExperience(+occupationCode, jobExperiences));
         this.populatePreferredWorkLocations();
     }
 

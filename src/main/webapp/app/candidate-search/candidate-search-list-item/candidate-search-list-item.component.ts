@@ -7,6 +7,7 @@ import {
 } from '../../shared/reference-service/occupation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { CandidateService } from '../services/candidate.service';
 
 @Component({
     selector: 'jr2-candidate-search-list-item',
@@ -23,7 +24,8 @@ export class CandidateSearchListItemComponent implements OnInit {
     private currentLanguage$: Observable<string>;
 
     constructor(private occupationService: OccupationService,
-                private translateService: TranslateService) {
+                private translateService: TranslateService,
+                private candidateService: CandidateService) {
 
         this.currentLanguage$ = Observable.merge(
             new BehaviorSubject(translateService.currentLang),
@@ -32,14 +34,8 @@ export class CandidateSearchListItemComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        let relevantJobExperience;
-        if (this.occupationCode) {
-            const occupationCodeNum = Number.parseInt(this.occupationCode);
-            relevantJobExperience = this.profile.jobExperiences
-                .find((jobExperience) => jobExperience.occupationCode === occupationCodeNum);
-        } else if (this.profile.jobExperiences.length > 0) {
-            relevantJobExperience = this.profile.jobExperiences[0];
-        }
+        const relevantJobExperience = this.candidateService.getRelevantJobExperience(
+            +this.occupationCode, this.profile.jobExperiences);
 
         if (relevantJobExperience) {
             this.jobExperience$ = this.occupationService.findOccupationByCode(relevantJobExperience.occupationCode)

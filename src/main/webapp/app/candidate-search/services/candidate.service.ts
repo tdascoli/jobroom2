@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Candidate, CandidateProfile } from './candidate';
+import { Candidate, CandidateProfile, JobExperience } from './candidate';
 import { Observable } from 'rxjs/Observable';
 import { BaseRequestOptions, Http, Response } from '@angular/http';
-import { CandidateSearchRequest } from './candidate-search-request';
+import { CandidateSearchRequest, Experience } from './candidate-search-request';
 import { ResponseWrapper } from '../../shared';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { createPageableURLSearchParams } from '../../shared/model/request-util';
@@ -59,5 +59,32 @@ export class CandidateService {
 
     decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
         return JSON.parse(decodeURIComponent(URISearchFilter));
+    }
+
+    getRelevantJobExperience(occupationCode: number, jobExperiences: JobExperience[]): JobExperience {
+        if (occupationCode) {
+            return jobExperiences
+                .find((jobExperience) => jobExperience.occupationCode === occupationCode);
+        }
+
+        if (!jobExperiences.length) {
+            return null;
+        }
+
+        const lastJobExperience = jobExperiences
+            .find((jobExperience) => jobExperience.lastJob);
+
+        if (lastJobExperience) {
+            return lastJobExperience;
+        }
+
+        const mostExperienced = jobExperiences
+            .sort((a, b) => +Experience[b.experience] - +Experience[a.experience])[0];
+
+        if (mostExperienced) {
+            return mostExperienced;
+        }
+
+        return jobExperiences[0];
     }
 }
