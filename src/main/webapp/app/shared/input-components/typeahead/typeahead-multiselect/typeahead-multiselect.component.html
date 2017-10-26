@@ -1,5 +1,5 @@
 <div class="form-control form-control-lg typeahead-multiselect d-flex flex-row flex-wrap" (click)="focusInput()">
-    <span class="btn btn-primary btn-sm typeahead-multiselect__tag" *ngFor="let item of selectedItems" [ngClass]="getItemClass(item)">
+    <span class="badge typeahead-multiselect__tag" *ngFor="let item of selectedItems" [ngClass]="getItemClass(item)">
     {{item.label}}
         <i class="fa fa-times remove-button" aria-hidden="true" (click)="removeItem(item)"></i>
     </span>
