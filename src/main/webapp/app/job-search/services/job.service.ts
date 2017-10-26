@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
-import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
+import { BaseRequestOptions, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { JhiDateUtils } from 'ng-jhipster';
 import { ResponseWrapper } from '../../shared';
 import { TranslateService } from '@ngx-translate/core';
 import { Job } from './job';
 import { JobSearchRequest } from './job-search-request';
+import { createPageableURLSearchParams } from '../../shared/model/request-util';
 
 @Injectable()
 export class JobService {
@@ -28,29 +29,12 @@ export class JobService {
     }
 
     search(req: JobSearchRequest): Observable<ResponseWrapper> {
-        const options: BaseRequestOptions = new BaseRequestOptions();
-        options.params = this.toURLSearchParams(req);
+        const options = new BaseRequestOptions();
+        options.params = createPageableURLSearchParams(req);
         options.params.set('language', this.translateService.currentLang);
 
-        return this.http.get(this.searchUrl, options)
+        return this.http.post(this.searchUrl, req, options)
             .map((res: Response) => this.convertResponse(res));
-    }
-
-    private toURLSearchParams(req: JobSearchRequest): URLSearchParams {
-        const params: URLSearchParams = new URLSearchParams();
-
-        Object.keys(req).forEach((key: string) => {
-            const value = req[key];
-            if (Array.isArray(value)) {
-                value.forEach((v: any) => {
-                    params.append(key, v);
-                });
-            } else {
-                params.set(key, value);
-            }
-        });
-
-        return params;
     }
 
     private convertResponse(res: Response): ResponseWrapper {

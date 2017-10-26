@@ -4,8 +4,8 @@ import { Observable } from 'rxjs/Observable';
 import { BaseRequestOptions, Http, Response } from '@angular/http';
 import { CandidateSearchRequest } from './candidate-search-request';
 import { ResponseWrapper } from '../../shared';
-import { createPageableURLSearchParams } from '../../shared/model/request-util';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
+import { createPageableURLSearchParams } from '../../shared/model/request-util';
 
 @Injectable()
 export class CandidateService {
