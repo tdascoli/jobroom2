@@ -47,6 +47,9 @@
             "graduation": {
                 "label": "Abschluss zum Beruf"
             },
+            "education": {
+                "label": "Bildungsstufe"
+            },
             "job": {
                 "label": "Berufsbezeichnung"
             },

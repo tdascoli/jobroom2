@@ -35,6 +35,7 @@ candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt,We
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
 candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf
 candidate-detail,candidate-detail.job-experience.graduation.label,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf
+candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
 candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf
 candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation
