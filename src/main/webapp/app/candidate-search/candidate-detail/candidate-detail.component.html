@@ -159,8 +159,6 @@
                                              [feature]="'candidate-detail'"
                                              [totalSize]="candidateProfileListTotalSize$ | async"></jr2-details-page-pagination>
 
-                <button class="btn btn-primary btn-block btn-sm">{{ 'candidate-detail.candidate-link' | translate }}</button>
-
                 <ul class="nav filter-nav flex-column">
                     <li *jhiHasAnyAuthority="['ROLE_PUBLIC_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
                         <a class="nav-link">
