@@ -1,5 +1,9 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
-import { CandidateSearchFilter, CandidateSearchState, getSearchFilter } from '../state-management/state/candidate-search.state';
+import {
+    CandidateSearchFilter,
+    CandidateSearchState,
+    getSearchFilter
+} from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import {
     Availability,
@@ -52,6 +56,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.filterForm = this.fb.group({
             experience: [this.searchFilter.experience],
+            skills: [[...this.searchFilter.skills || []]],
             workplace: [this.searchFilter.workplace],
             availability: [this.searchFilter.availability],
             workload: [this.searchFilter.workload],

@@ -106,6 +106,7 @@
         },
         "no-selection": "Keine Auswahl",
         "skills": {
+            "label": "F\u00e4higkeiten, Skills",
             "placeholder": "z.B. Tiefbau"
         },
         "title": "Candidate search",
@@ -115,7 +116,7 @@
                 "label": "Abschluss"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung, F\u00e4higkeiten, Skills"
+                "placeholder": "Berufsbezeichnung, Berufsgruppe"
             },
             "residence": {
                 "placeholder": "Wohnort: Kanton",

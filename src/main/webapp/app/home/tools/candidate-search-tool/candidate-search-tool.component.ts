@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/reference-service/occupation.service';
@@ -22,7 +22,7 @@ import { Subscription } from 'rxjs/Subscription';
     templateUrl: './candidate-search-tool.component.html',
     styleUrls: ['./candidate-search-tool.component.scss']
 })
-export class CandidateSearchToolComponent implements OnInit {
+export class CandidateSearchToolComponent implements OnInit, OnDestroy {
 
     @Input() candidateSearchToolModel: CandidateSearchToolState;
 
@@ -57,9 +57,15 @@ export class CandidateSearchToolComponent implements OnInit {
         this.subscription = this.candidateSearchForm.valueChanges
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
             .subscribe((formValue: any) => {
-                return this.count(formValue);
-            }
-        );
+                    return this.count(formValue);
+                }
+            );
+    }
+
+    ngOnDestroy(): void {
+        if (this.subscription) {
+            this.subscription.unsubscribe();
+        }
     }
 
     fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$

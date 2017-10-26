@@ -1,6 +1,11 @@
 <p class="text--line-height--h3">{{'candidate-search.filter.title' | translate}}</p>
 
 <form [formGroup]="filterForm" novalidate>
+    <div class="form-group">
+        <label class="small" translate="candidate-search.skills.label"></label>
+        <jr2-multiselect formControlName="skills" [placeholder]="'candidate-search.skills.placeholder' | translate" class="form-control form-control-sm">
+        </jr2-multiselect>
+    </div>
 
     <div class="form-group">
         <label for="experience" class="small" translate="candidate-search.experience.label"></label>

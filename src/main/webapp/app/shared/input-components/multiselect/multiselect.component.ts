@@ -1,12 +1,15 @@
 import {
+    AfterViewInit,
     ChangeDetectorRef,
     Component,
     forwardRef,
+    Inject,
     Input,
-    ViewChild
+    ViewChild,
 } from '@angular/core';
 import { ControlValueAccessor } from '@angular/forms/src/forms';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { WINDOW } from '../../shared-libs.module';
 
 enum Key {
     Tab = 9,
@@ -14,6 +17,9 @@ enum Key {
 }
 
 export const MAX_ITEM_NUM = 5;
+
+// todo: Check if there is a better way to get the default font
+const DEFAULT_FONT = '14px / 21px "Open Sans", "Helvetica Neue", Arial, sans-serif';
 
 @Component({
     selector: 'jr2-multiselect',
@@ -25,16 +31,29 @@ export const MAX_ITEM_NUM = 5;
         multi: true
     }]
 })
-export class MultiselectComponent implements ControlValueAccessor {
+export class MultiselectComponent implements ControlValueAccessor, AfterViewInit {
     @ViewChild('input') inputEl;
+    @ViewChild('canvas') canvasEl;
 
     @Input() id: string;
-    @Input() placeholder: string;
+    @Input() placeholder = '';
     @Input() maxItemNum = MAX_ITEM_NUM;
     disabled = false;
     selectedItems: Array<string> = [];
 
-    constructor(private changeDetectorRef: ChangeDetectorRef) {
+    private canvasCtx;
+    private lastKey = '';
+
+    constructor(private changeDetectorRef: ChangeDetectorRef,
+                @Inject(WINDOW)
+                private window: Window) {
+    }
+
+    ngAfterViewInit() {
+        const canvas = this.canvasEl.nativeElement;
+        const font = this.window.getComputedStyle(this.inputEl.nativeElement).font || DEFAULT_FONT;
+        this.canvasCtx = canvas.getContext('2d');
+        this.canvasCtx.font = font;
     }
 
     writeValue(obj: any): void {
@@ -65,7 +84,9 @@ export class MultiselectComponent implements ControlValueAccessor {
         if (this.selectedItems.length === this.maxItemNum || this.disabled) {
             return 0;
         } else if (value.length > 0) {
-            return `${value.length}em`;
+            const lastChar = this.lastKey.length === 1 ? this.lastKey : '';
+            const width = this.canvasCtx.measureText(value + lastChar).width;
+            return `${width}px`;
         } else if (this.selectedItems.length > 0) {
             return '0.5em';
         } else {
@@ -74,9 +95,7 @@ export class MultiselectComponent implements ControlValueAccessor {
     }
 
     handleBlur(event: any) {
-        if (!this.selectInputValue()) {
-            this.inputEl.nativeElement.value = '';
-        }
+        this.inputEl.nativeElement.value = '';
     }
 
     handleKeyDown(event: KeyboardEvent) {
@@ -86,6 +105,7 @@ export class MultiselectComponent implements ControlValueAccessor {
             event.preventDefault();
             event.stopPropagation();
         }
+        this.lastKey = event.key;
     }
 
     removeItem(item: string) {

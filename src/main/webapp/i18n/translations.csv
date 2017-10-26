@@ -109,11 +109,12 @@ candidate-search,candidate-search.languageSkills.spoken.no-selection,mündlich,m
 candidate-search,candidate-search.languageSkills.written.label,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.languageSkills.written.no-selection,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
+candidate-search,candidate-search.skills.label,"Fähigkeiten, Skills","Fähigkeiten, Skills","Fähigkeiten, Skills","Fähigkeiten, Skills"
 candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau
 candidate-search,candidate-search.title,Candidate search,Candidate search,Candidate search,Candidate search
 candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...
 candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
-candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills","Berufsbezeichnung, Fähigkeiten, Skills"
+candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe","Berufsbezeichnung, Berufsgruppe","Berufsbezeichnung, Berufsgruppe","Berufsbezeichnung, Berufsgruppe"
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Kantone,Kantone,Kantone
 candidate-search,candidate-search.toolbar.search-button.title.loading,Loading,Loading,Loading,Loading

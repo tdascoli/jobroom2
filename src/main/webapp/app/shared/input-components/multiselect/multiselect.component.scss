@@ -22,5 +22,6 @@
         @include alv-border-radius(0.5rem);
         background-color: $additional-accent-amber;
         border-color: $additional-accent-amber;
+        overflow: auto;
     }
 }
