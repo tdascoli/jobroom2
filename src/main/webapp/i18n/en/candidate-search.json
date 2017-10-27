@@ -116,7 +116,7 @@
                 "label": "Abschluss"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung, Berufsgruppe"
+                "placeholder": "Berufsbezeichnung"
             },
             "residence": {
                 "placeholder": "Wohnort: Kanton",

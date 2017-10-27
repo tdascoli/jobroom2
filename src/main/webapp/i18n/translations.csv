@@ -117,7 +117,7 @@ candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z
 candidate-search,candidate-search.title,Candidate search,Candidate search,Candidate search,Candidate search
 candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...
 candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
-candidate-search,candidate-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe","Berufsbezeichnung, Berufsgruppe","Berufsbezeichnung, Berufsgruppe","Berufsbezeichnung, Berufsgruppe"
+candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Kantone,Kantone,Kantone
 candidate-search,candidate-search.toolbar.search-button.title.loading,Loading,Loading,Loading,Loading
