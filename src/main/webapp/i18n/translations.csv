@@ -28,13 +28,17 @@ candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopiere
 candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
 candidate-detail,candidate-detail.candidate-save,Kandidat speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
 candidate-detail,candidate-detail.candidate-send-link,Link versenden,Link versenden,Link versenden,Link versenden
+candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,CH anerkannt,CH anerkannt,CH anerkannt
+candidate-detail,candidate-detail.graduation.CH,CH,CH,CH,CH
+candidate-detail,candidate-detail.graduation.NONE,kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
+candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,Ausländisch,Ausländisch,Ausländisch,Ausländisch
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
+candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
 candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf
 candidate-detail,candidate-detail.job-experience.graduation.label,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf
-candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
 candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf
 candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation

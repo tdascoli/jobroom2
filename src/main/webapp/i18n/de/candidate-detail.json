@@ -1,5 +1,11 @@
 {
     "candidate-detail": {
+        "graduation": {
+            "CH": "CH",
+            "NONE": "kein Abschluss",
+            "NOT_ACCEPTED": "Ausl\u00e4ndisch",
+            "ACCEPTED": "CH anerkannt"
+        },
         "additional-information": {
             "drivingCategories": {
                 "label": "F\u00fchrerausweiskategorien"
@@ -40,14 +46,14 @@
             "description": {
                 "label": "Kenntnisse, F\u00e4higkeiten, Skills"
             },
+            "education": {
+                "label": "Bildungsstufe"
+            },
             "experience": {
                 "label": "Erfahrungsjahre auf dem Beruf"
             },
             "graduation": {
                 "label": "Abschluss zum Beruf"
-            },
-            "education": {
-                "label": "Bildungsstufe"
             },
             "job": {
                 "label": "Berufsbezeichnung"
