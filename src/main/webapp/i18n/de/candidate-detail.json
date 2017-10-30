@@ -1,11 +1,5 @@
 {
     "candidate-detail": {
-        "graduation": {
-            "CH": "CH",
-            "NONE": "kein Abschluss",
-            "NOT_ACCEPTED": "Ausl\u00e4ndisch",
-            "ACCEPTED": "CH anerkannt"
-        },
         "additional-information": {
             "drivingCategories": {
                 "label": "F\u00fchrerausweiskategorien"
@@ -33,6 +27,12 @@
         "candidate-print": "Drucken",
         "candidate-save": "Kandidat speichern",
         "candidate-send-link": "Link versenden",
+        "graduation": {
+            "ACCEPTED": "CH anerkannt",
+            "CH": "CH",
+            "NONE": "kein Abschluss",
+            "NOT_ACCEPTED": "Ausl\u00e4ndisch"
+        },
         "job-center": {
             "email": {
                 "label": "E-Mail"

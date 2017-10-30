@@ -64,6 +64,14 @@
     },
     "global": {
         "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
+        "button": {
+            "add": {
+                "title": "Add"
+            },
+            "remove": {
+                "title": "Remove"
+            }
+        },
         "field": {
             "id": "ID"
         },
@@ -209,6 +217,7 @@
                 "lt": "Litauisch",
                 "ne": "Holl\u00e4ndisch",
                 "no": "Norwegisch",
+                "no-selection": "Keine Auswahl",
                 "po": "Polnisch",
                 "pt": "Portugiesisch",
                 "ro": "Rum\u00e4nisch",

@@ -1,10 +1,10 @@
-import { LanguageSelectorComponent } from '../../../../../../main/webapp/app/candidate-search/language-selector/language-selector.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { JobroomTestModule } from '../../../test.module';
+import { LanguageSelectorComponent } from '../../../../../../../main/webapp/app/shared/input-components/language-selector/language-selector.component';
 import {
     CEFR_Level,
     LanguageSkill
-} from '../../../../../../main/webapp/app/shared/model/shared-types';
+} from '../../../../../../../main/webapp/app/shared/model/shared-types';
+import { JobroomTestModule } from '../../../../test.module';
 
 describe('LanguageSelectorComponent', () => {
     let component: LanguageSelectorComponent;

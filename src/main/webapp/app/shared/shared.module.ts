@@ -19,7 +19,6 @@ import {
 import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
 import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
-import { KeysPipe } from './pipes/enum-keys.pipe';
 import { LanguageComponent } from './components/language/language.component';
 import { DetailsPagePaginationControlsComponent } from './components/details-page-pagination-controls/details-page-pagination-controls.component';
 import { DetailsPagePaginationComponent } from './components/details-page-pagination/details-page-pagination.component';
@@ -36,7 +35,6 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
-        KeysPipe,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
         DetailsPagePaginationComponent
@@ -54,7 +52,6 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
-        KeysPipe
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
@@ -65,7 +62,6 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
-        KeysPipe,
         StickyToolbarItemDirective,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,

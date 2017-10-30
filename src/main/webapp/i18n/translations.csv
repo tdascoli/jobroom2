@@ -98,19 +98,7 @@ candidate-search,candidate-search.graduation.NONE,kein Abschluss,kein Abschluss,
 candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch
 candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
 candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
-candidate-search,candidate-search.languageSkills.button.add.title,Add,Add,Add,Add
-candidate-search,candidate-search.languageSkills.button.remove.title,Remove,Remove,Remove,Remove
 candidate-search,candidate-search.languageSkills.label,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse
-candidate-search,candidate-search.languageSkills.language.label,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse,Sprachkentnisse
-candidate-search,candidate-search.languageSkills.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
-candidate-search,candidate-search.languageSkills.level.BASIC,Grundkentnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
-candidate-search,candidate-search.languageSkills.level.INTERMEDIATE,Fortgeschritten,Fortgeschritten,Fortgeschritten,Fortgeschritten
-candidate-search,candidate-search.languageSkills.level.NONE,keine Kentnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
-candidate-search,candidate-search.languageSkills.level.PROFICIENT,Professionell,Professionell,Professionell,Professionell
-candidate-search,candidate-search.languageSkills.spoken.label,mündlich,mündlich,mündlich,mündlich
-candidate-search,candidate-search.languageSkills.spoken.no-selection,mündlich,mündlich,mündlich,mündlich
-candidate-search,candidate-search.languageSkills.written.label,schriftlich,schriftlich,schriftlich,schriftlich
-candidate-search,candidate-search.languageSkills.written.no-selection,schriftlich,schriftlich,schriftlich,schriftlich
 candidate-search,candidate-search.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
 candidate-search,candidate-search.skills.label,"Fähigkeiten, Skills","Fähigkeiten, Skills","Fähigkeiten, Skills","Fähigkeiten, Skills"
 candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau
@@ -198,6 +186,8 @@ global,footer.link.abbreviation.text,Abkürzungen,Abkürzungen,Abkürzungen,Abk�
 global,footer.link.legal.text,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen
 global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
+global,global.button.add.title,Add,Add,Add,Add
+global,global.button.remove.title,Remove,Remove,Remove,Remove
 global,global.field.id,ID,ID,ID,ID
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
 global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Confirm the new password,Confirmation du nouveau mot de passe,Conferma nuova password
@@ -305,6 +295,7 @@ global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Profi
 global,global.reference.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
 global,global.reference.language.ne,Holländisch,Holländisch,Holländisch,Holländisch
 global,global.reference.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
+global,global.reference.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
 global,global.reference.language.po,Polnisch,Polnisch,Polnisch,Polnisch
 global,global.reference.language.pt,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
 global,global.reference.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch

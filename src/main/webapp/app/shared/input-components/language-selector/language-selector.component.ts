@@ -1,6 +1,6 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CEFR_Level, LanguageSkill } from '../../shared/model/shared-types';
+import { CEFR_Level, LanguageSkill } from '../../model/shared-types';
 
 const MAX_LANGUAGE_OPTIONS_NUM = 5;
 

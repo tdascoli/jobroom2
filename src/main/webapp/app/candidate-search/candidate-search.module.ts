@@ -9,7 +9,6 @@ import { candidateSearchReducer } from './state-management/reducers/candidate-se
 import { CandidateSearchFilterComponent } from './candidate-search-filter/candidate-search-filter.component';
 import { JobroomSharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
-import { LanguageSelectorComponent } from './language-selector/language-selector.component';
 import { LanguageSkillService } from './services/language-skill.service';
 import { CandidateSearchToolbarComponent } from './candidate-search-toolbar/candidate-search-toolbar.component';
 import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.module';
@@ -41,7 +40,6 @@ import { CantonService } from './services/canton.service';
         CandidateSearchListItemComponent,
         CandidateSearchComponent,
         CandidateSearchFilterComponent,
-        LanguageSelectorComponent,
         CandidateSearchToolbarComponent,
         CandidateDetailComponent
     ],
