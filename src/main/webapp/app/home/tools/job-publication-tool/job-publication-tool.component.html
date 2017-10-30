@@ -1,44 +1,390 @@
-<div class="tab-content--job-room">
-    <fieldset class="candidate-search">
-        <legend>Stellenbeschreibung</legend>
+<div class="row tab-content--job-room">
+    <div class="col-md-8">
+        <form [formGroup]="jobPublicationForm" (ngSubmit)="onSubmit()" novalidate>
+            <fieldset class="job-publication--horizontal">
+                <legend>Stellenbeschreibung</legend>
 
-        <div class="form-group">
-            <label>Stellenbezeichnung</label>
-            <div class="form-group--icon">
-                <jr2-typeahead-multiselect
-                    [itemLoader]="fetchOccupationSuggestions"
-                    [placeHolder]="'Beruf'"></jr2-typeahead-multiselect>
+                <div class="form-group">
+                    <label for="job-title" class="col-form-label">Stellenbezeichnung</label>
+                    <div>
+                        <input type="text" class="form-control" id="job-title"/>
+                    </div>
+                </div>
 
-                <a href="#" class="fa-stack form-control--icon">
-                    <i class="fa fa-search fa-stack-1x"></i>
-                </a>
+                <div class="form-group">
+                    <label>Stellenbezeichnung</label>
+                    <div class="form-group--icon">
+                        <jr2-typeahead-multiselect
+                            [itemLoader]="fetchOccupationSuggestions"
+                            [placeHolder]="'Beruf'"></jr2-typeahead-multiselect>
+
+                        <a href="#" class="fa-stack form-control--icon">
+                            <i class="fa fa-search fa-stack-1x"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="education" class="col-form-label">Ausbildung <span
+                        class="optional">Optional</span></label>
+                    <div>
+                        <select class="form-control custom-select" id="education">
+                            <option selected>keine Auswahl</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exp" class="col-form-label">Berufserfahrung <span
+                        class="optional">Optional</span></label>
+                    <div>
+                        <select class="form-control custom-select" id="exp">
+                            <option selected>keine Auswahl</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="description">Tätigkeit /Anforderungen</label>
+                    <div>
+                        <textarea class="form-control" id="description" rows="5" placeholder="max. 9000 Characters"
+                                  aria-describedby="maxChar"></textarea>
+                        <small id="maxChar" class="form-text text-muted">
+                            9000 characters available
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="workload-to" class="col-form-label">Arbeitspensum</label>
+                    <div class="form-group__inline sm-inline">
+                        <select class="form-control custom-select" id="workload-from">
+                            <option selected>0 %</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                        <select class="form-control custom-select" id="workload-to">
+                            <option selected>100%</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label">Stellenantritt</label>
+                    <div class="form-group__inline">
+                        <div class="radio col-form-label">
+                            <input type="radio" name="optionsRadios" id="optionsRadios4" value="option4"/>
+                            <label for="optionsRadios4">
+                                ab Sofort
+                            </label>
+                        </div>
+
+                        <div class="radio col-form-label">
+                            <input type="radio" name="optionsRadios" id="optionsRadios5" value="option5"/>
+                            <label for="optionsRadios5">
+                                nach Vereinbarung
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="stellenantritt-date" class="sr-only">Stellenantritt ab Datum</label>
+                            <div>
+                                <input type="date" class="form-control" id="stellenantritt-date"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-form-label">Anstellungsdauer</label>
+                    <div class="form-group__inline">
+                        <div class="radio col-form-label">
+                            <input type="radio" name="optionsRadios2" id="optionsRadios6" value="option6"
+                                   checked="checked"/>
+                            <label for="optionsRadios6">
+                                unbefristet
+                            </label>
+                        </div>
+
+                        <div class="radio col-form-label">
+                            <input type="radio" name="optionsRadios2" id="optionsRadios7" value="option7"/>
+                            <label for="optionsRadios7">
+                                befristet bis
+                            </label>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="anstellungsdauer-date" class="sr-only">Anstellungsdauer befristet bis
+                                Datum</label>
+                            <div>
+                                <input type="date" class="form-control" id="anstellungsdauer-date"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="driving-lic" class="col-form-label">Führerausweis <span class="optional">Optional</span></label>
+                    <div>
+                        <select class="form-control custom-select" id="driving-lic">
+                            <option selected>keine Auswahl</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="lang" class="col-form-label">Sprachkenntnisse <span
+                        class="optional">Optional</span></label>
+                    <div>
+                        <select class="form-control custom-select" id="lang">
+                            <option selected>keine Auswahl</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="job-publication--horizontal">
+                <legend>Arbeitsort</legend>
+
+                <div class="form-group">
+                    <label for="country" class="col-form-label">Land</label>
+                    <div>
+                        <select class="form-control custom-select" id="country">
+                            <option value="CH" selected>Schweiz</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="place" class="col-form-label">PLZ / Ort</label>
+                    <div>
+                        <input type="text" class="form-control" id="place"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="add-text" class="col-form-label">Zusatztext <span
+                        class="optional">Optional</span></label>
+                    <div>
+                        <input type="text" class="form-control" id="add-text"/>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="job-publication--horizontal">
+                <legend>Unternehmen</legend>
+
+                <div class="form-group">
+                    <label for="unt-name" class="col-form-label">Unternehmen</label>
+                    <div>
+                        <input type="text" class="form-control" id="unt-name"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unt-street" class="col-form-label">Strasse</label>
+                    <div>
+                        <input type="text" class="form-control" id="unt-street"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unt-zip" class="col-form-label">PLZ / Ort</label>
+                    <div>
+                        <input type="text" class="form-control" id="unt-zip"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unt-pobox" class="col-form-label">Postfach-Nr. <span
+                        class="optional">Optional</span></label>
+                    <div>
+                        <input type="text" class="form-control" id="unt-pobox"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unt-pobox-zip" class="col-form-label">Postfach PLZ / Ort <span
+                        class="optional">Optional</span></label>
+                    <div>
+                        <input type="text" class="form-control" id="unt-pobox-zip"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="unt-country" class="col-form-label">Land</label>
+                    <div>
+                        <select class="form-control custom-select" id="unt-country">
+                            <option value="CH" selected>Schweiz</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="job-publication--horizontal">
+                <legend>Kontaktperson</legend>
+
+                <div class="form-group">
+                    <label for="kp-anrede" class="col-form-label">Anrede</label>
+                    <div>
+                        <select class="form-control custom-select" id="kp-anrede">
+                            <option selected>keine Auswahl</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="kp-vorname" class="col-form-label">Vorname</label>
+                    <div>
+                        <input type="text" class="form-control" id="kp-vorname"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="kp-name" class="col-form-label">Nachname</label>
+                    <div>
+                        <input type="text" class="form-control" id="kp-name"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="kp-tel" class="col-form-label">Telefon</label>
+                    <div>
+                        <input type="text" class="form-control" id="kp-tel"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="kp-email" class="col-form-label">E-Mail</label>
+                    <div>
+                        <input type="email" class="form-control" id="kp-email"/>
+                    </div>
+                </div>
+
+            </fieldset>
+
+            <fieldset class="job-publication--horizontal">
+                <legend>Bewerbungsformen</legend>
+
+                <div class="checkbox">
+                    <input id="written" type="checkbox"/>
+                    <label for="written">
+                        Schriftliche Bewerbung
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <input id="electronic" type="checkbox"/>
+                    <label for="electronic">
+                        Elektronische Bewerbung
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="app-email" class="col-form-label">E-Mail</label>
+                    <div>
+                        <input type="email" class="form-control" id="app-email"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="app-form" class="col-form-label">Online-Formular</label>
+                    <div>
+                        <input type="text" class="form-control" id="app-form"/>
+                    </div>
+                </div>
+
+                <div class="checkbox">
+                    <input id="phone" type="checkbox"/>
+                    <label for="phone">
+                        Telefonische Bewerbung
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label for="app-phone" class="col-form-label">Telefon</label>
+                    <div>
+                        <input type="text" class="form-control" id="app-phone"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="app-text">Ergänzende Angaben</label>
+                    <div>
+                        <textarea class="form-control" id="app-text" rows="5" placeholder="max. 240 Characters"
+                                  aria-describedby="maxChar2"></textarea>
+                        <small id="maxChar2" class="form-text text-muted">
+                            240 characters available
+                        </small>
+                    </div>
+                </div>
+            </fieldset>
+
+            <fieldset class="job-publication--horizontal">
+                <legend>Publikationsmedien</legend>
+
+                <div class="checkbox">
+                    <input id="jr" type="checkbox"/>
+                    <label for="jr">
+                        Job-Room <a href="http://www.job-room.ch" target="_blank">Job-Room Webseite</a>
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <input id="eu" type="checkbox"/>
+                    <label for="eu">
+                        EURES <a href="http://www.eures.ch" target="_blank">EURES Portal</a>
+                    </label>
+                </div>
+            </fieldset>
+
+            <hr/>
+
+            <fieldset class="job-publication--horizontal">
+                <div class="checkbox">
+                    <input id="first" type="checkbox"/>
+                    <label for="first">
+                        Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen
+                        einhält.
+                    </label>
+                </div>
+            </fieldset>
+
+            <div class="job-publication--horizontal__actions">
+                <div class="form__actions">
+                    <button type="submit" class="btn btn-primary btn-lg">Job publizieren</button>
+                    <button type="reset" class="btn btn-secondary btn-lg">Zurücksetzen</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <div class="col-md">
+        <div class="job-publication__radar">
+            <div class="candidate-radar d-none d-md-inline-block">
+                <!--
+                <button type="button" class="close" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                -->
+                Diesem Job-Profil enstprechen bereits<br/>
+                <span class="badge badge-radar">1'644</span><br/>
+                Stellensuchenden
+                <a href="job-room/candidate-result-list.html">Jetzt anzeigen!</a>
             </div>
         </div>
-
-        <div class="form-group">
-            <label for="cs-8" class="col-form-label">Abschluss</label>
-            <div>
-                <select class="form-control custom-select" id="cs-8">
-                    <option selected="">keine Auswahl</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
-                </select>
-            </div>
-        </div>
-
-        <a class="btn btn-primary btn-lg" href="#">Job publizieren</a>
-    </fieldset>
-    <div class="candidate-search__radar">
-        <!--
-                          <button type="button" class="close" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                          </button>
-                          -->
-
-        Diesem Job-Profil enstprechen bereits<br>
-        <span class="badge badge-radar">1'644</span><br>
-        Stellensuchenden
-        <a href="#">Jetzt anzeigen!</a>
     </div>
 </div>
