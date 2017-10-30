@@ -4,9 +4,7 @@ import { JobroomTestModule } from '../../../test.module';
 import { cold } from 'jasmine-marbles';
 import { ReferenceService } from '../../../../../../main/webapp/app/shared/reference-service/reference.service';
 import { CandidateService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.service';
-import {
-    OccupationService
-} from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
+import { OccupationService } from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -65,7 +63,8 @@ describe('CandidateDetailComponent', () => {
                 id: '22222',
                 code: 22222,
                 labels: {
-                    en: 'Text'
+                    male: 'Text-M',
+                    female: 'Text-F'
                 }
             }
         });
@@ -79,44 +78,14 @@ describe('CandidateDetailComponent', () => {
             b: [{
                 occupationCode: 22222,
                 occupationLabels: {
-                    en: 'Text'
+                    male: 'Text-M',
+                    female: 'Text-F'
                 },
-                occupation: 'Text',
+                occupation: 'Text-M / Text-F',
                 wanted: true
             }]
         });
 
         expect(component.jobExperiences$).toBeObservable(expected);
     });
-
-    it('should populate occupationLabel with fallback', () => {
-        // GIVEN
-        const occupation$ = cold('-a', {
-            a: {
-                id: '22222',
-                code: 22222,
-                labels: {
-                    de: 'TextDE'
-                }
-            }
-        });
-        mockOccupationService.findOccupationByCode.and.returnValue(occupation$);
-
-        // WHEN
-        fixture.detectChanges();
-
-        // THEN
-        const expected = cold('-b', {
-            b: [{
-                occupationCode: 22222,
-                occupationLabels: {
-                    de: 'TextDE'
-                },
-                occupation: 'TextDE',
-                wanted: true
-            }]
-        });
-
-        expect(component.jobExperiences$).toBeObservable(expected);
-    })
 });

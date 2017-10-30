@@ -13,13 +13,17 @@ import { Store } from '@ngrx/store';
 import {
     CandidateSearchFilter,
     CandidateSearchState,
-    getCandidateProfileList, getSearchFilter,
+    getCandidateProfileList,
+    getSearchFilter,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Occupation } from '../../shared/reference-service/occupation.service';
 
 interface EnrichedJobExperience extends JobExperience {
-    occupationLabels: {}
+    occupationLabels: {
+        male: String,
+        female: String
+    }
 }
 
 @Component({
@@ -100,18 +104,10 @@ export class CandidateDetailComponent implements OnInit {
     private enrichWithCurrentLabel(lang: string): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
         return (jobExperience: EnrichedJobExperience) => {
             return Object.assign({}, jobExperience, {
-                occupation: jobExperience.occupationLabels[lang]
-                    ? jobExperience.occupationLabels[lang]
-                    : this.getFallbackOccupationLabel(jobExperience)
+                occupation: jobExperience.occupationLabels.male + ' / ' + jobExperience.occupationLabels.female
+
             });
         }
-    }
-
-    private getFallbackOccupationLabel(jobExperience: EnrichedJobExperience): string {
-        const fallbackLang = 'de';
-        return jobExperience.occupationLabels[fallbackLang]
-            ? jobExperience.occupationLabels[fallbackLang]
-            : jobExperience.occupationCode;
     }
 
     private populatePreferredWorkLocations(): void {

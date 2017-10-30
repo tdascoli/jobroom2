@@ -39,9 +39,7 @@ export class CandidateSearchListItemComponent implements OnInit {
 
         if (relevantJobExperience) {
             this.jobExperience$ = this.occupationService.findOccupationByCode(relevantJobExperience.occupationCode)
-                .map((occupation: Occupation) => Object.assign({}, relevantJobExperience, { occupationLabels: occupation.labels }))
-                .combineLatest(this.currentLanguage$)
-                .map(([experience, lang]) => Object.assign({}, experience, { occupation: experience.occupationLabels[lang] }));
+                .map((occupation: Occupation) => Object.assign({}, relevantJobExperience, { occupation: occupation.labels.male + ' / ' + occupation.labels.female }));
         } else {
             this.validExperienceData = false;
         }
