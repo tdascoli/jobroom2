@@ -25,7 +25,7 @@
         <div *ngSwitchCase="ToolbarItem.JOB_SEEKERS" id="job-seekers">
             <h1 class="tool__heading">{{'home.tools.jobSearch.title' | translate}}</h1>
             <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-9 col-xl-6 col-xxl-5">
                     <jr2-job-search-tool [jobSearchToolModel]="jobSearchToolModel$ | async"></jr2-job-search-tool>
                 </div>
             </div>
