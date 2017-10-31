@@ -8,6 +8,14 @@
     max-width: 25%;
 }
 
+:host /deep/ ngb-typeahead-window {
+    max-width: 485px;
+
+    button.dropdown-item {
+        width: 100%;
+    }
+}
+
 :host /deep/ .dropdown-menu a {
     font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
     font-size: 1.125rem;
