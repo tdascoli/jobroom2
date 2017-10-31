@@ -5,8 +5,6 @@ import {
     Occupation,
     OccupationService
 } from '../../shared/reference-service/occupation.service';
-import { TranslateService } from '@ngx-translate/core';
-import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 import { CandidateService } from '../services/candidate.service';
 
 @Component({
@@ -21,16 +19,8 @@ export class CandidateSearchListItemComponent implements OnInit {
     jobExperience$: Observable<JobExperience>;
     validExperienceData = true;
 
-    private currentLanguage$: Observable<string>;
-
     constructor(private occupationService: OccupationService,
-                private translateService: TranslateService,
                 private candidateService: CandidateService) {
-
-        this.currentLanguage$ = Observable.merge(
-            new BehaviorSubject(translateService.currentLang),
-            translateService.onLangChange.map((langChange) => langChange.lang)
-        );
     }
 
     ngOnInit(): void {
@@ -39,7 +29,8 @@ export class CandidateSearchListItemComponent implements OnInit {
 
         if (relevantJobExperience) {
             this.jobExperience$ = this.occupationService.findOccupationByCode(relevantJobExperience.occupationCode)
-                .map((occupation: Occupation) => Object.assign({}, relevantJobExperience, { occupation: occupation.labels.male + ' / ' + occupation.labels.female }));
+                .map((occupation: Occupation) => Object.assign({}, relevantJobExperience,
+                    { occupation: occupation.labels.male + ' / ' + occupation.labels.female }));
         } else {
             this.validExperienceData = false;
         }
