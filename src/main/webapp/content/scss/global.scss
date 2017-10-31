@@ -83,3 +83,10 @@ Toolbar (alv-styleguide v0.0.11)
     margin-top: 0;
     padding-top: 2.5rem;
 }
+
+
+@media screen and (min-width: 480px){
+    .header:not(.has-toolbar) ~ jhi-home .toolbar {
+        margin-top: -4rem;
+    }
+}
