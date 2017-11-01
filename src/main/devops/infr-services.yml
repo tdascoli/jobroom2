@@ -1,0 +1,39 @@
+version: '3.4'
+services:
+    jhipster-registry:
+        image: jhipster/jhipster-registry
+        env_file: env.properties
+        environment:
+            - SPRING_PROFILES_ACTIVE=development
+            - GIT_URI=https://github.com/alv-ch/central-config.git
+            - SPRING_CLOUD_CONFIG_PROFILE=development
+        ports:
+            - 8761:8761
+        networks:
+            - jobroom
+        secrets:
+            - source: bootstrap.yml-1
+              target: bootstrap.yml
+            - truststore.jks
+        command: java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /app.war --spring.cloud.config.server.git.uri=${GIT_URI} --spring.cloud.config.server.git.search-paths=${GIT_SEARCH_PATHS}
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
+
+    mail-server:
+        image: schickling/mailcatcher
+        env_file: env.properties
+        ports:
+            - 1025:1025
+            - 1080:1080
+        environment:
+            - TZ=Europe/Zurich
+        networks:
+            - jobroom
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
+
+networks:
+    jobroom:
+        driver: overlay

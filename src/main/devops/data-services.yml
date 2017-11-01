@@ -1,21 +1,73 @@
-version: '3'
+version: '3.4'
 services:
-    jobroom-postgresql:
-        build: dockerfiles/postgresql
-        image: docker_jobroom-postgresql
+    jobroom-postgres:
+        image: postgres:latest
         environment:
             - TZ=Europe/Zurich
             - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_USER=jobroom
+            - POSTGRES_PASSWORD=s3cr3t
         ports:
-            - 5432:5432
+            - 5434:5432
         volumes:
-            - postgres-data:/var/lib/postgresql/data
+            - jobroom_data:/var/lib/postgresql/data
         networks:
             - jobroom
-	command: postgres -c tcp_keepalives_idle=60 -c tcp_keepalives_interval=60 -c tcp_keepalives_count=60
         deploy:
             placement:
                 constraints: [node.labels.type == data]
+
+    jobservice-postgres:
+        image: postgres:latest
+        environment:
+            - TZ=Europe/Zurich
+            - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_USER=jobservice
+            - POSTGRES_PASSWORD=s3cr3t
+        ports:
+            - 5435:5432
+        volumes:
+            - jobservice_data:/var/lib/postgresql/data
+        networks:
+            - jobroom
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+
+    candidateservice-postgres:
+        image: postgres:latest
+        environment:
+            - TZ=Europe/Zurich
+            - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_USER=candidateservice
+            - POSTGRES_PASSWORD=s3cr3t
+        ports:
+            - 5436:5432
+        volumes:
+            - candidateservice_data:/var/lib/postgresql/data
+        networks:
+            - jobroom
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+
+    referenceservice-postgres:
+        image: postgres:latest
+        environment:
+            - TZ=Europe/Zurich
+            - PGDATA=/var/lib/postgresql/data/pgdata
+            - POSTGRES_USER=referenceservice
+            - POSTGRES_PASSWORD=s3cr3t
+        ports:
+            - 5437:5432
+        volumes:
+            - referenceservice_data:/var/lib/postgresql/data
+        networks:
+            - jobroom
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+
     jobroom-kibana:
         image: kibana:5
         env_file: env.properties
@@ -23,7 +75,7 @@ services:
             - 5601:5601
         environment:
             - xpack.security.enabled=false
-            - ELASTICSEARCH_URL=http://jobroom-elasticsearch:9200 
+            - ELASTICSEARCH_URL=http://jobroom-elasticsearch:9200
         links:
             - jobroom-elasticsearch:elasticsearch
         networks:
@@ -31,6 +83,7 @@ services:
         deploy:
             placement:
                 constraints: [node.labels.type == data]
+
     jobroom-elasticsearch:
         image: elasticsearch:5
         env_file: env.properties
@@ -60,7 +113,13 @@ services:
                     memory: 2G
 
 volumes:
-    postgres-data:
+    jobroom-data:
+        driver: local
+    jobservice-data:
+        driver: local
+    candidateservice-data:
+        driver: local
+    referenceservice-data:
         driver: local
     elasticsearch-data:
         driver: local
