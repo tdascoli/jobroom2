@@ -1,8 +1,8 @@
 <div class="tab-content--job-room">
     <fieldset class="candidate-search-off container-flow ">
-        <h1 class="col-12" translate="home.tools.candidate-search.title"></h1>
+        <h1 class="candidate-search__title" translate="home.tools.candidate-search.title"></h1>
         <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate
-              class="col-6 mt-3">
+              class="candidate-search__form">
 
             <div class="form-group">
                 <input id="occupation-input" formControlName="occupation" class="form-control"
