@@ -10,6 +10,7 @@ export interface JobSearchRequest {
     workingTimeMax: number;
     sort: string;
     companyName: string;
+    onlineSince: number;
     page: number;
     size: number;
 }

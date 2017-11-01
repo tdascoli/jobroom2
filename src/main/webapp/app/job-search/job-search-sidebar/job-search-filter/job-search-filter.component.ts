@@ -17,7 +17,7 @@ export const COMPANY_DEBOUNCE_TIME = 500;
 @Component({
     selector: 'jr2-job-search-filter',
     templateUrl: './job-search-filter.component.html',
-    styles: []
+    styleUrls: ['./job-search-filter.component.scss']
 })
 export class JobSearchFilterComponent implements OnInit, OnDestroy {
     @Input() searchFilter: JobSearchFilter;
@@ -37,6 +37,7 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
         this.filterForm = this.fb.group({
             contractType: [this.searchFilter.contractType],
             workingTime: [this.searchFilter.workingTime],
+            onlineSince: [this.searchFilter.onlineSince],
             sort: [this.searchFilter.sort]
         });
 

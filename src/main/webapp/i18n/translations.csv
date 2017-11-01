@@ -512,6 +512,8 @@ job-search,job-search.filter.sort.option.DATE_DESC,Sortiere nach Datum absteigen
 job-search,job-search.filter.sort.option.RELEVANCE_DESC,Sortiere nach Relevanz,Sortiere nach Relevanz,Sortiere nach Relevanz,Sortiere nach Relevanz
 job-search,job-search.filter.title,Suchergebnisse filtern,Suchergebnisse filtern,Suchergebnisse filtern,Suchergebnisse filtern
 job-search,job-search.filter.working-time.label,Pensum,Pensum,Pensum,Pensum
+job-search,job-search.filter.online-since.label,Online seit,Online seit,Online seit,Online seit
+job-search,job-search.filter.online-since.days.label,Tage(n),Tage(n),Tage(n),Tage(n)
 job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Unbefristet,Unbefristet,Unbefristet
 job-search,job-search.job-search-list-item.badge.temporary,Befristet,Befristet,Befristet,Befristet
 job-search,job-search.job-search-list.error-message,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!

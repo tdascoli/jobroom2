@@ -49,7 +49,8 @@ describe('JobSearchFilterComponent', () => {
             component.filterForm.setValue({
                 contractType: ContractType.PERMANENT,
                 workingTime: [80, 100],
-                sort: Sort.DATE_ASC
+                sort: Sort.DATE_ASC,
+                onlineSince: 60
             }, { emitEvent: true });
 
             // THEN
@@ -57,7 +58,8 @@ describe('JobSearchFilterComponent', () => {
                 contractType: ContractType.PERMANENT,
                 workingTime: [80, 100],
                 sort: Sort.DATE_ASC,
-                companyName: null
+                companyName: null,
+                onlineSince: 60
             }));
         });
 
@@ -71,7 +73,8 @@ describe('JobSearchFilterComponent', () => {
                 contractType: ContractType.ALL,
                 workingTime: [0, 100],
                 sort: Sort.RELEVANCE_DESC,
-                companyName: 'ab'
+                companyName: 'ab',
+                onlineSince: 60
             }));
         }));
 
@@ -85,7 +88,8 @@ describe('JobSearchFilterComponent', () => {
                 contractType: ContractType.ALL,
                 workingTime: [0, 100],
                 sort: null,
-                companyName: 'a'
+                companyName: 'a',
+                onlineSince: 60
             }));
         }));
     });

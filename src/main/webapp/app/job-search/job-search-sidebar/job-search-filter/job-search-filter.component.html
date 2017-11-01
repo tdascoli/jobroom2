@@ -28,4 +28,11 @@
         <label class="small">{{'job-search.filter.working-time.label' | translate}}</label>
         <jr2-range-input formControlName="workingTime" [min]="0" [max]="100" [step]="10"></jr2-range-input>
     </div>
+    <div class="form-group range-slider">
+        <label class="small">{{ 'job-search.filter.online-since.label' | translate}}</label>
+        <nouislider [min]="1" [max]="60" [config]="{step: 1}" class="range-input"
+                    [formControl]="filterForm.get('onlineSince')"></nouislider>
+        <span class="range-slider__value range-slider__value--unit small"
+              [attr.data-unit]="'job-search.filter.online-since.days.label' | translate">{{ filterForm.get('onlineSince').value }}</span>
+    </div>
 </form>

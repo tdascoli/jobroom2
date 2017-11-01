@@ -36,6 +36,7 @@ export interface JobSearchFilter {
     contractType: ContractType;
     workingTime: [number, number];
     companyName?: string;
+    onlineSince: number;
 }
 
 export const initialState: JobSearchState = {
@@ -49,7 +50,8 @@ export const initialState: JobSearchState = {
     searchFilter: {
         contractType: ContractType.ALL,
         workingTime: [0, 100],
-        sort: Sort.RELEVANCE_DESC
+        sort: Sort.RELEVANCE_DESC,
+        onlineSince: 60
     },
     totalJobCount: 0,
     page: 0,

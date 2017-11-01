@@ -1,0 +1,34 @@
+@import '../../../../content/scss/jbr2_variables.scss';
+
+/deep/ .range-input {
+    width: calc(100% - (73px));
+    margin: 0 !important;
+    padding-right: 5px;
+    display: inline-block !important;
+
+    & .noUi-target {
+        height: 0.5rem;
+        border-radius: 5px;
+        background: #CFCFCF;
+        box-shadow: none;
+
+        & .noUi-handle {
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            border-radius: 10px;
+            background: $main-accent-color;
+            box-shadow: none;
+
+            &:before {
+                display: none;
+            }
+            &:after {
+                display: none;
+            }
+            &:focus {
+                outline: none;
+            }
+        }
+    }
+}

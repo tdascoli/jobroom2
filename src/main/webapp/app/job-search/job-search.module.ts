@@ -24,6 +24,7 @@ import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
 import { JobLocalityComponent } from './job-locality/job-locality.component';
 import { DetailsPagePaginationEffects } from '../shared/components/details-page-pagination/state-management/effects/details-page-pagination.effects';
+import { NouisliderModule } from 'ng2-nouislider';
 
 @NgModule({
     imports: [
@@ -36,7 +37,8 @@ import { DetailsPagePaginationEffects } from '../shared/components/details-page-
         JobSearchRoutingModule,
         JobSearchSharedModule,
         ClipboardModule,
-        MarkdownModule.forRoot()
+        MarkdownModule.forRoot(),
+        NouisliderModule
     ],
     declarations: [
         JobSearchComponent,

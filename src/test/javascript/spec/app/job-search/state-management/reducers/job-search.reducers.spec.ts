@@ -50,7 +50,8 @@ describe('jobSearchReducer', () => {
         const searchFilter: JobSearchFilter = {
             contractType: ContractType.PERMANENT,
             workingTime: [80, 100],
-            sort: Sort.DATE_ASC
+            sort: Sort.DATE_ASC,
+            onlineSince: 60
         };
         const action = new actions.FilterChangedAction(searchFilter);
 

@@ -16,7 +16,7 @@ const byValue = (type: string) => (value: TypeaheadMultiselectModel) => value.ty
 
 export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter: JobSearchFilter, page = 0): JobSearchRequest {
     const { baseQuery, localityQuery } = searchQuery;
-    const { companyName } = searchFilter;
+    const { companyName, onlineSince } = searchFilter;
 
     const keywords = baseQuery.filter(byValue(OccupationInputType.FREE_TEXT)).map(toLabel);
     const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION)).map(toCode);
@@ -41,6 +41,7 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
         workingTimeMax: searchFilter.workingTime[1],
         sort,
         companyName,
+        onlineSince,
         page,
         size: ITEMS_PER_PAGE
     };

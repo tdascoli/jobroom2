@@ -19,7 +19,8 @@ describe('createJobSearchRequest', () => {
     const defaultFilter: JobSearchFilter = {
         contractType: ContractType.ALL,
         workingTime: [0, 100],
-        sort: Sort.RELEVANCE_DESC
+        sort: Sort.RELEVANCE_DESC,
+        onlineSince: 60
     };
 
     it('should map JobSearchFilter with default sort', () => {
@@ -106,4 +107,12 @@ describe('createJobSearchRequest', () => {
         expect(jobSearchRequest.localities).toEqual(['c4']);
         expect(jobSearchRequest.cantons).toEqual(['c5']);
     });
+
+    it('should map JobSearchFilter with default online since', () => {
+        // WHEN
+        const jobSearchRequest: JobSearchRequest = createJobSearchRequest(defaultQuery, defaultFilter);
+
+        // THEN
+        expect(jobSearchRequest.onlineSince).toEqual(60);
+    })
 });
