@@ -1,0 +1,71 @@
+version: '3'
+services:
+    jobroom-postgresql:
+        build: dockerfiles/postgresql
+        image: docker_jobroom-postgresql
+        environment:
+            - TZ=Europe/Zurich
+            - PGDATA=/var/lib/postgresql/data/pgdata
+        ports:
+            - 5432:5432
+        volumes:
+            - postgres-data:/var/lib/postgresql/data
+        networks:
+            - jobroom
+	command: postgres -c tcp_keepalives_idle=60 -c tcp_keepalives_interval=60 -c tcp_keepalives_count=60
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+    jobroom-kibana:
+        image: kibana:5
+        env_file: env.properties
+        ports:
+            - 5601:5601
+        environment:
+            - xpack.security.enabled=false
+            - ELASTICSEARCH_URL=http://jobroom-elasticsearch:9200 
+        links:
+            - jobroom-elasticsearch:elasticsearch
+        networks:
+            - jobroom
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+    jobroom-elasticsearch:
+        image: elasticsearch:5
+        env_file: env.properties
+        cap_add:
+            - IPC_LOCK
+        ports:
+            - 9200:9200
+            - 9300:9300
+        command: -Ecluster.name=jobroom-cluster -Enetwork.host=0.0.0.0
+        environment:
+            - xpack.security.enabled=false
+            - bootstrap.memory_lock=true
+            - ES_JAVA_OPTS=-Xms512m -Xmx512m -Duser.timezone=Europe/Zurich
+        ulimits:
+          memlock:
+            soft: -1
+            hard: -1
+        volumes:
+            - elasticsearch-data:/usr/share/elasticsearch/data
+        networks:
+            - jobroom
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+            resources:
+                limits:
+                    memory: 2G
+
+volumes:
+    postgres-data:
+        driver: local
+    elasticsearch-data:
+        driver: local
+
+networks:
+    jobroom:
+        driver: overlay
+

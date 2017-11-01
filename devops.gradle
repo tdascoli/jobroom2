@@ -1,62 +1,3 @@
-task _copyArtifacts {
-    dependsOn 'copyDockerFiles'
-    doLast {
-        configurations.docker.setTransitive(false).resolvedConfiguration.resolvedArtifacts
-            .each { artifact ->
-            copy {
-                from artifact.file
-                into "${buildDir}/artifacts"
-                rename { "${artifact.name}.${artifact.extension}" }
-            }
-            copy {
-                from "${buildDir}/artifacts/jobroom.war"
-                into "${buildDir}/docker/dockerfiles/jobroom"
-            }
-            copy {
-                from "${buildDir}/artifacts/jobservice.jar"
-                into "${buildDir}/docker/dockerfiles/jobservice"
-            }
-            copy {
-                from "${buildDir}/artifacts/referenceservice.jar"
-                into "${buildDir}/docker/dockerfiles/referenceservice"
-            }
-            copy {
-                from "${buildDir}/artifacts/candidateservice.jar"
-                into "${buildDir}/docker/dockerfiles/candidateservice"
-            }
-            copy {
-                from "${buildDir}/artifacts/jobroom_batch.jar"
-                into "${buildDir}/docker/dockerfiles/jobroom_batch"
-            }
-        }
-    }
-}
-
-task cleanupRepo(type:Delete) { 
-    delete '/home/ubuntu/.m2/repository/ch/'
-}
-
-task copyArtifacts {
-    dependsOn 'copyDockerFiles', 'cleanupRepo'
-    doLast {
-        exec {
-            commandLine 'mvn', '-q', '-U', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.jobroom:jobroom:LATEST:war', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/jobroom/jobroom.war"
-	}
-        exec {
-            commandLine 'mvn', '-q', '-U', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.service.job:jobservice:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/jobservice/jobservice.jar"
-	}
-        exec {
-            commandLine 'mvn', '-q', '-U', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.service.reference:referenceservice:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/referenceservice/referenceservice.jar"
-	}
-        exec {
-            commandLine 'mvn', '-q', '-U', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.service.candidate:candidateservice:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/candidateservice/candidateservice.jar"
-	}
-        exec {
-            commandLine 'mvn', '-q', '-U', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.jobroom.integration:jobroom_batch:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/jobroom_batch/jobroom_batch.jar"
-	}
-    }
-}
-
 task copyDockerFiles {
     doLast {
         copy {
@@ -66,21 +7,56 @@ task copyDockerFiles {
     }
 }
 
-task build(type: Exec) {
-    dependsOn 'copyArtifacts'
-    commandLine 'docker-compose', '-f', "${buildDir}/docker/docker-compose.yml", 'build'
+task copyArtifacts {
+    dependsOn 'copyDockerFiles'
+    doLast {
+        exec {
+            commandLine 'mvn', '-q', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.jobroom:jobroom:LATEST:war', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/jobroom/jobroom.war"
+        }
+        exec {
+            commandLine 'mvn', '-q', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.service.job:jobservice:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/jobservice/jobservice.jar"
+        }
+        exec {
+            commandLine 'mvn', '-q', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.service.reference:referenceservice:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/referenceservice/referenceservice.jar"
+        }
+        exec {
+            commandLine 'mvn', '-q', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.service.candidate:candidateservice:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/candidateservice/candidateservice.jar"
+        }
+        exec {
+            commandLine 'mvn', '-q', 'dependency:get', '-DrepoUrl=https://alvch.jfrog.io/alvch/libs-snapshots-local/', '-Dartifact=ch.admin.seco.jobroom.integration:jobroom_batch:LATEST:jar', '-Dtransitive=false', "-Ddest=${buildDir}/docker/dockerfiles/jobroom_batch/jobroom_batch.jar"
+        }
+    }
+}
+
+taks prepareDockerBuild {
+    dependsOn 'copyDockerFiles', 'copyArtifacts'
+}
+
+task docker_build(type: Exec) {
+    dependsOn 'prepareDockerBuild'
+    commandLine 'docker-compose', 'build'
+    workingDir "${buildDir}/docker/"
+}
+
+task docker_push(type: Exec) {
+    dependsOn 'docker_build'
+    commandLine 'docker-compose', 'push'
+    workingDir "${buildDir}/docker/"
+}
+
+task build {
+    dependsOn 'docker_push'
 }
 
 task deploy(type: Exec) {
     dependsOn 'build'
-    commandLine 'docker-compose', '-f', "${buildDir}/docker/docker-compose.yml", 'up', '-d'
+    commandLine 'docker', 'stack', 'deploy', '-c', "${buildDir}/docker/docker-compose.yml", 'dev'
 }
 
 task stop(type: Exec) {
-    commandLine 'docker-compose', '-f', "${buildDir}/docker/docker-compose.yml", 'stop'
+    commandLine 'docker', 'stack', 'remove', 'dev'
 }
 
 task clean(type: Delete) {
     delete buildDir
 }
-
