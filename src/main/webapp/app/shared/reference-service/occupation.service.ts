@@ -59,19 +59,22 @@ export class OccupationService {
     }
 
     findOccupationByCode(code: number): Observable<Occupation> {
-        const cachedOccupation = this.occupationCache[code];
+        const currentLang = this.translateService.currentLang;
+        const cacheKey = this.occupationCache[code] + '_' + currentLang;
+        const cachedOccupation = this.occupationCache[cacheKey];
         if (cachedOccupation) {
-            return Observable.of(this.occupationCache[code]);
+            return Observable.of(this.occupationCache[cacheKey]);
         }
 
         const params: URLSearchParams = new URLSearchParams();
         params.set('code', code.toString());
+        params.set('language', currentLang);
         const options = new BaseRequestOptions();
         options.params = params;
 
         return this.http.get(OCCUPATIONS_URL, options)
             .map((res: Response) => res.json() as Occupation)
-            .do((occupation: Occupation) => this.occupationCache[occupation.code] = occupation)
+            .do((occupation: Occupation) => this.occupationCache[cacheKey] = occupation)
             .map((occupation: Occupation) => occupation)
     }
 

@@ -44,6 +44,13 @@ zuul: # those values must be configured depending on the application specific ne
         max-per-route-connections: 100
     semaphore:
         max-semaphores: 500
+    sensitiveHeaders:
+        - Set-Cookie
+        - Authorization
+        - X-Frame-Options
+        - X-Content-Type-Options
+        - X-XSS-Protection
+    ignoreSecurityHeaders: false
 
 # See https://github.com/Netflix/Hystrix/wiki/Configuration
 hystrix:
