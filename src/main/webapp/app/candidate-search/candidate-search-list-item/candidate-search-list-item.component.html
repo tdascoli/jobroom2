@@ -9,7 +9,7 @@
             {{ 'global.reference.canton.' + profile.residenceCantonCode | translate}}
         </span>
         <span class="badge badge-gray" *ngIf="occupationCode && validExperienceData">
-            {{ 'candidate-search.experience.' + (jobExperience$ | async)?.experience | translate }}
+            {{ 'global.experience.' + (jobExperience$ | async)?.experience | translate }}
         </span>
         <span class="badge badge-yellow">
             {{ 'candidate-search.availability.' + profile.availability | translate}}

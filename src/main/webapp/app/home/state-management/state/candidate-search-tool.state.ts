@@ -1,8 +1,5 @@
-import {
-    Canton,
-    Graduation
-} from '../../../candidate-search/services/candidate-search-request';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
+import { Canton, Graduation } from '../../../shared/model/shared-types';
 
 export interface CandidateSearchToolState {
     occupation?: OccupationSuggestion,

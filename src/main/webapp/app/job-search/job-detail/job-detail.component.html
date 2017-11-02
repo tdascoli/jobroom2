@@ -28,7 +28,7 @@
                     <div *ngIf="job.contact">
                         <div class="job-detail__content">
                             <h4>{{'job-detail.contactPerson' | translate}}</h4>
-                            <p><span *ngIf="job.contact.salutation">{{ 'job-detail.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
+                            <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
                                 {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                             </p>
                             <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone }}</a></p>

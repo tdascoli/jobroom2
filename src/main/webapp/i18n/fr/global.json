@@ -365,7 +365,45 @@
             "development": "D\u00e9veloppement",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "drivingLicenceCategory": {
+            "A": "A",
+            "A1": "A1",
+            "B": "B",
+            "B1": "B1",
+            "BE": "BE",
+            "C": "C",
+            "C1": "C1",
+            "C1E": "C1E",
+            "CE": "CE",
+            "D": "D",
+            "D1": "D1",
+            "D1E": "D1E",
+            "DE": "DE",
+            "F": "F",
+            "G": "G",
+            "M": "M"
+        },
+        "education": {
+            "ISCED1": "Primarstufe - ISCED 1",
+            "ISCED2": "Sekundarstufe I - ISCED 2",
+            "ISCED3": "Sekundarstufe II - ISCED 3",
+            "ISCED4": "Zweitausbildung nicht terti\u00e4re Stufe - ISCED 4",
+            "ISCED5": "Terti\u00e4rstufe I - ISCED 5",
+            "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
+        },
+        "experience": {
+            "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
+            "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
+            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
+            "NONE": "keine Erfahrung"
+        },
+        "contactPerson": {
+            "salutation": {
+                "MR": "Herr",
+                "MS": "Frau"
+            }
+        }
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"

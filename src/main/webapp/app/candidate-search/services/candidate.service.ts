@@ -2,10 +2,11 @@ import { Injectable } from '@angular/core';
 import { Candidate, CandidateProfile, JobExperience } from './candidate';
 import { Observable } from 'rxjs/Observable';
 import { BaseRequestOptions, Http, Response } from '@angular/http';
-import { CandidateSearchRequest, Experience } from './candidate-search-request';
+import { CandidateSearchRequest } from './candidate-search-request';
 import { ResponseWrapper } from '../../shared';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { createPageableURLSearchParams } from '../../shared/model/request-util';
+import { Experience } from '../../shared/model/shared-types';
 
 @Injectable()
 export class CandidateService {

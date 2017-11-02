@@ -1,10 +1,7 @@
-import { Contact, Gender, LanguageSkill } from '../../shared/model/shared-types';
 import {
-    Availability,
-    Experience,
-    Graduation,
-    ISCED_1997,
-} from './candidate-search-request';
+    Availability, Contact, Experience, Gender, Graduation, ISCED_1997,
+    LanguageSkill
+} from '../../shared/model/shared-types';
 
 export interface Address {
     street: string;

@@ -1,6 +1,5 @@
 import { CandidateProfile } from '../../../../../../main/webapp/app/candidate-search/services/candidate';
-import { Gender } from '../../../../../../main/webapp/app/shared/model/shared-types';
-import { Availability } from '../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
+import { Availability, Gender } from '../../../../../../main/webapp/app/shared/model/shared-types';
 
 export function createCandidateProfile(name: string): CandidateProfile {
     return {
