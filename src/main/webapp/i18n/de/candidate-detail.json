@@ -25,12 +25,12 @@
         "back": "Zur\u00fcck zu den Suchergebnissen",
         "candidate-copy-link": "Link kopieren",
         "candidate-print": "Drucken",
-        "candidate-save": "Kandidat speichern",
+        "candidate-save": "Kandidatenprofil speichern",
         "candidate-send-link": "Link versenden",
         "graduation": {
             "ACCEPTED": "CH anerkannt",
             "CH": "CH",
-            "NONE": "kein Abschluss",
+            "NONE": "Kein Abschluss",
             "NOT_ACCEPTED": "Ausl\u00e4ndisch"
         },
         "job-center": {
@@ -40,7 +40,7 @@
             "phone": {
                 "label": "Telefon"
             },
-            "title": "Weitere Ausk\u00fcnfte erteilt"
+            "title": "Weitere Ausk\u00fcnfte erteilt Ihnen"
         },
         "job-experience": {
             "description": {
@@ -53,7 +53,7 @@
                 "label": "Erfahrungsjahre auf dem Beruf"
             },
             "graduation": {
-                "label": "Abschluss zum Beruf"
+                "label": "Berufsabschluss"
             },
             "job": {
                 "label": "Berufsbezeichnung"

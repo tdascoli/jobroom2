@@ -8,7 +8,7 @@
                 "error": "Ihr Passwort konnte nicht zur\u00fcckgesetzt werden. Zur Erinnerung Ihre Anfrage ist nur 24 Stunden g\u00fcltig.",
                 "info": "W\u00e4hlen Sie ein neues Passwort",
                 "keymissing": "Der Reset Schl\u00fcssel fehlt.",
-                "success": "<strong>Ihr Passwort wurde zur\u00fcckgesetzt.</strong> Bitte "
+                "success": "<strong>Ihr Passwort wurde zur\u00fcckgesetzt.</strong> "
             },
             "title": "Passwort zur\u00fccksetzen"
         },
@@ -18,7 +18,7 @@
             },
             "messages": {
                 "info": "Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",
-                "notfound": "<strong>Diese Email Adresse existiert nicht!</strong> \u00dcberpr\u00fcfen Sie Ihre Email Adresse und versuchen Sie es nochmal.",
+                "notfound": "<strong>Diese Email Adresse existiert nicht!</strong> \u00dcberpr\u00fcfen Sie Ihre Email Adresse und versuchen Sie es nocheinmal.",
                 "success": "Eine Email mit weiteren Instruktionen f\u00fcr das Zur\u00fccksetzen des Passworts wurde gesendet."
             },
             "title": "Passwort zur\u00fccksetzen"

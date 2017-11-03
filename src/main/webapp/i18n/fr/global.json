@@ -1,68 +1,19 @@
 {
-    "entity": {
-        "action": {
-            "addblob": "Ajouter blob",
-            "addimage": "Ajouter image",
-            "back": "Retour",
-            "cancel": "Annuler",
-            "delete": "Supprimer",
-            "edit": "Editer",
-            "open": "Ouvrir",
-            "save": "Sauvegarder",
-            "view": "Voir"
-        },
-        "delete": {
-            "title": "Confirmation de suppression"
-        },
-        "detail": {
-            "field": "Champs",
-            "value": "Valeur"
-        },
-        "validation": {
-            "datetimelocal": "Ce champ doit \u00eatre une date et une heure.",
-            "max": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}}.",
-            "maxbytes": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}} bytes.",
-            "maxlength": "Ce champ doit faire moins de {{max}} caract\u00e8res.",
-            "min": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}}.",
-            "minbytes": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}} bytes.",
-            "minlength": "Ce champ doit faire au minimum {{min}} caract\u00e8res.",
-            "number": "Ce champ doit \u00eatre un nombre.",
-            "pattern": "Ce champ doit suivre l'expression r\u00e9guli\u00e8re {{pattern}}.",
-            "required": "Ce champ est obligatoire."
-        }
-    },
-    "error": {
-        "NotNull": "Le champ {{fieldName}} ne peut pas \u00eatre vide !",
-        "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimum et maximum !",
-        "emailexists": "Email d\u00e9j\u00e0 utilis\u00e9 !",
-        "idexists": "Une nouvelle entit\u00e9 {{entityName}} ne peut pas avoir d'ID !",
-        "internalServerError": "Erreur interne du serveur",
-        "server": {
-            "not": {
-                "reachable": "Serveur inaccessible"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Non trouv\u00e9"
-            }
-        },
-        "userexists": "Login d\u00e9j\u00e0 utilis\u00e9 !"
-    },
-    "footer": {
-        "link": {
-            "abbreviation": {
-                "text": "Abk\u00fcrzungen"
-            },
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
-            }
-        }
-    },
     "global": {
+        "education": {
+            "ISCED1": "Primarstufe - ISCED 1",
+            "ISCED2": "Sekundarstufe I - ISCED 2",
+            "ISCED3": "Sekundarstufe II - ISCED 3",
+            "ISCED4": "Zweitausbildung nicht terti\u00e4re Stufe - ISCED 4",
+            "ISCED5": "Terti\u00e4rstufe I - ISCED 5",
+            "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
+        },
+        "experience": {
+            "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
+            "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
+            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
+            "NONE": "keine Erfahrung"
+        },
         "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre \u00e0 jour votre navigateur</a> pour une meilleure exp\u00e9rience.",
         "button": {
             "add": {
@@ -384,24 +335,73 @@
             "G": "G",
             "M": "M"
         },
-        "education": {
-            "ISCED1": "Primarstufe - ISCED 1",
-            "ISCED2": "Sekundarstufe I - ISCED 2",
-            "ISCED3": "Sekundarstufe II - ISCED 3",
-            "ISCED4": "Zweitausbildung nicht terti\u00e4re Stufe - ISCED 4",
-            "ISCED5": "Terti\u00e4rstufe I - ISCED 5",
-            "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
-        },
-        "experience": {
-            "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
-            "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
-            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
-            "NONE": "keine Erfahrung"
-        },
         "contactPerson": {
             "salutation": {
                 "MR": "Herr",
                 "MS": "Frau"
+            }
+        }
+    },
+    "entity": {
+        "action": {
+            "addblob": "Ajouter blob",
+            "addimage": "Ajouter image",
+            "back": "Retour",
+            "cancel": "Annuler",
+            "delete": "Supprimer",
+            "edit": "Editer",
+            "open": "Ouvrir",
+            "save": "Sauvegarder",
+            "view": "Voir"
+        },
+        "delete": {
+            "title": "Confirmation de suppression"
+        },
+        "detail": {
+            "field": "Champs",
+            "value": "Valeur"
+        },
+        "validation": {
+            "datetimelocal": "Ce champ doit \u00eatre une date et une heure.",
+            "max": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}}.",
+            "maxbytes": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}} bytes.",
+            "maxlength": "Ce champ doit faire moins de {{max}} caract\u00e8res.",
+            "min": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}}.",
+            "minbytes": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}} bytes.",
+            "minlength": "Ce champ doit faire au minimum {{min}} caract\u00e8res.",
+            "number": "Ce champ doit \u00eatre un nombre.",
+            "pattern": "Ce champ doit suivre l'expression r\u00e9guli\u00e8re {{pattern}}.",
+            "required": "Ce champ est obligatoire."
+        }
+    },
+    "error": {
+        "NotNull": "Le champ {{fieldName}} ne peut pas \u00eatre vide !",
+        "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimum et maximum !",
+        "emailexists": "Email d\u00e9j\u00e0 utilis\u00e9 !",
+        "idexists": "Une nouvelle entit\u00e9 {{entityName}} ne peut pas avoir d'ID !",
+        "internalServerError": "Erreur interne du serveur",
+        "server": {
+            "not": {
+                "reachable": "Serveur inaccessible"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Non trouv\u00e9"
+            }
+        },
+        "userexists": "Login d\u00e9j\u00e0 utilis\u00e9 !"
+    },
+    "footer": {
+        "link": {
+            "abbreviation": {
+                "text": "Abk\u00fcrzungen"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
             }
         }
     },

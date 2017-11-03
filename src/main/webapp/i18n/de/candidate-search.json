@@ -1,28 +1,28 @@
 {
     "candidate-search": {
         "availability": {
-            "BY_ARRANGEMENT": "Auf Vereinbarung",
+            "BY_ARRANGEMENT": "Nach Vereinbarung",
             "IMMEDIATE": "Ab Sofort",
             "label": "Verf\u00fcgbarkeit"
         },
         "candidate-search-list": {
-            "error-message": "Failed to load candidate result list!",
+            "error-message": "Die Resultate der Kandidatensuche konnten nicht geladen werden",
             "title": {
                 "many": {
-                    "with-locality": "More than {{count}} {{query}} Candidates in {{locality}}",
-                    "without-locality": "More than {{count}} {{query}} Candidates"
+                    "with-locality": "Mehr als {{count}} {{query}} Kandidaten in {{locality}}",
+                    "without-locality": "Mehr als {{count}} {{query}} Kandidaten"
                 },
                 "none": {
-                    "with-locality": "No {{query}} Candidates in {{locality}}",
-                    "without-locality": "No {{query}} Candidates"
+                    "with-locality": "Keine {{query}} Kandidaten in {{locality}}",
+                    "without-locality": "Keine {{query}} Kandidaten"
                 },
                 "one": {
-                    "with-locality": "1 {{query}} Candidate in {{locality}}",
-                    "without-locality": "1 {{query}} Candidate"
+                    "with-locality": "1 {{query}} Kandidat in {{locality}}",
+                    "without-locality": "1 {{query}} Kandidat"
                 },
                 "other": {
-                    "with-locality": "{{count}} {{query}} Candidates in {{locality}}",
-                    "without-locality": "{{count}} {{query}} Candidates"
+                    "with-locality": "{{count}} {{query}} Kandidaten in {{locality}}",
+                    "without-locality": "{{count}} {{query}} Kandidaten"
                 }
             }
         },
@@ -42,7 +42,7 @@
         "graduation": {
             "ACCEPTED": "CH-Abschluss oder CH anerkannt",
             "CH": "CH-Abschluss",
-            "NONE": "kein Abschluss",
+            "NONE": "Kein Abschluss",
             "NOT_ACCEPTED": "Abschluss CH oder ausl\u00e4ndisch",
             "label": "Abschluss"
         },
@@ -50,31 +50,31 @@
             "label": "Suchbegriffe"
         },
         "languageSkills": {
-            "label": "Sprachkentnisse"
+            "label": "Sprachkenntnisse"
         },
         "no-selection": "Keine Auswahl",
         "skills": {
             "label": "F\u00e4higkeiten, Skills",
             "placeholder": "z.B. Tiefbau"
         },
-        "title": "Candidate search",
+        "title": "Kandidatensuche",
         "toolbar": {
             "graduation": {
-                "default": "Abschluss ausw\u00e4hlen...",
+                "default": "Abschluss ausw\u00e4hlen",
                 "label": "Abschluss"
             },
             "occupation": {
                 "placeholder": "Berufsbezeichnung"
             },
             "residence": {
-                "placeholder": "Wohnort: Kanton",
+                "placeholder": "Wohnkanton",
                 "selected": "Kantone"
             },
             "search-button": {
                 "title": {
-                    "loading": "Loading",
+                    "loading": "Aktualisieren",
                     "many": "{{count}}+ Kandidaten",
-                    "none": "No Kandidaten",
+                    "none": "Keine Kandidaten",
                     "one": "1 der Kandidat",
                     "other": "{{count}} Kandidaten"
                 }

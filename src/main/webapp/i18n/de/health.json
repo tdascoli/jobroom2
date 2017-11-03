@@ -2,9 +2,9 @@
     "health": {
         "details": {
             "details": "Details",
-            "error": "Error",
+            "error": "Fehler",
             "name": "Name",
-            "properties": "Properties",
+            "properties": "Eigenschaften",
             "value": "Wert"
         },
         "indicator": {
@@ -21,8 +21,8 @@
         },
         "stacktrace": "Stacktrace",
         "status": {
-            "DOWN": "DOWN",
-            "UP": "UP"
+            "DOWN": "Unten",
+            "UP": "Oben"
         },
         "table": {
             "service": "Dienst Name",

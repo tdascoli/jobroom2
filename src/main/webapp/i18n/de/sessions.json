@@ -5,7 +5,7 @@
             "success": "<strong>Sitzung wurde geschlossen!</strong>"
         },
         "table": {
-            "button": "Schlie\u00dfen",
+            "button": "Schliessen",
             "date": "Datum",
             "ipaddress": "IP Adresse",
             "useragent": "User Agent"
