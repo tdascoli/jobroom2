@@ -29,9 +29,9 @@ describe('CantonService', () => {
         cantonService = _cantonService_;
     }));
 
-    it('should return 28 cantons', async(() => {
+    it('should return 26 cantons', async(() => {
         cantonService.getCantonOptions().subscribe((options) => {
-            expect(options.length).toEqual(28);
+            expect(options.length).toEqual(26);
         });
     }));
 
