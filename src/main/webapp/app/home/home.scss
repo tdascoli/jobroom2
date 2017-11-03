@@ -24,7 +24,5 @@ only screen and (min-resolution: 2dppx) {
 }
 
 :host .jumbotron {
-    background: url("~@alv-ch/alv-styleguide/build/images/bg-jobroom.jpg");
-    background-size: cover;
     min-height: 700px;
 }
