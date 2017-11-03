@@ -2,9 +2,9 @@
 # yarn lockfile v1
 
 
-"@alv-ch/alv-styleguide@0.0.9":
-  version "0.0.9"
-  resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.9.tgz#ceaeddfaa12d4b3cc3ae5c05e80a68054802ff9e"
+"@alv-ch/alv-styleguide@0.0.11":
+  version "0.0.11"
+  resolved "https://registry.yarnpkg.com/@alv-ch/alv-styleguide/-/alv-styleguide-0.0.11.tgz#aab473e2450177ccac960fa650c9475ba0b57009"
   dependencies:
     bootstrap "4.0.0-beta"
     bootstrap-drawer "1.0.6"

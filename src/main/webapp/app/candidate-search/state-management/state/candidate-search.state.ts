@@ -1,15 +1,9 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import {
-    Availability,
-    Canton,
-    DrivingLicenceCategory,
-    Experience,
-    Graduation,
-    ISCED_1997,
-    WorkForm
-} from '../../services/candidate-search-request';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
-import { LanguageSkill } from '../../../shared/model/shared-types';
+import {
+    Availability, Canton, DrivingLicenceCategory, Experience, Graduation, ISCED_1997, LanguageSkill,
+    WorkForm
+} from '../../../shared/model/shared-types';
 import { CandidateProfile } from '../../services/candidate';
 import { TypeaheadItemDisplayModel } from '../../../shared/input-components/typeahead/typeahead-item-display-model';
 

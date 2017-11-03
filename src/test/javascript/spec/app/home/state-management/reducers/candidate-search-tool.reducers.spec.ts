@@ -4,12 +4,8 @@ import {
     CandidateSearchToolCountedAction,
     CandidateSearchToolSubmittedAction
 } from '../../../../../../../main/webapp/app/home/state-management/actions/candidate-search-tool.actions';
-
-import {
-    Canton,
-    Graduation
-} from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
 import { candidateSearchToolReducer } from '../../../../../../../main/webapp/app/home/state-management/reducers/candidate-search-tool.reducers';
+import { Canton, Graduation } from '../../../../../../../main/webapp/app/shared/model/shared-types';
 
 describe('candidateSearchToolReducer', () => {
     it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {

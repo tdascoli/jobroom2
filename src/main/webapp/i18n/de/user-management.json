@@ -15,7 +15,7 @@
         "email": "Email",
         "firstName": "Vorname",
         "home": {
-            "createLabel": "Neuen Benutzer erstellen",
+            "createLabel": "Neuer Benutzer erstellen",
             "createOrEditLabel": "Benutzer erstellen oder bearbeiten",
             "title": "Benutzer"
         },

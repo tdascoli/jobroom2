@@ -2,7 +2,6 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/reference-service/occupation.service';
-import { Graduation } from '../../../candidate-search/services/candidate-search-request';
 import { Store } from '@ngrx/store';
 import {
     CandidateSearchToolState,
@@ -16,6 +15,7 @@ import { OccupationSuggestion } from '../../../shared/reference-service/occupati
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../../../candidate-search/services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
+import { Graduation } from '../../../shared/model/shared-types';
 
 @Component({
     selector: 'jr2-candidate-search-tool',

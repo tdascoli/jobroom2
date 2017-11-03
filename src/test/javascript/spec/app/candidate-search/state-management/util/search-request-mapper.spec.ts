@@ -5,18 +5,9 @@ import {
 import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import { OccupationSuggestion } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
 import {
-    Availability,
-    CandidateSearchRequest,
-    Canton,
-    DrivingLicenceCategory,
-    Experience,
-    Graduation,
-    ISCED_1997,
-    WorkForm
-} from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
-import {
-    CEFR_Level,
-    LanguageSkill
+    Availability, Canton,
+    CEFR_Level, DrivingLicenceCategory, Experience, Graduation, ISCED_1997,
+    LanguageSkill, WorkForm
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
 import { ITEMS_PER_PAGE } from '../../../../../../../main/webapp/app/shared/constants/pagination.constants';
 import {
@@ -27,6 +18,7 @@ import {
     TypeaheadItemDisplayModel,
     TypeaheadMultiselectModel
 } from '../../../../../../../main/webapp/app/shared/input-components/index';
+import { CandidateSearchRequest } from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
 
 describe('createCandidateSearchRequestFromFilter', () => {
 

@@ -3,3 +3,15 @@
     top: 100px;
     z-index: 1000;
 }
+
+.form-control.ng-invalid:not(form)  {
+    border-left: 5px solid #a94442;
+}
+
+.date__input {
+    margin: 0;
+}
+
+/deep/ .d-inline-block select {
+    margin: 0;
+}

@@ -2,15 +2,15 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Name des Unternehmen",
-                "placeholder": "Name des Unternehmen"
+                "label": "Name des Unternehmens",
+                "placeholder": "Name des Unternehmens"
             },
             "contract-type": {
                 "label": "Vertragsart",
                 "option": {
                     "ALL": "Alle",
-                    "PERMANENT": "Unbefristet",
-                    "TEMPORARY": "Befristet"
+                    "PERMANENT": "unbefristet",
+                    "TEMPORARY": "befristet"
                 }
             },
             "sort": {
@@ -39,15 +39,15 @@
             }
         },
         "job-search-list": {
-            "error-message": "Failed to load job result list!",
+            "error-message": "Die Resultate der Jobsuche konnten nicht geladen werden",
             "title": {
                 "many": {
-                    "with-locality": "More than {{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "More than {{count}} {{query}} Jobs"
+                    "with-locality": "Mehr als {{count}} {{query}} Jobs in {{locality}}",
+                    "without-locality": "Mehr als {{count}} {{query}} Jobs"
                 },
                 "none": {
-                    "with-locality": "No {{query}} Jobs in {{locality}}",
-                    "without-locality": "No {{query}} Jobs"
+                    "with-locality": "Keine {{query}} Jobs in {{locality}}",
+                    "without-locality": "Keine {{query}} Jobs"
                 },
                 "one": {
                     "with-locality": "1 {{query}} Job in {{locality}}",
@@ -59,10 +59,10 @@
                 }
             }
         },
-        "title": "Job search",
+        "title": "Job suchen",
         "toolbar": {
             "locality-select": {
-                "tooltip": "Select my current location"
+                "tooltip": "Aktueller Standort w\u00e4hlen"
             },
             "locality": {
                 "placeholder": "Ort, Region, Kanton"
@@ -72,9 +72,9 @@
             },
             "search-button": {
                 "title": {
-                    "loading": "Loading",
+                    "loading": "Aktualisieren",
                     "many": "{{count}}+ Jobs",
-                    "none": "No Jobs",
+                    "none": "Keine Jobs",
                     "one": "1 Job",
                     "other": "{{count}} Jobs"
                 }
@@ -84,9 +84,9 @@
     "typeahead-multiselect": {
         "type": {
             "canton": "Kanton",
-            "classification": "Classification",
+            "classification": "Klassifizierung",
             "locality": "Ortschaft",
-            "occupation": "Occupation"
+            "occupation": "Besch\u00e4ftigungsgrad"
         }
     }
 }

@@ -1,20 +1,12 @@
-import {
-    Availability,
-    CandidateLanguageSkill,
-    CandidateSearchRequest,
-    Canton,
-    DrivingLicenceCategory,
-    Experience,
-    Graduation,
-    ISCED_1997,
-    WorkForm,
-    WorkLoad
-} from '../../services/candidate-search-request';
 import { CandidateSearchFilter } from '../state/candidate-search.state';
 import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
-import { CEFR_Level, LanguageSkill } from '../../../shared/model/shared-types';
+import {
+    Availability, Canton, CEFR_Level, DrivingLicenceCategory, Experience, Graduation, ISCED_1997, LanguageSkill,
+    WorkForm
+} from '../../../shared/model/shared-types';
 import { CandidateSearchToolState } from '../../../home/state-management/state/candidate-search-tool.state';
 import { TypeaheadItemDisplayModel } from '../../../shared/input-components/typeahead/typeahead-item-display-model';
+import { CandidateLanguageSkill, CandidateSearchRequest, WorkLoad } from '../../services/candidate-search-request';
 
 export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSearchFilter, page = 0): CandidateSearchRequest {
     const {

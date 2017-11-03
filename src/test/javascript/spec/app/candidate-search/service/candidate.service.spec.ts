@@ -1,9 +1,6 @@
 import { CandidateService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.service';
 import { JobExperience } from '../../../../../../main/webapp/app/candidate-search/services/candidate';
-import {
-    Experience,
-    Graduation, ISCED_1997
-} from '../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
+import { Experience, Graduation, ISCED_1997 } from '../../../../../../main/webapp/app/shared/model/shared-types';
 
 describe('CandidateService', () => {
     let candidateService: CandidateService;

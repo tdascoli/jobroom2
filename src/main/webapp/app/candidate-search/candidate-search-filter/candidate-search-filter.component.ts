@@ -5,13 +5,6 @@ import {
     getSearchFilter
 } from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {
-    Availability,
-    DrivingLicenceCategory,
-    Experience,
-    ISCED_1997,
-    WorkForm
-} from '../services/candidate-search-request';
 import { Observable } from 'rxjs/Observable';
 import { LocalityService } from '../../shared/reference-service/locality.service';
 import { LanguageSkillService } from '../services/language-skill.service';
@@ -25,6 +18,10 @@ import {
 import { TypeaheadMultiselectModel } from '../../shared/input-components/index';
 import { CandidateService } from '../services/candidate.service';
 import { Store } from '@ngrx/store';
+import {
+    Availability, DrivingLicenceCategory, Experience, ISCED_1997,
+    WorkForm
+} from '../../shared/model/shared-types';
 
 @Component({
     selector: 'jr2-candidate-search-filter',

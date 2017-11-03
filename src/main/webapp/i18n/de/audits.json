@@ -3,7 +3,7 @@
         "filter": {
             "button": {
                 "clear": "leeren",
-                "close": "abschlie\u00dfen",
+                "close": "abschliessen",
                 "today": "heute",
                 "weeks": "Wochen"
             },

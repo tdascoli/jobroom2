@@ -61,7 +61,7 @@
                     </div>
                     <div *ngIf="jobExperience.experience" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.experience.label' | translate }}</strong>
-                        <span>{{ 'candidate-search.experience.' + jobExperience.experience | translate }}</span>
+                        <span>{{ 'global.experience.' + jobExperience.experience | translate }}</span>
                     </div>
                     <div *ngIf="jobExperience.education" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.education.label' | translate }}</strong>
@@ -124,7 +124,7 @@
                 </div>
             </div>
 
-            <div *jhiHasAnyAuthority="['ROLE_PUBLIC_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']"
+            <div *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']"
                  class="candidate-detail__content">
                 <ng-container *ngIf="candidateProtectedData$ | async as candidateProtectedData">
                     <h4 class="candidate-detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
@@ -160,7 +160,7 @@
                                              [totalSize]="candidateProfileListTotalSize$ | async"></jr2-details-page-pagination>
 
                 <ul class="nav filter-nav flex-column">
-                    <li *jhiHasAnyAuthority="['ROLE_PUBLIC_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
+                    <li *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
                         <a class="nav-link">
                             <i class="fa fa-star-o" aria-hidden="true"></i> {{ 'candidate-detail.candidate-save' | translate }}
                         </a>
