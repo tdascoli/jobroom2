@@ -4,7 +4,12 @@ import { OccupationService } from '../../../shared/reference-service/occupation.
 import { FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Subject } from 'rxjs/Subject';
-import { DrivingLicenceCategory, Experience, ISCED_1997 } from '../../../shared/model/shared-types';
+import {
+    DrivingLicenceCategory,
+    Experience,
+    ISCED_1997
+} from '../../../shared/model/shared-types';
+import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -26,7 +31,19 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
 
     jobPublicationForm: FormGroup;
 
+    publicationStartDateByArrangement = true;
+    minDate = JobPublicationToolComponent.buildMinDate();
+
     unsubscribe$ = new Subject<void>();
+
+    private static buildMinDate(): NgbDateStruct {
+        const now = new Date();
+        return {
+            year: now.getFullYear(),
+            month: now.getMonth() + 1,
+            day: now.getDate()
+        };
+    }
 
     constructor(private occupationService: OccupationService,
                 private fb: FormBuilder) {
@@ -40,7 +57,13 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 }),
                 description: ['', [Validators.required, Validators.maxLength(9000)]],
                 workload: [[0, 100], Validators.required],
-                publicationStartDate: [],
+                publicationStartDate: fb.group({
+                    immediate: 'false',
+                    date: [{
+                        value: null,
+                        disabled: true
+                    }, Validators.required]
+                }),
                 publicationEndDate: [],
                 startsImmediately: [],
                 permanent: [],
@@ -88,6 +111,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             'application.email', [Validators.email]);
         this.validateCheckboxRelatedField('application.phoneEnabled',
             'application.phoneNumber');
+        this.configurePublicationStartDateInputs();
     }
 
     private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string, additionalValidators: ValidatorFn[] = []) {
@@ -104,6 +128,21 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     relatedControl.clearValidators();
                 }
                 relatedControl.updateValueAndValidity();
+            });
+    }
+
+    private configurePublicationStartDateInputs() {
+        const date = this.jobPublicationForm.get('job.publicationStartDate.date');
+        this.jobPublicationForm.get('job.publicationStartDate.immediate').valueChanges
+            .takeUntil(this.unsubscribe$)
+            .subscribe((value) => {
+                if (value === 'true') {
+                    date.enable();
+                    this.publicationStartDateByArrangement = false;
+                } else {
+                    date.disable();
+                    this.publicationStartDateByArrangement = true;
+                }
             });
     }
 
