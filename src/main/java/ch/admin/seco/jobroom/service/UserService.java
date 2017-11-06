@@ -1,5 +1,6 @@
 package ch.admin.seco.jobroom.service;
 
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
@@ -29,6 +30,7 @@ import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.security.SecurityUtils;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
 import ch.admin.seco.jobroom.service.util.RandomUtil;
+import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 
 /**
  * Service class for managing users.
@@ -37,8 +39,8 @@ import ch.admin.seco.jobroom.service.util.RandomUtil;
 @Transactional
 public class UserService {
 
+    private static final String USERS_CACHE = "users";
     private final Logger log = LoggerFactory.getLogger(UserService.class);
-
     private final UserRepository userRepository;
 
     private final PasswordEncoder passwordEncoder;
@@ -61,7 +63,7 @@ public class UserService {
                 // activate given user for the registration key.
                 user.setActivated(true);
                 user.setActivationKey(null);
-                cacheManager.getCache("users").evict(user.getLogin());
+                cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Activated user: {}", user);
                 return user;
             });
@@ -76,37 +78,36 @@ public class UserService {
                 user.setPassword(passwordEncoder.encode(newPassword));
                 user.setResetKey(null);
                 user.setResetDate(null);
-                cacheManager.getCache("users").evict(user.getLogin());
+                cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 return user;
             });
     }
 
     public Optional<User> requestPasswordReset(String mail) {
-        return userRepository.findOneByEmail(mail)
+        return userRepository.findOneByEmailIgnoreCase(mail)
             .filter(User::getActivated)
             .map(user -> {
                 user.setResetKey(RandomUtil.generateResetKey());
                 user.setResetDate(Instant.now());
-                cacheManager.getCache("users").evict(user.getLogin());
+                cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 return user;
             });
     }
 
-    public User createUser(String login, String password, String firstName, String lastName, String email,
-        String imageUrl, String langKey) {
+    public User registerUser(ManagedUserVM userDTO) {
 
         User newUser = new User();
         Authority authority = authorityRepository.getOne(AuthoritiesConstants.USER);
         Set<Authority> authorities = new HashSet<>();
-        String encryptedPassword = passwordEncoder.encode(password);
-        newUser.setLogin(login);
+        String encryptedPassword = passwordEncoder.encode(userDTO.getPassword());
+        newUser.setLogin(userDTO.getLogin());
         // new user gets initially a generated password
         newUser.setPassword(encryptedPassword);
-        newUser.setFirstName(firstName);
-        newUser.setLastName(lastName);
-        newUser.setEmail(email);
-        newUser.setImageUrl(imageUrl);
-        newUser.setLangKey(langKey);
+        newUser.setFirstName(userDTO.getFirstName());
+        newUser.setLastName(userDTO.getLastName());
+        newUser.setEmail(userDTO.getEmail());
+        newUser.setImageUrl(userDTO.getImageUrl());
+        newUser.setLangKey(userDTO.getLangKey());
         // new user is not active
         newUser.setActivated(false);
         // new user gets registration key
@@ -126,15 +127,14 @@ public class UserService {
         user.setEmail(userDTO.getEmail());
         user.setImageUrl(userDTO.getImageUrl());
         if (userDTO.getLangKey() == null) {
-            user.setLangKey("de"); // default language
+            user.setLangKey(Constants.DEFAULT_LANGUAGE); // default language
         } else {
             user.setLangKey(userDTO.getLangKey());
         }
         if (userDTO.getAuthorities() != null) {
-            Set<Authority> authorities = new HashSet<>();
-            userDTO.getAuthorities().forEach(
-                authority -> authorities.add(authorityRepository.getOne(authority))
-            );
+            Set<Authority> authorities = userDTO.getAuthorities().stream()
+                .map(authorityRepository::getOne)
+                .collect(Collectors.toSet());
             user.setAuthorities(authorities);
         }
         String encryptedPassword = passwordEncoder.encode(RandomUtil.generatePassword());
@@ -163,7 +163,7 @@ public class UserService {
             user.setEmail(email);
             user.setLangKey(langKey);
             user.setImageUrl(imageUrl);
-            cacheManager.getCache("users").evict(user.getLogin());
+            cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
             log.debug("Changed Information for User: {}", user);
         });
     }
@@ -190,7 +190,7 @@ public class UserService {
                 userDTO.getAuthorities().stream()
                     .map(authorityRepository::getOne)
                     .forEach(managedAuthorities::add);
-                cacheManager.getCache("users").evict(user.getLogin());
+                cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Changed Information for User: {}", user);
                 return user;
             })
@@ -200,7 +200,7 @@ public class UserService {
     public void deleteUser(String login) {
         userRepository.findOneByLogin(login).ifPresent(user -> {
             userRepository.delete(user);
-            cacheManager.getCache("users").evict(login);
+            cacheManager.getCache(USERS_CACHE).evict(login);
             log.debug("Deleted User: {}", user);
         });
     }
@@ -209,7 +209,7 @@ public class UserService {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             String encryptedPassword = passwordEncoder.encode(password);
             user.setPassword(encryptedPassword);
-            cacheManager.getCache("users").evict(user.getLogin());
+            cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
             log.debug("Changed password for User: {}", user);
         });
     }
@@ -246,7 +246,7 @@ public class UserService {
         for (User user : users) {
             log.debug("Deleting not activated user {}", user.getLogin());
             userRepository.delete(user);
-            cacheManager.getCache("users").evict(user.getLogin());
+            cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
         }
     }
 

@@ -105,7 +105,7 @@ export class CandidateDetailComponent implements OnInit {
         return (jobExperience: EnrichedJobExperience) => {
             return Object.assign({}, jobExperience, {
                 occupation: jobExperience.occupationLabels.male +
-                ((jobExperience.occupationLabels.female && jobExperience.occupationLabels.male != jobExperience.occupationLabels.female)
+                ((jobExperience.occupationLabels.female && jobExperience.occupationLabels.male !== jobExperience.occupationLabels.female)
                     ? ' / ' + jobExperience.occupationLabels.female : '')
             });
         }

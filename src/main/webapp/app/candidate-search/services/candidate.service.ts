@@ -64,7 +64,7 @@ export class CandidateService {
 
     getRelevantJobExperience(occupationCode: string, jobExperiences: JobExperience[]): JobExperience {
         jobExperiences = jobExperiences
-            .filter(jobExperience => jobExperience.wanted);
+            .filter((jobExperience) => jobExperience.wanted);
 
         if (occupationCode) {
             return jobExperiences

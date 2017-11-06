@@ -1,4 +1,5 @@
 package ch.admin.seco.jobroom.service;
+import ch.admin.seco.jobroom.config.Constants;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -140,7 +141,7 @@ public class MailServiceIntTest {
     @Test
     public void testSendActivationEmail() throws Exception {
         User user = new User();
-        user.setLangKey("de");
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendActivationEmail(user);
@@ -155,7 +156,7 @@ public class MailServiceIntTest {
     @Test
     public void testCreationEmail() throws Exception {
         User user = new User();
-        user.setLangKey("de");
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendCreationEmail(user);
@@ -170,7 +171,7 @@ public class MailServiceIntTest {
     @Test
     public void testSendPasswordResetMail() throws Exception {
         User user = new User();
-        user.setLangKey("de");
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendPasswordResetMail(user);

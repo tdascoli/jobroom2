@@ -9,14 +9,13 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class TokenRelayFilter extends ZuulFilter {
+
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
-
         Set<String> headers = (Set<String>) ctx.get("ignoredHeaders");
-        // We need our JWT tokens relayed to resource servers
+        // JWT tokens should be relayed to the resource servers
         headers.remove("authorization");
-
         return null;
     }
 

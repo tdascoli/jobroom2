@@ -5,7 +5,7 @@
       "nativeLanguage": "de",
       "microservicePath": "../job-service"
     },
-    "jhipsterVersion": "4.8.2",
+    "jhipsterVersion": "4.10.2",
     "baseName": "jobroom",
     "packageName": "ch.admin.seco.jobroom",
     "packageFolder": "ch/admin/seco/jobroom",

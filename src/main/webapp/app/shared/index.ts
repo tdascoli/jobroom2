@@ -1,4 +1,5 @@
 export * from './layout/sticky-toolbar-item.directive';
+export * from './constants/error.constants';
 export * from './constants/pagination.constants';
 export * from './alert/alert.component';
 export * from './alert/alert-error.component';
@@ -14,8 +15,8 @@ export * from './language/language.helper';
 export * from './language/find-language-from-key.pipe';
 export * from './language/jobroom2-language.service';
 export * from './login/login.component';
-export * from './login/login.service';
 export * from './login/login-modal.service';
+export * from './login/login.service';
 export * from './user/account.model';
 export * from './user/user.model';
 export * from './user/user.service';
