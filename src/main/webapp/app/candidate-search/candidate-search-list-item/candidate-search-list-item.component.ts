@@ -25,12 +25,14 @@ export class CandidateSearchListItemComponent implements OnInit {
 
     ngOnInit(): void {
         const relevantJobExperience = this.candidateService.getRelevantJobExperience(
-            +this.occupationCode, this.profile.jobExperiences);
+            this.occupationCode, this.profile.jobExperiences);
 
         if (relevantJobExperience) {
             this.jobExperience$ = this.occupationService.findOccupationByCode(relevantJobExperience.occupationCode)
                 .map((occupation: Occupation) => Object.assign({}, relevantJobExperience,
-                    { occupation: occupation.labels.male + ' / ' + occupation.labels.female }));
+                    {
+                        occupation: occupation.labels.male + ((occupation.labels.female && occupation.labels.male != occupation.labels.female ) ? ' / ' + occupation.labels.female : '')
+                    }));
         } else {
             this.validExperienceData = false;
         }

@@ -60,7 +60,7 @@ export class OccupationService {
 
     findOccupationByCode(code: number): Observable<Occupation> {
         const currentLang = this.translateService.currentLang;
-        const cacheKey = this.occupationCache[code] + '_' + currentLang;
+        const cacheKey = code + '_' + currentLang;
         const cachedOccupation = this.occupationCache[cacheKey];
         if (cachedOccupation) {
             return Observable.of(this.occupationCache[cacheKey]);

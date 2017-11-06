@@ -80,7 +80,7 @@ export class CandidateDetailComponent implements OnInit {
             .map((profile: CandidateProfile) => profile.jobExperiences)
             .flatMap((experiences) => Observable.combineLatest(experiences.map(this.enrichWithLabels.bind(this))))
             .combineLatest(currentLanguage$)
-            .map(([experiences, lang]) => experiences.map(this.enrichWithCurrentLabel(lang)))
+            .map(([experiences, lang]) => experiences.map(this.formatOccupationLabel()))
             .map((experiences) => experiences
                 .filter((experience) => experience.wanted)
                 .sort((a, b) => +b.lastJob - +a.lastJob));
@@ -91,7 +91,7 @@ export class CandidateDetailComponent implements OnInit {
         this.relevantJobExperience$ = this.jobExperiences$
             .combineLatest(occupationCode$)
             .map(([jobExperiences, occupationCode]) =>
-                this.candidateService.getRelevantJobExperience(+occupationCode, jobExperiences));
+                this.candidateService.getRelevantJobExperience(occupationCode, jobExperiences));
         this.populatePreferredWorkLocations();
     }
 
@@ -101,11 +101,12 @@ export class CandidateDetailComponent implements OnInit {
                 { occupationLabels: occupation.labels }));
     }
 
-    private enrichWithCurrentLabel(lang: string): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
+    private formatOccupationLabel(): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
         return (jobExperience: EnrichedJobExperience) => {
             return Object.assign({}, jobExperience, {
-                occupation: jobExperience.occupationLabels.male + ' / ' + jobExperience.occupationLabels.female
-
+                occupation: jobExperience.occupationLabels.male +
+                ((jobExperience.occupationLabels.female && jobExperience.occupationLabels.male != jobExperience.occupationLabels.female)
+                    ? ' / ' + jobExperience.occupationLabels.female : '')
             });
         }
     }

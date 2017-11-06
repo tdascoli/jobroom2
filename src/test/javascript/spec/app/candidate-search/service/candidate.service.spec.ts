@@ -1,6 +1,10 @@
 import { CandidateService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.service';
 import { JobExperience } from '../../../../../../main/webapp/app/candidate-search/services/candidate';
-import { Experience, Graduation, ISCED_1997 } from '../../../../../../main/webapp/app/shared/model/shared-types';
+import {
+    Experience,
+    Graduation,
+    ISCED_1997
+} from '../../../../../../main/webapp/app/shared/model/shared-types';
 
 describe('CandidateService', () => {
     let candidateService: CandidateService;
@@ -11,7 +15,7 @@ describe('CandidateService', () => {
 
     it('should get JobExperience by occupationCode', () => {
         // GIVEN
-        const occupationCode = 22222;
+        const occupationCode = '22222';
         const jobExperiences: JobExperience[] = [
             {
                 occupationCode: 22222,

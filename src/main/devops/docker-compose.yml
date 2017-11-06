@@ -4,18 +4,15 @@ services:
         build: dockerfiles/jobroom
         image: localhost:5000/docker_jobroom-app
         env_file: env.properties
-        environment:
-            - SLEEP=0
         ports:
             - 8443:8443
-        volumes:
-            - ./config:/config
         networks:
             - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
+            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -24,18 +21,16 @@ services:
         image: localhost:5000/docker_jobservice-app
         env_file: env.properties
         environment:
-            - SLEEP=0
             - LIQUIBASE_DROPFIRST=false
         ports:
             - 8444:8444
-        volumes:
-            - ./config:/config
         networks:
             - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
+            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -44,18 +39,16 @@ services:
         image: localhost:5000/docker_referenceservice-app
         env_file: env.properties
         environment:
-            - SLEEP=0
             - LIQUIBASE_DROPFIRST=false
         ports:
             - 8445:8445
-        volumes:
-            - ./config:/config
         networks:
             - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
+            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -64,18 +57,16 @@ services:
         image: localhost:5000/docker_candidateservice-app
         env_file: env.properties
         environment:
-            - SLEEP=0
             - LIQUIBASE_DROPFIRST=false
         ports:
             - 8446:8446
-        volumes:
-            - ./config:/config
         networks:
             - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
+            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -85,11 +76,9 @@ services:
         env_file: env.properties
         environment:
             - SPRING_PROFILES_ACTIVE=development
-            - SLEEP=0
         ports:
             - 9000:9000
         volumes:
-            - ./config:/config
             - batch-data:/build
             - /tmp/sftp-inbound:/tmp/sftp-inbound
         networks:
@@ -98,6 +87,7 @@ services:
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
+            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -114,5 +104,7 @@ networks:
 
 secrets:
     bootstrap.yml-1:
+        external: true
+    truststore.jks:
         external: true
 

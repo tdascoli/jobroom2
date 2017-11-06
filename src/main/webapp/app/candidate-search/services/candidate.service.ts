@@ -62,10 +62,13 @@ export class CandidateService {
         return JSON.parse(decodeURIComponent(URISearchFilter));
     }
 
-    getRelevantJobExperience(occupationCode: number, jobExperiences: JobExperience[]): JobExperience {
+    getRelevantJobExperience(occupationCode: string, jobExperiences: JobExperience[]): JobExperience {
+        jobExperiences = jobExperiences
+            .filter(jobExperience => jobExperience.wanted);
+
         if (occupationCode) {
             return jobExperiences
-                .find((jobExperience) => jobExperience.occupationCode === occupationCode);
+                .find((jobExperience) => '' + jobExperience.occupationCode === occupationCode);
         }
 
         if (!jobExperiences.length) {
