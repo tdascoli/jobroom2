@@ -87,7 +87,14 @@
                 </h4>
                 <div class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.workForm.label' | translate }}</strong>
-                    <span>{{ candidateProfile.workForm.length ? candidateProfile.workForm.join(', ') : ('candidate-detail.additional-information.no-information' | translate) }}</span>
+                    <span *ngIf="candidateProfile.workForm.length;else empty_workform">
+                        <ng-container *ngFor="let workForm of candidateProfile.workForm | keys; last as isLast">
+                            {{('candidate-search.workForm.' + workForm.value | translate) + (isLast ? '' : ' ,')}}
+                        </ng-container>
+                    </span>
+                    <ng-template #empty_workform>
+                        <span>{{'candidate-detail.additional-information.no-information' | translate}}</span>
+                    </ng-template>
                 </div>
                 <div *ngIf="candidateProfile.gender" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.gender.label' | translate }}</strong>
