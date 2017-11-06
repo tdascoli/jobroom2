@@ -10,6 +10,7 @@ import {
     ISCED_1997
 } from '../../../shared/model/shared-types';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -28,9 +29,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         { key: 'UK', value: 'UK' },
         { key: 'A', value: 'A' }
     ];
+    languageSkills$: Observable<Array<string>>;
 
     jobPublicationForm: FormGroup;
-
     publicationStartDateByArrangement = true;
     minDate = JobPublicationToolComponent.buildMinDate();
 
@@ -46,7 +47,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     constructor(private occupationService: OccupationService,
-                private fb: FormBuilder) {
+                private fb: FormBuilder,
+                private languageSkillService: LanguageSkillService) {
+        this.languageSkills$ = languageSkillService.getLanguages();
+
         this.jobPublicationForm = fb.group({
             job: fb.group({
                 title: ['', Validators.required],
@@ -68,7 +72,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 startsImmediately: [],
                 permanent: [],
                 drivingLicenseLevel: [],
-                languageSkills: [],
                 location: fb.group({
                     countryCode: [this.countries[0].key, Validators.required],
                     zipCode: ['', Validators.required],
@@ -112,6 +115,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.validateCheckboxRelatedField('application.phoneEnabled',
             'application.phoneNumber');
         this.configurePublicationStartDateInputs();
+    }
+
+    get job(): FormGroup {
+        return this.jobPublicationForm.get('job') as FormGroup;
     }
 
     private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string, additionalValidators: ValidatorFn[] = []) {

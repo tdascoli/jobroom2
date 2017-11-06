@@ -62,7 +62,8 @@
                     <div class="form-group">
                         <label for="description">{{ 'home.tools.job-publication.description.label' | translate }}</label>
                         <div>
-                        <textarea #jobDescription class="form-control" id="description" rows="5" [placeholder]="'home.tools.job-publication.description.placeholder' | translate"
+                        <textarea #jobDescription class="form-control" id="description" rows="5"
+                                  [placeholder]="'home.tools.job-publication.description.placeholder' | translate"
                                   aria-describedby="maxChar" formControlName="description"
                                   (keypress)="blockExtraCharacters($event, 9000)"></textarea>
                             <small id="maxChar" class="form-text text-muted"
@@ -141,7 +142,8 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="anstellungsdauer-date" class="sr-only">{{ 'home.tools.job-publication.publicationEndDate.label' | translate }}</label>
+                                <label for="anstellungsdauer-date" class="sr-only">{{ 'home.tools.job-publication.publicationEndDate.label' | translate
+                                    }}</label>
                                 <div>
                                     <input formControlName="publicationEndDate" type="date" class="form-control" id="anstellungsdauer-date"/>
                                 </div>
@@ -161,19 +163,7 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="lang" class="col-form-label">
-                            {{ 'home.tools.job-publication.language-skills' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                        </label>
-                        <div>
-                            <select class="form-control custom-select" id="lang">
-                                <option selected>keine Auswahl</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
-                        </div>
-                    </div>
+                    <jr2-language-skills [group]="job" [controlName]="'languageSkills'" [languageOptions]="languageSkills$ | async"></jr2-language-skills>
                 </fieldset>
 
                 <fieldset formGroupName="location" class="job-publication--horizontal">
@@ -183,8 +173,9 @@
                         <label for="country" class="col-form-label">{{ 'home.tools.job-publication.locality.country' | translate }}</label>
                         <div>
                             <select formControlName="countryCode" class="form-control custom-select" id="country">
-                                <option *ngFor="let county of countries"
-                                        [value]="county.key">{{ county.value }}</option>
+                                <option *ngFor="let country of countries"
+                                        [value]="country.key">{{ country.value }}
+                                </option>
                             </select>
                         </div>
                     </div>
@@ -251,8 +242,9 @@
                     <label for="unt-country" class="col-form-label">{{ 'home.tools.job-publication.company.country' | translate }}</label>
                     <div>
                         <select formControlName="countryCode" class="form-control custom-select" id="unt-country">
-                            <option *ngFor="let county of countries"
-                                    [value]="county.key">{{ county.value }}</option>
+                            <option *ngFor="let country of countries"
+                                    [value]="country.key">{{ country.value }}
+                            </option>
                         </select>
                     </div>
                 </div>
@@ -349,7 +341,8 @@
                 <div class="form-group">
                     <label for="app-text">{{ 'home.tools.job-publication.application.additional-info.label' | translate }}</label>
                     <div>
-                        <textarea #additionalInfo class="form-control" id="app-text" rows="5" [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
+                        <textarea #additionalInfo class="form-control" id="app-text" rows="5"
+                                  [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
                                   aria-describedby="maxChar2" formControlName="additionalInfo"
                                   (keypress)="blockExtraCharacters($event, 240)"></textarea>
                         <small id="maxChar2" class="form-text text-muted"
@@ -388,12 +381,12 @@
                     </label>
                 </div>
             </fieldset>
-
             <div class="job-publication--horizontal__actions">
                 <div class="form__actions">
                     <button type="submit"
                             [disabled]="!disclaimer.checked || jobPublicationForm.invalid"
-                            class="btn btn-primary btn-lg">{{ 'home.tools.job-publication.submit' | translate }}</button>
+                            class="btn btn-primary btn-lg">{{ 'home.tools.job-publication.submit' | translate }}
+                    </button>
                     <button type="reset" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' | translate }}</button>
                 </div>
             </div>

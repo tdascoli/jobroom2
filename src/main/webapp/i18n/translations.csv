@@ -500,6 +500,7 @@ home,home.tools.job-publication.experience,Berufserfahrung,Berufserfahrung,Beruf
 home,home.tools.job-publication.job-description,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung
 home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
 home,home.tools.job-publication.language-skills,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse
+home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Language skill is required,Language skill is required
 home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
 home,home.tools.job-publication.locality.country,Land,Land,Land,Land
 home,home.tools.job-publication.locality.title,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort

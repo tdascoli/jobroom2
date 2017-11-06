@@ -1,0 +1,68 @@
+<div class="form-group" [formGroup]="group">
+
+    <label class="col-form-label">
+        {{ 'home.tools.job-publication.language-skills' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+    </label>
+
+    <ng-container formArrayName="languageSkills" *ngFor="let languageSkill of languageSkills.controls; let i = index; let first = first">
+
+        <div class="form-row" [formGroupName]="i">
+            <div class="col">
+                <div class="form-group">
+                    <label class="sr-only" [for]="'language-' + i" translate="global.reference.languages"></label>
+                    <select [id]="'language-' + i" class="form-control custom-select" formControlName="code" (change)="handleLanguageChange(i)">
+                        <option [ngValue]="null">{{'global.reference.language.no-selection'| translate}}</option>
+                        <option *ngFor="let languageOption of getLanguageOptions(languageSkill.value.code)" [ngValue]="languageOption">
+                            {{'global.reference.language.'+languageOption | translate}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="!first" class="col-auto">
+                <div class="form-group">
+                    <button class="btn btn-primary btn" [title]="'global.button.remove.title'| translate" (click)="removeByIndex(i)">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="languageSkill.value?.code" class="form-row" [formGroupName]="i">
+            <div class="col">
+                <div class="form-group">
+                    <label class="sr-only" [for]="'spoken-' + i" translate="global.reference.language.spoken"></label>
+                    <select [id]="'spoken-'+i" class="form-control custom-select" formControlName="spoken">
+                        <option [ngValue]="null">{{'global.reference.language.spoken'| translate}}</option>
+                        <option *ngFor="let languageLevel of languageLevels | keys: ['NONE']" [ngValue]="languageLevel.key">
+                            {{'global.reference.language.level.'+languageLevel.value | translate}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="sr-only" [for]="'written-' + i" translate="global.reference.language.written"></label>
+                    <select [id]="'written-'+i" class="form-control custom-select" formControlName="written">
+                        <option [ngValue]="null">{{'global.reference.language.written'| translate}}</option>
+                        <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
+                            {{'global.reference.language.level.'+languageLevel.value | translate}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="languageSkills.at(i).invalid">
+            <small *ngIf="languageSkills.at(i).errors && languageSkills.at(i).get('spoken').dirty" class="form-text text-danger"
+                   jhiTranslate="home.tools.job-publication.language-skills.spoken.error">
+                Invalid spoken level
+            </small>
+        </div>
+    </ng-container>
+
+    <div class="button-bar" *ngIf="isAddEnabled()">
+        <button class="btn btn-primary btn" (click)="addNewLanguageSkill()"><i class="fa fa-plus" aria-hidden="true"></i>
+            {{'global.button.add.title'| translate}}
+        </button>
+    </div>
+</div>

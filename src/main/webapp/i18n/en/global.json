@@ -1,7 +1,84 @@
 {
+    "entity": {
+        "action": {
+            "addblob": "Add blob",
+            "addimage": "Add image",
+            "back": "Back",
+            "cancel": "Cancel",
+            "delete": "Delete",
+            "edit": "Edit",
+            "open": "Open",
+            "save": "Save",
+            "view": "View"
+        },
+        "delete": {
+            "title": "Confirm delete operation"
+        },
+        "detail": {
+            "field": "Field",
+            "value": "Value"
+        },
+        "validation": {
+            "datetimelocal": "This field should be a date and time.",
+            "max": "This field cannot be more than {{ max }}.",
+            "maxbytes": "This field cannot be more than {{ max }} bytes.",
+            "maxlength": "This field cannot be longer than {{ max }} characters.",
+            "min": "This field should be at least {{ min }}.",
+            "minbytes": "This field should be at least {{ min }} bytes.",
+            "minlength": "This field is required to be at least {{ min }} characters.",
+            "number": "This field should be a number.",
+            "pattern": "This field should follow pattern for {{ pattern }}.",
+            "required": "This field is required."
+        }
+    },
+    "error": {
+        "NotNull": "Field {{ fieldName }} cannot be empty!",
+        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
+        "emailexists": "Email is already in use!",
+        "idexists": "A new {{ entityName }} cannot already have an ID",
+        "internalServerError": "Internal server error",
+        "server": {
+            "not": {
+                "reachable": "Server not reachable"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Not found"
+            }
+        },
+        "userexists": "Login name already used!"
+    },
+    "footer": {
+        "link": {
+            "abbreviation": {
+                "text": "Abk\u00fcrzungen"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+            }
+        }
+    },
     "global": {
+        "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
+        "button": {
+            "add": {
+                "title": "Add"
+            },
+            "remove": {
+                "title": "Remove"
+            }
+        },
+        "contactPerson": {
+            "salutation": {
+                "MR": "Herr",
+                "MS": "Frau"
+            }
+        },
         "drivingLicenceCategory": {
-            "label": "F\u00fchrerausweiskategorie",
             "A": "A",
             "A1": "A1",
             "B": "B",
@@ -17,22 +94,8 @@
             "DE": "DE",
             "F": "F",
             "G": "G",
-            "M": "M"
-        },
-        "browsehappy": "You are using an <strong>outdated</strong> browser. Please <a href=\"http://browsehappy.com/?locale=en\">upgrade your browser</a> to improve your experience.",
-        "button": {
-            "add": {
-                "title": "Add"
-            },
-            "remove": {
-                "title": "Remove"
-            }
-        },
-        "contactPerson": {
-            "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
-            }
+            "M": "M",
+            "label": "F\u00fchrerausweiskategorie"
         },
         "education": {
             "ISCED1": "Primarstufe - ISCED 1",
@@ -340,69 +403,6 @@
             "test": "Test"
         },
         "title": "Jobroom"
-    },
-    "entity": {
-        "action": {
-            "addblob": "Add blob",
-            "addimage": "Add image",
-            "back": "Back",
-            "cancel": "Cancel",
-            "delete": "Delete",
-            "edit": "Edit",
-            "open": "Open",
-            "save": "Save",
-            "view": "View"
-        },
-        "delete": {
-            "title": "Confirm delete operation"
-        },
-        "detail": {
-            "field": "Field",
-            "value": "Value"
-        },
-        "validation": {
-            "datetimelocal": "This field should be a date and time.",
-            "max": "This field cannot be more than {{ max }}.",
-            "maxbytes": "This field cannot be more than {{ max }} bytes.",
-            "maxlength": "This field cannot be longer than {{ max }} characters.",
-            "min": "This field should be at least {{ min }}.",
-            "minbytes": "This field should be at least {{ min }} bytes.",
-            "minlength": "This field is required to be at least {{ min }} characters.",
-            "number": "This field should be a number.",
-            "pattern": "This field should follow pattern for {{ pattern }}.",
-            "required": "This field is required."
-        }
-    },
-    "error": {
-        "NotNull": "Field {{ fieldName }} cannot be empty!",
-        "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
-        "emailexists": "Email is already in use!",
-        "idexists": "A new {{ entityName }} cannot already have an ID",
-        "internalServerError": "Internal server error",
-        "server": {
-            "not": {
-                "reachable": "Server not reachable"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Not found"
-            }
-        },
-        "userexists": "Login name already used!"
-    },
-    "footer": {
-        "link": {
-            "abbreviation": {
-                "text": "Abk\u00fcrzungen"
-            },
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
-            }
-        }
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"

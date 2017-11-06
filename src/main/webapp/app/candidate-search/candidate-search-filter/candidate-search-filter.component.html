@@ -42,8 +42,8 @@
 
     <div class="form-group">
         <label class="small" translate="candidate-search.languageSkills.label"></label>
-        <jr2-language-selector formControlName="languageSkills" [languageOptions]="getLanguageOptions() | async">
-        </jr2-language-selector>
+        <jr2-language-filter formControlName="languageSkills" [languageOptions]="getLanguageOptions() | async">
+        </jr2-language-filter>
     </div>
 
     <div class="form-group">

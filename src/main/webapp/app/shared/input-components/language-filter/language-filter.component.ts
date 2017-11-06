@@ -6,16 +6,16 @@ const MAX_LANGUAGE_OPTIONS_NUM = 5;
 
 // fixme: Review change detection strategy!!
 @Component({
-    selector: 'jr2-language-selector',
-    templateUrl: './language-selector.component.html',
+    selector: 'jr2-language-filter',
+    templateUrl: './language-filter.component.html',
     styles: ['.language-selector-item {margin: 0.8rem 0 0 0}'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
-        useExisting: forwardRef(() => LanguageSelectorComponent),
+        useExisting: forwardRef(() => LanguageFilterComponent),
         multi: true
     }]
 })
-export class LanguageSelectorComponent implements ControlValueAccessor {
+export class LanguageFilterComponent implements ControlValueAccessor {
     @Input() languageOptions: Array<string>;
 
     languageLevels = CEFR_Level;
