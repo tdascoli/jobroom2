@@ -1,5 +1,39 @@
 {
     "global": {
+        "drivingLicenceCategory": {
+            "label": "F\u00fchrerausweiskategorie",
+            "A": "A",
+            "A1": "A1",
+            "B": "B",
+            "B1": "B1",
+            "BE": "BE",
+            "C": "C",
+            "C1": "C1",
+            "C1E": "C1E",
+            "CE": "CE",
+            "D": "D",
+            "D1": "D1",
+            "D1E": "D1E",
+            "DE": "DE",
+            "F": "F",
+            "G": "G",
+            "M": "M"
+        },
+        "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
+        "button": {
+            "add": {
+                "title": "Add"
+            },
+            "remove": {
+                "title": "Remove"
+            }
+        },
+        "contactPerson": {
+            "salutation": {
+                "MR": "Herr",
+                "MS": "Frau"
+            }
+        },
         "education": {
             "ISCED1": "Primarstufe - ISCED 1",
             "ISCED2": "Sekundarstufe I - ISCED 2",
@@ -13,15 +47,6 @@
             "MORE_THAN_1_YEAR": "Mehr als 1 Jahr",
             "MORE_THAN_3_YEARS": "Mehr als 3 Jahre",
             "NONE": "Keine Erfahrung"
-        },
-        "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
-        "button": {
-            "add": {
-                "title": "Add"
-            },
-            "remove": {
-                "title": "Remove"
-            }
         },
         "field": {
             "id": "ID"
@@ -314,31 +339,7 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "drivingLicenceCategory": {
-            "A": "A",
-            "A1": "A1",
-            "B": "B",
-            "B1": "B1",
-            "BE": "BE",
-            "C": "C",
-            "C1": "C1",
-            "C1E": "C1E",
-            "CE": "CE",
-            "D": "D",
-            "D1": "D1",
-            "D1E": "D1E",
-            "DE": "DE",
-            "F": "F",
-            "G": "G",
-            "M": "M"
-        },
-        "contactPerson": {
-            "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
-            }
-        }
+        "title": "Jobroom"
     },
     "entity": {
         "action": {

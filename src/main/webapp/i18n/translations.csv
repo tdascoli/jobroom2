@@ -61,7 +61,6 @@ candidate-search,candidate-search.candidate-search-list.title.one.with-locality,
 candidate-search,candidate-search.candidate-search-list.title.one.without-locality,1 {{query}} Kandidat,1 {{query}} Candidate,1 {{query}} Candidate,1 {{query}} Candidate
 candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} {{query}} Kandidaten in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}}
 candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Kandidaten,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates
-candidate-search,candidate-search.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
 candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
 candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
@@ -180,6 +179,7 @@ global,global.drivingLicenceCategory.DE,DE,DE,DE,DE
 global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
+global,global.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
 global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
 global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2
 global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3

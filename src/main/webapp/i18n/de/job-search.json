@@ -13,6 +13,12 @@
                     "TEMPORARY": "befristet"
                 }
             },
+            "online-since": {
+                "days": {
+                    "label": "Tage(n)"
+                },
+                "label": "Online seit"
+            },
             "sort": {
                 "label": "Sortierung",
                 "option": {
@@ -24,12 +30,6 @@
             "title": "Suchergebnisse filtern",
             "working-time": {
                 "label": "Pensum"
-            },
-            "online-since": {
-                "label": "Online seit",
-                "days": {
-                    "label": "Tage(n)"
-                }
             }
         },
         "job-search-list-item": {
