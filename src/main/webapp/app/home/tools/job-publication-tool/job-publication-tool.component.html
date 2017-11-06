@@ -83,9 +83,7 @@
                             <label class="col-form-label">{{ 'home.tools.job-publication.publicationStartDate.title' | translate }}</label>
                             <div class="form-group__inline">
                                 <div class="radio col-form-label">
-                                    <input formControlName="immediate" type="radio"
-                                           id="fromNow"
-                                           value="false"
+                                    <input formControlName="immediate" type="radio" id="fromNow" value="true"
                                            (click)="startDatePicker.close()"/>
                                     <label for="fromNow">
                                         {{ 'home.tools.job-publication.publicationStartDate.immediately' | translate }}
@@ -94,7 +92,7 @@
 
                                 <div class="radio col-form-label">
                                     <input formControlName="immediate" type="radio"
-                                           id="byArrangement" value="true"/>
+                                           id="byArrangement" value="false"/>
                                     <label for="byArrangement">
                                         {{ 'home.tools.job-publication.publicationStartDate.by-arrangement' | translate }}
                                     </label>
@@ -109,10 +107,11 @@
                                                class="form-control date__input"
                                                id="stellenantritt-date"
                                                ngbDatepicker
+                                               readonly
                                                formControlName="date"
-                                               [minDate]="minDate"/>
+                                               [minDate]="publicationStartDateMin"/>
                                         <button class="input-group-addon"
-                                                (click)="startDatePicker.toggle()"
+                                                (click)="startDatePicker.toggle(); endDatePicker.close()"
                                                 type="button"
                                                 [disabled]="publicationStartDateByArrangement">
                                             <i class="fa fa-calendar-o"
@@ -124,32 +123,45 @@
                         </div>
                     </ng-container>
 
-                    <div class="form-group">
-                        <label class="col-form-label">{{ 'home.tools.job-publication.publicationEndDate.title' | translate }}</label>
-                        <div class="form-group__inline">
-                            <div class="radio col-form-label">
-                                <input type="radio" name="optionsRadios2" id="optionsRadios6" value="option6"/>
-                                <label for="optionsRadios6">
-                                    {{ 'home.tools.job-publication.publicationEndDate.permanent' | translate }}
-                                </label>
-                            </div>
+                    <ng-container formGroupName="publicationEndDate">
+                        <div class="form-group">
+                            <label class="col-form-label">{{ 'home.tools.job-publication.publicationEndDate.title' | translate }}</label>
+                            <div class="form-group__inline">
+                                <div class="radio col-form-label">
+                                    <input type="radio" formControlName="permanent" id="permanent" value="true"/>
+                                    <label for="permanent">
+                                        {{ 'home.tools.job-publication.publicationEndDate.permanent' | translate }}
+                                    </label>
+                                </div>
 
-                            <div class="radio col-form-label">
-                                <input type="radio" name="optionsRadios2" id="optionsRadios7" value="option7"/>
-                                <label for="optionsRadios7">
-                                    {{ 'home.tools.job-publication.publicationEndDate.temporary' | translate }}
-                                </label>
-                            </div>
+                                <div class="radio col-form-label">
+                                    <input type="radio" formControlName="permanent" id="temporary" value="false" (click)="endDatePicker.close()"/>
+                                    <label for="temporary">
+                                        {{ 'home.tools.job-publication.publicationEndDate.temporary' | translate }}
+                                    </label>
+                                </div>
 
-                            <div class="form-group">
-                                <label for="anstellungsdauer-date" class="sr-only">{{ 'home.tools.job-publication.publicationEndDate.label' | translate
-                                    }}</label>
-                                <div>
-                                    <input formControlName="publicationEndDate" type="date" class="form-control" id="anstellungsdauer-date"/>
+                                <div class="form-group">
+                                    <div class="input-group">
+                                        <label for="anstellungsdauer-date" class="sr-only">{{ 'home.tools.job-publication.publicationEndDate.label' | translate }}</label>
+                                        <input #endDatePicker="ngbDatepicker"
+                                               formControlName="date"
+                                               ngbDatepicker
+                                               readonly
+                                               class="form-control date__input"
+                                               id="anstellungsdauer-date"
+                                               [minDate]="publicationEndDateMin"/>
+                                        <button class="input-group-addon"
+                                                (click)="endDatePicker.toggle(); startDatePicker.close()"
+                                                type="button"
+                                                [disabled]="publicationEndDateIsPermanent">
+                                            <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ng-container>
 
                     <div class="form-group">
                         <label for="driving-lic" class="col-form-label">{{ 'home.tools.job-publication.driving-licence' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span></label>
