@@ -13,6 +13,7 @@ import { HomeEffects, homeReducers } from './state-management';
 import { EffectsModule } from '@ngrx/effects';
 import { CandidateSearchModule } from '../candidate-search/candidate-search.module';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { ZipCodeComponent } from './tools/job-publication-tool/zip-code/zip-code.component';
 import { LanguageSkillsComponent } from './tools/job-publication-tool/language-skills/language-skills.component';
 
 @NgModule({
@@ -33,7 +34,8 @@ import { LanguageSkillsComponent } from './tools/job-publication-tool/language-s
         JobPublicationToolComponent,
         ToolbarComponent,
         ToolbarItemComponent,
-        LanguageSkillsComponent
+        LanguageSkillsComponent,
+        ZipCodeComponent
     ],
     entryComponents: [],
     providers: [],

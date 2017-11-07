@@ -16,6 +16,12 @@
             },
             "candidateSearchTab": "Kandidaten finden",
             "job-publication": {
+                "no-selection": "keine Auswahl",
+                "occupation": {
+                    "label": "Beruf",
+                    "placeholder": "Beruf"
+                },
+                "optional": "Optional",
                 "application": {
                     "additional-info": {
                         "characters-counter-text": "{{count}} characters available",
@@ -36,7 +42,9 @@
                     "postbox-zipcode": "Postfach PLZ / Ort",
                     "street": "Strasse",
                     "title": "Unternehmen",
-                    "zipcode": "PLZ / Ort"
+                    "zipcode": "PLZ / Ort",
+                    "postbox-zip": "Postfach PLZ",
+                    "postbox-city": "Ort"
                 },
                 "contact": {
                     "email": "E-Mail",
@@ -63,14 +71,10 @@
                     "additional-text": "Zusatztext",
                     "country": "Land",
                     "title": "Arbeitsort",
-                    "zipcode": "PLZ / Ort"
+                    "zipcode": "PLZ / Ort",
+                    "zip": "PLZ",
+                    "city": "Ort"
                 },
-                "no-selection": "keine Auswahl",
-                "occupation": {
-                    "label": "Beruf",
-                    "placeholder": "Beruf"
-                },
-                "optional": "Optional",
                 "publication": {
                     "title": "Publikationsmedien"
                 },

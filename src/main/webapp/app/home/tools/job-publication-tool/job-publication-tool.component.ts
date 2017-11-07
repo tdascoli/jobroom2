@@ -1,7 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/reference-service/occupation.service';
-import { FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Subject } from 'rxjs/Subject';
 import {
@@ -11,6 +11,7 @@ import {
 } from '../../../shared/model/shared-types';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
+import { Translations } from './zip-code/zip-code.component';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -86,16 +87,13 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 drivingLicenseLevel: [],
                 location: fb.group({
                     countryCode: [this.countries[0].key, Validators.required],
-                    zipCode: ['', Validators.required],
                     text: []
                 })
             }),
             company: fb.group({
                 name: ['', Validators.required],
                 street: ['', Validators.required],
-                zipCode: ['', Validators.required],
                 postboxNumber: [],
-                postboxZipCode: [],
                 countryCode: [this.countries[0].key, Validators.required]
             }),
             contact: fb.group({
@@ -109,9 +107,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 mailEnabled: [],
                 emailEnabled: [],
                 phoneEnabled: [],
-                email: [{ value: '', disabled: true }],
-                url: [{ value: '', disabled: true }],
-                phoneNumber: [{ value: '', disabled: true }],
+                email: [{ value: '', disabled: true }, [Validators.required, Validators.email]],
+                url: [{ value: '', disabled: true }, [Validators.required]],
+                phoneNumber: [{ value: '', disabled: true }, [Validators.required]],
                 additionalInfo: ['', [Validators.required, Validators.maxLength(240)]],
             }),
             publication: fb.group({
@@ -120,12 +118,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             })
         });
 
-        this.validateCheckboxRelatedField('application.mailEnabled',
-            'application.url');
-        this.validateCheckboxRelatedField('application.emailEnabled',
-            'application.email', [Validators.email]);
-        this.validateCheckboxRelatedField('application.phoneEnabled',
-            'application.phoneNumber');
+        this.validateCheckboxRelatedField('application.mailEnabled', 'application.url');
+        this.validateCheckboxRelatedField('application.emailEnabled', 'application.email');
+        this.validateCheckboxRelatedField('application.phoneEnabled', 'application.phoneNumber');
 
         this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
             (disabled) => this.publicationStartDateByArrangement = disabled);
@@ -138,18 +133,16 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         return this.jobPublicationForm.get('job') as FormGroup;
     }
 
-    private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string, additionalValidators: ValidatorFn[] = []) {
+    private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string) {
         this.jobPublicationForm.get(checkboxPath).valueChanges
             .takeUntil(this.unsubscribe$)
             .subscribe((enabled: boolean) => {
                 const relatedControl = this.jobPublicationForm.get(relatedFieldPath);
                 if (enabled) {
                     relatedControl.enable();
-                    relatedControl.setValidators([Validators.required, ...additionalValidators]);
                 } else {
                     relatedControl.disable();
                     relatedControl.setValue('');
-                    relatedControl.clearValidators();
                 }
                 relatedControl.updateValueAndValidity();
             });
@@ -210,6 +203,14 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         if (event.target.value.length >= maxLength) {
             event.preventDefault();
         }
+    }
+
+    getPoBoxZipCodeTranslations(): Translations {
+        return {
+            zipCode: 'home.tools.job-publication.company.postbox-zipcode',
+            zip: 'home.tools.job-publication.company.postbox-zip',
+            city: 'home.tools.job-publication.company.postbox-city'
+        };
     }
 
     onSubmit(): void {

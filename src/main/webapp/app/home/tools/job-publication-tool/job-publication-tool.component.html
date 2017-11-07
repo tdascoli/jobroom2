@@ -192,12 +192,10 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="place" class="col-form-label">{{ 'home.tools.job-publication.locality.zipcode' | translate }}</label>
-                        <div>
-                            <input formControlName="zipCode" type="text" class="form-control" id="place"/>
-                        </div>
-                    </div>
+                    <jr2-zip-code [formGroup]="jobPublicationForm.get('job.location')"
+                                  controlName="zipCode"
+                                  [countryControl]="jobPublicationForm.get('job.location.countryCode')">
+                    </jr2-zip-code>
 
                     <div class="form-group">
                         <label for="add-text" class="col-form-label">
@@ -220,18 +218,19 @@
                         <input formControlName="name" type="text" class="form-control" id="unt-name"/>
                     </div>
                 </div>
+
                 <div class="form-group">
                     <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' | translate }}</label>
                     <div>
                         <input formControlName="street" type="text" class="form-control" id="unt-street"/>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="unt-zip" class="col-form-label">{{ 'home.tools.job-publication.company.zipcode' | translate }}</label>
-                    <div>
-                        <input formControlName="zipCode" type="text" class="form-control" id="unt-zip"/>
-                    </div>
-                </div>
+
+                <jr2-zip-code [formGroup]="jobPublicationForm.get('company')"
+                              controlName="zipCode"
+                              [countryControl]="jobPublicationForm.get('company.countryCode')">
+                </jr2-zip-code>
+
                 <div class="form-group">
                     <label for="unt-pobox" class="col-form-label">
                         {{ 'home.tools.job-publication.company.postbox-number' | translate }}
@@ -241,15 +240,14 @@
                         <input formControlName="postboxNumber" type="text" class="form-control" id="unt-pobox"/>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="unt-pobox-zip" class="col-form-label">
-                        {{ 'home.tools.job-publication.company.postbox-zipcode' | translate }}
-                        <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                    </label>
-                    <div>
-                        <input formControlName="postboxZipCode" type="text" class="form-control" id="unt-pobox-zip"/>
-                    </div>
-                </div>
+
+                <jr2-zip-code [formGroup]="jobPublicationForm.get('company')"
+                              controlName="postboxZipCode"
+                              [countryControl]="jobPublicationForm.get('company.countryCode')"
+                              [translations]="getPoBoxZipCodeTranslations()"
+                              [optional]="true">
+                </jr2-zip-code>
+
                 <div class="form-group">
                     <label for="unt-country" class="col-form-label">{{ 'home.tools.job-publication.company.country' | translate }}</label>
                     <div>
