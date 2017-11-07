@@ -72,9 +72,9 @@ describe('OccupationService', () => {
                 expect(model.length).toEqual(4);
                 expect(model).toEqual([
                     new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '00', 'Informatiker', 0),
-                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '01', 'Bioinformatiker', 0),
-                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '02', 'Wirtschaftinformatiker', 0),
-                    new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, '10', 'Berufe der Informatik', 1)
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '01', 'Bioinformatiker', 1),
+                    new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, '02', 'Wirtschaftinformatiker', 2),
+                    new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, '10', 'Berufe der Informatik', 3)
                 ]);
             })));
     });

@@ -28,14 +28,16 @@ interface OccupationCache {
 export class OccupationService {
     private occupationCache: OccupationCache = {};
 
-    private static mapOccupationSuggestions(occupationSuggestions: OccupationSuggestion[]): TypeaheadMultiselectModel[] {
+    private static mapOccupationSuggestions(occupationSuggestions: OccupationSuggestion[], startIndex = 0): TypeaheadMultiselectModel[] {
         return occupationSuggestions
-            .map((o: OccupationSuggestion) => new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, o.code, o.name, 0));
+            .map((o: OccupationSuggestion, index: number) =>
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, o.code, o.name, startIndex + index));
     }
 
-    private static mapClassificationSuggestions(classificationSuggestions: ClassificationSuggestion[]): TypeaheadMultiselectModel[] {
+    private static mapClassificationSuggestions(classificationSuggestions: ClassificationSuggestion[], startIndex = 0): TypeaheadMultiselectModel[] {
         return classificationSuggestions
-            .map((c: ClassificationSuggestion) => new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, c.code, c.name, 1));
+            .map((c: ClassificationSuggestion, index: number) =>
+                new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, c.code, c.name, startIndex + index));
     }
 
     constructor(private http: Http, private translateService: TranslateService) {
@@ -45,7 +47,7 @@ export class OccupationService {
         return this.fetchSuggestionsInternal(query)
             .map((occupationAutocomplete) => {
                 const occupations = OccupationService.mapOccupationSuggestions(occupationAutocomplete.occupations);
-                const classifications = OccupationService.mapClassificationSuggestions(occupationAutocomplete.classifications);
+                const classifications = OccupationService.mapClassificationSuggestions(occupationAutocomplete.classifications, occupations.length);
 
                 return [...occupations, ...classifications];
             })
