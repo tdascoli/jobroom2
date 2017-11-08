@@ -13,15 +13,12 @@ Print configuration
 =================================================================================== */
 
 @import 'print.scss';
+@import 'jbr2_variables.scss';
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
 
 button.close {
     cursor: pointer;
-}
-
-html, body {
-    margin: 0px;
 }
 
 div.main {
@@ -75,7 +72,7 @@ footer,
 }
 
 /*=================================================================================
-Toolbar (alv-styleguide v0.0.11)
+Toolbar (alv-styleguide)
 =================================================================================== */
 
 .sticked--top .toolbar-form,
@@ -84,9 +81,13 @@ Toolbar (alv-styleguide v0.0.11)
     padding-top: 2.5rem;
 }
 
-
 @media screen and (min-width: 480px){
-    .header:not(.has-toolbar) ~ jhi-home .toolbar {
-        margin-top: -4rem;
+    body:not(.has-jumbotron) .jumbotron,
+    body:not(.has-toolbar) .toolbar.sticked--top {
+        margin-top: -($header-margin);
+    }
+
+    body:not(.has-toolbar) .toolbar.sticked--top {
+        top: ($header-alv-height + $header-navbar-height);
     }
 }
