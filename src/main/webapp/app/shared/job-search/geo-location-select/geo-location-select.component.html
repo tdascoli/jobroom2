@@ -1,7 +1,7 @@
 <a href="#" *ngIf="isVisible()" (click)="getLocation($event)" [ngbTooltip]="tooltip"
    container="body"
    class="geolocation-selector fa-stack form-control--icon">
-    <i *ngIf="loading" class="fa fa-refresh fa-spin fa-stack-2x"></i>
-    <i *ngIf="!loading" class="fa fa-circle fa-stack-2x"></i>
-    <i *ngIf="!loading" class="fa fa-map-marker fa-stack-1x fa-inverse"></i>
+    <span *ngIf="loading" class="fa fa-refresh fa-spin fa-stack-2x"></span>
+    <span *ngIf="!loading" class="fa fa-circle fa-stack-2x"></span>
+    <span *ngIf="!loading" class="fa fa-map-marker fa-stack-1x fa-inverse"></span>
 </a>
