@@ -8,7 +8,8 @@
                        [ngbTypeahead]="fetchOccupationSuggestions"
                        [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
                        [inputFormatter]="occupationFormatter"
-                       [resultFormatter]="occupationFormatter">
+                       [resultFormatter]="occupationFormatter"
+                       (blur)="clearInvalidValue($event)">
             </div>
             <div class="form-group form-group--wide">
                 <ss-multiselect-dropdown [options]="cantonOptions$ | async"

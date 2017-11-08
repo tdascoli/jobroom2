@@ -1,4 +1,4 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { OccupationService } from '../../../shared/reference-service/occupation.service';
@@ -16,6 +16,7 @@ import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-mul
 import { CantonService } from '../../../candidate-search/services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Graduation } from '../../../shared/model/shared-types';
+import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -25,6 +26,7 @@ import { Graduation } from '../../../shared/model/shared-types';
 export class CandidateSearchToolComponent implements OnInit, OnDestroy {
 
     @Input() candidateSearchToolModel: CandidateSearchToolState;
+    @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
     private subscription: Subscription;
 
@@ -65,6 +67,23 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
     ngOnDestroy(): void {
         if (this.subscription) {
             this.subscription.unsubscribe();
+        }
+    }
+
+    clearInvalidValue(event: any) {
+        const occupationControl = this.candidateSearchForm.get('occupation');
+        const value = occupationControl.value;
+        if (value && value.code === undefined) {
+            occupationControl.setValue(undefined, {
+                emitEvent: true,
+            });
+
+            // This hack removes the invalid value from the input field.
+            // The idea is from this PR: https://github.com/ng-bootstrap/ng-bootstrap/pull/1468
+            //
+            // todo: This is duplicated in the CandidateSearchToolbarComponent, we should eventual remove it.
+            // todo: We have to review this after updating to the next ng-bootstrap versions.
+            this.ngbTypeaheadDirective._userInput = '';
         }
     }
 
