@@ -13,7 +13,6 @@ import {
     LoginService,
     Principal,
     StateStorageService,
-    StickyToolbarItemDirective,
     UserService
 } from './';
 import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
@@ -31,7 +30,6 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
     declarations: [
         JhiLoginModalComponent,
         HasAnyAuthorityDirective,
-        StickyToolbarItemDirective,
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
@@ -62,7 +60,6 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
-        StickyToolbarItemDirective,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
         DetailsPagePaginationComponent
