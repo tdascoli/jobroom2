@@ -9,15 +9,19 @@ import {
 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../shared/reference-service/occupation.service';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
-import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Graduation } from '../../shared/model/shared-types';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+import {
+    FormatterFn,
+    OccupationPresentationService,
+    SuggestionLoaderFn,
+} from '../../shared/reference-service/occupation-presentation.service';
+import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -49,11 +53,16 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     toolbarForm: FormGroup;
     residence: FormControl;
 
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
+    occupationFormatter: FormatterFn<OccupationSuggestion>;
+
     private subscription: Subscription;
 
-    constructor(private occupationService: OccupationService,
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private cantonService: CantonService,
                 private fb: FormBuilder) {
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnInit() {
@@ -99,12 +108,6 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             this.ngbTypeaheadDirective._userInput = '';
         }
     }
-
-    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
-        .filter((prefix: string) => prefix.length > 2)
-        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
-
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
 
     search(formValue: any): void {
         const searchFilter = Object.assign({}, this.searchFilter, formValue);

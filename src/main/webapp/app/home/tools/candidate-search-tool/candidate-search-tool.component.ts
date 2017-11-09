@@ -1,7 +1,6 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../../shared/reference-service/occupation.service';
 import { Store } from '@ngrx/store';
 import {
     CandidateSearchToolState,
@@ -17,6 +16,11 @@ import { CantonService } from '../../../candidate-search/services/canton.service
 import { Subscription } from 'rxjs/Subscription';
 import { Graduation } from '../../../shared/model/shared-types';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+import {
+    FormatterFn,
+    OccupationPresentationService,
+    SuggestionLoaderFn
+} from '../../../shared/reference-service/occupation-presentation.service';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -41,10 +45,15 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         dynamicTitleMaxItems: 1
     };
 
-    constructor(private occupationService: OccupationService,
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
+    occupationFormatter: FormatterFn<OccupationSuggestion>;
+
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private store: Store<CandidateSearchToolState>,
                 private cantonService: CantonService,
                 private fb: FormBuilder) {
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnInit(): void {
@@ -86,12 +95,6 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
             this.ngbTypeaheadDirective._userInput = '';
         }
     }
-
-    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
-        .filter((prefix: string) => prefix.length > 2)
-        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
-
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
 
     search(formValue: any) {
         this.store.dispatch(new CandidateSearchToolSubmittedAction(formValue));
