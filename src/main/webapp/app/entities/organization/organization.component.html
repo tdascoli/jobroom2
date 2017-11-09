@@ -1,0 +1,106 @@
+<div>
+    <h2>
+        <span jhiTranslate="jobroomApp.organization.home.title">Organizations</span>
+        <button class="btn btn-primary float-right jh-create-entity create-organization"
+                [routerLink]="['/', { outlets: { popup: ['organization-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span class="hidden-sm-down" jhiTranslate="jobroomApp.organization.home.createLabel">
+            Create new Organization
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+        <div class="col-sm-12">
+            <form name="searchForm" class="form-inline">
+                <div class="input-group w-100 mt-3">
+                    <input type="text" class="form-control" [(ngModel)]="currentSearch" id="currentSearch"
+                           name="currentSearch" placeholder="{{ 'jobroomApp.organization.home.search' | translate }}">
+                    <button class="input-group-addon btn btn-info" (click)="search(currentSearch)">
+                        <span class="fa fa-search"></span>
+                    </button>
+                    <button class="input-group-addon btn btn-danger" (click)="clear()" *ngIf="currentSearch">
+                        <span class="fa fa-trash-o"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="organizations">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+                <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+                <th jhiSortBy="externalId"><span jhiTranslate="jobroomApp.organization.externalId">External Id</span>
+                    <span class="fa fa-sort"></span></th>
+                <th jhiSortBy="name"><span jhiTranslate="jobroomApp.organization.name">Name</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="street"><span jhiTranslate="jobroomApp.organization.street">Street</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="zipCode"><span jhiTranslate="jobroomApp.organization.zipCode">Zip Code</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="city"><span jhiTranslate="jobroomApp.organization.city">City</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="email"><span jhiTranslate="jobroomApp.organization.email">Email</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="phone"><span jhiTranslate="jobroomApp.organization.phone">Phone</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="type"><span jhiTranslate="jobroomApp.organization.type">Type</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="active"><span jhiTranslate="jobroomApp.organization.active">Active</span> <span
+                    class="fa fa-sort"></span></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let organization of organizations ;trackBy: trackId">
+                <td><a [routerLink]="['../organization', organization.id ]">{{organization.id}}</a></td>
+                <td>{{organization.externalId}}</td>
+                <td>{{organization.name}}</td>
+                <td>{{organization.street}}</td>
+                <td>{{organization.zipCode}}</td>
+                <td>{{organization.city}}</td>
+                <td>{{organization.email}}</td>
+                <td>{{organization.phone}}</td>
+                <td jhiTranslate="{{'jobroomApp.CompanyType.' + organization.type}}">{{organization.type}}</td>
+                <td>{{organization.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../organization', organization.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'organization/'+ organization.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'organization/'+ organization.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="organizations && organizations.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5"
+                            [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [maxSize]="5" [pageSize]="itemsPerPage" [(page)]="page"
+                            (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,4 @@
-import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
 import { JobroomSharedModule } from '../../shared';
@@ -6,8 +6,8 @@ import { JobroomSharedModule } from '../../shared';
 import {
     ElasticsearchReindexComponent,
     ElasticsearchReindexModalComponent,
-    ElasticsearchReindexService,
-    elasticsearchReindexRoute
+    elasticsearchReindexRoute,
+    ElasticsearchReindexService
 } from './';
 
 const ADMIN_ROUTES = [
@@ -32,4 +32,5 @@ const ADMIN_ROUTES = [
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 
-export class JobroomElasticsearchReindexModule {}
+export class JobroomElasticsearchReindexModule {
+}

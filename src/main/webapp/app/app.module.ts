@@ -36,8 +36,6 @@ import { CandidateSearchModule } from './candidate-search/candidate-search.modul
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
-// jhipster-needle-angular-add-module-import JHipster will add new module here
-
 @NgModule({
     imports: [
         BrowserModule,

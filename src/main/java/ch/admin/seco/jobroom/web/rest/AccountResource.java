@@ -40,10 +40,12 @@ import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 @RequestMapping("/api")
 public class AccountResource {
 
-    private static final String CHECK_ERROR_MESSAGE = "Incorrect password";
     private final Logger log = LoggerFactory.getLogger(AccountResource.class);
+
     private final UserRepository userRepository;
+
     private final UserService userService;
+
     private final MailService mailService;
 
     public AccountResource(UserRepository userRepository, UserService userService, MailService mailService) {
@@ -51,12 +53,6 @@ public class AccountResource {
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
-    }
-
-    private static boolean checkPasswordLength(String password) {
-        return !StringUtils.isEmpty(password) &&
-            password.length() >= ManagedUserVM.PASSWORD_MIN_LENGTH &&
-            password.length() <= ManagedUserVM.PASSWORD_MAX_LENGTH;
     }
 
     /**
@@ -198,5 +194,11 @@ public class AccountResource {
         if (!user.isPresent()) {
             throw new InternalServerErrorException("No user was found for this reset key");
         }
+    }
+
+    private boolean checkPasswordLength(String password) {
+        return !StringUtils.isEmpty(password) &&
+            password.length() >= ManagedUserVM.PASSWORD_MIN_LENGTH &&
+            password.length() <= ManagedUserVM.PASSWORD_MAX_LENGTH;
     }
 }

@@ -116,10 +116,10 @@ public class ExceptionTranslatorIntTest {
     @Test
     public void testUnauthorized() throws Exception {
         mockMvc.perform(get("/test/unauthorized"))
-            .andDo(ha -> System.out.println(ha.getResponse().getContentAsString()))
             .andExpect(status().isUnauthorized())
             .andExpect(content().contentType(MediaTypes.PROBLEM))
             .andExpect(jsonPath("$.message").value("error.http.401"))
+            .andExpect(jsonPath("$.path").value("/test/unauthorized"))
             .andExpect(jsonPath("$.detail").value("test authentication failed!"));
     }
 
