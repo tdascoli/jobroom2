@@ -19,6 +19,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.annotation.Secured;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import ch.admin.seco.jobroom.security.AuthoritiesConstants;
+import ch.admin.seco.jobroom.security.SecurityUtils;
 import ch.admin.seco.jobroom.service.OrganizationService;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
 import ch.admin.seco.jobroom.web.rest.errors.BadRequestAlertException;
@@ -85,12 +88,10 @@ public class OrganizationResource {
     @Timed
     public ResponseEntity<OrganizationDTO> updateOrganization(@Valid @RequestBody OrganizationDTO organizationDTO) throws URISyntaxException {
         log.debug("REST request to update Organization : {}", organizationDTO);
-        if (organizationDTO.getId() == null) {
-            return createOrganization(organizationDTO);
-        }
+
         OrganizationDTO result = organizationService.save(organizationDTO);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, organizationDTO.getId().toString()))
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()))
             .body(result);
     }
 
@@ -154,4 +155,14 @@ public class OrganizationResource {
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
+    @PostMapping("/organizations/housekeeping")
+    @Timed
+    @Secured(AuthoritiesConstants.USER)
+    public ResponseEntity<Void> reindexAll() throws URISyntaxException {
+        log.info("REST request to start housekeeping for Organizations by user : {}", SecurityUtils.getCurrentUserLogin());
+        organizationService.housekeeping();
+        return ResponseEntity.accepted()
+            .headers(HeaderUtil.createAlert("housekeeping.accepted", null))
+            .build();
+    }
 }
