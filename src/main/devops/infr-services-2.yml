@@ -1,0 +1,32 @@
+version: '3.4'
+services:
+    jobroom-proxy:
+        image: nginx:alpine
+        env_file: env.properties
+        ports:
+            - 443:443
+        volumes:
+            - jobroom_proxy:/etc/nginx/conf.d/
+        networks:
+            - jobroom_data2
+        secrets:
+            - dev.job-room.ch.key
+            - dev.job-room.ch.pem
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
+
+volumes:
+    jobroom_proxy:
+        external: true
+
+networks:
+    jobroom_data2:
+        external: true
+
+secrets:
+    dev.job-room.ch.key:
+        external: true
+    dev.job-room.ch.pem:
+        external: true
+

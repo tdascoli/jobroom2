@@ -7,15 +7,16 @@ services:
             - SPRING_PROFILES_ACTIVE=development
             - GIT_URI=https://github.com/alv-ch/central-config.git
             - SPRING_CLOUD_CONFIG_PROFILE=development
+            - SECURITY_USER_PASSWORD=$${jhipster.registry.password}
         ports:
             - 8761:8761
         networks:
-            - jobroom
+            - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
             - truststore.jks
-        command: java ${JAVA_OPTS} -Djava.security.egd=file:/dev/./urandom -jar /app.war --spring.cloud.config.server.git.uri=${GIT_URI} --spring.cloud.config.server.git.search-paths=${GIT_SEARCH_PATHS}
+        command: java -Xmx512m -Xms256m -Djavax.net.ssl.trustStore=/run/secrets/truststore.jks -Djavax.net.ssl.trustStorePassword=changeit -Duser.timezone=Europe/Zurich -Djava.security.egd=file:/dev/./urandom -jar /jhipster-registry.war --spring.cloud.config.server.git.uri=https://github.com/alv-ch/central-config.git
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -29,11 +30,43 @@ services:
         environment:
             - TZ=Europe/Zurich
         networks:
-            - jobroom
+            - jobroom_data2
         deploy:
             placement:
                 constraints: [node.labels.type == java]
 
+services:
+    jobroom-proxy:
+        image: nginx:alpine
+        env_file: env.properties
+        ports:
+            - 443:443
+        volumes:
+            - jobroom_proxy:/etc/nginx/conf.d/
+        networks:
+            - jobroom_data2
+        secrets:
+            - dev.job-room.ch.key
+            - dev.job-room.ch.pem
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
+
+volumes:
+    jobroom_proxy:
+        external: true
+
 networks:
-    jobroom:
-        driver: overlay
+    jobroom_data2:
+        external: true
+
+secrets:
+    bootstrap.yml-1:
+        external: true
+    truststore.jks:
+        external: true
+    dev.job-room.ch.key:
+        external: true
+    dev.job-room.ch.pem:
+        external: true
+

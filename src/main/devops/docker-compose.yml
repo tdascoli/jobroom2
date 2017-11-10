@@ -1,13 +1,14 @@
-version: '3.4'
+version: '3.3'
 services:
     jobroom-app:
         build: dockerfiles/jobroom
         image: localhost:5000/docker_jobroom-app
         env_file: env.properties
+        environment:
+            - LIQUIBASE_DROPFIRST=true
         ports:
             - 8443:8443
         networks:
-            - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
@@ -25,7 +26,6 @@ services:
         ports:
             - 8444:8444
         networks:
-            - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
@@ -43,7 +43,6 @@ services:
         ports:
             - 8445:8445
         networks:
-            - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
@@ -61,7 +60,6 @@ services:
         ports:
             - 8446:8446
         networks:
-            - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
@@ -82,7 +80,6 @@ services:
             - batch-data:/build
             - /tmp/sftp-inbound:/tmp/sftp-inbound
         networks:
-            - jobroom
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
@@ -97,8 +94,6 @@ volumes:
         driver: local
 
 networks:
-    jobroom:
-        driver: overlay
     jobroom_data2:
         external: true
 

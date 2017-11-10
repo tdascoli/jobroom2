@@ -6,13 +6,16 @@ services:
             - TZ=Europe/Zurich
             - PGDATA=/var/lib/postgresql/data/pgdata
             - POSTGRES_USER=jobroom
-            - POSTGRES_PASSWORD=s3cr3t
+            - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
         ports:
             - 5434:5432
         volumes:
-            - jobroom_data:/var/lib/postgresql/data
+            - jobroom-data:/var/lib/postgresql/data
         networks:
-            - jobroom
+            - jobroom_data2
+        secrets:
+            - postgres-passwd
+        command: postgres -c tcp_keepalives_idle=60 -c tcp_keepalives_interval=60 -c tcp_keepalives_count=60
         deploy:
             placement:
                 constraints: [node.labels.type == data]
@@ -23,13 +26,16 @@ services:
             - TZ=Europe/Zurich
             - PGDATA=/var/lib/postgresql/data/pgdata
             - POSTGRES_USER=jobservice
-            - POSTGRES_PASSWORD=s3cr3t
+            - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
         ports:
             - 5435:5432
         volumes:
-            - jobservice_data:/var/lib/postgresql/data
+            - jobservice-data:/var/lib/postgresql/data
         networks:
-            - jobroom
+            - jobroom_data2
+        secrets:
+            - postgres-passwd
+        command: postgres -c tcp_keepalives_idle=60 -c tcp_keepalives_interval=60 -c tcp_keepalives_count=60
         deploy:
             placement:
                 constraints: [node.labels.type == data]
@@ -40,13 +46,16 @@ services:
             - TZ=Europe/Zurich
             - PGDATA=/var/lib/postgresql/data/pgdata
             - POSTGRES_USER=candidateservice
-            - POSTGRES_PASSWORD=s3cr3t
+            - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
         ports:
             - 5436:5432
         volumes:
-            - candidateservice_data:/var/lib/postgresql/data
+            - candidateservice-data:/var/lib/postgresql/data
         networks:
-            - jobroom
+            - jobroom_data2
+        secrets:
+            - postgres-passwd
+        command: postgres -c tcp_keepalives_idle=60 -c tcp_keepalives_interval=60 -c tcp_keepalives_count=60
         deploy:
             placement:
                 constraints: [node.labels.type == data]
@@ -57,13 +66,16 @@ services:
             - TZ=Europe/Zurich
             - PGDATA=/var/lib/postgresql/data/pgdata
             - POSTGRES_USER=referenceservice
-            - POSTGRES_PASSWORD=s3cr3t
+            - POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd
         ports:
             - 5437:5432
         volumes:
-            - referenceservice_data:/var/lib/postgresql/data
+            - referenceservice-data:/var/lib/postgresql/data
         networks:
-            - jobroom
+            - jobroom_data2
+        secrets:
+            - postgres-passwd
+        command: postgres -c tcp_keepalives_idle=60 -c tcp_keepalives_interval=60 -c tcp_keepalives_count=60
         deploy:
             placement:
                 constraints: [node.labels.type == data]
@@ -79,7 +91,7 @@ services:
         links:
             - jobroom-elasticsearch:elasticsearch
         networks:
-            - jobroom
+            - jobroom_data2
         deploy:
             placement:
                 constraints: [node.labels.type == data]
@@ -104,13 +116,29 @@ services:
         volumes:
             - elasticsearch-data:/usr/share/elasticsearch/data
         networks:
-            - jobroom
+            - jobroom_data2
         deploy:
             placement:
                 constraints: [node.labels.type == data]
             resources:
                 limits:
                     memory: 2G
+
+    jobroom-batch-oracle:
+        image: container-registry.oracle.com/database/enterprise:12.2.0.1
+        environment:
+            - ORACLE_SID=orcl
+            - ORACLE_PWD=jobroom
+        ports:
+           - 1521:1521
+           - 5500:5500
+        volumes:
+           - jobroom-batch-data:/opt/oracle/oradata
+        networks:
+            - jobroom_data2
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
 
 volumes:
     jobroom-data:
@@ -123,8 +151,14 @@ volumes:
         driver: local
     elasticsearch-data:
         driver: local
+    jobroom-batch-data:
+        driver: local
 
 networks:
-    jobroom:
-        driver: overlay
+    jobroom_data2:
+        external: true
 
+secrets:
+    postgres-passwd:
+        external: true
+ 
