@@ -19,7 +19,10 @@ import { TypeaheadMultiselectModel } from '../../shared/input-components/index';
 import { CandidateService } from '../services/candidate.service';
 import { Store } from '@ngrx/store';
 import {
-    Availability, DrivingLicenceCategory, Experience, ISCED_1997,
+    Availability,
+    DrivingLicenceCategory,
+    Experience,
+    ISCED_1997,
     WorkForm
 } from '../../shared/model/shared-types';
 
@@ -38,15 +41,13 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     workForms = WorkForm;
     drivingLicenceCategories = DrivingLicenceCategory;
     filterForm: FormGroup;
-    candidateSearchUrl: string;
+    candidateSearchUrl$: Observable<string>;
 
     private formChangesSubscription: Subscription;
-    private searchFilterSubscription: Subscription;
 
     constructor(private languageSkillService: LanguageSkillService,
                 private localityService: LocalityService,
                 private fb: FormBuilder,
-                private candidateService: CandidateService,
                 private store: Store<CandidateSearchState>) {
     }
 
@@ -69,15 +70,13 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
             }
         );
 
-        this.searchFilterSubscription = this.store.select(getSearchFilter).subscribe((filter: CandidateSearchFilter) => {
-                this.candidateSearchUrl = window.location.href + '/?searchFilter=' + this.candidateService.encodeURISearchFilter(filter);
-            }
-        );
+        this.candidateSearchUrl$ = this.store.select(getSearchFilter)
+            .map((filter: CandidateSearchFilter) =>
+                `${window.location.href}/?searchFilter=${CandidateService.encodeURISearchFilter(filter)}`);
     }
 
     ngOnDestroy(): void {
         this.formChangesSubscription.unsubscribe();
-        this.searchFilterSubscription.unsubscribe();
     }
 
     getLanguageOptions(): Observable<Array<string>> {

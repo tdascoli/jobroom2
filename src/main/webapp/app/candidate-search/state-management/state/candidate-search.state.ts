@@ -1,7 +1,13 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import {
-    Availability, Canton, DrivingLicenceCategory, Experience, Graduation, ISCED_1997, LanguageSkill,
+    Availability,
+    Canton,
+    DrivingLicenceCategory,
+    Experience,
+    Graduation,
+    ISCED_1997,
+    LanguageSkill,
     WorkForm
 } from '../../../shared/model/shared-types';
 import { CandidateProfile } from '../../services/candidate';
@@ -16,7 +22,6 @@ export interface CandidateSearchState {
     candidateProfileList: Array<CandidateProfile>;
     initialState: boolean;
     candidateListScrollY: number;
-    searchByUrlParams: boolean;
 }
 
 export interface CandidateSearchFilter {
@@ -24,7 +29,7 @@ export interface CandidateSearchFilter {
     skills?: Array<string>,
     experience?: Experience,
     workplace?: TypeaheadItemDisplayModel,
-    residence?: Array<Canton>,
+    residence?: Array<Canton | string>,
     availability?: Availability,
     workload?: [number, number];
     workForm?: WorkForm,
@@ -46,8 +51,7 @@ export const initialState: CandidateSearchState = {
     candidateProfileList: [],
     initialState: true,
     searchError: false,
-    candidateListScrollY: 0,
-    searchByUrlParams: false
+    candidateListScrollY: 0
 };
 
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
@@ -57,4 +61,3 @@ export const getLoading = createSelector(getCandidateSearchState, (state: Candid
 export const getSearchError = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchError);
 export const getTotalCandidateCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidateCount);
 export const getCandidateListScrollY = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.candidateListScrollY);
-export const getSearchByUrlParams = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchByUrlParams);

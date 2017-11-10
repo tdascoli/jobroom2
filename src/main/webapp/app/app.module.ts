@@ -33,14 +33,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { DEBUG_INFO_ENABLED } from './app.constants';
 import { CandidateSearchModule } from './candidate-search/candidate-search.module';
-import { CustomRouterStateSerializer } from './shared/custom-router-state-serializer/custom-router-state-serializer';
 import {
-    StoreRouterConnectingModule,
-    routerReducer,
-    RouterReducerState,
-    RouterStateSerializer
-} from '@ngrx/router-store';
-import {reducers} from "./shared/custom-router-state-serializer/custom-router-state-serializer";
+    CustomRouterStateSerializer,
+    reducers
+} from './shared/custom-router-state-serializer/custom-router-state-serializer';
+import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 

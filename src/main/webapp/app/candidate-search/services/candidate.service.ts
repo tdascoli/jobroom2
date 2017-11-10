@@ -7,6 +7,7 @@ import { ResponseWrapper } from '../../shared';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { createPageableURLSearchParams } from '../../shared/model/request-util';
 import { Experience } from '../../shared/model/shared-types';
+import base64url from 'base64url/dist/base64url';
 
 @Injectable()
 export class CandidateService {
@@ -17,6 +18,14 @@ export class CandidateService {
 
     private static convertResponse(res: Response): ResponseWrapper {
         return new ResponseWrapper(res.headers, res.json(), res.status);
+    }
+
+    static encodeURISearchFilter(filter: CandidateSearchFilter): string {
+        return base64url.encode(JSON.stringify(filter));
+    }
+
+    static decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
+        return JSON.parse(base64url.decode(URISearchFilter));
     }
 
     constructor(private http: Http) {
@@ -52,14 +61,6 @@ export class CandidateService {
             .map((wrapper: ResponseWrapper) => {
                 return Number.parseInt(wrapper.json.totalCount)
             });
-    }
-
-    encodeURISearchFilter(filter: CandidateSearchFilter): string {
-        return encodeURI(JSON.stringify(filter));
-    }
-
-    decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
-        return JSON.parse(decodeURIComponent(URISearchFilter));
     }
 
     getRelevantJobExperience(occupationCode: string, jobExperiences: JobExperience[]): JobExperience {
