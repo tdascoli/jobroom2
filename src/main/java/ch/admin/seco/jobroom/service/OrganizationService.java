@@ -53,4 +53,6 @@ public interface OrganizationService {
      *  @return the list of entities
      */
     Page<OrganizationDTO> search(String query, Pageable pageable);
+
+    void housekeeping();
 }

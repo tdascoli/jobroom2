@@ -170,7 +170,8 @@ public class OrganizationResourceIntTest {
 
         // Validate the Organization in Elasticsearch
         Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
-        assertThat(organizationEs).isEqualToComparingFieldByField(testOrganization);
+        assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
+            "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
 
     @Test
@@ -345,7 +346,8 @@ public class OrganizationResourceIntTest {
 
         // Validate the Organization in Elasticsearch
         Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
-        assertThat(organizationEs).isEqualToComparingFieldByField(testOrganization);
+        assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
+            "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
 
     @Test
@@ -360,7 +362,7 @@ public class OrganizationResourceIntTest {
         restOrganizationMockMvc.perform(put("/api/organizations")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isCreated());
+            .andExpect(status().isOk());
 
         // Validate the Organization in the database
         List<Organization> organizationList = organizationRepository.findAll();

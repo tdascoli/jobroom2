@@ -237,7 +237,11 @@ dependencies {
         exclude(group: 'org.springframework.data', module: 'spring-data-elasticsearch')
     }
     compile "org.springframework.data:spring-data-elasticsearch:3.0.0.M4-DATAES-363"
-    compile "org.springframework.security:spring-security-web"
+    compile("org.springframework.boot:spring-boot-starter-web") {
+        exclude module: 'spring-boot-starter-tomcat'
+    }
+    compile "org.springframework.boot:spring-boot-starter-reactor-netty"
+    compile "org.springframework.boot:spring-boot-starter-undertow"
     compile 'org.springframework.security.oauth:spring-security-oauth2'
     compile "io.jsonwebtoken:jjwt:${jjwt_version}"
     compile ("io.springfox:springfox-swagger2:${springfox_version}") {
