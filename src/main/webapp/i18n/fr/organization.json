@@ -1,0 +1,30 @@
+{
+    "jobroomApp": {
+        "organization": {
+            "home": {
+                "title": "Organizations",
+                "createLabel": "Créer un nouveau Organization",
+                "createOrEditLabel": "Créer ou éditer un Organization",
+                "search": "Recherche pour Organization"
+            },
+            "created": "Un nouveau Organization a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Organization avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Organization avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Organization {{ id }} ?"
+            },
+            "detail": {
+                "title": "Organization"
+            },
+            "externalId": "External Id",
+            "name": "Name",
+            "street": "Street",
+            "zipCode": "Zip Code",
+            "city": "City",
+            "email": "Email",
+            "phone": "Phone",
+            "type": "Type",
+            "active": "Active"
+        }
+    }
+}

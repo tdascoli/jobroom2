@@ -12,3 +12,15 @@ $main-color-gray-100: #ececec; // lighten 42.5%
 $main-color-gray-light-400: #d7d7d7; // lighten 5.5%
 $main-color-gray-light-50: #fcfcfc; // lighten 20%
 $text-weight-light: 300;
+
+$margin-x-general: 1.5rem;
+$margin-x-filter: $margin-x-general;
+
+// Header + Toolbar
+$header-margin: 4rem;
+$header-mobile-margin: .5rem;
+$header-alv-height: 30px;
+$header-navbar-height: 60px;
+
+$toolbar-height: 110px;
+$toolbar-margin-bottom: $margin-x-filter;

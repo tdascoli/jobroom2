@@ -1,406 +1,452 @@
-<div class="row tab-content--job-room">
-    <div class="col-md-8">
-        <form [formGroup]="jobPublicationForm" (ngSubmit)="onSubmit()" novalidate>
+<div class="tab-content--job-room">
+    <div class="d-flex flex-row">
+        <div class="job-publication__form">
+            <form [formGroup]="jobPublicationForm" (ngSubmit)="onSubmit()" novalidate>
 
-            <ng-container formGroupName="job">
-                <fieldset class="job-publication--horizontal">
-                    <legend>{{ 'home.tools.job-publication.job-description' | translate }}</legend>
-
-                    <div class="form-group">
-                        <label for="job-title" class="col-form-label">{{ 'home.tools.job-publication.job-title' | translate }}</label>
-                        <div>
-                            <input type="text" class="form-control" id="job-title" formControlName="title"/>
-                        </div>
-                    </div>
-
-                    <ng-container formGroupName="occupation">
-                        <div class="form-group">
-                            <label>{{ 'home.tools.job-publication.occupation.label' | translate }}</label>
-                            <div class="form-group--icon">
-                                <input class="form-control form-control-lg"
-                                       [ngbTypeahead]="fetchOccupationSuggestions"
-                                       [placeholder]="'home.tools.job-publication.occupation.placeholder' | translate"
-                                       [editable]="false"
-                                       [inputFormatter]="occupationFormatter"
-                                       [resultFormatter]="occupationFormatter"
-                                       formControlName="occupationSuggestion"/>
-
-                                <a href="#" class="fa-stack form-control--icon">
-                                    <i class="fa fa-search fa-stack-1x"></i>
-                                </a>
-                            </div>
-                        </div>
+                <ng-container formGroupName="job">
+                    <fieldset class="job-publication--horizontal">
+                        <legend>{{ 'home.tools.job-publication.job-description' | translate }}</legend>
 
                         <div class="form-group">
-                            <label for="education" class="col-form-label">
-                                {{ 'home.tools.job-publication.education' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                            </label>
+                            <label for="job-title" class="col-form-label">{{ 'home.tools.job-publication.job-title' |
+                                translate }}</label>
                             <div>
-                                <select class="form-control custom-select" id="education" formControlName="educationLevel">
-                                    <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate }}</option>
-                                    <option *ngFor="let educationLevel of educationLevels | keys" [ngValue]="educationLevel.key">
-                                        {{'global.education.' + educationLevel.value | translate}}
-                                    </option>
-                                </select>
+                                <input type="text" class="form-control" id="job-title" formControlName="title"/>
                             </div>
                         </div>
-                        <div class="form-group">
-                            <label for="exp" class="col-form-label">{{ 'home.tools.job-publication.experience' | translate }}
-                                <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                            </label>
-                            <div>
-                                <select class="form-control custom-select" id="exp" formControlName="experience">
-                                    <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate }}</option>
-                                    <option *ngFor="let experience of experiences | keys" [ngValue]="experience.key">
-                                        {{'global.experience.' + experience.value | translate}}
-                                    </option>
-                                </select>
-                            </div>
-                        </div>
-                    </ng-container>
 
-                    <div class="form-group">
-                        <label for="description">{{ 'home.tools.job-publication.description.label' | translate }}</label>
-                        <div>
-                        <textarea #jobDescription class="form-control" id="description" rows="5" [placeholder]="'home.tools.job-publication.description.placeholder' | translate"
-                                  aria-describedby="maxChar" formControlName="description"
-                                  (keypress)="blockExtraCharacters($event, 9000)"></textarea>
-                            <small id="maxChar" class="form-text text-muted"
-                                   jhiTranslate="home.tools.job-publication.description.characters-counter-text"
-                                   translateValues="{count: {{ max(9000 - jobDescription.value.length, 0) }}}">
-                            </small>
-                        </div>
-                    </div>
+                        <ng-container formGroupName="occupation">
+                            <div class="form-group">
+                                <label>{{ 'home.tools.job-publication.occupation.label' | translate }}</label>
+                                <div class="form-group--icon">
+                                    <input class="form-control form-control-lg"
+                                           [ngbTypeahead]="fetchOccupationSuggestions"
+                                           [placeholder]="'home.tools.job-publication.occupation.placeholder' | translate"
+                                           [editable]="false"
+                                           [inputFormatter]="occupationFormatter"
+                                           [resultFormatter]="occupationFormatter"
+                                           formControlName="occupationSuggestion"/>
 
-                    <div class="form-group">
-                        <label class="col-form-label">{{ 'home.tools.job-publication.workload' | translate }}</label>
-                        <jr2-range-input formControlName="workload" [min]="0" [max]="100" [step]="10" [hideDelimiter]="true"></jr2-range-input>
-                    </div>
-
-                    <ng-container formGroupName="publicationStartDate">
-                        <div class="form-group">
-                            <label class="col-form-label">{{ 'home.tools.job-publication.publicationStartDate.title' | translate }}</label>
-                            <div class="form-group__inline">
-                                <div class="radio col-form-label">
-                                    <input formControlName="immediate" type="radio"
-                                           id="fromNow"
-                                           value="false"
-                                           (click)="startDatePicker.close()"/>
-                                    <label for="fromNow">
-                                        {{ 'home.tools.job-publication.publicationStartDate.immediately' | translate }}
-                                    </label>
+                                    <a href="#" class="fa-stack form-control--icon">
+                                        <i class="fa fa-search fa-stack-1x"></i>
+                                    </a>
                                 </div>
-
-                                <div class="radio col-form-label">
-                                    <input formControlName="immediate" type="radio"
-                                           id="byArrangement" value="true"/>
-                                    <label for="byArrangement">
-                                        {{ 'home.tools.job-publication.publicationStartDate.by-arrangement' | translate }}
-                                    </label>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <label for="stellenantritt-date" class="sr-only">
-                                            {{ 'home.tools.job-publication.publicationStartDate.label' | translate }}
-                                        </label>
-                                        <input #startDatePicker="ngbDatepicker"
-                                               class="form-control date__input"
-                                               id="stellenantritt-date"
-                                               ngbDatepicker
-                                               formControlName="date"
-                                               [minDate]="minDate"/>
-                                        <button class="input-group-addon"
-                                                (click)="startDatePicker.toggle()"
-                                                type="button"
-                                                [disabled]="publicationStartDateByArrangement">
-                                            <i class="fa fa-calendar-o"
-                                               aria-hidden="true"></i>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </ng-container>
-
-                    <div class="form-group">
-                        <label class="col-form-label">{{ 'home.tools.job-publication.publicationEndDate.title' | translate }}</label>
-                        <div class="form-group__inline">
-                            <div class="radio col-form-label">
-                                <input type="radio" name="optionsRadios2" id="optionsRadios6" value="option6"/>
-                                <label for="optionsRadios6">
-                                    {{ 'home.tools.job-publication.publicationEndDate.permanent' | translate }}
-                                </label>
-                            </div>
-
-                            <div class="radio col-form-label">
-                                <input type="radio" name="optionsRadios2" id="optionsRadios7" value="option7"/>
-                                <label for="optionsRadios7">
-                                    {{ 'home.tools.job-publication.publicationEndDate.temporary' | translate }}
-                                </label>
                             </div>
 
                             <div class="form-group">
-                                <label for="anstellungsdauer-date" class="sr-only">{{ 'home.tools.job-publication.publicationEndDate.label' | translate }}</label>
+                                <label for="education" class="col-form-label">
+                                    {{ 'home.tools.job-publication.education' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                                </label>
                                 <div>
-                                    <input formControlName="publicationEndDate" type="date" class="form-control" id="anstellungsdauer-date"/>
+                                    <select class="form-control custom-select" id="education"
+                                            formControlName="educationLevel">
+                                        <option value="null" selected>{{ 'home.tools.job-publication.no-selection' |
+                                            translate }}
+                                        </option>
+                                        <option *ngFor="let educationLevel of educationLevels | keys"
+                                                [ngValue]="educationLevel.key">
+                                            {{'global.education.' + educationLevel.value | translate}}
+                                        </option>
+                                    </select>
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label for="exp" class="col-form-label">{{ 'home.tools.job-publication.experience' |
+                                    translate }}
+                                    <span
+                                        class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                                </label>
+                                <div>
+                                    <select class="form-control custom-select" id="exp" formControlName="experience">
+                                        <option value="null" selected>{{ 'home.tools.job-publication.no-selection' |
+                                            translate }}
+                                        </option>
+                                        <option *ngFor="let experience of experiences | keys"
+                                                [ngValue]="experience.key">
+                                            {{'global.experience.' + experience.value | translate}}
+                                        </option>
+                                    </select>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <div class="form-group">
+                            <label for="description">{{ 'home.tools.job-publication.description.label' | translate
+                                }}</label>
+                            <div>
+                            <textarea #jobDescription class="form-control" id="description" rows="5"
+                                      [placeholder]="'home.tools.job-publication.description.placeholder' | translate"
+                                      aria-describedby="maxChar" formControlName="description"
+                                      (keypress)="blockExtraCharacters($event, 9000)"></textarea>
+                                <small id="maxChar" class="form-text text-muted"
+                                       jhiTranslate="home.tools.job-publication.description.characters-counter-text"
+                                       translateValues="{count: {{ max(9000 - jobDescription.value.length, 0) }}}">
+                                </small>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-form-label">{{ 'home.tools.job-publication.workload' | translate
+                                }}</label>
+                            <jr2-range-input formControlName="workload" [min]="0" [max]="100" [step]="10"
+                                             [hideDelimiter]="true"></jr2-range-input>
+                        </div>
+
+                        <ng-container formGroupName="publicationStartDate">
+                            <div class="form-group">
+                                <label class="col-form-label">{{ 'home.tools.job-publication.publicationStartDate.title'
+                                    | translate }}</label>
+                                <div class="form-group__inline">
+                                    <div class="radio col-form-label">
+                                        <input formControlName="immediate" type="radio" id="fromNow" value="true"
+                                               (click)="startDatePicker.close()"/>
+                                        <label for="fromNow">
+                                            {{ 'home.tools.job-publication.publicationStartDate.immediately' | translate
+                                            }}
+                                        </label>
+                                    </div>
+
+                                    <div class="radio col-form-label">
+                                        <input formControlName="immediate" type="radio"
+                                               id="byArrangement" value="false"/>
+                                        <label for="byArrangement">
+                                            {{ 'home.tools.job-publication.publicationStartDate.by-arrangement' |
+                                            translate }}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="stellenantritt-date" class="sr-only">
+                                                {{ 'home.tools.job-publication.publicationStartDate.label' | translate
+                                                }}
+                                            </label>
+                                            <input #startDatePicker="ngbDatepicker"
+                                                   class="form-control date__input"
+                                                   id="stellenantritt-date"
+                                                   ngbDatepicker
+                                                   readonly
+                                                   formControlName="date"
+                                                   [minDate]="publicationStartDateMin"/>
+                                            <button class="input-group-addon"
+                                                    (click)="startDatePicker.toggle(); endDatePicker.close()"
+                                                    type="button"
+                                                    [disabled]="publicationStartDateByArrangement">
+                                                <i class="fa fa-calendar-o"
+                                                   aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <ng-container formGroupName="publicationEndDate">
+                            <div class="form-group">
+                                <label class="col-form-label">{{ 'home.tools.job-publication.publicationEndDate.title' |
+                                    translate }}</label>
+                                <div class="form-group__inline">
+                                    <div class="radio col-form-label">
+                                        <input type="radio" formControlName="permanent" id="permanent" value="true"/>
+                                        <label for="permanent">
+                                            {{ 'home.tools.job-publication.publicationEndDate.permanent' | translate }}
+                                        </label>
+                                    </div>
+
+                                    <div class="radio col-form-label">
+                                        <input type="radio" formControlName="permanent" id="temporary" value="false"
+                                               (click)="endDatePicker.close()"/>
+                                        <label for="temporary">
+                                            {{ 'home.tools.job-publication.publicationEndDate.temporary' | translate }}
+                                        </label>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <label for="anstellungsdauer-date" class="sr-only">{{
+                                                'home.tools.job-publication.publicationEndDate.label' | translate
+                                                }}</label>
+                                            <input #endDatePicker="ngbDatepicker"
+                                                   formControlName="date"
+                                                   ngbDatepicker
+                                                   readonly
+                                                   class="form-control date__input"
+                                                   id="anstellungsdauer-date"
+                                                   [minDate]="publicationEndDateMin"/>
+                                            <button class="input-group-addon"
+                                                    (click)="endDatePicker.toggle(); startDatePicker.close()"
+                                                    type="button"
+                                                    [disabled]="publicationEndDateIsPermanent">
+                                                <i class="fa fa-calendar-o" aria-hidden="true"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </ng-container>
+
+                        <div class="form-group">
+                            <label for="driving-lic" class="col-form-label">{{
+                                'home.tools.job-publication.driving-licence' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span></label>
+                            <div>
+                                <select formControlName="drivingLicenseLevel" class="form-control custom-select"
+                                        id="driving-lic">
+                                    <option value="null" selected>{{ 'home.tools.job-publication.no-selection' |
+                                        translate }}
+                                    </option>
+                                    <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys"
+                                            [ngValue]="drivingLicenceCategory.key">
+                                        {{'global.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <jr2-language-skills [group]="job" [controlName]="'languageSkills'"
+                                             [languageOptions]="languageSkills$ | async"></jr2-language-skills>
+                    </fieldset>
+
+                    <fieldset formGroupName="location" class="job-publication--horizontal">
+                        <legend>{{ 'home.tools.job-publication.locality.title' | translate }}</legend>
+
+                        <div class="form-group">
+                            <label for="country" class="col-form-label">{{ 'home.tools.job-publication.locality.country'
+                                | translate }}</label>
+                            <div>
+                                <select formControlName="countryCode" class="form-control custom-select" id="country">
+                                    <option *ngFor="let country of countries"
+                                            [value]="country.key">{{ country.value }}
+                                    </option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <jr2-zip-code [formGroup]="jobPublicationForm.get('job.location')"
+                                      controlName="zipCode"
+                                      [countryControl]="jobPublicationForm.get('job.location.countryCode')">
+                        </jr2-zip-code>
+
+                        <div class="form-group">
+                            <label for="add-text" class="col-form-label">
+                                {{ 'home.tools.job-publication.locality.additional-text' | translate }}
+                                <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                            </label>
+                            <div>
+                                <input formControlName="text" type="text" class="form-control" id="add-text"/>
+                            </div>
+                        </div>
+                    </fieldset>
+                </ng-container>
+
+                <fieldset formGroupName="company" class="job-publication--horizontal">
+                    <legend>{{ 'home.tools.job-publication.company.title' | translate }}</legend>
+
+                    <div class="form-group">
+                        <label for="unt-name" class="col-form-label">{{ 'home.tools.job-publication.company.title' |
+                            translate }}</label>
+                        <div>
+                            <input formControlName="name" type="text" class="form-control" id="unt-name"/>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="driving-lic" class="col-form-label">{{ 'home.tools.job-publication.driving-licence' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span></label>
+                        <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' |
+                            translate }}</label>
                         <div>
-                            <select formControlName="drivingLicenseLevel" class="form-control custom-select" id="driving-lic">
-                                <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate }}</option>
-                                <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys" [ngValue]="drivingLicenceCategory.key">
-                                    {{'global.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
+                            <input formControlName="street" type="text" class="form-control" id="unt-street"/>
+                        </div>
+                    </div>
+
+                    <jr2-zip-code [formGroup]="jobPublicationForm.get('company')"
+                                  controlName="zipCode"
+                                  [countryControl]="jobPublicationForm.get('company.countryCode')">
+                    </jr2-zip-code>
+
+                    <div class="form-group">
+                        <label for="unt-pobox" class="col-form-label">
+                            {{ 'home.tools.job-publication.company.postbox-number' | translate }}
+                            <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                        </label>
+                        <div>
+                            <input formControlName="postboxNumber" type="text" class="form-control" id="unt-pobox"/>
+                        </div>
+                    </div>
+
+                    <jr2-zip-code [formGroup]="jobPublicationForm.get('company')"
+                                  controlName="postboxZipCode"
+                                  [countryControl]="jobPublicationForm.get('company.countryCode')"
+                                  [translations]="getPoBoxZipCodeTranslations()"
+                                  [optional]="true">
+                    </jr2-zip-code>
+
+                    <div class="form-group">
+                        <label for="unt-country" class="col-form-label">{{ 'home.tools.job-publication.company.country'
+                            | translate }}</label>
+                        <div>
+                            <select formControlName="countryCode" class="form-control custom-select" id="unt-country">
+                                <option *ngFor="let country of countries"
+                                        [value]="country.key">{{ country.value }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset formGroupName="contact" class="job-publication--horizontal">
+                    <legend>{{ 'home.tools.job-publication.contact.title' | translate }}</legend>
+
+                    <div class="form-group">
+                        <label for="kp-anrede" class="col-form-label">{{ 'home.tools.job-publication.contact.salutation'
+                            | translate }}</label>
+                        <div>
+                            <select formControlName="salutation" class="form-control custom-select" id="kp-anrede">
+                                <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate
+                                    }}
+                                </option>
+                                <option [value]="'global.contactPerson.salutation.MR' | translate">
+                                    {{ 'global.contactPerson.salutation.MR' | translate }}
+                                </option>
+                                <option [value]="'global.contactPerson.salutation.MS' | translate">
+                                    {{ 'global.contactPerson.salutation.MS' | translate }}
                                 </option>
                             </select>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="lang" class="col-form-label">
-                            {{ 'home.tools.job-publication.language-skills' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                        </label>
+                        <label for="kp-vorname" class="col-form-label">{{
+                            'home.tools.job-publication.contact.first-name' | translate }}</label>
                         <div>
-                            <select class="form-control custom-select" id="lang">
-                                <option selected>keine Auswahl</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
-                            </select>
+                            <input formControlName="firstName" type="text" class="form-control" id="kp-vorname"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="kp-name" class="col-form-label">{{ 'home.tools.job-publication.contact.last-name' |
+                            translate }}</label>
+                        <div>
+                            <input formControlName="lastName" type="text" class="form-control" id="kp-name"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="kp-tel" class="col-form-label">{{ 'home.tools.job-publication.contact.phone' |
+                            translate }}</label>
+                        <div>
+                            <input formControlName="phoneNumber" type="text" class="form-control" id="kp-tel"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="kp-email" class="col-form-label">{{ 'home.tools.job-publication.contact.email' |
+                            translate }}</label>
+                        <div>
+                            <input formControlName="email" type="email" class="form-control" id="kp-email"/>
+                        </div>
+                    </div>
+
+                </fieldset>
+
+                <fieldset formGroupName="application" class="job-publication--horizontal">
+                    <legend>{{ 'home.tools.job-publication.application.title' | translate }}</legend>
+
+                    <div class="checkbox">
+                        <input id="written" type="checkbox" formControlName="mailEnabled"/>
+                        <label for="written">
+                            {{ 'home.tools.job-publication.application.mail-enabled' | translate }}
+                        </label>
+                    </div>
+
+                    <div class="checkbox">
+                        <input id="electronic" type="checkbox" formControlName="emailEnabled"/>
+                        <label for="electronic">
+                            {{ 'home.tools.job-publication.application.email-enabled' | translate }}
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-email" class="col-form-label">{{ 'home.tools.job-publication.application.email'
+                            | translate }}</label>
+                        <div>
+                            <input type="email" class="form-control" id="app-email" formControlName="email"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="app-form" class="col-form-label">{{
+                            'home.tools.job-publication.application.online-form' | translate }}</label>
+                        <div>
+                            <input type="text" class="form-control" id="app-form" formControlName="url"/>
+                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                        <input id="phone" type="checkbox" formControlName="phoneEnabled"/>
+                        <label for="phone">
+                            {{ 'home.tools.job-publication.application.phone-enabled' | translate }}
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="app-phone" class="col-form-label">{{ 'home.tools.job-publication.application.phone'
+                            | translate }}</label>
+                        <div>
+                            <input type="text" class="form-control" id="app-phone" formControlName="phoneNumber"/>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="app-text">{{ 'home.tools.job-publication.application.additional-info.label' |
+                            translate }}</label>
+                        <div>
+                            <textarea #additionalInfo class="form-control" id="app-text" rows="5"
+                                      [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
+                                      aria-describedby="maxChar2" formControlName="additionalInfo"
+                                      (keypress)="blockExtraCharacters($event, 240)"></textarea>
+                            <small id="maxChar2" class="form-text text-muted"
+                                   jhiTranslate="home.tools.job-publication.application.additional-info.characters-counter-text"
+                                   translateValues="{count: {{ max(240 - additionalInfo.value.length, 0) }}}">
+                            </small>
                         </div>
                     </div>
                 </fieldset>
 
-                <fieldset formGroupName="location" class="job-publication--horizontal">
-                    <legend>{{ 'home.tools.job-publication.locality.title' | translate }}</legend>
+                <fieldset formGroupName="publication" class="job-publication--horizontal">
+                    <legend>{{ 'home.tools.job-publication.publication.title' | translate }}</legend>
 
-                    <div class="form-group">
-                        <label for="country" class="col-form-label">{{ 'home.tools.job-publication.locality.country' | translate }}</label>
-                        <div>
-                            <select formControlName="countryCode" class="form-control custom-select" id="country">
-                                <option *ngFor="let county of countries"
-                                        [value]="county.key">{{ county.value }}</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="place" class="col-form-label">{{ 'home.tools.job-publication.locality.zipcode' | translate }}</label>
-                        <div>
-                            <input formControlName="zipCode" type="text" class="form-control" id="place"/>
-                        </div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="add-text" class="col-form-label">
-                            {{ 'home.tools.job-publication.locality.additional-text' | translate }}
-                            <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                    <div class="checkbox">
+                        <input id="jr" type="checkbox" formControlName="jobroom"/>
+                        <label for="jr">
+                            Job-Room <a href="http://www.job-room.ch" target="_blank">Job-Room Webseite</a>
                         </label>
-                        <div>
-                            <input formControlName="text" type="text" class="form-control" id="add-text"/>
-                        </div>
+                    </div>
+
+                    <div class="checkbox">
+                        <input id="eu" type="checkbox" formControlName="eures"/>
+                        <label for="eu">
+                            EURES <a href="http://www.eures.ch" target="_blank">EURES Portal</a>
+                        </label>
                     </div>
                 </fieldset>
-            </ng-container>
 
-            <fieldset formGroupName="company" class="job-publication--horizontal">
-                <legend>{{ 'home.tools.job-publication.company.title' | translate }}</legend>
+                <hr/>
 
-                <div class="form-group">
-                    <label for="unt-name" class="col-form-label">{{ 'home.tools.job-publication.company.title' | translate }}</label>
-                    <div>
-                        <input formControlName="name" type="text" class="form-control" id="unt-name"/>
+                <fieldset class="job-publication--horizontal">
+                    <div class="checkbox">
+                        <input #disclaimer id="first" type="checkbox"/>
+                        <label for="first">
+                            {{ 'home.tools.job-publication.disclaimer' | translate }}
+                        </label>
+                    </div>
+                </fieldset>
+                <div class="job-publication--horizontal__actions">
+                    <div class="form__actions">
+                        <button type="submit"
+                                [disabled]="!disclaimer.checked || jobPublicationForm.invalid"
+                                class="btn btn-primary btn-lg">{{ 'home.tools.job-publication.submit' | translate }}
+                        </button>
+                        <button type="reset" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' |
+                            translate }}
+                        </button>
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' | translate }}</label>
-                    <div>
-                        <input formControlName="street" type="text" class="form-control" id="unt-street"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="unt-zip" class="col-form-label">{{ 'home.tools.job-publication.company.zipcode' | translate }}</label>
-                    <div>
-                        <input formControlName="zipCode" type="text" class="form-control" id="unt-zip"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="unt-pobox" class="col-form-label">
-                        {{ 'home.tools.job-publication.company.postbox-number' | translate }}
-                        <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                    </label>
-                    <div>
-                        <input formControlName="postboxNumber" type="text" class="form-control" id="unt-pobox"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="unt-pobox-zip" class="col-form-label">
-                        {{ 'home.tools.job-publication.company.postbox-zipcode' | translate }}
-                        <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                    </label>
-                    <div>
-                        <input formControlName="postboxZipCode" type="text" class="form-control" id="unt-pobox-zip"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="unt-country" class="col-form-label">{{ 'home.tools.job-publication.company.country' | translate }}</label>
-                    <div>
-                        <select formControlName="countryCode" class="form-control custom-select" id="unt-country">
-                            <option *ngFor="let county of countries"
-                                    [value]="county.key">{{ county.value }}</option>
-                        </select>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset formGroupName="contact" class="job-publication--horizontal">
-                <legend>{{ 'home.tools.job-publication.contact.title' | translate }}</legend>
-
-                <div class="form-group">
-                    <label for="kp-anrede" class="col-form-label">{{ 'home.tools.job-publication.contact.salutation' | translate }}</label>
-                    <div>
-                        <select formControlName="salutation" class="form-control custom-select" id="kp-anrede">
-                            <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate }}</option>
-                            <option [value]="'global.contactPerson.salutation.MR' | translate">
-                                {{ 'global.contactPerson.salutation.MR' | translate }}
-                            </option>
-                            <option [value]="'global.contactPerson.salutation.MS' | translate">
-                                {{ 'global.contactPerson.salutation.MS' | translate }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="kp-vorname" class="col-form-label">{{ 'home.tools.job-publication.contact.first-name' | translate }}</label>
-                    <div>
-                        <input formControlName="firstName" type="text" class="form-control" id="kp-vorname"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="kp-name" class="col-form-label">{{ 'home.tools.job-publication.contact.last-name' | translate }}</label>
-                    <div>
-                        <input formControlName="lastName" type="text" class="form-control" id="kp-name"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="kp-tel" class="col-form-label">{{ 'home.tools.job-publication.contact.phone' | translate }}</label>
-                    <div>
-                        <input formControlName="phoneNumber" type="text" class="form-control" id="kp-tel"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="kp-email" class="col-form-label">{{ 'home.tools.job-publication.contact.email' | translate }}</label>
-                    <div>
-                        <input formControlName="email" type="email" class="form-control" id="kp-email"/>
-                    </div>
-                </div>
-
-            </fieldset>
-
-            <fieldset formGroupName="application" class="job-publication--horizontal">
-                <legend>{{ 'home.tools.job-publication.application.title' | translate }}</legend>
-
-                <div class="checkbox">
-                    <input id="written" type="checkbox" formControlName="mailEnabled"/>
-                    <label for="written">
-                        {{ 'home.tools.job-publication.application.mail-enabled' | translate }}
-                    </label>
-                </div>
-
-                <div class="checkbox">
-                    <input id="electronic" type="checkbox" formControlName="emailEnabled"/>
-                    <label for="electronic">
-                        {{ 'home.tools.job-publication.application.email-enabled' | translate }}
-                    </label>
-                </div>
-
-                <div class="form-group">
-                    <label for="app-email" class="col-form-label">{{ 'home.tools.job-publication.application.email' | translate }}</label>
-                    <div>
-                        <input type="email" class="form-control" id="app-email" formControlName="email"/>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label for="app-form" class="col-form-label">{{ 'home.tools.job-publication.application.online-form' | translate }}</label>
-                    <div>
-                        <input type="text" class="form-control" id="app-form" formControlName="url"/>
-                    </div>
-                </div>
-
-                <div class="checkbox">
-                    <input id="phone" type="checkbox" formControlName="phoneEnabled"/>
-                    <label for="phone">
-                        {{ 'home.tools.job-publication.application.phone-enabled' | translate }}
-                    </label>
-                </div>
-                <div class="form-group">
-                    <label for="app-phone" class="col-form-label">{{ 'home.tools.job-publication.application.phone' | translate }}</label>
-                    <div>
-                        <input type="text" class="form-control" id="app-phone" formControlName="phoneNumber"/>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="app-text">{{ 'home.tools.job-publication.application.additional-info.label' | translate }}</label>
-                    <div>
-                        <textarea #additionalInfo class="form-control" id="app-text" rows="5" [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
-                                  aria-describedby="maxChar2" formControlName="additionalInfo"
-                                  (keypress)="blockExtraCharacters($event, 240)"></textarea>
-                        <small id="maxChar2" class="form-text text-muted"
-                               jhiTranslate="home.tools.job-publication.application.additional-info.characters-counter-text"
-                               translateValues="{count: {{ max(240 - additionalInfo.value.length, 0) }}}">
-                        </small>
-                    </div>
-                </div>
-            </fieldset>
-
-            <fieldset formGroupName="publication" class="job-publication--horizontal">
-                <legend>{{ 'home.tools.job-publication.publication.title' | translate }}</legend>
-
-                <div class="checkbox">
-                    <input id="jr" type="checkbox" formControlName="jobroom"/>
-                    <label for="jr">
-                        Job-Room <a href="http://www.job-room.ch" target="_blank">Job-Room Webseite</a>
-                    </label>
-                </div>
-
-                <div class="checkbox">
-                    <input id="eu" type="checkbox" formControlName="eures"/>
-                    <label for="eu">
-                        EURES <a href="http://www.eures.ch" target="_blank">EURES Portal</a>
-                    </label>
-                </div>
-            </fieldset>
-
-            <hr/>
-
-            <fieldset class="job-publication--horizontal">
-                <div class="checkbox">
-                    <input #disclaimer id="first" type="checkbox"/>
-                    <label for="first">
-                        {{ 'home.tools.job-publication.disclaimer' | translate }}
-                    </label>
-                </div>
-            </fieldset>
-
-            <div class="job-publication--horizontal__actions">
-                <div class="form__actions">
-                    <button type="submit"
-                            [disabled]="!disclaimer.checked || jobPublicationForm.invalid"
-                            class="btn btn-primary btn-lg">{{ 'home.tools.job-publication.submit' | translate }}</button>
-                    <button type="reset" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' | translate }}</button>
-                </div>
-            </div>
-        </form>
-    </div>
-
-    <div class="col-md">
+            </form>
+        </div>
         <div class="job-publication__radar">
             <div class="candidate-radar d-none d-md-inline-block">
                 <!--

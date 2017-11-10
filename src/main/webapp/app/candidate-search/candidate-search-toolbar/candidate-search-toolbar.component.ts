@@ -1,14 +1,27 @@
-import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
+import {
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
+    ViewChild
+} from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../shared/reference-service/occupation.service';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
-import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
 import { Graduation } from '../../shared/model/shared-types';
+import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+import {
+    FormatterFn,
+    OccupationPresentationService,
+    SuggestionLoaderFn,
+} from '../../shared/reference-service/occupation-presentation.service';
+import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -22,6 +35,8 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     @Input() loading: boolean;
     @Input() searchFilter: CandidateSearchFilter;
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
+
+    @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
     maxCandidateListSize: number = MAX_CANDIDATE_LIST_SIZE;
     graduations = Graduation;
@@ -38,11 +53,16 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     toolbarForm: FormGroup;
     residence: FormControl;
 
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
+    occupationFormatter: FormatterFn<OccupationSuggestion>;
+
     private subscription: Subscription;
 
-    constructor(private occupationService: OccupationService,
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private cantonService: CantonService,
                 private fb: FormBuilder) {
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnInit() {
@@ -72,11 +92,22 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
         this.subscription.unsubscribe();
     }
 
-    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
-        .filter((prefix: string) => prefix.length > 2)
-        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
+    clearInvalidValue(event: any) {
+        const occupationControl = this.toolbarForm.get('occupation');
+        const value = occupationControl.value;
+        if (value && value.code === undefined) {
+            occupationControl.setValue(undefined, {
+                emitEvent: true,
+            });
 
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
+            // This hack removes the invalid value from the input field.
+            // The idea is from this PR: https://github.com/ng-bootstrap/ng-bootstrap/pull/1468
+            //
+            // todo: This is duplicated in the CandidateSearchToolComponent, we should eventual remove it.
+            // todo: We have to review this after updating to the next ng-bootstrap versions.
+            this.ngbTypeaheadDirective._userInput = '';
+        }
+    }
 
     search(formValue: any): void {
         const searchFilter = Object.assign({}, this.searchFilter, formValue);

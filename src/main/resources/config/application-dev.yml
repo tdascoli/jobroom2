@@ -52,6 +52,18 @@ spring:
             hibernate.cache.hazelcast.instance_name: jobroom
             hibernate.cache.use_minimal_puts: true
             hibernate.cache.hazelcast.use_lite_member: true
+    data:
+        elasticsearch:
+            cluster-name:
+#            cluster-nodes: localhost:9300
+            properties:
+                client.transport.sniff: false
+                client.transport.ignore_cluster_name: true
+                client.transport.ping_timeout: 5s
+                client.transport.nodes_sampler_interval: 5s
+                path:
+                    logs: build/elasticsearch/log
+                    data: build/elasticsearch/data
     mail:
         host: localhost
         port: 25
@@ -153,6 +165,7 @@ jhipster:
         spectator-metrics: # Reports Spectator Circuit Breaker metrics in the logs
             enabled: false
             # edit spring.metrics.export.delay-millis to set report frequency
+
 
 # ===================================================================
 # Application specific properties

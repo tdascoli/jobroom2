@@ -4,13 +4,13 @@ import java.io.Serializable;
 import java.time.Instant;
 import java.util.HashSet;
 import java.util.Locale;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
@@ -21,11 +21,14 @@ import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import org.apache.commons.lang3.StringUtils;
 import org.hibernate.annotations.BatchSize;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
+
+import org.springframework.data.elasticsearch.annotations.Document;
 
 import ch.admin.seco.jobroom.config.Constants;
 
@@ -35,13 +38,14 @@ import ch.admin.seco.jobroom.config.Constants;
 @Entity
 @Table(name = "jhi_user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+@Document(indexName = "user")
 public class User extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     @Id
     @Column(name = "id", columnDefinition = "uuid")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUIDGenerator")
+    @GeneratedValue
     @GenericGenerator(name = "UUIDGenerator", strategy = "uuid2")
     private UUID id;
 
@@ -74,8 +78,8 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(nullable = false)
     private boolean activated = false;
 
-    @Size(min = 2, max = 5)
-    @Column(name = "lang_key", length = 5)
+    @Size(min = 2, max = 6)
+    @Column(name = "lang_key", length = 6)
     private String langKey;
 
     @Size(max = 256)
@@ -119,7 +123,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     //Lowercase the login before saving it in database
     public void setLogin(String login) {
-        this.login = login.toLowerCase(Locale.ENGLISH);
+        this.login = StringUtils.lowerCase(login, Locale.ENGLISH);
     }
 
     public String getPassword() {
@@ -212,7 +216,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Override
     public int hashCode() {
-        return login.hashCode();
+        return Objects.hashCode(getId());
     }
 
     @Override
@@ -225,8 +229,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
         }
 
         User user = (User) o;
-
-        return login.equals(user.login);
+        return !(user.getId() == null || getId() == null) && Objects.equals(getId(), user.getId());
     }
 
     @Override

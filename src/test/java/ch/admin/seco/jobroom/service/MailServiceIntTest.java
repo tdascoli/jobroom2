@@ -31,6 +31,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import ch.admin.seco.jobroom.JobroomApp;
+import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.User;
 
 @RunWith(SpringRunner.class)
@@ -133,14 +134,14 @@ public class MailServiceIntTest {
         assertThat(message.getSubject()).isEqualTo("test title");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo(user.getEmail());
         assertThat(message.getFrom()[0].toString()).isEqualTo("test@localhost");
-        assertThat(message.getContent().toString()).startsWith("<html>test title, http://127.0.0.1:8080, john</html>");
+        assertThat(message.getContent().toString()).isEqualTo("<html>test title, http://127.0.0.1:8080, john</html>\n");
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
     }
 
     @Test
     public void testSendActivationEmail() throws Exception {
         User user = new User();
-        user.setLangKey("de");
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendActivationEmail(user);
@@ -155,7 +156,7 @@ public class MailServiceIntTest {
     @Test
     public void testCreationEmail() throws Exception {
         User user = new User();
-        user.setLangKey("de");
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendCreationEmail(user);
@@ -170,7 +171,7 @@ public class MailServiceIntTest {
     @Test
     public void testSendPasswordResetMail() throws Exception {
         User user = new User();
-        user.setLangKey("de");
+        user.setLangKey(Constants.DEFAULT_LANGUAGE);
         user.setLogin("john");
         user.setEmail("john.doe@example.com");
         mailService.sendPasswordResetMail(user);

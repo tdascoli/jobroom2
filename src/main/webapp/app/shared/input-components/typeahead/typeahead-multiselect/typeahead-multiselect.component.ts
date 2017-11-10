@@ -9,6 +9,7 @@ import { Observable } from 'rxjs/Rx';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect-model';
 import { TypeaheadItemDisplayModel } from '../typeahead-item-display-model';
+import { TYPEAHEAD_QUERY_MIN_LENGTH } from '../../../../app.constants';
 
 enum Key {
     Tab = 9,
@@ -145,7 +146,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
             .map(toDisplayModel);
 
         return text$
-            .filter((query: string) => query.length > 2)
+            .filter((query: string) => query.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
             .switchMap((query: string) => this.itemLoader(query))
             .map(toDisplayModelArray);
     };

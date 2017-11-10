@@ -1,5 +1,13 @@
 @import '../../../content/scss/jbr2_variables.scss';
 
+@media screen and (min-width: 480px){
+    .sticky-top {
+        position: sticky;
+        top: calc(#{$header-alv-height + $header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom});
+        z-index: 100;
+    }
+}
+
 :host /deep/ .typeahead-singleselect__type-label--canton {
     background-color: $main-accent-color-400;
 }

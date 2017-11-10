@@ -1,4 +1,4 @@
-apply plugin: "net.ltgt.apt"
+apply plugin: "net.ltgt.apt-idea"
 
 dependencies {
     apt "org.mapstruct:mapstruct-processor:${mapstruct_version}"

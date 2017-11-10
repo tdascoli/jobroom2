@@ -4,12 +4,15 @@
     z-index: 1000;
 }
 
-.form-control.ng-invalid:not(form)  {
+/deep/ .form-control.ng-invalid {
     border-left: 5px solid #a94442;
 }
 
 .date__input {
     margin: 0;
+    &:enabled {
+        background-color: #ffffff;
+    }
 }
 
 /deep/ .d-inline-block select {

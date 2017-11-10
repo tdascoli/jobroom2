@@ -9,7 +9,8 @@
                        [ngbTypeahead]="fetchOccupationSuggestions"
                        [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
                        [inputFormatter]="occupationFormatter"
-                       [resultFormatter]="occupationFormatter">
+                       [resultFormatter]="occupationFormatter"
+                       (blur)="clearInvalidValue($event)">
             </div>
 
             <div class="form-group">
@@ -29,7 +30,7 @@
             </div>
             <button class="btn btn-primary btn-lg btn-block">
                 <span translate="home.tools.candidate-search.search-button.title"></span>
-                <span>({{candidateSearchToolModel.totalCount}})</span>
+                <span>({{candidateSearchToolModel.totalCount | jr2Number}})</span>
             </button>
         </form>
     </fieldset>

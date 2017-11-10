@@ -26,9 +26,6 @@
                 }
             }
         },
-        "drivingLicenceCategory": {
-            "label": "F\u00fchrerausweiskategorie"
-        },
         "education": {
             "label": "Bildungsstufe"
         },

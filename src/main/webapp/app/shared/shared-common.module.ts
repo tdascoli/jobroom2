@@ -10,7 +10,7 @@ import {
     JobroomSharedLibsModule
 } from './';
 import {
-    LanguageSelectorComponent,
+    LanguageFilterComponent,
     MultiselectComponent,
     RangeInputComponent,
     SearchButtonComponent,
@@ -31,7 +31,7 @@ import {
         RangeInputComponent,
         MultiselectComponent,
         TypeaheadSingleselectComponent,
-        LanguageSelectorComponent,
+        LanguageFilterComponent,
         SearchButtonComponent
     ],
     providers: [
@@ -52,7 +52,7 @@ import {
         RangeInputComponent,
         MultiselectComponent,
         TypeaheadSingleselectComponent,
-        LanguageSelectorComponent,
+        LanguageFilterComponent,
         SearchButtonComponent,
         KeysPipe
     ]

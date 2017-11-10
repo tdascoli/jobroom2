@@ -1,5 +1,102 @@
 {
+    "entity": {
+        "action": {
+            "addblob": "Aggiungi blob",
+            "addimage": "Aggiungi immagine",
+            "back": "Indietro",
+            "cancel": "Annulla",
+            "delete": "Elimina",
+            "edit": "Modifica",
+            "open": "Open",
+            "save": "Salva",
+            "view": "Visualizza"
+        },
+        "delete": {
+            "title": "Conferma operazione di cancellazione"
+        },
+        "detail": {
+            "field": "Campo",
+            "value": "Valore"
+        },
+        "validation": {
+            "datetimelocal": "Questo campo dovrebbe essere data e ora.",
+            "max": "Questo campo non pu\u00f2 essere superiore a {{ max }}.",
+            "maxbytes": "Questo campo non pu\u00f2 essere superiore a {{ max }} byte.",
+            "maxlength": "Questo campo non pu\u00f2 essere pi\u00f9 di {{ max }} caratteri.",
+            "min": "Questo campo dovrebbe essere pi\u00f9 di {{ min }}.",
+            "minbytes": "Questo campo dovrebbe essere pi\u00f9 di {{ min }} byte.",
+            "minlength": "Questo campo deve essere di almeno {{ min }} caratteri.",
+            "number": "Questo campo dovrebbe essere un numero.",
+            "pattern": "Questo campo dovrebbe corrispondere al modello {{ pattern }}.",
+            "required": "Questo campo \u00e8 obbligatorio."
+        }
+    },
+    "error": {
+        "NotNull": "Il campo {{ fieldName }} non pu\u00f2 essere vuoto!",
+        "Size": "Il campo {{ fieldName }} non \u00e8 conforme ai requisiti di lunghezza min/max!",
+        "emailexists": "L'email \u00e8 gi\u00e0 in uso!",
+        "idexists": "Un(a) nuovo/a {{entityName}} non pu\u00f2 gi\u00e0 avere un ID",
+        "internalServerError": "Internal server error",
+        "server": {
+            "not": {
+                "reachable": "Server non raggiungibile"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Non trovato"
+            }
+        },
+        "userexists": "Il nome utente \u00e8 gi\u00e0 in uso!"
+    },
+    "footer": {
+        "link": {
+            "abbreviation": {
+                "text": "Abk\u00fcrzungen"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+            }
+        }
+    },
     "global": {
+        "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
+        "button": {
+            "add": {
+                "title": "Add"
+            },
+            "remove": {
+                "title": "Remove"
+            }
+        },
+        "contactPerson": {
+            "salutation": {
+                "MR": "Herr",
+                "MS": "Frau"
+            }
+        },
+        "drivingLicenceCategory": {
+            "A": "A",
+            "A1": "A1",
+            "B": "B",
+            "B1": "B1",
+            "BE": "BE",
+            "C": "C",
+            "C1": "C1",
+            "C1E": "C1E",
+            "CE": "CE",
+            "D": "D",
+            "D1": "D1",
+            "D1E": "D1E",
+            "DE": "DE",
+            "F": "F",
+            "G": "G",
+            "M": "M",
+            "label": "F\u00fchrerausweiskategorie"
+        },
         "education": {
             "ISCED1": "Primarstufe - ISCED 1",
             "ISCED2": "Sekundarstufe I - ISCED 2",
@@ -13,15 +110,6 @@
             "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
             "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
             "NONE": "keine Erfahrung"
-        },
-        "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
-        "button": {
-            "add": {
-                "title": "Add"
-            },
-            "remove": {
-                "title": "Remove"
-            }
         },
         "field": {
             "id": "ID"
@@ -67,6 +155,7 @@
                 "userManagement": "Gestione utenti"
             },
             "entities": {
+                "organization": "Organization",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
                 "main": "Entit\u00e0"
@@ -314,94 +403,7 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "drivingLicenceCategory": {
-            "A": "A",
-            "A1": "A1",
-            "B": "B",
-            "B1": "B1",
-            "BE": "BE",
-            "C": "C",
-            "C1": "C1",
-            "C1E": "C1E",
-            "CE": "CE",
-            "D": "D",
-            "D1": "D1",
-            "D1E": "D1E",
-            "DE": "DE",
-            "F": "F",
-            "G": "G",
-            "M": "M"
-        },
-        "contactPerson": {
-            "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
-            }
-        }
-    },
-    "entity": {
-        "action": {
-            "addblob": "Aggiungi blob",
-            "addimage": "Aggiungi immagine",
-            "back": "Indietro",
-            "cancel": "Annulla",
-            "delete": "Elimina",
-            "edit": "Modifica",
-            "open": "Open",
-            "save": "Salva",
-            "view": "Visualizza"
-        },
-        "delete": {
-            "title": "Conferma operazione di cancellazione"
-        },
-        "detail": {
-            "field": "Campo",
-            "value": "Valore"
-        },
-        "validation": {
-            "datetimelocal": "Questo campo dovrebbe essere data e ora.",
-            "max": "Questo campo non pu\u00f2 essere superiore a {{ max }}.",
-            "maxbytes": "Questo campo non pu\u00f2 essere superiore a {{ max }} byte.",
-            "maxlength": "Questo campo non pu\u00f2 essere pi\u00f9 di {{ max }} caratteri.",
-            "min": "Questo campo dovrebbe essere pi\u00f9 di {{ min }}.",
-            "minbytes": "Questo campo dovrebbe essere pi\u00f9 di {{ min }} byte.",
-            "minlength": "Questo campo deve essere di almeno {{ min }} caratteri.",
-            "number": "Questo campo dovrebbe essere un numero.",
-            "pattern": "Questo campo dovrebbe corrispondere al modello {{ pattern }}.",
-            "required": "Questo campo \u00e8 obbligatorio."
-        }
-    },
-    "error": {
-        "NotNull": "Il campo {{ fieldName }} non pu\u00f2 essere vuoto!",
-        "Size": "Il campo {{ fieldName }} non \u00e8 conforme ai requisiti di lunghezza min/max!",
-        "emailexists": "L'email \u00e8 gi\u00e0 in uso!",
-        "idexists": "Un(a) nuovo/a {{entityName}} non pu\u00f2 gi\u00e0 avere un ID",
-        "internalServerError": "Internal server error",
-        "server": {
-            "not": {
-                "reachable": "Server non raggiungibile"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Non trovato"
-            }
-        },
-        "userexists": "Il nome utente \u00e8 gi\u00e0 in uso!"
-    },
-    "footer": {
-        "link": {
-            "abbreviation": {
-                "text": "Abk\u00fcrzungen"
-            },
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
-            }
-        }
+        "title": "Jobroom"
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"

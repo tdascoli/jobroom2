@@ -42,6 +42,19 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
             exclude: ['node_modules/generator-jhipster']
         },
         {
+            test: /\.ts$/,
+            use: [
+                {
+                    loader: 'ngc-webpack',
+                    options: {
+                        disable: false,
+                        tsConfigPath: 'tsconfig-aot.json'
+                    }
+                }
+            ],
+            exclude: /(polyfills\.ts|vendor\.ts|Reflect\.ts)/
+        },
+        {
             test: /\.scss$/,
             loaders: ['to-string-loader', 'css-loader', 'sass-loader'],
             exclude: /(vendor\.scss|global\.scss)/

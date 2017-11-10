@@ -18,7 +18,7 @@ describe('KeysPipe', () => {
             { key: 2, value: 'C' },
             { key: 3, value: 'D' },
         ];
-        expect(pipe.transform(ENUM, null)).toEqual(expectedResult);
+        expect(pipe.transform(ENUM)).toEqual(expectedResult);
     });
 
     it('transforms ENUM with numbers to map', () => {
@@ -32,6 +32,18 @@ describe('KeysPipe', () => {
             { key: 2, value: '3' },
             { key: 3, value: '4' },
         ];
-        expect(pipe.transform(ENUM, null)).toEqual(expectedResult);
+        expect(pipe.transform(ENUM)).toEqual(expectedResult);
+    });
+
+    it('excludes the members given in the first parameter', () => {
+        enum ENUM {
+            A, B, C, D
+        }
+
+        const expectedResult = [
+            { key: 0, value: 'A' },
+            { key: 3, value: 'D' },
+        ];
+        expect(pipe.transform(ENUM, ['B', 'C'])).toEqual(expectedResult);
     });
 });

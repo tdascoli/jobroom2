@@ -1,4 +1,4 @@
-<div class="toolbar toolbar--light md-whiteframe-3dp sticky-top">
+<div class="toolbar toolbar--light md-whiteframe-3dp sticked sticked--top">
     <div class="container">
         <form [formGroup]="toolbarForm" (ngSubmit)="search(toolbarForm.value)" novalidate
               class="form-inline toolbar-form job-search__form">
@@ -8,7 +8,8 @@
                        [ngbTypeahead]="fetchOccupationSuggestions"
                        [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
                        [inputFormatter]="occupationFormatter"
-                       [resultFormatter]="occupationFormatter">
+                       [resultFormatter]="occupationFormatter"
+                       (blur)="clearInvalidValue($event)">
             </div>
             <div class="form-group form-group--wide">
                 <ss-multiselect-dropdown [options]="cantonOptions$ | async"

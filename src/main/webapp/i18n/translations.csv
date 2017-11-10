@@ -61,7 +61,6 @@ candidate-search,candidate-search.candidate-search-list.title.one.with-locality,
 candidate-search,candidate-search.candidate-search-list.title.one.without-locality,1 {{query}} Kandidat,1 {{query}} Candidate,1 {{query}} Candidate,1 {{query}} Candidate
 candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} {{query}} Kandidaten in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}}
 candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Kandidaten,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates
-candidate-search,candidate-search.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
 candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
 candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
@@ -180,6 +179,7 @@ global,global.drivingLicenceCategory.DE,DE,DE,DE,DE
 global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
+global,global.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
 global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
 global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2
 global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3
@@ -468,6 +468,10 @@ home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistung
 home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen
 home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten
 home,home.tools.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidaten finden,Kandidaten finden
+home,home.tools.job-publication.no-selection,keine Auswahl,keine Auswahl,keine Auswahl,keine Auswahl
+home,home.tools.job-publication.occupation.label,Beruf,Beruf,Beruf,Beruf
+home,home.tools.job-publication.occupation.placeholder,Beruf,Beruf,Beruf,Beruf
+home,home.tools.job-publication.optional,Optional,Optional,Optional,Optional
 home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} characters available,{{count}} characters available,{{count}} characters available,{{count}} characters available
 home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
 home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Characters,max. 240 Characters,max. 240 Characters,max. 240 Characters
@@ -500,14 +504,37 @@ home,home.tools.job-publication.experience,Berufserfahrung,Berufserfahrung,Beruf
 home,home.tools.job-publication.job-description,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung
 home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
 home,home.tools.job-publication.language-skills,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse
+home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Language skill is required,Language skill is required
 home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
 home,home.tools.job-publication.locality.country,Land,Land,Land,Land
 home,home.tools.job-publication.locality.title,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
-home,home.tools.job-publication.no-selection,keine Auswahl,keine Auswahl,keine Auswahl,keine Auswahl
-home,home.tools.job-publication.occupation.label,Beruf,Beruf,Beruf,Beruf
-home,home.tools.job-publication.occupation.placeholder,Beruf,Beruf,Beruf,Beruf
-home,home.tools.job-publication.optional,Optional,Optional,Optional,Optional
+home,home.tools.job-publication.locality.zip,PLZ,PLZ,PLZ,PLZ
+home,home.tools.job-publication.locality.city,Ort,Ort,Ort,Ort
+home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
+home,home.tools.job-publication.company.title,Unternehmen,Unternehmen,Unternehmen,Unternehmen
+home,home.tools.job-publication.company.street,Strasse,Strasse,Strasse,Strasse
+home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.
+home,home.tools.job-publication.company.postbox-zipcode,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort
+home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,Postfach PLZ,Postfach PLZ,Postfach PLZ
+home,home.tools.job-publication.company.postbox-city,Ort,Ort,Ort,Ort
+home,home.tools.job-publication.company.country,Land,Land,Land,Land
+home,home.tools.job-publication.contact.title,Kontaktperson,Kontaktperson,Kontaktperson,Kontaktperson
+home,home.tools.job-publication.contact.salutation,Anrede,Anrede,Anrede,Anrede
+home,home.tools.job-publication.contact.first-name,Vorname,Vorname,Vorname,Vorname
+home,home.tools.job-publication.contact.last-name,Nachname,Nachname,Nachname,Nachname
+home,home.tools.job-publication.contact.phone,Telefon,Telefon,Telefon,Telefon
+home,home.tools.job-publication.contact.email,E-Mail,E-Mail,E-Mail,E-Mail
+home,home.tools.job-publication.application.title,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen
+home,home.tools.job-publication.application.mail-enabled,Schriftliche Bewerbung,Schriftliche Bewerbung,Schriftliche Bewerbung,Schriftliche Bewerbung
+home,home.tools.job-publication.application.email-enabled,Elektronische Bewerbung,Elektronische Bewerbung,Elektronische Bewerbung,Elektronische Bewerbung
+home,home.tools.job-publication.application.email,E-Mail,E-Mail,E-Mail,E-Mail
+home,home.tools.job-publication.application.online-form,Online-Formular,Online-Formular,Online-Formular,Online-Formular
+home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung
+home,home.tools.job-publication.application.phone,Telefon,Telefon,Telefon,Telefon
+home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
+home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Characters,max. 240 Characters,max. 240 Characters,max. 240 Characters
+home,home.tools.job-publication.application.additional-info.characters-counter-text,"{{count}} characters available","{{count}} characters available","{{count}} characters available","{{count}} characters available"
 home,home.tools.job-publication.publication.title,Publikationsmedien,Publikationsmedien,Publikationsmedien,Publikationsmedien
 home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum
 home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,unbefristet,unbefristet,unbefristet

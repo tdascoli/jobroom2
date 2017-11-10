@@ -1,0 +1,56 @@
+<div *ngIf="organization">
+    <h2><span jhiTranslate="jobroomApp.organization.detail.title">Organization</span> {{organization.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="jobroomApp.organization.externalId">External Id</span></dt>
+        <dd>
+            <span>{{organization.externalId}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.name">Name</span></dt>
+        <dd>
+            <span>{{organization.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.street">Street</span></dt>
+        <dd>
+            <span>{{organization.street}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.zipCode">Zip Code</span></dt>
+        <dd>
+            <span>{{organization.zipCode}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.city">City</span></dt>
+        <dd>
+            <span>{{organization.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.email">Email</span></dt>
+        <dd>
+            <span>{{organization.email}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.phone">Phone</span></dt>
+        <dd>
+            <span>{{organization.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.type">Type</span></dt>
+        <dd>
+            <span jhiTranslate="{{'jobroomApp.CompanyType.' + organization.type}}">{{organization.type}}</span>
+        </dd>
+        <dt><span jhiTranslate="jobroomApp.organization.active">Active</span></dt>
+        <dd>
+            <span>{{organization.active}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'organization/'+ organization.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

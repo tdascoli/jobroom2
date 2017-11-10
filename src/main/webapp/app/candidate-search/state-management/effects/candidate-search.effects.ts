@@ -2,6 +2,7 @@ import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import { ROUTER_NAVIGATION } from '@ngrx/router-store';
+import { Params, RouterStateSnapshot } from '@angular/router';
 import {
     CandidateSearchState,
     getCandidateSearchState
@@ -111,13 +112,14 @@ export class CandidateSearchEffects {
         .filter((action: NextItemLoadedAction) => action.payload.feature === CANDIDATE_DETAIL_FEATURE)
         .do((action: NextItemLoadedAction) => {
             this.router.navigate(['/candidate-detail', action.payload.item.id])
+            const test = {url: 'coucou'} as RouterStateSnapshot;
         });
 
     @Effect({ dispatch: false })
     routerNavigation$: Observable<Action> = this.actions$
         .ofType(ROUTER_NAVIGATION)
-        .do((action: RouterNavigationAction) => {
-            const URISearchFilter = action.payload.event.state.root.queryParams.searchFilter;
+        .do((action: any) => {
+            const URISearchFilter = action.payload.routerState.queryParams.searchFilter;
             if (URISearchFilter) {
                 const filter: CandidateSearchFilter  = this.candidateService.decodeURISearchFilter(URISearchFilter);
                 this.store.dispatch(new SearchByUrlParamsAction(filter));

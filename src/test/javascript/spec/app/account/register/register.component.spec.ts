@@ -1,10 +1,21 @@
-import { ComponentFixture, TestBed, async, inject, tick, fakeAsync } from '@angular/core/testing';
-import { Renderer, ElementRef } from '@angular/core';
+import {
+    async,
+    ComponentFixture,
+    fakeAsync,
+    inject,
+    TestBed,
+    tick
+} from '@angular/core/testing';
+import { ElementRef, Renderer } from '@angular/core';
 import { Observable } from 'rxjs/Rx';
 import { JhiLanguageService } from 'ng-jhipster';
 import { MockLanguageService } from '../../../helpers/mock-language.service';
 import { JobroomTestModule } from '../../../test.module';
-import { LoginModalService } from '../../../../../../main/webapp/app/shared';
+import {
+    EMAIL_ALREADY_USED_TYPE,
+    LOGIN_ALREADY_USED_TYPE,
+    LoginModalService
+} from '../../../../../../main/webapp/app/shared';
 import { Register } from '../../../../../../main/webapp/app/account/register/register.service';
 import { RegisterComponent } from '../../../../../../main/webapp/app/account/register/register.component';
 
@@ -34,7 +45,7 @@ describe('Component Tests', () => {
                     }
                 ]
             }).overrideTemplate(RegisterComponent, '')
-            .compileComponents();
+                .compileComponents();
         }));
 
         beforeEach(() => {
@@ -80,7 +91,9 @@ describe('Component Tests', () => {
                 fakeAsync((service: Register) => {
                     spyOn(service, 'save').and.returnValue(Observable.throw({
                         status: 400,
-                        _body: 'login already in use'
+                        json() {
+                            return { type: LOGIN_ALREADY_USED_TYPE }
+                        }
                     }));
                     comp.registerAccount.password = comp.confirmPassword = 'password';
 
@@ -99,7 +112,9 @@ describe('Component Tests', () => {
                 fakeAsync((service: Register) => {
                     spyOn(service, 'save').and.returnValue(Observable.throw({
                         status: 400,
-                        _body: 'email address already in use'
+                        json() {
+                            return { type: EMAIL_ALREADY_USED_TYPE }
+                        }
                     }));
                     comp.registerAccount.password = comp.confirmPassword = 'password';
 

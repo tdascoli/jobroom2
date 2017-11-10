@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../../shared/reference-service/occupation.service';
-import { FormBuilder, FormGroup, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Subject } from 'rxjs/Subject';
 import {
@@ -10,6 +9,13 @@ import {
     ISCED_1997
 } from '../../../shared/model/shared-types';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
+import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
+import { Translations } from './zip-code/zip-code.component';
+import {
+    FormatterFn,
+    OccupationPresentationService,
+    SuggestionLoaderFn
+} from '../../../shared/reference-service/occupation-presentation.service';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -28,25 +34,39 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         { key: 'UK', value: 'UK' },
         { key: 'A', value: 'A' }
     ];
+    languageSkills$: Observable<Array<string>>;
 
     jobPublicationForm: FormGroup;
-
     publicationStartDateByArrangement = true;
-    minDate = JobPublicationToolComponent.buildMinDate();
+    publicationEndDateIsPermanent = true;
+    publicationStartDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
+    publicationEndDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
+
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
+    occupationFormatter: FormatterFn<OccupationSuggestion>;
 
     unsubscribe$ = new Subject<void>();
 
-    private static buildMinDate(): NgbDateStruct {
-        const now = new Date();
+    private static mapDateToNgbDateStruct(source?: Date): NgbDateStruct {
+        const date = source ? source : new Date();
         return {
-            year: now.getFullYear(),
-            month: now.getMonth() + 1,
-            day: now.getDate()
+            year: date.getFullYear(),
+            month: date.getMonth() + 1,
+            day: date.getDate()
         };
     }
 
-    constructor(private occupationService: OccupationService,
-                private fb: FormBuilder) {
+    private static mapNgbDateStructToDate(dateStruct: NgbDateStruct): Date {
+        return new Date(dateStruct.year, dateStruct.month - 1, dateStruct.day);
+    }
+
+    constructor(private occupationPresentationService: OccupationPresentationService,
+                private fb: FormBuilder,
+                private languageSkillService: LanguageSkillService) {
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
+        this.languageSkills$ = languageSkillService.getLanguages();
+
         this.jobPublicationForm = fb.group({
             job: fb.group({
                 title: ['', Validators.required],
@@ -58,29 +78,31 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 description: ['', [Validators.required, Validators.maxLength(9000)]],
                 workload: [[0, 100], Validators.required],
                 publicationStartDate: fb.group({
-                    immediate: 'false',
+                    immediate: 'true',
                     date: [{
                         value: null,
                         disabled: true
                     }, Validators.required]
                 }),
-                publicationEndDate: [],
+                publicationEndDate: fb.group({
+                    permanent: 'true',
+                    date: [{
+                        value: null,
+                        disabled: true
+                    }, Validators.required]
+                }),
                 startsImmediately: [],
                 permanent: [],
                 drivingLicenseLevel: [],
-                languageSkills: [],
                 location: fb.group({
                     countryCode: [this.countries[0].key, Validators.required],
-                    zipCode: ['', Validators.required],
                     text: []
                 })
             }),
             company: fb.group({
                 name: ['', Validators.required],
                 street: ['', Validators.required],
-                zipCode: ['', Validators.required],
                 postboxNumber: [],
-                postboxZipCode: [],
                 countryCode: [this.countries[0].key, Validators.required]
             }),
             contact: fb.group({
@@ -94,9 +116,12 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 mailEnabled: [],
                 emailEnabled: [],
                 phoneEnabled: [],
-                email: [{ value: '', disabled: true }],
-                url: [{ value: '', disabled: true }],
-                phoneNumber: [{ value: '', disabled: true }],
+                email: [{
+                    value: '',
+                    disabled: true
+                }, [Validators.required, Validators.email]],
+                url: [{ value: '', disabled: true }, [Validators.required]],
+                phoneNumber: [{ value: '', disabled: true }, [Validators.required]],
                 additionalInfo: ['', [Validators.required, Validators.maxLength(240)]],
             }),
             publication: fb.group({
@@ -105,52 +130,68 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             })
         });
 
-        this.validateCheckboxRelatedField('application.mailEnabled',
-            'application.url');
-        this.validateCheckboxRelatedField('application.emailEnabled',
-            'application.email', [Validators.email]);
-        this.validateCheckboxRelatedField('application.phoneEnabled',
-            'application.phoneNumber');
-        this.configurePublicationStartDateInputs();
+        this.validateCheckboxRelatedField('application.mailEnabled', 'application.url');
+        this.validateCheckboxRelatedField('application.emailEnabled', 'application.email');
+        this.validateCheckboxRelatedField('application.phoneEnabled', 'application.phoneNumber');
+
+        this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
+            (disabled) => this.publicationStartDateByArrangement = disabled);
+        this.configureDateInput('job.publicationEndDate.date', 'job.publicationEndDate.permanent',
+            (disabled) => this.publicationEndDateIsPermanent = disabled);
+        this.updatePublicationStartDateRelatedField();
     }
 
-    private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string, additionalValidators: ValidatorFn[] = []) {
+    get job(): FormGroup {
+        return this.jobPublicationForm.get('job') as FormGroup;
+    }
+
+    private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string) {
         this.jobPublicationForm.get(checkboxPath).valueChanges
             .takeUntil(this.unsubscribe$)
             .subscribe((enabled: boolean) => {
                 const relatedControl = this.jobPublicationForm.get(relatedFieldPath);
                 if (enabled) {
                     relatedControl.enable();
-                    relatedControl.setValidators([Validators.required, ...additionalValidators]);
                 } else {
                     relatedControl.disable();
                     relatedControl.setValue('');
-                    relatedControl.clearValidators();
                 }
                 relatedControl.updateValueAndValidity();
             });
     }
 
-    private configurePublicationStartDateInputs() {
-        const date = this.jobPublicationForm.get('job.publicationStartDate.date');
-        this.jobPublicationForm.get('job.publicationStartDate.immediate').valueChanges
+    private configureDateInput(dateInputPath: string, radioButtonsPath: string, onChange: (disabled: boolean) => void) {
+        const date = this.jobPublicationForm.get(dateInputPath);
+        this.jobPublicationForm.get(radioButtonsPath).valueChanges
             .takeUntil(this.unsubscribe$)
             .subscribe((value) => {
-                if (value === 'true') {
+                if (value === 'false') {
                     date.enable();
-                    this.publicationStartDateByArrangement = false;
+                    onChange(false);
                 } else {
                     date.disable();
-                    this.publicationStartDateByArrangement = true;
+                    onChange(true);
                 }
             });
     }
 
-    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
-        .filter((prefix: string) => prefix.length > 2)
-        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
+    private updatePublicationStartDateRelatedField() {
+        this.jobPublicationForm.get('job.publicationStartDate.date').valueChanges
+            .takeUntil(this.unsubscribe$)
+            .subscribe((value) => {
+                if (value) {
+                    const publicationEndDateControl = this.jobPublicationForm.get('job.publicationEndDate.date');
+                    const publicationStartDate = JobPublicationToolComponent.mapNgbDateStructToDate(value);
+                    const publicationEndDate = JobPublicationToolComponent
+                        .mapNgbDateStructToDate(publicationEndDateControl.value ? publicationEndDateControl.value : this.publicationEndDateMin);
 
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
+                    if (publicationStartDate > publicationEndDate) {
+                        publicationEndDateControl.setValue(null);
+                    }
+                    this.publicationEndDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct(publicationStartDate);
+                }
+            });
+    }
 
     ngOnInit(): void {
     }
@@ -168,6 +209,14 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         if (event.target.value.length >= maxLength) {
             event.preventDefault();
         }
+    }
+
+    getPoBoxZipCodeTranslations(): Translations {
+        return {
+            zipCode: 'home.tools.job-publication.company.postbox-zipcode',
+            zip: 'home.tools.job-publication.company.postbox-zip',
+            city: 'home.tools.job-publication.company.postbox-city'
+        };
     }
 
     onSubmit(): void {

@@ -1,28 +1,28 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { LanguageSelectorComponent } from '../../../../../../../main/webapp/app/shared/input-components/language-selector/language-selector.component';
+import { LanguageFilterComponent } from '../../../../../../../main/webapp/app/shared/input-components/language-filter/language-filter.component';
 import {
     CEFR_Level,
     LanguageSkill
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
 import { JobroomTestModule } from '../../../../test.module';
 
-describe('LanguageSelectorComponent', () => {
-    let component: LanguageSelectorComponent;
-    let fixture: ComponentFixture<LanguageSelectorComponent>;
+describe('LanguageFilterComponent', () => {
+    let component: LanguageFilterComponent;
+    let fixture: ComponentFixture<LanguageFilterComponent>;
     let mockModelChangeListener: { (newValue: any): void };
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [JobroomTestModule],
-            declarations: [LanguageSelectorComponent]
+            declarations: [LanguageFilterComponent]
         })
-            .overrideTemplate(LanguageSelectorComponent, '')
+            .overrideTemplate(LanguageFilterComponent, '')
             .compileComponents();
     }));
 
     beforeEach(() => {
         mockModelChangeListener = jasmine.createSpy('mockModelChangeListener');
-        fixture = TestBed.createComponent(LanguageSelectorComponent);
+        fixture = TestBed.createComponent(LanguageFilterComponent);
         component = fixture.componentInstance;
         component.languageOptions = ['en', 'de', 'fr', 'it'];
         component.registerOnChange(mockModelChangeListener);

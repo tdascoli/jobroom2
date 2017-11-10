@@ -41,6 +41,7 @@ import ch.admin.seco.jobroom.JobroomApp;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.repository.UserRepository;
+import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.service.MailService;
 import ch.admin.seco.jobroom.service.UserService;
@@ -85,6 +86,9 @@ public class UserResourceIntTest {
     private UserRepository userRepository;
 
     @Autowired
+    private UserSearchRepository userSearchRepository;
+
+    @Autowired
     private MailService mailService;
 
     @Autowired
@@ -117,10 +121,10 @@ public class UserResourceIntTest {
      */
     public static User createEntity(EntityManager em) {
         User user = new User();
-        user.setLogin(DEFAULT_LOGIN);
+        user.setLogin(DEFAULT_LOGIN + RandomStringUtils.randomAlphabetic(5));
         user.setPassword(RandomStringUtils.random(60));
         user.setActivated(true);
-        user.setEmail(DEFAULT_EMAIL);
+        user.setEmail(RandomStringUtils.randomAlphabetic(5) + DEFAULT_EMAIL);
         user.setFirstName(DEFAULT_FIRSTNAME);
         user.setLastName(DEFAULT_LASTNAME);
         user.setImageUrl(DEFAULT_IMAGEURL);
@@ -131,7 +135,7 @@ public class UserResourceIntTest {
     @Before
     public void setup() {
         MockitoAnnotations.initMocks(this);
-        UserResource userResource = new UserResource(userRepository, mailService, userService);
+        UserResource userResource = new UserResource(userRepository, userService, mailService, userSearchRepository);
         this.restUserMockMvc = MockMvcBuilders.standaloneSetup(userResource)
             .setCustomArgumentResolvers(pageableArgumentResolver)
             .setControllerAdvice(exceptionTranslator)
@@ -142,6 +146,8 @@ public class UserResourceIntTest {
     @Before
     public void initTest() {
         user = createEntity(em);
+        user.setLogin(DEFAULT_LOGIN);
+        user.setEmail(DEFAULT_EMAIL);
     }
 
     @Test
@@ -151,7 +157,7 @@ public class UserResourceIntTest {
 
         // Create the User
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             null,
             DEFAULT_LOGIN,
@@ -191,7 +197,7 @@ public class UserResourceIntTest {
         int databaseSizeBeforeCreate = userRepository.findAll().size();
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             UUID.randomUUID(),
             DEFAULT_LOGIN,
@@ -224,10 +230,11 @@ public class UserResourceIntTest {
     public void createUserWithExistingLogin() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
         int databaseSizeBeforeCreate = userRepository.findAll().size();
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             null,
             DEFAULT_LOGIN, // this login should already be used
@@ -260,10 +267,11 @@ public class UserResourceIntTest {
     public void createUserWithExistingEmail() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
         int databaseSizeBeforeCreate = userRepository.findAll().size();
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             null,
             "anotherlogin",
@@ -296,6 +304,7 @@ public class UserResourceIntTest {
     public void getAllUsers() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
 
         // Get all the users
         restUserMockMvc.perform(get("/api/users?sort=id,desc")
@@ -315,6 +324,7 @@ public class UserResourceIntTest {
     public void getUser() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
 
         // Get the user
         restUserMockMvc.perform(get("/api/users/{login}", user.getLogin()))
@@ -340,13 +350,14 @@ public class UserResourceIntTest {
     public void updateUser() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
         int databaseSizeBeforeUpdate = userRepository.findAll().size();
 
         // Update the user
         User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
             updatedUser.getLogin(),
@@ -384,13 +395,14 @@ public class UserResourceIntTest {
     public void updateUserLogin() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
         int databaseSizeBeforeUpdate = userRepository.findAll().size();
 
         // Update the user
         User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
             UPDATED_LOGIN,
@@ -429,6 +441,7 @@ public class UserResourceIntTest {
     public void updateUserExistingEmail() throws Exception {
         // Initialize the database with 2 users
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
 
         User anotherUser = new User();
         anotherUser.setLogin("jhipster");
@@ -440,12 +453,13 @@ public class UserResourceIntTest {
         anotherUser.setImageUrl("");
         anotherUser.setLangKey("en");
         userRepository.saveAndFlush(anotherUser);
+        userSearchRepository.save(anotherUser);
 
         // Update the user
         User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
             updatedUser.getLogin(),
@@ -473,6 +487,7 @@ public class UserResourceIntTest {
     public void updateUserExistingLogin() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
 
         User anotherUser = new User();
         anotherUser.setLogin("jhipster");
@@ -484,12 +499,13 @@ public class UserResourceIntTest {
         anotherUser.setImageUrl("");
         anotherUser.setLangKey("en");
         userRepository.saveAndFlush(anotherUser);
+        userSearchRepository.save(anotherUser);
 
         // Update the user
         User updatedUser = userRepository.getOne(user.getId());
 
         Set<String> authorities = new HashSet<>();
-        authorities.add("ROLE_USER");
+        authorities.add(AuthoritiesConstants.USER);
         ManagedUserVM managedUserVM = new ManagedUserVM(
             updatedUser.getId(),
             "jhipster", // this login should already be used by anotherUser
@@ -517,6 +533,7 @@ public class UserResourceIntTest {
     public void deleteUser() throws Exception {
         // Initialize the database
         userRepository.saveAndFlush(user);
+        userSearchRepository.save(user);
         int databaseSizeBeforeDelete = userRepository.findAll().size();
 
         // Delete the user
@@ -544,21 +561,18 @@ public class UserResourceIntTest {
 
     @Test
     @Transactional
-    public void testUserEquals() {
-        User userA = new User();
-        assertThat(userA).isEqualTo(userA);
-        assertThat(userA).isNotEqualTo(null);
-        assertThat(userA).isNotEqualTo(new Object());
-        assertThat(userA.toString()).isNotNull();
-
-        userA.setLogin("AAA");
-        User userB = new User();
-        userB.setLogin("BBB");
-        assertThat(userA).isNotEqualTo(userB);
-
-        userB.setLogin("AAA");
-        assertThat(userA).isEqualTo(userB);
-        assertThat(userA.hashCode()).isEqualTo(userB.hashCode());
+    public void testUserEquals() throws Exception {
+        TestUtil.equalsVerifier(User.class);
+        User User1 = new User();
+        User1.setId(UUID.fromString("00000000-0000-0000-0000-000000000001"));
+        User User2 = new User();
+        assertThat(User1).isNotEqualTo(User2);
+        User2.setId(User1.getId());
+        assertThat(User1).isEqualTo(User2);
+        User2.setId(UUID.fromString("00000000-0000-0000-0000-000000000002"));
+        assertThat(User1).isNotEqualTo(User2);
+        User1.setId(null);
+        assertThat(User1).isNotEqualTo(User2);
     }
 
     @Test
@@ -653,5 +667,4 @@ public class UserResourceIntTest {
         assertThat(authorityA).isEqualTo(authorityB);
         assertThat(authorityA.hashCode()).isEqualTo(authorityB.hashCode());
     }
-
 }

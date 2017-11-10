@@ -15,6 +15,85 @@
                 "title": "Finden Sie passende Kandidaten"
             },
             "candidateSearchTab": "Kandidaten finden",
+            "job-publication": {
+                "no-selection": "keine Auswahl",
+                "occupation": {
+                    "label": "Beruf",
+                    "placeholder": "Beruf"
+                },
+                "optional": "Optional",
+                "application": {
+                    "additional-info": {
+                        "characters-counter-text": "{{count}} characters available",
+                        "label": "Erg\u00e4nzende Angaben",
+                        "placeholder": "max. 240 Characters"
+                    },
+                    "email": "E-Mail",
+                    "email-enabled": "Elektronische Bewerbung",
+                    "mail-enabled": "Schriftliche Bewerbung",
+                    "online-form": "Online-Formular",
+                    "phone": "Telefon",
+                    "phone-enabled": "Telefonische Bewerbung",
+                    "title": "Bewerbungsformen"
+                },
+                "company": {
+                    "country": "Land",
+                    "postbox-number": "Postfach-Nr.",
+                    "postbox-zipcode": "Postfach PLZ / Ort",
+                    "street": "Strasse",
+                    "title": "Unternehmen",
+                    "zipcode": "PLZ / Ort",
+                    "postbox-zip": "Postfach PLZ",
+                    "postbox-city": "Ort"
+                },
+                "contact": {
+                    "email": "E-Mail",
+                    "first-name": "Vorname",
+                    "last-name": "Nachname",
+                    "phone": "Telefon",
+                    "salutation": "Anrede",
+                    "title": "Kontaktperson"
+                },
+                "description": {
+                    "characters-counter-text": "{{count}} characters available",
+                    "label": "T\u00e4tigkeit /Anforderungen",
+                    "placeholder": "max. 9000 Characters"
+                },
+                "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
+                "driving-licence": "F\u00fchrerausweis",
+                "education": "Ausbildung",
+                "experience": "Berufserfahrung",
+                "job-description": "Stellenbeschreibung",
+                "job-title": "Stellenbezeichnung",
+                "language-skills": "Sprachkenntnisse",
+                "language-skills.spoken.error": "Language skill is required",
+                "locality": {
+                    "additional-text": "Zusatztext",
+                    "country": "Land",
+                    "title": "Arbeitsort",
+                    "zipcode": "PLZ / Ort",
+                    "zip": "PLZ",
+                    "city": "Ort"
+                },
+                "publication": {
+                    "title": "Publikationsmedien"
+                },
+                "publicationEndDate": {
+                    "label": "Anstellungsdauer befristet bis Datum",
+                    "permanent": "unbefristet",
+                    "temporary": "befristet bis",
+                    "title": "Anstellungsdauer"
+                },
+                "publicationStartDate": {
+                    "by-arrangement": "nach Vereinbarung",
+                    "immediately": "ab Sofort",
+                    "label": "Stellenantritt ab Datum",
+                    "title": "Stellenantritt"
+                },
+                "reset": "Zur\u00fccksetzen",
+                "submit": "Job publizieren",
+                "workload": "Arbeitspensum"
+            },
             "job-search": {
                 "search-button": {
                     "title": "Jobs anzeigen"
@@ -23,80 +102,6 @@
             "jobPublicationTab": "Job publizieren",
             "jobSearch": {
                 "title": "Finden Sie jetzt Ihren Traumjob!"
-            },
-            "job-publication": {
-                "optional": "Optional",
-                "no-selection": "keine Auswahl",
-                "job-description": "Stellenbeschreibung",
-                "job-title": "Stellenbezeichnung",
-                "occupation": {
-                    "label": "Beruf",
-                    "placeholder": "Beruf"
-                },
-                "education": "Ausbildung",
-                "experience": "Berufserfahrung",
-                "description": {
-                    "label": "T\u00e4tigkeit /Anforderungen",
-                    "placeholder": "max. 9000 Characters",
-                    "characters-counter-text": "{{count}} characters available"
-                },
-                "workload": "Arbeitspensum",
-                "publicationStartDate": {
-                    "title": "Stellenantritt",
-                    "immediately": "ab Sofort",
-                    "by-arrangement": "nach Vereinbarung",
-                    "label": "Stellenantritt ab Datum"
-                },
-                "publicationEndDate": {
-                    "title": "Anstellungsdauer",
-                    "permanent": "unbefristet",
-                    "temporary": "befristet bis",
-                    "label": "Anstellungsdauer befristet bis Datum"
-                },
-                "driving-licence": "F\u00fchrerausweis",
-                "language-skills": "Sprachkenntnisse",
-                "locality": {
-                    "title": "Arbeitsort",
-                    "country": "Land",
-                    "zipcode": "PLZ / Ort",
-                    "additional-text": "Zusatztext"
-                },
-                "company": {
-                    "title": "Unternehmen",
-                    "street": "Strasse",
-                    "zipcode": "PLZ / Ort",
-                    "postbox-number": "Postfach-Nr.",
-                    "postbox-zipcode": "Postfach PLZ / Ort",
-                    "country": "Land"
-                },
-                "contact": {
-                    "title": "Kontaktperson",
-                    "salutation": "Anrede",
-                    "first-name": "Vorname",
-                    "last-name": "Nachname",
-                    "phone": "Telefon",
-                    "email": "E-Mail"
-                },
-                "application": {
-                    "title": "Bewerbungsformen",
-                    "mail-enabled": "Schriftliche Bewerbung",
-                    "email-enabled": "Elektronische Bewerbung",
-                    "email": "E-Mail",
-                    "online-form": "Online-Formular",
-                    "phone-enabled": "Telefonische Bewerbung",
-                    "phone": "Telefon",
-                    "additional-info": {
-                        "label": "Erg\u00e4nzende Angaben",
-                        "placeholder": "max. 240 Characters",
-                        "characters-counter-text": "{{count}} characters available"
-                    }
-                },
-                "publication": {
-                    "title": "Publikationsmedien"
-                },
-                "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
-                "submit": "Job publizieren",
-                "reset": "Zur\u00fccksetzen"
             }
         }
     }

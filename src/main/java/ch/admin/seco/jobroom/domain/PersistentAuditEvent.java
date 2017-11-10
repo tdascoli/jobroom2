@@ -11,7 +11,6 @@ import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.MapKeyColumn;
@@ -31,7 +30,7 @@ public class PersistentAuditEvent implements Serializable {
 
     @Id
     @Column(name = "event_id", columnDefinition = "uuid")
-    @GeneratedValue(strategy = GenerationType.AUTO, generator = "UUIDGenerator")
+    @GeneratedValue
     @GenericGenerator(name = "UUIDGenerator", strategy = "uuid2")
     private UUID id;
 

@@ -1,5 +1,102 @@
 {
+    "entity": {
+        "action": {
+            "addblob": "Blob hinzuf\u00fcgen",
+            "addimage": "Bild hinzuf\u00fcgen",
+            "back": "Zur\u00fcck",
+            "cancel": "Abbrechen",
+            "delete": "L\u00f6schen",
+            "edit": "Bearbeiten",
+            "open": "\u00d6ffnen",
+            "save": "Speichern",
+            "view": "Details"
+        },
+        "delete": {
+            "title": "L\u00f6schen best\u00e4tigen"
+        },
+        "detail": {
+            "field": "Feld",
+            "value": "Wert"
+        },
+        "validation": {
+            "datetimelocal": "Dieses Feld muss eine Datums- und Zeitangabe enthalten.",
+            "max": "Dieses Feld muss kleiner als {{max}} sein.",
+            "maxbytes": "Dieses Feld sollte nicht mehr als {{max}} bytes haben.",
+            "maxlength": "Dieses Feld darf max. {{max}} Zeichen lang sein.",
+            "min": "Dieses Feld muss gr\u00f6sser als {{min}} sein.",
+            "minbytes": "Dieses Feld sollte mehr als {{min}} bytes haben.",
+            "minlength": "Dieses Feld muss mind. {{min}} Zeichen lang sein.",
+            "number": "Dieses Feld muss eine Zahl sein.",
+            "pattern": "Dieses Feld muss das Muster {{pattern}} erf\u00fcllen.",
+            "required": "Pflichtfeld"
+        }
+    },
+    "error": {
+        "NotNull": "Feld {{fieldName}} darf nicht leer sein!",
+        "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
+        "emailexists": "Email wird bereits verwendet!",
+        "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
+        "internalServerError": "Internal server error",
+        "server": {
+            "not": {
+                "reachable": "Server ist nicht erreichbar"
+            }
+        },
+        "url": {
+            "not": {
+                "found": "Nicht gefunden"
+            }
+        },
+        "userexists": "Benutzername bereits vergeben!"
+    },
+    "footer": {
+        "link": {
+            "abbreviation": {
+                "text": "Abk\u00fcrzungen"
+            },
+            "legal": {
+                "text": "Rechtliche Grundlagen"
+            },
+            "seco": {
+                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+            }
+        }
+    },
     "global": {
+        "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
+        "button": {
+            "add": {
+                "title": "Add"
+            },
+            "remove": {
+                "title": "Remove"
+            }
+        },
+        "contactPerson": {
+            "salutation": {
+                "MR": "Herr",
+                "MS": "Frau"
+            }
+        },
+        "drivingLicenceCategory": {
+            "A": "A",
+            "A1": "A1",
+            "B": "B",
+            "B1": "B1",
+            "BE": "BE",
+            "C": "C",
+            "C1": "C1",
+            "C1E": "C1E",
+            "CE": "CE",
+            "D": "D",
+            "D1": "D1",
+            "D1E": "D1E",
+            "DE": "DE",
+            "F": "F",
+            "G": "G",
+            "M": "M",
+            "label": "F\u00fchrerausweiskategorie"
+        },
         "education": {
             "ISCED1": "Primarstufe - ISCED 1",
             "ISCED2": "Sekundarstufe I - ISCED 2",
@@ -13,15 +110,6 @@
             "MORE_THAN_1_YEAR": "Mehr als 1 Jahr",
             "MORE_THAN_3_YEARS": "Mehr als 3 Jahre",
             "NONE": "Keine Erfahrung"
-        },
-        "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
-        "button": {
-            "add": {
-                "title": "Add"
-            },
-            "remove": {
-                "title": "Remove"
-            }
         },
         "field": {
             "id": "ID"
@@ -67,6 +155,7 @@
                 "userManagement": "Benutzerverwaltung"
             },
             "entities": {
+                "organization": "Organization",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
                 "main": "Entit\u00e4ten"
@@ -314,94 +403,7 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "drivingLicenceCategory": {
-            "A": "A",
-            "A1": "A1",
-            "B": "B",
-            "B1": "B1",
-            "BE": "BE",
-            "C": "C",
-            "C1": "C1",
-            "C1E": "C1E",
-            "CE": "CE",
-            "D": "D",
-            "D1": "D1",
-            "D1E": "D1E",
-            "DE": "DE",
-            "F": "F",
-            "G": "G",
-            "M": "M"
-        },
-        "contactPerson": {
-            "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
-            }
-        }
-    },
-    "entity": {
-        "action": {
-            "addblob": "Blob hinzuf\u00fcgen",
-            "addimage": "Bild hinzuf\u00fcgen",
-            "back": "Zur\u00fcck",
-            "cancel": "Abbrechen",
-            "delete": "L\u00f6schen",
-            "edit": "Bearbeiten",
-            "open": "\u00d6ffnen",
-            "save": "Speichern",
-            "view": "Details"
-        },
-        "delete": {
-            "title": "L\u00f6schen best\u00e4tigen"
-        },
-        "detail": {
-            "field": "Feld",
-            "value": "Wert"
-        },
-        "validation": {
-            "datetimelocal": "Dieses Feld muss eine Datums- und Zeitangabe enthalten.",
-            "max": "Dieses Feld muss kleiner als {{max}} sein.",
-            "maxbytes": "Dieses Feld sollte nicht mehr als {{max}} bytes haben.",
-            "maxlength": "Dieses Feld darf max. {{max}} Zeichen lang sein.",
-            "min": "Dieses Feld muss gr\u00f6sser als {{min}} sein.",
-            "minbytes": "Dieses Feld sollte mehr als {{min}} bytes haben.",
-            "minlength": "Dieses Feld muss mind. {{min}} Zeichen lang sein.",
-            "number": "Dieses Feld muss eine Zahl sein.",
-            "pattern": "Dieses Feld muss das Muster {{pattern}} erf\u00fcllen.",
-            "required": "Pflichtfeld"
-        }
-    },
-    "error": {
-        "NotNull": "Feld {{fieldName}} darf nicht leer sein!",
-        "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
-        "emailexists": "Email wird bereits verwendet!",
-        "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
-        "internalServerError": "Internal server error",
-        "server": {
-            "not": {
-                "reachable": "Server ist nicht erreichbar"
-            }
-        },
-        "url": {
-            "not": {
-                "found": "Nicht gefunden"
-            }
-        },
-        "userexists": "Benutzername bereits vergeben!"
-    },
-    "footer": {
-        "link": {
-            "abbreviation": {
-                "text": "Abk\u00fcrzungen"
-            },
-            "legal": {
-                "text": "Rechtliche Grundlagen"
-            },
-            "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
-            }
-        }
+        "title": "Jobroom"
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"
