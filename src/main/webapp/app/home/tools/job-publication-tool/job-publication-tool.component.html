@@ -221,9 +221,9 @@
                             </div>
                         </div>
 
-                        <jr2-zip-code [formGroup]="jobPublicationForm.get('job.location')"
+                        <jr2-zip-code [group]="job.get('location')"
                                       controlName="zipCode"
-                                      [countryControl]="jobPublicationForm.get('job.location.countryCode')">
+                                      [switzSelected]="getSwitzSelected(job.get('location.countryCode')) | async">
                         </jr2-zip-code>
 
                         <div class="form-group">
@@ -257,9 +257,9 @@
                         </div>
                     </div>
 
-                    <jr2-zip-code [formGroup]="jobPublicationForm.get('company')"
+                    <jr2-zip-code [group]="jobPublicationForm.get('company')"
                                   controlName="zipCode"
-                                  [countryControl]="jobPublicationForm.get('company.countryCode')">
+                                  [switzSelected]="getSwitzSelected(jobPublicationForm.get('company.countryCode')) | async">
                     </jr2-zip-code>
 
                     <div class="form-group">
@@ -272,9 +272,9 @@
                         </div>
                     </div>
 
-                    <jr2-zip-code [formGroup]="jobPublicationForm.get('company')"
+                    <jr2-zip-code [group]="jobPublicationForm.get('company')"
                                   controlName="postboxZipCode"
-                                  [countryControl]="jobPublicationForm.get('company.countryCode')"
+                                  [switzSelected]="getSwitzSelected(jobPublicationForm.get('company.countryCode')) | async"
                                   [translations]="getPoBoxZipCodeTranslations()"
                                   [optional]="true">
                     </jr2-zip-code>
@@ -348,14 +348,14 @@
                     <legend>{{ 'home.tools.job-publication.application.title' | translate }}</legend>
 
                     <div class="checkbox">
-                        <input id="written" type="checkbox" formControlName="mailEnabled"/>
+                        <input id="written" type="checkbox" formControlName="written"/>
                         <label for="written">
                             {{ 'home.tools.job-publication.application.mail-enabled' | translate }}
                         </label>
                     </div>
 
                     <div class="checkbox">
-                        <input id="electronic" type="checkbox" formControlName="emailEnabled"/>
+                        <input id="electronic" type="checkbox" formControlName="electronic"/>
                         <label for="electronic">
                             {{ 'home.tools.job-publication.application.email-enabled' | translate }}
                         </label>

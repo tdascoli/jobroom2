@@ -1,9 +1,13 @@
 import {
-    ChangeDetectionStrategy, Component, Input,
-    OnInit
+    ChangeDetectionStrategy,
+    Component, Input, OnChanges,
+    OnInit, SimpleChanges
 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
+import { LocalityAutocomplete } from '../../../../shared/reference-service/locality-autocomplete';
+import { NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
+import { LocalityService } from '../../../../shared/index';
 
 export interface Translations {
     zipCode: string;
@@ -16,15 +20,13 @@ export interface Translations {
     templateUrl: './zip-code.component.html',
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ZipCodeComponent implements OnInit {
-    private readonly SWITZ_KEY = 'CH';
-
+export class ZipCodeComponent implements OnInit, OnChanges {
     @Input()
-    formGroup: FormGroup;
+    group: FormGroup;
     @Input()
     controlName: string;
     @Input()
-    countryControl: FormControl;
+    switzSelected: boolean;
     @Input()
     translations: Translations = {
         zipCode: 'home.tools.job-publication.locality.zipcode',
@@ -34,21 +36,62 @@ export class ZipCodeComponent implements OnInit {
     @Input()
     optional: boolean;
 
-    switzSelected$: Observable<boolean>;
+    zipAutocompleter: FormControl;
+    zipGroup: FormGroup;
 
-    constructor(private fb: FormBuilder) {
+    private static localityResultMapper(localityAutocomplete: LocalityAutocomplete): any {
+        return localityAutocomplete.localities
+            .map((locality) => ({ zip: locality.zipCode, city: locality.city }));
+    }
+
+    constructor(private fb: FormBuilder,
+                private localityService: LocalityService) {
     }
 
     ngOnInit() {
-        const validators = this.optional ? [] : [Validators.required];
-        this.formGroup.addControl(this.controlName, this.fb.group({
-            zip: ['', [...validators, Validators.pattern(/^\d*$/)]],
-            city: ['', validators]
-        }));
+    }
 
-        this.switzSelected$ = Observable.merge(
-            Observable.of(this.countryControl.value),
-            this.countryControl.valueChanges)
-            .map((selectedCountry) => selectedCountry === this.SWITZ_KEY);
+    ngOnChanges(changes: SimpleChanges): void {
+        if (changes['switzSelected']) {
+            if (changes['switzSelected'].firstChange) {
+                const validators = this.optional ? [] : [Validators.required];
+                this.zipAutocompleter = this.fb.control('', validators);
+                this.zipGroup = this.fb.group({
+                    zip: ['', [...validators, Validators.pattern(/^\d*$/)]],
+                    city: ['', validators]
+                })
+            }
+            this.group.removeControl(this.controlName);
+            if (changes['switzSelected'].currentValue) {
+                this.group.addControl(this.controlName, this.zipAutocompleter);
+                this.zipAutocompleter.reset();
+            } else {
+                this.group.addControl(this.controlName, this.zipGroup);
+                this.zipGroup.reset();
+            }
+        }
+    }
+
+    get zipControlGroup(): FormGroup {
+        return this.group.get(this.controlName) as FormGroup;
+    }
+
+    search = (text$: Observable<string>) =>
+        text$
+            .debounceTime(200)
+            .distinctUntilChanged()
+            .flatMap((term) => term.length < 2 ? Observable.empty()
+                : this.localityService.fetchSuggestions(term, ZipCodeComponent.localityResultMapper));
+
+    formatter = (result: any) => {
+        return result.zip + (result.city ? ' ' : '') + result.city;
+    };
+
+    setZip(event: NgbTypeaheadSelectItemEvent): void {
+        this.zipControlGroup.setValue(event.item);
+    }
+
+    zipChange(): void {
+        this.zipControlGroup.reset();
     }
 }

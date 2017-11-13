@@ -78,7 +78,8 @@ describe('JobSearchToolbarComponent', () => {
                 city: 'Bern',
                 communalCode: 351,
                 cantonCode: 'BE',
-                regionCode: 'BE01'
+                regionCode: 'BE01',
+                zipCode: '33333'
             });
 
             // THEN
@@ -100,7 +101,8 @@ describe('JobSearchToolbarComponent', () => {
                 city: 'Biel',
                 communalCode: 371,
                 cantonCode: 'BE',
-                regionCode: 'BE08'
+                regionCode: 'BE08',
+                zipCode: '33333'
             });
 
             // THEN

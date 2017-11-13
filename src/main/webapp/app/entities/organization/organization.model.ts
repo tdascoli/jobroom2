@@ -15,7 +15,7 @@ export class Organization implements BaseEntity {
                 public email?: string,
                 public phone?: string,
                 public type?: CompanyType,
-                public active?: boolean,) {
+                public active?: boolean) {
         this.active = false;
     }
 }
