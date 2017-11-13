@@ -1,5 +1,7 @@
 package ch.admin.seco.jobroom.service.dto;
 
+import static java.util.Objects.nonNull;
+
 import java.time.Instant;
 import java.util.Set;
 import java.util.UUID;
@@ -55,6 +57,8 @@ public class UserDTO {
 
     private Set<String> authorities;
 
+    private String organizationId;
+
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
@@ -64,7 +68,9 @@ public class UserDTO {
             user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
-                .collect(Collectors.toSet()));
+                .collect(Collectors.toSet())
+        );
+        this.organizationId = getOrganizationId(user);
     }
 
     public UserDTO(UUID id, String login, String firstName, String lastName,
@@ -167,5 +173,9 @@ public class UserDTO {
             ", lastModifiedDate=" + lastModifiedDate +
             ", authorities=" + authorities +
             "}";
+    }
+
+    private String getOrganizationId(User user) {
+        return nonNull(user.getOrganization()) ? user.getOrganization().getExternalId() : null;
     }
 }

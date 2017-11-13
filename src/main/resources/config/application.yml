@@ -111,6 +111,16 @@ jhipster:
         core-pool-size: 2
         max-pool-size: 50
         queue-capacity: 10000
+    gateway:
+        rate-limiting:
+            enabled: true
+            limit: 100
+            duration-in-seconds: 10
+        authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
+            jobservice: /api,/v2/api-docs # recommended dev configuration
+            referenceservice: /api,/v2/api-docs # recommended dev configuration
+            candidateservice: /api,/v2/api-docs # recommended dev configuration
+
     # By default CORS is disabled. Uncomment to enable.
     #cors:
         #allowed-origins: "*"

@@ -1,5 +1,7 @@
 package ch.admin.seco.jobroom.security;
 
+import static java.util.Objects.nonNull;
+
 import java.util.List;
 import java.util.Locale;
 import java.util.Optional;
@@ -47,9 +49,16 @@ public class DomainUserDetailsService implements UserDetailsService {
                 .map(authority -> new SimpleGrantedAuthority(authority.getName()))
                 .collect(Collectors.toList());
             return new org.springframework.security.core.userdetails.User(lowercaseLogin,
-                user.getPassword(),
+                user.getPassword(), true, true, true, isActive(user),
                 grantedAuthorities);
         }).orElseThrow(() -> new UsernameNotFoundException("User " + lowercaseLogin + " was not found in the " +
             "database"));
+    }
+
+    private boolean isActive(User user) {
+        if (nonNull(user.getOrganization())) {
+            return user.getOrganization().isActive();
+        }
+        return true;
     }
 }
