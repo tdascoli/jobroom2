@@ -223,6 +223,7 @@ global,global.menu.admin.userManagement,Benutzerverwaltung,User management,Gesti
 global,global.menu.entities.jhipster-needle-menu-add-entry,JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!)
 global,global.menu.entities.job,Job,Job,Job,Job
 global,global.menu.entities.main,Entitäten,Entities,Entités,Entità
+global,global.menu.entities.organization,Organization,Organization,Organization,Organization
 global,global.menu.home,Startseite,Home,Accueil,Home
 global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
 global,global.menu.language,Sprache,Language,Langue,Lingua

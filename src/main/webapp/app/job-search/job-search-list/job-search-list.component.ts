@@ -11,7 +11,6 @@ import {
     HideJobListErrorAction,
     SaveScrollYAction
 } from '../state-management/actions/job-search.actions';
-import { MAX_JOB_LIST_SIZE } from '../../app.constants';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
@@ -71,8 +70,6 @@ export class JobSearchListComponent implements OnDestroy, AfterViewInit {
             key += '.none';
         } else if (this.totalCount === 1) {
             key += '.one';
-        } else if (this.totalCount > MAX_JOB_LIST_SIZE) {
-            key += '.many';
         } else {
             key += '.other';
         }
@@ -87,6 +84,6 @@ export class JobSearchListComponent implements OnDestroy, AfterViewInit {
     }
 
     getMaxCount() {
-        return Math.min(this.totalCount, MAX_JOB_LIST_SIZE);
+        return this.totalCount;
     }
 }

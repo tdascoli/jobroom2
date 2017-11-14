@@ -1,5 +1,7 @@
 package ch.admin.seco.jobroom.service;
 
+import static java.util.Objects.nonNull;
+
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
@@ -24,6 +26,7 @@ import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.repository.AuthorityRepository;
+import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.UserRepository;
 import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
@@ -47,14 +50,17 @@ public class UserService {
 
     private final UserSearchRepository userSearchRepository;
 
+    private final OrganizationRepository organizationRepository;
+
     private final AuthorityRepository authorityRepository;
 
     private final CacheManager cacheManager;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserSearchRepository userSearchRepository, AuthorityRepository authorityRepository, CacheManager cacheManager) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserSearchRepository userSearchRepository, OrganizationRepository organizationRepository, AuthorityRepository authorityRepository, CacheManager cacheManager) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.userSearchRepository = userSearchRepository;
+        this.organizationRepository = organizationRepository;
         this.authorityRepository = authorityRepository;
         this.cacheManager = cacheManager;
     }
@@ -118,6 +124,9 @@ public class UserService {
         newUser.setActivationKey(RandomUtil.generateActivationKey());
         authorities.add(authority);
         newUser.setAuthorities(authorities);
+        if (nonNull(userDTO.getOrganizationId())) {
+            newUser.setOrganization(organizationRepository.findByExternalId(userDTO.getOrganizationId()).get());
+        }
         userRepository.save(newUser);
         userSearchRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
@@ -147,6 +156,9 @@ public class UserService {
         user.setResetKey(RandomUtil.generateResetKey());
         user.setResetDate(Instant.now());
         user.setActivated(true);
+        if (nonNull(userDTO.getOrganizationId())) {
+            user.setOrganization(organizationRepository.findByExternalId(userDTO.getOrganizationId()).get());
+        }
         userRepository.save(user);
         userSearchRepository.save(user);
         log.debug("Created Information for User: {}", user);
@@ -197,6 +209,9 @@ public class UserService {
                 userDTO.getAuthorities().stream()
                     .map(authorityRepository::getOne)
                     .forEach(managedAuthorities::add);
+                if (nonNull(userDTO.getOrganizationId())) {
+                    user.setOrganization(organizationRepository.findByExternalId(userDTO.getOrganizationId()).get());
+                }
                 userSearchRepository.save(user);
                 cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Changed Information for User: {}", user);

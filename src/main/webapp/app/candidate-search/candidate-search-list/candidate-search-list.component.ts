@@ -7,7 +7,6 @@ import {
     OnDestroy
 } from '@angular/core';
 import { CandidateProfile } from '../services/candidate';
-import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { Store } from '@ngrx/store';
 import {
     CandidateSearchState,
@@ -75,8 +74,6 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
             key += '.none';
         } else if (this.totalCount === 1) {
             key += '.one';
-        } else if (this.totalCount > MAX_CANDIDATE_LIST_SIZE) {
-            key += '.many';
         } else {
             key += '.other';
         }
@@ -91,7 +88,7 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
     }
 
     getMaxCount() {
-        return Math.min(this.totalCount, MAX_CANDIDATE_LIST_SIZE);
+        return this.totalCount;
     }
 
     onScroll(event: any) {

@@ -68,8 +68,11 @@ export class CandidateService {
             .filter((jobExperience) => jobExperience.wanted);
 
         if (occupationCode) {
-            return jobExperiences
-                .find((jobExperience) => '' + jobExperience.occupationCode === occupationCode);
+            const jobExperience = jobExperiences
+                .find((_jobExperience) => String(_jobExperience.occupationCode) === String(occupationCode));
+            if (jobExperience) {
+                return jobExperience;
+            }
         }
 
         if (!jobExperiences.length) {

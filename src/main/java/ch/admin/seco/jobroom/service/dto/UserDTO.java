@@ -157,6 +157,14 @@ public class UserDTO {
         return authorities;
     }
 
+    public String getOrganizationId() {
+        return organizationId;
+    }
+
+    public void setOrganizationId(String organizationId) {
+        this.organizationId = organizationId;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
