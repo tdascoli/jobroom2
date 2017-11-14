@@ -27,6 +27,6 @@
                 }
             }
         },
-        "title": "Profil de l'utilisateur [<b>{{username}}</b>]"
+        "title": "Profil de l'utilisateur [<strong>{{username}}</strong>]"
     }
 }

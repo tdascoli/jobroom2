@@ -770,7 +770,7 @@ organization,jobroomApp.organization.zipCode,Zip Code,Zip Code,Zip Code,Zip Code
 password,password.form.button,Speichern,Save,Sauvegarder,Salva
 password,password.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Das Passwort konnte nicht geändert werden.,<strong>An error has occurred!</strong> The password could not be changed.,<strong>Une erreur est survenue !</strong> Le mot de passe n'a pas pu être modifié.,<strong>C'è stato un errore!</strong> Impossibile cambiare password.
 password,password.messages.success,<strong>Passwort wurde geändert!</strong>,<strong>Password changed!</strong>,<strong>Le mot de passe a été modifié !</strong>,<strong>Password modificata correttamente!</strong>
-password,password.title,Passwort für [<b>{{username}}</b>],Password for [<b>{{username}}</b>],Changer le mot de passe pour [<b>{{username}}</b>],Password per [<b>{{username}}</b>]
+password,password.title,Passwort für [<strong>{{username}}</strong>],Password for [<strong>{{username}}</strong>],Changer le mot de passe pour [<strong>{{username}}</strong>],Password per [<strong>{{username}}</strong>]
 register,register.form.button,Registrieren,Register,Enregistrement,Crea Account
 register,register.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso</strong> Si prega di sceglierne un altro.
 register,register.messages.error.fail,<strong>Registrierung fehlgeschlagen!</strong> Bitte versuchen Sie es später nochmal.,<strong>Registration failed!</strong> Please try again later.,<strong>Compte non créé !</strong> Merci d'essayer à nouveau plus tard.,<strong>La registrazione dell'account è fallita!</strong> Riprova più tardi.
@@ -798,7 +798,7 @@ sessions,sessions.table.button,Schliessen,Invalidate,Invalider,Invalida
 sessions,sessions.table.date,Datum,Date,Date,Data
 sessions,sessions.table.ipaddress,IP Adresse,IP address,Adresse IP,Indirizzo IP
 sessions,sessions.table.useragent,User Agent,User Agent,User Agent,User Agent
-sessions,sessions.title,Aktive Sitzungen für [<b>{{username}}</b>],Active sessions for [<b>{{username}}</b>],Sessions actives de [<b>{{username}}</b>],Sessioni attive per [<b>{{username}}</b>]
+sessions,sessions.title,Aktive Sitzungen für [<strong>{{username}}</strong>],Active sessions for [<strong>{{username}}</strong>],Sessions actives de [<strong>{{username}}</strong>],Sessioni attive per [<strong>{{username}}</strong>]
 settings,settings.form.button,Speichern,Save,Sauvegarder,Salva
 settings,settings.form.firstname,Vorname,First Name,Prénom,Nome
 settings,settings.form.firstname.placeholder,Ihr Vorname,Your first name,Votre prénom,Il tuo nome
@@ -814,7 +814,7 @@ settings,settings.messages.validate.firstname.required,Ihr Vorname wird benötig
 settings,settings.messages.validate.lastname.maxlength,Ihr Nachname darf nicht länger als 50 Zeichen sein,Your last name cannot be longer than 50 characters,Votre nom ne doit pas comporter plus de 50 caractères.,Il cognome non può contenere più di 50 caratteri
 settings,settings.messages.validate.lastname.minlength,Ihr Nachname muss mindestens 1 Zeichen lang sein,Your last name is required to be at least 1 character,Votre nom doit comporter au moins un caractère.,Il cognome deve essere di almeno 1 carattere
 settings,settings.messages.validate.lastname.required,Ihr Nachname wird benötigt.,Your last name is required.,Votre nom est requis.,Il cognome è obbligatorio.
-settings,settings.title,Einstellungen für Benutzer [<b>{{username}}</b>],User settings for [<b>{{username}}</b>],Profil de l'utilisateur [<b>{{username}}</b>],Impostazioni per l'utente [<b>{{username}}</b>]
+settings,settings.title,Einstellungen für Benutzer [<strong>{{username}}</strong>],User settings for [<strong>{{username}}</strong>],Profil de l'utilisateur [<strong>{{username}}</strong>],Impostazioni per l'utente [<strong>{{username}}</strong>]
 user-management,userManagement.activated,Aktiv,Activated,Activé,Attivato
 user-management,userManagement.created,Ein neuer Benutzer wurde mit ID {{ param }} erstellt,A new user is created with identifier {{ param }},L'utilisateur {{ param }} a été créé.,È stato creato un nuovo utente con identificativo {{ param }}
 user-management,userManagement.createdBy,Erstellt von,Created by,Créé par,Creato da

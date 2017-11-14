@@ -27,6 +27,6 @@
                 }
             }
         },
-        "title": "Einstellungen f\u00fcr Benutzer [<b>{{username}}</b>]"
+        "title": "Einstellungen f\u00fcr Benutzer [<strong>{{username}}</strong>]"
     }
 }

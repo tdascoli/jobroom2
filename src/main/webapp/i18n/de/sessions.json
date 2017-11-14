@@ -10,6 +10,6 @@
             "ipaddress": "IP Adresse",
             "useragent": "User Agent"
         },
-        "title": "Aktive Sitzungen f\u00fcr [<b>{{username}}</b>]"
+        "title": "Aktive Sitzungen f\u00fcr [<strong>{{username}}</strong>]"
     }
 }

@@ -5,7 +5,7 @@
                 aria-controls="drawerExample"
                 aria-expanded="false"
                 aria-label="Toggle navigation">
-            <i class="fa fa-bars" aria-hidden="true"></i>
+            <span class="fa fa-bars" aria-hidden="true"></span>
         </button>
 
         <a class="navbar-brand alv-logo alv-logo--inverse" routerLink="home">
@@ -26,7 +26,7 @@
                             <span aria-hidden="true">×</span>
                         </button>
                         <a href="/job-room.html">
-                            <i class="fa fa-lg fa-home" aria-hidden="true"></i>
+                            <span class="fa fa-lg fa-home" aria-hidden="true"></span>
                             Job-Room
                         </a>
                     </div>
@@ -37,7 +37,7 @@
                             <a class="nav-link dropdown-toggle active" href="javascript:void(0);"
                                role="button" (click)="toggleNavbar()"
                                aria-haspopup="true" aria-expanded="false">
-                                <i class="fa fa-bars" aria-hidden="true"></i>
+                                <span class="fa fa-bars" aria-hidden="true"></span>
                                 Job-Room
                             </a>
                             <div class="dropdown-menu" [ngClass]="{show: !isNavbarCollapsed}"
@@ -74,8 +74,8 @@
                                         <span class="dropdown-title">Admin</span>
                                         <a class="dropdown-item" routerLink="gateway"
                                            routerLinkActive="active">
-                                            <i class="fa fa-fw fa-road"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-road"
+                                               aria-hidden="true"></span>
                                             <span jhiTranslate="global.menu.admin.gateway"
                                                   (click)="collapseNavbar()">Gateway</span>
                                         </a>
@@ -84,8 +84,8 @@
                                            routerLink="user-management"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-user"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-user"
+                                               aria-hidden="true"></span>
                                             <span
                                                 jhiTranslate="global.menu.admin.userManagement">User management</span>
                                         </a>
@@ -93,39 +93,39 @@
                                         <a class="dropdown-item" routerLink="jhi-metrics"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-tachometer"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-tachometer"
+                                               aria-hidden="true"></span>
                                             <span
                                                 jhiTranslate="global.menu.admin.metrics">Metrics</span>
                                         </a>
                                         <a class="dropdown-item" routerLink="jhi-health"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-heart"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-heart"
+                                               aria-hidden="true"></span>
                                             <span jhiTranslate="global.menu.admin.health">Health</span>
                                         </a>
                                         <a class="dropdown-item"
                                            routerLink="jhi-configuration"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-list"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-list"
+                                               aria-hidden="true"></span>
                                             <span
                                                 jhiTranslate="global.menu.admin.configuration">Configuration</span>
                                         </a>
                                         <a class="dropdown-item" routerLink="audits"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-bell"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-bell"
+                                               aria-hidden="true"></span>
                                             <span jhiTranslate="global.menu.admin.audits">Audits</span>
                                         </a>
                                         <a class="dropdown-item" routerLink="logs"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-tasks"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-tasks"
+                                               aria-hidden="true"></span>
                                             <span jhiTranslate="global.menu.admin.logs">Logs</span>
                                         </a>
 
@@ -133,8 +133,8 @@
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()"
                                            *ngIf="swaggerEnabled">
-                                            <i class="fa fa-fw fa-book"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-book"
+                                               aria-hidden="true"></span>
                                             <span
                                                 jhiTranslate="global.menu.admin.apidocs">API</span>
                                         </a>
@@ -143,8 +143,8 @@
                                            routerLink="elasticsearch-reindex"
                                            routerLinkActive="active"
                                            (click)="collapseNavbar()">
-                                            <i class="fa fa-fw fa-search"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-search"
+                                               aria-hidden="true"></span>
                                             <span
                                                 jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
                                         </a>
@@ -155,8 +155,8 @@
                                            target="_tab"
                                            (click)="collapseNavbar()"
                                            *ngIf="!inProduction">
-                                            <i class="fa fa-fw fa-hdd-o"
-                                               aria-hidden="true"></i>
+                                            <span class="fa fa-fw fa-hdd-o"
+                                               aria-hidden="true"></span>
                                             <span
                                                 jhiTranslate="global.menu.admin.database">Database</span>
                                         </a>
