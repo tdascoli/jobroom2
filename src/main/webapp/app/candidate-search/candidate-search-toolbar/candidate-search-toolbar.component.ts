@@ -10,7 +10,6 @@ import {
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
-import { MAX_CANDIDATE_LIST_SIZE } from '../../app.constants';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -31,14 +30,12 @@ import { OccupationSuggestion } from '../../shared/reference-service/occupation-
 
 export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
-    @Input() totalCount: number;
     @Input() loading: boolean;
     @Input() searchFilter: CandidateSearchFilter;
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
-    maxCandidateListSize: number = MAX_CANDIDATE_LIST_SIZE;
     graduations = Graduation;
 
     cantonOptions$: Observable<IMultiSelectOption[]>;

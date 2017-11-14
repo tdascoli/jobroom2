@@ -81,11 +81,6 @@ candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,A
 candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Kantone,Kantone,Kantone
-candidate-search,candidate-search.toolbar.search-button.title.loading,Aktualisieren,Loading,Loading,Loading
-candidate-search,candidate-search.toolbar.search-button.title.many,{{count}}+ Kandidaten,{{count}}+ Candidates,{{count}}+ Kandidaten,{{count}}+ Kandidaten
-candidate-search,candidate-search.toolbar.search-button.title.none,Keine Kandidaten,No Candidates,No Kandidaten,No Kandidaten
-candidate-search,candidate-search.toolbar.search-button.title.one,1 der Kandidat,1 Candidate,1 der Kandidat,1 der Kandidat
-candidate-search,candidate-search.toolbar.search-button.title.other,{{count}} Kandidaten,{{count}} Candidates,{{count}} Kandidaten,{{count}} Kandidaten
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
 candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
 candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Schichtarbeit,Schichtarbeit,Schichtarbeit
@@ -590,11 +585,6 @@ job-search,job-search.title,Job suchen,Job search,Job search,Job search
 job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Select my current location,Select my current location
 job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton"
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
-job-search,job-search.toolbar.search-button.title.loading,Aktualisieren,Loading,Loading,Loading
-job-search,job-search.toolbar.search-button.title.many,{{count}}+ Jobs,{{count}}+ Jobs,{{count}}+ Jobs,{{count}}+ Jobs
-job-search,job-search.toolbar.search-button.title.none,Keine Jobs,No Jobs,No Jobs,No Jobs
-job-search,job-search.toolbar.search-button.title.one,1 Job,1 Job,1 Job,1 Job
-job-search,job-search.toolbar.search-button.title.other,{{count}} Jobs,{{count}} Jobs,{{count}} Jobs,{{count}} Jobs
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Canton
 job-search,typeahead-multiselect.type.classification,Klassifizierung,Classification,Classification,Classification
 job-search,typeahead-multiselect.type.locality,Ortschaft,Ortschaft,Ortschaft,Ortschaft

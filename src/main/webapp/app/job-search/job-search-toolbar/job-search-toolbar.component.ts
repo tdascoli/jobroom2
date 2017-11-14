@@ -11,7 +11,6 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { JobSearchQuery } from '../state-management/state/job-search.state';
 import { Subscription } from 'rxjs/Subscription';
 import { LocalityInputType } from '../../shared/reference-service/locality-autocomplete';
-import { MAX_JOB_LIST_SIZE } from '../../app.constants';
 import { TypeaheadMultiselectModel } from '../../shared/input-components';
 
 @Component({
@@ -20,12 +19,10 @@ import { TypeaheadMultiselectModel } from '../../shared/input-components';
     styleUrls: ['./job-search-toolbar.component.scss']
 })
 export class JobSearchToolbarComponent implements OnInit, OnDestroy {
-    @Input() totalCount: number;
     @Input() loading: boolean;
     @Input() searchQuery: JobSearchQuery;
 
     toolbarForm: FormGroup;
-    maxJobListSize: number = MAX_JOB_LIST_SIZE;
 
     private subscription: Subscription;
 
