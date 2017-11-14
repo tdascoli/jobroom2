@@ -1,9 +1,13 @@
 package ch.admin.seco.jobroom.web.rest;
 
+import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
+
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
+import java.util.stream.StreamSupport;
 
 import javax.validation.Valid;
 
@@ -31,6 +35,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.repository.UserRepository;
+import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.service.MailService;
 import ch.admin.seco.jobroom.service.UserService;
@@ -44,13 +49,12 @@ import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 
 /**
  * REST controller for managing users.
- *
- * <p>This class accesses the User entity, and needs to fetch its collection of authorities.</p>
+ * <p>
+ * This class accesses the User entity, and needs to fetch its collection of authorities.
  * <p>
  * For a normal use-case, it would be better to have an eager relationship between User and Authority,
  * and send everything to the client side: there would be no View Model and DTO, a lot less code, and an outer-join
  * which would be good for performance.
- * </p>
  * <p>
  * We use a View Model and a DTO for 3 reasons:
  * <ul>
@@ -64,7 +68,8 @@ import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
  * (which will get lots of data from the database, for each HTTP call).</li>
  * <li> As this manages users, for security reasons, we'd rather have a DTO layer.</li>
  * </ul>
- * <p>Another option would be to have a specific JPA entity graph to handle this case.</p>
+ * <p>
+ * Another option would be to have a specific JPA entity graph to handle this case.
  */
 @RestController
 @RequestMapping("/api")
@@ -78,20 +83,22 @@ public class UserResource {
 
     private final MailService mailService;
 
-    public UserResource(UserRepository userRepository, UserService userService, MailService mailService) {
+    private final UserSearchRepository userSearchRepository;
+
+    public UserResource(UserRepository userRepository, UserService userService, MailService mailService, UserSearchRepository userSearchRepository) {
 
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
+        this.userSearchRepository = userSearchRepository;
     }
 
     /**
      * POST  /users  : Creates a new user.
-     * <p>
+     *
      * Creates a new user if the login and email are not already used, and sends an
      * mail with an activation link.
      * The user needs to be activated on creation.
-     * </p>
      *
      * @param managedUserVM the user to create
      * @return the ResponseEntity with status 201 (Created) and with body the new user, or with status 400 (Bad Request) if the login or email is already in use
@@ -201,5 +208,20 @@ public class UserResource {
         log.debug("REST request to delete User: {}", login);
         userService.deleteUser(login);
         return ResponseEntity.ok().headers(HeaderUtil.createAlert("userManagement.deleted", login)).build();
+    }
+
+    /**
+     * SEARCH  /_search/users/:query : search for the User corresponding
+     * to the query.
+     *
+     * @param query the query to search
+     * @return the result of the search
+     */
+    @GetMapping("/_search/users/{query}")
+    @Timed
+    public List<User> search(@PathVariable String query) {
+        return StreamSupport
+            .stream(userSearchRepository.search(queryStringQuery(query)).spliterator(), false)
+            .collect(Collectors.toList());
     }
 }

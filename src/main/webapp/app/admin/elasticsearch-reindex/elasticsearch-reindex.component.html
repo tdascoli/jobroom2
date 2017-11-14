@@ -1,4 +1,4 @@
-<div class="container" style="margin-top: 2rem;">
+<div>
     <h2>
         <span jhiTranslate="elasticsearch.reindex.title">Reindex Elasticsearch</span>
     </h2>
@@ -13,7 +13,7 @@
         This can take a long time and is susceptible to concurrency issues so it should be performed when the number of
         users is low.
     </p>
-    <button class="btn btn-primary" (click)="showConfirm()">
+    <button class="btn btn-primary float-right" (click)="showConfirm()">
         <span class="fa fa-exclamation"></span> <span jhiTranslate="elasticsearch.reindex.go">Reindex</span>
     </button>
 </div>

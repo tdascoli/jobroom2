@@ -1,6 +1,5 @@
 package ch.admin.seco.jobroom.service;
 
-
 import java.time.Instant;
 import java.time.temporal.ChronoUnit;
 import java.util.HashSet;
@@ -26,6 +25,7 @@ import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.repository.AuthorityRepository;
 import ch.admin.seco.jobroom.repository.UserRepository;
+import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.security.SecurityUtils;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
@@ -45,13 +45,16 @@ public class UserService {
 
     private final PasswordEncoder passwordEncoder;
 
+    private final UserSearchRepository userSearchRepository;
+
     private final AuthorityRepository authorityRepository;
 
     private final CacheManager cacheManager;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, AuthorityRepository authorityRepository, CacheManager cacheManager) {
+    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserSearchRepository userSearchRepository, AuthorityRepository authorityRepository, CacheManager cacheManager) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
+        this.userSearchRepository = userSearchRepository;
         this.authorityRepository = authorityRepository;
         this.cacheManager = cacheManager;
     }
@@ -63,6 +66,7 @@ public class UserService {
                 // activate given user for the registration key.
                 user.setActivated(true);
                 user.setActivationKey(null);
+                userSearchRepository.save(user);
                 cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Activated user: {}", user);
                 return user;
@@ -115,6 +119,7 @@ public class UserService {
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         userRepository.save(newUser);
+        userSearchRepository.save(newUser);
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
@@ -143,6 +148,7 @@ public class UserService {
         user.setResetDate(Instant.now());
         user.setActivated(true);
         userRepository.save(user);
+        userSearchRepository.save(user);
         log.debug("Created Information for User: {}", user);
         return user;
     }
@@ -163,6 +169,7 @@ public class UserService {
             user.setEmail(email);
             user.setLangKey(langKey);
             user.setImageUrl(imageUrl);
+            userSearchRepository.save(user);
             cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
             log.debug("Changed Information for User: {}", user);
         });
@@ -190,6 +197,7 @@ public class UserService {
                 userDTO.getAuthorities().stream()
                     .map(authorityRepository::getOne)
                     .forEach(managedAuthorities::add);
+                userSearchRepository.save(user);
                 cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Changed Information for User: {}", user);
                 return user;
@@ -200,6 +208,7 @@ public class UserService {
     public void deleteUser(String login) {
         userRepository.findOneByLogin(login).ifPresent(user -> {
             userRepository.delete(user);
+            userSearchRepository.delete(user);
             cacheManager.getCache(USERS_CACHE).evict(login);
             log.debug("Deleted User: {}", user);
         });
@@ -238,7 +247,6 @@ public class UserService {
      * Not activated users should be automatically deleted after 3 days.
      * <p>
      * This is scheduled to get fired everyday, at 01:00 (am).
-     * </p>
      */
     @Scheduled(cron = "0 0 1 * * ?")
     public void removeNotActivatedUsers() {
@@ -246,12 +254,13 @@ public class UserService {
         for (User user : users) {
             log.debug("Deleting not activated user {}", user.getLogin());
             userRepository.delete(user);
+            userSearchRepository.delete(user);
             cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
         }
     }
 
     /**
-     * Returns a list of all available authorities.
+     * Get all authorities.
      *
      * @return a list of all the authorities
      */

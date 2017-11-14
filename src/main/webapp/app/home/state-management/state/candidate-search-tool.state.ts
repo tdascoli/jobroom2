@@ -9,5 +9,5 @@ export interface CandidateSearchToolState {
 }
 
 export const initialState: CandidateSearchToolState = {
-    totalCount: 0
+    totalCount: -1
 };

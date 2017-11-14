@@ -1,39 +1,49 @@
-<ng-container [formGroup]="formGroup">
-    <div *ngIf="switzSelected$ | async; else outsideOfSwitz" class="form-group">
+<ng-container *ngIf="switzSelected; else outsideOfSwitz">
+    <div [formGroup]="group" class="form-group">
         <label class="col-form-label">
             {{ translations.zipCode | translate }}
             <span *ngIf="optional" class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
         </label>
-        <div [formGroupName]="controlName">
-            <input type="text" formControlName="zip" class="form-control" name="zipCode"/>
+        <div>
+            <input type="text"
+                   [formControl]="zipAutocompleter"
+                   (selectItem)="setZip($event)"
+                   (change)="zipChange()"
+                   [ngbTypeahead]="search"
+                   [inputFormatter]="formatter"
+                   [resultFormatter]="formatter"
+                   [editable]="false"
+                   class="form-control"
+                   name="zipCode"/>
         </div>
     </div>
-
-    <ng-template #outsideOfSwitz>
-        <div class="form-group">
-            <div class="row">
-                <div class="col-md-4">
-                    <label class="col-form-label">
-                        {{ translations.zip | translate }}
-                        <span *ngIf="optional" class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                    </label>
-                </div>
-                <div class="col">
-                    <label class="col-form-label">
-                        {{ translations.city | translate }}
-                        <span *ngIf="optional" class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
-                    </label>
-                </div>
-            </div>
-            <div [formGroupName]="controlName" class="row">
-                <div class="col-md-4">
-                    <input type="text" formControlName="zip" class="form-control" name="zip"/>
-                </div>
-                <div class="col">
-                    <input type="text" formControlName="city" class="form-control" name="city"/>
-                </div>
-            </div>
-        </div>
-    </ng-template>
 </ng-container>
 
+<ng-template #outsideOfSwitz>
+    <div [formGroup]="group" class="form-group">
+        <div class="row">
+            <div class="col-md-4">
+                <label class="col-form-label">
+                    {{ translations.zip | translate }}
+                    <span *ngIf="optional"
+                          class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                </label>
+            </div>
+            <div class="col">
+                <label class="col-form-label">
+                    {{ translations.city | translate }}
+                    <span *ngIf="optional"
+                          class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                </label>
+            </div>
+        </div>
+        <div [formGroup]="zipGroup" class="row">
+            <div class="col-md-4">
+                <input type="text" formControlName="zip" class="form-control" name="zip"/>
+            </div>
+            <div class="col">
+                <input type="text" formControlName="city" class="form-control" name="city"/>
+            </div>
+        </div>
+    </div>
+</ng-template>

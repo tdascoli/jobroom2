@@ -1,7 +1,6 @@
-import { Component, OnDestroy, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../../shared/reference-service/occupation.service';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Subject } from 'rxjs/Subject';
 import {
@@ -11,19 +10,27 @@ import {
 } from '../../../shared/model/shared-types';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
+import {
+    FormatterFn,
+    OccupationPresentationService,
+    SuggestionLoaderFn
+} from '../../../shared/reference-service/occupation-presentation.service';
 import { Translations } from './zip-code/zip-code.component';
 
 @Component({
     selector: 'jr2-job-publication-tool',
     templateUrl: './job-publication-tool.component.html',
-    styleUrls: ['./job-publication-tool.component.scss']
+    styleUrls: ['./job-publication-tool.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JobPublicationToolComponent implements OnInit, OnDestroy {
+    private readonly SWITZ_KEY = 'CH';
+
     educationLevels = ISCED_1997;
     experiences = Experience;
     drivingLicenceCategories = DrivingLicenceCategory;
     countries = [
-        { key: 'CH', value: 'Schweiz' },
+        { key: this.SWITZ_KEY, value: 'Schweiz' },
         { key: 'DE', value: 'DE' },
         { key: 'FR', value: 'FR' },
         { key: 'IT', value: 'IT' },
@@ -37,6 +44,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     publicationEndDateIsPermanent = true;
     publicationStartDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
     publicationEndDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
+
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
+    occupationFormatter: FormatterFn<OccupationSuggestion>;
 
     unsubscribe$ = new Subject<void>();
 
@@ -53,9 +63,11 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         return new Date(dateStruct.year, dateStruct.month - 1, dateStruct.day);
     }
 
-    constructor(private occupationService: OccupationService,
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private fb: FormBuilder,
                 private languageSkillService: LanguageSkillService) {
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
         this.languageSkills$ = languageSkillService.getLanguages();
 
         this.jobPublicationForm = fb.group({
@@ -104,10 +116,13 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 email: ['', Validators.email],
             }),
             application: fb.group({
-                mailEnabled: [],
-                emailEnabled: [],
+                written: [],
+                electronic: [],
                 phoneEnabled: [],
-                email: [{ value: '', disabled: true }, [Validators.required, Validators.email]],
+                email: [{
+                    value: '',
+                    disabled: true
+                }, [Validators.required, Validators.email]],
                 url: [{ value: '', disabled: true }, [Validators.required]],
                 phoneNumber: [{ value: '', disabled: true }, [Validators.required]],
                 additionalInfo: ['', [Validators.required, Validators.maxLength(240)]],
@@ -118,9 +133,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             })
         });
 
-        this.validateCheckboxRelatedField('application.mailEnabled', 'application.url');
-        this.validateCheckboxRelatedField('application.emailEnabled', 'application.email');
-        this.validateCheckboxRelatedField('application.phoneEnabled', 'application.phoneNumber');
+        this.validateCheckboxRelatedField('application.electronic',
+            ['application.email', 'application.url']);
+        this.validateCheckboxRelatedField('application.phoneEnabled', ['application.phoneNumber']);
 
         this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
             (disabled) => this.publicationStartDateByArrangement = disabled);
@@ -129,22 +144,31 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.updatePublicationStartDateRelatedField();
     }
 
+    getSwitzSelected(countryControl: FormControl): Observable<boolean> {
+        return Observable.merge(
+            Observable.of(countryControl.value),
+            countryControl.valueChanges)
+            .map((selectedCountry) => selectedCountry === this.SWITZ_KEY);
+    }
+
     get job(): FormGroup {
         return this.jobPublicationForm.get('job') as FormGroup;
     }
 
-    private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string) {
+    private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string[]) {
         this.jobPublicationForm.get(checkboxPath).valueChanges
             .takeUntil(this.unsubscribe$)
             .subscribe((enabled: boolean) => {
-                const relatedControl = this.jobPublicationForm.get(relatedFieldPath);
-                if (enabled) {
-                    relatedControl.enable();
-                } else {
-                    relatedControl.disable();
-                    relatedControl.setValue('');
-                }
-                relatedControl.updateValueAndValidity();
+                relatedFieldPath.forEach((path) => {
+                    const relatedControl = this.jobPublicationForm.get(path);
+                    if (enabled) {
+                        relatedControl.enable();
+                    } else {
+                        relatedControl.disable();
+                        relatedControl.setValue('');
+                    }
+                    relatedControl.updateValueAndValidity();
+                });
             });
     }
 
@@ -180,12 +204,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 }
             });
     }
-
-    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
-        .filter((prefix: string) => prefix.length > 2)
-        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
-
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
 
     ngOnInit(): void {
     }

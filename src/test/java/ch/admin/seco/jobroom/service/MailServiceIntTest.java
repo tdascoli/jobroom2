@@ -1,5 +1,4 @@
 package ch.admin.seco.jobroom.service;
-import ch.admin.seco.jobroom.config.Constants;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.mockito.ArgumentMatchers.any;
@@ -32,6 +31,7 @@ import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import ch.admin.seco.jobroom.JobroomApp;
+import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.User;
 
 @RunWith(SpringRunner.class)
@@ -134,7 +134,7 @@ public class MailServiceIntTest {
         assertThat(message.getSubject()).isEqualTo("test title");
         assertThat(message.getAllRecipients()[0].toString()).isEqualTo(user.getEmail());
         assertThat(message.getFrom()[0].toString()).isEqualTo("test@localhost");
-        assertThat(message.getContent().toString()).startsWith("<html>test title, http://127.0.0.1:8080, john</html>");
+        assertThat(message.getContent().toString()).isEqualTo("<html>test title, http://127.0.0.1:8080, john</html>\n");
         assertThat(message.getDataHandler().getContentType()).isEqualTo("text/html;charset=UTF-8");
     }
 

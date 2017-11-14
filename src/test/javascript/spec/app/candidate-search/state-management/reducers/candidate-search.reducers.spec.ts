@@ -42,7 +42,6 @@ describe('candidateSearchReducer', () => {
         expect(newState.page).toEqual(0);
         expect(newState.loading).toBeFalsy();
         expect(newState.searchError).toBeFalsy();
-        expect(newState.initialState).toBeFalsy();
         expect(newState.candidateListScrollY).toBe(0);
         verifyUnchanged(newState, state, [
             'candidateProfileList',
@@ -50,7 +49,6 @@ describe('candidateSearchReducer', () => {
             'page',
             'loading',
             'searchError',
-            'initialState',
             'candidateListScrollY'
         ]);
     });
@@ -94,7 +92,8 @@ describe('candidateSearchReducer', () => {
         // THEN
         expect(newState.searchFilter.workplace).toEqual(new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true));
         expect(newState.loading).toBeTruthy();
-        verifyUnchanged(newState, state, ['loading', 'searchFilter']);
+        expect(newState.initialState).toBeFalsy();
+        verifyUnchanged(newState, state, ['loading', 'searchFilter', 'initialState']);
     });
 
     it('should update CandidateSearchState for NEXT_PAGE_LOADED action', () => {

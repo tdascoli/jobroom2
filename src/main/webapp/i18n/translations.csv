@@ -81,11 +81,6 @@ candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,A
 candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Kantone,Kantone,Kantone
-candidate-search,candidate-search.toolbar.search-button.title.loading,Aktualisieren,Loading,Loading,Loading
-candidate-search,candidate-search.toolbar.search-button.title.many,{{count}}+ Kandidaten,{{count}}+ Candidates,{{count}}+ Kandidaten,{{count}}+ Kandidaten
-candidate-search,candidate-search.toolbar.search-button.title.none,Keine Kandidaten,No Candidates,No Kandidaten,No Kandidaten
-candidate-search,candidate-search.toolbar.search-button.title.one,1 der Kandidat,1 Candidate,1 der Kandidat,1 der Kandidat
-candidate-search,candidate-search.toolbar.search-button.title.other,{{count}} Kandidaten,{{count}} Candidates,{{count}} Kandidaten,{{count}} Kandidaten
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
 candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
 candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Schichtarbeit,Schichtarbeit,Schichtarbeit
@@ -95,6 +90,9 @@ candidate-search,candidate-search.workLocation.label,Arbeitsort,Arbeitsort,Arbei
 candidate-search,candidate-search.workload.label,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
 candidate-search,candidate-search.workplace.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
 candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton"
+companyType,jobroomApp.CompanyType.AVG,AVG,AVG,AVG,AVG
+companyType,jobroomApp.CompanyType.RAV,RAV,RAV,RAV,RAV
+companyType,jobroomApp.CompanyType.null,,,,
 configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filtrer (par préfixe),Filtro (per prefisso)
 configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
@@ -465,13 +463,12 @@ home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
 home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
 home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für
+home,home.tools.candidate-search.search-badge.many,"Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden"
+home,home.tools.candidate-search.search-badge.none,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende
+home,home.tools.candidate-search.search-badge.one,"Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende"
 home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen
 home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten
 home,home.tools.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidaten finden,Kandidaten finden
-home,home.tools.job-publication.no-selection,keine Auswahl,keine Auswahl,keine Auswahl,keine Auswahl
-home,home.tools.job-publication.occupation.label,Beruf,Beruf,Beruf,Beruf
-home,home.tools.job-publication.occupation.placeholder,Beruf,Beruf,Beruf,Beruf
-home,home.tools.job-publication.optional,Optional,Optional,Optional,Optional
 home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} characters available,{{count}} characters available,{{count}} characters available,{{count}} characters available
 home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
 home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Characters,max. 240 Characters,max. 240 Characters,max. 240 Characters
@@ -483,7 +480,9 @@ home,home.tools.job-publication.application.phone,Telefon,Telefon,Telefon,Telefo
 home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung
 home,home.tools.job-publication.application.title,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen
 home,home.tools.job-publication.company.country,Land,Land,Land,Land
+home,home.tools.job-publication.company.postbox-city,Ort,Ort,Ort,Ort
 home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.
+home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,Postfach PLZ,Postfach PLZ,Postfach PLZ
 home,home.tools.job-publication.company.postbox-zipcode,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort
 home,home.tools.job-publication.company.street,Strasse,Strasse,Strasse,Strasse
 home,home.tools.job-publication.company.title,Unternehmen,Unternehmen,Unternehmen,Unternehmen
@@ -506,35 +505,15 @@ home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,
 home,home.tools.job-publication.language-skills,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse
 home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Language skill is required,Language skill is required
 home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
+home,home.tools.job-publication.locality.city,Ort,Ort,Ort,Ort
 home,home.tools.job-publication.locality.country,Land,Land,Land,Land
 home,home.tools.job-publication.locality.title,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
-home,home.tools.job-publication.locality.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
 home,home.tools.job-publication.locality.zip,PLZ,PLZ,PLZ,PLZ
-home,home.tools.job-publication.locality.city,Ort,Ort,Ort,Ort
-home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
-home,home.tools.job-publication.company.title,Unternehmen,Unternehmen,Unternehmen,Unternehmen
-home,home.tools.job-publication.company.street,Strasse,Strasse,Strasse,Strasse
-home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.
-home,home.tools.job-publication.company.postbox-zipcode,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort
-home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,Postfach PLZ,Postfach PLZ,Postfach PLZ
-home,home.tools.job-publication.company.postbox-city,Ort,Ort,Ort,Ort
-home,home.tools.job-publication.company.country,Land,Land,Land,Land
-home,home.tools.job-publication.contact.title,Kontaktperson,Kontaktperson,Kontaktperson,Kontaktperson
-home,home.tools.job-publication.contact.salutation,Anrede,Anrede,Anrede,Anrede
-home,home.tools.job-publication.contact.first-name,Vorname,Vorname,Vorname,Vorname
-home,home.tools.job-publication.contact.last-name,Nachname,Nachname,Nachname,Nachname
-home,home.tools.job-publication.contact.phone,Telefon,Telefon,Telefon,Telefon
-home,home.tools.job-publication.contact.email,E-Mail,E-Mail,E-Mail,E-Mail
-home,home.tools.job-publication.application.title,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen
-home,home.tools.job-publication.application.mail-enabled,Schriftliche Bewerbung,Schriftliche Bewerbung,Schriftliche Bewerbung,Schriftliche Bewerbung
-home,home.tools.job-publication.application.email-enabled,Elektronische Bewerbung,Elektronische Bewerbung,Elektronische Bewerbung,Elektronische Bewerbung
-home,home.tools.job-publication.application.email,E-Mail,E-Mail,E-Mail,E-Mail
-home,home.tools.job-publication.application.online-form,Online-Formular,Online-Formular,Online-Formular,Online-Formular
-home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung
-home,home.tools.job-publication.application.phone,Telefon,Telefon,Telefon,Telefon
-home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
-home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Characters,max. 240 Characters,max. 240 Characters,max. 240 Characters
-home,home.tools.job-publication.application.additional-info.characters-counter-text,"{{count}} characters available","{{count}} characters available","{{count}} characters available","{{count}} characters available"
+home,home.tools.job-publication.locality.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
+home,home.tools.job-publication.no-selection,keine Auswahl,keine Auswahl,keine Auswahl,keine Auswahl
+home,home.tools.job-publication.occupation.label,Beruf,Beruf,Beruf,Beruf
+home,home.tools.job-publication.occupation.placeholder,Beruf,Beruf,Beruf,Beruf
+home,home.tools.job-publication.optional,Optional,Optional,Optional,Optional
 home,home.tools.job-publication.publication.title,Publikationsmedien,Publikationsmedien,Publikationsmedien,Publikationsmedien
 home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum
 home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,unbefristet,unbefristet,unbefristet
@@ -606,11 +585,6 @@ job-search,job-search.title,Job suchen,Job search,Job search,Job search
 job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Select my current location,Select my current location
 job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton"
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
-job-search,job-search.toolbar.search-button.title.loading,Aktualisieren,Loading,Loading,Loading
-job-search,job-search.toolbar.search-button.title.many,{{count}}+ Jobs,{{count}}+ Jobs,{{count}}+ Jobs,{{count}}+ Jobs
-job-search,job-search.toolbar.search-button.title.none,Keine Jobs,No Jobs,No Jobs,No Jobs
-job-search,job-search.toolbar.search-button.title.one,1 Job,1 Job,1 Job,1 Job
-job-search,job-search.toolbar.search-button.title.other,{{count}} Jobs,{{count}} Jobs,{{count}} Jobs,{{count}} Jobs
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Canton
 job-search,typeahead-multiselect.type.classification,Klassifizierung,Classification,Classification,Classification
 job-search,typeahead-multiselect.type.locality,Ortschaft,Ortschaft,Ortschaft,Ortschaft
@@ -775,6 +749,24 @@ metrics,metrics.servicesstats.table.p99,p99,p99,p99,p99
 metrics,metrics.servicesstats.title,Service Statistiken (Zeit in Millisekunden),Services statistics (time in millisecond),Statistiques des services (temps en millisecondes),Statistiche Servizi (in millisecondi)
 metrics,metrics.title,Anwendungs-Metriken,Application Metrics,Métriques de l'application,Metriche dell'applicazione
 metrics,metrics.updating,Aktualisierung...,Updating...,Mise à jour...,Aggiornamento...
+organization,jobroomApp.organization.active,Active,Active,Active,Active
+organization,jobroomApp.organization.city,City,City,City,City
+organization,jobroomApp.organization.created,Organization erstellt mit ID {{ param }},A new Organization is created with identifier {{ param }},Un nouveau Organization a été créé avec l'identifiant {{ param }},&Egrave
+organization,jobroomApp.organization.delete.question,Soll Organization {{ id }} wirklich dauerhaft gelöscht werden?,Are you sure you want to delete Organization {{ id }}?,Etes-vous certain de vouloir supprimer le Organization {{ id }} ?,Sei sicuro di volere eliminare Organization {{ id }}?
+organization,jobroomApp.organization.deleted,Organization gelöscht mit ID {{ param }},A Organization is deleted with identifier {{ param }},Le Organization avec l'identifiant {{ param }} a été supprimé,&Egrave
+organization,jobroomApp.organization.detail.title,Organization,Organization,Organization,Organization
+organization,jobroomApp.organization.email,Email,Email,Email,Email
+organization,jobroomApp.organization.externalId,External Id,External Id,External Id,External Id
+organization,jobroomApp.organization.home.createLabel,Organization erstellen,Create a new Organization,Créer un nouveau Organization,Genera un nuovo Organization
+organization,jobroomApp.organization.home.createOrEditLabel,Organization erstellen oder bearbeiten,Create or edit a Organization,Créer ou éditer un Organization,Genera o modifica un Organization
+organization,jobroomApp.organization.home.search,Suche nach Organization,Search for Organization,Recherche pour Organization,Cerca Organization
+organization,jobroomApp.organization.home.title,Organizations,Organizations,Organizations,Organizations
+organization,jobroomApp.organization.name,Name,Name,Name,Name
+organization,jobroomApp.organization.phone,Phone,Phone,Phone,Phone
+organization,jobroomApp.organization.street,Street,Street,Street,Street
+organization,jobroomApp.organization.type,Type,Type,Type,Type
+organization,jobroomApp.organization.updated,Organization aktualisiert mit ID {{ param }},A Organization is updated with identifier {{ param }},Le Organization avec l'identifiant {{ param }} a été mis à jour,&Egrave
+organization,jobroomApp.organization.zipCode,Zip Code,Zip Code,Zip Code,Zip Code
 password,password.form.button,Speichern,Save,Sauvegarder,Salva
 password,password.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Das Passwort konnte nicht geändert werden.,<strong>An error has occurred!</strong> The password could not be changed.,<strong>Une erreur est survenue !</strong> Le mot de passe n'a pas pu être modifié.,<strong>C'è stato un errore!</strong> Impossibile cambiare password.
 password,password.messages.success,<strong>Passwort wurde geändert!</strong>,<strong>Password changed!</strong>,<strong>Le mot de passe a été modifié !</strong>,<strong>Password modificata correttamente!</strong>

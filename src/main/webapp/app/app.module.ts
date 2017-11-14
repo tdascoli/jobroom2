@@ -33,8 +33,11 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { DEBUG_INFO_ENABLED } from './app.constants';
 import { CandidateSearchModule } from './candidate-search/candidate-search.module';
-
-// jhipster-needle-angular-add-module-import JHipster will add new module here
+import {
+    CustomRouterStateSerializer,
+    reducers
+} from './shared/custom-router-state-serializer/custom-router-state-serializer';
+import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router-store';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
@@ -51,7 +54,8 @@ import { CandidateSearchModule } from './candidate-search/candidate-search.modul
         JobroomEntityModule,
         JobSearchModule,
         CandidateSearchModule,
-        StoreModule.forRoot({}),
+        StoreModule.forRoot(reducers),
+        StoreRouterConnectingModule,
         DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
         EffectsModule.forRoot([])
         // jhipster-needle-angular-add-module JHipster will add new module here
@@ -71,7 +75,8 @@ import { CandidateSearchModule } from './candidate-search/candidate-search.modul
         VersionService,
         customHttpProvider(),
         PaginationConfig,
-        UserRouteAccessService
+        UserRouteAccessService,
+        { provide: RouterStateSerializer, useClass: CustomRouterStateSerializer }
     ],
     bootstrap: [JhiMainComponent]
 })

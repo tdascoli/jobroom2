@@ -66,15 +66,6 @@
             "residence": {
                 "placeholder": "Wohnort: Kanton",
                 "selected": "Kantone"
-            },
-            "search-button": {
-                "title": {
-                    "loading": "Loading",
-                    "many": "{{count}}+ Candidates",
-                    "none": "No Candidates",
-                    "one": "1 Candidate",
-                    "other": "{{count}} Candidates"
-                }
             }
         },
         "workForm": {

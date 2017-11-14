@@ -11,7 +11,6 @@ export const SHOW_CANDIDATE_LIST_ERROR = 'CANDIDATES:SHOW_CANDIDATE_LIST_ERROR';
 export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
 export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
-export const SEARCH_BY_URL_PARAMS = 'SEARCH_BY_URL_PARAMS';
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
@@ -77,13 +76,6 @@ export class SaveScrollYAction implements Action {
     }
 }
 
-export class SearchByUrlParamsAction implements Action {
-    readonly type = SEARCH_BY_URL_PARAMS;
-
-    constructor(public payload: CandidateSearchFilter) {
-    }
-}
-
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
@@ -94,5 +86,4 @@ export type Actions =
     | HideCandidateListErrorAction
     | CountCandidatesAction
     | SaveScrollYAction
-    | SearchByUrlParamsAction
     ;

@@ -95,7 +95,21 @@ describe('TypeaheadMultiselectComponent', () => {
             input$ = new BehaviorSubject('');
         });
 
-        it('should not load items if the input is shorter than 3 characters', fakeAsync(() => {
+        it('should not load items if the input is shorter than 2 characters', fakeAsync(() => {
+            // GIVEN
+            component.itemLoader = (value: string) => Observable.of([]);
+            spyOn(component, 'itemLoader').and.callThrough();
+            component.wrappedItemLoader(input$).subscribe((o: any) => '');
+
+            // WHEN
+            input$.next('1');
+            tick(201);
+
+            // THAN
+            expect(component.itemLoader).not.toHaveBeenCalled();
+        }));
+
+        it('should load items if the input is longer than 2 characters (inclusive)', fakeAsync(() => {
             // GIVEN
             component.itemLoader = (value: string) => Observable.of([]);
             spyOn(component, 'itemLoader').and.callThrough();
@@ -106,21 +120,7 @@ describe('TypeaheadMultiselectComponent', () => {
             tick(201);
 
             // THAN
-            expect(component.itemLoader).not.toHaveBeenCalled();
-        }));
-
-        it('should load items if the input is longer than 3 characters (inclusive)', fakeAsync(() => {
-            // GIVEN
-            component.itemLoader = (value: string) => Observable.of([]);
-            spyOn(component, 'itemLoader').and.callThrough();
-            component.wrappedItemLoader(input$).subscribe((o: any) => '');
-
-            // WHEN
-            input$.next('123');
-            tick(201);
-
-            // THAN
-            expect(component.itemLoader).toHaveBeenCalledWith('123');
+            expect(component.itemLoader).toHaveBeenCalledWith('12');
         }));
 
         it('should filter the already selected values from the loaded items', fakeAsync(() => {

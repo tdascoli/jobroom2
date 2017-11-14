@@ -1,15 +1,12 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { OccupationService } from '../../../shared/reference-service/occupation.service';
 import { Store } from '@ngrx/store';
-import {
-    CandidateSearchToolState,
-    initialState
-} from '../../state-management/state/candidate-search-tool.state';
+import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
 import {
     CandidateSearchToolCountAction,
-    CandidateSearchToolSubmittedAction
+    CandidateSearchToolSubmittedAction,
+    ResetCandidateSearchToolCountAction
 } from '../../state-management/actions/candidate-search-tool.actions';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
@@ -17,6 +14,11 @@ import { CantonService } from '../../../candidate-search/services/canton.service
 import { Subscription } from 'rxjs/Subscription';
 import { Graduation } from '../../../shared/model/shared-types';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
+import {
+    FormatterFn,
+    OccupationPresentationService,
+    SuggestionLoaderFn
+} from '../../../shared/reference-service/occupation-presentation.service';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -41,10 +43,15 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         dynamicTitleMaxItems: 1
     };
 
-    constructor(private occupationService: OccupationService,
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
+    occupationFormatter: FormatterFn<OccupationSuggestion>;
+
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private store: Store<CandidateSearchToolState>,
                 private cantonService: CantonService,
                 private fb: FormBuilder) {
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnInit(): void {
@@ -55,13 +62,10 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         });
         this.cantonOptions$ = this.cantonService.getCantonOptions();
 
-        this.store.dispatch(new CandidateSearchToolCountAction(initialState));
         this.subscription = this.candidateSearchForm.valueChanges
+            .startWith(this.candidateSearchForm.value)
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
-            .subscribe((formValue: any) => {
-                    return this.count(formValue);
-                }
-            );
+            .subscribe((formValue: any) => this.filterChanged(formValue));
     }
 
     ngOnDestroy(): void {
@@ -87,17 +91,35 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         }
     }
 
-    fetchOccupationSuggestions = (prefix$: Observable<string>) => prefix$
-        .filter((prefix: string) => prefix.length > 2)
-        .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
-
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
-
     search(formValue: any) {
         this.store.dispatch(new CandidateSearchToolSubmittedAction(formValue));
     }
 
-    count(formValue: any) {
-        this.store.dispatch(new CandidateSearchToolCountAction(formValue));
+    getBadgeKey() {
+        const totalCount = this.candidateSearchToolModel.totalCount;
+
+        let key = 'home.tools.candidate-search.search-badge';
+        if (totalCount === 0) {
+            key += '.none';
+        } else if (totalCount === 1) {
+            key += '.one';
+        } else {
+            key += '.many';
+        }
+
+        return key;
+    }
+
+    private filterChanged(formValue: any) {
+        const { occupation, residence, graduation } = formValue;
+        const isFilterSelected = (occupation && occupation.code)
+            || (residence && residence.length > 0)
+            || (graduation != null && graduation >= 0);
+
+        if (isFilterSelected) {
+            this.store.dispatch(new CandidateSearchToolCountAction(formValue));
+        } else {
+            this.store.dispatch(new ResetCandidateSearchToolCountAction());
+        }
     }
 }

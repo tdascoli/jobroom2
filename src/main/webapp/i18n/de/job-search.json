@@ -69,15 +69,6 @@
             },
             "occupation": {
                 "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
-            },
-            "search-button": {
-                "title": {
-                    "loading": "Aktualisieren",
-                    "many": "{{count}}+ Jobs",
-                    "none": "Keine Jobs",
-                    "one": "1 Job",
-                    "other": "{{count}} Jobs"
-                }
             }
         }
     },

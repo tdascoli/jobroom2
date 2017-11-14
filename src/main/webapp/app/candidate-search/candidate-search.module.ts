@@ -22,11 +22,15 @@ import { CandidateSearchListItemComponent } from './candidate-search-list-item/c
 import { CandidateSearchEffects } from './state-management/effects/candidate-search.effects';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { CantonService } from './services/canton.service';
+import { RouterEffects } from './state-management/effects/router.effects';
 
 @NgModule({
     imports: [
         StoreModule.forFeature('candidateSearch', candidateSearchReducer),
-        EffectsModule.forFeature([CandidateSearchEffects, DetailsPagePaginationEffects]),
+        EffectsModule.forFeature([
+            CandidateSearchEffects,
+            DetailsPagePaginationEffects,
+            RouterEffects]),
         JobroomSharedModule,
         CommonModule,
         ReactiveFormsModule,

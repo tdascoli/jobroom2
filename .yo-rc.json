@@ -17,7 +17,7 @@
     "databaseType": "sql",
     "devDatabaseType": "h2Disk",
     "prodDatabaseType": "postgresql",
-    "searchEngine": false,
+    "searchEngine": "elasticsearch",
     "messageBroker": false,
     "serviceDiscoveryType": "eureka",
     "buildTool": "gradle",

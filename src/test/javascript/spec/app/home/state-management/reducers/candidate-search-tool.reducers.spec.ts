@@ -2,10 +2,14 @@ import { initialState } from '../../../../../../../main/webapp/app/home/state-ma
 import {
     CandidateSearchToolCountAction,
     CandidateSearchToolCountedAction,
-    CandidateSearchToolSubmittedAction
+    CandidateSearchToolSubmittedAction,
+    ResetCandidateSearchToolCountAction
 } from '../../../../../../../main/webapp/app/home/state-management/actions/candidate-search-tool.actions';
 import { candidateSearchToolReducer } from '../../../../../../../main/webapp/app/home/state-management/reducers/candidate-search-tool.reducers';
-import { Canton, Graduation } from '../../../../../../../main/webapp/app/shared/model/shared-types';
+import {
+    Canton,
+    Graduation
+} from '../../../../../../../main/webapp/app/shared/model/shared-types';
 
 describe('candidateSearchToolReducer', () => {
     it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
@@ -52,5 +56,18 @@ describe('candidateSearchToolReducer', () => {
 
         // THEN
         expect(newState.totalCount).toEqual(totalCount);
+    });
+
+    it('should update CandidateSearchToolState.totalCount for RESET_CANDIDATE_SEARCH_TOOL_COUNT action', () => {
+        // GIVEN
+        const action = new ResetCandidateSearchToolCountAction();
+
+        // WHEN
+        const totalCount = 15;
+        const state = Object.assign({}, initialState, totalCount);
+        const newState = candidateSearchToolReducer(state, action);
+
+        // THEN
+        expect(newState.totalCount).toEqual(initialState.totalCount);
     });
 });

@@ -10,10 +10,13 @@ import 'zone.js/dist/jasmine-patch';
 import 'rxjs';
 import 'intl/locale-data/jsonp/en-US.js';
 import { TestBed } from '@angular/core/testing';
-import { BrowserDynamicTestingModule, platformBrowserDynamicTesting } from '@angular/platform-browser-dynamic/testing';
+import {
+    BrowserDynamicTestingModule,
+    platformBrowserDynamicTesting
+} from '@angular/platform-browser-dynamic/testing';
 
 TestBed.initTestEnvironment(BrowserDynamicTestingModule, platformBrowserDynamicTesting());
 
-declare const require: any;
+declare let require: any;
 const testsContext: any = require.context('./', true, /\.spec/);
 testsContext.keys().forEach(testsContext);

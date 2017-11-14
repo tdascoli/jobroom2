@@ -1,0 +1,30 @@
+{
+    "jobroomApp": {
+        "organization": {
+            "active": "Active",
+            "city": "City",
+            "created": "Organization erstellt mit ID {{ param }}",
+            "delete": {
+                "question": "Soll Organization {{ id }} wirklich dauerhaft gel\u00f6scht werden?"
+            },
+            "deleted": "Organization gel\u00f6scht mit ID {{ param }}",
+            "detail": {
+                "title": "Organization"
+            },
+            "email": "Email",
+            "externalId": "External Id",
+            "home": {
+                "createLabel": "Organization erstellen",
+                "createOrEditLabel": "Organization erstellen oder bearbeiten",
+                "search": "Suche nach Organization",
+                "title": "Organizations"
+            },
+            "name": "Name",
+            "phone": "Phone",
+            "street": "Street",
+            "type": "Type",
+            "updated": "Organization aktualisiert mit ID {{ param }}",
+            "zipCode": "Zip Code"
+        }
+    }
+}

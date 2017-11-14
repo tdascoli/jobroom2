@@ -1,7 +1,6 @@
 import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
-import { ROUTER_NAVIGATION } from '@ngrx/router-store';
 import {
     CandidateSearchState,
     getCandidateSearchState
@@ -36,9 +35,6 @@ import {
 import { Router } from '@angular/router';
 import { CandidateProfile } from '../../services/candidate';
 import { WINDOW } from '../../../shared/shared-libs.module';
-import { RouterNavigationAction } from '@ngrx/router-store';
-import { CandidateSearchFilter } from '../state/candidate-search.state';
-import { SearchByUrlParamsAction } from '../actions/candidate-search.actions';
 
 export const CANDIDATE_SEARCH_DEBOUNCE = new InjectionToken<number>('CANDIDATE_SEARCH_DEBOUNCE');
 export const CANDIDATE_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('CANDIDATE_SEARCH_SCHEDULER');
@@ -51,7 +47,7 @@ export class CandidateSearchEffects {
         .ofType(INIT_CANDIDATE_SEARCH)
         .withLatestFrom(this.store.select(getCandidateSearchState))
         .switchMap(([action, state]) => {
-            if (state.initialState || state.searchByUrlParams) {
+            if (state.initialState) {
                 return this.candidateService.search(toInitialSearchRequest(state))
                     .map(toCandidateProfileListLoadedAction)
                     .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)));
@@ -106,22 +102,11 @@ export class CandidateSearchEffects {
             : new LoadNextItemsPageErrorAction({ feature: CANDIDATE_DETAIL_FEATURE }));
 
     @Effect({ dispatch: false })
-    nextJobLoaded$: Observable<Action> = this.actions$
+    nextItemLoaded$: Observable<Action> = this.actions$
         .ofType(NEXT_ITEM_LOADED)
         .filter((action: NextItemLoadedAction) => action.payload.feature === CANDIDATE_DETAIL_FEATURE)
         .do((action: NextItemLoadedAction) => {
             this.router.navigate(['/candidate-detail', action.payload.item.id])
-        });
-
-    @Effect({ dispatch: false })
-    routerNavigation$: Observable<Action> = this.actions$
-        .ofType(ROUTER_NAVIGATION)
-        .do((action: RouterNavigationAction) => {
-            const URISearchFilter = action.payload.event.state.root.queryParams.searchFilter;
-            if (URISearchFilter) {
-                const filter: CandidateSearchFilter  = this.candidateService.decodeURISearchFilter(URISearchFilter);
-                this.store.dispatch(new SearchByUrlParamsAction(filter));
-            }
         });
 
     constructor(private actions$: Actions,

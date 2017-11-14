@@ -3,6 +3,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect-model';
 import { TypeaheadItemDisplayModel } from '../typeahead-item-display-model';
+import { TYPEAHEAD_QUERY_MIN_LENGTH } from '../../../../app.constants';
 
 @Component({
     selector: 'jr2-typeahead-singleselect',
@@ -87,7 +88,7 @@ export class TypeaheadSingleselectComponent implements ControlValueAccessor {
             .map(toDisplayModel);
 
         return text$
-            .filter((query: string) => query.length > 2)
+            .filter((query: string) => query.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
             .switchMap((query: string) => this.itemLoader(query))
             .map(toDisplayModelArray);
     };

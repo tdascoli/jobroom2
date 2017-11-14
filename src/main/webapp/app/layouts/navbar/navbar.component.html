@@ -32,7 +32,8 @@
                     </div>
 
                     <ul class="navbar-nav">
-                        <li class="nav-item megamenu dropdown dropdown--canvas" [ngClass]="{show: !isNavbarCollapsed}" jhiMegaMenu>
+                        <li class="nav-item megamenu dropdown dropdown--canvas" [ngClass]="{show: !isNavbarCollapsed}"
+                            jhiMegaMenu>
                             <a class="nav-link dropdown-toggle active" href="javascript:void(0);"
                                role="button" (click)="toggleNavbar()"
                                aria-haspopup="true" aria-expanded="false">
@@ -175,28 +176,37 @@
                             </a>
                         </li>
                         <li class="nav-item d-none d-sm-block" *ngIf="!isAuthenticated()">
-                            <a class="nav-link nav-link--login" (click)="login()" jhiTranslate="global.menu.account.login">
+                            <a class="nav-link nav-link--login" (click)="login()"
+                               jhiTranslate="global.menu.account.login">
                                 Login
                             </a>
 
                         </li>
                         <li ngbDropdown class="nav-item d-none d-sm-block dropdown" *ngIf="isAuthenticated()">
-                            <a ngbDropdownToggle class="nav-link nav-link--account dropdown-toggle" href="javascript:void(0);" id="account-menu">
+                            <a ngbDropdownToggle class="nav-link nav-link--account dropdown-toggle"
+                               href="javascript:void(0);"
+                               id="account-menu">
                                 {{account.firstName}} {{account.lastName}}
                             </a>
                             <ul class="dropdown-menu dropdown-menu-right dropdown-menu--account" ngbDropdownMenu>
                                 <li>
-                                    <a class="dropdown-item dropdown-item--account" routerLink="settings" routerLinkActive="active" (click)="collapseNavbar()">
+                                    <a class="dropdown-item dropdown-item--account" routerLink="settings"
+                                       routerLinkActive="active"
+                                       (click)="collapseNavbar()">
                                         <span jhiTranslate="global.menu.account.settings">Settings</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item dropdown-item--account" routerLink="password" routerLinkActive="active" (click)="collapseNavbar()">
+                                    <a class="dropdown-item dropdown-item--account" routerLink="password"
+                                       routerLinkActive="active"
+                                       (click)="collapseNavbar()">
                                         <span jhiTranslate="global.menu.account.password">Password</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a class="dropdown-item dropdown-item--account" id="logout" routerLinkActive="active" (click)="logout()">
+                                    <a class="dropdown-item dropdown-item--account" id="logout"
+                                       routerLinkActive="active"
+                                       (click)="logout()">
                                         <span jhiTranslate="global.menu.account.logout">Sign out</span>
                                     </a>
                                 </li>

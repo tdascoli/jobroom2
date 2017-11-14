@@ -54,12 +54,14 @@ describe('LocalityService', () => {
                             city: 'Bern',
                             communalCode: 351,
                             cantonCode: 'BE',
-                            regionCode: 'BE01'
+                            regionCode: 'BE01',
+                            zipCode: '33333'
                         }, {
                             city: 'Bertschikon (Gossau ZH)',
                             communalCode: 115,
                             cantonCode: 'ZH',
-                            regionCode: 'ZH12'
+                            regionCode: 'ZH12',
+                            zipCode: '33333'
                         }
                     ],
                     cantons: [{
