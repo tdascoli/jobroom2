@@ -1,9 +1,9 @@
 {
     "jobroomApp": {
         "CompanyType": {
-            "null": "",
             "AVG": "AVG",
-            "RAV": "RAV"
+            "RAV": "RAV",
+            "null": ""
         }
     }
 }

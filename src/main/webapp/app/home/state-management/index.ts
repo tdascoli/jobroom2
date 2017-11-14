@@ -2,7 +2,8 @@ import { JobSearchToolSubmittedAction } from './actions/job-search-tool.actions'
 import {
     CandidateSearchToolCountAction,
     CandidateSearchToolCountedAction,
-    CandidateSearchToolSubmittedAction
+    CandidateSearchToolSubmittedAction,
+    ResetCandidateSearchToolCountAction
 } from './actions/candidate-search-tool.actions';
 import {
     SelectAgencyTabAction,
@@ -26,6 +27,7 @@ export type Actions =
     | CandidateSearchToolSubmittedAction
     | CandidateSearchToolCountAction
     | CandidateSearchToolCountedAction
+    | ResetCandidateSearchToolCountAction
     | SelectToolbarItemAction
     | SelectCompanyTabAction
     | SelectAgencyTabAction

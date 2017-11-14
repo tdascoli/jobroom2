@@ -1,37 +1,45 @@
 <div class="tab-content--job-room">
-    <fieldset class="candidate-search-off container-flow ">
-        <h1 class="candidate-search__title" translate="home.tools.candidate-search.title"></h1>
-        <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate
-              class="candidate-search__form">
+    <h1 class="candidate-search__title" translate="home.tools.candidate-search.title"></h1>
+    <div class="d-flex flex-row">
+        <div class="candidate-search__form">
+            <fieldset class="candidate-search-off container-flow ">
+                <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate>
 
-            <div class="form-group">
-                <input id="occupation-input" formControlName="occupation" class="form-control"
-                       [ngbTypeahead]="fetchOccupationSuggestions"
-                       [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
-                       [inputFormatter]="occupationFormatter"
-                       [resultFormatter]="occupationFormatter"
-                       (blur)="clearInvalidValue($event)">
-            </div>
+                    <div class="form-group">
+                        <input id="occupation-input" formControlName="occupation" class="form-control"
+                               [ngbTypeahead]="fetchOccupationSuggestions"
+                               [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
+                               [inputFormatter]="occupationFormatter"
+                               [resultFormatter]="occupationFormatter"
+                               (blur)="clearInvalidValue($event)">
+                    </div>
 
-            <div class="form-group">
-                <ss-multiselect-dropdown [options]="cantonOptions$ | async"
-                                         [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
-                                         [settings]="multiSelectSettings"
-                                         formControlName="residence"></ss-multiselect-dropdown>
-            </div>
+                    <div class="form-group">
+                        <ss-multiselect-dropdown [options]="cantonOptions$ | async"
+                                                 [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
+                                                 [settings]="multiSelectSettings"
+                                                 formControlName="residence"></ss-multiselect-dropdown>
+                    </div>
 
-            <div class="form-group">
-                <select formControlName="graduation" class="form-control custom-select">
-                    <option [ngValue]="null" translate="candidate-search.toolbar.graduation.default"></option>
-                    <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key"
-                            translate="{{'candidate-search.graduation.' + graduation.value}}">
-                    </option>
-                </select>
+                    <div class="form-group">
+                        <select formControlName="graduation" class="form-control custom-select">
+                            <option [ngValue]="null" translate="candidate-search.toolbar.graduation.default"></option>
+                            <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key"
+                                    translate="{{'candidate-search.graduation.' + graduation.value}}">
+                            </option>
+                        </select>
+                    </div>
+                    <button class="btn btn-primary btn-lg btn-block">
+                        <span translate="home.tools.candidate-search.search-button.title"></span>
+                    </button>
+                </form>
+            </fieldset>
+        </div>
+        <div class="candidate-search__radar">
+            <div class="candidate-radar d-none d-md-inline-block" *ngIf="candidateSearchToolModel.totalCount > -1">
+                <div [innerHTML]="getBadgeKey() | translate: { count: candidateSearchToolModel.totalCount | jr2Number }">
+                </div>
             </div>
-            <button class="btn btn-primary btn-lg btn-block">
-                <span translate="home.tools.candidate-search.search-button.title"></span>
-                <span>({{candidateSearchToolModel.totalCount | jr2Number}})</span>
-            </button>
-        </form>
-    </fieldset>
+        </div>
+    </div>
 </div>

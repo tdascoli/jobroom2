@@ -2,13 +2,11 @@ import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import {
-    CandidateSearchToolState,
-    initialState
-} from '../../state-management/state/candidate-search-tool.state';
+import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
 import {
     CandidateSearchToolCountAction,
-    CandidateSearchToolSubmittedAction
+    CandidateSearchToolSubmittedAction,
+    ResetCandidateSearchToolCountAction
 } from '../../state-management/actions/candidate-search-tool.actions';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
@@ -64,13 +62,10 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         });
         this.cantonOptions$ = this.cantonService.getCantonOptions();
 
-        this.store.dispatch(new CandidateSearchToolCountAction(initialState));
         this.subscription = this.candidateSearchForm.valueChanges
+            .startWith(this.candidateSearchForm.value)
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
-            .subscribe((formValue: any) => {
-                    return this.count(formValue);
-                }
-            );
+            .subscribe((formValue: any) => this.filterChanged(formValue));
     }
 
     ngOnDestroy(): void {
@@ -100,7 +95,31 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         this.store.dispatch(new CandidateSearchToolSubmittedAction(formValue));
     }
 
-    count(formValue: any) {
-        this.store.dispatch(new CandidateSearchToolCountAction(formValue));
+    getBadgeKey() {
+        const totalCount = this.candidateSearchToolModel.totalCount;
+
+        let key = 'home.tools.candidate-search.search-badge';
+        if (totalCount === 0) {
+            key += '.none';
+        } else if (totalCount === 1) {
+            key += '.one';
+        } else {
+            key += '.many';
+        }
+
+        return key;
+    }
+
+    private filterChanged(formValue: any) {
+        const { occupation, residence, graduation } = formValue;
+        const isFilterSelected = (occupation && occupation.code)
+            || (residence && residence.length > 0)
+            || (graduation != null && graduation >= 0);
+
+        if (isFilterSelected) {
+            this.store.dispatch(new CandidateSearchToolCountAction(formValue));
+        } else {
+            this.store.dispatch(new ResetCandidateSearchToolCountAction());
+        }
     }
 }

@@ -155,7 +155,6 @@
                 "userManagement": "Benutzerverwaltung"
             },
             "entities": {
-                "organization": "Organization",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
                 "main": "Entit\u00e4ten"

@@ -6,7 +6,8 @@ import { Actions } from '../index';
 import {
     CANDIDATE_SEARCH_TOOL_COUNT,
     CANDIDATE_SEARCH_TOOL_COUNTED,
-    CANDIDATE_SEARCH_TOOL_SUBMITTED
+    CANDIDATE_SEARCH_TOOL_SUBMITTED,
+    RESET_CANDIDATE_SEARCH_TOOL_COUNT
 } from '../actions/candidate-search-tool.actions';
 
 export function candidateSearchToolReducer(state = initialState, action: Actions): CandidateSearchToolState {
@@ -18,6 +19,9 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
             break;
         case CANDIDATE_SEARCH_TOOL_COUNTED:
             newState = Object.assign({}, state, { totalCount: action.payload });
+            break;
+        case RESET_CANDIDATE_SEARCH_TOOL_COUNT:
+            newState = Object.assign({}, state, { totalCount: initialState.totalCount });
             break;
         default:
             newState = state;
