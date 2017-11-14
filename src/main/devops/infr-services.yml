@@ -35,12 +35,13 @@ services:
             placement:
                 constraints: [node.labels.type == java]
 
-services:
     jobroom-proxy:
         image: nginx:alpine
         env_file: env.properties
         ports:
-            - 443:443
+            - target: 443
+              published: 8443
+              mode: host
         volumes:
             - jobroom_proxy:/etc/nginx/conf.d/
         networks:

@@ -28,7 +28,7 @@ task copyArtifacts {
     }
 }
 
-taks prepareDockerBuild {
+task prepareDockerBuild {
     dependsOn 'copyDockerFiles', 'copyArtifacts'
 }
 

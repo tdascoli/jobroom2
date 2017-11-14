@@ -7,13 +7,12 @@ services:
         environment:
             - LIQUIBASE_DROPFIRST=true
         ports:
-            - 8443:8443
+            - 8080:8080
         networks:
             - jobroom_data2
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
-            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -30,7 +29,6 @@ services:
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
-            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -47,7 +45,6 @@ services:
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
-            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -64,7 +61,6 @@ services:
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
-            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
@@ -84,7 +80,6 @@ services:
         secrets:
             - source: bootstrap.yml-1
               target: bootstrap.yml
-            - truststore.jks
         deploy:
             placement:
                 constraints: [node.labels.type == java]
