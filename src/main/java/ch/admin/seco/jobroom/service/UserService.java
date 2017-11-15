@@ -210,7 +210,8 @@ public class UserService {
                     .map(authorityRepository::getOne)
                     .forEach(managedAuthorities::add);
                 if (nonNull(userDTO.getOrganizationId())) {
-                    user.setOrganization(organizationRepository.findByExternalId(userDTO.getOrganizationId()).get());
+                    organizationRepository.findByExternalId(userDTO.getOrganizationId())
+                        .ifPresent(user::setOrganization);
                 }
                 userSearchRepository.save(user);
                 cacheManager.getCache(USERS_CACHE).evict(user.getLogin());

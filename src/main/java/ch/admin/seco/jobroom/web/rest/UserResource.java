@@ -161,19 +161,25 @@ public class UserResource {
     public ResponseEntity<UserDTO> importUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
         log.debug("REST request to import User : {}", managedUserVM);
         Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail());
-        if (existingUser.isPresent() && (!existingUser.get().getLogin().equals(managedUserVM.getLogin()))) {
-            throw new LoginAlreadyUsedException();
+
+        // update existing user
+        if (existingUser.isPresent()) {
+            User user = existingUser.get();
+            if (!user.getLogin().equals(managedUserVM.getLogin())) {
+                throw new LoginAlreadyUsedException();
+            }
+
+            managedUserVM.setId(user.getId());
+            Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
+            return ResponseUtil.wrapOrNotFound(updatedUser,
+                HeaderUtil.createAlert("userManagement.updated", managedUserVM.getLogin()));
         }
-        if (!existingUser.isPresent()) {
-            User newUser = userService.createUser(managedUserVM);
-            return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
-                .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
-                .body(new UserDTO(newUser));
-        }
-        managedUserVM.setId(existingUser.get().getId());
-        Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
-        return ResponseUtil.wrapOrNotFound(updatedUser,
-            HeaderUtil.createAlert("userManagement.updated", managedUserVM.getLogin()));
+
+        // create new user
+        User newUser = userService.createUser(managedUserVM);
+        return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
+            .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
+            .body(new UserDTO(newUser));
 
     }
 
