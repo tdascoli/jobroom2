@@ -125,7 +125,8 @@ public class UserService {
         authorities.add(authority);
         newUser.setAuthorities(authorities);
         if (nonNull(userDTO.getOrganizationId())) {
-            newUser.setOrganization(organizationRepository.findByExternalId(userDTO.getOrganizationId()).get());
+            organizationRepository.findByExternalId(userDTO.getOrganizationId())
+                .ifPresent(newUser::setOrganization);
         }
         userRepository.save(newUser);
         userSearchRepository.save(newUser);
@@ -157,7 +158,8 @@ public class UserService {
         user.setResetDate(Instant.now());
         user.setActivated(true);
         if (nonNull(userDTO.getOrganizationId())) {
-            user.setOrganization(organizationRepository.findByExternalId(userDTO.getOrganizationId()).get());
+            organizationRepository.findByExternalId(userDTO.getOrganizationId())
+                .ifPresent(user::setOrganization);
         }
         userRepository.save(user);
         userSearchRepository.save(user);

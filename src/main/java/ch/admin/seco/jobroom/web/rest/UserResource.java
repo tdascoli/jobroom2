@@ -175,6 +175,7 @@ public class UserResource {
                 HeaderUtil.createAlert("userManagement.updated", managedUserVM.getLogin()));
         }
 
+        //
         // create new user
         User newUser = userService.createUser(managedUserVM);
         return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
