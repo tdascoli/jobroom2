@@ -10,7 +10,7 @@ describe('CandidateService', () => {
     let candidateService: CandidateService;
 
     beforeEach(() => {
-        candidateService = new CandidateService(null);
+        candidateService = new CandidateService(null, null);
     });
 
     it('should get JobExperience by occupationCode', () => {

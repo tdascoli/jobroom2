@@ -48,7 +48,8 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     constructor(private languageSkillService: LanguageSkillService,
                 private localityService: LocalityService,
                 private fb: FormBuilder,
-                private store: Store<CandidateSearchState>) {
+                private store: Store<CandidateSearchState>,
+                private candidateService: CandidateService) {
     }
 
     ngOnInit(): void {
@@ -72,7 +73,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
         this.candidateSearchUrl$ = this.store.select(getSearchFilter)
             .map((filter: CandidateSearchFilter) =>
-                `${window.location.href}/?searchFilter=${CandidateService.encodeURISearchFilter(filter)}`);
+                `${window.location.href}/?searchFilter=${this.candidateService.encodeURISearchFilter(filter)}`);
     }
 
     ngOnDestroy(): void {

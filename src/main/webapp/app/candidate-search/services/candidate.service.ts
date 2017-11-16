@@ -7,7 +7,7 @@ import { ResponseWrapper } from '../../shared';
 import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
 import { createPageableURLSearchParams } from '../../shared/model/request-util';
 import { Experience } from '../../shared/model/shared-types';
-import base64url from 'base64url/dist/base64url';
+import { JhiBase64Service } from 'ng-jhipster';
 
 @Injectable()
 export class CandidateService {
@@ -20,15 +20,16 @@ export class CandidateService {
         return new ResponseWrapper(res.headers, res.json(), res.status);
     }
 
-    static encodeURISearchFilter(filter: CandidateSearchFilter): string {
-        return base64url.encode(JSON.stringify(filter));
+    encodeURISearchFilter(filter: CandidateSearchFilter): string {
+        return this.base64Service.encode(JSON.stringify(filter));
     }
 
-    static decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
-        return JSON.parse(base64url.decode(URISearchFilter));
+    decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
+        return JSON.parse(this.base64Service.decode(URISearchFilter));
     }
 
-    constructor(private http: Http) {
+    constructor(private http: Http,
+                private base64Service: JhiBase64Service) {
     }
 
     findCandidate(id: string): Observable<Candidate> {

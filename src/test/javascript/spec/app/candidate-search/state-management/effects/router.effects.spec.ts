@@ -12,6 +12,9 @@ import { MockRouter } from '../../../../helpers/mock-route.service';
 import { SearchCandidatesAction } from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-multiselect-model';
 import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { CandidateService } from '../../../../../../../main/webapp/app/candidate-search/services/candidate.service';
+import { JhiBase64Service } from 'ng-jhipster';
+import { Http } from '@angular/http';
 
 describe('RouterEffects', () => {
     const testFilter = 'eyJza2lsbHMiOltdLCJsYW5ndWFnZVNraWxscyI6W3siY29kZSI6ImRlIiwid3Jpd' +
@@ -33,9 +36,12 @@ describe('RouterEffects', () => {
                 StoreModule.forRoot({ candidateSearch: candidateSearchReducer })
             ],
             providers: [
+                JhiBase64Service,
+                CandidateService,
                 RouterEffects,
                 provideMockActions(() => actions$),
                 { provide: Router, useValue: mockRouter },
+                { provide: Http, useValue: null }
             ],
         });
 

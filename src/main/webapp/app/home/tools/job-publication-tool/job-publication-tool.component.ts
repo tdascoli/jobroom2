@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Subject } from 'rxjs/Subject';
 import {
@@ -144,7 +144,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.updatePublicationStartDateRelatedField();
     }
 
-    getSwitzSelected(countryControl: FormControl): Observable<boolean> {
+    getSwitzSelected(countryControl: AbstractControl): Observable<boolean> {
         return Observable.merge(
             Observable.of(countryControl.value),
             countryControl.valueChanges)

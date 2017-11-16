@@ -20,16 +20,17 @@ export class RouterEffects {
         .map((action: RouterNavigationAction<RouterStateUrl>) => action.payload)
         .filter(actionsWithFilter)
         .do(() => this.router.navigate(['/candidate-search']))
-        .map(toSearchCandidatesAction);
+        .map(toSearchCandidatesAction.bind(this));
 
     constructor(private actions$: Actions,
-                private router: Router) {
+                private router: Router,
+                private candidateService: CandidateService) {
     }
 }
 
 function toSearchCandidatesAction(payload: RouterNavigationPayload<RouterStateUrl>): SearchCandidatesAction {
     const filterString = payload.routerState.queryParams.searchFilter;
-    const filter = CandidateService.decodeURISearchFilter(filterString);
+    const filter = this.candidateService.decodeURISearchFilter(filterString);
 
     return new SearchCandidatesAction(filter);
 }
