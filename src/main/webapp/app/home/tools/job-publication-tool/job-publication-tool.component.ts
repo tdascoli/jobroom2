@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, FormBuilder, FormGroup, Validators, ValidatorFn } from '@angular/forms';
 import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Subject } from 'rxjs/Subject';
 import {
@@ -16,6 +16,7 @@ import {
     SuggestionLoaderFn
 } from '../../../shared/reference-service/occupation-presentation.service';
 import { Translations } from './zip-code/zip-code.component';
+import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-patterns';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -113,7 +114,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 firstName: ['', Validators.required],
                 lastName: ['', Validators.required],
                 phoneNumber: ['', Validators.required],
-                email: ['', Validators.email],
+                email: ['', [Validators.required, Validators.pattern(EMAIL_REGEX)]],
             }),
             application: fb.group({
                 written: [],
@@ -122,8 +123,8 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 email: [{
                     value: '',
                     disabled: true
-                }, [Validators.required, Validators.email]],
-                url: [{ value: '', disabled: true }, [Validators.required]],
+                }, []],
+                url: [{ value: '', disabled: true }, []],
                 phoneNumber: [{ value: '', disabled: true }, [Validators.required]],
                 additionalInfo: ['', [Validators.required, Validators.maxLength(240)]],
             }),
@@ -136,6 +137,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.validateCheckboxRelatedField('application.electronic',
             ['application.email', 'application.url']);
         this.validateCheckboxRelatedField('application.phoneEnabled', ['application.phoneNumber']);
+        this.validateElectronicApplicationFields('application.email',
+            'application.url', Validators.pattern(URL_REGEX));
+        this.validateElectronicApplicationFields('application.url',
+            'application.email', Validators.pattern(EMAIL_REGEX));
 
         this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
             (disabled) => this.publicationStartDateByArrangement = disabled);
@@ -169,6 +174,18 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     }
                     relatedControl.updateValueAndValidity();
                 });
+            });
+    }
+
+    private validateElectronicApplicationFields(source: string, target: string, validator: ValidatorFn) {
+        this.jobPublicationForm.get(source).valueChanges
+            .takeUntil(this.unsubscribe$)
+            .distinctUntilChanged((a, b) => !a.length === !b.length)
+            .subscribe((value) => {
+                const validators = value ? [validator] : [Validators.required, validator];
+                const applicationUrlControl = this.jobPublicationForm.get(target);
+                applicationUrlControl.setValidators(validators);
+                applicationUrlControl.updateValueAndValidity();
             });
     }
 
