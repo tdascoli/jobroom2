@@ -10,9 +10,9 @@
         "tools": {
             "candidate-search": {
                 "search-badge": {
+                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
                     "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
-                    "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
-                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden"
+                    "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende"
                 },
                 "search-button": {
                     "title": "Kandidaten anzeigen"
@@ -97,7 +97,8 @@
                 },
                 "reset": "Zur\u00fccksetzen",
                 "submit": "Job publizieren",
-                "workload": "Arbeitspensum"
+                "workload": "Arbeitspensum",
+                "date-placeholder": "TT.MM.JJJJ"
             },
             "job-search": {
                 "search-button": {

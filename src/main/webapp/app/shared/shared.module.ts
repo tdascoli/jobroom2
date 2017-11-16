@@ -21,6 +21,8 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { LanguageComponent } from './components/language/language.component';
 import { DetailsPagePaginationControlsComponent } from './components/details-page-pagination-controls/details-page-pagination-controls.component';
 import { DetailsPagePaginationComponent } from './components/details-page-pagination/details-page-pagination.component';
+import { NgbDateParserFormatter } from '@ng-bootstrap/ng-bootstrap';
+import { NgbDateMomentParserFormatter } from './util/ngb-date-moment-parser-formatter';
 
 @NgModule({
     imports: [
@@ -50,6 +52,10 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
+        {
+            provide: NgbDateParserFormatter,
+            useValue: new NgbDateMomentParserFormatter()
+        }
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [

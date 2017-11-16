@@ -40,7 +40,8 @@
     "rxjs": "5.4.2",
     "swagger-ui": "2.2.10",
     "tether": "1.4.0",
-    "zone.js": "^0.8.18"
+    "zone.js": "^0.8.18",
+    "moment": "^2.19.2"
   },
   "devDependencies": {
     "@angular/cli": "1.4.2",

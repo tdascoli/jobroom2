@@ -11,3 +11,4 @@ export const VERSION = _VERSION;
 export const DEBUG_INFO_ENABLED = _DEBUG_INFO_ENABLED;
 export const SERVER_API_URL = _SERVER_API_URL;
 export const TYPEAHEAD_QUERY_MIN_LENGTH = 2;
+export const DATE_FORMAT = 'DD.MM.YYYY';

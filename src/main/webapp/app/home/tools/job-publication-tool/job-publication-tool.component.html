@@ -124,6 +124,7 @@
                                             <input #startDatePicker="ngbDatepicker"
                                                    class="form-control date__input"
                                                    id="stellenantritt-date"
+                                                   placeholder="{{ 'home.tools.job-publication.date-placeholder' | translate }}"
                                                    ngbDatepicker
                                                    readonly
                                                    formControlName="date"
@@ -167,6 +168,7 @@
                                                 'home.tools.job-publication.publicationEndDate.label' | translate
                                                 }}</label>
                                             <input #endDatePicker="ngbDatepicker"
+                                                   placeholder="{{ 'home.tools.job-publication.date-placeholder' | translate }}"
                                                    formControlName="date"
                                                    ngbDatepicker
                                                    readonly
