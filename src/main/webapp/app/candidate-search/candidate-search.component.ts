@@ -52,7 +52,7 @@ export class CandidateSearchComponent {
             .map((occupation) => occupation.code);
         this.occupationName$ = store.select(getSearchFilter)
             .map(occupationMapper)
-            .map((occupation) => occupation.name);
+            .map((occupation) => occupation.name ? occupation.name : '');
         this.residenceFilterString$ = this.store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));

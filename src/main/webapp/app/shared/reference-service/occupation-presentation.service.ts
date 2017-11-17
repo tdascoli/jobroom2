@@ -22,5 +22,5 @@ export class OccupationPresentationService {
         .filter((prefix: string) => prefix.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
         .switchMap((prefix: string) => this.occupationService.getOccupations(prefix));
 
-    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name;
+    occupationFormatter = (occupation: OccupationSuggestion) => occupation.name ? occupation.name : '';
 }
