@@ -3,6 +3,8 @@ import { JobPublicationToolComponent } from '../../../../../../../main/webapp/ap
 import { ReactiveFormsModule } from '@angular/forms';
 import { LanguageSkillService } from '../../../../../../../main/webapp/app/candidate-search/services/language-skill.service';
 import { OccupationPresentationService } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { TranslateService } from '@ngx-translate/core';
+import { Observable } from 'rxjs/Observable';
 
 describe('JobPublicationToolComponent', () => {
     let component: JobPublicationToolComponent;
@@ -20,7 +22,8 @@ describe('JobPublicationToolComponent', () => {
                     provide: OccupationPresentationService,
                     useValue: mockOccupationPresentationService
                 },
-                { provide: LanguageSkillService, useValue: mockLanguageSkillService }
+                { provide: LanguageSkillService, useValue: mockLanguageSkillService },
+                { provide: TranslateService, useValue: { currentLang: 'de', onLangChange: Observable.never() } }
             ]
         })
             .overrideTemplate(JobPublicationToolComponent, '')

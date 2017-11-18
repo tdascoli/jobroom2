@@ -17,6 +17,8 @@ import {
 } from '../../../shared/reference-service/occupation-presentation.service';
 import { Translations } from './zip-code/zip-code.component';
 import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-patterns';
+import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import * as countries from 'i18n-iso-countries';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -30,14 +32,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     educationLevels = ISCED_1997;
     experiences = Experience;
     drivingLicenceCategories = DrivingLicenceCategory;
-    countries = [
-        { key: this.SWITZ_KEY, value: 'Schweiz' },
-        { key: 'DE', value: 'DE' },
-        { key: 'FR', value: 'FR' },
-        { key: 'IT', value: 'IT' },
-        { key: 'UK', value: 'UK' },
-        { key: 'A', value: 'A' }
-    ];
     languageSkills$: Observable<Array<string>>;
 
     jobPublicationForm: FormGroup;
@@ -50,6 +44,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     occupationFormatter: FormatterFn<OccupationSuggestion>;
 
     unsubscribe$ = new Subject<void>();
+    countries$: Observable<{key: string, value: string}[]>;
 
     private static mapDateToNgbDateStruct(source?: Date): NgbDateStruct {
         const date = source ? source : new Date();
@@ -66,10 +61,12 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private fb: FormBuilder,
-                private languageSkillService: LanguageSkillService) {
+                private languageSkillService: LanguageSkillService,
+                private translateService: TranslateService) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
         this.languageSkills$ = languageSkillService.getLanguages();
+        this.setupCountries();
 
         this.jobPublicationForm = fb.group({
             job: fb.group({
@@ -99,7 +96,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 permanent: [],
                 drivingLicenseLevel: [],
                 location: fb.group({
-                    countryCode: [this.countries[0].key, Validators.required],
+                    countryCode: [this.SWITZ_KEY, Validators.required],
                     text: []
                 })
             }),
@@ -107,7 +104,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 name: ['', Validators.required],
                 street: ['', Validators.required],
                 postboxNumber: [],
-                countryCode: [this.countries[0].key, Validators.required]
+                countryCode: [this.SWITZ_KEY, Validators.required]
             }),
             contact: fb.group({
                 salutation: ['', Validators.required],
@@ -258,5 +255,21 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         jobPublication.job.workingTimePercentageTo = jobPublication.job.workload[1];
 
         console.log(jobPublication);
+    }
+
+    private setupCountries(): void {
+        countries.registerLocale(require('i18n-iso-countries/langs/en.json'));
+        countries.registerLocale(require('i18n-iso-countries/langs/fr.json'));
+        countries.registerLocale(require('i18n-iso-countries/langs/de.json'));
+        countries.registerLocale(require('i18n-iso-countries/langs/it.json'));
+
+        this.countries$ = Observable.merge(
+            Observable.of(this.translateService.currentLang),
+            this.translateService.onLangChange.map((e: LangChangeEvent) => e.lang))
+            .map((lang: string) => {
+                const countryNames = countries.getNames(lang);
+                return Object.keys(countryNames)
+                    .map((key) => ({ key, value: countryNames[key] }));
+            });
     }
 }

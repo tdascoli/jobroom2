@@ -216,7 +216,7 @@
                                 | translate }}</label>
                             <div>
                                 <select formControlName="countryCode" class="form-control custom-select" id="country">
-                                    <option *ngFor="let country of countries"
+                                    <option *ngFor="let country of countries$ | async"
                                             [value]="country.key">{{ country.value }}
                                     </option>
                                 </select>
@@ -286,7 +286,7 @@
                             | translate }}</label>
                         <div>
                             <select formControlName="countryCode" class="form-control custom-select" id="unt-country">
-                                <option *ngFor="let country of countries"
+                                <option *ngFor="let country of countries$ | async"
                                         [value]="country.key">{{ country.value }}
                                 </option>
                             </select>
