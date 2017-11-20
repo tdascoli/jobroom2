@@ -51,7 +51,7 @@ export const initialState: JobSearchState = {
         contractType: ContractType.ALL,
         workingTime: [0, 100],
         sort: Sort.RELEVANCE_DESC,
-        onlineSince: 60
+        onlineSince: 20
     },
     totalJobCount: 0,
     page: 0,
