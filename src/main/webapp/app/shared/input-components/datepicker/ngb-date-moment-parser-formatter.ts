@@ -29,13 +29,9 @@ export class NgbDateMomentParserFormatter extends NgbDateParserFormatter {
     }
 }
 
-export function dateParserFormatterFactory() {
-    return new NgbDateMomentParserFormatter();
-}
-
 export function dateParserFormatterProvider() {
     return {
         provide: NgbDateParserFormatter,
-        useFactory: dateParserFormatterFactory,
+        useClass: NgbDateMomentParserFormatter,
     };
 }
