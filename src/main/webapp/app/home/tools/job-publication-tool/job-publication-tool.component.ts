@@ -20,6 +20,7 @@ import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-pattern
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
 import { POSTBOX_NUMBEB_REGEX } from '../../../shared/index';
+import { PHONE_NUMBER_REGEX } from '../../../shared/index';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -113,7 +114,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 salutation: ['', Validators.required],
                 firstName: ['', Validators.required],
                 lastName: ['', Validators.required],
-                phoneNumber: ['', Validators.required],
+                phoneNumber: ['', [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
                 email: ['', [Validators.required, Validators.pattern(EMAIL_REGEX)]],
             }),
             application: fb.group({
@@ -125,7 +126,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     disabled: true
                 }, []],
                 url: [{ value: '', disabled: true }, []],
-                phoneNumber: [{ value: '', disabled: true }, [Validators.required]],
+                phoneNumber: [{ value: '', disabled: true }, [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
                 additionalInfo: ['', [Validators.required, Validators.maxLength(this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)]],
             }),
             publication: fb.group({
