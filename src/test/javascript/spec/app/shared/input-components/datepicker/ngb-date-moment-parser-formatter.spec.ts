@@ -1,4 +1,4 @@
-import { NgbDateMomentParserFormatter } from '../../../../../../main/webapp/app/shared/util/ngb-date-moment-parser-formatter';
+import { NgbDateMomentParserFormatter } from '../../../../../../../main/webapp/app/shared/input-components/datepicker/ngb-date-moment-parser-formatter';
 
 describe('NgbDateMomentParserFormatter', () => {
 

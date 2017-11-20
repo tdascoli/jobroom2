@@ -1,6 +1,6 @@
 import { NgbDateParserFormatter, NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import * as moment from 'moment';
-import { DATE_FORMAT } from '../../app.constants';
+import { DATE_FORMAT } from '../../../app.constants';
 
 export class NgbDateMomentParserFormatter extends NgbDateParserFormatter {
 

@@ -21,7 +21,8 @@ import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { LanguageComponent } from './components/language/language.component';
 import { DetailsPagePaginationControlsComponent } from './components/details-page-pagination-controls/details-page-pagination-controls.component';
 import { DetailsPagePaginationComponent } from './components/details-page-pagination/details-page-pagination.component';
-import { dateParserFormatterProvider } from './util/ngb-date-moment-parser-formatter';
+import { dateParserFormatterProvider } from './input-components/datepicker/ngb-date-moment-parser-formatter';
+import { datepickerI18nService } from './input-components/datepicker/ngb-datepicker-i18n-service';
 
 @NgModule({
     imports: [
@@ -51,7 +52,8 @@ import { dateParserFormatterProvider } from './util/ngb-date-moment-parser-forma
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
-        dateParserFormatterProvider()
+        dateParserFormatterProvider(),
+        datepickerI18nService()
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [
