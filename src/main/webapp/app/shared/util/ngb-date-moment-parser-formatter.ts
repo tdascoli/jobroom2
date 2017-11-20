@@ -27,5 +27,15 @@ export class NgbDateMomentParserFormatter extends NgbDateParserFormatter {
         });
         return date.isValid() ? date.format(DATE_FORMAT) : '';
     }
+}
 
+export function dateParserFormatterFactory() {
+    return new NgbDateMomentParserFormatter();
+}
+
+export function dateParserFormatterProvider() {
+    return {
+        provide: NgbDateParserFormatter,
+        useFactory: dateParserFormatterFactory,
+    };
 }
