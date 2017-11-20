@@ -223,7 +223,6 @@ global,global.menu.admin.userManagement,Benutzerverwaltung,User management,Gesti
 global,global.menu.entities.jhipster-needle-menu-add-entry,JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!)
 global,global.menu.entities.job,Job,Job,Job,Job
 global,global.menu.entities.main,Entitäten,Entities,Entités,Entità
-global,global.menu.entities.organization,Organization,Organization,Organization,Organization
 global,global.menu.home,Startseite,Home,Accueil,Home
 global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
 global,global.menu.language,Sprache,Language,Langue,Lingua
@@ -437,7 +436,7 @@ global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Development,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test
 global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
-global,header.title,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV,Arbeitslosenversicherung ALV
+global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
 global,navigation.next,Nächster,Next,Nächster,Nächster
 global,navigation.previous,Bisherige,Previous,Bisherige,Bisherige
 health,health.details.details,Details,Details,Détails,Dettagli
@@ -460,6 +459,8 @@ health,health.table.service,Dienst Name,Service name,Nom du service,Nome del ser
 health,health.table.status,Status,Status,Etat,Stato
 health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
 home,home.title,JobRoom,JobRoom,JobRoom,JobRoom
+home,home.title.portal,arbeit,work,travail,lavoro
+home,home.title.portal-url,https://www.arbeit.swiss,https://www.work.swiss,https://www.travail.swiss,https://www.lavoro.swiss
 home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
 home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
@@ -494,6 +495,7 @@ home,home.tools.job-publication.contact.last-name,Nachname,Nachname,Nachname,Nac
 home,home.tools.job-publication.contact.phone,Telefon,Telefon,Telefon,Telefon
 home,home.tools.job-publication.contact.salutation,Anrede,Anrede,Anrede,Anrede
 home,home.tools.job-publication.contact.title,Kontaktperson,Kontaktperson,Kontaktperson,Kontaktperson
+home,home.tools.job-publication.date-placeholder,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
 home,home.tools.job-publication.description.characters-counter-text,{{count}} characters available,{{count}} characters available,{{count}} characters available,{{count}} characters available
 home,home.tools.job-publication.description.label,Tätigkeit /Anforderungen,Tätigkeit /Anforderungen,Tätigkeit /Anforderungen,Tätigkeit /Anforderungen
 home,home.tools.job-publication.description.placeholder,max. 9000 Characters,max. 9000 Characters,max. 9000 Characters,max. 9000 Characters
@@ -527,7 +529,6 @@ home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stelle
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.job-publication.workload,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
-home,home.tools.job-publication.date-placeholder,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Traumjob finden!,Traumjob finden!,Traumjob finden!
 home,home.tools.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!

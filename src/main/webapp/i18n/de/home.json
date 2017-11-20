@@ -1,6 +1,8 @@
 {
     "home": {
         "title": "JobRoom",
+        "title.portal": "arbeit",
+        "title.portal-url": "https://www.arbeit.swiss",
         "toolbar": {
             "companies": "Unternehmen",
             "jobSeekers": "Stellensuchende",
@@ -53,6 +55,7 @@
                     "salutation": "Anrede",
                     "title": "Kontaktperson"
                 },
+                "date-placeholder": "TT.MM.JJJJ",
                 "description": {
                     "characters-counter-text": "{{count}} characters available",
                     "label": "T\u00e4tigkeit /Anforderungen",
@@ -97,8 +100,7 @@
                 },
                 "reset": "Zur\u00fccksetzen",
                 "submit": "Job publizieren",
-                "workload": "Arbeitspensum",
-                "date-placeholder": "TT.MM.JJJJ"
+                "workload": "Arbeitspensum"
             },
             "job-search": {
                 "search-button": {
