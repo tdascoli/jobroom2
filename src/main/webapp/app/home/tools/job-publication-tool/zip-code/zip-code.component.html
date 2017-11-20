@@ -7,7 +7,6 @@
         <div>
             <input type="text"
                    [formControl]="zipAutocompleter"
-                   (selectItem)="setZip($event)"
                    (change)="zipChange()"
                    [ngbTypeahead]="search"
                    [inputFormatter]="formatter"

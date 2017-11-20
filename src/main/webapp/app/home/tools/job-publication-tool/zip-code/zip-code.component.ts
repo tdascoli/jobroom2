@@ -6,7 +6,6 @@ import {
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { LocalityAutocomplete } from '../../../../shared/reference-service/locality-autocomplete';
-import { NgbTypeaheadSelectItemEvent } from '@ng-bootstrap/ng-bootstrap';
 import { LocalityService } from '../../../../shared/index';
 
 export interface Translations {
@@ -87,11 +86,9 @@ export class ZipCodeComponent implements OnInit, OnChanges {
         return result.zip + (result.city ? ' ' : '') + result.city;
     };
 
-    setZip(event: NgbTypeaheadSelectItemEvent): void {
-        this.zipControlGroup.setValue(event.item);
-    }
-
     zipChange(): void {
-        this.zipControlGroup.reset();
+        if (this.zipControlGroup.invalid) {
+            this.zipControlGroup.reset();
+        }
     }
 }
