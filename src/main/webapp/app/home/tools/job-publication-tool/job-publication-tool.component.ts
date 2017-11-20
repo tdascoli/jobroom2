@@ -184,6 +184,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     private validateElectronicApplicationFields(source: string, target: string, validator: ValidatorFn) {
         this.jobPublicationForm.get(source).valueChanges
             .takeUntil(this.unsubscribe$)
+            .map((value) => value ? value : '')
             .distinctUntilChanged((a, b) => !a.length === !b.length)
             .subscribe((value) => {
                 const validators = value ? [validator] : [Validators.required, validator];
@@ -287,5 +288,19 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 return Object.keys(countryNames)
                     .map((key) => ({ key, value: countryNames[key] }));
             });
+    }
+
+    resetForm(): void {
+        this.jobPublicationForm.reset({
+            job: {
+                workload: [0, 100],
+                location: {
+                    countryCode: this.SWITZ_KEY
+                }
+            },
+            company: {
+                countryCode: this.SWITZ_KEY
+            }
+        });
     }
 }

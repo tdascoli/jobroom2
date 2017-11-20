@@ -442,7 +442,7 @@
                                 [disabled]="!disclaimer.checked || jobPublicationForm.invalid"
                                 class="btn btn-primary btn-lg">{{ 'home.tools.job-publication.submit' | translate }}
                         </button>
-                        <button type="reset" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' |
+                        <button (click)="resetForm()" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' |
                             translate }}
                         </button>
                     </div>
