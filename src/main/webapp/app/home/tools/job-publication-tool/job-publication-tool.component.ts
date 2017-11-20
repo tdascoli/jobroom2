@@ -28,6 +28,8 @@ import * as countries from 'i18n-iso-countries';
 })
 export class JobPublicationToolComponent implements OnInit, OnDestroy {
     private readonly SWITZ_KEY = 'CH';
+    readonly JOB_DESCRIPTION_MAX_LENGTH = 9000;
+    readonly APPLICATION_ADDITIONAL_INFO_MAX_LENGTH = 240;
 
     educationLevels = ISCED_1997;
     experiences = Experience;
@@ -76,7 +78,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     educationLevel: [],
                     experience: []
                 }),
-                description: ['', [Validators.required, Validators.maxLength(9000)]],
+                description: ['', [Validators.required, Validators.maxLength(this.JOB_DESCRIPTION_MAX_LENGTH)]],
                 workload: [[0, 100], Validators.required],
                 publicationStartDate: fb.group({
                     immediate: 'true',
@@ -123,7 +125,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 }, []],
                 url: [{ value: '', disabled: true }, []],
                 phoneNumber: [{ value: '', disabled: true }, [Validators.required]],
-                additionalInfo: ['', [Validators.required, Validators.maxLength(240)]],
+                additionalInfo: ['', [Validators.required, Validators.maxLength(this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)]],
             }),
             publication: fb.group({
                 jobroom: [],
@@ -144,6 +146,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.configureDateInput('job.publicationEndDate.date', 'job.publicationEndDate.permanent',
             (disabled) => this.publicationEndDateIsPermanent = disabled);
         this.updatePublicationStartDateRelatedField();
+
+        this.validateTextField('job.description', this.JOB_DESCRIPTION_MAX_LENGTH);
+        this.validateTextField('application.additionalInfo', this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH);
     }
 
     getSwitzSelected(countryControl: AbstractControl): Observable<boolean> {
@@ -255,6 +260,15 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         jobPublication.job.workingTimePercentageTo = jobPublication.job.workload[1];
 
         console.log(jobPublication);
+    }
+
+    private validateTextField(textFieldPath: string, maxLength: number) {
+        const textFieldControl = this.jobPublicationForm.get(textFieldPath);
+        textFieldControl.valueChanges
+            .takeUntil(this.unsubscribe$)
+            .filter((value) => value.length > maxLength)
+            .subscribe((value) =>
+                textFieldControl.setValue(value.substr(0, maxLength)));
     }
 
     private setupCountries(): void {

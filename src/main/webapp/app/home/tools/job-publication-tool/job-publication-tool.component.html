@@ -77,10 +77,10 @@
                             <textarea #jobDescription class="form-control" id="description" rows="5"
                                       [placeholder]="'home.tools.job-publication.description.placeholder' | translate"
                                       aria-describedby="maxChar" formControlName="description"
-                                      (keypress)="blockExtraCharacters($event, 9000)"></textarea>
+                                      (keypress)="blockExtraCharacters($event, JOB_DESCRIPTION_MAX_LENGTH)"></textarea>
                                 <small id="maxChar" class="form-text text-muted"
                                        jhiTranslate="home.tools.job-publication.description.characters-counter-text"
-                                       translateValues="{count: {{ max(9000 - jobDescription.value.length, 0) }}}">
+                                       translateValues="{count: {{ max(JOB_DESCRIPTION_MAX_LENGTH - jobDescription.value.length, 0) }}}">
                                 </small>
                             </div>
                         </div>
@@ -399,10 +399,10 @@
                             <textarea #additionalInfo class="form-control" id="app-text" rows="5"
                                       [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
                                       aria-describedby="maxChar2" formControlName="additionalInfo"
-                                      (keypress)="blockExtraCharacters($event, 240)"></textarea>
+                                      (keypress)="blockExtraCharacters($event, APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)"></textarea>
                             <small id="maxChar2" class="form-text text-muted"
                                    jhiTranslate="home.tools.job-publication.application.additional-info.characters-counter-text"
-                                   translateValues="{count: {{ max(240 - additionalInfo.value.length, 0) }}}">
+                                   translateValues="{count: {{ max(APPLICATION_ADDITIONAL_INFO_MAX_LENGTH - additionalInfo.value.length, 0) }}}">
                             </small>
                         </div>
                     </div>
