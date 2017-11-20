@@ -19,6 +19,7 @@ import { Translations } from './zip-code/zip-code.component';
 import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-patterns';
 import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
+import { POSTBOX_NUMBEB_REGEX } from '../../../shared/index';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -105,7 +106,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             company: fb.group({
                 name: ['', Validators.required],
                 street: ['', Validators.required],
-                postboxNumber: [],
+                postboxNumber: ['', Validators.pattern(POSTBOX_NUMBEB_REGEX)],
                 countryCode: [this.SWITZ_KEY, Validators.required]
             }),
             contact: fb.group({
