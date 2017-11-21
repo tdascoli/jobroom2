@@ -24,4 +24,15 @@
 
 .candidate-search__radar {
     width: 25%;
+
+    .btn-link {
+        font-weight: 700;
+        margin-top: $margin-x-narrow;
+        color: transparent;
+        cursor: pointer;
+    }
+
+    &:hover .btn-link {
+        color: #ffffff;
+    }
 }

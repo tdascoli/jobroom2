@@ -12,9 +12,10 @@
         "tools": {
             "candidate-search": {
                 "search-badge": {
-                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
-                    "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
-                    "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende"
+                    "many": "Diesem Job-Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
+                    "none": "Diesem Job-Profil entspricht keine Stellensuchende",
+                    "one": "Diesem Job-Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
+                    "show": "Jetzt anzeigen!"
                 },
                 "search-button": {
                     "title": "Kandidaten anzeigen"
