@@ -3,7 +3,7 @@
     <div class="d-flex flex-row">
         <div class="candidate-search__form">
             <fieldset class="candidate-search-off container-flow ">
-                <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate>
+                <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate id="ngForm" #documentEditForm="ngForm">
 
                     <div class="form-group">
                         <input id="occupation-input" formControlName="occupation" class="form-control"
@@ -37,8 +37,8 @@
         </div>
         <div class="candidate-search__radar">
             <div class="candidate-radar d-none d-md-inline-block" *ngIf="candidateSearchToolModel.totalCount > -1">
-                <div [innerHTML]="getBadgeKey() | translate: { count: candidateSearchToolModel.totalCount | jr2Number }">
-                </div>
+                <div [innerHTML]="getBadgeKey() | translate: { count: candidateSearchToolModel.totalCount | jr2Number }"></div>
+                <button class="btn-link" form="ngForm" (click)="documentEditForm.ngSubmit.emit()">{{ 'home.tools.candidate-search.search-badge.show' | translate }}</button>
             </div>
         </div>
     </div>
