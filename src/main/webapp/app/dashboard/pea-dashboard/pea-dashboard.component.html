@@ -1,0 +1,105 @@
+<div class="base dashboard">
+    <!--todo: implement dashboard-->
+    <div class="base__content--wide">
+        <div class="alv-logo-box md-whiteframe-1dp">
+            <h2 class="dashboard__title text--light">
+                <span class="dashboard__icon"><span class="fa fa-table" aria-hidden="true"></span></span>
+                Jobs bewirtschaften
+            </h2>
+
+            <div class="dashboard__actions">
+                <div class="form-inline">
+                    <div class="form-group">
+                        <label for="table-search" class="sr-only">In Stellen suchen</label>
+                        <div class="form-group--icon">
+                            <input id="table-search" class="form-control" placeholder="In Stellen suchen">
+                            <span class="fa-stack form-control--icon">
+								<span aria-hidden="true" class="fa fa-search fa-stack-1x"></span>
+							</span>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="filter-age" class="col-form-label">Alter der Stellen</label>
+                        <div>
+                            <select class="form-control custom-select" id="filter-age">
+                                <option selected="">3 Monate</option>
+                                <option value="1">One</option>
+                                <option value="2">Two</option>
+                                <option value="3">Three</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="dashboard__content--table">
+                <table class="table table-striped table-hover table-sm">
+                    <thead>
+                    <tr>
+                        <th scope="col">#Job-Room</th>
+                        <th scope="col">#AVAM</th>
+                        <th scope="col">Meldedatum</th>
+                        <th scope="col">Stellenbezeichnung</th>
+                        <th scope="col">Arbeitsort</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Aktion</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">1234</th>
+                        <td>1234</td>
+                        <td>01.05.2017</td>
+                        <td>Test Stelle</td>
+                        <td>Bern</td>
+                        <td>publiziert</td>
+                        <td>
+                            <div class="actions">
+                                <a href="#" aria-label="Stelle sichten" data-toggle="tooltip" data-placement="top" title="Stelle sichten"><span class="fa fa-fw fa-eye" aria-hidden="true"></span></a>
+                                <a href="#" aria-label="Stelle kopieren" data-toggle="tooltip" data-placement="top" title="Stelle kopieren"><span class="fa fa-fw fa-clone" aria-hidden="true"></span></a>
+                                <a href="#" aria-label="Stelle abmelden" data-toggle="tooltip" data-placement="top" title="Stelle abmelden"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1234</th>
+                        <td>1234</td>
+                        <td>01.05.2017</td>
+                        <td>Test Stelle</td>
+                        <td>Bern</td>
+                        <td>abgemeldet</td>
+                        <td>
+                            <div class="actions">
+                                <a href="#" aria-label="Stelle sichten" data-toggle="tooltip" data-placement="top" title="Stelle sichten"><span class="fa fa-fw fa-eye" aria-hidden="true"></span></a>
+                                <a href="#" aria-label="Stelle kopieren" data-toggle="tooltip" data-placement="top" title="Stelle kopieren"><span class="fa fa-fw fa-clone" aria-hidden="true"></span></a>
+                                <a href="#" aria-label="Stelle abmelden" data-toggle="tooltip" data-placement="top" title="Stelle abmelden"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span></a>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">1234</th>
+                        <td>1234</td>
+                        <td>01.05.2017</td>
+                        <td>Test Stelle</td>
+                        <td>Bern</td>
+                        <td>offen</td>
+                        <td>
+                            <div class="actions">
+                                <a href="#" aria-label="Stelle sichten" data-toggle="tooltip" data-placement="top" title="Stelle sichten"><span class="fa fa-fw fa-eye" aria-hidden="true"></span></a>
+                                <a href="#" aria-label="Stelle kopieren" data-toggle="tooltip" data-placement="top" title="Stelle kopieren"><span class="fa fa-fw fa-clone" aria-hidden="true"></span></a>
+                                <a href="#" aria-label="Stelle abmelden" data-toggle="tooltip" data-placement="top" title="Stelle abmelden"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span></a>
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="base__related">
+        <div class="dashboard__subtitle">Sie sind eingeloggt als</div>
+        <strong>Vorname Name</strong><br>
+        Firmenname
+    </div>
+</div>

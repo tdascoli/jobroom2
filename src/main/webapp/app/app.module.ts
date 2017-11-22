@@ -33,6 +33,7 @@ import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { DEBUG_INFO_ENABLED } from './app.constants';
 import { CandidateSearchModule } from './candidate-search/candidate-search.module';
+import { DashboardModule } from './dashboard/dashboard.module';
 import {
     CustomRouterStateSerializer,
     reducers
@@ -54,6 +55,7 @@ import { RouterStateSerializer, StoreRouterConnectingModule } from '@ngrx/router
         JobroomEntityModule,
         JobSearchModule,
         CandidateSearchModule,
+        DashboardModule,
         StoreModule.forRoot(reducers),
         StoreRouterConnectingModule,
         DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],

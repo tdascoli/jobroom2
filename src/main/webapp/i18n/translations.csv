@@ -220,6 +220,7 @@ global,global.menu.admin.main,Administration,Administration,Administration,Ammin
 global,global.menu.admin.metrics,Metriken,Metrics,Métriques,Metriche
 global,global.menu.admin.tracker,Benutzer Aktivitäten,User tracker,Suivi des utilisateurs,Tracciamento utente
 global,global.menu.admin.userManagement,Benutzerverwaltung,User management,Gestion des utilisateurs,Gestione utenti
+global,global.menu.dashboard,Dashboard,Dashboard,Dashboard,Dashboard
 global,global.menu.entities.jhipster-needle-menu-add-entry,JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!)
 global,global.menu.entities.job,Job,Job,Job,Job
 global,global.menu.entities.main,Entitäten,Entities,Entités,Entità

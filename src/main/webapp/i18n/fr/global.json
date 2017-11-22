@@ -139,6 +139,7 @@
                 "sessions": "Sessions",
                 "settings": "Profil"
             },
+            "dashboard": "Dashboard",
             "admin": {
                 "apidocs": "API",
                 "audits": "Audits",
