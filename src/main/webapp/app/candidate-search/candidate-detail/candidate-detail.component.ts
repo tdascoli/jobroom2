@@ -1,6 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Candidate, CandidateProfile, JobExperience } from '../services/candidate';
+import {
+    Candidate,
+    CandidateProfile,
+    Degree,
+    JobExperience
+} from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
 import {
     JobCenter,
@@ -18,6 +23,7 @@ import {
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Occupation } from '../../shared/reference-service/occupation.service';
+import { Graduation } from '../../shared/model/shared-types';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -132,5 +138,17 @@ export class CandidateDetailComponent implements OnInit {
 
     printCandidateDetails(): void {
         window.print();
+    }
+
+    isDisplayGraduation(graduation: string) {
+        return graduation && graduation !== Graduation[Graduation.NONE];
+    }
+
+    isDisplayDegree(degree: string) {
+        return degree && Degree[degree] >= Degree.EIDG_FACHAUSWEIS;
+    }
+
+    isDisplayHighestDegree(highestDegree: string) {
+        return highestDegree && Degree[highestDegree] >= Degree.SEKUNDARSCHULE_OBERSTUFE
     }
 }

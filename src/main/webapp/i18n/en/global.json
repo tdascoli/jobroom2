@@ -111,6 +111,24 @@
             "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
             "NONE": "keine Erfahrung"
         },
+        "degree": {
+            "PRIMARSCHULE": "Primarschule",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sekundarschule unterstufe",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sekundarschule oberstufe",
+            "EIDG_BERUFSATTEST": "Eidg berufsattest",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Eidg faehigkeitszeugnis",
+            "FACHMITTELSCHULE": "Fachmittelschule",
+            "BERUFSMATURA": "Berufsmatura",
+            "FACHMATURA": "Fachmatura",
+            "GYMNASIUM_MATURA": "Gymnasium matura",
+            "EIDG_FACHAUSWEIS": "Eidg fachausweis",
+            "EIDG_DIPLOM": "Eidg diplom",
+            "BACHELOR_FACHHOCHSCHULE": "Bachelor fachhochschule",
+            "BACHELOR_UNIVERSITY": "Bachelor university",
+            "MASTER_FACHHOCHSCHULE": "Master fachhochschule",
+            "MASTER_UNIVERSITY": "Master university",
+            "DOKTORAT": "Doktorat"
+        },
         "field": {
             "id": "ID"
         },
@@ -158,7 +176,8 @@
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
-                "main": "Entities"
+                "main": "Entities",
+                "organization": "Organization"
             },
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",

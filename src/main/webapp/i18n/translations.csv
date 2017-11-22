@@ -28,17 +28,17 @@ candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopiere
 candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
 candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
 candidate-detail,candidate-detail.candidate-send-link,Link versenden,Link versenden,Link versenden,Link versenden
-candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,CH anerkannt,CH anerkannt,CH anerkannt
-candidate-detail,candidate-detail.graduation.CH,CH,CH,CH,CH
+candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,CH anerkannt,diplôme étranger reconnu en CH,Diploma estero riconosciuto in Svizzera
+candidate-detail,candidate-detail.graduation.CH,CH-Abschluss diplôme,CH-Abschluss diplôme,CH Suisse Diplôme,CH Diploma svizzero
 candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
-candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,Ausländisch,Ausländisch,Ausländisch,Ausländisch
+candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,CH nicht anerkannt,CH nicht anerkannt,diplôme étranger non reconnu en CH,Diploma estero non riconosciuto in Svizzera
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
-candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
 candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf
 candidate-detail,candidate-detail.job-experience.graduation.label,Berufsabschluss,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf
+candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Ausbildung,Ausbildung,Ausbildung
 candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
 candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf
 candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation
@@ -188,6 +188,22 @@ global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,weniger als 1 Jahr,
 global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
 global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre
 global,global.experience.NONE,Keine Erfahrung,keine Erfahrung,keine Erfahrung,keine Erfahrung
+global,global.degree.PRIMARSCHULE,Primarschule,Primarschule,Primarschule,Primarschule
+global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Sekundarschule unterstufe,Sekundarschule unterstufe,Sekundarschule unterstufe,Sekundarschule unterstufe
+global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Sekundarschule oberstufe,Sekundarschule oberstufe,Sekundarschule oberstufe,Sekundarschule oberstufe
+global,global.degree.EIDG_BERUFSATTEST,Eidg berufsattest,Eidg berufsattest,Eidg berufsattest,Eidg berufsattest
+global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Eidg faehigkeitszeugnis,Eidg faehigkeitszeugnis,Eidg faehigkeitszeugnis,Eidg faehigkeitszeugnis
+global,global.degree.FACHMITTELSCHULE,Fachmittelschule,Fachmittelschule,Fachmittelschule,Fachmittelschule
+global,global.degree.BERUFSMATURA,Berufsmatura,Berufsmatura,Berufsmatura,Berufsmatura
+global,global.degree.FACHMATURA,Fachmatura,Fachmatura,Fachmatura,Fachmatura
+global,global.degree.GYMNASIUM_MATURA,Gymnasium matura,Gymnasium matura,Gymnasium matura,Gymnasium matura
+global,global.degree.EIDG_FACHAUSWEIS,Eidg fachausweis,Eidg fachausweis,Eidg fachausweis,Eidg fachausweis
+global,global.degree.EIDG_DIPLOM,Eidg diplom,Eidg diplom,Eidg diplom,Eidg diplom
+global,global.degree.BACHELOR_FACHHOCHSCHULE,Bachelor fachhochschule,Bachelor fachhochschule,Bachelor fachhochschule,Bachelor fachhochschule
+global,global.degree.BACHELOR_UNIVERSITY,Bachelor university,Bachelor university,Bachelor university,Bachelor university
+global,global.degree.MASTER_FACHHOCHSCHULE,Master fachhochschule,Master fachhochschule,Master fachhochschule,Master fachhochschule
+global,global.degree.MASTER_UNIVERSITY,Master university,Master university,Master university,Master university
+global,global.degree.DOKTORAT,Doktorat,Doktorat,Doktorat,Doktorat
 global,global.field.id,ID,ID,ID,ID
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
 global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Confirm the new password,Confirmation du nouveau mot de passe,Conferma nuova password

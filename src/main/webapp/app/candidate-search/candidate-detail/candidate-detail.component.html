@@ -57,17 +57,17 @@
                         </strong>
                         <span class="text--bold">{{ jobExperience.occupation }}</span>
                     </div>
-                    <div *ngIf="jobExperience.graduation" class="content__item">
+                    <div *ngIf="isDisplayGraduation(jobExperience.graduation)" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.graduation.label' | translate }}</strong>
                         <span>{{ 'candidate-detail.graduation.' + jobExperience.graduation | translate }}</span>
+                    </div>
+                    <div *ngIf="isDisplayDegree(jobExperience.degree)" class="content__item">
+                        <strong>{{ 'candidate-detail.job-experience.degree.label' | translate }}</strong>
+                        <span>{{ 'global.degree.' + jobExperience.degree | translate }}</span>
                     </div>
                     <div *ngIf="jobExperience.experience" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.experience.label' | translate }}</strong>
                         <span>{{ 'global.experience.' + jobExperience.experience | translate }}</span>
-                    </div>
-                    <div *ngIf="jobExperience.education" class="content__item">
-                        <strong>{{ 'candidate-detail.job-experience.education.label' | translate }}</strong>
-                        <span>{{ jobExperience.education }}</span>
                     </div>
                     <div *ngIf="jobExperience.remark" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.description.label' | translate }}</strong>
@@ -104,14 +104,12 @@
                 </div>
                 <div *ngIf="candidateProfile.highestEducationLevel" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.highestEducationLevel.label' | translate }}</strong>
-                    <span>{{ candidateProfile.highestEducationLevel }}</span>
+                    <span>{{ 'global.education.' + candidateProfile.highestEducationLevel | translate }}</span>
                 </div>
-                <!--TODO-->
-                <!-- <div class="content__item">
+                <div *ngIf="isDisplayHighestDegree(candidateProfile.highestDegree)" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.education.label' | translate }}</strong>
-                    <span>
-                    </span>
-                </div>-->
+                    <span>{{ 'global.degree.' + candidateProfile.highestDegree | translate }}</span>
+                </div>
                 <div *ngIf="candidateProfile.preferredWorkRegions || candidateProfile.preferredWorkCantons"
                      class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>

@@ -28,10 +28,10 @@
         "candidate-save": "Kandidat speichern",
         "candidate-send-link": "Link versenden",
         "graduation": {
-            "ACCEPTED": "CH anerkannt",
-            "CH": "CH",
+            "ACCEPTED": "dipl\u00f4me \u00e9tranger reconnu en CH",
+            "CH": "CH Suisse Dipl\u00f4me",
             "NONE": "kein Abschluss",
-            "NOT_ACCEPTED": "Ausl\u00e4ndisch"
+            "NOT_ACCEPTED": "dipl\u00f4me \u00e9tranger non reconnu en CH"
         },
         "job-center": {
             "email": {
@@ -46,14 +46,14 @@
             "description": {
                 "label": "Kenntnisse, F\u00e4higkeiten, Skills"
             },
-            "education": {
-                "label": "Bildungsstufe"
-            },
             "experience": {
                 "label": "Erfahrungsjahre auf dem Beruf"
             },
             "graduation": {
                 "label": "Abschluss zum Beruf"
+            },
+            "degree": {
+                "label": "Ausbildung"
             },
             "job": {
                 "label": "Berufsbezeichnung"
