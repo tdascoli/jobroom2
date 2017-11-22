@@ -11,8 +11,8 @@
                        [resultFormatter]="occupationFormatter"
                        (blur)="clearInvalidValue($event)">
             </div>
-            <div class="form-group form-group--wide">
-                <ss-multiselect-dropdown [options]="cantonOptions$ | async"
+            <div *ngIf="cantonOptions$ | async as cantonOptions" class="form-group form-group--wide">
+                <ss-multiselect-dropdown [options]="cantonOptions"
                                          [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
                                          [settings]="multiSelectSettings"
                                          [formControl]="residence"></ss-multiselect-dropdown>
