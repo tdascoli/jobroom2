@@ -43,7 +43,6 @@ export class JobSearchToolComponent implements OnInit, OnDestroy {
         });
 
         this.subscription = this.jobSearchForm.valueChanges
-            .startWith(this.jobSearchForm.value)
             .distinctUntilChanged()
             .subscribe((formValue) => this.filterChanged(formValue));
     }
