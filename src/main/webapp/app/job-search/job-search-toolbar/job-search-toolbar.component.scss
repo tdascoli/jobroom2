@@ -15,3 +15,20 @@
 :host /deep/ .typeahead-multiselect__type-label--locality {
     background-color: $additional-accent-green;
 }
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    .sticked {
+        position: fixed;
+    }
+
+    .sticked--top.toolbar {
+        margin-top: 0 !important;
+        width: 100%;
+        top: ($header-alv-height + $header-navbar-height) !important;
+    }
+
+    :host /deep/  + .container {
+        padding-top: ($header-alv-height + $header-navbar-height);
+    }
+}
