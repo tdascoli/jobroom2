@@ -1,4 +1,7 @@
-import { JobSearchToolSubmittedAction } from './actions/job-search-tool.actions';
+import {
+    JobSearchToolCountAction, JobSearchToolCountedAction, JobSearchToolSubmittedAction,
+    ResetJobSearchToolCountAction
+} from './actions/job-search-tool.actions';
 import {
     CandidateSearchToolCountAction,
     CandidateSearchToolCountedAction,
@@ -24,6 +27,9 @@ export { CandidateSearchToolState } from './state/candidate-search-tool.state';
 
 export type Actions =
     | JobSearchToolSubmittedAction
+    | JobSearchToolCountAction
+    | JobSearchToolCountedAction
+    | ResetJobSearchToolCountAction
     | CandidateSearchToolSubmittedAction
     | CandidateSearchToolCountAction
     | CandidateSearchToolCountedAction

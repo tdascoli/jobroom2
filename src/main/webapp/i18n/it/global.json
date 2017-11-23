@@ -139,7 +139,6 @@
                 "sessions": "Sessioni",
                 "settings": "Impostazioni"
             },
-            "dashboard": "Dashboard",
             "admin": {
                 "apidocs": "API",
                 "audits": "Cambiamenti",
@@ -155,6 +154,7 @@
                 "tracker": "Tracciamento utente",
                 "userManagement": "Gestione utenti"
             },
+            "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",

@@ -13,6 +13,7 @@ export class JobService {
 
     private resourceUrl = 'jobservice/api/jobs';
     private searchUrl = 'jobservice/api/_search/jobs';
+    private countUrl = 'jobservice/api/_count/jobs';
 
     constructor(private http: Http,
                 private dateUtils: JhiDateUtils,
@@ -35,6 +36,14 @@ export class JobService {
 
         return this.http.post(this.searchUrl, req, options)
             .map((res: Response) => this.convertResponse(res));
+    }
+
+    count(req: JobSearchRequest): Observable<number> {
+        return this.http.post(this.countUrl, req)
+            .map((res: Response) => this.convertResponse(res))
+            .map((wrapper: ResponseWrapper) => {
+                return Number.parseInt(wrapper.json.totalCount)
+            });
     }
 
     private convertResponse(res: Response): ResponseWrapper {

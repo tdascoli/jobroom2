@@ -6,7 +6,8 @@ import { Observable } from 'rxjs/Observable';
 import * as jobSearch from '../../../job-search/state-management/actions/job-search.actions';
 import * as candidateSearch from '../../../candidate-search/state-management/actions/candidate-search.actions';
 import {
-    JOB_SEARCH_TOOL_SUBMITTED,
+    JOB_SEARCH_TOOL_COUNT,
+    JOB_SEARCH_TOOL_SUBMITTED, JobSearchToolCountAction, JobSearchToolCountedAction,
     JobSearchToolSubmittedAction
 } from '../actions/job-search-tool.actions';
 import {
@@ -18,6 +19,10 @@ import {
 } from '../actions/candidate-search-tool.actions';
 import { CandidateService } from '../../../candidate-search/services/candidate.service';
 import { createCandidateSearchRequestFromToolState } from '../../../candidate-search/state-management/util/search-request-mapper';
+import { JobService } from '../../../job-search/services/job.service';
+import {
+    createJobSearchRequestFromToolState
+} from '../../../job-search/state-management/util/search-request-mapper';
 
 @Injectable()
 export class HomeEffects {
@@ -45,6 +50,18 @@ export class HomeEffects {
             }
         );
 
-    constructor(private actions$: Actions, private router: Router, private candidateService: CandidateService) {
+    @Effect()
+    jobSearchToolCount$: Observable<Action> = this.actions$
+        .ofType(JOB_SEARCH_TOOL_COUNT)
+        .switchMap((action: JobSearchToolCountAction) => {
+                const req = createJobSearchRequestFromToolState(action.payload);
+                return this.jobService.count(req)
+                    .map((totalCount: number) => new JobSearchToolCountedAction(totalCount))
+                    .catch((err: any) => Observable.of(new JobSearchToolCountedAction(0)))
+            }
+        );
+
+    constructor(private actions$: Actions, private router: Router, private candidateService: CandidateService,
+                private jobService: JobService) {
     }
 }

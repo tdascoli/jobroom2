@@ -9,6 +9,7 @@ import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 import { OccupationInputType } from '../../../shared/reference-service/occupation-autocomplete';
 import { LocalityInputType } from '../../../shared/reference-service/locality-autocomplete';
 import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
+import { JobSearchToolState } from '../../../home/state-management/state/job-search-tool.state';
 
 const toCode = (value: TypeaheadMultiselectModel) => value.code;
 const toLabel = (value: TypeaheadMultiselectModel) => value.label;
@@ -18,24 +19,15 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
     const { baseQuery, localityQuery } = searchQuery;
     const { companyName, onlineSince } = searchFilter;
 
-    const keywords = baseQuery.filter(byValue(OccupationInputType.FREE_TEXT)).map(toLabel);
-    const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION)).map(toCode);
-    const classifications = baseQuery.filter(byValue(OccupationInputType.CLASSIFICATION)).map(toCode);
-
-    const localities = localityQuery.filter(byValue(LocalityInputType.LOCALITY)).map(toCode);
-    const cantons = localityQuery.filter(byValue(LocalityInputType.CANTON)).map(toCode);
+    let request = populateBaseQuery({}, baseQuery);
+    request = populateLocalityQuery(request, localityQuery);
 
     const permanent = mapContractType(searchFilter.contractType);
     const sort = mapSort(searchFilter.sort);
     const regions = [];
 
-    return {
-        keywords,
-        occupations,
-        classifications,
-        localities,
+    return Object.assign({
         regions,
-        cantons,
         permanent,
         workingTimeMin: searchFilter.workingTime[0],
         workingTimeMax: searchFilter.workingTime[1],
@@ -44,7 +36,26 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
         onlineSince,
         page,
         size: ITEMS_PER_PAGE
-    };
+    }, request);
+}
+
+function populateBaseQuery(request, baseQuery: Array<TypeaheadMultiselectModel>) {
+    const keywords = baseQuery.filter(byValue(OccupationInputType.FREE_TEXT)).map(toLabel);
+    const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION)).map(toCode);
+    const classifications = baseQuery.filter(byValue(OccupationInputType.CLASSIFICATION)).map(toCode);
+    return Object.assign({}, request, { keywords, occupations, classifications });
+}
+
+function populateLocalityQuery(request, localityQuery: Array<TypeaheadMultiselectModel>) {
+    const localities = localityQuery.filter(byValue(LocalityInputType.LOCALITY)).map(toCode);
+    const cantons = localityQuery.filter(byValue(LocalityInputType.CANTON)).map(toCode);
+    return Object.assign({}, request, { localities, cantons });
+}
+
+export function createJobSearchRequestFromToolState(toolState: JobSearchToolState): JobSearchRequest {
+    const { baseQuery, localityQuery } = toolState;
+    const request = populateBaseQuery({}, baseQuery);
+    return populateLocalityQuery(request, localityQuery);
 }
 
 function mapContractType(contractType: ContractType): boolean {

@@ -1,15 +1,22 @@
 import { initialState, JobSearchToolState } from '../state/job-search-tool.state';
 import { Actions, JOB_SEARCH_TOOL_SUBMITTED } from '../index';
+import {
+    JOB_SEARCH_TOOL_COUNT, JOB_SEARCH_TOOL_COUNTED,
+    RESET_JOB_SEARCH_TOOL_COUNT
+} from '../actions/job-search-tool.actions';
 
 export function jobSearchToolReducer(state = initialState, action: Actions): JobSearchToolState {
     let newState;
     switch (action.type) {
         case JOB_SEARCH_TOOL_SUBMITTED:
-            const { localityQuery, baseQuery } = action.payload;
-            newState = Object.assign({}, state, {
-                localityQuery: [...localityQuery],
-                baseQuery: [...baseQuery]
-            });
+        case JOB_SEARCH_TOOL_COUNT:
+            newState = Object.assign({}, action.payload);
+            break;
+        case JOB_SEARCH_TOOL_COUNTED:
+            newState = Object.assign({}, state, { totalCount: action.payload });
+            break;
+        case RESET_JOB_SEARCH_TOOL_COUNT:
+            newState = Object.assign({}, state, { totalCount: initialState.totalCount });
             break;
 
         default:
