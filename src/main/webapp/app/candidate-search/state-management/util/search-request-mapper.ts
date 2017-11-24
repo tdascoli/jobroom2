@@ -76,10 +76,12 @@ function mapWorkLoad(workLoad: [number, number]): WorkLoad {
 
 function mapLanguageSkills(languageSkills: Array<LanguageSkill>): Array<CandidateLanguageSkill> {
     return languageSkills
-        ? languageSkills.map((languageSkill) => Object.assign({}, {
-            code: languageSkill.code,
-            written: CEFR_Level[languageSkill.written],
-            spoken: CEFR_Level[languageSkill.spoken]
-        }) as CandidateLanguageSkill)
+        ? languageSkills
+            .filter((languageSkill) => languageSkill.code)
+            .map((languageSkill) => Object.assign({}, {
+                code: languageSkill.code,
+                written: CEFR_Level[languageSkill.written],
+                spoken: CEFR_Level[languageSkill.spoken]
+            }) as CandidateLanguageSkill)
         : null;
 }

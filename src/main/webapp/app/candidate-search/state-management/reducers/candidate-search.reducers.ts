@@ -1,4 +1,8 @@
-import { CandidateSearchState, initialState } from '../state/candidate-search.state';
+import {
+    CandidateSearchFilter,
+    CandidateSearchState,
+    initialState
+} from '../state/candidate-search.state';
 import {
     Actions,
     CANDIDATE_LIST_LOADED,

@@ -5,9 +5,15 @@ import {
 import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import { OccupationSuggestion } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
 import {
-    Availability, Canton,
-    CEFR_Level, DrivingLicenceCategory, Experience, Graduation, ISCED_1997,
-    LanguageSkill, WorkForm
+    Availability,
+    Canton,
+    CEFR_Level,
+    DrivingLicenceCategory,
+    Experience,
+    Graduation,
+    ISCED_1997,
+    LanguageSkill,
+    WorkForm
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
 import { ITEMS_PER_PAGE } from '../../../../../../../main/webapp/app/shared/constants/pagination.constants';
 import {
@@ -158,27 +164,53 @@ describe('createCandidateSearchRequestFromFilter', () => {
         expect(candidateSearchRequest.drivingLicenceCategory).toEqual(DrivingLicenceCategory[drivingLicenceCategory]);
     });
 
-    it('should map CandidateSearchFilter with languageSkills', () => {
-        // GIVEN
+    describe('mapLanguageSkills', () => {
         const spoken = CEFR_Level.PROFICIENT;
         const written = CEFR_Level.INTERMEDIATE;
-        const languageSkills: Array<LanguageSkill> = [Object.assign({}, {
-            code: 'en',
-            nativeLanguage: true,
-            'spoken': spoken,
-            'written': written
-        })];
-        const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { 'languageSkills': languageSkills });
 
-        // WHEN
-        const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
+        it('should map CandidateSearchFilter with languageSkills', () => {
+            // GIVEN
+            const languageSkills: Array<LanguageSkill> = [Object.assign({}, {
+                code: 'en',
+                nativeLanguage: true,
+                spoken,
+                written
+            })];
+            const filter: CandidateSearchFilter = Object.assign({}, defaultFilter,
+                { 'languageSkills': languageSkills });
 
-        // THEN
-        expect(candidateSearchRequest.languageSkills).toEqual([Object.assign({}, {
-            code: 'en',
-            spoken: CEFR_Level[spoken],
-            written: CEFR_Level[written]
-        })]);
+            // WHEN
+            const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
+
+            // THEN
+            expect(candidateSearchRequest.languageSkills).toEqual([Object.assign({}, {
+                code: 'en',
+                spoken: CEFR_Level[spoken],
+                written: CEFR_Level[written]
+            })]);
+        });
+
+        it('should filter invalid languageSkills', () => {
+            // GIVEN
+            const languageSkills: Array<LanguageSkill> = [{
+                code: 'en',
+                nativeLanguage: true,
+                spoken,
+                written
+            }, {
+                code: null,
+                spoken,
+                written
+            }];
+            const filter: CandidateSearchFilter = Object.assign({}, defaultFilter,
+                { 'languageSkills': languageSkills });
+
+            // WHEN
+            const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
+
+            // THEN
+            expect(candidateSearchRequest.languageSkills.length).toEqual(1);
+        });
     });
 
     it('should map CandidateSearchRequest with canton and region code', () => {
