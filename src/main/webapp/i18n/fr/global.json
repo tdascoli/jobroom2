@@ -98,12 +98,12 @@
             "label": "F\u00fchrerausweiskategorie"
         },
         "education": {
-            "ISCED1": "Primarstufe - ISCED 1",
-            "ISCED2": "Sekundarstufe I - ISCED 2",
-            "ISCED3": "Sekundarstufe II - ISCED 3",
-            "ISCED4": "Zweitausbildung nicht terti\u00e4re Stufe - ISCED 4",
-            "ISCED5": "Terti\u00e4rstufe I - ISCED 5",
-            "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
+            "ISCED1": "degr\u00e9 primaire - ISCED 1",
+            "ISCED2": "degr\u00e9 secondaire I - ISCED 2",
+            "ISCED3": "degr\u00e9 secondaire II - ISCED 3",
+            "ISCED4": "degr\u00e9 post-secondaire non tertiaire ISCED 4",
+            "ISCED5": "degr\u00e9 tertiaire I - ISCED 5",
+            "ISCED6": "degr\u00e9 tertiaire II - ISCED 6"
         },
         "experience": {
             "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
@@ -112,22 +112,24 @@
             "NONE": "keine Erfahrung"
         },
         "degree": {
-            "PRIMARSCHULE": "Primarschule",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sekundarschule unterstufe",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sekundarschule oberstufe",
-            "EIDG_BERUFSATTEST": "Eidg berufsattest",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Eidg faehigkeitszeugnis",
-            "FACHMITTELSCHULE": "Fachmittelschule",
-            "BERUFSMATURA": "Berufsmatura",
-            "FACHMATURA": "Fachmatura",
-            "GYMNASIUM_MATURA": "Gymnasium matura",
-            "EIDG_FACHAUSWEIS": "Eidg fachausweis",
-            "EIDG_DIPLOM": "Eidg diplom",
-            "BACHELOR_FACHHOCHSCHULE": "Bachelor fachhochschule",
-            "BACHELOR_UNIVERSITY": "Bachelor university",
-            "MASTER_FACHHOCHSCHULE": "Master fachhochschule",
-            "MASTER_UNIVERSITY": "Master university",
-            "DOKTORAT": "Doktorat"
+            "PRIMARSCHULE": "Primaire \u2013 Ecole obligatoire",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Ecole obligatoire",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Ecole sup\u00e9rieure ou \u00e9quivalent",
+            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. initiale AFP ou \u00e9quiv.",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. initiale CFC ou \u00e9quiv.",
+            "FACHMITTELSCHULE": "Sec. II \u2013 Ecole de culture g\u00e9n\u00e9rale ou \u00e9quiv.",
+            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e9 professionnelle ou \u00e9quiv.",
+            "FACHMATURA": "Sec. II \u2013 Maturit\u00e9 sp\u00e9cialis\u00e9e ou \u00e9quiv.",
+            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e9 gymnasiale ou \u00e9quiv.",
+            "EIDG_FACHAUSWEIS": "Terti\u00e4r - H\u00f6here Berufsbildung",
+            "EIDG_DIPLOM": "Terti\u00e4r - H\u00f6here Berufsbildung",
+            "BACHELOR_FACHHOCHSCHULE": "Tertiaire \u2013 Bachelor HES ou \u00e9quivalent",
+            "BACHELOR_UNIVERSITY": "Tertiaire \u2013 Bachelor HEU ou \u00e9quivalent",
+            "MASTER_FACHHOCHSCHULE": "Tertiaire \u2013 Master HES ou \u00e9quivalent",
+            "MASTER_UNIVERSITY": "Tertiaire \u2013  Master HEU ou \u00e9quivalent",
+            "DOKTORAT": "Tertiaire \u2013 Doctorat HEU ou \u00e9quivalent",
+            "UNBEKANNT": "ne sait pas",
+            "NA": "aucune indication"
         },
         "field": {
             "id": "ID"
@@ -157,7 +159,6 @@
                 "sessions": "Sessions",
                 "settings": "Profil"
             },
-            "dashboard": "Dashboard",
             "admin": {
                 "apidocs": "API",
                 "audits": "Audits",
@@ -173,11 +174,11 @@
                 "tracker": "Suivi des utilisateurs",
                 "userManagement": "Gestion des utilisateurs"
             },
+            "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
-                "main": "Entit\u00e9s",
-                "organization": "Organization"
+                "main": "Entit\u00e9s"
             },
             "home": "Accueil",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",

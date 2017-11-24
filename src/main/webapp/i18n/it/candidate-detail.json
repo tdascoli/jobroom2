@@ -28,10 +28,10 @@
         "candidate-save": "Kandidat speichern",
         "candidate-send-link": "Link versenden",
         "graduation": {
+            "CH": "Diploma svizzero",
             "ACCEPTED": "Diploma estero riconosciuto in Svizzera",
-            "CH": "CH Diploma svizzero",
-            "NONE": "kein Abschluss",
-            "NOT_ACCEPTED": "Diploma estero non riconosciuto in Svizzera"
+            "NOT_ACCEPTED": "Diploma estero non riconosciuto in Svizzera",
+            "NONE": "nessuno"
         },
         "job-center": {
             "email": {

@@ -28,10 +28,10 @@ candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopiere
 candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
 candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
 candidate-detail,candidate-detail.candidate-send-link,Link versenden,Link versenden,Link versenden,Link versenden
-candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,CH anerkannt,diplôme étranger reconnu en CH,Diploma estero riconosciuto in Svizzera
-candidate-detail,candidate-detail.graduation.CH,CH-Abschluss diplôme,CH-Abschluss diplôme,CH Suisse Diplôme,CH Diploma svizzero
-candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
-candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,CH nicht anerkannt,CH nicht anerkannt,diplôme étranger non reconnu en CH,Diploma estero non riconosciuto in Svizzera
+candidate-detail,candidate-detail.graduation.CH,CH-Abschluss,CH-Abschluss,diplôme CH,Diploma svizzero
+candidate-detail,candidate-detail.graduation.ACCEPTED,"ausländisch, CH anerkannt","ausländisch, CH anerkannt",diplôme étranger reconnu en CH,Diploma estero riconosciuto in Svizzera
+candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,"ausländisch, CH nicht anerkannt","ausländisch, CH nicht anerkannt",diplôme étranger non reconnu en CH,Diploma estero non riconosciuto in Svizzera
+candidate-detail,candidate-detail.graduation.NONE,Keiner,Keiner,aucun,nessuno
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
@@ -65,10 +65,10 @@ candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bi
 candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen
-candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt
-candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,CH-Abschluss,CH-Abschluss
-candidate-search,candidate-search.graduation.NONE,Kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
-candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch
+candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,diplôme CH,Diploma svizzero
+candidate-search,candidate-search.graduation.ACCEPTED,"ausländisch, CH anerkannt","ausländisch, CH anerkannt",diplôme étranger reconnu en CH,Diploma estero riconosciuto in Svizzera
+candidate-search,candidate-search.graduation.NOT_ACCEPTED,"ausländisch, CH nicht anerkannt","ausländisch, CH nicht anerkannt",diplôme étranger non reconnu en CH,Diploma estero non riconosciuto in Svizzera
+candidate-search,candidate-search.graduation.NONE,Keiner,Keiner,aucun,nessuno
 candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
 candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
 candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Sprachkenntnisse,Sprachkentnisse,Sprachkentnisse
@@ -178,32 +178,34 @@ global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
 global,global.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
-global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
-global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2
-global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3
-global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4
-global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5
-global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6
+global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,degré primaire - ISCED 1,Livello primario - ISCED 1
+global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,degré secondaire I - ISCED 2,Livello secondario I - ISCED 2
+global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,degré secondaire II - ISCED 3,Livello secondario II - ISCED 3
+global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,degré post-secondaire non tertiaire ISCED 4,Seconda formazione - ISCED 4
+global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,degré tertiaire I - ISCED 5,Livello terziario I - ISCED 5
+global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,degré tertiaire II - ISCED 6,Livello terziario II - ISCED 6
 global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr
 global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
 global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre
 global,global.experience.NONE,Keine Erfahrung,keine Erfahrung,keine Erfahrung,keine Erfahrung
-global,global.degree.PRIMARSCHULE,Primarschule,Primarschule,Primarschule,Primarschule
-global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Sekundarschule unterstufe,Sekundarschule unterstufe,Sekundarschule unterstufe,Sekundarschule unterstufe
-global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Sekundarschule oberstufe,Sekundarschule oberstufe,Sekundarschule oberstufe,Sekundarschule oberstufe
-global,global.degree.EIDG_BERUFSATTEST,Eidg berufsattest,Eidg berufsattest,Eidg berufsattest,Eidg berufsattest
-global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Eidg faehigkeitszeugnis,Eidg faehigkeitszeugnis,Eidg faehigkeitszeugnis,Eidg faehigkeitszeugnis
-global,global.degree.FACHMITTELSCHULE,Fachmittelschule,Fachmittelschule,Fachmittelschule,Fachmittelschule
-global,global.degree.BERUFSMATURA,Berufsmatura,Berufsmatura,Berufsmatura,Berufsmatura
-global,global.degree.FACHMATURA,Fachmatura,Fachmatura,Fachmatura,Fachmatura
-global,global.degree.GYMNASIUM_MATURA,Gymnasium matura,Gymnasium matura,Gymnasium matura,Gymnasium matura
-global,global.degree.EIDG_FACHAUSWEIS,Eidg fachausweis,Eidg fachausweis,Eidg fachausweis,Eidg fachausweis
-global,global.degree.EIDG_DIPLOM,Eidg diplom,Eidg diplom,Eidg diplom,Eidg diplom
-global,global.degree.BACHELOR_FACHHOCHSCHULE,Bachelor fachhochschule,Bachelor fachhochschule,Bachelor fachhochschule,Bachelor fachhochschule
-global,global.degree.BACHELOR_UNIVERSITY,Bachelor university,Bachelor university,Bachelor university,Bachelor university
-global,global.degree.MASTER_FACHHOCHSCHULE,Master fachhochschule,Master fachhochschule,Master fachhochschule,Master fachhochschule
-global,global.degree.MASTER_UNIVERSITY,Master university,Master university,Master university,Master university
-global,global.degree.DOKTORAT,Doktorat,Doktorat,Doktorat,Doktorat
+global,global.degree.PRIMARSCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire – Ecole obligatoire,Elementare – Scuola obligatoria
+global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Sek. I - obligatorische Schule,Sek. I - obligatorische Schule,Sec. I – Ecole obligatoire,Sec. I – Scuola obligatoria
+global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Sek. II - Weiterführende Schule od. äq.,Sek. II - Weiterführende Schule od. äq.,Sec. II – Ecole supérieure ou équivalent,Sec. II – Scuola superiore o equiv.
+global,global.degree.EIDG_BERUFSATTEST,Sek. II - Berufliche Grundbildung EBA od. äq.,Sek. II - Berufliche Grundbildung EBA od. äq.,Sec. II – Form. prof. initiale AFP ou équiv.,Sec. II – Form. prof. di base CFP o equiv.
+global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sec. II – Form. prof. initiale CFC ou équiv.,Sec. II – Form. prof. di base AFC o equiv.
+global,global.degree.FACHMITTELSCHULE,Sek. II - Fachmittelschule oder äq.,Sek. II - Fachmittelschule oder äq.,Sec. II – Ecole de culture générale ou équiv.,Sec. II – Scuola specializzata o equiv.
+global,global.degree.BERUFSMATURA,Sek. II - Berufsmaturität od. äq.,Sek. II - Berufsmaturität od. äq.,Sec. II – Maturité professionnelle ou équiv.,Sec. II – Maturità professionale o equiv.
+global,global.degree.FACHMATURA,Sek. II - Fachmaturität od. äq.,Sek. II - Fachmaturität od. äq.,Sec. II – Maturité spécialisée ou équiv.,Sec. II – Maturità specializzata o equiv.
+global,global.degree.GYMNASIUM_MATURA,Sek. II - Gymnasiale Maturität od. äq.,Sek. II - Gymnasiale Maturität od. äq.,Sec. II – Maturité gymnasiale ou équiv.,Sec. II – Maturità liceale o equiv.
+global,global.degree.EIDG_FACHAUSWEIS,Tertiär - Höhere Berufsbildung, eidg. FA od. äq.,Tertiär - Höhere Berufsbildung, eidg. FA od. äq.,Tertiaire – Form. prof. sup. BF ou équiv.,Terziario – Form. prof. sup. APF o equiv.
+global,global.degree.EIDG_DIPLOM,Tertiär - Höhere Berufsbildung, Dipl. od. äq.,Tertiär - Höhere Berufsbildung, Dipl. od. äq.,Tertiaire – Form. prof. sup. diplôme ou équiv.,Terziario – Form. prof. sup. diploma o equiv.
+global,global.degree.BACHELOR_FACHHOCHSCHULE,Tertiär - Bachelor Fachhochschule od. äq.,Tertiär - Bachelor Fachhochschule od. äq.,Tertiaire – Bachelor HES ou équivalent,Terziario – Bachelor SUP o equivalente
+global,global.degree.BACHELOR_UNIVERSITY,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiaire – Bachelor HEU ou équivalent,Terziario – Bachelor scuola univ./poli. o equiv.
+global,global.degree.MASTER_FACHHOCHSCHULE,Tertiär - Master Fachhochschule od. äq.,Tertiär - Master Fachhochschule od. äq.,Tertiaire – Master HES ou équivalent,Terziario – Master SUP o equivalente
+global,global.degree.MASTER_UNIVERSITY,Tertiär - Master universitäre Hochschule od. äq.,Tertiär - Master universitäre Hochschule od. äq.,Tertiaire –  Master HEU ou équivalent,Terziario – Master scuola univ./poli. o equiv.
+global,global.degree.DOKTORAT,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiaire – Doctorat HEU ou équivalent,Terziario – Dottorato scuola univ./poli. o equiv.
+global,global.degree.UNBEKANNT,weiss nicht,weiss nicht,ne sait pas,non sa
+global,global.degree.NA,keine Angabe,keine Angabe,aucune indication,nessuna risposta
 global,global.field.id,ID,ID,ID,ID
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
 global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Confirm the new password,Confirmation du nouveau mot de passe,Conferma nuova password

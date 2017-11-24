@@ -22,6 +22,7 @@ export interface Candidate {
 }
 
 export enum Degree {
+    // TODO: review if it's possible to use english names
     PRIMARSCHULE = 120,
     SEKUNDARSCHULE_UNTERSTUFE = 121,
     SEKUNDARSCHULE_OBERSTUFE = 130,
@@ -37,7 +38,9 @@ export enum Degree {
     BACHELOR_UNIVERSITY = 171,
     MASTER_FACHHOCHSCHULE = 172,
     MASTER_UNIVERSITY = 173,
-    DOKTORAT = 180
+    DOKTORAT = 180,
+    UNBEKANNT = 198,
+    NA = 199
 }
 
 export interface JobExperience {

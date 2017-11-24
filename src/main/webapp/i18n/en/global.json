@@ -112,22 +112,24 @@
             "NONE": "keine Erfahrung"
         },
         "degree": {
-            "PRIMARSCHULE": "Primarschule",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sekundarschule unterstufe",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sekundarschule oberstufe",
-            "EIDG_BERUFSATTEST": "Eidg berufsattest",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Eidg faehigkeitszeugnis",
-            "FACHMITTELSCHULE": "Fachmittelschule",
-            "BERUFSMATURA": "Berufsmatura",
-            "FACHMATURA": "Fachmatura",
-            "GYMNASIUM_MATURA": "Gymnasium matura",
-            "EIDG_FACHAUSWEIS": "Eidg fachausweis",
-            "EIDG_DIPLOM": "Eidg diplom",
-            "BACHELOR_FACHHOCHSCHULE": "Bachelor fachhochschule",
-            "BACHELOR_UNIVERSITY": "Bachelor university",
-            "MASTER_FACHHOCHSCHULE": "Master fachhochschule",
-            "MASTER_UNIVERSITY": "Master university",
-            "DOKTORAT": "Doktorat"
+            "PRIMARSCHULE": "Primarstufe - obligatorische Schule",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sek. I - obligatorische Schule",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
+            "EIDG_BERUFSATTEST": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
+            "FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
+            "BERUFSMATURA": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
+            "FACHMATURA": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
+            "GYMNASIUM_MATURA": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
+            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
+            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
+            "BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
+            "BACHELOR_UNIVERSITY": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
+            "MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
+            "MASTER_UNIVERSITY": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q.",
+            "DOKTORAT": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
+            "UNBEKANNT": "weiss nicht",
+            "NA": "keine Angabe"
         },
         "field": {
             "id": "ID"
@@ -157,7 +159,6 @@
                 "sessions": "Sessions",
                 "settings": "Settings"
             },
-            "dashboard": "Dashboard",
             "admin": {
                 "apidocs": "API",
                 "audits": "Audits",
@@ -173,11 +174,11 @@
                 "tracker": "User tracker",
                 "userManagement": "User management"
             },
+            "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
-                "main": "Entities",
-                "organization": "Organization"
+                "main": "Entities"
             },
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",

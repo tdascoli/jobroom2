@@ -37,10 +37,10 @@
             "title": "Kandidaten suchen"
         },
         "graduation": {
-            "ACCEPTED": "CH-Abschluss oder CH anerkannt",
             "CH": "CH-Abschluss",
-            "NONE": "Kein Abschluss",
-            "NOT_ACCEPTED": "Abschluss CH oder ausl\u00e4ndisch",
+            "ACCEPTED": "ausl\u00e4ndisch, CH anerkannt",
+            "NOT_ACCEPTED": "ausl\u00e4ndisch, CH nicht anerkannt",
+            "NONE": "Keiner",
             "label": "Abschluss"
         },
         "keywords": {

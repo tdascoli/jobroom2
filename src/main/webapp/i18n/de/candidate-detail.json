@@ -28,10 +28,10 @@
         "candidate-save": "Kandidatenprofil speichern",
         "candidate-send-link": "Link versenden",
         "graduation": {
-            "ACCEPTED": "CH anerkannt",
-            "CH": "CH-Abschluss dipl\u00f4me",
-            "NONE": "Kein Abschluss",
-            "NOT_ACCEPTED": "CH nicht anerkannt"
+            "CH": "CH-Abschluss",
+            "ACCEPTED": "ausl\u00e4ndisch, CH anerkannt",
+            "NOT_ACCEPTED": "ausl\u00e4ndisch, CH nicht anerkannt",
+            "NONE": "Keiner"
         },
         "job-center": {
             "email": {

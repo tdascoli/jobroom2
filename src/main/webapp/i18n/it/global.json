@@ -98,12 +98,12 @@
             "label": "F\u00fchrerausweiskategorie"
         },
         "education": {
-            "ISCED1": "Primarstufe - ISCED 1",
-            "ISCED2": "Sekundarstufe I - ISCED 2",
-            "ISCED3": "Sekundarstufe II - ISCED 3",
-            "ISCED4": "Zweitausbildung nicht terti\u00e4re Stufe - ISCED 4",
-            "ISCED5": "Terti\u00e4rstufe I - ISCED 5",
-            "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
+            "ISCED1": "Livello primario - ISCED 1",
+            "ISCED2": "Livello secondario I - ISCED 2",
+            "ISCED3": "Livello secondario II - ISCED 3",
+            "ISCED4": "Seconda formazione - ISCED 4",
+            "ISCED5": "Livello terziario I - ISCED 5",
+            "ISCED6": "Livello terziario II - ISCED 6"
         },
         "experience": {
             "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
@@ -112,22 +112,24 @@
             "NONE": "keine Erfahrung"
         },
         "degree": {
-            "PRIMARSCHULE": "Primarschule",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sekundarschule unterstufe",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sekundarschule oberstufe",
-            "EIDG_BERUFSATTEST": "Eidg berufsattest",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Eidg faehigkeitszeugnis",
-            "FACHMITTELSCHULE": "Fachmittelschule",
-            "BERUFSMATURA": "Berufsmatura",
-            "FACHMATURA": "Fachmatura",
-            "GYMNASIUM_MATURA": "Gymnasium matura",
-            "EIDG_FACHAUSWEIS": "Eidg fachausweis",
-            "EIDG_DIPLOM": "Eidg diplom",
-            "BACHELOR_FACHHOCHSCHULE": "Bachelor fachhochschule",
-            "BACHELOR_UNIVERSITY": "Bachelor university",
-            "MASTER_FACHHOCHSCHULE": "Master fachhochschule",
-            "MASTER_UNIVERSITY": "Master university",
-            "DOKTORAT": "Doktorat"
+            "PRIMARSCHULE": "Elementare \u2013 Scuola obligatoria",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Scuola obligatoria",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Scuola superiore o equiv.",
+            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. di base CFP o equiv.",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. di base AFC o equiv.",
+            "FACHMITTELSCHULE": "Sec. II \u2013 Scuola specializzata o equiv.",
+            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e0 professionale o equiv.",
+            "FACHMATURA": "Sec. II \u2013 Maturit\u00e0 specializzata o equiv.",
+            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e0 liceale o equiv.",
+            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
+            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
+            "BACHELOR_FACHHOCHSCHULE": "Terziario \u2013 Bachelor SUP o equivalente",
+            "BACHELOR_UNIVERSITY": "Terziario \u2013 Bachelor scuola univ./poli. o equiv.",
+            "MASTER_FACHHOCHSCHULE": "Terziario \u2013 Master SUP o equivalente",
+            "MASTER_UNIVERSITY": "Terziario \u2013 Master scuola univ./poli. o equiv.",
+            "DOKTORAT": "Terziario \u2013 Dottorato scuola univ./poli. o equiv.",
+            "UNBEKANNT": "non sa",
+            "NA": "nessuna risposta"
         },
         "field": {
             "id": "ID"
@@ -157,7 +159,6 @@
                 "sessions": "Sessioni",
                 "settings": "Impostazioni"
             },
-            "dashboard": "Dashboard",
             "admin": {
                 "apidocs": "API",
                 "audits": "Cambiamenti",
@@ -173,11 +174,11 @@
                 "tracker": "Tracciamento utente",
                 "userManagement": "Gestione utenti"
             },
+            "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
                 "job": "Job",
-                "main": "Entit\u00e0",
-                "organization": "Organization"
+                "main": "Entit\u00e0"
             },
             "home": "Home",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",

@@ -150,5 +150,6 @@ export class CandidateDetailComponent implements OnInit {
 
     isDisplayHighestDegree(highestDegree: string) {
         return highestDegree && Degree[highestDegree] >= Degree.SEKUNDARSCHULE_OBERSTUFE
+            && Degree[highestDegree] <= Degree.DOKTORAT;
     }
 }
