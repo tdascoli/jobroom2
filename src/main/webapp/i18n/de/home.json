@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "JobRoom",
+        "title": "Job Room",
         "title.portal": "arbeit",
         "title.portal-url": "https://www.arbeit.swiss",
         "toolbar": {
@@ -11,16 +11,16 @@
         },
         "tools": {
             "candidate-search": {
+                "search-button": {
+                    "title": "Kandidaten anzeigen"
+                },
+                "title": "Finden Sie passende Kandidaten",
                 "search-badge": {
                     "many": "Diesem Job-Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
                     "none": "Diesem Job-Profil entspricht keine Stellensuchende",
                     "one": "Diesem Job-Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
-                },
-                "search-button": {
-                    "title": "Kandidaten anzeigen"
-                },
-                "title": "Finden Sie passende Kandidaten"
+                }
             },
             "candidateSearchTab": "Kandidaten finden",
             "job-publication": {

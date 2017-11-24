@@ -28,10 +28,10 @@
         "candidate-save": "Kandidatenprofil speichern",
         "candidate-send-link": "Link versenden",
         "graduation": {
-            "CH": "CH-Abschluss",
-            "ACCEPTED": "ausl\u00e4ndisch, CH anerkannt",
-            "NOT_ACCEPTED": "ausl\u00e4ndisch, CH nicht anerkannt",
-            "NONE": "Keiner"
+            "ACCEPTED": "CH anerkannt",
+            "CH": "CH",
+            "NONE": "Kein Abschluss",
+            "NOT_ACCEPTED": "Ausl\u00e4ndisch"
         },
         "job-center": {
             "email": {
@@ -43,17 +43,20 @@
             "title": "Weitere Ausk\u00fcnfte erteilt Ihnen"
         },
         "job-experience": {
+            "degree": {
+                "label": "Ausbildung"
+            },
             "description": {
                 "label": "Kenntnisse, F\u00e4higkeiten, Skills"
+            },
+            "education": {
+                "label": "Bildungsstufe"
             },
             "experience": {
                 "label": "Erfahrungsjahre auf dem Beruf"
             },
             "graduation": {
                 "label": "Berufsabschluss"
-            },
-            "degree": {
-                "label": "Ausbildung"
             },
             "job": {
                 "label": "Berufsbezeichnung"

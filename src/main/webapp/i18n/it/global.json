@@ -7,7 +7,7 @@
             "cancel": "Annulla",
             "delete": "Elimina",
             "edit": "Modifica",
-            "open": "Open",
+            "open": "Apri",
             "save": "Salva",
             "view": "Visualizza"
         },
@@ -36,7 +36,7 @@
         "Size": "Il campo {{ fieldName }} non \u00e8 conforme ai requisiti di lunghezza min/max!",
         "emailexists": "L'email \u00e8 gi\u00e0 in uso!",
         "idexists": "Un(a) nuovo/a {{entityName}} non pu\u00f2 gi\u00e0 avere un ID",
-        "internalServerError": "Internal server error",
+        "internalServerError": "Errore interno server",
         "server": {
             "not": {
                 "reachable": "Server non raggiungibile"
@@ -52,13 +52,13 @@
     "footer": {
         "link": {
             "abbreviation": {
-                "text": "Abk\u00fcrzungen"
+                "text": "Abbreviazioni"
             },
             "legal": {
-                "text": "Rechtliche Grundlagen"
+                "text": "Basi giuridiche"
             },
             "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+                "text": "Assicurazione contro la disoccupazione / Mercato del lavoro AD"
             }
         }
     },
@@ -74,9 +74,29 @@
         },
         "contactPerson": {
             "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
+                "MR": "Signor",
+                "MS": "Signora"
             }
+        },
+        "degree": {
+            "BACHELOR_FACHHOCHSCHULE": "Terziario \u2013 Bachelor SUP o equivalente",
+            "BACHELOR_UNIVERSITY": "Terziario \u2013 Bachelor scuola univ./poli. o equiv.",
+            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e0 professionale o equiv.",
+            "DOKTORAT": "Terziario \u2013 Dottorato scuola univ./poli. o equiv.",
+            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. di base CFP o equiv.",
+            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
+            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. di base AFC o equiv.",
+            "FACHMATURA": "Sec. II \u2013 Maturit\u00e0 specializzata o equiv.",
+            "FACHMITTELSCHULE": "Sec. II \u2013 Scuola specializzata o equiv.",
+            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e0 liceale o equiv.",
+            "MASTER_FACHHOCHSCHULE": "Terziario \u2013 Master SUP o equivalente",
+            "MASTER_UNIVERSITY": "Terziario \u2013 Master scuola univ./poli. o equiv.",
+            "NA": "nessuna risposta",
+            "PRIMARSCHULE": "Elementare \u2013 Scuola obligatoria",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Scuola superiore o equiv.",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Scuola obligatoria",
+            "UNBEKANNT": "non sa"
         },
         "drivingLicenceCategory": {
             "A": "A",
@@ -106,30 +126,10 @@
             "ISCED6": "Livello terziario II - ISCED 6"
         },
         "experience": {
-            "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
-            "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
-            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
-            "NONE": "keine Erfahrung"
-        },
-        "degree": {
-            "PRIMARSCHULE": "Elementare \u2013 Scuola obligatoria",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Scuola obligatoria",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Scuola superiore o equiv.",
-            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. di base CFP o equiv.",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. di base AFC o equiv.",
-            "FACHMITTELSCHULE": "Sec. II \u2013 Scuola specializzata o equiv.",
-            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e0 professionale o equiv.",
-            "FACHMATURA": "Sec. II \u2013 Maturit\u00e0 specializzata o equiv.",
-            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e0 liceale o equiv.",
-            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
-            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
-            "BACHELOR_FACHHOCHSCHULE": "Terziario \u2013 Bachelor SUP o equivalente",
-            "BACHELOR_UNIVERSITY": "Terziario \u2013 Bachelor scuola univ./poli. o equiv.",
-            "MASTER_FACHHOCHSCHULE": "Terziario \u2013 Master SUP o equivalente",
-            "MASTER_UNIVERSITY": "Terziario \u2013 Master scuola univ./poli. o equiv.",
-            "DOKTORAT": "Terziario \u2013 Dottorato scuola univ./poli. o equiv.",
-            "UNBEKANNT": "non sa",
-            "NA": "nessuna risposta"
+            "LESS_THAN_1_YEAR": "meno di 1 anno",
+            "MORE_THAN_1_YEAR": "pi\u00f9 di 1 anno",
+            "MORE_THAN_3_YEARS": "pi\u00f9 di 3 anni",
+            "NONE": "nessuna esperienza"
         },
         "field": {
             "id": "ID"
@@ -145,8 +145,8 @@
             "username.placeholder": "Il tuo nome utente"
         },
         "gender": {
-            "FEMALE": "weiblich",
-            "MALE": "m\u00e4nnlich"
+            "FEMALE": "femmina",
+            "MALE": "maschio"
         },
         "item-count": "Mostra {{first}} - {{second}} di {{total}} articoli.",
         "menu": {
@@ -177,7 +177,7 @@
             "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-                "job": "Job",
+                "job": "Posto",
                 "main": "Entit\u00e0"
             },
             "home": "Home",
@@ -190,7 +190,7 @@
             },
             "info": {
                 "authenticated": {
-                    "link": "accedere",
+                    "link": "Accedi",
                     "prefix": "Se vuoi",
                     "suffix": ", puoi provare gli account di default: <br/> - Amministratore (user = \"admin\" e la password = \"admin\") <br/> - utente (user = \"user\" e la password = \"user\")"
                 },
@@ -215,7 +215,7 @@
                     "maxlength": "La password non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
                     "minlength": "La password deve essere di almeno 4 caratteri",
                     "required": "La password \u00e8 obbligatoria.",
-                    "strength": "Robustezza della password:"
+                    "strength": "Sicurezza della password:"
                 }
             }
         },
@@ -227,6 +227,8 @@
                 "BE": "Berna",
                 "BL": "Basilea-Campagna",
                 "BS": "Basilea-Citt\u00e0",
+                "CH": "Svizzera",
+                "FL": "Principato Liechtenstein",
                 "FR": "Friburgo",
                 "GE": "Ginevra",
                 "GL": "Glarona",
@@ -267,22 +269,22 @@
                 "km": "Khmer",
                 "ku": "Kurdisch",
                 "level": {
-                    "BASIC": "Grundkentnisse",
-                    "INTERMEDIATE": "Fortgeschritten",
-                    "NONE": "keine Kentnisse",
+                    "BASIC": "Principiante",
+                    "INTERMEDIATE": "Avanzato",
+                    "NONE": "nessuna conoscenza",
                     "PROFICIENT": "Proficient"
                 },
                 "lt": "Litauisch",
                 "ne": "Holl\u00e4ndisch",
                 "no": "Norwegisch",
-                "no-selection": "Keine Auswahl",
+                "no-selection": "Nessuna scelta",
                 "po": "Polnisch",
                 "pt": "Portugiesisch",
                 "ro": "Rum\u00e4nisch",
                 "ru": "Russisch",
                 "sk": "Slowakisch",
                 "sl": "Slowenisch",
-                "spoken": "m\u00fcndlich",
+                "spoken": "orale",
                 "sq": "Albanisch",
                 "sr": "Serbisch",
                 "sv": "Schwedisch",
@@ -290,10 +292,10 @@
                 "th": "Thai",
                 "tr": "T\u00fcrkisch",
                 "vi": "Vietnamesisch",
-                "written": "schriftlich",
+                "written": "scritto",
                 "zh": "Chinesisch"
             },
-            "languages": "Sprachen",
+            "languages": "Lingue",
             "region": {
                 "A": "esteroLU05",
                 "AG01": "Aarau",
@@ -385,7 +387,7 @@
                 "TG07": "Steckborn",
                 "TG08": "Weinfelden",
                 "TI01": "Blenio, Leventina, Riviera",
-                "TI02": "Locarno, Vallemaggio",
+                "TI02": "Locarno, Vallemaggia",
                 "TI03": "Lugano",
                 "TI04": "Basso Mendrisiotto",
                 "TI06": "Bellinzonese",
@@ -429,7 +431,7 @@
         "title": "Assicurazione contro la disoccupazione AD"
     },
     "navigation": {
-        "next": "N\u00e4chster",
-        "previous": "Bisherige"
+        "next": "Seguente",
+        "previous": "Precedente"
     }
 }

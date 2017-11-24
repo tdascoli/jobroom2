@@ -2,13 +2,13 @@
     "reset": {
         "finish": {
             "form": {
-                "button": "Validate new password"
+                "button": "Set new password."
             },
             "messages": {
                 "error": "Your password couldn't be reset. Remember a password request is only valid for 24 hours.",
-                "info": "Choose a new password",
+                "info": "Choose a new password.",
                 "keymissing": "The reset key is missing.",
-                "success": "<strong>Your password has been reset.</strong> Please "
+                "success": "<strong>Your password has been reset.</strong> "
             },
             "title": "Reset password"
         },
@@ -17,11 +17,11 @@
                 "button": "Reset password"
             },
             "messages": {
-                "info": "Enter the email address you used to register",
-                "notfound": "<strong>Email address isn't registered!</strong> Please check and try again",
+                "info": "Enter the email address you used to register.",
+                "notfound": "<strong>Email address isn't registered!</strong> Please check and try again.",
                 "success": "Check your emails for details on how to reset your password."
             },
-            "title": "Reset your password"
+            "title": "Reset your password."
         }
     }
 }

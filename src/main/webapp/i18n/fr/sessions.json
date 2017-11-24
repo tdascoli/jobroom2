@@ -1,15 +1,15 @@
 {
     "sessions": {
         "messages": {
-            "error": "<strong>Une erreur est survenue !</strong> La session ne peut pas \u00eatre invalid\u00e9e.",
-            "success": "<strong>La session a \u00e9t\u00e9 invalid\u00e9e !</strong>"
+            "error": "<strong>Une erreur s'est produite !</strong> La session n'a pas pu \u00eatre ferm\u00e9e.",
+            "success": "<strong>La session a \u00e9t\u00e9 ferm\u00e9e !</strong>"
         },
         "table": {
-            "button": "Invalider",
+            "button": "Fermer",
             "date": "Date",
             "ipaddress": "Adresse IP",
-            "useragent": "User Agent"
+            "useragent": "Agent utilisateur"
         },
-        "title": "Sessions actives de [<strong>{{username}}</strong>]"
+        "title": "Sessions actives de [<b>{{username}}</b>]"
     }
 }

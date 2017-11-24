@@ -1,6 +1,6 @@
 {
     "userManagement": {
-        "activated": "Activated",
+        "activated": "Active",
         "created": "A new user is created with identifier {{ param }}",
         "createdBy": "Created by",
         "createdDate": "Created date",
@@ -8,7 +8,7 @@
         "delete": {
             "question": "Are you sure you want to delete user {{ login }}?"
         },
-        "deleted": "An user is deleted with identifier {{ param }}",
+        "deleted": "A user was deleted with identifier {{ param }}",
         "detail": {
             "title": "User"
         },
@@ -25,6 +25,6 @@
         "lastName": "Last name",
         "login": "Login",
         "profiles": "Profiles",
-        "updated": "An user is updated with identifier {{ param }}"
+        "updated": "A user was updated with identifier {{ param }}"
     }
 }

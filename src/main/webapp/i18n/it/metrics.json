@@ -1,18 +1,18 @@
 {
     "metrics": {
         "cache": {
-            "averageGetTime": "",
-            "averagePutTime": "",
-            "averageRemoveTime": "",
+            "averageGetTime": "Grado di occupazione time",
+            "averagePutTime": "Grado di occupazione time",
+            "averageRemoveTime": "Grado di occupazione time",
             "cachename": "Nome Cache",
             "evictions": "Evictions",
-            "gets": "",
-            "hitPercent": "",
+            "gets": "Grado di occupazione ets",
+            "hitPercent": "Grado di occupazione percent",
             "hits": "Hits",
-            "missPercent": "",
+            "missPercent": "Grado di occupazione percent",
             "misses": "Misses",
-            "puts": "",
-            "removals": "",
+            "puts": "Grado di occupazione uts",
+            "removals": "Grado di occupazione als",
             "title": "Statistiche cache"
         },
         "datasource": {

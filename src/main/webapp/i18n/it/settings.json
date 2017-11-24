@@ -27,6 +27,6 @@
                 }
             }
         },
-        "title": "Impostazioni per l'utente [<strong>{{username}}</strong>]"
+        "title": "Impostazioni per l'utente [<b>{{username}}</b>]"
     }
 }

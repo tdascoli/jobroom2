@@ -12,22 +12,22 @@
             "view": "View"
         },
         "delete": {
-            "title": "Confirm delete operation"
+            "title": "Confirm deletion"
         },
         "detail": {
             "field": "Field",
             "value": "Value"
         },
         "validation": {
-            "datetimelocal": "This field should be a date and time.",
+            "datetimelocal": "This field must be a date and time.",
             "max": "This field cannot be more than {{ max }}.",
             "maxbytes": "This field cannot be more than {{ max }} bytes.",
             "maxlength": "This field cannot be longer than {{ max }} characters.",
-            "min": "This field should be at least {{ min }}.",
+            "min": "This field must be at least {{ min }}.",
             "minbytes": "This field should be at least {{ min }} bytes.",
-            "minlength": "This field is required to be at least {{ min }} characters.",
-            "number": "This field should be a number.",
-            "pattern": "This field should follow pattern for {{ pattern }}.",
+            "minlength": "This field must be at least {{ min }} characters.",
+            "number": "This field must be a number.",
+            "pattern": "This field must follow the pattern {{ pattern }}.",
             "required": "This field is required."
         }
     },
@@ -35,7 +35,7 @@
         "NotNull": "Field {{ fieldName }} cannot be empty!",
         "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
         "emailexists": "Email is already in use!",
-        "idexists": "A new {{ entityName }} cannot already have an ID",
+        "idexists": "A new {{ entityName }} cannot have an ID yet.",
         "internalServerError": "Internal server error",
         "server": {
             "not": {
@@ -52,13 +52,13 @@
     "footer": {
         "link": {
             "abbreviation": {
-                "text": "Abk\u00fcrzungen"
+                "text": "Abbreviations"
             },
             "legal": {
-                "text": "Rechtliche Grundlagen"
+                "text": "Legal framework"
             },
             "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+                "text": "Unemployment insurance/Labour market"
             }
         }
     },
@@ -74,9 +74,29 @@
         },
         "contactPerson": {
             "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
+                "MR": "Mr",
+                "MS": "Ms"
             }
+        },
+        "degree": {
+            "BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
+            "BACHELOR_UNIVERSITY": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
+            "BERUFSMATURA": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
+            "DOKTORAT": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
+            "EIDG_BERUFSATTEST": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
+            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
+            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
+            "FACHMATURA": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
+            "FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
+            "GYMNASIUM_MATURA": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
+            "MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
+            "MASTER_UNIVERSITY": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q.",
+            "NA": "keine Angabe",
+            "PRIMARSCHULE": "Primarstufe - obligatorische Schule",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sek. I - obligatorische Schule",
+            "UNBEKANNT": "weiss nicht"
         },
         "drivingLicenceCategory": {
             "A": "A",
@@ -106,47 +126,27 @@
             "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
         },
         "experience": {
-            "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
-            "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
-            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
-            "NONE": "keine Erfahrung"
-        },
-        "degree": {
-            "PRIMARSCHULE": "Primarstufe - obligatorische Schule",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sek. I - obligatorische Schule",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
-            "EIDG_BERUFSATTEST": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
-            "FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
-            "BERUFSMATURA": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
-            "FACHMATURA": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
-            "GYMNASIUM_MATURA": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
-            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
-            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
-            "BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
-            "BACHELOR_UNIVERSITY": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
-            "MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
-            "MASTER_UNIVERSITY": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q.",
-            "DOKTORAT": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
-            "UNBEKANNT": "weiss nicht",
-            "NA": "keine Angabe"
+            "LESS_THAN_1_YEAR": "Less than 1 year",
+            "MORE_THAN_1_YEAR": "More than 1 year",
+            "MORE_THAN_3_YEARS": "More than 3 years",
+            "NONE": "No experience"
         },
         "field": {
             "id": "ID"
         },
         "form": {
             "confirmpassword": "New password confirmation",
-            "confirmpassword.placeholder": "Confirm the new password",
-            "email": "Email",
-            "email.placeholder": "Your email",
+            "confirmpassword.placeholder": "Please confirm your new password",
+            "email": "Email address",
+            "email.placeholder": "Your email address",
             "newpassword": "New password",
             "newpassword.placeholder": "New password",
             "username": "Username",
             "username.placeholder": "Your username"
         },
         "gender": {
-            "FEMALE": "weiblich",
-            "MALE": "m\u00e4nnlich"
+            "FEMALE": "Female",
+            "MALE": "Male"
         },
         "item-count": "Showing {{first}} - {{second}} of {{total}} items.",
         "menu": {
@@ -155,7 +155,7 @@
                 "logout": "Sign out",
                 "main": "Account",
                 "password": "Password",
-                "register": "Register",
+                "register": "Registration",
                 "sessions": "Sessions",
                 "settings": "Settings"
             },
@@ -186,13 +186,13 @@
         },
         "messages": {
             "error": {
-                "dontmatch": "The password and its confirmation do not match!"
+                "dontmatch": "The confirmed password and the new password do not match!"
             },
             "info": {
                 "authenticated": {
                     "link": "sign in",
-                    "prefix": "If you want to ",
-                    "suffix": ", you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
+                    "prefix": "If you\u2019d like, ",
+                    "suffix": "you can try the default accounts:<br/>- Administrator (login=\"admin\" and password=\"admin\") <br/>- User (login=\"user\" and password=\"user\")."
                 },
                 "register": {
                     "link": "Register a new account",
@@ -202,19 +202,19 @@
             "validate": {
                 "confirmpassword": {
                     "maxlength": "Your confirmation password cannot be longer than 50 characters.",
-                    "minlength": "Your confirmation password is required to be at least 4 characters.",
-                    "required": "Your confirmation password is required."
+                    "minlength": "Your confirmation password must be at least 5 characters.",
+                    "required": "You must confirm your password."
                 },
                 "email": {
-                    "invalid": "Your email is invalid.",
-                    "maxlength": "Your email cannot be longer than 50 characters.",
-                    "minlength": "Your email is required to be at least 5 characters.",
-                    "required": "Your email is required."
+                    "invalid": "Your email address is invalid.",
+                    "maxlength": "Your email address cannot be longer than 50 characters.",
+                    "minlength": "Your email address must be at least 5 characters.",
+                    "required": "Your email address is required."
                 },
                 "newpassword": {
-                    "maxlength": "Your password cannot be longer than 50 characters.",
-                    "minlength": "Your password is required to be at least 4 characters.",
-                    "required": "Your password is required.",
+                    "maxlength": "The new password cannot be longer than 50 characters.",
+                    "minlength": "The new password must be at least 5 characters.",
+                    "required": "A new password is required.",
                     "strength": "Password strength:"
                 }
             }
@@ -227,6 +227,8 @@
                 "BE": "Bern",
                 "BL": "Basel-Landschaft",
                 "BS": "Basel-Stadt",
+                "CH": "Schweiz",
+                "FL": "F\u00fcrstentum Liechtenstein",
                 "FR": "Freiburg",
                 "GE": "Genf",
                 "GL": "Glarus",

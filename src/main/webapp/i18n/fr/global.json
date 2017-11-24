@@ -9,33 +9,33 @@
             "edit": "Editer",
             "open": "Ouvrir",
             "save": "Sauvegarder",
-            "view": "Voir"
+            "view": "D\u00e9tails"
         },
         "delete": {
-            "title": "Confirmation de suppression"
+            "title": "Confirmer la suppression"
         },
         "detail": {
-            "field": "Champs",
+            "field": "Champ",
             "value": "Valeur"
         },
         "validation": {
             "datetimelocal": "Ce champ doit \u00eatre une date et une heure.",
             "max": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}}.",
-            "maxbytes": "Ce champ doit \u00eatre inf\u00e9rieur \u00e0 {{max}} bytes.",
-            "maxlength": "Ce champ doit faire moins de {{max}} caract\u00e8res.",
+            "maxbytes": "Ce champ ne doit pas d\u00e9passer {{max}} bytes.",
+            "maxlength": "Ce champ doit comporter au maximum {{max}} caract\u00e8res.",
             "min": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}}.",
             "minbytes": "Ce champ doit \u00eatre sup\u00e9rieur \u00e0 {{min}} bytes.",
-            "minlength": "Ce champ doit faire au minimum {{min}} caract\u00e8res.",
+            "minlength": "Ce champ doit avoir au minimum {{min}} caract\u00e8res.",
             "number": "Ce champ doit \u00eatre un nombre.",
-            "pattern": "Ce champ doit suivre l'expression r\u00e9guli\u00e8re {{pattern}}.",
+            "pattern": "Ce champ doit respecter le mod\u00e8le {{pattern}}.",
             "required": "Ce champ est obligatoire."
         }
     },
     "error": {
         "NotNull": "Le champ {{fieldName}} ne peut pas \u00eatre vide !",
-        "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimum et maximum !",
-        "emailexists": "Email d\u00e9j\u00e0 utilis\u00e9 !",
-        "idexists": "Une nouvelle entit\u00e9 {{entityName}} ne peut pas avoir d'ID !",
+        "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimums et maximums !",
+        "emailexists": "E-mail d\u00e9j\u00e0 utilis\u00e9 !",
+        "idexists": "La nouvelle entit\u00e9 {{entityName}} ne peut pas encore avoir d'ID !",
         "internalServerError": "Erreur interne du serveur",
         "server": {
             "not": {
@@ -47,18 +47,18 @@
                 "found": "Non trouv\u00e9"
             }
         },
-        "userexists": "Login d\u00e9j\u00e0 utilis\u00e9 !"
+        "userexists": "Nom d'utilisateur d\u00e9j\u00e0 utilis\u00e9 !"
     },
     "footer": {
         "link": {
             "abbreviation": {
-                "text": "Abk\u00fcrzungen"
+                "text": "Abr\u00e9viations"
             },
             "legal": {
-                "text": "Rechtliche Grundlagen"
+                "text": "Bases juridiques"
             },
             "seco": {
-                "text": "Arbeitslosenversicherung / Arbeitsmarkt ALV"
+                "text": "Assurance-ch\u00f4mage / march\u00e9 du travail AC"
             }
         }
     },
@@ -74,9 +74,29 @@
         },
         "contactPerson": {
             "salutation": {
-                "MR": "Herr",
-                "MS": "Frau"
+                "MR": "Monsieur",
+                "MS": "Madame"
             }
+        },
+        "degree": {
+            "BACHELOR_FACHHOCHSCHULE": "Tertiaire \u2013 Bachelor HES ou \u00e9quivalent",
+            "BACHELOR_UNIVERSITY": "Tertiaire \u2013 Bachelor HEU ou \u00e9quivalent",
+            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e9 professionnelle ou \u00e9quiv.",
+            "DOKTORAT": "Tertiaire \u2013 Doctorat HEU ou \u00e9quivalent",
+            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. initiale AFP ou \u00e9quiv.",
+            "EIDG_DIPLOM": "Terti\u00e4r - H\u00f6here Berufsbildung",
+            "EIDG_FACHAUSWEIS": "Terti\u00e4r - H\u00f6here Berufsbildung",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. initiale CFC ou \u00e9quiv.",
+            "FACHMATURA": "Sec. II \u2013 Maturit\u00e9 sp\u00e9cialis\u00e9e ou \u00e9quiv.",
+            "FACHMITTELSCHULE": "Sec. II \u2013 Ecole de culture g\u00e9n\u00e9rale ou \u00e9quiv.",
+            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e9 gymnasiale ou \u00e9quiv.",
+            "MASTER_FACHHOCHSCHULE": "Tertiaire \u2013 Master HES ou \u00e9quivalent",
+            "MASTER_UNIVERSITY": "Tertiaire \u2013  Master HEU ou \u00e9quivalent",
+            "NA": "aucune indication",
+            "PRIMARSCHULE": "Primaire \u2013 Ecole obligatoire",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Ecole sup\u00e9rieure ou \u00e9quivalent",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Ecole obligatoire",
+            "UNBEKANNT": "ne sait pas"
         },
         "drivingLicenceCategory": {
             "A": "A",
@@ -106,58 +126,38 @@
             "ISCED6": "degr\u00e9 tertiaire II - ISCED 6"
         },
         "experience": {
-            "LESS_THAN_1_YEAR": "weniger als 1 Jahr",
-            "MORE_THAN_1_YEAR": "mehr als 1 Jahr",
-            "MORE_THAN_3_YEARS": "mehr als 3 Jahre",
-            "NONE": "keine Erfahrung"
-        },
-        "degree": {
-            "PRIMARSCHULE": "Primaire \u2013 Ecole obligatoire",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Ecole obligatoire",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Ecole sup\u00e9rieure ou \u00e9quivalent",
-            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. initiale AFP ou \u00e9quiv.",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. initiale CFC ou \u00e9quiv.",
-            "FACHMITTELSCHULE": "Sec. II \u2013 Ecole de culture g\u00e9n\u00e9rale ou \u00e9quiv.",
-            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e9 professionnelle ou \u00e9quiv.",
-            "FACHMATURA": "Sec. II \u2013 Maturit\u00e9 sp\u00e9cialis\u00e9e ou \u00e9quiv.",
-            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e9 gymnasiale ou \u00e9quiv.",
-            "EIDG_FACHAUSWEIS": "Terti\u00e4r - H\u00f6here Berufsbildung",
-            "EIDG_DIPLOM": "Terti\u00e4r - H\u00f6here Berufsbildung",
-            "BACHELOR_FACHHOCHSCHULE": "Tertiaire \u2013 Bachelor HES ou \u00e9quivalent",
-            "BACHELOR_UNIVERSITY": "Tertiaire \u2013 Bachelor HEU ou \u00e9quivalent",
-            "MASTER_FACHHOCHSCHULE": "Tertiaire \u2013 Master HES ou \u00e9quivalent",
-            "MASTER_UNIVERSITY": "Tertiaire \u2013  Master HEU ou \u00e9quivalent",
-            "DOKTORAT": "Tertiaire \u2013 Doctorat HEU ou \u00e9quivalent",
-            "UNBEKANNT": "ne sait pas",
-            "NA": "aucune indication"
+            "LESS_THAN_1_YEAR": "Moins d'un an",
+            "MORE_THAN_1_YEAR": "Plus d'un an",
+            "MORE_THAN_3_YEARS": "Plus de trois ans",
+            "NONE": "Aucune exp\u00e9rience"
         },
         "field": {
             "id": "ID"
         },
         "form": {
-            "confirmpassword": "Confirmation du nouveau mot de passe",
-            "confirmpassword.placeholder": "Confirmation du nouveau mot de passe",
-            "email": "Email",
-            "email.placeholder": "Votre email",
+            "confirmpassword": "Confirmer le nouveau mot de passe",
+            "confirmpassword.placeholder": "Confirmez votre nouveau mot de passe",
+            "email": "Adresse e-mail",
+            "email.placeholder": "Votre adresse e-mail",
             "newpassword": "Nouveau mot de passe",
             "newpassword.placeholder": "Nouveau mot de passe",
             "username": "Nom d'utilisateur",
             "username.placeholder": "Votre nom d'utilisateur"
         },
         "gender": {
-            "FEMALE": "weiblich",
-            "MALE": "m\u00e4nnlich"
+            "FEMALE": "f\u00e9minin",
+            "MALE": "masculin"
         },
-        "item-count": "Affichage {{first}} - {{second}} de {{total}} items.",
+        "item-count": "Affichage {{first}} - {{second}} de {{total}} \u00e9l\u00e9ments.",
         "menu": {
             "account": {
-                "login": "S'authentifier",
+                "login": "Connexion",
                 "logout": "D\u00e9connexion",
                 "main": "Compte",
                 "password": "Mot de passe",
                 "register": "Cr\u00e9er un compte",
                 "sessions": "Sessions",
-                "settings": "Profil"
+                "settings": "Param\u00e8tres"
             },
             "admin": {
                 "apidocs": "API",
@@ -170,27 +170,27 @@
                 "jhipster-needle-menu-add-admin-element": "JHipster will add additional menu entries here (do not translate!)",
                 "logs": "Logs",
                 "main": "Administration",
-                "metrics": "M\u00e9triques",
-                "tracker": "Suivi des utilisateurs",
+                "metrics": "Mesures",
+                "tracker": "Activit\u00e9 des utilisateurs",
                 "userManagement": "Gestion des utilisateurs"
             },
             "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-                "job": "Job",
+                "job": "Emploi",
                 "main": "Entit\u00e9s"
             },
-            "home": "Accueil",
+            "home": "Page d'accueil",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
             "language": "Langue"
         },
         "messages": {
             "error": {
-                "dontmatch": "Le nouveau mot de passe et sa confirmation ne sont pas \u00e9gaux !"
+                "dontmatch": "La confirmation du mot de passe ne correspond pas au nouveau mot de passe !"
             },
             "info": {
                 "authenticated": {
-                    "link": "connecter",
+                    "link": "Se connecter",
                     "prefix": "Si vous voulez vous ",
                     "suffix": ", vous pouvez utiliser les comptes par d\u00e9faut : <br/> - Administrateur (nom d'utilisateur=\"admin\" et mot de passe =\"admin\") <br/> - Utilisateur (nom d'utilisateur=\"user\" et mot de passe =\"user\")."
                 },
@@ -201,20 +201,20 @@
             },
             "validate": {
                 "confirmpassword": {
-                    "maxlength": "Votre confirmation du mot de passe ne doit pas comporter plus de 50 caract\u00e8res.",
-                    "minlength": "Votre confirmation du mot de passe doit comporter au moins 5 caract\u00e8res.",
-                    "required": "Votre confirmation du mot de passe est requise."
+                    "maxlength": "Le mot de passe confirm\u00e9 ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Le mot de passe confirm\u00e9 doit comporter au moins 5 caract\u00e8res.",
+                    "required": "Vous devez confirmer le mot de passe."
                 },
                 "email": {
-                    "invalid": "Votre email n'est pas valide.",
-                    "maxlength": "Votre email ne doit pas comporter plus de 50 caract\u00e8res.",
-                    "minlength": "Votre email doit comporter au moins 5 caract\u00e8res.",
-                    "required": "Votre email est requis."
+                    "invalid": "Votre adresse e-mail n'est pas valide.",
+                    "maxlength": "Votre adresse e-mail ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Votre adresse e-mail doit comporter au moins 5 caract\u00e8res.",
+                    "required": "Votre adresse e-mail est requise."
                 },
                 "newpassword": {
                     "maxlength": "Votre mot de passe ne doit pas comporter plus de 50 caract\u00e8res.",
                     "minlength": "Votre mot de passe doit comporter au moins 5 caract\u00e8res.",
-                    "required": "Votre mot de passe est requis.",
+                    "required": "Un nouveau mot de passe est requis.",
                     "strength": "Robustesse du mot de passe :"
                 }
             }
@@ -227,6 +227,8 @@
                 "BE": "Berne",
                 "BL": "B\u00e2le-Campagne",
                 "BS": "B\u00e2le-Ville",
+                "CH": "Suisse",
+                "FL": "F\u00fcrstentum Liechtenstein",
                 "FR": "Fribourg",
                 "GE": "Gen\u00e8ve",
                 "GL": "Glaris",
@@ -429,7 +431,7 @@
         "title": "Assurance-ch\u00f4mage AC"
     },
     "navigation": {
-        "next": "N\u00e4chster",
-        "previous": "Bisherige"
+        "next": "Suivant",
+        "previous": "Ancien"
     }
 }

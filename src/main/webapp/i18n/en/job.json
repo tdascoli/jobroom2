@@ -1,12 +1,12 @@
 {
     "jobroomApp": {
         "job": {
-            "ageMax": "Age Max",
-            "ageMin": "Age Min",
-            "ageRestrictionReason": "Age Restriction Reason",
+            "ageMax": "Max age",
+            "ageMin": "Min age",
+            "ageRestrictionReason": "Reason for age restriction",
             "applicationUrl": "Application Url",
-            "cancellationDate": "Cancellation Date",
-            "cancellationReason": "Cancellation Reason",
+            "cancellationDate": "Cancellation date",
+            "cancellationReason": "Cancellation reason",
             "companyAddressLine1": "Company Address Line 1",
             "companyAddressLine2": "Company Address Line 2",
             "companyCity": "Company City",
@@ -26,27 +26,27 @@
             "contactTitle": "Contact Title",
             "currencyCode": "Currency Code",
             "delete": {
-                "question": "Are you sure you want to delete Job {{ id }}?"
+                "question": "Are you sure you want to delete the job {{ id }}?"
             },
             "description": "Description",
             "detail": {
                 "title": "Job"
             },
-            "drivingLicenseLevel": "Driving License Level",
-            "endDate": "End Date",
-            "externalId": "External Id",
+            "drivingLicenseLevel": "Driving licence level",
+            "endDate": "End date",
+            "externalId": "External ID",
             "externalUrl": "External Url",
-            "fingerPrint": "Finger Print",
+            "fingerPrint": "Fingerprint",
             "gender": "Gender",
-            "hasPersonalVehicle": "Has Personal Vehicle",
+            "hasPersonalVehicle": "Has personal vehicle",
             "home": {
-                "createLabel": "Create a new Job",
-                "createOrEditLabel": "Create or edit a Job",
+                "createLabel": "Create a new job",
+                "createOrEditLabel": "Create or edit a job",
                 "title": "Jobs"
             },
-            "isJobSharing": "Is Job Sharing",
-            "isPermanent": "Is Permanent",
-            "isSuitableForDisabled": "Is Suitable For Disabled",
+            "isJobSharing": "Is job sharing",
+            "isPermanent": "Is permanent",
+            "isSuitableForDisabled": "Is suitable for disabled",
             "languages": "Languages",
             "locality": {
                 "cantonCode": "Locality Canton Code",
@@ -56,25 +56,25 @@
                 "text": "Locality Text",
                 "zipCode": "Job Locality Zip Code"
             },
-            "numberOfJobs": "Number Of Jobs",
-            "paymentMax": "Payment Max",
-            "paymentMin": "Payment Min",
+            "numberOfJobs": "Number of jobs",
+            "paymentMax": "Max payment",
+            "paymentMin": "Min payment",
             "professions": "Professions",
-            "publicationEndDate": "Publication End Date",
-            "publicationStartDate": "Publication Start Date",
-            "registrationDate": "Registration Date",
-            "startDate": "Start Date",
-            "startsImmediately": "Starts Immediately",
+            "publicationEndDate": "Publication end date",
+            "publicationStartDate": "Publication start date",
+            "registrationDate": "Registration date",
+            "startDate": "Available from",
+            "startsImmediately": "Available immediately",
             "title": "Title",
-            "workingTimePercentageMax": "Working Time Percentage Max",
-            "workingTimePercentageMin": "Working Time Percentage Min"
+            "workingTimePercentageMax": "Maximum working time percentage",
+            "workingTimePercentageMin": "Minimum working time percentage"
         }
     },
     "jobserviceApp": {
         "job": {
-            "created": "A new Job is created with identifier {{ param }}",
-            "deleted": "A Job is deleted with identifier {{ param }}",
-            "updated": "A Job is updated with identifier {{ param }}"
+            "created": "A new job is created with identifier {{ param }}",
+            "deleted": "A job is deleted with identifier {{ param }}",
+            "updated": "A job is updated with identifier {{ param }}"
         }
     }
 }

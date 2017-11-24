@@ -1,15 +1,15 @@
 {
     "sessions": {
         "messages": {
-            "error": "<strong>An error has occurred!</strong> The session could not be invalidated.",
-            "success": "<strong>Session invalidated!</strong>"
+            "error": "<strong>An error has occurred!</strong> The session could not be closed.",
+            "success": "<strong>Session closed!</strong>"
         },
         "table": {
-            "button": "Invalidate",
+            "button": "Close",
             "date": "Date",
             "ipaddress": "IP address",
-            "useragent": "User Agent"
+            "useragent": "User agent"
         },
-        "title": "Active sessions for [<strong>{{username}}</strong>]"
+        "title": "Active sessions for [<b>{{username}}</b>]"
     }
 }

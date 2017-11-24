@@ -1,28 +1,28 @@
 {
     "home": {
-        "title": "JobRoom",
+        "title": "Job Room",
         "title.portal": "work",
         "title.portal-url": "https://www.work.swiss",
         "toolbar": {
-            "companies": "Unternehmen",
-            "jobSeekers": "Stellensuchende",
-            "recruitmentAgencies": "Arbeitsvermittler",
-            "title": "Job-Room bietet Leistungen f\u00fcr"
+            "companies": "Companies",
+            "jobSeekers": "Job seekers",
+            "recruitmentAgencies": "Recruitment agencies",
+            "title": "Job Room offers services for"
         },
         "tools": {
             "candidate-search": {
+                "search-button": {
+                    "title": "Display candidates"
+                },
+                "title": "Find suitable candidates",
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
                     "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
                     "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
-                },
-                "search-button": {
-                    "title": "Kandidaten anzeigen"
-                },
-                "title": "Finden Sie passende Kandidaten"
+                }
             },
-            "candidateSearchTab": "Kandidaten finden",
+            "candidateSearchTab": "Find candidates",
             "job-publication": {
                 "application": {
                     "additional-info": {
@@ -105,12 +105,12 @@
             },
             "job-search": {
                 "search-button": {
-                    "title": "Traumjob finden!"
+                    "title": "Find your dream job!"
                 }
             },
-            "jobPublicationTab": "Job publizieren",
+            "jobPublicationTab": "Publish job",
             "jobSearch": {
-                "title": "Finden Sie jetzt Ihren Traumjob!"
+                "title": "Find your dream job now!"
             }
         }
     }

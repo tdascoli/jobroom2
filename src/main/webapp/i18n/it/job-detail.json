@@ -1,35 +1,35 @@
 {
     "job-detail": {
         "action": {
-            "applyNow": "Jetzt Bewerben",
-            "copyLink": "Link kopieren",
-            "print": "Drucken",
-            "saveJob": "Stellenangebot speichern",
-            "savePdf": "Als PDF speichern",
-            "sendEmail": "Per E-Mail versenden",
-            "showExternalPage": "Zum externen Stelleninserat"
+            "applyNow": "Candidarsi ora",
+            "copyLink": "Copia link",
+            "print": "Stampa",
+            "saveJob": "Salva offerta di lavoro",
+            "savePdf": "Salva come PDF",
+            "sendEmail": "Invia per email",
+            "showExternalPage": "vai all'annuncio esterno"
         },
         "application": {
-            "email": "Per E-Mail",
-            "hints": "Erg\u00e4nzende Angaben",
-            "mail": "Per Post",
-            "mail.text": "siehe Adresse des Unternehmens",
-            "phone": "Telefonisch",
-            "title": "Bewerbungsformen"
+            "email": "Via email",
+            "hints": "Dati complementari",
+            "mail": "Per posta",
+            "mail.text": "V. indirizzo dell'impresa",
+            "phone": "Telefonicamente",
+            "title": "Tipologie di candidatura"
         },
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "contactPerson": "Ihre Kontaktperson",
-        "external-job-disclaimer": "Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?.",
-        "onlineSince": "Vakant seit",
-        "otherJobsCompany": "{{count}} Jobs anzeigen",
-        "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",
-        "reference": "Referenz",
-        "reference.job-id": "Stellennummer",
-        "reference.phone": "Telefon",
-        "reference.responsible-job-center": "Zust\u00e4ndiges RAV",
-        "startsImmediately": "Stellenantritt",
-        "startsImmediately.false": "nach Vereinbarung",
-        "startsImmediately.true": "ab sofort",
-        "title": "Job detail"
+        "back": "Torna ai risultati della ricerca",
+        "contactPerson": "La tua persona di contatto",
+        "external-job-disclaimer": "Questo annuncio \u00e8 stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcun influsso sul suo contenuto n\u00e9 sulla sua qualit\u00e0.",
+        "onlineSince": "Vacante dal",
+        "otherJobsCompany": "{{count}} Visualizzare posti ",
+        "otherJobsEquivalent": "{{count}} Visualizzare posti simili",
+        "reference": "Riferimento",
+        "reference.job-id": "Numero posto",
+        "reference.phone": "Telefono",
+        "reference.responsible-job-center": "URC competente",
+        "startsImmediately": "Entrata in funzione",
+        "startsImmediately.false": "previo accordo",
+        "startsImmediately.true": "subito",
+        "title": "Dettagli sul posto"
     }
 }

@@ -1,89 +1,89 @@
 {
     "candidate-search": {
         "availability": {
-            "BY_ARRANGEMENT": "Auf Vereinbarung",
-            "IMMEDIATE": "Ab Sofort",
-            "label": "Verf\u00fcgbarkeit"
+            "BY_ARRANGEMENT": "By arrangement",
+            "IMMEDIATE": "Immediately",
+            "label": "Availability"
         },
         "candidate-search-list": {
-            "error-message": "Failed to load candidate result list!",
+            "error-message": "Failed to load candidate result list.",
             "title": {
                 "many": {
-                    "with-locality": "More than {{count}} {{query}} Candidates in {{locality}}",
-                    "without-locality": "More than {{count}} {{query}} Candidates"
+                    "with-locality": "More than {{count}} {{query}} candidates in {{locality}}",
+                    "without-locality": "More than {{count}} {{query}} candidates"
                 },
                 "none": {
-                    "with-locality": "No {{query}} Candidates in {{locality}}",
-                    "without-locality": "No {{query}} Candidates"
+                    "with-locality": "No {{query}} candidates in {{locality}}",
+                    "without-locality": "No {{query}} candidates"
                 },
                 "one": {
-                    "with-locality": "1 {{query}} Candidate in {{locality}}",
-                    "without-locality": "1 {{query}} Candidate"
+                    "with-locality": "1 {{query}} candidate in {{locality}}",
+                    "without-locality": "1 {{query}} candidate"
                 },
                 "other": {
-                    "with-locality": "{{count}} {{query}} Candidates in {{locality}}",
-                    "without-locality": "{{count}} {{query}} Candidates"
+                    "with-locality": "{{count}} {{query}} candidates in {{locality}}",
+                    "without-locality": "{{count}} {{query}} candidates"
                 }
             }
         },
         "education": {
-            "label": "Bildungsstufe"
+            "label": "Level of education"
         },
         "experience": {
-            "label": "Berufserfahrung"
+            "label": "Professional experience"
         },
         "filter": {
-            "candidate-search-link": "Suche als Link versenden",
-            "title": "Kandidaten suchen"
+            "candidate-search-link": "Send search as link",
+            "title": "Search candidates"
         },
         "graduation": {
-            "CH": "CH-Abschluss",
-            "ACCEPTED": "ausl\u00e4ndisch, CH anerkannt",
-            "NOT_ACCEPTED": "ausl\u00e4ndisch, CH nicht anerkannt",
-            "NONE": "Keiner",
-            "label": "Abschluss"
+            "ACCEPTED": "Swiss degree or accepted in Switzerland",
+            "CH": "Swiss degree",
+            "NONE": "No degree",
+            "NOT_ACCEPTED": "Swiss degree or foreign degree",
+            "label": "Degree"
         },
         "keywords": {
-            "label": "Suchbegriffe"
+            "label": "Search terms"
         },
         "languageSkills": {
-            "label": "Sprachkenntnisse"
+            "label": "Language skills"
         },
-        "no-selection": "Keine Auswahl",
+        "no-selection": "No selection",
         "skills": {
-            "label": "F\u00e4higkeiten, Skills",
-            "placeholder": "z.B. Tiefbau"
+            "label": "Competencies, skills",
+            "placeholder": "E.g. Civil engineering"
         },
         "title": "Candidate search",
         "toolbar": {
             "graduation": {
-                "default": "Abschluss ausw\u00e4hlen...",
-                "label": "Abschluss"
+                "default": "Select degree",
+                "label": "Degree"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung"
+                "placeholder": "Professional title"
             },
             "residence": {
-                "placeholder": "Wohnort: Kanton",
-                "selected": "Kantone"
+                "placeholder": "Canton of residence",
+                "selected": "Cantons"
             }
         },
         "workForm": {
-            "HOME_WORK": "Heimarbeit",
-            "NIGHT_WORK": "Nachtarbeit",
-            "SHIFT_WORK": "Schichtarbeit",
-            "SUNDAY_AND_HOLIDAYS": "Sonn- und Feiertagsarbeit",
-            "label": "Arbeitsform"
+            "HOME_WORK": "Home-based work",
+            "NIGHT_WORK": "Night work",
+            "SHIFT_WORK": "Shift work",
+            "SUNDAY_AND_HOLIDAYS": "Sunday and holiday work",
+            "label": "Work form"
         },
         "workLocation": {
-            "label": "Arbeitsort"
+            "label": "Work location"
         },
         "workload": {
-            "label": "Arbeitspensum"
+            "label": "FT/PT"
         },
         "workplace": {
-            "label": "Arbeitsort",
-            "placeholder": "Ort, Gemeinde, Kanton"
+            "label": "Work location",
+            "placeholder": "Location, municipality, canton"
         }
     }
 }

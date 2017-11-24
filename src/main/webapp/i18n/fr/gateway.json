@@ -1,7 +1,7 @@
 {
     "gateway": {
         "refresh": {
-            "button": "Rafra\u00eechir"
+            "button": "Actualiser"
         },
         "routes": {
             "error": "Attention : aucun serveur disponible !",

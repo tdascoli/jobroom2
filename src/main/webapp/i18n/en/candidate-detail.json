@@ -2,87 +2,90 @@
     "candidate-detail": {
         "additional-information": {
             "drivingCategories": {
-                "label": "F\u00fchrerausweiskategorien"
+                "label": "Driving licence categories"
             },
             "education": {
-                "label": "Ausbildung"
+                "label": "Education"
             },
             "gender": {
-                "label": "Geschlecht"
+                "label": "Gender"
             },
             "highestEducationLevel": {
-                "label": "H\u00f6chste Bildungsstufe"
+                "label": "Highest education level"
             },
-            "no-information": "Keine Angaben",
+            "no-information": "No information",
             "preferredWorkRegions": {
-                "label": "Gesuchte Arbeitsregion/en"
+                "label": "Preferred work region(s)"
             },
-            "title": "Weitere Angaben",
+            "title": "Additional information",
             "workForm": {
-                "label": "Arbeitsform"
+                "label": "Work form"
             }
         },
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "candidate-copy-link": "Link kopieren",
-        "candidate-print": "Drucken",
-        "candidate-save": "Kandidat speichern",
-        "candidate-send-link": "Link versenden",
+        "back": "Back to search results",
+        "candidate-copy-link": "Copy link",
+        "candidate-print": "Print",
+        "candidate-save": "Save candidate profile",
+        "candidate-send-link": "Send link",
         "graduation": {
-            "CH": "CH-Abschluss",
-            "ACCEPTED": "ausl\u00e4ndisch, CH anerkannt",
-            "NOT_ACCEPTED": "ausl\u00e4ndisch, CH nicht anerkannt",
-            "NONE": "Keiner"
+            "ACCEPTED": "Accepted in Switzerland",
+            "CH": "Swiss",
+            "NONE": "No degree",
+            "NOT_ACCEPTED": "Foreign"
         },
         "job-center": {
             "email": {
-                "label": "E-Mail"
+                "label": "Email"
             },
             "phone": {
-                "label": "Telefon"
+                "label": "Telephone"
             },
-            "title": "Weitere Ausk\u00fcnfte erteilt"
+            "title": "For more information contact"
         },
         "job-experience": {
-            "description": {
-                "label": "Kenntnisse, F\u00e4higkeiten, Skills"
-            },
-            "experience": {
-                "label": "Erfahrungsjahre auf dem Beruf"
-            },
-            "graduation": {
-                "label": "Abschluss zum Beruf"
-            },
             "degree": {
                 "label": "Ausbildung"
             },
+            "description": {
+                "label": "Expertise, competencies, skills"
+            },
+            "education": {
+                "label": "Level of education"
+            },
+            "experience": {
+                "label": "Number of years experience"
+            },
+            "graduation": {
+                "label": "Professional degree"
+            },
             "job": {
-                "label": "Berufsbezeichnung"
+                "label": "Professional title"
             },
             "last-job": {
-                "label": "Zuletzt ausge\u00fcbter Beruf"
+                "label": "Last job"
             },
-            "title": "Berufliche Qualifikation"
+            "title": "Professional qualification"
         },
         "personal-information": {
             "address": {
-                "label": "Adresse"
+                "label": "Address"
             },
             "e-mail": {
-                "label": "E-Mail"
+                "label": "Email"
             },
             "mobile": {
-                "label": "Mobile"
+                "label": "Mobile number"
             },
             "name": {
-                "label": "Name / Vorname"
+                "label": "Last name / First name"
             },
             "nationality": {
-                "label": "Staatsangeh\u00f6rigkeit"
+                "label": "Nationality"
             },
             "phone": {
-                "label": "Telefon"
+                "label": "Telephone"
             },
-            "title": "Personalien / Kontaktdaten des Kandidaten"
+            "title": "Personal information / Candidate contact details"
         }
     }
 }
