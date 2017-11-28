@@ -3,7 +3,7 @@
 .typeahead-multiselect {
     width: 100%;
 
-    overflow-y: scroll;
+    overflow-y: visible;
     max-height: 4rem;
 
     .typeahead-multiselect__tag {
