@@ -1,35 +1,35 @@
 {
     "job-detail": {
         "action": {
-            "applyNow": "Jetzt Bewerben",
-            "copyLink": "Link kopieren",
-            "print": "Drucken",
-            "saveJob": "Stellenangebot speichern",
-            "savePdf": "Als PDF speichern",
-            "sendEmail": "Per E-Mail versenden",
-            "showExternalPage": "Zum externen Stelleninserat"
+            "applyNow": "Apply now",
+            "copyLink": "Copy link",
+            "print": "Print",
+            "saveJob": "Save job posting",
+            "savePdf": "Save as PDF",
+            "sendEmail": "Send via email",
+            "showExternalPage": "Link to external job posting"
         },
         "application": {
-            "email": "E-Mail",
-            "hints": "Hints",
-            "mail": "For Mail",
+            "email": "Via email",
+            "hints": "Additional information",
+            "mail": "Via post",
             "mail.text": "See company address",
-            "phone": "Phone",
-            "title": "Application"
+            "phone": "By phone",
+            "title": "Application forms"
         },
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "contactPerson": "Ihre Kontaktperson",
-        "external-job-disclaimer": "This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.                                                                                                                                                                                                                    ",
-        "onlineSince": "Vakant seit",
-        "otherJobsCompany": "{{count}} Jobs anzeigen",
-        "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",
-        "reference": "Referenz",
-        "reference.job-id": "Stellennummer",
-        "reference.phone": "Telefon",
-        "reference.responsible-job-center": "Zust\u00e4ndiges RAV",
-        "startsImmediately": "Stellenantritt",
-        "startsImmediately.false": "nach Vereinbarung",
-        "startsImmediately.true": "ab sofort",
+        "back": "Back to search results",
+        "contactPerson": "Your contact person",
+        "external-job-disclaimer": "This job posting was found on an external website. The unemployment insurance and public employment service provides this search result as an additional service. It has no influence on its content and quality.                                                                                                                                                                                                                    ",
+        "onlineSince": "Vacant since",
+        "otherJobsCompany": "Show {{count}} jobs",
+        "otherJobsEquivalent": "Show {{count}} similar jobs",
+        "reference": "Reference",
+        "reference.job-id": "Job ID",
+        "reference.phone": "Telephone",
+        "reference.responsible-job-center": "Responsible job centre",
+        "startsImmediately": "Start date",
+        "startsImmediately.false": "By arrangement",
+        "startsImmediately.true": "Immediately",
         "title": "Job detail"
     }
 }

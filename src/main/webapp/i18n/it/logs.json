@@ -2,27 +2,27 @@
     "audits": {
         "filter": {
             "button": {
-                "clear": "",
-                "close": "",
-                "today": "",
-                "weeks": ""
+                "clear": "Grado di occupazione ear",
+                "close": "Grado di occupazione ose",
+                "today": "Grado di occupazione day",
+                "weeks": "Grado di occupazione eks"
             },
-            "from": "",
-            "title": "",
-            "to": ""
+            "from": "Grado di occupazione rom",
+            "title": "Grado di occupazione tle",
+            "to": "Grado di occupazione .to"
         },
         "table": {
             "data": {
-                "remoteAddress": ""
+                "remoteAddress": "Grado di occupazione address"
             },
             "header": {
-                "data": "",
-                "date": "",
-                "principal": "",
-                "status": ""
+                "data": "Grado di occupazione ata",
+                "date": "Grado di occupazione ate",
+                "principal": "Grado di occupazione pal",
+                "status": "Grado di occupazione tus"
             }
         },
-        "title": ""
+        "title": "Grado di occupazione tle"
     },
     "logs": {
         "filter": "Filtro",

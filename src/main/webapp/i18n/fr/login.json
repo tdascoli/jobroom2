@@ -14,6 +14,6 @@
         "password": {
             "forgot": "Avez-vous oubli\u00e9 votre mot de passe ?"
         },
-        "title": "Authentification"
+        "title": "Connexion"
     }
 }

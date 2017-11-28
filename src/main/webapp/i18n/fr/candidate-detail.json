@@ -2,87 +2,90 @@
     "candidate-detail": {
         "additional-information": {
             "drivingCategories": {
-                "label": "F\u00fchrerausweiskategorien"
+                "label": "Cat\u00e9gories de permis de conduire"
             },
             "education": {
-                "label": "Ausbildung"
+                "label": "Formation"
             },
             "gender": {
-                "label": "Geschlecht"
+                "label": "Sexe"
             },
             "highestEducationLevel": {
-                "label": "H\u00f6chste Bildungsstufe"
+                "label": "Niveau de formation le plus \u00e9lev\u00e9"
             },
-            "no-information": "Keine Angaben",
+            "no-information": "Aucune indication",
             "preferredWorkRegions": {
-                "label": "Gesuchte Arbeitsregion/en"
+                "label": "R\u00e9gion/s de travail recherch\u00e9e/s"
             },
-            "title": "Weitere Angaben",
+            "title": "Autres indications",
             "workForm": {
-                "label": "Arbeitsform"
+                "label": "Forme de travail"
             }
         },
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "candidate-copy-link": "Link kopieren",
-        "candidate-print": "Drucken",
-        "candidate-save": "Kandidat speichern",
-        "candidate-send-link": "Link versenden",
+        "back": "Retour aux r\u00e9sultats",
+        "candidate-copy-link": "Copier le lien",
+        "candidate-print": "Imprimer",
+        "candidate-save": "Sauvegarder le profil du candidat",
+        "candidate-send-link": "Envoyer le lien",
         "graduation": {
-            "ACCEPTED": "CH anerkannt",
-            "CH": "CH",
-            "NONE": "kein Abschluss",
-            "NOT_ACCEPTED": "Ausl\u00e4ndisch"
+            "ACCEPTED": "Reconnu en Suisse",
+            "CH": "Suisse",
+            "NONE": "Aucun dipl\u00f4me",
+            "NOT_ACCEPTED": "Etranger"
         },
         "job-center": {
             "email": {
-                "label": "E-Mail"
+                "label": "E-mail"
             },
             "phone": {
-                "label": "Telefon"
+                "label": "T\u00e9l\u00e9phone"
             },
-            "title": "Weitere Ausk\u00fcnfte erteilt"
+            "title": "Autres renseignements donn\u00e9s par"
         },
         "job-experience": {
+            "degree": {
+                "label": "Ausbildung"
+            },
             "description": {
-                "label": "Kenntnisse, F\u00e4higkeiten, Skills"
+                "label": "Connaissances, comp\u00e9tences, aptitudes"
             },
             "education": {
-                "label": "Bildungsstufe"
+                "label": "Niveau de formation "
             },
             "experience": {
-                "label": "Erfahrungsjahre auf dem Beruf"
+                "label": "Ann\u00e9es d'exp\u00e9rience dans la profession"
             },
             "graduation": {
-                "label": "Abschluss zum Beruf"
+                "label": "Dipl\u00f4me dans la profession"
             },
             "job": {
-                "label": "Berufsbezeichnung"
+                "label": "D\u00e9signation de la profession"
             },
             "last-job": {
-                "label": "Zuletzt ausge\u00fcbter Beruf"
+                "label": "Derni\u00e8re profession exerc\u00e9e"
             },
-            "title": "Berufliche Qualifikation"
+            "title": "Qualifications professionnelles"
         },
         "personal-information": {
             "address": {
                 "label": "Adresse"
             },
             "e-mail": {
-                "label": "E-Mail"
+                "label": "E-mail"
             },
             "mobile": {
-                "label": "Mobile"
+                "label": "T\u00e9l. mobile"
             },
             "name": {
-                "label": "Name / Vorname"
+                "label": "Nom / pr\u00e9nom"
             },
             "nationality": {
-                "label": "Staatsangeh\u00f6rigkeit"
+                "label": "Nationalit\u00e9 "
             },
             "phone": {
-                "label": "Telefon"
+                "label": "T\u00e9l\u00e9phone"
             },
-            "title": "Personalien / Kontaktdaten des Kandidaten"
+            "title": "Coordonn\u00e9es du candidat"
         }
     }
 }

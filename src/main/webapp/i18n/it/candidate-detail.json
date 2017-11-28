@@ -2,87 +2,90 @@
     "candidate-detail": {
         "additional-information": {
             "drivingCategories": {
-                "label": "F\u00fchrerausweiskategorien"
+                "label": "Categorie patente"
             },
             "education": {
-                "label": "Ausbildung"
+                "label": "Formazione"
             },
             "gender": {
-                "label": "Geschlecht"
+                "label": "Sesso"
             },
             "highestEducationLevel": {
-                "label": "H\u00f6chste Bildungsstufe"
+                "label": "Massimo titolo di studio"
             },
-            "no-information": "Keine Angaben",
+            "no-information": "Nessuna indicazione",
             "preferredWorkRegions": {
-                "label": "Gesuchte Arbeitsregion/en"
+                "label": "Regione/i di ricerca"
             },
-            "title": "Weitere Angaben",
+            "title": "Altri dati",
             "workForm": {
-                "label": "Arbeitsform"
+                "label": "Tipologia lavorativa"
             }
         },
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "candidate-copy-link": "Link kopieren",
-        "candidate-print": "Drucken",
-        "candidate-save": "Kandidat speichern",
-        "candidate-send-link": "Link versenden",
+        "back": "Torna ai risultati della ricerca ",
+        "candidate-copy-link": "Copia link",
+        "candidate-print": "Stampa",
+        "candidate-save": "salva candidato",
+        "candidate-send-link": "Invia link",
         "graduation": {
-            "ACCEPTED": "CH anerkannt",
+            "ACCEPTED": "Riconosciuto in CH",
             "CH": "CH",
-            "NONE": "kein Abschluss",
-            "NOT_ACCEPTED": "Ausl\u00e4ndisch"
+            "NONE": "Nessun titolo",
+            "NOT_ACCEPTED": "Straniero"
         },
         "job-center": {
             "email": {
-                "label": "E-Mail"
+                "label": "email"
             },
             "phone": {
-                "label": "Telefon"
+                "label": "Telefono"
             },
-            "title": "Weitere Ausk\u00fcnfte erteilt"
+            "title": "Per maggiori informazioni"
         },
         "job-experience": {
+            "degree": {
+                "label": "Ausbildung"
+            },
             "description": {
-                "label": "Kenntnisse, F\u00e4higkeiten, Skills"
+                "label": "Conoscenze, competenze, skills"
             },
             "education": {
-                "label": "Bildungsstufe"
+                "label": "Livello formativo"
             },
             "experience": {
-                "label": "Erfahrungsjahre auf dem Beruf"
+                "label": "Anni di esperienza professionale"
             },
             "graduation": {
-                "label": "Abschluss zum Beruf"
+                "label": "Titolo professionale"
             },
             "job": {
-                "label": "Berufsbezeichnung"
+                "label": "Denominazione professionale"
             },
             "last-job": {
-                "label": "Zuletzt ausge\u00fcbter Beruf"
+                "label": "Ultima professione svolta"
             },
-            "title": "Berufliche Qualifikation"
+            "title": "Qualifica professionale"
         },
         "personal-information": {
             "address": {
-                "label": "Adresse"
+                "label": "Indirizzo"
             },
             "e-mail": {
-                "label": "E-Mail"
+                "label": "email"
             },
             "mobile": {
-                "label": "Mobile"
+                "label": "Cellulare"
             },
             "name": {
-                "label": "Name / Vorname"
+                "label": "Cognome / nome"
             },
             "nationality": {
-                "label": "Staatsangeh\u00f6rigkeit"
+                "label": "Cittadinanza"
             },
             "phone": {
-                "label": "Telefon"
+                "label": "Telefono"
             },
-            "title": "Personalien / Kontaktdaten des Kandidaten"
+            "title": "Generalit\u00e0 / coordinate del candidato"
         }
     }
 }

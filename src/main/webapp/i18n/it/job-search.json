@@ -2,82 +2,82 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Name des Unternehmen",
-                "placeholder": "Name des Unternehmen"
+                "label": "Nome dell'impresa",
+                "placeholder": "Nome dell'impresa"
             },
             "contract-type": {
-                "label": "Vertragsart",
+                "label": "Tipologia di contratto",
                 "option": {
-                    "ALL": "Alle",
-                    "PERMANENT": "Unbefristet",
-                    "TEMPORARY": "Befristet"
+                    "ALL": "Tutto",
+                    "PERMANENT": "A tempo indeterminato",
+                    "TEMPORARY": "A tempo determinato"
                 }
             },
             "online-since": {
                 "days": {
-                    "label": "Tage(n)"
+                    "label": "Giorno(i)"
                 },
-                "label": "Online seit"
+                "label": "Online dal"
             },
             "sort": {
-                "label": "Sortierung",
+                "label": "Classificazione",
                 "option": {
-                    "DATE_ASC": "Sortiere nach Datum aufsteigend",
-                    "DATE_DESC": "Sortiere nach Datum absteigend",
-                    "RELEVANCE_DESC": "Sortiere nach Relevanz"
+                    "DATE_ASC": "Ordine crescente per data",
+                    "DATE_DESC": "Ordine decrescente per data",
+                    "RELEVANCE_DESC": "Classifica per pertinenza"
                 }
             },
-            "title": "Suchergebnisse filtern",
+            "title": "Filtra risultati della ricerca",
             "working-time": {
-                "label": "Pensum"
+                "label": "Grado di occupazione"
             }
         },
         "job-search-list-item": {
             "badge": {
-                "permanent": "Unbefristet",
-                "temporary": "Befristet"
+                "permanent": "A tempo indeterminato",
+                "temporary": "A tempo determinato"
             }
         },
         "job-search-list": {
-            "error-message": "Failed to load job result list!",
+            "error-message": "Impossibile caricare l'ultima lista di posti!",
             "title": {
                 "many": {
-                    "with-locality": "More than {{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "More than {{count}} {{query}} Jobs"
+                    "with-locality": "Pi\u00f9 di {{count}} {{query}} posti in {{locality}}",
+                    "without-locality": "Pi\u00f9 di {{count}} {{query}} posti"
                 },
                 "none": {
-                    "with-locality": "No {{query}} Jobs in {{locality}}",
-                    "without-locality": "No {{query}} Jobs"
+                    "with-locality": "Nessun {{query}} posto in {{locality}}",
+                    "without-locality": "Nessun {{query}} posto"
                 },
                 "one": {
-                    "with-locality": "1 {{query}} Job in {{locality}}",
-                    "without-locality": "1 {{query}} Job"
+                    "with-locality": "1 {{query}} posto in {{locality}}",
+                    "without-locality": "1 {{query}} posto"
                 },
                 "other": {
-                    "with-locality": "{{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "{{count}} {{query}} Jobs"
+                    "with-locality": "{{count}} {{query}} posti in {{locality}}",
+                    "without-locality": "{{count}} {{query}} posti"
                 }
             }
         },
-        "title": "Job search",
+        "title": "Cerca posti",
         "toolbar": {
             "locality-select": {
-                "tooltip": "Select my current location"
+                "tooltip": "selezione la mia posizione attuale"
             },
             "locality": {
-                "placeholder": "Ort, Region, Kanton"
+                "placeholder": "Localit\u00e0, regione, Cantone"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
+                "placeholder": "Denominazione professionale, gruppo professionale, competenze"
             }
         }
     },
     "typeahead-multiselect": {
         "type": {
-            "canton": "Canton",
-            "classification": "Classification",
-            "locality": "Ortschaft",
-            "occupation": "Occupation"
+            "canton": "Cantone",
+            "classification": "Classificazione",
+            "locality": "Localit\u00e0",
+            "occupation": "Grado di occupazione"
         }
     }
 }

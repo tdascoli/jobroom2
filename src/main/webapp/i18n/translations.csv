@@ -10,86 +10,87 @@ audits,audits.filter.from,von,from,De,da
 audits,audits.filter.title,Nach Datum filtern,Filter per date,Filtrer par date,Filtra per data
 audits,audits.filter.to,bis,to,à,a
 audits,audits.table.data.remoteAddress,Remote-Adresse:,Remote Address:,Adresse Distante :,Indirizzo remoto:
-audits,audits.table.header.data,Extrainformationen,Extra data,Autres données,Altre informazioni
+audits,audits.table.header.data,Zusatzinformationen,Extra data,Autres données,Altre informazioni
 audits,audits.table.header.date,Datum,Date,Date,Data
 audits,audits.table.header.principal,Benutzer,User,Utilisateur,Utente
-audits,audits.table.header.status,Stand,State,Status,Stato
+audits,audits.table.header.status,Stand,Status,Etat,Stato
 audits,audits.title,Audits,Audits,Audits,Cambiamenti
-candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Führerausweiskategorien,Führerausweiskategorien,Führerausweiskategorien
-candidate-detail,candidate-detail.additional-information.education.label,Ausbildung,Ausbildung,Ausbildung,Ausbildung
-candidate-detail,candidate-detail.additional-information.gender.label,Geschlecht,Geschlecht,Geschlecht,Geschlecht
-candidate-detail,candidate-detail.additional-information.highestEducationLevel.label,Höchste Bildungsstufe,Höchste Bildungsstufe,Höchste Bildungsstufe,Höchste Bildungsstufe
-candidate-detail,candidate-detail.additional-information.no-information,Keine Angaben,Keine Angaben,Keine Angaben,Keine Angaben
-candidate-detail,candidate-detail.additional-information.preferredWorkRegions.label,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en,Gesuchte Arbeitsregion/en
-candidate-detail,candidate-detail.additional-information.title,Weitere Angaben,Weitere Angaben,Weitere Angaben,Weitere Angaben
-candidate-detail,candidate-detail.additional-information.workForm.label,Arbeitsform,Arbeitsform,Arbeitsform,Arbeitsform
-candidate-detail,candidate-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
-candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Link kopieren,Link kopieren,Link kopieren
-candidate-detail,candidate-detail.candidate-print,Drucken,Drucken,Drucken,Drucken
-candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Kandidat speichern,Kandidat speichern,Kandidat speichern
-candidate-detail,candidate-detail.candidate-send-link,Link versenden,Link versenden,Link versenden,Link versenden
-candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,CH anerkannt,CH anerkannt,CH anerkannt
-candidate-detail,candidate-detail.graduation.CH,CH,CH,CH,CH
-candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
-candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,Ausländisch,Ausländisch,Ausländisch,Ausländisch
-candidate-detail,candidate-detail.job-center.email.label,E-Mail,E-Mail,E-Mail,E-Mail
-candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telefon,Telefon,Telefon
-candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt,Weitere Auskünfte erteilt
-candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills","Kenntnisse, Fähigkeiten, Skills"
-candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
-candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf,Erfahrungsjahre auf dem Beruf
-candidate-detail,candidate-detail.job-experience.graduation.label,Berufsabschluss,Abschluss zum Beruf,Abschluss zum Beruf,Abschluss zum Beruf
-candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
-candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf,Zuletzt ausgeübter Beruf
-candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation,Berufliche Qualifikation
-candidate-detail,candidate-detail.personal-information.address.label,Adresse,Adresse,Adresse,Adresse
-candidate-detail,candidate-detail.personal-information.e-mail.label,E-Mail,E-Mail,E-Mail,E-Mail
-candidate-detail,candidate-detail.personal-information.mobile.label,Mobile,Mobile,Mobile,Mobile
-candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname,Name / Vorname,Name / Vorname,Name / Vorname
-candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Staatsangehörigkeit,Staatsangehörigkeit,Staatsangehörigkeit
-candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telefon,Telefon,Telefon
-candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personalien / Kontaktdaten des Kandidaten,Personalien / Kontaktdaten des Kandidaten,Personalien / Kontaktdaten des Kandidaten
-candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,Auf Vereinbarung,Auf Vereinbarung,Auf Vereinbarung
-candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Ab Sofort,Ab Sofort,Ab Sofort
-candidate-search,candidate-search.availability.label,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit,Verfügbarkeit
-candidate-search,candidate-search.candidate-search-list.error-message,Die Resultate der Kandidatensuche konnten nicht geladen werden,Failed to load candidate result list!,Failed to load candidate result list!,Failed to load candidate result list!
-candidate-search,candidate-search.candidate-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Kandidaten in {{locality}},More than {{count}} {{query}} Candidates in {{locality}},More than {{count}} {{query}} Candidates in {{locality}},More than {{count}} {{query}} Candidates in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.many.without-locality,Mehr als {{count}} {{query}} Kandidaten,More than {{count}} {{query}} Candidates,More than {{count}} {{query}} Candidates,More than {{count}} {{query}} Candidates
-candidate-search,candidate-search.candidate-search-list.title.none.with-locality,Keine {{query}} Kandidaten in {{locality}},No {{query}} Candidates in {{locality}},No {{query}} Candidates in {{locality}},No {{query}} Candidates in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.none.without-locality,Keine {{query}} Kandidaten,No {{query}} Candidates,No {{query}} Candidates,No {{query}} Candidates
-candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 {{query}} Kandidat in {{locality}},1 {{query}} Candidate in {{locality}},1 {{query}} Candidate in {{locality}},1 {{query}} Candidate in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.one.without-locality,1 {{query}} Kandidat,1 {{query}} Candidate,1 {{query}} Candidate,1 {{query}} Candidate
-candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} {{query}} Kandidaten in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}},{{count}} {{query}} Candidates in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Kandidaten,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates,{{count}} {{query}} Candidates
-candidate-search,candidate-search.education.label,Bildungsstufe,Bildungsstufe,Bildungsstufe,Bildungsstufe
-candidate-search,candidate-search.experience.label,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
-candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden,Suche als Link versenden
-candidate-search,candidate-search.filter.title,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen,Kandidaten suchen
-candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt,CH-Abschluss oder CH anerkannt
-candidate-search,candidate-search.graduation.CH,CH-Abschluss,CH-Abschluss,CH-Abschluss,CH-Abschluss
-candidate-search,candidate-search.graduation.NONE,Kein Abschluss,kein Abschluss,kein Abschluss,kein Abschluss
-candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch,Abschluss CH oder ausländisch
-candidate-search,candidate-search.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
-candidate-search,candidate-search.keywords.label,Suchbegriffe,Suchbegriffe,Suchbegriffe,Suchbegriffe
-candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Sprachkenntnisse,Sprachkentnisse,Sprachkentnisse
-candidate-search,candidate-search.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
-candidate-search,candidate-search.skills.label,"Fähigkeiten, Skills","Fähigkeiten, Skills","Fähigkeiten, Skills","Fähigkeiten, Skills"
-candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau,z.B. Tiefbau
-candidate-search,candidate-search.title,Kandidatensuche,Candidate search,Candidate search,Candidate search
-candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen,Abschluss auswählen...,Abschluss auswählen...,Abschluss auswählen...
-candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Abschluss,Abschluss,Abschluss
-candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung,Berufsbezeichnung
-candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Wohnort: Kanton,Wohnort: Kanton,Wohnort: Kanton
-candidate-search,candidate-search.toolbar.residence.selected,Kantone,Kantone,Kantone,Kantone
-candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Heimarbeit,Heimarbeit,Heimarbeit
-candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Nachtarbeit,Nachtarbeit,Nachtarbeit
-candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Schichtarbeit,Schichtarbeit,Schichtarbeit
-candidate-search,candidate-search.workForm.SUNDAY_AND_HOLIDAYS,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit,Sonn- und Feiertagsarbeit
-candidate-search,candidate-search.workForm.label,Arbeitsform,Arbeitsform,Arbeitsform,Arbeitsform
-candidate-search,candidate-search.workLocation.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
-candidate-search,candidate-search.workload.label,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
-candidate-search,candidate-search.workplace.label,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
-candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton","Ort, Gemeinde, Kanton"
+candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Driving licence categories,Catégories de permis de conduire,Categorie patente
+candidate-detail,candidate-detail.additional-information.education.label,Ausbildung,Education,Formation,Formazione
+candidate-detail,candidate-detail.additional-information.gender.label,Geschlecht,Gender,Sexe,Sesso
+candidate-detail,candidate-detail.additional-information.highestEducationLevel.label,Höchste Bildungsstufe,Highest education level,Niveau de formation le plus élevé,Massimo titolo di studio
+candidate-detail,candidate-detail.additional-information.no-information,Keine Angaben,No information,Aucune indication,Nessuna indicazione
+candidate-detail,candidate-detail.additional-information.preferredWorkRegions.label,Gesuchte Arbeitsregion/en,Preferred work region(s),Région/s de travail recherchée/s,Regione/i di ricerca
+candidate-detail,candidate-detail.additional-information.title,Weitere Angaben,Additional information,Autres indications,Altri dati
+candidate-detail,candidate-detail.additional-information.workForm.label,Arbeitsform,Work form,Forme de travail,Tipologia lavorativa
+candidate-detail,candidate-detail.back,Zurück zu den Suchergebnissen,Back to search results,Retour aux résultats,"Torna ai risultati della ricerca "
+candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Copy link,Copier le lien,Copia link
+candidate-detail,candidate-detail.candidate-print,Drucken,Print,Imprimer,Stampa
+candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Save candidate profile,Sauvegarder le profil du candidat,salva candidato
+candidate-detail,candidate-detail.candidate-send-link,Link versenden,Send link,Envoyer le lien,Invia link
+candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,Accepted in Switzerland,Reconnu en Suisse,Riconosciuto in CH
+candidate-detail,candidate-detail.graduation.CH,CH,Swiss,Suisse,CH
+candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
+candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,Ausländisch,Foreign,Etranger,Straniero
+candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
+candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
+candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
+candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Ausbildung,Ausbildung,Ausbildung
+candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, aptitudes","Conoscenze, competenze, skills"
+candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Level of education,"Niveau de formation ",Livello formativo
+candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Number of years experience,Années d'expérience dans la profession,Anni di esperienza professionale
+candidate-detail,candidate-detail.job-experience.graduation.label,Berufsabschluss,Professional degree,Diplôme dans la profession,Titolo professionale
+candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Professional title,Désignation de la profession,Denominazione professionale
+candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Last job,Dernière profession exercée,Ultima professione svolta
+candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Professional qualification,Qualifications professionnelles,Qualifica professionale
+candidate-detail,candidate-detail.personal-information.address.label,Adresse,Address,Adresse,Indirizzo
+candidate-detail,candidate-detail.personal-information.e-mail.label,E-Mail,Email,E-mail,email
+candidate-detail,candidate-detail.personal-information.mobile.label,Mobile,Mobile number,Tél. mobile,Cellulare
+candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname,Last name / First name,Nom / prénom,Cognome / nome
+candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Nationality,"Nationalité ",Cittadinanza
+candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telephone,Téléphone,Telefono
+candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personal information / Candidate contact details,Coordonnées du candidat,Generalità / coordinate del candidato
+candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By arrangement,A convenir,Da concordare
+candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Immediately,Tout de suite,Da subito
+candidate-search,candidate-search.availability.label,Verfügbarkeit,Availability,Disponibilité,Disponibilità
+candidate-search,candidate-search.candidate-search-list.error-message,Die Resultate der Kandidatensuche konnten nicht geladen werden,Failed to load candidate result list.,Les résultats de la recherche de candidats n'ont pas pu être chargés,Impossibile caricare la lista risultati dei candidati!
+candidate-search,candidate-search.candidate-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Kandidaten in {{locality}},More than {{count}} {{query}} candidates in {{locality}},Plus de {{count}} {{query}} candidats à {{locality}},Più di {{count}} {{query}} candidati in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.many.without-locality,Mehr als {{count}} {{query}} Kandidaten,More than {{count}} {{query}} candidates,"Plus de {{count}} {{query}} candidats ",Più di  {{count}} {{query}} candidati
+candidate-search,candidate-search.candidate-search-list.title.none.with-locality,Keine {{query}} Kandidaten in {{locality}},No {{query}} candidates in {{locality}},Aucun {{query}} candidat à {{locality}},Nessun {{query}} candidato in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.none.without-locality,Keine {{query}} Kandidaten,No {{query}} candidates,"Aucun {{query}} candidat ",Nessun {{query}} candidato
+candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 {{query}} Kandidat in {{locality}},1 {{query}} candidate in {{locality}},1 {{query}} candidat à {{locality}},1 {{query}} candidato in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.one.without-locality,1 {{query}} Kandidat,1 {{query}} candidate,1 {{query}} candidat,1 {{query}} candidato
+candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} {{query}} Kandidaten in {{locality}},{{count}} {{query}} candidates in {{locality}},{{count}} {{query}} candidats à {{locality}},{{count}} {{query}} candidati in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Kandidaten,{{count}} {{query}} candidates,{{count}} {{query}} candidats,{{count}} {{query}} candidati
+candidate-search,candidate-search.education.label,Bildungsstufe,Level of education,Niveau de formation,Livello formativo
+candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
+candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer le résultat de la recherche comme lien,Invia ricerca come link
+candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
+candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,Swiss degree or accepted in Switzerland,Diplôme suisse ou reconnu en Suisse,Titolo CH o riconosciuto in CH
+candidate-search,candidate-search.graduation.CH,CH-Abschluss,Swiss degree,Diplôme suisse,Titolo CH
+candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
+candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Swiss degree or foreign degree,Diplôme suisse ou étranger,Titolo CH o straniero
+candidate-search,candidate-search.graduation.label,Abschluss,Degree,Diplôme,Titolo
+candidate-search,candidate-search.keywords.label,Suchbegriffe,Search terms,Critères de recherche,Termini ricercati
+candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
+candidate-search,candidate-search.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
+candidate-search,candidate-search.skills.label,"Fähigkeiten, Skills","Competencies, skills","Compétences, aptitudes",Competenze skills
+candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,E.g. Civil engineering,p. ex. génie civil,es. genio civile
+candidate-search,candidate-search.title,Kandidatensuche,Candidate search,Recherche de candidats,Cerca candidati
+candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen,Select degree,Sélectionner un diplôme,Seleziona titolo...
+candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Degree,Diplôme,Titolo
+candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Professional title,Désignation de la profession,Denominazione professionale
+candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Canton of residence,Canton de domicile,Luogo di domicilio: Cantone
+candidate-search,candidate-search.toolbar.residence.selected,Kantone,Cantons,Cantons,Cantoni
+candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Home-based work,Travail à domicile,Telelavoro
+candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Night work,Travail de nuit,Lavoro notturno
+candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Shift work,Travail en équipes,Lavoro a turni
+candidate-search,candidate-search.workForm.SUNDAY_AND_HOLIDAYS,Sonn- und Feiertagsarbeit,Sunday and holiday work,Travail le dimanche et les jours fériés,Lavoro domenicale e festivo
+candidate-search,candidate-search.workForm.label,Arbeitsform,Work form,Forme de travail,Tipologia lavorativa
+candidate-search,candidate-search.workLocation.label,Arbeitsort,Work location,Lieu de travail,Sede di lavoro
+candidate-search,candidate-search.workload.label,Arbeitspensum,FT/PT,Taux d'occupation,Grado di occupazione
+candidate-search,candidate-search.workplace.label,Arbeitsort,Work location,Lieu de travail,"Sede di lavoro "
+candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Location, municipality, canton","Lieu, commune, canton","Località, Comune, Cantone"
 companyType,jobroomApp.CompanyType.AVG,AVG,AVG,AVG,AVG
 companyType,jobroomApp.CompanyType.RAV,RAV,RAV,RAV,RAV
 companyType,jobroomApp.CompanyType.null,,,,
@@ -108,20 +109,20 @@ elasticsearch-reindex,elasticsearch.reindex.instructions2,This can take a long t
 elasticsearch-reindex,elasticsearch.reindex.title,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch
 error,error.concurrencyFailure,Another user modified this data at the same time as you. Your changes were rejected.,Another user modified this data at the same time as you. Your changes were rejected.,Un autre utilisateur a modifié ces données en même temps que vous. Vos changements n'ont pas été sauvegardés.,Another user modified this data at the same time as you. Your changes were rejected.
 error,error.http.400,Bad request.,Bad request.,Mauvaise requête.,Bad request.
-error,error.http.403,Sie haben nicht die nötigen Berechtigungen diese Seite anzuzeigen.,You are not authorized to access this page.,Vous n'avez pas les droits pour accéder à cette page.,Non si dispongono i privilegi sufficienti per accedere a qusta pagina.
+error,error.http.403,Sie haben nicht die nötigen Berechtigungen diese Seite anzuzeigen.,You are not authorised to access this page.,Vous n'avez pas les droits nécessaires pour accéder à cette page.,Non hai i diritti per accedere a questa pagina.
 error,error.http.405,The HTTP verb you used is not supported for this URL.,The HTTP verb you used is not supported for this URL.,Le verbe HTTP que vous avez utilisé n'est pas reconnu par cet URL.,The HTTP verb you used is not supported for this URL.
 error,error.http.500,Internal server error.,Internal server error.,Erreur interne du serveur.,Internal server error.
 error,error.title,Fehlerseite!,Error page!,Page d'erreur !,Pagina di errore!
 error,error.validation,Validation error on the server.,Validation error on the server.,Erreur de validation côté serveur.,Validation error on the server.
-gateway,gateway.refresh.button,Aktualisieren,Refresh,Rafraîchir,Aggiorna
+gateway,gateway.refresh.button,Aktualisieren,Refresh,Actualiser,Aggiorna
 gateway,gateway.routes.error,Achtung: keine Server verfügbar!,Warning: no server available!,Attention : aucun serveur disponible !,Attenzione: non ci sono server disponibili!
 gateway,gateway.routes.servers,Verfügbare Server,Available servers,Serveurs disponibles,Server disponibili
 gateway,gateway.routes.service,service,service,Service,servizio
 gateway,gateway.routes.title,Aktuelle Routen,Current routes,Routes actuelles,Itinerari attuali
 gateway,gateway.routes.url,URL,URL,URL,URL
 gateway,gateway.title,Gateway,Gateway,Gateway,Gateway
-gender,jobroomApp.Gender.FEMALE,Frau,FEMALE,FEMALE,FEMALE
-gender,jobroomApp.Gender.MALE,Mann,MALE,MALE,MALE
+gender,jobroomApp.Gender.FEMALE,Frau,Female,Femme,FEMMINA
+gender,jobroomApp.Gender.MALE,Mann,Male,Homme,MASCHIO
 gender,jobroomApp.Gender.null,,,,
 global,entity.action.addblob,Blob hinzufügen,Add blob,Ajouter blob,Aggiungi blob
 global,entity.action.addimage,Bild hinzufügen,Add image,Ajouter image,Aggiungi immagine
@@ -129,38 +130,56 @@ global,entity.action.back,Zurück,Back,Retour,Indietro
 global,entity.action.cancel,Abbrechen,Cancel,Annuler,Annulla
 global,entity.action.delete,Löschen,Delete,Supprimer,Elimina
 global,entity.action.edit,Bearbeiten,Edit,Editer,Modifica
-global,entity.action.open,Öffnen,Open,Ouvrir,Open
+global,entity.action.open,Öffnen,Open,Ouvrir,Apri
 global,entity.action.save,Speichern,Save,Sauvegarder,Salva
-global,entity.action.view,Details,View,Voir,Visualizza
-global,entity.delete.title,Löschen bestätigen,Confirm delete operation,Confirmation de suppression,Conferma operazione di cancellazione
-global,entity.detail.field,Feld,Field,Champs,Campo
+global,entity.action.view,Details,View,Détails,Visualizza
+global,entity.delete.title,Löschen bestätigen,Confirm deletion,Confirmer la suppression,Conferma operazione di cancellazione
+global,entity.detail.field,Feld,Field,Champ,Campo
 global,entity.detail.value,Wert,Value,Valeur,Valore
-global,entity.validation.datetimelocal,Dieses Feld muss eine Datums- und Zeitangabe enthalten.,This field should be a date and time.,Ce champ doit être une date et une heure.,Questo campo dovrebbe essere data e ora.
+global,entity.validation.datetimelocal,Dieses Feld muss eine Datums- und Zeitangabe enthalten.,This field must be a date and time.,Ce champ doit être une date et une heure.,Questo campo dovrebbe essere data e ora.
 global,entity.validation.max,Dieses Feld muss kleiner als {{max}} sein.,This field cannot be more than {{ max }}.,Ce champ doit être inférieur à {{max}}.,Questo campo non può essere superiore a {{ max }}.
-global,entity.validation.maxbytes,Dieses Feld sollte nicht mehr als {{max}} bytes haben.,This field cannot be more than {{ max }} bytes.,Ce champ doit être inférieur à {{max}} bytes.,Questo campo non può essere superiore a {{ max }} byte.
-global,entity.validation.maxlength,Dieses Feld darf max. {{max}} Zeichen lang sein.,This field cannot be longer than {{ max }} characters.,Ce champ doit faire moins de {{max}} caractères.,Questo campo non può essere più di {{ max }} caratteri.
-global,entity.validation.min,Dieses Feld muss grösser als {{min}} sein.,This field should be at least {{ min }}.,Ce champ doit être supérieur à {{min}}.,Questo campo dovrebbe essere più di {{ min }}.
+global,entity.validation.maxbytes,Dieses Feld sollte nicht mehr als {{max}} bytes haben.,This field cannot be more than {{ max }} bytes.,Ce champ ne doit pas dépasser {{max}} bytes.,Questo campo non può essere superiore a {{ max }} byte.
+global,entity.validation.maxlength,Dieses Feld darf max. {{max}} Zeichen lang sein.,This field cannot be longer than {{ max }} characters.,Ce champ doit comporter au maximum {{max}} caractères.,Questo campo non può essere più di {{ max }} caratteri.
+global,entity.validation.min,Dieses Feld muss grösser als {{min}} sein.,This field must be at least {{ min }}.,Ce champ doit être supérieur à {{min}}.,Questo campo dovrebbe essere più di {{ min }}.
 global,entity.validation.minbytes,Dieses Feld sollte mehr als {{min}} bytes haben.,This field should be at least {{ min }} bytes.,Ce champ doit être supérieur à {{min}} bytes.,Questo campo dovrebbe essere più di {{ min }} byte.
-global,entity.validation.minlength,Dieses Feld muss mind. {{min}} Zeichen lang sein.,This field is required to be at least {{ min }} characters.,Ce champ doit faire au minimum {{min}} caractères.,Questo campo deve essere di almeno {{ min }} caratteri.
-global,entity.validation.number,Dieses Feld muss eine Zahl sein.,This field should be a number.,Ce champ doit être un nombre.,Questo campo dovrebbe essere un numero.
-global,entity.validation.pattern,Dieses Feld muss das Muster {{pattern}} erfüllen.,This field should follow pattern for {{ pattern }}.,Ce champ doit suivre l'expression régulière {{pattern}}.,Questo campo dovrebbe corrispondere al modello {{ pattern }}.
+global,entity.validation.minlength,Dieses Feld muss mind. {{min}} Zeichen lang sein.,This field must be at least {{ min }} characters.,Ce champ doit avoir au minimum {{min}} caractères.,Questo campo deve essere di almeno {{ min }} caratteri.
+global,entity.validation.number,Dieses Feld muss eine Zahl sein.,This field must be a number.,Ce champ doit être un nombre.,Questo campo dovrebbe essere un numero.
+global,entity.validation.pattern,Dieses Feld muss das Muster {{pattern}} erfüllen.,This field must follow the pattern {{ pattern }}.,Ce champ doit respecter le modèle {{pattern}}.,Questo campo dovrebbe corrispondere al modello {{ pattern }}.
 global,entity.validation.required,Pflichtfeld,This field is required.,Ce champ est obligatoire.,Questo campo è obbligatorio.
 global,error.NotNull,Feld {{fieldName}} darf nicht leer sein!,Field {{ fieldName }} cannot be empty!,Le champ {{fieldName}} ne peut pas être vide !,Il campo {{ fieldName }} non può essere vuoto!
-global,error.Size,Feld {{fieldName}} erfüllt nicht die minimalen/maximalen Voraussetzungen!,Field {{ fieldName }} does not meet min/max size requirements!,Le champ {{fieldName}} ne respecte pas les critères minimum et maximum !,Il campo {{ fieldName }} non è conforme ai requisiti di lunghezza min/max!
-global,error.emailexists,Email wird bereits verwendet!,Email is already in use!,Email déjà utilisé !,L'email è già in uso!
-global,error.idexists,Ein neuer {{entityName}} kann noch keine ID haben,A new {{ entityName }} cannot already have an ID,Une nouvelle entité {{entityName}} ne peut pas avoir d'ID !,Un(a) nuovo/a {{entityName}} non può già avere un ID
-global,error.internalServerError,Internal server error,Internal server error,Erreur interne du serveur,Internal server error
+global,error.Size,Feld {{fieldName}} erfüllt nicht die minimalen/maximalen Voraussetzungen!,Field {{ fieldName }} does not meet min/max size requirements!,Le champ {{fieldName}} ne respecte pas les critères minimums et maximums !,Il campo {{ fieldName }} non è conforme ai requisiti di lunghezza min/max!
+global,error.emailexists,Email wird bereits verwendet!,Email is already in use!,E-mail déjà utilisé !,L'email è già in uso!
+global,error.idexists,Ein neuer {{entityName}} kann noch keine ID haben,A new {{ entityName }} cannot have an ID yet.,La nouvelle entité {{entityName}} ne peut pas encore avoir d'ID !,Un(a) nuovo/a {{entityName}} non può già avere un ID
+global,error.internalServerError,Internal server error,Internal server error,Erreur interne du serveur,Errore interno server
 global,error.server.not.reachable,Server ist nicht erreichbar,Server not reachable,Serveur inaccessible,Server non raggiungibile
 global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
-global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Login déjà utilisé !,Il nome utente è già in uso!
-global,footer.link.abbreviation.text,Abkürzungen,Abkürzungen,Abkürzungen,Abkürzungen
-global,footer.link.legal.text,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen,Rechtliche Grundlagen
-global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV,Arbeitslosenversicherung / Arbeitsmarkt ALV
+global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Nom d'utilisateur déjà utilisé !,Il nome utente è già in uso!
+global,footer.link.abbreviation.text,Abkürzungen,Abbreviations,Abréviations,Abbreviazioni
+global,footer.link.legal.text,Rechtliche Grundlagen,Legal framework,Bases juridiques,Basi giuridiche
+global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Unemployment insurance/Labour market,Assurance-chômage / marché du travail AC,Assicurazione contro la disoccupazione / Mercato del lavoro AD
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
 global,global.button.add.title,Add,Add,Add,Add
 global,global.button.remove.title,Remove,Remove,Remove,Remove
-global,global.contactPerson.salutation.MR,Herr,Herr,Herr,Herr
-global,global.contactPerson.salutation.MS,Frau,Frau,Frau,Frau
+global,global.contactPerson.salutation.MR,Herr,Mr,Monsieur,Signor
+global,global.contactPerson.salutation.MS,Frau,Ms,Madame,Signora
+global,global.degree.BACHELOR_FACHHOCHSCHULE,Tertiär - Bachelor Fachhochschule od. äq.,Tertiär - Bachelor Fachhochschule od. äq.,Tertiaire – Bachelor HES ou équivalent,Terziario – Bachelor SUP o equivalente
+global,global.degree.BACHELOR_UNIVERSITY,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiaire – Bachelor HEU ou équivalent,Terziario – Bachelor scuola univ./poli. o equiv.
+global,global.degree.BERUFSMATURA,Sek. II - Berufsmaturität od. äq.,Sek. II - Berufsmaturität od. äq.,Sec. II – Maturité professionnelle ou équiv.,Sec. II – Maturità professionale o equiv.
+global,global.degree.DOKTORAT,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiaire – Doctorat HEU ou équivalent,Terziario – Dottorato scuola univ./poli. o equiv.
+global,global.degree.EIDG_BERUFSATTEST,Sek. II - Berufliche Grundbildung EBA od. äq.,Sek. II - Berufliche Grundbildung EBA od. äq.,Sec. II – Form. prof. initiale AFP ou équiv.,Sec. II – Form. prof. di base CFP o equiv.
+global,global.degree.EIDG_DIPLOM,Tertiär - Höhere Berufsbildung," Dipl. od. äq.",Tertiär - Höhere Berufsbildung," Dipl. od. äq."
+global,global.degree.EIDG_FACHAUSWEIS,Tertiär - Höhere Berufsbildung," eidg. FA od. äq.",Tertiär - Höhere Berufsbildung," eidg. FA od. äq."
+global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sec. II – Form. prof. initiale CFC ou équiv.,Sec. II – Form. prof. di base AFC o equiv.
+global,global.degree.FACHMATURA,Sek. II - Fachmaturität od. äq.,Sek. II - Fachmaturität od. äq.,Sec. II – Maturité spécialisée ou équiv.,Sec. II – Maturità specializzata o equiv.
+global,global.degree.FACHMITTELSCHULE,Sek. II - Fachmittelschule oder äq.,Sek. II - Fachmittelschule oder äq.,Sec. II – Ecole de culture générale ou équiv.,Sec. II – Scuola specializzata o equiv.
+global,global.degree.GYMNASIUM_MATURA,Sek. II - Gymnasiale Maturität od. äq.,Sek. II - Gymnasiale Maturität od. äq.,Sec. II – Maturité gymnasiale ou équiv.,Sec. II – Maturità liceale o equiv.
+global,global.degree.MASTER_FACHHOCHSCHULE,Tertiär - Master Fachhochschule od. äq.,Tertiär - Master Fachhochschule od. äq.,Tertiaire – Master HES ou équivalent,Terziario – Master SUP o equivalente
+global,global.degree.MASTER_UNIVERSITY,Tertiär - Master universitäre Hochschule od. äq.,Tertiär - Master universitäre Hochschule od. äq.,Tertiaire –  Master HEU ou équivalent,Terziario – Master scuola univ./poli. o equiv.
+global,global.degree.NA,keine Angabe,keine Angabe,aucune indication,nessuna risposta
+global,global.degree.PRIMARSCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire – Ecole obligatoire,Elementare – Scuola obligatoria
+global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Sek. II - Weiterführende Schule od. äq.,Sek. II - Weiterführende Schule od. äq.,Sec. II – Ecole supérieure ou équivalent,Sec. II – Scuola superiore o equiv.
+global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Sek. I - obligatorische Schule,Sek. I - obligatorische Schule,Sec. I – Ecole obligatoire,Sec. I – Scuola obligatoria
+global,global.degree.UNBEKANNT,weiss nicht,weiss nicht,ne sait pas,non sa
 global,global.drivingLicenceCategory.A,A,A,A,A
 global,global.drivingLicenceCategory.A1,A1,A1,A1,A1
 global,global.drivingLicenceCategory.B,B,B,B,B
@@ -178,35 +197,35 @@ global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
 global,global.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
-global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,Primarstufe - ISCED 1
-global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2
-global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3
-global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4
-global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5
-global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6
-global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr,weniger als 1 Jahr
-global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr,mehr als 1 Jahr
-global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre,mehr als 3 Jahre
-global,global.experience.NONE,Keine Erfahrung,keine Erfahrung,keine Erfahrung,keine Erfahrung
+global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,degré primaire - ISCED 1,Livello primario - ISCED 1
+global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,degré secondaire I - ISCED 2,Livello secondario I - ISCED 2
+global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,degré secondaire II - ISCED 3,Livello secondario II - ISCED 3
+global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,degré post-secondaire non tertiaire ISCED 4,Seconda formazione - ISCED 4
+global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,degré tertiaire I - ISCED 5,Livello terziario I - ISCED 5
+global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,degré tertiaire II - ISCED 6,Livello terziario II - ISCED 6
+global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,Less than 1 year,Moins d'un an,meno di 1 anno
+global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,More than 1 year,Plus d'un an,più di 1 anno
+global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,More than 3 years,Plus de trois ans,più di 3 anni
+global,global.experience.NONE,Keine Erfahrung,No experience,Aucune expérience,nessuna esperienza
 global,global.field.id,ID,ID,ID,ID
-global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmation du nouveau mot de passe,Conferma nuova password
-global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Confirm the new password,Confirmation du nouveau mot de passe,Conferma nuova password
-global,global.form.email,Email Adresse,Email,Email,Email
-global,global.form.email.placeholder,Ihre Email Adresse,Your email,Votre email,Il tuo indirizzo email
+global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmer le nouveau mot de passe,Conferma nuova password
+global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Please confirm your new password,Confirmez votre nouveau mot de passe,Conferma nuova password
+global,global.form.email,Email Adresse,Email address,Adresse e-mail,Email
+global,global.form.email.placeholder,Ihre Email Adresse,Your email address,Votre adresse e-mail,Il tuo indirizzo email
 global,global.form.newpassword,Neues Passwort,New password,Nouveau mot de passe,Nuova password
 global,global.form.newpassword.placeholder,Neues Passwort,New password,Nouveau mot de passe,Nuova password
 global,global.form.username,Benutzername,Username,Nom d'utilisateur,Utente
 global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom d'utilisateur,Il tuo nome utente
-global,global.gender.FEMALE,weiblich,weiblich,weiblich,weiblich
-global,global.gender.MALE,männlich,männlich,männlich,männlich
-global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} items.,Mostra {{first}} - {{second}} di {{total}} articoli.
-global,global.menu.account.login,Anmelden,Sign in,S'authentifier,Accesso
+global,global.gender.FEMALE,weiblich,Female,féminin,femmina
+global,global.gender.MALE,männlich,Male,masculin,maschio
+global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} éléments.,Mostra {{first}} - {{second}} di {{total}} articoli.
+global,global.menu.account.login,Anmelden,Sign in,Connexion,Accesso
 global,global.menu.account.logout,Abmelden,Sign out,Déconnexion,Esci
 global,global.menu.account.main,Zugang,Account,Compte,Utente
 global,global.menu.account.password,Passwort,Password,Mot de passe,Password
-global,global.menu.account.register,Registrierung,Register,Créer un compte,Registrazione
+global,global.menu.account.register,Registrierung,Registration,Créer un compte,Registrazione
 global,global.menu.account.sessions,Sitzungen,Sessions,Sessions,Sessioni
-global,global.menu.account.settings,Einstellungen,Settings,Profil,Impostazioni
+global,global.menu.account.settings,Einstellungen,Settings,Paramètres,Impostazioni
 global,global.menu.admin.apidocs,API,API,API,API
 global,global.menu.admin.audits,Audits,Audits,Audits,Cambiamenti
 global,global.menu.admin.configuration,Konfiguration,Configuration,Configuration,Configurazione
@@ -217,39 +236,41 @@ global,global.menu.admin.health,Status,Health,Diagnostics,Integrità
 global,global.menu.admin.jhipster-needle-menu-add-admin-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
 global,global.menu.admin.logs,Protokoll,Logs,Logs,Log
 global,global.menu.admin.main,Administration,Administration,Administration,Amministratore
-global,global.menu.admin.metrics,Metriken,Metrics,Métriques,Metriche
-global,global.menu.admin.tracker,Benutzer Aktivitäten,User tracker,Suivi des utilisateurs,Tracciamento utente
+global,global.menu.admin.metrics,Metriken,Metrics,Mesures,Metriche
+global,global.menu.admin.tracker,Benutzer Aktivitäten,User tracker,Activité des utilisateurs,Tracciamento utente
 global,global.menu.admin.userManagement,Benutzerverwaltung,User management,Gestion des utilisateurs,Gestione utenti
 global,global.menu.dashboard,Dashboard,Dashboard,Dashboard,Dashboard
 global,global.menu.entities.jhipster-needle-menu-add-entry,JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!),JHipster will add additional entities here (do not translate!)
-global,global.menu.entities.job,Job,Job,Job,Job
+global,global.menu.entities.job,Job,Job,Emploi,Posto
 global,global.menu.entities.main,Entitäten,Entities,Entités,Entità
-global,global.menu.home,Startseite,Home,Accueil,Home
+global,global.menu.home,Startseite,Home,Page d'accueil,Home
 global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
 global,global.menu.language,Sprache,Language,Langue,Lingua
-global,global.messages.error.dontmatch,Das bestätigte Passwort entspricht nicht dem neuen Passwort!,The password and its confirmation do not match!,Le nouveau mot de passe et sa confirmation ne sont pas égaux !,La password e la sua conferma non corrispondono!
-global,global.messages.info.authenticated.link,anmelden,sign in,connecter,accedere
-global,global.messages.info.authenticated.prefix,"Wenn Sie sich ","If you want to ","Si vous voulez vous ",Se vuoi
-global,global.messages.info.authenticated.suffix,"möchten, versuchen Sie es mit <br/>- Administrator (Name=""admin"" und Passwort=""admin"")<br/>- Benutzer (Name=""user"" und Passwort=""user"").",", you can try the default accounts:<br/>- Administrator (login=""admin"" and password=""admin"") <br/>- User (login=""user"" and password=""user"").",", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=""admin"" et mot de passe =""admin"") <br/> - Utilisateur (nom d'utilisateur=""user"" et mot de passe =""user"").",", puoi provare gli account di default: <br/> - Amministratore (user = ""admin"" e la password = ""admin"") <br/> - utente (user = ""user"" e la password = ""user"")"
+global,global.messages.error.dontmatch,Das bestätigte Passwort entspricht nicht dem neuen Passwort!,The confirmed password and the new password do not match!,La confirmation du mot de passe ne correspond pas au nouveau mot de passe !,La password e la sua conferma non corrispondono!
+global,global.messages.info.authenticated.link,anmelden,sign in,Se connecter,Accedi
+global,global.messages.info.authenticated.prefix,"Wenn Sie sich ","If you’d like, ","Si vous voulez vous ",Se vuoi
+global,global.messages.info.authenticated.suffix,"möchten, versuchen Sie es mit <br/>- Administrator (Name=""admin"" und Passwort=""admin"")<br/>- Benutzer (Name=""user"" und Passwort=""user"").","you can try the default accounts:<br/>- Administrator (login=""admin"" and password=""admin"") <br/>- User (login=""user"" and password=""user"").",", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=""admin"" et mot de passe =""admin"") <br/> - Utilisateur (nom d'utilisateur=""user"" et mot de passe =""user"").",", puoi provare gli account di default: <br/> - Amministratore (user = ""admin"" e la password = ""admin"") <br/> - utente (user = ""user"" e la password = ""user"")"
 global,global.messages.info.register.link,Registrieren Sie sich,Register a new account,Créer un compte,Crea un account
 global,global.messages.info.register.noaccount,Sie haben noch keinen Zugang?,You don't have an account yet?,Vous n'avez pas encore de compte ?,Non hai ancora un account?
-global,global.messages.validate.confirmpassword.maxlength,Das bestätigte Passwort darf nicht länger als 50 Zeichen sein,Your confirmation password cannot be longer than 50 characters.,Votre confirmation du mot de passe ne doit pas comporter plus de 50 caractères.,La tua password non può contenere più di 50 caratteri
-global,global.messages.validate.confirmpassword.minlength,Das bestätigte Passwort muss mindestens 5 Zeichen lang sein,Your confirmation password is required to be at least 4 characters.,Votre confirmation du mot de passe doit comporter au moins 5 caractères.,La tua password deve essere di almeno 4 caratteri
-global,global.messages.validate.confirmpassword.required,Sie müssen das Passwort bestätigen.,Your confirmation password is required.,Votre confirmation du mot de passe est requise.,La password di conferma è obbligatoria.
-global,global.messages.validate.email.invalid,Ihre Email Adresse ist ungültig.,Your email is invalid.,Votre email n'est pas valide.,L'indirizzo email non è valido.
-global,global.messages.validate.email.maxlength,Ihre Email Adresse darf nicht länger als 50 Zeichen sein,Your email cannot be longer than 50 characters.,Votre email ne doit pas comporter plus de 50 caractères.,L'indirizzo email non può contenere più di 50 caratteri
-global,global.messages.validate.email.minlength,Ihre Email Adresse muss mindestens 5 Zeichen lang sein,Your email is required to be at least 5 characters.,Votre email doit comporter au moins 5 caractères.,L'indirizzo email deve essere di almeno 5 caratteri
-global,global.messages.validate.email.required,Ihre Email Adresse wird benötigt.,Your email is required.,Votre email est requis.,L'indirizzo email è obbligatorio.
-global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nicht länger als 50 Zeichen sein,Your password cannot be longer than 50 characters.,Votre mot de passe ne doit pas comporter plus de 50 caractères.,La password non può contenere più di 50 caratteri
-global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,Your password is required to be at least 4 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
-global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,Your password is required.,Votre mot de passe est requis.,La password è obbligatoria.
-global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Robustezza della password:
+global,global.messages.validate.confirmpassword.maxlength,Das bestätigte Passwort darf nicht länger als 50 Zeichen sein,Your confirmation password cannot be longer than 50 characters.,Le mot de passe confirmé ne doit pas comporter plus de 50 caractères.,La tua password non può contenere più di 50 caratteri
+global,global.messages.validate.confirmpassword.minlength,Das bestätigte Passwort muss mindestens 5 Zeichen lang sein,Your confirmation password must be at least 5 characters.,Le mot de passe confirmé doit comporter au moins 5 caractères.,La tua password deve essere di almeno 4 caratteri
+global,global.messages.validate.confirmpassword.required,Sie müssen das Passwort bestätigen.,You must confirm your password.,Vous devez confirmer le mot de passe.,La password di conferma è obbligatoria.
+global,global.messages.validate.email.invalid,Ihre Email Adresse ist ungültig.,Your email address is invalid.,Votre adresse e-mail n'est pas valide.,L'indirizzo email non è valido.
+global,global.messages.validate.email.maxlength,Ihre Email Adresse darf nicht länger als 50 Zeichen sein,Your email address cannot be longer than 50 characters.,Votre adresse e-mail ne doit pas comporter plus de 50 caractères.,L'indirizzo email non può contenere più di 50 caratteri
+global,global.messages.validate.email.minlength,Ihre Email Adresse muss mindestens 5 Zeichen lang sein,Your email address must be at least 5 characters.,Votre adresse e-mail doit comporter au moins 5 caractères.,L'indirizzo email deve essere di almeno 5 caratteri
+global,global.messages.validate.email.required,Ihre Email Adresse wird benötigt.,Your email address is required.,Votre adresse e-mail est requise.,L'indirizzo email è obbligatorio.
+global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nicht länger als 50 Zeichen sein,The new password cannot be longer than 50 characters.,Votre mot de passe ne doit pas comporter plus de 50 caractères.,La password non può contenere più di 50 caratteri
+global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,The new password must be at least 5 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
+global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,A new password is required.,Un nouveau mot de passe est requis.,La password è obbligatoria.
+global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Sicurezza della password:
 global,global.reference.canton.AG,Aargau,Aargau,Argovie,Argovia
 global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
 global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
 global,global.reference.canton.BE,Bern,Bern,Berne,Berna
 global,global.reference.canton.BL,Basel-Landschaft,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna
 global,global.reference.canton.BS,Basel-Stadt,Basel-Stadt,Bâle-Ville,Basilea-Città
+global,global.reference.canton.CH,Schweiz,Schweiz,Suisse,Svizzera
+global,global.reference.canton.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Principato Liechtenstein
 global,global.reference.canton.FR,Freiburg,Freiburg,Fribourg,Friburgo
 global,global.reference.canton.GE,Genf,Genf,Genève,Ginevra
 global,global.reference.canton.GL,Glarus,Glarus,Glaris,Glarona
@@ -287,21 +308,21 @@ global,global.reference.language.it,Italienisch,Italienisch,Italienisch,Italieni
 global,global.reference.language.jp,Japanisch,Japanisch,Japanisch,Japanisch
 global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
 global,global.reference.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
-global,global.reference.language.level.BASIC,Grundkenntnisse,Grundkentnisse,Grundkentnisse,Grundkentnisse
-global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Fortgeschritten
-global,global.reference.language.level.NONE,keine Kenntnisse,keine Kentnisse,keine Kentnisse,keine Kentnisse
+global,global.reference.language.level.BASIC,Grundkenntnisse,Grundkentnisse,Grundkentnisse,Principiante
+global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Avanzato
+global,global.reference.language.level.NONE,keine Kenntnisse,keine Kentnisse,keine Kentnisse,nessuna conoscenza
 global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
 global,global.reference.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
 global,global.reference.language.ne,Holländisch,Holländisch,Holländisch,Holländisch
 global,global.reference.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
-global,global.reference.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Keine Auswahl
+global,global.reference.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Nessuna scelta
 global,global.reference.language.po,Polnisch,Polnisch,Polnisch,Polnisch
 global,global.reference.language.pt,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
 global,global.reference.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch
 global,global.reference.language.ru,Russisch,Russisch,Russisch,Russisch
 global,global.reference.language.sk,Slowakisch,Slowakisch,Slowakisch,Slowakisch
 global,global.reference.language.sl,Slowenisch,Slowenisch,Slowenisch,Slowenisch
-global,global.reference.language.spoken,mündlich,mündlich,mündlich,mündlich
+global,global.reference.language.spoken,mündlich,mündlich,mündlich,orale
 global,global.reference.language.sq,Albanisch,Albanisch,Albanisch,Albanisch
 global,global.reference.language.sr,Serbisch,Serbisch,Serbisch,Serbisch
 global,global.reference.language.sv,Schwedisch,Schwedisch,Schwedisch,Schwedisch
@@ -309,9 +330,9 @@ global,global.reference.language.ta,Tamil,Tamil,Tamil,Tamil
 global,global.reference.language.th,Thai,Thai,Thai,Thai
 global,global.reference.language.tr,Türkisch,Türkisch,Türkisch,Türkisch
 global,global.reference.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vietnamesisch
-global,global.reference.language.written,schriftlich,schriftlich,schriftlich,schriftlich
+global,global.reference.language.written,schriftlich,schriftlich,schriftlich,scritto
 global,global.reference.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
-global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Sprachen
+global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Lingue
 global,global.reference.region.A,Ausland,Ausland,étranger,esteroLU05
 global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
 global,global.reference.region.AG02,Baden,Baden,Baden,Baden
@@ -402,7 +423,7 @@ global,global.reference.region.TG06,Münchenwil,Münchenwil,Münchenwil,München
 global,global.reference.region.TG07,Steckborn,Steckborn,Steckborn,Steckborn
 global,global.reference.region.TG08,Weinfelden,Weinfelden,Weinfelden,Weinfelden
 global,global.reference.region.TI01,"Blenio, Leventina, Riviera","Blenio, Leventina, Riviera","Blenio, Leventina, Riviera","Blenio, Leventina, Riviera"
-global,global.reference.region.TI02,"Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio"
+global,global.reference.region.TI02,"Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggio","Locarno, Vallemaggia"
 global,global.reference.region.TI03,Lugano,Lugano,Lugano,Lugano
 global,global.reference.region.TI04,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto
 global,global.reference.region.TI06,Bellinzonese,Bellinzonese,Bellinzonese,Bellinzonese
@@ -438,11 +459,11 @@ global,global.ribbon.development,Development,Development,Développement,Developm
 global,global.ribbon.test,Test,Test,Test,Test
 global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
 global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
-global,navigation.next,Nächster,Next,Nächster,Nächster
-global,navigation.previous,Bisherige,Previous,Bisherige,Bisherige
+global,navigation.next,Nächster,Next,Suivant,Seguente
+global,navigation.previous,Bisherige,Previous,Ancien,Precedente
 health,health.details.details,Details,Details,Détails,Dettagli
 health,health.details.error,Fehler,Error,Erreur,Errore
-health,health.details.name,Name,Name,Nom,Nome
+health,health.details.name,Name,Name,Nom,Cognome
 health,health.details.properties,Eigenschaften,Properties,Propriétés,Proprietà
 health,health.details.value,Wert,Value,Valeur,Valore
 health,health.indicator.configServer,Microservice Config Server,Microservice Config Server,Microservice Config Server,Server di Configurazioni Microservice
@@ -459,20 +480,20 @@ health,health.status.UP,Oben,UP,DISPONIBLE,DISPONIBILE
 health,health.table.service,Dienst Name,Service name,Nom du service,Nome del servizio
 health,health.table.status,Status,Status,Etat,Stato
 health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
-home,home.title,JobRoom,JobRoom,JobRoom,JobRoom
+home,home.title,Job Room,Job Room,Job Room,Job Room
 home,home.title.portal,arbeit,work,travail,lavoro
 home,home.title.portal-url,https://www.arbeit.swiss,https://www.work.swiss,https://www.travail.swiss,https://www.lavoro.swiss
-home,home.toolbar.companies,Unternehmen,Unternehmen,Unternehmen,Unternehmen
-home,home.toolbar.jobSeekers,Stellensuchende,Stellensuchende,Stellensuchende,Stellensuchende
-home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler,Arbeitsvermittler
-home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für,Job-Room bietet Leistungen für
+home,home.toolbar.companies,Unternehmen,Companies,Entreprise,Imprese
+home,home.toolbar.jobSeekers,Stellensuchende,Job seekers,Demandeur d'emploi,Persone in cerca d'impiego
+home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Recruitment agencies,Agence de placement,Collocatori
+home,home.toolbar.title,Job-Room bietet Leistungen für,Job Room offers services for,Job-Room offre des services pour,Job-Room offre servizi per
 home,home.tools.candidate-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden"
 home,home.tools.candidate-search.search-badge.none,Diesem Job-Profil entspricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende
 home,home.tools.candidate-search.search-badge.one,"Diesem Job-Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende"
 home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
-home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen,Kandidaten anzeigen
-home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten,Finden Sie passende Kandidaten
-home,home.tools.candidateSearchTab,Kandidaten finden,Kandidaten finden,Kandidaten finden,Kandidaten finden
+home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Display candidates,Afficher des candidats,Visualizza candidati
+home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Find suitable candidates,Trouvez des candidats appropriés,Trova il candidato giusto
+home,home.tools.candidateSearchTab,Kandidaten finden,Find candidates,Trouver des candidats,Trova candidati
 home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} characters available,{{count}} characters available,{{count}} characters available,{{count}} characters available
 home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
 home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Characters,max. 240 Characters,max. 240 Characters,max. 240 Characters
@@ -531,172 +552,172 @@ home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stelle
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.job-publication.workload,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
-home,home.tools.job-search.search-button.title,Jobs anzeigen,Traumjob finden!,Traumjob finden!,Traumjob finden!
+home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.job-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs"
 home,home.tools.job-search.search-badge.none,Diesem Job-Profil entspricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs
 home,home.tools.job-search.search-badge.one,"Diesem Job-Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs"
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
-home,home.tools.jobPublicationTab,Job publizieren,Job publizieren,Job publizieren,Job publizieren
-home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!,Finden Sie jetzt Ihren Traumjob!
-job-detail,job-detail.action.applyNow,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben,Jetzt Bewerben
-job-detail,job-detail.action.copyLink,Link kopieren,Link kopieren,Link kopieren,Link kopieren
-job-detail,job-detail.action.print,Drucken,Drucken,Drucken,Drucken
-job-detail,job-detail.action.saveJob,Stellenangebot speichern,Stellenangebot speichern,Stellenangebot speichern,Stellenangebot speichern
-job-detail,job-detail.action.savePdf,Als PDF speichern,Als PDF speichern,Als PDF speichern,Als PDF speichern
-job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden,Per E-Mail versenden
-job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat,Zum externen Stelleninserat
-job-detail,job-detail.application.email,Per E-Mail,E-Mail,Per E-Mail,Per E-Mail
-job-detail,job-detail.application.hints,Ergänzende Angaben,Hints,Ergänzende Angaben,Ergänzende Angaben
-job-detail,job-detail.application.mail,Per Post,For Mail,Per Post,Per Post
-job-detail,job-detail.application.mail.text,siehe Adresse des Unternehmens,See company address,siehe Adresse des Unternehmens,siehe Adresse des Unternehmens
-job-detail,job-detail.application.phone,Telefonisch,Phone,Telefonisch,Telefonisch
-job-detail,job-detail.application.title,Bewerbungsformen,Application,Bewerbungsformen,Bewerbungsformen
-job-detail,job-detail.back,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen,Zurück zu den Suchergebnissen
-job-detail,job-detail.contactPerson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
-job-detail,job-detail.external-job-disclaimer,"Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.                                                                                                                                                              ","This ad has been found on an external website. The unemployment insurance and public employment service provides this search result as an additional service, but has no influence on its content and quality.                                                                                                                                                                                                                    ","Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.                                                                                                                                                                                           ","Questo annuncio ? stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcuna influenza sul suo contenuto e qualit?."
-job-detail,job-detail.onlineSince,Vakant seit,Vakant seit,Vakant seit,Vakant seit
-job-detail,job-detail.otherJobsCompany,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen,{{count}} Jobs anzeigen
-job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen,{{count}} ähnliche Jobs anzeigen
-job-detail,job-detail.reference,Referenz,Referenz,Referenz,Referenz
-job-detail,job-detail.reference.job-id,Stellennummer,Stellennummer,Stellennummer,Stellennummer
-job-detail,job-detail.reference.phone,Telefon,Telefon,Telefon,Telefon
-job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV,Zuständiges RAV
-job-detail,job-detail.startsImmediately,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
-job-detail,job-detail.startsImmediately.false,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung
-job-detail,job-detail.startsImmediately.true,ab Sofort,ab sofort,ab sofort,ab sofort
-job-detail,job-detail.title,Job detail,Job detail,Job detail,Job detail
-job-search,job-search.filter.company-name.label,Name des Unternehmens,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
-job-search,job-search.filter.company-name.placeholder,Name des Unternehmens,Name des Unternehmen,Name des Unternehmen,Name des Unternehmen
-job-search,job-search.filter.contract-type.label,Vertragsart,Vertragsart,Vertragsart,Vertragsart
-job-search,job-search.filter.contract-type.option.ALL,Alle,Alle,Alle,Alle
-job-search,job-search.filter.contract-type.option.PERMANENT,unbefristet,Unbefristet,Unbefristet,Unbefristet
-job-search,job-search.filter.contract-type.option.TEMPORARY,befristet,Befristet,Befristet,Befristet
-job-search,job-search.filter.online-since.days.label,Tage(n),Tage(n),Tage(n),Tage(n)
-job-search,job-search.filter.online-since.label,Online seit,Online seit,Online seit,Online seit
-job-search,job-search.filter.sort.label,Sortierung,Sortierung,Sortierung,Sortierung
-job-search,job-search.filter.sort.option.DATE_ASC,Sortiere nach Datum aufsteigend,Sortiere nach Datum aufsteigend,Sortiere nach Datum aufsteigend,Sortiere nach Datum aufsteigend
-job-search,job-search.filter.sort.option.DATE_DESC,Sortiere nach Datum absteigend,Sortiere nach Datum absteigend,Sortiere nach Datum absteigend,Sortiere nach Datum absteigend
-job-search,job-search.filter.sort.option.RELEVANCE_DESC,Sortiere nach Relevanz,Sortiere nach Relevanz,Sortiere nach Relevanz,Sortiere nach Relevanz
-job-search,job-search.filter.title,Suchergebnisse filtern,Suchergebnisse filtern,Suchergebnisse filtern,Suchergebnisse filtern
-job-search,job-search.filter.working-time.label,Pensum,Pensum,Pensum,Pensum
-job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Unbefristet,Unbefristet,Unbefristet
-job-search,job-search.job-search-list-item.badge.temporary,Befristet,Befristet,Befristet,Befristet
-job-search,job-search.job-search-list.error-message,Die Resultate der Jobsuche konnten nicht geladen werden,Failed to load job result list!,Failed to load job result list!,Failed to load job result list!
-job-search,job-search.job-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} Jobs in {{locality}}
-job-search,job-search.job-search-list.title.many.without-locality,Mehr als {{count}} {{query}} Jobs,More than {{count}} {{query}} Jobs,More than {{count}} {{query}} Jobs,More than {{count}} {{query}} Jobs
-job-search,job-search.job-search-list.title.none.with-locality,Keine {{query}} Jobs in {{locality}},No {{query}} Jobs in {{locality}},No {{query}} Jobs in {{locality}},No {{query}} Jobs in {{locality}}
-job-search,job-search.job-search-list.title.none.without-locality,Keine {{query}} Jobs,No {{query}} Jobs,No {{query}} Jobs,No {{query}} Jobs
-job-search,job-search.job-search-list.title.one.with-locality,1 {{query}} Job in {{locality}},1 {{query}} Job in {{locality}},1 {{query}} Job in {{locality}},1 {{query}} Job in {{locality}}
-job-search,job-search.job-search-list.title.one.without-locality,1 {{query}} Job,1 {{query}} Job,1 {{query}} Job,1 {{query}} Job
-job-search,job-search.job-search-list.title.other.with-locality,{{count}} {{query}} Jobs in {{locality}},{{count}} {{query}} Jobs in {{locality}},{{count}} {{query}} Jobs in {{locality}},{{count}} {{query}} Jobs in {{locality}}
-job-search,job-search.job-search-list.title.other.without-locality,{{count}} {{query}} Jobs,{{count}} {{query}} Jobs,{{count}} {{query}} Jobs,{{count}} {{query}} Jobs
-job-search,job-search.title,Job suchen,Job search,Job search,Job search
-job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Select my current location,Select my current location
-job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton","Ort, Region, Kanton"
-job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Berufsbezeichnung, Berufsgruppe, Fähigkeiten"
-job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Canton
-job-search,typeahead-multiselect.type.classification,Klassifizierung,Classification,Classification,Classification
-job-search,typeahead-multiselect.type.locality,Ortschaft,Ortschaft,Ortschaft,Ortschaft
-job-search,typeahead-multiselect.type.occupation,Berufsbezeichnung,Occupation,Occupation,Occupation
-job,jobroomApp.job.ageMax,Max. Alter,Age Max,Age Max,Age Max
-job,jobroomApp.job.ageMin,Min. Alter,Age Min,Age Min,Age Min
-job,jobroomApp.job.ageRestrictionReason,Grund für Altersbeschränkung,Age Restriction Reason,Age Restriction Reason,Age Restriction Reason
+home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
+home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Find your dream job now!,Partez à la recherche de l'emploi dont vous rêvez !,Trova adesso il tuo lavoro da sogno!
+job-detail,job-detail.action.applyNow,Jetzt Bewerben,Apply now,Postuler maintenant,Candidarsi ora
+job-detail,job-detail.action.copyLink,Link kopieren,Copy link,Copier le lien,Copia link
+job-detail,job-detail.action.print,Drucken,Print,Imprimer,Stampa
+job-detail,job-detail.action.saveJob,Stellenangebot speichern,Save job posting,Sauvegarder l'offre d'emploi,Salva offerta di lavoro
+job-detail,job-detail.action.savePdf,Als PDF speichern,Save as PDF,Sauvegarder en tant que PDF,Salva come PDF
+job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Send via email,Envoyer par e-mail,Invia per email
+job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Link to external job posting,Vers l'offre d'emploi externe,vai all'annuncio esterno
+job-detail,job-detail.application.email,Per E-Mail,Via email,Par e-mail,Via email
+job-detail,job-detail.application.hints,Ergänzende Angaben,Additional information,Indications complémentaires,Dati complementari
+job-detail,job-detail.application.mail,Per Post,Via post,Par la poste,Per posta
+job-detail,job-detail.application.mail.text,siehe Adresse des Unternehmens,See company address,Voir l'adresse de l'entreprise,V. indirizzo dell'impresa
+job-detail,job-detail.application.phone,Telefonisch,By phone,Par téléphone,Telefonicamente
+job-detail,job-detail.application.title,Bewerbungsformen,Application forms,Types de postulation,Tipologie di candidatura
+job-detail,job-detail.back,Zurück zu den Suchergebnissen,Back to search results,Retour à la liste des résultats,Torna ai risultati della ricerca
+job-detail,job-detail.contactPerson,Ihre Kontaktperson,Your contact person,Votre personne de contact,La tua persona di contatto
+job-detail,job-detail.external-job-disclaimer,"Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und öffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zusätzliche Dienstleistung zur Verfügung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualität.                                                                                                                                                              ","This job posting was found on an external website. The unemployment insurance and public employment service provides this search result as an additional service. It has no influence on its content and quality.                                                                                                                                                                                                                    ","Cette annonce a été trouvée sur un site externe. L'assurance-chômage et le service public de l'emploi fournissent ce résultat de recherche en tant que service supplémentaire, mais n'a aucune influence sur son contenu et sa qualité.                                                                                                                                                                                           ","Questo annuncio è stato trovato su un sito web esterno. L'assicurazione contro la disoccupazione e il servizio pubblico per l'impiego fornisce questo risultato di ricerca come un servizio aggiuntivo, ma non ha alcun influsso sul suo contenuto né sulla sua qualità."
+job-detail,job-detail.onlineSince,Vakant seit,Vacant since,Libre depuis,Vacante dal
+job-detail,job-detail.otherJobsCompany,{{count}} Jobs anzeigen,Show {{count}} jobs,Montrer {{count}} emplois,"{{count}} Visualizzare posti "
+job-detail,job-detail.otherJobsEquivalent,{{count}} ähnliche Jobs anzeigen,Show {{count}} similar jobs,Montrer {{count}} emplois semblables,{{count}} Visualizzare posti simili
+job-detail,job-detail.reference,Referenz,Reference,Référence,Riferimento
+job-detail,job-detail.reference.job-id,Stellennummer,Job ID,Numéro du poste,Numero posto
+job-detail,job-detail.reference.phone,Telefon,Telephone,Téléphone,Telefono
+job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Responsible job centre,ORP compétent,URC competente
+job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fonction,Entrata in funzione
+job-detail,job-detail.startsImmediately.false,nach Vereinbarung,By arrangement,A convenir,previo accordo
+job-detail,job-detail.startsImmediately.true,ab Sofort,Immediately,Tout de suite,subito
+job-detail,job-detail.title,Job detail,Job detail,Détail de l'emploi,Dettagli sul posto
+job-search,job-search.filter.company-name.label,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
+job-search,job-search.filter.company-name.placeholder,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
+job-search,job-search.filter.contract-type.label,Vertragsart,Contract type,Type de contrat,Tipologia di contratto
+job-search,job-search.filter.contract-type.option.ALL,Alle,All,Tous,Tutto
+job-search,job-search.filter.contract-type.option.PERMANENT,unbefristet,Permanent,indéterminé,A tempo indeterminato
+job-search,job-search.filter.contract-type.option.TEMPORARY,befristet,Temporary,durée limitée,A tempo determinato
+job-search,job-search.filter.online-since.days.label,Tage(n),Days(n),Jour(s),Giorno(i)
+job-search,job-search.filter.online-since.label,Online seit,Online since,En ligne depuis,Online dal
+job-search,job-search.filter.sort.label,Sortierung,Sort,Tri,Classificazione
+job-search,job-search.filter.sort.option.DATE_ASC,Sortiere nach Datum aufsteigend,Sort by date ascending,Tri par date - ordre croissant,Ordine crescente per data
+job-search,job-search.filter.sort.option.DATE_DESC,Sortiere nach Datum absteigend,Sort by date descending,Tri par date - ordre décroissant,Ordine decrescente per data
+job-search,job-search.filter.sort.option.RELEVANCE_DESC,Sortiere nach Relevanz,Sort by relevance,Tri selon pertinence,Classifica per pertinenza
+job-search,job-search.filter.title,Suchergebnisse filtern,Filter search result,Filtrer les résultats,Filtra risultati della ricerca
+job-search,job-search.filter.working-time.label,Pensum,Workload,Taux d'occupation,Grado di occupazione
+job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
+job-search,job-search.job-search-list-item.badge.temporary,Befristet,Temporary,Durée limitée,A tempo determinato
+job-search,job-search.job-search-list.error-message,Jobsuche fehlgeschlagen,Failed to load job result list!,Les résultats de la recherche d'emplois n'ont pas pu être chargés,Impossibile caricare l'ultima lista di posti!
+job-search,job-search.job-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} jobs in {{locality}},Plus de {{count}} {{query}} emplois à {{locality}},Più di {{count}} {{query}} posti in {{locality}}
+job-search,job-search.job-search-list.title.many.without-locality,Mehr als {{count}} {{query}} Jobs,More than {{count}} {{query}} jobs,Plus de {{count}} {{query}} emplois,Più di {{count}} {{query}} posti
+job-search,job-search.job-search-list.title.none.with-locality,Keine {{query}} Jobs in {{locality}},No {{query}} jobs in {{locality}},Aucun {{query}} emploi à {{locality}},Nessun {{query}} posto in {{locality}}
+job-search,job-search.job-search-list.title.none.without-locality,Keine {{query}} Jobs,No {{query}} jobs,Aucun {{query}} emploi,Nessun {{query}} posto
+job-search,job-search.job-search-list.title.one.with-locality,1 {{query}} Job in {{locality}},1 {{query}} job in {{locality}},1 {{query}} emploi à {{locality}},1 {{query}} posto in {{locality}}
+job-search,job-search.job-search-list.title.one.without-locality,1 {{query}} Job,1 {{query}} job,1 {{query}} emploi,1 {{query}} posto
+job-search,job-search.job-search-list.title.other.with-locality,{{count}} {{query}} Jobs in {{locality}},{{count}} {{query}} jobs in {{locality}},{{count}} {{query}} emplois à {{locality}},{{count}} {{query}} posti in {{locality}}
+job-search,job-search.job-search-list.title.other.without-locality,{{count}} {{query}} Jobs,{{count}} {{query}} jobs,{{count}} {{query}} emplois,{{count}} {{query}} posti
+job-search,job-search.title,Job suchen,Job search,Chercher un emploi,Cerca posti
+job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Sélectionner le lieu actuel,selezione la mia posizione attuale
+job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Location, region, canton","Lieu, région, canton","Località, regione, Cantone"
+job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Professional title, professional group, competencies","Désignation de la profession, groupe de profession, compétences","Denominazione professionale, gruppo professionale, competenze"
+job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
+job-search,typeahead-multiselect.type.classification,Klassifizierung,Classification,Classification,Classificazione
+job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località
+job-search,typeahead-multiselect.type.occupation,Beschäftigungsgrad,Working time,Taux d'occupation,Grado di occupazione
+job,jobroomApp.job.ageMax,Max. Alter,Max age,Age Max,"Età max "
+job,jobroomApp.job.ageMin,Min. Alter,Min age,Age Min,Età min
+job,jobroomApp.job.ageRestrictionReason,Grund für Altersbeschränkung,Reason for age restriction,Raison de la limitation de l'âge,Motivo limitazione età
 job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url
-job,jobroomApp.job.cancellationDate,Annulationsdatum,Cancellation Date,Cancellation Date,Cancellation Date
-job,jobroomApp.job.cancellationReason,Annluationsgrund,Cancellation Reason,Cancellation Reason,Cancellation Reason
-job,jobroomApp.job.companyAddressLine1,Unternehmensadresse Zeile 1,Company Address Line 1,Company Address Line 1,Company Address Line 1
-job,jobroomApp.job.companyAddressLine2,Unternehmensadresse Zeile 2,Company Address Line 2,Company Address Line 2,Company Address Line 2
-job,jobroomApp.job.companyCity,Ort,Company City,Company City,Company City
-job,jobroomApp.job.companyCountryCode,Land,Company Country Code,Company Country Code,Company Country Code
-job,jobroomApp.job.companyEmail,Email Adresse,Company Email,Company Email,Company Email
-job,jobroomApp.job.companyName,Name,Company Name,Company Name,Company Name
-job,jobroomApp.job.companyPhone,Telefon,Company Phone,Company Phone,Company Phone
-job,jobroomApp.job.companyPostboxCity,Postfach,Company Postbox City,Company Postbox City,Company Postbox City
-job,jobroomApp.job.companyPostboxNumber,Postfachnummer,Company Postbox Number,Company Postbox Number,Company Postbox Number
-job,jobroomApp.job.companyPostboxZipCode,Postleitzahl,Company Postbox Zip Code,Company Postbox Zip Code,Company Postbox Zip Code
-job,jobroomApp.job.companyWebsite,Webseite,Company Website,Company Website,Company Website
-job,jobroomApp.job.companyZipCode,Postleitzahl,Company Zip Code,Company Zip Code,Company Zip Code
-job,jobroomApp.job.contactEmail,Kontakt E-Mail,Contact Email,Contact Email,Contact Email
-job,jobroomApp.job.contactFirstName,Kontakt Vorname,Contact First Name,Contact First Name,Contact First Name
-job,jobroomApp.job.contactLastName,Kontakt Nachname,Contact Last Name,Contact Last Name,Contact Last Name
-job,jobroomApp.job.contactPhone,Kontakt Telefonnummer,Contact Phone,Contact Phone,Contact Phone
-job,jobroomApp.job.contactTitle,Kontakt Anrede,Contact Title,Contact Title,Contact Title
-job,jobroomApp.job.currencyCode,Währungscode,Currency Code,Currency Code,Currency Code
-job,jobroomApp.job.delete.question,Soll Job {{ id }} wirklich endgültig gelöscht werden?,Are you sure you want to delete Job {{ id }}?,Etes-vous certain de vouloir supprimer le Job {{ id }} ?,Sei sicuro di volere eliminare Job {{ id }}?
-job,jobroomApp.job.description,Beschreibung,Description,Description,Description
-job,jobroomApp.job.detail.title,Job,Job,Job,Job
-job,jobroomApp.job.drivingLicenseLevel,Führerausweiskategorie,Driving License Level,Driving License Level,Driving License Level
-job,jobroomApp.job.endDate,Enddatum,End Date,End Date,End Date
-job,jobroomApp.job.externalId,Externe ID,External Id,External Id,External Id
-job,jobroomApp.job.externalUrl,Externe URL,External Url,External Url,External Url
-job,jobroomApp.job.fingerPrint,Fingerabdruck,Finger Print,Finger Print,Finger Print
-job,jobroomApp.job.gender,Geschlecht,Gender,Gender,Gender
-job,jobroomApp.job.hasPersonalVehicle,Verfügt über eigenes Fahrzeug,Has Personal Vehicle,Has Personal Vehicle,Has Personal Vehicle
-job,jobroomApp.job.home.createLabel,Job erstellen,Create a new Job,Créer un nouveau Job,Genera un nuovo Job
-job,jobroomApp.job.home.createOrEditLabel,Job erstellen oder bearbeiten,Create or edit a Job,Créer ou éditer un Job,Genera o modifica un Job
-job,jobroomApp.job.home.title,Jobs,Jobs,Jobs,Jobs
-job,jobroomApp.job.isJobSharing,Jobsharing,Is Job Sharing,Is Job Sharing,Is Job Sharing
-job,jobroomApp.job.isPermanent,Festanstellung,Is Permanent,Is Permanent,Is Permanent
-job,jobroomApp.job.isSuitableForDisabled,Is Suitable For Disabled,Is Suitable For Disabled,Is Suitable For Disabled,Is Suitable For Disabled
-job,jobroomApp.job.languages,Sprachen,Languages,Languages,Languages
-job,jobroomApp.job.locality.cantonCode,Locality Canton Code,Locality Canton Code,Locality Canton Code,Locality Canton Code
-job,jobroomApp.job.locality.communalCode,Locality Communal Code,Locality Communal Code,Locality Communal Code,Locality Communal Code
-job,jobroomApp.job.locality.countryCode,Locality Country Code,Locality Country Code,Locality Country Code,Locality Country Code
-job,jobroomApp.job.locality.regionCode,Locality Region Code,Locality Region Code,Locality Region Code,Locality Region Code
-job,jobroomApp.job.locality.text,Locality Text,Locality Text,Locality Text,Locality Text
-job,jobroomApp.job.locality.zipCode,Job Locality Zip Code,Job Locality Zip Code,Job Locality Zip Code,Job Locality Zip Code
-job,jobroomApp.job.numberOfJobs,Anzahl Jobangebote,Number Of Jobs,Number Of Jobs,Number Of Jobs
-job,jobroomApp.job.paymentMax,Maximaler Lohn,Payment Max,Payment Max,Payment Max
-job,jobroomApp.job.paymentMin,Minimaler Lohn,Payment Min,Payment Min,Payment Min
-job,jobroomApp.job.professions,Berufe,Professions,Professions,Professions
-job,jobroomApp.job.publicationEndDate,Publizieren bis,Publication End Date,Publication End Date,Publication End Date
-job,jobroomApp.job.publicationStartDate,Publizieren ab,Publication Start Date,Publication Start Date,Publication Start Date
-job,jobroomApp.job.registrationDate,Registriert am,Registration Date,Registration Date,Registration Date
-job,jobroomApp.job.startDate,Verfügbar ab,Start Date,Start Date,Start Date
-job,jobroomApp.job.startsImmediately,sofort Verfügbar,Starts Immediately,Starts Immediately,Starts Immediately
-job,jobroomApp.job.title,Titel,Title,Title,Title
-job,jobroomApp.job.workingTimePercentageMax,Max. Beschäftigungsgrad,Working Time Percentage Max,Working Time Percentage Max,Working Time Percentage Max
-job,jobroomApp.job.workingTimePercentageMin,Min. Beschäftigungsgrad,Working Time Percentage Min,Working Time Percentage Min,Working Time Percentage Min
-job,jobserviceApp.job.created,Job mit ID {{ param }} erstellt,A new Job is created with identifier {{ param }},Un nouveau Job a été créé avec l'identifiant {{ param }},È stato generato un nuovo Job con identificatore { param }}
-job,jobserviceApp.job.deleted,Job mit ID {{ param }} gelöscht,A Job is deleted with identifier {{ param }},Le Job avec l'identifiant {{ param }} a été supprimé,È stato eliminato Job con identificatore {{ param }}
-job,jobserviceApp.job.updated,Job mit ID {{ param }} aktualisiert,A Job is updated with identifier {{ param }},Le Job avec l'identifiant {{ param }} a été mis à jour,È stato aggiornato Job identificato da {{ param }}
+job,jobroomApp.job.cancellationDate,Annulationsdatum,Cancellation date,Date d'annulation,Data di cancellazione
+job,jobroomApp.job.cancellationReason,Annluationsgrund,Cancellation reason,Motif de l'annulation,Motivo cancellazione
+job,jobroomApp.job.companyAddressLine1,Unternehmensadresse Zeile 1,Company Address Line 1,Adresse de l'entreprise - ligne 1,Indirizzo impresa riga 1
+job,jobroomApp.job.companyAddressLine2,Unternehmensadresse Zeile 2,Company Address Line 2,Adresse de l'entreprise - ligne 2,Indirizzo impresa riga 2
+job,jobroomApp.job.companyCity,Ort,Company City,Lieu,Città dell'impresa
+job,jobroomApp.job.companyCountryCode,Land,Company Country Code,Pays,Codice Paese impresa
+job,jobroomApp.job.companyEmail,Email Adresse,Company Email,Adresse e-mail,Email impresa
+job,jobroomApp.job.companyName,Name,Company Name,Nom,Nome impresa
+job,jobroomApp.job.companyPhone,Telefon,Company Phone,Téléphone,Telefono impresa
+job,jobroomApp.job.companyPostboxCity,Postfach,Company Postbox City,Case postale,Casella postale Città impresa
+job,jobroomApp.job.companyPostboxNumber,Postfachnummer,Company Postbox Number,Numéro de la case postale,Numero casella postale impresa
+job,jobroomApp.job.companyPostboxZipCode,Postleitzahl,Company Postbox Zip Code,Code postal,Zip Code casella postale impresa
+job,jobroomApp.job.companyWebsite,Webseite,Company Website,Site web,Sito web impresa
+job,jobroomApp.job.companyZipCode,Postleitzahl,Company Zip Code,Code postal,Zip Code impresa
+job,jobroomApp.job.contactEmail,Kontakt E-Mail,Contact Email,Contact - E-mail,Email contatto
+job,jobroomApp.job.contactFirstName,Kontakt Vorname,Contact First Name,Contact - Prénom,Nome contatto
+job,jobroomApp.job.contactLastName,Kontakt Nachname,Contact Last Name,Contact - Nom,Cognome contatto
+job,jobroomApp.job.contactPhone,Kontakt Telefonnummer,Contact Phone,Contact - Numéro de téléphone,Telefono contatto
+job,jobroomApp.job.contactTitle,Kontakt Anrede,Contact Title,Contact - Titre,Titolo contatto
+job,jobroomApp.job.currencyCode,Währungscode,Currency Code,Monnaie,Codice valuta
+job,jobroomApp.job.delete.question,Soll Job {{ id }} wirklich endgültig gelöscht werden?,Are you sure you want to delete the job {{ id }}?,Etes-vous certain de vouloir supprimer l'emploi {{ id }} ?,Sei sicuro di volere eliminare il posto {{ id }}?
+job,jobroomApp.job.description,Beschreibung,Description,Description,Descrizione
+job,jobroomApp.job.detail.title,Job,Job,Emploi,Posto
+job,jobroomApp.job.drivingLicenseLevel,Führerausweiskategorie,Driving licence level,Catégorie de permis de conduire,Categoria patente
+job,jobroomApp.job.endDate,Enddatum,End date,Date de fin,Data finale
+job,jobroomApp.job.externalId,Externe ID,External ID,ID externe,Id esterna
+job,jobroomApp.job.externalUrl,Externe URL,External Url,URL externe,Url esterna
+job,jobroomApp.job.fingerPrint,Fingerabdruck,Fingerprint,Empreinte digitale,Impronta digitale
+job,jobroomApp.job.gender,Geschlecht,Gender,Sexe,Sesso
+job,jobroomApp.job.hasPersonalVehicle,Verfügt über eigenes Fahrzeug,Has personal vehicle,Dispose de son propre véhicule,Automunito
+job,jobroomApp.job.home.createLabel,Job erstellen,Create a new job,Créer un emploi,Genera un nuovo posto
+job,jobroomApp.job.home.createOrEditLabel,Job erstellen oder bearbeiten,Create or edit a job,Créer ou éditer un emploi,Genera o modifica un posto
+job,jobroomApp.job.home.title,Jobs,Jobs,Emplois,Posti
+job,jobroomApp.job.isJobSharing,Jobsharing,Is job sharing,Partage d'emploi (job sharing),Is Job Sharing
+job,jobroomApp.job.isPermanent,Festanstellung,Is permanent,Emploi fixe,Is permanente
+job,jobroomApp.job.isSuitableForDisabled,Is Suitable For Disabled,Is suitable for disabled,Convient aux personnes handicapées,Is adatto ai disabili
+job,jobroomApp.job.languages,Sprachen,Languages,Langues,Lingue
+job,jobroomApp.job.locality.cantonCode,Locality Canton Code,Locality Canton Code,Localité - code canton,"Codice cantonale località "
+job,jobroomApp.job.locality.communalCode,Locality Communal Code,Locality Communal Code,Localité - code commune,"Codice comunale località "
+job,jobroomApp.job.locality.countryCode,Locality Country Code,Locality Country Code,Localité - code pays,"Codice Paese località "
+job,jobroomApp.job.locality.regionCode,Locality Region Code,Locality Region Code,Localité - code région,"Codice regione località "
+job,jobroomApp.job.locality.text,Locality Text,Locality Text,Texte localité,"Testo località "
+job,jobroomApp.job.locality.zipCode,Job Locality Zip Code,Job Locality Zip Code,Code postal lieu de l'emploi,Zip Code località posto
+job,jobroomApp.job.numberOfJobs,Anzahl Jobangebote,Number of jobs,Nombre des offres d'emploi,Numero di posti
+job,jobroomApp.job.paymentMax,Maximaler Lohn,Max payment,Salaire maximal,Pagamento max
+job,jobroomApp.job.paymentMin,Minimaler Lohn,Min payment,Salaire minimal,Pagamento min
+job,jobroomApp.job.professions,Berufe,Professions,Professions,Professioni
+job,jobroomApp.job.publicationEndDate,Publizieren bis,Publication end date,Publication jusqu'au,Data finale pubblicazione
+job,jobroomApp.job.publicationStartDate,Publizieren ab,Publication start date,Publication à partir du,Data inizio pubblicazione
+job,jobroomApp.job.registrationDate,Registriert am,Registration date,Saisi le,Data di registrazione
+job,jobroomApp.job.startDate,Verfügbar ab,Available from,Disponible à partir du,Data d'inizio
+job,jobroomApp.job.startsImmediately,sofort Verfügbar,Available immediately,Disponible tout de suite,Inizio immediato
+job,jobroomApp.job.title,Titel,Title,Titre,Titolo
+job,jobroomApp.job.workingTimePercentageMax,Max. Beschäftigungsgrad,Maximum working time percentage,Taux d'occupation maximal,Grado di occupazione max
+job,jobroomApp.job.workingTimePercentageMin,Min. Beschäftigungsgrad,Minimum working time percentage,Taux d'occupation minimal,Grado di occupazione min
+job,jobserviceApp.job.created,Job mit ID {{ param }} erstellt,A new job is created with identifier {{ param }},"Un emploi portant l'ID {{ param }} a été créé ",È stato generato un nuovo posto con identificatore { param }}
+job,jobserviceApp.job.deleted,Job mit ID {{ param }} gelöscht,A job is deleted with identifier {{ param }},L'emploi portant l'ID {{ param }} a été supprimé,È stato eliminato un posto con identificatore {{ param }}
+job,jobserviceApp.job.updated,Job mit ID {{ param }} aktualisiert,A job is updated with identifier {{ param }},L'emploi portant l'ID {{ param }} a été mis à jour,È stato aggiornato un posto identificato da {{ param }}
 login,login.form.button,Anmelden,Sign in,Connexion,Accedi
 login,login.form.password,Passwort,Password,Mot de passe,Password
 login,login.form.password.placeholder,Ihr Passwort,Your password,Votre mot de passe,La tua password
 login,login.form.rememberme,Automatische Anmeldung,Remember me,Garder la session ouverte,Ricordami
 login,login.messages.error.authentication,<strong>Anmeldung fehlgeschlagen!</strong> Überprüfen Sie bitte Ihre Angaben und versuchen Sie es erneut.,<strong>Failed to sign in!</strong> Please check your credentials and try again.,<strong>Erreur d'authentification !</strong> Veuillez vérifier vos identifiants de connexion.,<strong>Accesso non riuscito!</strong> Si prega di controllare le credenziali e riprovare.
 login,login.password.forgot,Passwort vergessen,Did you forget your password?,Avez-vous oublié votre mot de passe ?,Password dimenticata?
-login,login.title,Anmelden,Sign in,Authentification,Accedi
-logs,audits.filter.button.clear,,,Effacer,
-logs,audits.filter.button.close,,,Fermer,
-logs,audits.filter.button.today,,,Aujourd'hui,
-logs,audits.filter.button.weeks,,,Semaines,
-logs,audits.filter.from,,,De,
-logs,audits.filter.title,,,Filtrer par date,
-logs,audits.filter.to,,,à,
-logs,audits.table.data.remoteAddress,,,Adresse Distante :,
-logs,audits.table.header.data,,,Autres données,
-logs,audits.table.header.date,,,Date,
-logs,audits.table.header.principal,,,Utilisateur,
-logs,audits.table.header.status,,,Status,
-logs,audits.title,,,Audits,
-logs,logs.filter,Filter,Filter,Filtrer,Filtro
+login,login.title,Anmelden,Sign in,Connexion,Accedi
+logs,audits.filter.button.clear,,,Effacer,Grado di occupazione ear
+logs,audits.filter.button.close,,,Fermer,Grado di occupazione ose
+logs,audits.filter.button.today,,,Aujourd'hui,Grado di occupazione day
+logs,audits.filter.button.weeks,,,Semaines,Grado di occupazione eks
+logs,audits.filter.from,,,De,Grado di occupazione rom
+logs,audits.filter.title,,,Filtrer par date,Grado di occupazione tle
+logs,audits.filter.to,,,à,Grado di occupazione .to
+logs,audits.table.data.remoteAddress,,,Adresse Distante :,Grado di occupazione address
+logs,audits.table.header.data,,,Autres données,Grado di occupazione ata
+logs,audits.table.header.date,,,Date,Grado di occupazione ate
+logs,audits.table.header.principal,,,Utilisateur,Grado di occupazione pal
+logs,audits.table.header.status,,,Status,Grado di occupazione tus
+logs,audits.title,,,Audits,Grado di occupazione tle
+logs,logs.filter,Filter,Filter,Filtres,Filtro
 logs,logs.nbloggers,Es existieren {{ total }} Logger.,There are {{ total }} loggers.,"Total de {{ total }} ""loggers"".",Hai {{ total }} logger.
 logs,logs.table.level,Stufe,Level,Niveau,Livello
 logs,logs.table.name,Name,Name,Nom,Nome
 logs,logs.title,Protokolle,Logs,Logs,Log
-metrics,metrics.cache.averageGetTime,,Average get time (µs),Temps de lecture moyen (µs),
-metrics,metrics.cache.averagePutTime,,Average put time (µs),Temps d'écriture moyen (µs),
-metrics,metrics.cache.averageRemoveTime,,Average remove time (µs),Temps de suppression moyen (µs),
+metrics,metrics.cache.averageGetTime,,Average get time (µs),Temps de lecture moyen (µs),Grado di occupazione time
+metrics,metrics.cache.averagePutTime,,Average put time (µs),Temps d'écriture moyen (µs),Grado di occupazione time
+metrics,metrics.cache.averageRemoveTime,,Average remove time (µs),Temps de suppression moyen (µs),Grado di occupazione time
 metrics,metrics.cache.cachename,Cache Name,Cache name,Nom du cache,Nome Cache
 metrics,metrics.cache.evictions,Anzahl entfernter Objekte,Cache Evictions,Évictions,Evictions
-metrics,metrics.cache.gets,,Cache Gets,Lectures,
-metrics,metrics.cache.hitPercent,,Cache Hit %,% données existantes,
+metrics,metrics.cache.gets,,Cache Gets,Lectures,Grado di occupazione ets
+metrics,metrics.cache.hitPercent,,Cache Hit %,% données existantes,Grado di occupazione percent
 metrics,metrics.cache.hits,Treffer,Cache Hits,Données existantes,Hits
-metrics,metrics.cache.missPercent,,Cache Miss %,% données non existantes,
+metrics,metrics.cache.missPercent,,Cache Miss %,% données non existantes,Grado di occupazione percent
 metrics,metrics.cache.misses,Keine Treffer,Cache Misses,Données non existantes,Misses
-metrics,metrics.cache.puts,,Cache Puts,Écritures,
-metrics,metrics.cache.removals,,Cache Removals,Suppressions,
+metrics,metrics.cache.puts,,Cache Puts,Écritures,Grado di occupazione uts
+metrics,metrics.cache.removals,,Cache Removals,Suppressions,Grado di occupazione als
 metrics,metrics.cache.title,Cache Statistiken,Cache statistics,Statistiques de cache,Statistiche cache
 metrics,metrics.datasource.count,Anzahl,Count,Total,Count
 metrics,metrics.datasource.max,Max,Max,Max,Max
@@ -777,62 +798,62 @@ organization,jobroomApp.organization.type,Type,Type,Type,Type
 organization,jobroomApp.organization.updated,Organization aktualisiert mit ID {{ param }},A Organization is updated with identifier {{ param }},Le Organization avec l'identifiant {{ param }} a été mis à jour,&Egrave
 organization,jobroomApp.organization.zipCode,Zip Code,Zip Code,Zip Code,Zip Code
 password,password.form.button,Speichern,Save,Sauvegarder,Salva
-password,password.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Das Passwort konnte nicht geändert werden.,<strong>An error has occurred!</strong> The password could not be changed.,<strong>Une erreur est survenue !</strong> Le mot de passe n'a pas pu être modifié.,<strong>C'è stato un errore!</strong> Impossibile cambiare password.
+password,password.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Das Passwort konnte nicht geändert werden.,<strong>An error has occurred!</strong> The password could not be changed.,<strong>Une erreur s'est produite !</strong> Le mot de passe n'a pas pu être modifié.,<strong>C'è stato un errore!</strong> Impossibile cambiare password.
 password,password.messages.success,<strong>Passwort wurde geändert!</strong>,<strong>Password changed!</strong>,<strong>Le mot de passe a été modifié !</strong>,<strong>Password modificata correttamente!</strong>
-password,password.title,Passwort für [<strong>{{username}}</strong>],Password for [<strong>{{username}}</strong>],Changer le mot de passe pour [<strong>{{username}}</strong>],Password per [<strong>{{username}}</strong>]
+password,password.title,Passwort für [<b>{{username}}</b>],Password for [<b>{{username}}</b>],Mot de passe pour [<b>{{username}}</b>],Password per [<b>{{username}}</b>]
 register,register.form.button,Registrieren,Register,Enregistrement,Crea Account
-register,register.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso</strong> Si prega di sceglierne un altro.
-register,register.messages.error.fail,<strong>Registrierung fehlgeschlagen!</strong> Bitte versuchen Sie es später nochmal.,<strong>Registration failed!</strong> Please try again later.,<strong>Compte non créé !</strong> Merci d'essayer à nouveau plus tard.,<strong>La registrazione dell'account è fallita!</strong> Riprova più tardi.
-register,register.messages.error.userexists,<strong>Benutzername bereits vergeben!</strong> Bitte wählen Sie einen anderen aus.,<strong>Login name already registered!</strong> Please choose another one.,<strong>Ce compte utilisateur existe déjà !</strong> Veuillez en choisir un autre.,<strong>Il nome utente scelto è già registrato!</strong> Si prega di scegliere un altro nome utente.
-register,register.messages.success,<strong>Registrierung gespeichert!</strong> Bitte überprüfen Sie Ihre Emails um die Registrierung zu bestätigen.,<strong>Registration saved!</strong> Please check your email for confirmation.,<strong>Compte enregistré !</strong> Merci de vérifier votre email de confirmation.,<strong>La registrazione account è stata salvata!</strong> Controlla la tua email per confermare.
+register,register.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet e-mail est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso</strong> Si prega di sceglierne un altro.
+register,register.messages.error.fail,<strong>Registrierung fehlgeschlagen!</strong> Bitte versuchen Sie es später nochmal.,<strong>Registration failed!</strong> Please try again later.,<strong>Compte non créé !</strong> Merci de réessayer plus tard.,<strong>La registrazione dell'account è fallita!</strong> Riprova più tardi.
+register,register.messages.error.userexists,<strong>Benutzername bereits vergeben!</strong> Bitte wählen Sie einen anderen aus.,<strong>Login name already registered!</strong> Please choose another one.,<strong>Ce nom d'utilisateur existe déjà !</strong> Veuillez en choisir un autre.,<strong>Il nome utente scelto è già registrato!</strong> Si prega di scegliere un altro nome utente.
+register,register.messages.success,<strong>Registrierung gespeichert!</strong> Bitte überprüfen Sie Ihre Emails um die Registrierung zu bestätigen.,<strong>Registration saved!</strong> Please check your email for confirmation.,<strong>Compte enregistré !</strong> Merci de consulter l'e-mail de confirmation.,<strong>La registrazione account è stata salvata!</strong> Controlla la tua email per confermare.
 register,register.messages.validate.login.maxlength,Ihr Benutzername darf nicht länger als 50 Zeichen sein,Your username cannot be longer than 50 characters.,Votre nom d'utilisateur ne peut pas contenir plus de 50 caractères.,Il nome utente non può contenere più di 50 caratteri
-register,register.messages.validate.login.minlength,Ihr Benutzername muss mindestens 1 Zeichen lang sein,Your username is required to be at least 1 character.,Votre nom d'utilisateur doit contenir plus d'un caractère.,Il nome utente deve essere di almeno 1 carattere
-register,register.messages.validate.login.pattern,Ihr Benutzername darf nur Kleinbuchstaben und Ziffern enthalten,Your username can only contain lower-case letters and digits.,Votre nom d'utilisateur ne peut contenir que des lettres minuscules ou des nombres.,Il nome utente può contenere solo lettere minuscole e cifre.
-register,register.messages.validate.login.required,Ihr Benutzername wird benötigt.,Your username is required.,Votre nom d'utilisateur est obligatoire.,Il nome utente è obbligatorio.
-register,register.title,Registrierung,Registration,Création de compte utilisateur,Registrazione
-reset,reset.finish.form.button,Neues Passwort setzen,Validate new password,Réinitialiser le mot de passe,Convalida la nuova password
-reset,reset.finish.messages.error,Ihr Passwort konnte nicht zurückgesetzt werden. Zur Erinnerung Ihre Anfrage ist nur 24 Stunden gültig.,Your password couldn't be reset. Remember a password request is only valid for 24 hours.,Votre mot de passe n'a pas pu être réinitialisé. La demande de réinitialisation n'est valable que 24 heures.,La tua password potrebbe non essere ripristinata. Ricorda che la richiesta della password è valida solo per 24 ore.
-reset,reset.finish.messages.info,Wählen Sie ein neues Passwort,Choose a new password,Choisir un nouveau mot de passe,Scegliere una nuova password
-reset,reset.finish.messages.keymissing,Der Reset Schlüssel fehlt.,The reset key is missing.,La clef de réinitilisation est manquante,La chiave di reimpostazione non è presente.
-reset,reset.finish.messages.success,"<strong>Ihr Passwort wurde zurückgesetzt.</strong> ","<strong>Your password has been reset.</strong> Please ","<strong>Votre mot de passe a été réinitialisé.</strong> Merci de ",<strong>La tua password è stata reimpostata .</strong> Per favore
-reset,reset.finish.title,Passwort zurücksetzen,Reset password,Réinitialisation du mot de passe,Cambia Password
+register,register.messages.validate.login.minlength,Ihr Benutzername muss mindestens 1 Zeichen lang sein,Your username must be at least 1 character.,Votre nom d'utilisateur doit contenir au moins un caractère.,Il nome utente deve essere di almeno 1 carattere
+register,register.messages.validate.login.pattern,Ihr Benutzername darf nur Kleinbuchstaben und Ziffern enthalten,Your username can only contain lower-case letters and digits.,Votre nom d'utilisateur ne peut contenir que des lettres minuscules et des nombres.,Il nome utente può contenere solo lettere minuscole e cifre.
+register,register.messages.validate.login.required,Ihr Benutzername wird benötigt.,Your username is required.,Votre nom d'utilisateur est requis.,Il nome utente è obbligatorio.
+register,register.title,Registrierung,Registration,Création du compte utilisateur,Registrazione
+reset,reset.finish.form.button,Neues Passwort setzen,Set new password.,Réinitialiser le mot de passe,Convalida la nuova password
+reset,reset.finish.messages.error,Ihr Passwort konnte nicht zurückgesetzt werden. Zur Erinnerung Ihre Anfrage ist nur 24 Stunden gültig.,Your password couldn't be reset. Remember a password request is only valid for 24 hours.,"Votre mot de passe n'a pas pu être réinitialisé. Pour rappel, la demande de réinitialisation n'est valable que 24 heures.",La tua password potrebbe non essere ripristinata. Ricorda che la richiesta della password è valida solo per 24 ore.
+reset,reset.finish.messages.info,Wählen Sie ein neues Passwort,Choose a new password.,Veuillez choisir un nouveau mot de passe.,Scegliere una nuova password
+reset,reset.finish.messages.keymissing,Der Reset Schlüssel fehlt.,The reset key is missing.,La clé de réinitialisation fait défaut.,La chiave di reimpostazione non è presente.
+reset,reset.finish.messages.success,"<strong>Ihr Passwort wurde zurückgesetzt.</strong> ","<strong>Your password has been reset.</strong> ",<strong>Votre mot de passe a été réinitialisé.</strong>,<strong>La tua password è stata reimpostata .</strong> Per favore
+reset,reset.finish.title,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Cambia Password
 reset,reset.request.form.button,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Reimposta Password
-reset,reset.request.messages.info,"Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",Enter the email address you used to register,Veuillez renseigner l'adresse email utilisée pour vous enregistrer,Inserisci l'indirizzo email utilizzato per la registrazione
-reset,reset.request.messages.notfound,<strong>Diese Email Adresse existiert nicht!</strong> Überprüfen Sie Ihre Email Adresse und versuchen Sie es nocheinmal.,<strong>Email address isn't registered!</strong> Please check and try again,<strong>L'adresse email n'existe pas !</strong> Merci de la vérifier et de réessayer.,<strong>Email non registrata!</strong> Si prega di verificarla e riprovare!
-reset,reset.request.messages.success,Eine Email mit weiteren Instruktionen für das Zurücksetzen des Passworts wurde gesendet.,Check your emails for details on how to reset your password.,Veuillez vérifier vos nouveaux emails et suivre les instructions pour réinitialiser votre mot de passe.,Controlla la tua email per i dettagli su come reimpostare la password.
-reset,reset.request.title,Passwort zurücksetzen,Reset your password,Réinitialiser son mot de passe,Reimposta Password
-sessions,sessions.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Die Sitzung konnte nicht geschlossen werden.,<strong>An error has occurred!</strong> The session could not be invalidated.,<strong>Une erreur est survenue !</strong> La session ne peut pas être invalidée.,<strong>Si è verificato un errore!</strong> Impossibile invalidare la sessione.
-sessions,sessions.messages.success,<strong>Sitzung wurde geschlossen!</strong>,<strong>Session invalidated!</strong>,<strong>La session a été invalidée !</strong>,<strong>Sessione invalidata!</strong>
-sessions,sessions.table.button,Schliessen,Invalidate,Invalider,Invalida
+reset,reset.request.messages.info,"Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",Enter the email address you used to register.,Veuillez indiquer l'adresse e-mail utilisée pour vous enregistrer.,Inserisci l'indirizzo email utilizzato per la registrazione
+reset,reset.request.messages.notfound,<strong>Diese Email Adresse existiert nicht!</strong> Überprüfen Sie Ihre Email Adresse und versuchen Sie es nocheinmal.,<strong>Email address isn't registered!</strong> Please check and try again.,<strong>L'adresse e-mail n'existe pas !</strong> Merci de la vérifier et de réessayer.,<strong>Email non registrata!</strong> Si prega di verificarla e riprovare!
+reset,reset.request.messages.success,Eine Email mit weiteren Instruktionen für das Zurücksetzen des Passworts wurde gesendet.,Check your emails for details on how to reset your password.,"Un e-mail vous a été envoyé, contenant les instructions pour réinitialiser votre mot de passe.",Controlla la tua email per i dettagli su come reimpostare la password.
+reset,reset.request.title,Passwort zurücksetzen,Reset your password.,Réinitialiser le mot de passe,Reimposta Password
+sessions,sessions.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Die Sitzung konnte nicht geschlossen werden.,<strong>An error has occurred!</strong> The session could not be closed.,<strong>Une erreur s'est produite !</strong> La session n'a pas pu être fermée.,<strong>Si è verificato un errore!</strong> Impossibile invalidare la sessione.
+sessions,sessions.messages.success,<strong>Sitzung wurde geschlossen!</strong>,<strong>Session closed!</strong>,<strong>La session a été fermée !</strong>,<strong>Sessione invalidata!</strong>
+sessions,sessions.table.button,Schliessen,Close,Fermer,Invalida
 sessions,sessions.table.date,Datum,Date,Date,Data
 sessions,sessions.table.ipaddress,IP Adresse,IP address,Adresse IP,Indirizzo IP
-sessions,sessions.table.useragent,User Agent,User Agent,User Agent,User Agent
-sessions,sessions.title,Aktive Sitzungen für [<strong>{{username}}</strong>],Active sessions for [<strong>{{username}}</strong>],Sessions actives de [<strong>{{username}}</strong>],Sessioni attive per [<strong>{{username}}</strong>]
+sessions,sessions.table.useragent,Benutzeragent,User agent,Agent utilisateur,User Agent
+sessions,sessions.title,Aktive Sitzungen für [<b>{{username}}</b>],Active sessions for [<b>{{username}}</b>],Sessions actives de [<b>{{username}}</b>],Sessioni attive per [<b>{{username}}</b>]
 settings,settings.form.button,Speichern,Save,Sauvegarder,Salva
-settings,settings.form.firstname,Vorname,First Name,Prénom,Nome
+settings,settings.form.firstname,Vorname,First name,Prénom,Nome
 settings,settings.form.firstname.placeholder,Ihr Vorname,Your first name,Votre prénom,Il tuo nome
 settings,settings.form.language,Sprache,Language,Langue,Lingua
-settings,settings.form.lastname,Nachname,Last Name,Nom,Cognome
+settings,settings.form.lastname,Nachname,Last name,Nom,Cognome
 settings,settings.form.lastname.placeholder,Ihr Nachname,Your last name,Votre nom,Il tuo cognome
-settings,settings.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet email est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso!</strong> Si prega di sceglierne un altro.
-settings,settings.messages.error.fail,<strong>Es ist ein Fehler aufgetreten!</strong> Die Einstellungen konnten nicht gespeichert werden.,<strong>An error has occurred!</strong> Settings could not be saved.,<strong>Une erreur est survenue !</strong> Votre profil n'a pas été sauvegardé.,<strong>Si è verificato un errore!</strong> Impossibile salvare le impostazioni.
-settings,settings.messages.success,<strong>Einstellungen wurden gespeichert!</strong>,<strong>Settings saved!</strong>,<strong>Votre profil a été sauvegardé !</strong>,<strong>Impostazioni salvate!</strong>
-settings,settings.messages.validate.firstname.maxlength,Ihr Vorname darf nicht länger als 50 Zeichen sein,Your first name cannot be longer than 50 characters,Votre prénom ne doit pas comporter plus de 50 caractères.,Il nome non può contenere più di 50 caratteri
-settings,settings.messages.validate.firstname.minlength,Ihr Vorname muss mindestens 1 Zeichen lang sein,Your first name is required to be at least 1 character,Votre prénom doit comporter au moins un caractère.,Il nome deve essere di almeno 1 carattere
+settings,settings.messages.error.emailexists,<strong>Email wird bereits verwendet!</strong> Bitte wählen Sie eine andere aus.,<strong>Email is already in use!</strong> Please choose another one.,<strong>Cet e-mail est déjà utilisé !</strong> Veuillez en choisir un autre.,<strong>L'indirizzo email è già in uso!</strong> Si prega di sceglierne un altro.
+settings,settings.messages.error.fail,<strong>Es ist ein Fehler aufgetreten!</strong> Die Einstellungen konnten nicht gespeichert werden.,<strong>An error has occurred!</strong> Settings could not be saved.,<strong>Une erreur s'est produite !</strong> Les paramètres n'ont pas été sauvegardés.,<strong>Si è verificato un errore!</strong> Impossibile salvare le impostazioni.
+settings,settings.messages.success,<strong>Einstellungen wurden gespeichert!</strong>,<strong>Settings saved!</strong>,<strong>Les paramètres ont été sauvegardés !</strong>,<strong>Impostazioni salvate!</strong>
+settings,settings.messages.validate.firstname.maxlength,Ihr Vorname darf nicht länger als 50 Zeichen sein,Your first name cannot be longer than 50 characters.,Votre prénom ne doit pas comporter plus de 50 caractères.,Il nome non può contenere più di 50 caratteri
+settings,settings.messages.validate.firstname.minlength,Ihr Vorname muss mindestens 1 Zeichen lang sein,Your first name must be at least 1 character.,Votre prénom doit comporter au moins un caractère.,Il nome deve essere di almeno 1 carattere
 settings,settings.messages.validate.firstname.required,Ihr Vorname wird benötigt.,Your first name is required.,Votre prénom est requis.,Il nome è obbligatorio.
-settings,settings.messages.validate.lastname.maxlength,Ihr Nachname darf nicht länger als 50 Zeichen sein,Your last name cannot be longer than 50 characters,Votre nom ne doit pas comporter plus de 50 caractères.,Il cognome non può contenere più di 50 caratteri
-settings,settings.messages.validate.lastname.minlength,Ihr Nachname muss mindestens 1 Zeichen lang sein,Your last name is required to be at least 1 character,Votre nom doit comporter au moins un caractère.,Il cognome deve essere di almeno 1 carattere
+settings,settings.messages.validate.lastname.maxlength,Ihr Nachname darf nicht länger als 50 Zeichen sein,Your last name cannot be longer than 50 characters.,Votre nom ne doit pas comporter plus de 50 caractères.,Il cognome non può contenere più di 50 caratteri
+settings,settings.messages.validate.lastname.minlength,Ihr Nachname muss mindestens 1 Zeichen lang sein,Your last name must be at least 1 character.,Votre nom doit comporter au moins un caractère.,Il cognome deve essere di almeno 1 carattere
 settings,settings.messages.validate.lastname.required,Ihr Nachname wird benötigt.,Your last name is required.,Votre nom est requis.,Il cognome è obbligatorio.
-settings,settings.title,Einstellungen für Benutzer [<strong>{{username}}</strong>],User settings for [<strong>{{username}}</strong>],Profil de l'utilisateur [<strong>{{username}}</strong>],Impostazioni per l'utente [<strong>{{username}}</strong>]
-user-management,userManagement.activated,Aktiv,Activated,Activé,Attivato
-user-management,userManagement.created,Ein neuer Benutzer wurde mit ID {{ param }} erstellt,A new user is created with identifier {{ param }},L'utilisateur {{ param }} a été créé.,È stato creato un nuovo utente con identificativo {{ param }}
+settings,settings.title,Einstellungen für Benutzer [<b>{{username}}</b>],User settings for [<b>{{username}}</b>],Paramètres d'utilisateur [<b>{{username}}</b>],Impostazioni per l'utente [<b>{{username}}</b>]
+user-management,userManagement.activated,Aktiv,Active,Activé,Attivato
+user-management,userManagement.created,Ein neuer Benutzer wurde mit ID {{ param }} erstellt,A new user is created with identifier {{ param }},Un nouvel utilisateur portant l'ID {{ param }} a été créé.,È stato creato un nuovo utente con identificativo {{ param }}
 user-management,userManagement.createdBy,Erstellt von,Created by,Créé par,Creato da
 user-management,userManagement.createdDate,Erstellt am,Created date,Créé le,Creato il
 user-management,userManagement.deactivated,Deaktiviert,Deactivated,Désactivé,Disattivato
-user-management,userManagement.delete.question,"Sind Sie sicher, dass Sie den Benutzer {{ login }} löschen möchten?",Are you sure you want to delete user {{ login }}?,Etes-vous certain de vouloir supprimer l'utilisateur {{ login }} ?,Si è sicuri di volere eliminare l'utente {{ login }}?
-user-management,userManagement.deleted,Ein Benutzer mit ID {{ param }} wurde gelöscht,An user is deleted with identifier {{ param }},L'utilisateur {{ param }} a été supprimé.,È stato eliminato l'utente identificato da {{ param }}
+user-management,userManagement.delete.question,"Sind Sie sicher, dass Sie den Benutzer {{ login }} löschen möchten?",Are you sure you want to delete user {{ login }}?,Etes-vous certain de vouloir supprimer l'utilisateur {{ login }} ?,Sei sicuro di volere eliminare l'utente {{ login }}?
+user-management,userManagement.deleted,Ein Benutzer mit ID {{ param }} wurde gelöscht,A user was deleted with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été supprimé.,È stato eliminato l'utente identificato da {{ param }}
 user-management,userManagement.detail.title,Benutzer,User,Utilisateur,Utente
-user-management,userManagement.email,Email,Email,Email,Email
+user-management,userManagement.email,Email,Email,E-mail,Email
 user-management,userManagement.firstName,Vorname,First name,Prénom,Nome
 user-management,userManagement.home.createLabel,Neuer Benutzer erstellen,Create a new user,Créer un nouvel utilisateur,Crea un nuovo utente
 user-management,userManagement.home.createOrEditLabel,Benutzer erstellen oder bearbeiten,Create or edit a user,Créer ou éditer un utilisateur,Crea o modifica un utente
@@ -842,5 +863,5 @@ user-management,userManagement.lastModifiedBy,Bearbeitet von,Modified by,Modifi�
 user-management,userManagement.lastModifiedDate,Zuletzt bearbeitet,Modified date,Modifié le,Modificato il
 user-management,userManagement.lastName,Nachname,Last name,Nom,Cognome
 user-management,userManagement.login,Login,Login,Login,Login
-user-management,userManagement.profiles,Profile,Profiles,Droits,Profili
-user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,An user is updated with identifier {{ param }},L'utilisateur {{ param }} a été mis à jour.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}
+user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
+user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}

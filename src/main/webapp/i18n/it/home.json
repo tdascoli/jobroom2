@@ -1,28 +1,28 @@
 {
     "home": {
-        "title": "JobRoom",
+        "title": "Job Room",
         "title.portal": "lavoro",
         "title.portal-url": "https://www.lavoro.swiss",
         "toolbar": {
-            "companies": "Unternehmen",
-            "jobSeekers": "Stellensuchende",
-            "recruitmentAgencies": "Arbeitsvermittler",
-            "title": "Job-Room bietet Leistungen f\u00fcr"
+            "companies": "Imprese",
+            "jobSeekers": "Persone in cerca d'impiego",
+            "recruitmentAgencies": "Collocatori",
+            "title": "Job-Room offre servizi per"
         },
         "tools": {
             "candidate-search": {
+                "search-button": {
+                    "title": "Visualizza candidati"
+                },
+                "title": "Trova il candidato giusto",
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
                     "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
                     "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
-                },
-                "search-button": {
-                    "title": "Kandidaten anzeigen"
-                },
-                "title": "Finden Sie passende Kandidaten"
+                }
             },
-            "candidateSearchTab": "Kandidaten finden",
+            "candidateSearchTab": "Trova candidati",
             "job-publication": {
                 "application": {
                     "additional-info": {
@@ -105,7 +105,7 @@
             },
             "job-search": {
                 "search-button": {
-                    "title": "Traumjob finden!"
+                    "title": "Trova il lavoro da sogno!"
                 },
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
@@ -114,9 +114,9 @@
                     "show": "Jetzt anzeigen!"
                 }
             },
-            "jobPublicationTab": "Job publizieren",
+            "jobPublicationTab": "Pubblica lavoro",
             "jobSearch": {
-                "title": "Finden Sie jetzt Ihren Traumjob!"
+                "title": "Trova adesso il tuo lavoro da sogno!"
             }
         }
     }

@@ -43,6 +43,9 @@
             "title": "Weitere Ausk\u00fcnfte erteilt Ihnen"
         },
         "job-experience": {
+            "degree": {
+                "label": "Ausbildung"
+            },
             "description": {
                 "label": "Kenntnisse, F\u00e4higkeiten, Skills"
             },

@@ -3,7 +3,7 @@
         "concurrencyFailure": "Un autre utilisateur a modifi\u00e9 ces donn\u00e9es en m\u00eame temps que vous. Vos changements n'ont pas \u00e9t\u00e9 sauvegard\u00e9s.",
         "http": {
             "400": "Mauvaise requ\u00eate.",
-            "403": "Vous n'avez pas les droits pour acc\u00e9der \u00e0 cette page.",
+            "403": "Vous n'avez pas les droits n\u00e9cessaires pour acc\u00e9der \u00e0 cette page.",
             "405": "Le verbe HTTP que vous avez utilis\u00e9 n'est pas reconnu par cet URL.",
             "500": "Erreur interne du serveur."
         },

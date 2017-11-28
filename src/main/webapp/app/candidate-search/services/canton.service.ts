@@ -11,7 +11,7 @@ export class CantonService {
     }
 
     getCantonOptions(): Observable<IMultiSelectOption[]> {
-        const mapToOption = (key: string) => Object.assign({}, {
+        const mapToOption = (key: string) => ({
             id: key,
             name: `global.reference.canton.${key}`
         });

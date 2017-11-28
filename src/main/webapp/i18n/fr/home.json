@@ -1,28 +1,28 @@
 {
     "home": {
-        "title": "JobRoom",
+        "title": "Job Room",
         "title.portal": "travail",
         "title.portal-url": "https://www.travail.swiss",
         "toolbar": {
-            "companies": "Unternehmen",
-            "jobSeekers": "Stellensuchende",
-            "recruitmentAgencies": "Arbeitsvermittler",
-            "title": "Job-Room bietet Leistungen f\u00fcr"
+            "companies": "Entreprise",
+            "jobSeekers": "Demandeur d'emploi",
+            "recruitmentAgencies": "Agence de placement",
+            "title": "Job-Room offre des services pour"
         },
         "tools": {
             "candidate-search": {
+                "search-button": {
+                    "title": "Afficher des candidats"
+                },
+                "title": "Trouvez des candidats appropri\u00e9s",
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
                     "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
                     "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
-                },
-                "search-button": {
-                    "title": "Kandidaten anzeigen"
-                },
-                "title": "Finden Sie passende Kandidaten"
+                }
             },
-            "candidateSearchTab": "Kandidaten finden",
+            "candidateSearchTab": "Trouver des candidats",
             "job-publication": {
                 "application": {
                     "additional-info": {
@@ -105,7 +105,7 @@
             },
             "job-search": {
                 "search-button": {
-                    "title": "Traumjob finden!"
+                    "title": "Afficher les offres d'emploi"
                 },
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
@@ -114,9 +114,9 @@
                     "show": "Jetzt anzeigen!"
                 }
             },
-            "jobPublicationTab": "Job publizieren",
+            "jobPublicationTab": "Publier une place vacante",
             "jobSearch": {
-                "title": "Finden Sie jetzt Ihren Traumjob!"
+                "title": "Partez \u00e0 la recherche de l'emploi dont vous r\u00eavez !"
             }
         }
     }

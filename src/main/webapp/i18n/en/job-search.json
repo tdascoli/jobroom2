@@ -2,60 +2,60 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Name des Unternehmen",
-                "placeholder": "Name des Unternehmen"
+                "label": "Company name",
+                "placeholder": "Company name"
             },
             "contract-type": {
-                "label": "Vertragsart",
+                "label": "Contract type",
                 "option": {
-                    "ALL": "Alle",
-                    "PERMANENT": "Unbefristet",
-                    "TEMPORARY": "Befristet"
+                    "ALL": "All",
+                    "PERMANENT": "Permanent",
+                    "TEMPORARY": "Temporary"
                 }
             },
             "online-since": {
                 "days": {
-                    "label": "Tage(n)"
+                    "label": "Days(n)"
                 },
-                "label": "Online seit"
+                "label": "Online since"
             },
             "sort": {
-                "label": "Sortierung",
+                "label": "Sort",
                 "option": {
-                    "DATE_ASC": "Sortiere nach Datum aufsteigend",
-                    "DATE_DESC": "Sortiere nach Datum absteigend",
-                    "RELEVANCE_DESC": "Sortiere nach Relevanz"
+                    "DATE_ASC": "Sort by date ascending",
+                    "DATE_DESC": "Sort by date descending",
+                    "RELEVANCE_DESC": "Sort by relevance"
                 }
             },
-            "title": "Suchergebnisse filtern",
+            "title": "Filter search result",
             "working-time": {
-                "label": "Pensum"
+                "label": "Workload"
             }
         },
         "job-search-list-item": {
             "badge": {
-                "permanent": "Unbefristet",
-                "temporary": "Befristet"
+                "permanent": "Permanent",
+                "temporary": "Temporary"
             }
         },
         "job-search-list": {
             "error-message": "Failed to load job result list!",
             "title": {
                 "many": {
-                    "with-locality": "More than {{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "More than {{count}} {{query}} Jobs"
+                    "with-locality": "More than {{count}} {{query}} jobs in {{locality}}",
+                    "without-locality": "More than {{count}} {{query}} jobs"
                 },
                 "none": {
-                    "with-locality": "No {{query}} Jobs in {{locality}}",
-                    "without-locality": "No {{query}} Jobs"
+                    "with-locality": "No {{query}} jobs in {{locality}}",
+                    "without-locality": "No {{query}} jobs"
                 },
                 "one": {
-                    "with-locality": "1 {{query}} Job in {{locality}}",
-                    "without-locality": "1 {{query}} Job"
+                    "with-locality": "1 {{query}} job in {{locality}}",
+                    "without-locality": "1 {{query}} job"
                 },
                 "other": {
-                    "with-locality": "{{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "{{count}} {{query}} Jobs"
+                    "with-locality": "{{count}} {{query}} jobs in {{locality}}",
+                    "without-locality": "{{count}} {{query}} jobs"
                 }
             }
         },
@@ -65,10 +65,10 @@
                 "tooltip": "Select my current location"
             },
             "locality": {
-                "placeholder": "Ort, Region, Kanton"
+                "placeholder": "Location, region, canton"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
+                "placeholder": "Professional title, professional group, competencies"
             }
         }
     },
@@ -76,8 +76,8 @@
         "type": {
             "canton": "Canton",
             "classification": "Classification",
-            "locality": "Ortschaft",
-            "occupation": "Occupation"
+            "locality": "Locality",
+            "occupation": "Working time"
         }
     }
 }

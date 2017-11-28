@@ -1,35 +1,35 @@
 {
     "job-detail": {
         "action": {
-            "applyNow": "Jetzt Bewerben",
-            "copyLink": "Link kopieren",
-            "print": "Drucken",
-            "saveJob": "Stellenangebot speichern",
-            "savePdf": "Als PDF speichern",
-            "sendEmail": "Per E-Mail versenden",
-            "showExternalPage": "Zum externen Stelleninserat"
+            "applyNow": "Postuler maintenant",
+            "copyLink": "Copier le lien",
+            "print": "Imprimer",
+            "saveJob": "Sauvegarder l'offre d'emploi",
+            "savePdf": "Sauvegarder en tant que PDF",
+            "sendEmail": "Envoyer par e-mail",
+            "showExternalPage": "Vers l'offre d'emploi externe"
         },
         "application": {
-            "email": "Per E-Mail",
-            "hints": "Erg\u00e4nzende Angaben",
-            "mail": "Per Post",
-            "mail.text": "siehe Adresse des Unternehmens",
-            "phone": "Telefonisch",
-            "title": "Bewerbungsformen"
+            "email": "Par e-mail",
+            "hints": "Indications compl\u00e9mentaires",
+            "mail": "Par la poste",
+            "mail.text": "Voir l'adresse de l'entreprise",
+            "phone": "Par t\u00e9l\u00e9phone",
+            "title": "Types de postulation"
         },
-        "back": "Zur\u00fcck zu den Suchergebnissen",
-        "contactPerson": "Ihre Kontaktperson",
-        "external-job-disclaimer": "Cette annonce a ?t? trouv?e sur un site externe. L'assurance-ch?mage et le service public de l'emploi fournissent ce r?sultat de recherche en tant que service suppl?mentaire, mais n'a aucune influence sur son contenu et sa qualit?.                                                                                                                                                                                           ",
-        "onlineSince": "Vakant seit",
-        "otherJobsCompany": "{{count}} Jobs anzeigen",
-        "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",
-        "reference": "Referenz",
-        "reference.job-id": "Stellennummer",
-        "reference.phone": "Telefon",
-        "reference.responsible-job-center": "Zust\u00e4ndiges RAV",
-        "startsImmediately": "Stellenantritt",
-        "startsImmediately.false": "nach Vereinbarung",
-        "startsImmediately.true": "ab sofort",
-        "title": "Job detail"
+        "back": "Retour \u00e0 la liste des r\u00e9sultats",
+        "contactPerson": "Votre personne de contact",
+        "external-job-disclaimer": "Cette annonce a \u00e9t\u00e9 trouv\u00e9e sur un site externe. L'assurance-ch\u00f4mage et le service public de l'emploi fournissent ce r\u00e9sultat de recherche en tant que service suppl\u00e9mentaire, mais n'a aucune influence sur son contenu et sa qualit\u00e9.                                                                                                                                                                                           ",
+        "onlineSince": "Libre depuis",
+        "otherJobsCompany": "Montrer {{count}} emplois",
+        "otherJobsEquivalent": "Montrer {{count}} emplois semblables",
+        "reference": "R\u00e9f\u00e9rence",
+        "reference.job-id": "Num\u00e9ro du poste",
+        "reference.phone": "T\u00e9l\u00e9phone",
+        "reference.responsible-job-center": "ORP comp\u00e9tent",
+        "startsImmediately": "Entr\u00e9e en fonction",
+        "startsImmediately.false": "A convenir",
+        "startsImmediately.true": "Tout de suite",
+        "title": "D\u00e9tail de l'emploi"
     }
 }

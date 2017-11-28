@@ -1,5 +1,9 @@
 @import '../../../content/scss/jbr2_variables.scss';
 
+.toolbar-form .form-group {
+    max-width: 33%;
+}
+
 :host /deep/ .typeahead-multiselect__type-label--classification {
     background-color: $main-accent-color-400;
 }
@@ -14,4 +18,21 @@
 
 :host /deep/ .typeahead-multiselect__type-label--locality {
     background-color: $additional-accent-green;
+}
+
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+
+    .sticked {
+        position: fixed;
+    }
+
+    .sticked--top.toolbar {
+        margin-top: 0 !important;
+        width: 100%;
+        top: ($header-alv-height + $header-navbar-height) !important;
+    }
+
+    :host /deep/  + .container {
+        padding-top: ($header-alv-height + $header-navbar-height);
+    }
 }

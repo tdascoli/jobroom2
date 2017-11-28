@@ -19,7 +19,7 @@
                 "data": "Extra data",
                 "date": "Date",
                 "principal": "User",
-                "status": "State"
+                "status": "Status"
             }
         },
         "title": "Audits"

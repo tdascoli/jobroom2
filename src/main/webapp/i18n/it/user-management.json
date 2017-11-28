@@ -6,7 +6,7 @@
         "createdDate": "Creato il",
         "deactivated": "Disattivato",
         "delete": {
-            "question": "Si \u00e8 sicuri di volere eliminare l'utente {{ login }}?"
+            "question": "Sei sicuro di volere eliminare l'utente {{ login }}?"
         },
         "deleted": "\u00c8 stato eliminato l'utente identificato da {{ param }}",
         "detail": {

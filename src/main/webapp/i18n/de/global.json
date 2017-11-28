@@ -78,6 +78,26 @@
                 "MS": "Frau"
             }
         },
+        "degree": {
+            "BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
+            "BACHELOR_UNIVERSITY": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
+            "BERUFSMATURA": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
+            "DOKTORAT": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
+            "EIDG_BERUFSATTEST": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
+            "EIDG_DIPLOM": "Terti\u00e4r - H\u00f6here Berufsbildung",
+            "EIDG_FACHAUSWEIS": "Terti\u00e4r - H\u00f6here Berufsbildung",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
+            "FACHMATURA": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
+            "FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
+            "GYMNASIUM_MATURA": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
+            "MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
+            "MASTER_UNIVERSITY": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q.",
+            "NA": "keine Angabe",
+            "PRIMARSCHULE": "Primarstufe - obligatorische Schule",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Sek. I - obligatorische Schule",
+            "UNBEKANNT": "weiss nicht"
+        },
         "drivingLicenceCategory": {
             "A": "A",
             "A1": "A1",
@@ -207,6 +227,8 @@
                 "BE": "Bern",
                 "BL": "Basel-Landschaft",
                 "BS": "Basel-Stadt",
+                "CH": "Schweiz",
+                "FL": "F\u00fcrstentum Liechtenstein",
                 "FR": "Freiburg",
                 "GE": "Genf",
                 "GL": "Glarus",

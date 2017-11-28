@@ -2,73 +2,73 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Name des Unternehmen",
-                "placeholder": "Name des Unternehmen"
+                "label": "Nom de l'entreprise",
+                "placeholder": "Nom de l'entreprise"
             },
             "contract-type": {
-                "label": "Vertragsart",
+                "label": "Type de contrat",
                 "option": {
-                    "ALL": "Alle",
-                    "PERMANENT": "Unbefristet",
-                    "TEMPORARY": "Befristet"
+                    "ALL": "Tous",
+                    "PERMANENT": "ind\u00e9termin\u00e9",
+                    "TEMPORARY": "dur\u00e9e limit\u00e9e"
                 }
             },
             "online-since": {
                 "days": {
-                    "label": "Tage(n)"
+                    "label": "Jour(s)"
                 },
-                "label": "Online seit"
+                "label": "En ligne depuis"
             },
             "sort": {
-                "label": "Sortierung",
+                "label": "Tri",
                 "option": {
-                    "DATE_ASC": "Sortiere nach Datum aufsteigend",
-                    "DATE_DESC": "Sortiere nach Datum absteigend",
-                    "RELEVANCE_DESC": "Sortiere nach Relevanz"
+                    "DATE_ASC": "Tri par date - ordre croissant",
+                    "DATE_DESC": "Tri par date - ordre d\u00e9croissant",
+                    "RELEVANCE_DESC": "Tri selon pertinence"
                 }
             },
-            "title": "Suchergebnisse filtern",
+            "title": "Filtrer les r\u00e9sultats",
             "working-time": {
-                "label": "Pensum"
+                "label": "Taux d'occupation"
             }
         },
         "job-search-list-item": {
             "badge": {
-                "permanent": "Unbefristet",
-                "temporary": "Befristet"
+                "permanent": "Ind\u00e9termin\u00e9",
+                "temporary": "Dur\u00e9e limit\u00e9e"
             }
         },
         "job-search-list": {
-            "error-message": "Failed to load job result list!",
+            "error-message": "Les r\u00e9sultats de la recherche d'emplois n'ont pas pu \u00eatre charg\u00e9s",
             "title": {
                 "many": {
-                    "with-locality": "More than {{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "More than {{count}} {{query}} Jobs"
+                    "with-locality": "Plus de {{count}} {{query}} emplois \u00e0 {{locality}}",
+                    "without-locality": "Plus de {{count}} {{query}} emplois"
                 },
                 "none": {
-                    "with-locality": "No {{query}} Jobs in {{locality}}",
-                    "without-locality": "No {{query}} Jobs"
+                    "with-locality": "Aucun {{query}} emploi \u00e0 {{locality}}",
+                    "without-locality": "Aucun {{query}} emploi"
                 },
                 "one": {
-                    "with-locality": "1 {{query}} Job in {{locality}}",
-                    "without-locality": "1 {{query}} Job"
+                    "with-locality": "1 {{query}} emploi \u00e0 {{locality}}",
+                    "without-locality": "1 {{query}} emploi"
                 },
                 "other": {
-                    "with-locality": "{{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "{{count}} {{query}} Jobs"
+                    "with-locality": "{{count}} {{query}} emplois \u00e0 {{locality}}",
+                    "without-locality": "{{count}} {{query}} emplois"
                 }
             }
         },
-        "title": "Job search",
+        "title": "Chercher un emploi",
         "toolbar": {
             "locality-select": {
-                "tooltip": "Select my current location"
+                "tooltip": "S\u00e9lectionner le lieu actuel"
             },
             "locality": {
-                "placeholder": "Ort, Region, Kanton"
+                "placeholder": "Lieu, r\u00e9gion, canton"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
+                "placeholder": "D\u00e9signation de la profession, groupe de profession, comp\u00e9tences"
             }
         }
     },
@@ -76,8 +76,8 @@
         "type": {
             "canton": "Canton",
             "classification": "Classification",
-            "locality": "Ortschaft",
-            "occupation": "Occupation"
+            "locality": "Localit\u00e9",
+            "occupation": "Taux d'occupation"
         }
     }
 }

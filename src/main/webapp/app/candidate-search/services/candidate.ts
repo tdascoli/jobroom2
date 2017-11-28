@@ -21,23 +21,26 @@ export interface Candidate {
     candidateProfile: CandidateProfile;
 }
 
-enum Degree {
-    PRIMARSCHULE,
-    SEKUNDARSCHULE_UNTERSTUFE,
-    SEKUNDARSCHULE_OBERSTUFE,
-    EIDG_BERUFSATTEST,
-    EIDG_FAEHIGKEITSZEUGNIS,
-    FACHMITTELSCHULE,
-    BERUFSMATURA,
-    FACHMATURA,
-    GYMNASIUM_MATURA,
-    EIDG_FACHAUSWEIS,
-    EIDG_DIPLOM,
-    BACHELOR_FACHHOCHSCHULE,
-    BACHELOR_UNIVERSITY,
-    MASTER_FACHHOCHSCHULE,
-    MASTER_UNIVERSITY,
-    DOKTORAT
+export enum Degree {
+    // TODO: review if it's possible to use english names
+    PRIMARSCHULE = 120,
+    SEKUNDARSCHULE_UNTERSTUFE = 121,
+    SEKUNDARSCHULE_OBERSTUFE = 130,
+    EIDG_BERUFSATTEST = 131,
+    EIDG_FAEHIGKEITSZEUGNIS = 132,
+    FACHMITTELSCHULE = 133,
+    BERUFSMATURA = 134,
+    FACHMATURA = 135,
+    GYMNASIUM_MATURA = 136,
+    EIDG_FACHAUSWEIS = 150,
+    EIDG_DIPLOM = 160,
+    BACHELOR_FACHHOCHSCHULE = 170,
+    BACHELOR_UNIVERSITY = 171,
+    MASTER_FACHHOCHSCHULE = 172,
+    MASTER_UNIVERSITY = 173,
+    DOKTORAT = 180,
+    UNBEKANNT = 198,
+    NA = 199
 }
 
 export interface JobExperience {
@@ -68,6 +71,7 @@ export interface CandidateProfile {
     languages: LanguageSkill[];
     drivingCategories: string[];
     highestEducationLevel: string;
+    highestDegree: string
     jobCenterCode: string;
     jobAdvisor: Contact;
 }

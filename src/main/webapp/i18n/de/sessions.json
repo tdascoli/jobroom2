@@ -8,8 +8,8 @@
             "button": "Schliessen",
             "date": "Datum",
             "ipaddress": "IP Adresse",
-            "useragent": "User Agent"
+            "useragent": "Benutzeragent"
         },
-        "title": "Aktive Sitzungen f\u00fcr [<strong>{{username}}</strong>]"
+        "title": "Aktive Sitzungen f\u00fcr [<b>{{username}}</b>]"
     }
 }

@@ -39,7 +39,7 @@
             }
         },
         "job-search-list": {
-            "error-message": "Die Resultate der Jobsuche konnten nicht geladen werden",
+            "error-message": "Jobsuche fehlgeschlagen",
             "title": {
                 "many": {
                     "with-locality": "Mehr als {{count}} {{query}} Jobs in {{locality}}",
@@ -77,7 +77,7 @@
             "canton": "Kanton",
             "classification": "Klassifizierung",
             "locality": "Ortschaft",
-            "occupation": "Berufsbezeichnung"
+            "occupation": "Besch\u00e4ftigungsgrad"
         }
     }
 }
