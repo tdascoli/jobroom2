@@ -26,17 +26,11 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
                 '/v2/api-docs',
                 '/h2-console',
                 '/auth',
-                '/jobpublicationservice'
+                '/jobpublicationservice',
+		'/candidateservice',
+                '/h2-console'
             ],
             target: 'https://dev.job-room.ch:8443',
-            secure: false
-        },
-        {
-            context: [
-                '/candidateservice'
-            ],
-            target: 'http://127.0.0.1:8083',
-            pathRewrite: {'^/candidateservice' : ''},
             secure: false
         }],
         watchOptions: {
