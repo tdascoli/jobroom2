@@ -17,7 +17,8 @@ describe('jobSearchToolReducer', () => {
             localityQuery: [
                 new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, 'c4', 'l4'),
                 new TypeaheadMultiselectModel(LocalityInputType.CANTON, 'c5', 'l5')
-            ]
+            ],
+            totalCount: 0
         };
         const action = new JobSearchToolSubmittedAction(searchModel);
 

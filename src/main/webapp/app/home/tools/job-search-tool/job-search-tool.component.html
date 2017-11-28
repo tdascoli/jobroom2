@@ -1,26 +1,36 @@
-<div>
-    <form [formGroup]="jobSearchForm" novalidate (submit)="search(jobSearchForm.value)">
-        <div class="form-group form-group--wide">
-            <jr2-typeahead-multiselect
-                formControlName="baseQuery"
-                [itemLoader]="fetchOccupationSuggestions"
-                [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
+<div class="row">
+    <div class="col-md-9 col-xl-6 col-xxl-5">
+        <form id="ngForm" #jobForm="ngForm" [formGroup]="jobSearchForm" novalidate (submit)="search(jobSearchForm.value)">
+            <div class="form-group form-group--wide">
+                <jr2-typeahead-multiselect
+                    formControlName="baseQuery"
+                    [itemLoader]="fetchOccupationSuggestions"
+                    [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
 
+            </div>
+            <div class="form-group form-group--wide form-group--icon">
+                <label class="sr-only">Ort, Region, Kanton</label>
+                <jr2-typeahead-multiselect
+                    formControlName="localityQuery"
+                    [itemLoader]="fetchLocalitySuggestions"
+                    [editable]="false"
+                    [focusFirst]="true"
+                    [placeHolder]="'job-search.toolbar.locality.placeholder' | translate"></jr2-typeahead-multiselect>
+                <jr2-geo-location-select
+                    (localitySelect)="handleLocalitySelect($event)"
+                    [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
+            </div>
+            <button class="btn btn-primary btn-lg btn-block">
+                {{'home.tools.job-search.search-button.title' | translate }}
+            </button>
+        </form>
+    </div>
+    <div class="col">
+        <div class="candidate-radar d-none d-md-inline-block" *ngIf="jobSearchToolModel.totalCount >= 0">
+            <div [innerHTML]="getBadgeKey() | translate: { count: jobSearchToolModel.totalCount }"></div>
+            <button class="btn-link" form="ngForm" (click)="jobForm.ngSubmit.emit()">
+                {{ 'home.tools.job-search.search-badge.show' | translate }}
+            </button>
         </div>
-        <div class="form-group form-group--wide form-group--icon">
-            <label class="sr-only">Ort, Region, Kanton</label>
-            <jr2-typeahead-multiselect
-                formControlName="localityQuery"
-                [itemLoader]="fetchLocalitySuggestions"
-                [editable]="false"
-                [focusFirst]="true"
-                [placeHolder]="'job-search.toolbar.locality.placeholder' | translate"></jr2-typeahead-multiselect>
-            <jr2-geo-location-select
-                (localitySelect)="handleLocalitySelect($event)"
-                [tooltip]="'job-search.toolbar.locality-select.tooltip' | translate "></jr2-geo-location-select>
-        </div>
-        <button class="btn btn-primary btn-lg btn-block">
-            {{'home.tools.job-search.search-button.title' | translate }}
-        </button>
-    </form>
+    </div>
 </div>

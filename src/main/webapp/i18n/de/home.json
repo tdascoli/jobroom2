@@ -106,6 +106,12 @@
             "job-search": {
                 "search-button": {
                     "title": "Jobs anzeigen"
+                },
+                "search-badge": {
+                    "many": "Diesem Job-Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
+                    "none": "Diesem Job-Profil entspricht keine Jobs",
+                    "one": "Diesem Job-Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Jobs",
+                    "show": "Jetzt anzeigen!"
                 }
             },
             "jobPublicationTab": "Job publizieren",

@@ -553,6 +553,10 @@ home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.job-publication.workload,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
+home,home.tools.job-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs"
+home,home.tools.job-search.search-badge.none,Diesem Job-Profil entspricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs
+home,home.tools.job-search.search-badge.one,"Diesem Job-Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs"
+home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Find your dream job now!,Partez à la recherche de l'emploi dont vous rêvez !,Trova adesso il tuo lavoro da sogno!
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Apply now,Postuler maintenant,Candidarsi ora
