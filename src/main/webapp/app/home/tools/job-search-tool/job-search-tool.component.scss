@@ -15,3 +15,17 @@
 :host /deep/ .typeahead-multiselect__type-label--locality {
     background-color: $additional-accent-green;
 }
+
+.job-search__radar {
+
+    .btn-link {
+        font-weight: 700;
+        margin-top: $margin-x-narrow;
+        color: transparent;
+        cursor: pointer;
+    }
+
+    &:hover .btn-link {
+        color: #ffffff;
+    }
+}

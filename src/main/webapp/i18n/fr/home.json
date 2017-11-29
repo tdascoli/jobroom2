@@ -11,16 +11,16 @@
         },
         "tools": {
             "candidate-search": {
-                "search-button": {
-                    "title": "Afficher des candidats"
-                },
-                "title": "Trouvez des candidats appropri\u00e9s",
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
                     "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
                     "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
-                }
+                },
+                "search-button": {
+                    "title": "Afficher des candidats"
+                },
+                "title": "Trouvez des candidats appropri\u00e9s"
             },
             "candidateSearchTab": "Trouver des candidats",
             "job-publication": {
