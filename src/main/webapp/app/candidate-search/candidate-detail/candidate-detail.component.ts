@@ -205,4 +205,12 @@ export class CandidateDetailComponent implements OnInit {
             this.profileMetrics('shwrav');
         }
     }
+
+    phoneClicked(candidate): void {
+        this.profileMetrics(candidate ? 'phncnd' : 'phnrav');
+    }
+
+    mailClicked(candidate): void {
+        this.profileMetrics(candidate ? 'mailcnd' : 'mailrav');
+    }
 }
