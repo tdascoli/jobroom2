@@ -14,6 +14,8 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
     let newState;
     switch (action.type) {
         case CANDIDATE_SEARCH_TOOL_SUBMITTED:
+            newState = Object.assign({}, state, action.payload);
+            break;
         case CANDIDATE_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, action.payload);
             break;
@@ -21,7 +23,7 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
             newState = Object.assign({}, state, { totalCount: action.payload });
             break;
         case RESET_CANDIDATE_SEARCH_TOOL_COUNT:
-            newState = Object.assign({}, state, { totalCount: initialState.totalCount });
+            newState = Object.assign({}, initialState);
             break;
         default:
             newState = state;

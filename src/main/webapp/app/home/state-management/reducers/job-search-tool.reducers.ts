@@ -9,6 +9,8 @@ export function jobSearchToolReducer(state = initialState, action: Actions): Job
     let newState;
     switch (action.type) {
         case JOB_SEARCH_TOOL_SUBMITTED:
+            newState = Object.assign({}, state, action.payload);
+            break;
         case JOB_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, action.payload);
             break;
@@ -16,7 +18,7 @@ export function jobSearchToolReducer(state = initialState, action: Actions): Job
             newState = Object.assign({}, state, { totalCount: action.payload });
             break;
         case RESET_JOB_SEARCH_TOOL_COUNT:
-            newState = Object.assign({}, state, { totalCount: initialState.totalCount });
+            newState = Object.assign({}, initialState);
             break;
 
         default:

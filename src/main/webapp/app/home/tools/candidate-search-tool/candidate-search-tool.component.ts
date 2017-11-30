@@ -63,7 +63,7 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         this.cantonOptions$ = this.cantonService.getCantonOptions();
 
         this.subscription = this.candidateSearchForm.valueChanges
-            .startWith(this.candidateSearchForm.value)
+            .distinctUntilChanged()
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
             .subscribe((formValue: any) => this.filterChanged(formValue));
     }
