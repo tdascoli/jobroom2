@@ -7,8 +7,8 @@ import { JhiDataUtils, JhiDateUtils, JhiEventManager } from 'ng-jhipster';
 import { JobroomTestModule } from '../../../test.module';
 import { MockActivatedRoute } from '../../../helpers/mock-route.service';
 import { OrganizationDetailComponent } from '../../../../../../main/webapp/app/entities/organization/organization-detail.component';
-import { OrganizationService } from '../../../../../../main/webapp/app/entities/organization/organization.service';
-import { Organization } from '../../../../../../main/webapp/app/entities/organization/organization.model';
+import { OrganizationService } from '../../../../../../main/webapp/app/shared/organization/organization.service';
+import { Organization } from '../../../../../../main/webapp/app/shared/organization/organization.model';
 
 describe('Component Tests', () => {
 

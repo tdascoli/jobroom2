@@ -23,6 +23,7 @@ import { DetailsPagePaginationControlsComponent } from './components/details-pag
 import { DetailsPagePaginationComponent } from './components/details-page-pagination/details-page-pagination.component';
 import { dateParserFormatterProvider } from './input-components/datepicker/ngb-date-moment-parser-formatter';
 import { datepickerI18nService } from './input-components/datepicker/ngb-datepicker-i18n-service';
+import { OrganizationService } from './organization/organization.service';
 
 @NgModule({
     imports: [
@@ -53,7 +54,8 @@ import { datepickerI18nService } from './input-components/datepicker/ngb-datepic
         LocaleAwareDecimalPipe,
         SafeHtmlPipe,
         dateParserFormatterProvider(),
-        datepickerI18nService()
+        datepickerI18nService(),
+        OrganizationService
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [

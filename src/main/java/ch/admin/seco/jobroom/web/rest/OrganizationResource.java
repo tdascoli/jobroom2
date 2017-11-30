@@ -33,6 +33,7 @@ import org.springframework.web.bind.annotation.RestController;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.security.SecurityUtils;
 import ch.admin.seco.jobroom.service.OrganizationService;
+import ch.admin.seco.jobroom.service.dto.OrganizationAutocompleteDTO;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
 import ch.admin.seco.jobroom.web.rest.errors.BadRequestAlertException;
 import ch.admin.seco.jobroom.web.rest.util.HeaderUtil;
@@ -124,6 +125,14 @@ public class OrganizationResource {
         return ResponseUtil.wrapOrNotFound(organizationDTO);
     }
 
+    @GetMapping("/organizations/externalId/{id}")
+    @Timed
+    public ResponseEntity<OrganizationDTO> getOrganizationByExternalId(@PathVariable String id) {
+        log.debug("REST request to get Organization by externalId : {}", id);
+        Optional<OrganizationDTO> organizationDTO = organizationService.findOneByExternalId(id);
+        return ResponseUtil.wrapOrNotFound(organizationDTO);
+    }
+
     /**
      * DELETE  /organizations/:id : delete the "id" organization.
      *
@@ -153,6 +162,13 @@ public class OrganizationResource {
         Page<OrganizationDTO> page = organizationService.search(query, pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/organizations");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
+    }
+
+    @GetMapping("/_search/organizations/suggest")
+    @Timed
+    public OrganizationAutocompleteDTO suggestOrganizations(@RequestParam String prefix, @RequestParam int resultSize) {
+        log.debug("REST request to search for Organizations suggestions for prefix {}", prefix);
+        return organizationService.suggest(prefix, resultSize);
     }
 
     @PostMapping("/organizations/housekeeping")

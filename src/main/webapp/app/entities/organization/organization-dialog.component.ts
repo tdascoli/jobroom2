@@ -6,9 +6,9 @@ import { Observable } from 'rxjs/Rx';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { JhiAlertService, JhiEventManager } from 'ng-jhipster';
 
-import { Organization } from './organization.model';
+import { Organization } from '../../shared/organization/organization.model';
 import { OrganizationPopupService } from './organization-popup.service';
-import { OrganizationService } from './organization.service';
+import { OrganizationService } from '../../shared/organization/organization.service';
 
 @Component({
     selector: 'jhi-organization-dialog',

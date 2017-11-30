@@ -29,6 +29,8 @@ import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.search.OrganizationSearchRepository;
 import ch.admin.seco.jobroom.service.OrganizationService;
+import ch.admin.seco.jobroom.service.OrganizationSuggestionService;
+import ch.admin.seco.jobroom.service.dto.OrganizationAutocompleteDTO;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
 import ch.admin.seco.jobroom.service.mapper.OrganizationMapper;
 
@@ -51,12 +53,20 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     private final EntityManager entityManager;
 
-    public OrganizationServiceImpl(OrganizationRepository organizationRepository, OrganizationMapper organizationMapper, OrganizationSearchRepository organizationSearchRepository, TransactionTemplate transactionTemplate, EntityManager entityManager) {
+    private final OrganizationSuggestionService organizationSuggestionService;
+
+    public OrganizationServiceImpl(OrganizationRepository organizationRepository,
+        OrganizationMapper organizationMapper,
+        OrganizationSearchRepository organizationSearchRepository,
+        TransactionTemplate transactionTemplate,
+        EntityManager entityManager,
+        OrganizationSuggestionService organizationSuggestionService) {
         this.organizationRepository = organizationRepository;
         this.organizationMapper = organizationMapper;
         this.organizationSearchRepository = organizationSearchRepository;
         this.transactionTemplate = transactionTemplate;
         this.entityManager = entityManager;
+        this.organizationSuggestionService = organizationSuggestionService;
     }
 
     /**
@@ -111,6 +121,14 @@ public class OrganizationServiceImpl implements OrganizationService {
             .map(organizationMapper::toDto);
     }
 
+    @Override
+    @Transactional(readOnly = true)
+    public Optional<OrganizationDTO> findOneByExternalId(String externalId) {
+        log.debug("Request to get Organization by externalId : {}", externalId);
+        return organizationRepository.findByExternalId(externalId)
+            .map(organizationMapper::toDto);
+    }
+
     /**
      *  Delete the  organization by id.
      *
@@ -136,6 +154,12 @@ public class OrganizationServiceImpl implements OrganizationService {
         log.debug("Request to search for a page of Organizations for query {}", query);
         Page<Organization> result = organizationSearchRepository.search(queryStringQuery(query), pageable);
         return result.map(organizationMapper::toDto);
+    }
+
+    @Override
+    @Transactional(readOnly = true)
+    public OrganizationAutocompleteDTO suggest(String prefix, int resultSize) {
+        return organizationSuggestionService.suggest(prefix, resultSize);
     }
 
     @Scheduled(cron = "0 0 5 * * *")

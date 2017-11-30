@@ -173,6 +173,7 @@ public class AccountResourceIntTest {
             "Joe",                  // firstName
             "Shmoe",                // lastName
             "joe@example.com",      // email
+            "+380000000",           // phone
             true,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -202,6 +203,7 @@ public class AccountResourceIntTest {
             "Funky",                // firstName
             "One",                  // lastName
             "funky@example.com",    // email
+            "+380000000",           // phone
             true,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -231,6 +233,7 @@ public class AccountResourceIntTest {
             "Bob",              // firstName
             "Green",            // lastName
             "invalid",          // email <-- invalid
+            "+380000000",      // phone
             true,               // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -260,6 +263,7 @@ public class AccountResourceIntTest {
             "Bob",              // firstName
             "Green",            // lastName
             "bob@example.com",  // email
+            "+380000000",      // phone
             true,               // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -289,6 +293,7 @@ public class AccountResourceIntTest {
             "Bob",              // firstName
             "Green",            // lastName
             "bob@example.com",  // email
+            "+380000000",      // phone
             true,               // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -319,6 +324,7 @@ public class AccountResourceIntTest {
             "Alice",                // firstName
             "Something",            // lastName
             "alice@example.com",    // email
+            "+380000000",           // phone
             true,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -330,7 +336,7 @@ public class AccountResourceIntTest {
 
         // Duplicate login, different email
         ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getId(), validUser.getLogin(), validUser.getPassword(), validUser.getFirstName(), validUser.getLastName(),
-            "alicejr@example.com", true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
+            "alicejr@example.com", validUser.getPhone(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -361,6 +367,7 @@ public class AccountResourceIntTest {
             "John",                 // firstName
             "Doe",                  // lastName
             "john@example.com",     // email
+            "+38098898932",         // phone
             true,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -372,7 +379,7 @@ public class AccountResourceIntTest {
 
         // Duplicate email, different login
         ManagedUserVM duplicatedUser = new ManagedUserVM(validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
-            validUser.getEmail(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
+            validUser.getEmail(), validUser.getPhone(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
 
         // Good user
         restMvc.perform(
@@ -390,7 +397,7 @@ public class AccountResourceIntTest {
 
         // Duplicate email - with uppercase email address
         final ManagedUserVM userWithUpperCaseEmail = new ManagedUserVM(validUser.getId(), "johnjr", validUser.getPassword(), validUser.getLogin(), validUser.getLastName(),
-            validUser.getEmail().toUpperCase(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
+            validUser.getEmail().toUpperCase(), validUser.getPhone(), true, validUser.getImageUrl(), validUser.getLangKey(), validUser.getCreatedBy(), validUser.getCreatedDate(), validUser.getLastModifiedBy(), validUser.getLastModifiedDate(), validUser.getAuthorities());
 
         restMvc.perform(
             post("/api/register")
@@ -412,6 +419,7 @@ public class AccountResourceIntTest {
             "Bad",                  // firstName
             "Guy",                  // lastName
             "badguy@example.com",   // email
+            "+3800393209",          // phone
             true,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -478,6 +486,7 @@ public class AccountResourceIntTest {
             "firstname",                // firstName
             "lastname",                  // lastName
             "save-account@example.com",    // email
+            "+38238238238",    // phone
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -498,6 +507,7 @@ public class AccountResourceIntTest {
         assertThat(updatedUser.getFirstName()).isEqualTo(userDTO.getFirstName());
         assertThat(updatedUser.getLastName()).isEqualTo(userDTO.getLastName());
         assertThat(updatedUser.getEmail()).isEqualTo(userDTO.getEmail());
+        assertThat(updatedUser.getPhone()).isEqualTo(userDTO.getPhone());
         assertThat(updatedUser.getLangKey()).isEqualTo(userDTO.getLangKey());
         assertThat(updatedUser.getPassword()).isEqualTo(user.getPassword());
         assertThat(updatedUser.getImageUrl()).isEqualTo(userDTO.getImageUrl());
@@ -523,6 +533,7 @@ public class AccountResourceIntTest {
             "firstname",                // firstName
             "lastname",                  // lastName
             "invalid email",    // email
+            "+38238238238",    // phone
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -568,6 +579,7 @@ public class AccountResourceIntTest {
             "firstname",                // firstName
             "lastname",                  // lastName
             "save-existing-email2@example.com",    // email
+            "+38238238238",    // phone
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -606,6 +618,7 @@ public class AccountResourceIntTest {
             "firstname",                // firstName
             "lastname",                  // lastName
             "save-existing-email-and-login@example.com",    // email
+            "+38238238238",    // phone
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey

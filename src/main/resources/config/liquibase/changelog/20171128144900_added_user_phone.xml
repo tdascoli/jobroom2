@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+
+    <!--
+        Added User phone.
+    -->
+    <changeSet id="20171128144900-1" author="korobko">
+        <addColumn tableName="jhi_user">
+            <column name="phone" type="varchar(50)">
+                <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_phone"/>
+            </column>
+        </addColumn>
+    </changeSet>
+</databaseChangeLog>

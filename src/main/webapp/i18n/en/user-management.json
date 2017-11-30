@@ -13,6 +13,9 @@
             "title": "User"
         },
         "email": "Email",
+        "phone": "Phone",
+        "phone.validation.invalid": "Phone is invalid",
+        "organization": "Organization",
         "firstName": "First name",
         "home": {
             "createLabel": "Create a new user",

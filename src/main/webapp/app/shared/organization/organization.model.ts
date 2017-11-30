@@ -1,4 +1,4 @@
-import { BaseEntity } from './../../shared';
+import { BaseEntity } from '../';
 
 export const enum CompanyType {
     'AVG',
@@ -18,4 +18,15 @@ export class Organization implements BaseEntity {
                 public active?: boolean) {
         this.active = false;
     }
+}
+
+export class OrganizationSuggestion {
+    externalId: string;
+    name: string;
+    street: string;
+    city: string;
+}
+
+export interface OrganizationAutocomplete {
+    organizations: Array<OrganizationSuggestion>;
 }

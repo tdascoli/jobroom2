@@ -13,7 +13,6 @@ import {
     OrganizationPopupService,
     OrganizationResolvePagingParams,
     organizationRoute,
-    OrganizationService,
 } from './';
 
 const ENTITY_STATES = [
@@ -42,7 +41,6 @@ const ENTITY_STATES = [
         OrganizationDeletePopupComponent,
     ],
     providers: [
-        OrganizationService,
         OrganizationPopupService,
         OrganizationResolvePagingParams,
     ],

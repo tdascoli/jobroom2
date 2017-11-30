@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import ch.admin.seco.jobroom.service.dto.OrganizationAutocompleteDTO;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
 
 /**
@@ -38,6 +39,14 @@ public interface OrganizationService {
     Optional<OrganizationDTO> findOne(UUID id);
 
     /**
+     *  Get the organization by externalId.
+     *
+     *  @param externalId the externalId of the entity
+     *  @return the entity
+     */
+    Optional<OrganizationDTO> findOneByExternalId(String externalId);
+
+    /**
      *  Delete the "id" organization.
      *
      *  @param id the id of the entity
@@ -53,6 +62,14 @@ public interface OrganizationService {
      *  @return the list of entities
      */
     Page<OrganizationDTO> search(String query, Pageable pageable);
+
+    /**
+     * Search for the organizations corresponding to the prefix and limit result by resultSize.
+     * @param prefix the prefix of organization suggest
+     * @param resultSize the result size
+     * @return result of the suggest
+     */
+    OrganizationAutocompleteDTO suggest(String prefix, int resultSize);
 
     void housekeeping();
 }

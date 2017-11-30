@@ -3,8 +3,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Rx';
 import { JhiEventManager } from 'ng-jhipster';
 
-import { Organization } from './organization.model';
-import { OrganizationService } from './organization.service';
+import { Organization } from '../../shared/organization/organization.model';
+import { OrganizationService } from '../../shared/organization/organization.service';
 
 @Component({
     selector: 'jhi-organization-detail',

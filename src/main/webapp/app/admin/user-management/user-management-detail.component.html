@@ -17,6 +17,8 @@
         <dd>{{user.lastName}}</dd>
         <dt><span jhiTranslate="userManagement.email">Email</span></dt>
         <dd>{{user.email}}</dd>
+        <dt><span jhiTranslate="userManagement.phone">Phone</span></dt>
+        <dd>{{user.phone}}</dd>
         <dt><span jhiTranslate="userManagement.langKey">Lang Key</span></dt>
         <dd>{{user.langKey}}</dd>
         <dt><span jhiTranslate="userManagement.createdBy">Created By</span></dt>
@@ -35,6 +37,10 @@
                 </li>
             </ul>
         </dd>
+        <ng-container *ngIf="userOrganization$ | async as userOrganization">
+            <dt><span jhiTranslate="userManagement.organization">Organization</span></dt>
+            <dd>{{ userOrganization.name }} {{ userOrganization.city }}, {{ userOrganization.street }}</dd>
+        </ng-container>
     </dl>
     <button type="submit"
             routerLink="/user-management"

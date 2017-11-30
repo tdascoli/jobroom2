@@ -1,8 +1,8 @@
 import { Component, Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
-import { Organization } from './organization.model';
-import { OrganizationService } from './organization.service';
+import { Organization } from '../../shared/organization/organization.model';
+import { OrganizationService } from '../../shared/organization/organization.service';
 
 @Injectable()
 export class OrganizationPopupService {

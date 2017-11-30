@@ -6,23 +6,34 @@ import { JhiEventManager } from 'ng-jhipster';
 
 import { UserModalService } from './user-modal.service';
 import { JhiLanguageHelper, User, UserService } from '../../shared';
+import { PHONE_NUMBER_REGEX } from '../../shared/validation/regex-patterns';
+import { Observable } from 'rxjs/Observable';
+import { OrganizationService } from '../../shared/organization/organization.service';
+import {
+    Organization, OrganizationAutocomplete,
+    OrganizationSuggestion
+} from '../../shared/organization/organization.model';
 
 @Component({
     selector: 'jhi-user-mgmt-dialog',
     templateUrl: './user-management-dialog.component.html'
 })
 export class UserMgmtDialogComponent implements OnInit {
+    private static readonly ORGANIZATION_SUGGESTIONS_SIZE = 10;
 
     user: User;
     languages: any[];
     authorities: any[];
     isSaving: Boolean;
+    phoneRegex = PHONE_NUMBER_REGEX;
+    userOrganization: OrganizationSuggestion;
 
     constructor(
         public activeModal: NgbActiveModal,
         private languageHelper: JhiLanguageHelper,
         private userService: UserService,
-        private eventManager: JhiEventManager
+        private eventManager: JhiEventManager,
+        private organizationService: OrganizationService
     ) {}
 
     ngOnInit() {
@@ -34,6 +45,12 @@ export class UserMgmtDialogComponent implements OnInit {
         this.languageHelper.getAll().then((languages) => {
             this.languages = languages;
         });
+
+        if (this.user.organizationId) {
+            this.organizationService.findByExternalId(this.user.organizationId).subscribe((organization: Organization) => {
+                this.userOrganization = organization as OrganizationSuggestion;
+            });
+        }
     }
 
     clear() {
@@ -42,6 +59,7 @@ export class UserMgmtDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
+        this.user.organizationId = this.userOrganization.externalId;
         if (this.user.id !== null) {
             this.userService.update(this.user).subscribe((response) => this.onSaveSuccess(response), () => this.onSaveError());
         } else {
@@ -58,6 +76,16 @@ export class UserMgmtDialogComponent implements OnInit {
     private onSaveError() {
         this.isSaving = false;
     }
+
+    searchOrganizations = (text$: Observable<string>) =>
+        text$
+            .debounceTime(200)
+            .distinctUntilChanged()
+            .flatMap((term) => term.length < 2 ? Observable.empty()
+                : this.organizationService.suggest(term, UserMgmtDialogComponent.ORGANIZATION_SUGGESTIONS_SIZE))
+                    .map((autocomplete: OrganizationAutocomplete) => autocomplete.organizations);
+
+    formatter = (suggestion: OrganizationSuggestion) => `${suggestion.name} ${suggestion.city}, ${suggestion.street}`;
 }
 
 @Component({
@@ -76,11 +104,13 @@ export class UserDialogComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
         this.routeSub = this.route.params.subscribe((params) => {
-            if ( params['login'] ) {
-                this.modalRef = this.userModalService.open(UserMgmtDialogComponent as Component, params['login']);
-            } else {
-                this.modalRef = this.userModalService.open(UserMgmtDialogComponent as Component);
-            }
+            setTimeout(() => {
+                if ( params['login'] ) {
+                    this.modalRef = this.userModalService.open(UserMgmtDialogComponent as Component, params['login']);
+                } else {
+                    this.modalRef = this.userModalService.open(UserMgmtDialogComponent as Component);
+                }
+            });
         });
     }
 

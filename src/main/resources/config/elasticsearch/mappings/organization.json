@@ -1,0 +1,28 @@
+{
+    "organization": {
+        "properties": {
+            "name": {
+                "type": "completion",
+                "analyzer": "keyword"
+            },
+            "externalId": {
+                "type": "keyword"
+            },
+            "street": {
+                "type": "text"
+            },
+            "zipCode": {
+                "type": "keyword"
+            },
+            "city": {
+                "type": "text"
+            },
+            "email": {
+                "type": "text"
+            },
+            "phone": {
+                "type": "text"
+            }
+        }
+    }
+}

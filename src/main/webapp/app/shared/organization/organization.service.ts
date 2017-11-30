@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Http, Response } from '@angular/http';
+import { BaseRequestOptions, URLSearchParams, Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import { SERVER_API_URL } from '../../app.constants';
 
-import { Organization } from './organization.model';
-import { createRequestOption, ResponseWrapper } from '../../shared';
+import { Organization, OrganizationAutocomplete } from './organization.model';
+import { createRequestOption, ResponseWrapper } from '../';
 
 @Injectable()
 export class OrganizationService {
@@ -38,6 +38,13 @@ export class OrganizationService {
         });
     }
 
+    findByExternalId(id: string): Observable<Organization> {
+        return this.http.get(`${this.resourceUrl}/externalId/${id}`).map((res: Response) => {
+            const jsonResponse = res.json();
+            return this.convertItemFromServer(jsonResponse);
+        });
+    }
+
     query(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl, options)
@@ -52,6 +59,17 @@ export class OrganizationService {
         const options = createRequestOption(req);
         return this.http.get(this.resourceSearchUrl, options)
             .map((res: any) => this.convertResponse(res));
+    }
+
+    suggest(prefix: string, resultSize: number): Observable<OrganizationAutocomplete> {
+        const params: URLSearchParams = new URLSearchParams();
+        params.set('prefix', prefix);
+        params.set('resultSize', resultSize.toString());
+        const options: BaseRequestOptions = new BaseRequestOptions();
+        options.params = params;
+
+        return this.http.get(`${this.resourceSearchUrl}/suggest`, options)
+            .map((res: Response) => res.json() as OrganizationAutocomplete);
     }
 
     private convertResponse(res: Response): ResponseWrapper {

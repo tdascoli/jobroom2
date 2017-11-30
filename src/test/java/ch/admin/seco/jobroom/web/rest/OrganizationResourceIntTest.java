@@ -416,6 +416,45 @@ public class OrganizationResourceIntTest {
 
     @Test
     @Transactional
+    public void getOrganizationByExternalId() throws Exception {
+        // Initialize the database
+        organizationRepository.saveAndFlush(organization);
+
+        // Get the organization
+        restOrganizationMockMvc.perform(get("/api/organizations/externalId/{id}", organization.getExternalId()))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(jsonPath("$.id").value(organization.getId().toString()))
+            .andExpect(jsonPath("$.externalId").value(DEFAULT_EXTERNAL_ID))
+            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+            .andExpect(jsonPath("$.street").value(DEFAULT_STREET))
+            .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE))
+            .andExpect(jsonPath("$.city").value(DEFAULT_CITY))
+            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
+            .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE))
+            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
+            .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE));
+    }
+
+    @Test
+    @Transactional
+    public void suggestOrganizations() throws Exception {
+        // Initialize the database
+        organizationRepository.saveAndFlush(organization);
+        organizationSearchRepository.save(organization);
+
+        // Search the organization
+        restOrganizationMockMvc.perform(get("/api/_search/organizations/suggest?prefix=AAA&resultSize=1"))
+            .andExpect(status().isOk())
+            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+            .andExpect(jsonPath("$.organizations.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID)))
+            .andExpect(jsonPath("$.organizations.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.organizations.[*].street").value(hasItem(DEFAULT_STREET)))
+            .andExpect(jsonPath("$.organizations.[*].city").value(hasItem(DEFAULT_CITY)));
+    }
+
+    @Test
+    @Transactional
     public void equalsVerifier() throws Exception {
         TestUtil.equalsVerifier(Organization.class);
         Organization organization1 = new Organization();

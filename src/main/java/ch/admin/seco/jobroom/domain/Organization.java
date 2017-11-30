@@ -18,6 +18,7 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import org.springframework.data.elasticsearch.annotations.Document;
+import org.springframework.data.elasticsearch.annotations.Mapping;
 
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 
@@ -28,6 +29,7 @@ import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 @Table(name = "organization")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "organization")
+@Mapping(mappingPath = "config/elasticsearch/mappings/organization.json")
 public class Organization extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

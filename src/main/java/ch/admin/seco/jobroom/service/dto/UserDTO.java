@@ -39,6 +39,9 @@ public class UserDTO {
     @Size(min = 5, max = 100)
     private String email;
 
+    @Pattern(regexp = "^([+]\\d+)?$")
+    private String phone;
+
     @Size(max = 256)
     private String imageUrl;
 
@@ -65,7 +68,7 @@ public class UserDTO {
 
     public UserDTO(User user) {
         this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
-            user.getEmail(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
+            user.getEmail(), user.getPhone(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet())
@@ -74,7 +77,7 @@ public class UserDTO {
     }
 
     public UserDTO(UUID id, String login, String firstName, String lastName,
-        String email, boolean activated, String imageUrl, String langKey,
+        String email, String phone, boolean activated, String imageUrl, String langKey,
         String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate,
         Set<String> authorities) {
 
@@ -83,6 +86,7 @@ public class UserDTO {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
+        this.phone = phone;
         this.activated = activated;
         this.imageUrl = imageUrl;
         this.langKey = langKey;
@@ -165,6 +169,14 @@ public class UserDTO {
         this.organizationId = organizationId;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -172,6 +184,7 @@ public class UserDTO {
             ", firstName='" + firstName + '\'' +
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
+            ", phone='" + phone + '\'' +
             ", imageUrl='" + imageUrl + '\'' +
             ", activated=" + activated +
             ", langKey='" + langKey + '\'' +
