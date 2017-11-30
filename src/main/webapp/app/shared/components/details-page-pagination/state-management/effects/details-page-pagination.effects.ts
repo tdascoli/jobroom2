@@ -8,6 +8,7 @@ import {
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
+import { Http } from '@angular/http';
 
 @Injectable()
 export class DetailsPagePaginationEffects {
@@ -25,7 +26,8 @@ export class DetailsPagePaginationEffects {
             : new NextItemErrorAction({ feature: action.payload.feature }));
 
     constructor(private actions$: Actions,
-                private store: Store<any>) {
+                private store: Store<any>,
+                private http: Http) {
     }
 
     private getNextItem(loadItemAction: LoadNextItemAction | LoadPreviousItemAction): Observable<Item> {
@@ -36,16 +38,18 @@ export class DetailsPagePaginationEffects {
         const feature = loadItemAction.payload.feature;
         const selectedItemIndex = loadItemAction.payload.itemsList
             .findIndex((item) => item.id === loadItemAction.payload.currentItem.id);
-        const nextItemIndex = selectedItemIndex
-            + (loadItemAction instanceof LoadPreviousItemAction ? -1 : 1);
+        const direction = (loadItemAction instanceof LoadPreviousItemAction ? -1 : 1);
+        const nextItemIndex = selectedItemIndex + direction;
         const nextItem = loadItemAction.payload.itemsList[nextItemIndex];
 
         if (nextItem) {
+            this.http.post('/candidateservice/api/_profilemetrics/candidates',
+                {event: 'nav', id: nextItem.id, direction: direction, index: nextItemIndex}).first().subscribe();
             return Observable.of(nextItem);
         } else {
             this.store.dispatch(new LoadNextItemsPageAction({ feature }));
 
-            return Observable.merge(
+            const nextItemObs = Observable.merge(
                 this.actions$
                     .ofType(NEXT_ITEMS_PAGE_LOADED)
                     .filter((action: NextItemsPageLoadedAction) => action.payload.feature === feature)
@@ -55,6 +59,13 @@ export class DetailsPagePaginationEffects {
                     .filter((action: LoadNextItemsPageErrorAction) => action.payload.feature === feature)
                     .map((action) => null))
                 .take(1);
+
+            nextItemObs.first().subscribe((profile) =>
+                this.http.post('/candidateservice/api/_profilemetrics/candidates',
+                    {event: 'nav', id: profile.id, direction: direction, index: nextItemIndex}).first().subscribe()
+            );
+            
+            return nextItemObs;
         }
     }
 }
