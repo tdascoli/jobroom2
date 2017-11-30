@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
     Candidate,
@@ -27,7 +27,8 @@ import {
 } from '../state-management/state/candidate-search.state';
 import { Gender, Graduation } from '../../shared/model/shared-types';
 import { Http } from '@angular/http';
-import { Location } from "@angular/common";
+import { Location } from '@angular/common';
+import { CandidateLoggingService } from '../services/candidate.logging.service';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -41,7 +42,7 @@ interface EnrichedJobExperience extends JobExperience {
     templateUrl: './candidate-detail.component.html',
     styleUrls: ['./candidate-detail.component.scss']
 })
-export class CandidateDetailComponent implements OnInit {
+export class CandidateDetailComponent implements OnInit, OnDestroy {
     candidateProfile$: Observable<CandidateProfile>;
     jobExperiences$: Observable<Array<EnrichedJobExperience>>;
     jobCenter$: Observable<JobCenter>;
@@ -64,7 +65,8 @@ export class CandidateDetailComponent implements OnInit {
                 private translateService: TranslateService,
                 private store: Store<CandidateSearchState>,
                 private http: Http,
-                private location: Location) {
+                private location: Location,
+                private loggingService: CandidateLoggingService) {
     }
 
     ngOnInit() {
@@ -160,7 +162,7 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     printCandidateDetails(): void {
-        this.profileMetrics({event: 'prnt'});
+        this.profileMetrics({ event: 'prnt' });
         window.print();
     }
 
@@ -174,23 +176,21 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     sendAsMail(): void {
-        this.profileMetrics({event: 'sndlnk'});
+        this.profileMetrics({ event: 'sndlnk' });
     }
 
     copyLink(): void {
-        this.profileMetrics({event: 'cpylnk'});
+        this.profileMetrics({ event: 'cpylnk' });
     }
 
     backToResults(): void {
-        this.profileMetrics({event: 'prflft'});
+        this.profileMetrics({ event: 'prflft' });
     }
 
     profileMetrics(event: Object): void {
         this.candidateProfile$.first().subscribe((profile) => {
                 event['id'] = profile.id;
-                console.log(event);
-                this.http.post('/candidateservice/api/_profilemetrics/candidates',
-                    event).first().subscribe()
+                this.loggingService.logProfileEvent(event);
             });
     }
 
@@ -199,20 +199,20 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     showDetails(candidate): void {
-        if(candidate) {
+        if (candidate) {
             this.candidateContactVisible = true;
-            this.profileMetrics({event: 'shwcnd'});
+            this.profileMetrics({ event: 'shwcnd' });
         } else {
             this.RAVContactVisible = true;
-            this.profileMetrics({event: 'shwrav'});
+            this.profileMetrics({ event: 'shwrav' });
         }
     }
 
     phoneClicked(candidate): void {
-        this.profileMetrics({event: candidate ? 'phncnd' : 'phnrav'});
+        this.profileMetrics({ event: candidate ? 'phncnd' : 'phnrav' });
     }
 
     mailClicked(candidate): void {
-        this.profileMetrics({event: candidate ? 'mailcnd' : 'mailrav'});
+        this.profileMetrics({ event: candidate ? 'mailcnd' : 'mailrav' });
     }
 }

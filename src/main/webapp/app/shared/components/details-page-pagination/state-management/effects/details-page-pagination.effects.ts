@@ -9,6 +9,7 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { Http } from '@angular/http';
+import { CandidateLoggingService } from '../../../../../candidate-search/services/candidate.logging.service';
 
 @Injectable()
 export class DetailsPagePaginationEffects {
@@ -27,7 +28,8 @@ export class DetailsPagePaginationEffects {
 
     constructor(private actions$: Actions,
                 private store: Store<any>,
-                private http: Http) {
+                private http: Http,
+                private loggingService: CandidateLoggingService) {
     }
 
     private getNextItem(loadItemAction: LoadNextItemAction | LoadPreviousItemAction): Observable<Item> {
@@ -43,8 +45,9 @@ export class DetailsPagePaginationEffects {
         const nextItem = loadItemAction.payload.itemsList[nextItemIndex];
 
         if (nextItem) {
-            this.http.post('/candidateservice/api/_profilemetrics/candidates',
-                {event: 'nav', id: nextItem.id, direction: direction, index: nextItemIndex}).first().subscribe();
+            this.loggingService.logProfileEvent(
+                { event: 'nav', id: nextItem.id, dir: direction, index: nextItemIndex }
+            );
             return Observable.of(nextItem);
         } else {
             this.store.dispatch(new LoadNextItemsPageAction({ feature }));
@@ -61,10 +64,11 @@ export class DetailsPagePaginationEffects {
                 .take(1);
 
             nextItemObs.first().subscribe((profile) =>
-                this.http.post('/candidateservice/api/_profilemetrics/candidates',
-                    {event: 'nav', id: profile.id, direction: direction, index: nextItemIndex}).first().subscribe()
+                this.loggingService.logProfileEvent(
+                    { event: 'nav', id: profile.id, dir: direction, index: nextItemIndex }
+                )
             );
-            
+
             return nextItemObs;
         }
     }

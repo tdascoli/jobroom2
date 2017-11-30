@@ -7,6 +7,7 @@ import {
     OccupationPresentationService
 } from '../../shared/reference-service';
 import { CandidateService } from '../services/candidate.service';
+import { CandidateLoggingService } from '../services/candidate.logging.service';
 
 @Component({
     selector: 'jr2-candidate-search-list-item',
@@ -23,6 +24,7 @@ export class CandidateSearchListItemComponent implements OnInit {
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private candidateService: CandidateService,
+                private loggingService: CandidateLoggingService,
                 private http: Http) {
     }
 
@@ -44,7 +46,6 @@ export class CandidateSearchListItemComponent implements OnInit {
     }
 
     logHit(): void {
-        this.http.post('/candidateservice/api/_profilemetrics/candidates',
-            {event: 'hit', id: this.profile.id, index: this.index}).first().subscribe();
+        this.loggingService.logProfileEvent({ event: 'hit', id: this.profile.id, index: this.index });
     }
 }
