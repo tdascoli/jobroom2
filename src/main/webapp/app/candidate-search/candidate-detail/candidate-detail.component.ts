@@ -111,11 +111,12 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
         this.populatePreferredWorkLocations();
 
         this.locationSubscription = this.location.subscribe((event) => {
+                console.log(event);
                 if (event.type === 'popstate' && event.url.indexOf('candidate-detail') < 0) {
                     // Technically, this could just be done in ngOnDestroy directly
-                    this.profileMetrics('prflft');
+                    this.profileMetrics({ event: 'prflft' });
                 } else {
-                    // Log a nav?
+                    // Log as nav!
                 }
             }
         );
@@ -214,5 +215,9 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
 
     mailClicked(candidate): void {
         this.profileMetrics({ event: candidate ? 'mailcnd' : 'mailrav' });
+    }
+
+    addToFavorites(): void {
+        this.profileMetrics({ event: 'favadd' })
     }
 }

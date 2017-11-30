@@ -178,7 +178,7 @@
 
                 <ul class="nav filter-nav flex-column">
                     <li *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
-                        <a class="nav-link">
+                        <a class="nav-link" (click)="addToFavorites()">
                             <i class="fa fa-star-o" aria-hidden="true"></i> {{ 'candidate-detail.candidate-save' | translate }}
                         </a>
                     </li>
