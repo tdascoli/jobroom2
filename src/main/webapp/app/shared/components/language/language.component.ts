@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { LanguageSkill } from '../../model/shared-types';
 
 @Component({
@@ -22,12 +22,21 @@ import { LanguageSkill } from '../../model/shared-types';
     `
 })
 
-export class LanguageComponent {
+export class LanguageComponent implements OnInit {
     @Input() languages: LanguageSkill[];
     @Input() containerClass = 'job-detail__content';
     @Input() titleClass = 'job-detail__content__title';
     @Input() itemClass = 'content__item';
 
+    private static filterLanguagesWithInvalidCodes(languages: LanguageSkill[]): LanguageSkill[] {
+        return languages
+            .filter((language) => language.code !== '98' && language.code !== '99')
+    }
+
     constructor() {
+    }
+
+    ngOnInit(): void {
+        this.languages = LanguageComponent.filterLanguagesWithInvalidCodes(this.languages)
     }
 }
