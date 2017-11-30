@@ -160,7 +160,7 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     printCandidateDetails(): void {
-        this.profileMetrics('prnt');
+        this.profileMetrics({event: 'prnt'});
         window.print();
     }
 
@@ -174,22 +174,24 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     sendAsMail(): void {
-        this.profileMetrics('sndlnk');
+        this.profileMetrics({event: 'sndlnk'});
     }
 
     copyLink(): void {
-        this.profileMetrics('cpylnk');
+        this.profileMetrics({event: 'cpylnk'});
     }
 
     backToResults(): void {
-        this.profileMetrics('prflft');
+        this.profileMetrics({event: 'prflft'});
     }
 
-    profileMetrics(event: string): void {
-        console.log(event);
-        this.candidateProfile$.first().subscribe((profile) =>
-            this.http.post('/candidateservice/api/_profilemetrics/candidates',
-                {event: event, id: profile.id}).first().subscribe());
+    profileMetrics(event: Object): void {
+        this.candidateProfile$.first().subscribe((profile) => {
+                event['id'] = profile.id;
+                console.log(event);
+                this.http.post('/candidateservice/api/_profilemetrics/candidates',
+                    event).first().subscribe()
+            });
     }
 
     windowClosed(): void {
@@ -199,18 +201,18 @@ export class CandidateDetailComponent implements OnInit {
     showDetails(candidate): void {
         if(candidate) {
             this.candidateContactVisible = true;
-            this.profileMetrics('shwcnd');
+            this.profileMetrics({event: 'shwcnd'});
         } else {
             this.RAVContactVisible = true;
-            this.profileMetrics('shwrav');
+            this.profileMetrics({event: 'shwrav'});
         }
     }
 
     phoneClicked(candidate): void {
-        this.profileMetrics(candidate ? 'phncnd' : 'phnrav');
+        this.profileMetrics({event: candidate ? 'phncnd' : 'phnrav'});
     }
 
     mailClicked(candidate): void {
-        this.profileMetrics(candidate ? 'mailcnd' : 'mailrav');
+        this.profileMetrics({event: candidate ? 'mailcnd' : 'mailrav'});
     }
 }

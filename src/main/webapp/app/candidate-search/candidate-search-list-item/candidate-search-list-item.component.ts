@@ -43,7 +43,7 @@ export class CandidateSearchListItemComponent implements OnInit {
         }
     }
 
-    loghit(): void {
+    logHit(): void {
         this.http.post('/candidateservice/api/_profilemetrics/candidates',
             {event: 'hit', id: this.profile.id, index: this.index}).first().subscribe();
     }
