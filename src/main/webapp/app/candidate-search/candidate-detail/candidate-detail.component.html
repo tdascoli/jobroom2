@@ -20,9 +20,13 @@
                             </p>
                         </address>
 
-                        <p>
-                            {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a><br/>
-                            {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
+                        <button class="btn btn-primary" *ngIf="!RAVContactVisible" (click)="showDetails(false);">
+                            {{'candidate-detail.job-center.show-contact' | translate}}
+                        </button>
+
+                        <p *ngIf="RAVContactVisible">
+                            {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}" (click)="phoneClicked(false);">{{jobCenter.phone}}</a><br/>
+                            {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}" (click)="mailClicked(false);">{{jobCenter.email}}</a>
                         </p>
                         <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
                     </div>

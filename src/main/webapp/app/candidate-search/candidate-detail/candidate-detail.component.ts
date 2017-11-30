@@ -54,6 +54,8 @@ export class CandidateDetailComponent implements OnInit {
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
     locationSubscription: any;
+    RAVContactVisible: boolean;
+    candidateContactVisible: boolean;
 
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
@@ -115,6 +117,9 @@ export class CandidateDetailComponent implements OnInit {
                 }
             }
         );
+
+        this.RAVContactVisible = false;
+        this.candidateContactVisible = false;
     }
 
     ngOnDestroy() {
@@ -189,5 +194,15 @@ export class CandidateDetailComponent implements OnInit {
 
     windowClosed(): void {
         this.http.get('https://datenservice.kof.ethz.ch/api/v1/ts?keys=kofbarometer').subscribe();
+    }
+
+    showDetails(candidate): void {
+        if(candidate) {
+            this.candidateContactVisible = true;
+            this.profileMetrics('shwcnd');
+        } else {
+            this.RAVContactVisible = true;
+            this.profileMetrics('shwrav');
+        }
     }
 }

@@ -36,6 +36,7 @@ candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,In der Schweiz nicht a
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
+candidate-detail,candidate-detail.job-center.show-contact,Kontaktdaten anzeigen,Kontaktdaten anzeigen,Kontaktdaten anzeigen,Kontaktdaten anzeigen
 candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Training,Formation,Formazione
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, aptitudes","Conoscenze, competenze, skills"
 candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Level of education,"Niveau de formation ",Livello formativo
