@@ -148,17 +148,22 @@
                         <strong>{{ 'candidate-detail.personal-information.nationality.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.nationalityCode }}</span>
                     </div>
-                    <div *ngIf="candidateProtectedData.address" class="content__item">
-                        <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
-                        <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
-                    </div>
-                    <div *ngIf="candidateProtectedData.phone" class="content__item" (click)="phoneClicked(true);">
-                        <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
-                        <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
-                    </div>
-                    <div *ngIf="candidateProtectedData.email" class="content__item" (click)="mailClicked(true);">
-                        <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>
-                        <span><a href="mailto:{{candidateProtectedData.email}}">{{candidateProtectedData.email}}</a></span>
+                    <button *ngIf="!candidateContactVisible" (click)="showDetails(true);" class="btn btn-primary candidate-detail__contact-button">
+                        {{'candidate-detail.personal-information.show-contact' | translate}}
+                    </button>
+                    <div *ngIf="candidateContactVisible">
+                        <div *ngIf="candidateProtectedData.address" class="content__item">
+                            <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
+                            <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
+                        </div>
+                        <div *ngIf="candidateProtectedData.phone" class="content__item" (click)="phoneClicked(true);">
+                            <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
+                            <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
+                        </div>
+                        <div *ngIf="candidateProtectedData.email" class="content__item" (click)="mailClicked(true);">
+                            <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>
+                            <span><a href="mailto:{{candidateProtectedData.email}}">{{candidateProtectedData.email}}</a></span>
+                        </div>
                     </div>
                 </ng-container>
             </div>
