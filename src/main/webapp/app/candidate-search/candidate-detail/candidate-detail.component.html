@@ -152,11 +152,11 @@
                         <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
                         <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
                     </div>
-                    <div *ngIf="candidateProtectedData.phone" class="content__item">
+                    <div *ngIf="candidateProtectedData.phone" class="content__item" (click)="phoneClicked(true);">
                         <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
                         <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
                     </div>
-                    <div *ngIf="candidateProtectedData.email" class="content__item">
+                    <div *ngIf="candidateProtectedData.email" class="content__item" (click)="mailClicked(true);">
                         <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>
                         <span><a href="mailto:{{candidateProtectedData.email}}">{{candidateProtectedData.email}}</a></span>
                     </div>
