@@ -1,4 +1,4 @@
-<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/candidate-detail', profile.id]">
+<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/candidate-detail', profile.id]" (click)="logHit()">
 
     <div class="d-flex w-100 justify-content-between mb-1">
         <h4 class="text--primary-color" *ngIf="validExperienceData">{{ (jobExperience$ | async)?.occupation}}</h4>
@@ -16,6 +16,9 @@
         </span>
         <span class="badge badge-gray">
             {{ profile.workLoad }}%
+        </span>
+        <span class="badge badge-blue">
+            {{ 'global.gender.' + profile.gender | translate }}
         </span>
     </div>
 

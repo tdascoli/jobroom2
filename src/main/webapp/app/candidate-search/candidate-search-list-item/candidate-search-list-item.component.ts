@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Http } from '@angular/http';
 import { CandidateProfile, JobExperience } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
 import {
@@ -15,12 +16,14 @@ import { CandidateService } from '../services/candidate.service';
 export class CandidateSearchListItemComponent implements OnInit {
     @Input() profile: CandidateProfile;
     @Input() occupationCode: string;
+    @Input() index: number;
 
     jobExperience$: Observable<JobExperience>;
     validExperienceData = true;
 
     constructor(private occupationPresentationService: OccupationPresentationService,
-                private candidateService: CandidateService) {
+                private candidateService: CandidateService,
+                private http: Http) {
     }
 
     ngOnInit(): void {
@@ -38,5 +41,10 @@ export class CandidateSearchListItemComponent implements OnInit {
         } else {
             this.validExperienceData = false;
         }
+    }
+
+    loghit(): void {
+        this.http.post('/candidateservice/api/_profilemetrics/candidates',
+            {event: 'hit', id: this.profile.id, index: this.index}).first().subscribe();
     }
 }

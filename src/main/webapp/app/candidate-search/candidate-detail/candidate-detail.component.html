@@ -4,7 +4,7 @@
             <div class="base__sticky-panel">
                 <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
                     <li class="page-item">
-                        <a class="page-link" routerLink="/candidate-search">{{'candidate-detail.back' | translate}}</a>
+                        <a class="page-link" routerLink="/candidate-search" (click)="backToResults()">{{'candidate-detail.back' | translate}}</a>
                     </li>
                 </ul>
 
@@ -175,12 +175,13 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [class.active]="isCopied" ngxClipboard
-                           [cbContent]="candidateUrl" (cbOnSuccess)="isCopied = true">
+                           [cbContent]="candidateUrl" (cbOnSuccess)="isCopied = true"
+                            (click)="copyLink()">
                             <i class="fa fa-share" aria-hidden="true"></i> {{ 'candidate-detail.candidate-copy-link' | translate }}
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{'mailto:?body=' + candidateUrl}}">
+                        <a class="nav-link" href="{{'mailto:?body=' + candidateUrl}}" (click)="sendAsMail()">
                             <i class="fa fa-envelope"></i> {{ 'candidate-detail.candidate-send-link' | translate }}
                         </a>
                     </li>

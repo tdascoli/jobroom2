@@ -26,6 +26,8 @@ import {
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Gender, Graduation } from '../../shared/model/shared-types';
+import { Http } from '@angular/http';
+import { Location } from "@angular/common";
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -51,13 +53,16 @@ export class CandidateDetailComponent implements OnInit {
     isCopied: boolean;
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
+    locationSubscription: any;
 
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
                 private candidateService: CandidateService,
                 private occupationPresentationService: OccupationPresentationService,
                 private translateService: TranslateService,
-                private store: Store<CandidateSearchState>) {
+                private store: Store<CandidateSearchState>,
+                private http: Http,
+                private location: Location) {
     }
 
     ngOnInit() {
@@ -100,6 +105,20 @@ export class CandidateDetailComponent implements OnInit {
             .map(([jobExperiences, occupationCode]) =>
                 this.candidateService.getRelevantJobExperience(occupationCode, jobExperiences));
         this.populatePreferredWorkLocations();
+
+        this.locationSubscription = this.location.subscribe((event) => {
+                if (event.type === 'popstate' && event.url.indexOf('candidate-detail') < 0) {
+                    // Technically, this could just be done in ngOnDestroy directly
+                    this.profileMetrics('prflft');
+                } else {
+                    // Log a nav?
+                }
+            }
+        );
+    }
+
+    ngOnDestroy() {
+        this.locationSubscription.unsubscribe();
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {
@@ -136,6 +155,7 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     printCandidateDetails(): void {
+        this.profileMetrics('prnt');
         window.print();
     }
 
@@ -146,5 +166,28 @@ export class CandidateDetailComponent implements OnInit {
     isDisplayDegree(degree: string) {
         return degree && Degree[degree] >= Degree.SEKUNDARSCHULE_OBERSTUFE
             && Degree[degree] <= Degree.DOKTORAT;
+    }
+
+    sendAsMail(): void {
+        this.profileMetrics('sndlnk');
+    }
+
+    copyLink(): void {
+        this.profileMetrics('cpylnk');
+    }
+
+    backToResults(): void {
+        this.profileMetrics('prflft');
+    }
+
+    profileMetrics(event: string): void {
+        console.log(event);
+        this.candidateProfile$.first().subscribe((profile) =>
+            this.http.post('/candidateservice/api/_profilemetrics/candidates',
+                {event: event, id: profile.id}).first().subscribe());
+    }
+
+    windowClosed(): void {
+        this.http.get('https://datenservice.kof.ethz.ch/api/v1/ts?keys=kofbarometer').subscribe();
     }
 }
