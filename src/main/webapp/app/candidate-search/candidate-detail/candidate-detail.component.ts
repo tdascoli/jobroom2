@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
     Candidate,
@@ -185,7 +185,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
     }
 
     backToResults(): void {
-        this.profileMetrics({ event: 'prflft' });
+        this.profileLeft();
     }
 
     profileMetrics(event: Object): void {
@@ -195,8 +195,14 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
             });
     }
 
+    /*// ETTODO: Forced refresh counts as unload...
+    @HostListener('window:unload')
     windowClosed(): void {
-        this.http.get('https://datenservice.kof.ethz.ch/api/v1/ts?keys=kofbarometer').subscribe();
+        this.profileLeft();
+    }   */
+
+    profileLeft(): void {
+        this.profileMetrics({ event: 'prflft' })
     }
 
     showDetails(candidate): void {
