@@ -2,6 +2,8 @@
 Main page styles
 ========================================================================== */
 
+@import '../../content/scss/jbr2_variables.scss';
+
 .hipster {
     display: inline-block;
     width: 347px;
@@ -24,5 +26,5 @@ only screen and (min-resolution: 2dppx) {
 }
 
 :host .jumbotron {
-    min-height: 700px;
+    min-height: calc(100vh - #{$header-navbar-height});
 }
