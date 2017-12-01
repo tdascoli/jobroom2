@@ -84,12 +84,22 @@
 
             <!-- Languages -->
             <jr2-languages [languages]="candidateProfile.languages"
+<<<<<<< 9525615d007cf11df51a9d45cc6863aa94955419
                            [containerClass]="'detail__content'"
                            [titleClass]="'detail__content__title'"></jr2-languages>
 
             <!-- Additional information -->
             <div class="detail__content">
                 <h4 class="detail__content__title">
+=======
+                           [containerClass]="'candidate-detail__content'"
+                           [titleClass]="'candidate-detail__content__title'"
+                            (jhiAppear)="onAppear('lang')"></jr2-languages>
+
+            <!-- Additional information -->
+            <div class="candidate-detail__content">
+                <h4 class="candidate-detail__content__title" >
+>>>>>>> Added 'element appeared' functionality'
                     {{ 'candidate-detail.additional-information.title' | translate }}
                 </h4>
                 <div class="content__item">
@@ -103,11 +113,11 @@
                         <span>{{'candidate-detail.additional-information.no-information' | translate}}</span>
                     </ng-template>
                 </div>
-                <div *ngIf="candidateProfile.gender" class="content__item">
+                <div *ngIf="candidateProfile.gender" class="content__item" (jhiAppear)="onAppear('gender')">
                     <strong>{{ 'candidate-detail.additional-information.gender.label' | translate }}</strong>
                     <span>{{ 'global.gender.' + candidateProfile.gender | translate }}</span>
                 </div>
-                <div *ngIf="candidateProfile.highestEducationLevel" class="content__item">
+                <div *ngIf="candidateProfile.highestEducationLevel" class="content__item" (jhiAppear)="onAppear('education')">
                     <strong>{{ 'candidate-detail.additional-information.highestEducationLevel.label' | translate }}</strong>
                     <span>{{ 'global.education.' + candidateProfile.highestEducationLevel | translate }}</span>
                 </div>
@@ -140,7 +150,7 @@
                  class="detail__content">
                 <ng-container *ngIf="candidateProtectedData$ | async as candidateProtectedData">
                     <h4 class="detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
-                    <div *ngIf="candidateProtectedData.firstName || candidateProtectedData.lastName" class="content__item">
+                    <div *ngIf="candidateProtectedData.firstName || candidateProtectedData.lastName" class="content__item" (jhiAppear)="onAppear('name')">
                         <strong>{{ 'candidate-detail.personal-information.name.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.firstName }} {{ candidateProtectedData.lastName }}</span>
                     </div>

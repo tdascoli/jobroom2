@@ -26,7 +26,6 @@ import {
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Gender, Graduation } from '../../shared/model/shared-types';
-import { Http } from '@angular/http';
 import { Location } from '@angular/common';
 import { CandidateLoggingService } from '../services/candidate.logging.service';
 
@@ -57,6 +56,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
     locationSubscription: any;
     RAVContactVisible: boolean;
     candidateContactVisible: boolean;
+    lastElementToAppear: string;
 
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
@@ -64,7 +64,6 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
                 private occupationPresentationService: OccupationPresentationService,
                 private translateService: TranslateService,
                 private store: Store<CandidateSearchState>,
-                private http: Http,
                 private location: Location,
                 private loggingService: CandidateLoggingService) {
     }
@@ -111,10 +110,9 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
         this.populatePreferredWorkLocations();
 
         this.locationSubscription = this.location.subscribe((event) => {
-                console.log(event);
                 if (event.type === 'popstate' && event.url.indexOf('candidate-detail') < 0) {
                     // Technically, this could just be done in ngOnDestroy directly
-                    this.profileMetrics({ event: 'prflft' });
+                    this.profileLeft();
                 } else {
                     // Log as nav!
                 }
@@ -123,6 +121,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
 
         this.RAVContactVisible = false;
         this.candidateContactVisible = false;
+        this.lastElementToAppear = 'none';
     }
 
     ngOnDestroy() {
@@ -162,7 +161,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
         return Observable.of([]);
     }
 
-    printCandidateDetails(): void {
+    public printCandidateDetails(): void {
         this.profileMetrics({ event: 'prnt' });
         window.print();
     }
@@ -176,36 +175,36 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
             && Degree[degree] <= Degree.DOKTORAT;
     }
 
-    sendAsMail(): void {
+    public sendAsMail(): void {
         this.profileMetrics({ event: 'sndlnk' });
     }
 
-    copyLink(): void {
+    public copyLink(): void {
         this.profileMetrics({ event: 'cpylnk' });
     }
 
-    backToResults(): void {
+    public  backToResults(): void {
         this.profileLeft();
     }
 
-    profileMetrics(event: Object): void {
+    public  profileMetrics(event: Object): void {
         this.candidateProfile$.first().subscribe((profile) => {
                 event['id'] = profile.id;
                 this.loggingService.logProfileEvent(event);
             });
     }
 
-    /*// ETTODO: Forced refresh counts as unload...
+    // ETTODO: Forced refresh counts as unload...
     @HostListener('window:unload')
     windowClosed(): void {
         this.profileLeft();
-    }   */
-
-    profileLeft(): void {
-        this.profileMetrics({ event: 'prflft' })
     }
 
-    showDetails(candidate): void {
+    public profileLeft(): void {
+        this.profileMetrics({ event: 'prflft', furthestAppearance: this.lastElementToAppear })
+    }
+
+    public showDetails(candidate): void {
         if (candidate) {
             this.candidateContactVisible = true;
             this.profileMetrics({ event: 'shwcnd' });
@@ -215,15 +214,19 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
         }
     }
 
-    phoneClicked(candidate): void {
+    public phoneClicked(candidate): void {
         this.profileMetrics({ event: candidate ? 'phncnd' : 'phnrav' });
     }
 
-    mailClicked(candidate): void {
+    public mailClicked(candidate): void {
         this.profileMetrics({ event: candidate ? 'mailcnd' : 'mailrav' });
     }
 
-    addToFavorites(): void {
+    public addToFavorites(): void {
         this.profileMetrics({ event: 'favadd' })
+    }
+
+    public onAppear(element): void {
+        this.lastElementToAppear = element;
     }
 }

@@ -8,7 +8,6 @@ import {
 import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
-import { Http } from '@angular/http';
 import { CandidateLoggingService } from '../../../../../candidate-search/services/candidate.logging.service';
 
 @Injectable()
@@ -28,7 +27,6 @@ export class DetailsPagePaginationEffects {
 
     constructor(private actions$: Actions,
                 private store: Store<any>,
-                private http: Http,
                 private loggingService: CandidateLoggingService) {
     }
 

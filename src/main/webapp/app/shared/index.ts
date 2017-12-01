@@ -28,5 +28,6 @@ export * from './shared.module';
 export * from './job-search';
 export * from './reference-service';
 export * from './model/shared-types';
+export * from './appear/appear-directive';
 export * from './validation/regex-patterns';
 export * from './utils/date-utils';
