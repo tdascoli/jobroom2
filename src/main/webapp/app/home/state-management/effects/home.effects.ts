@@ -61,7 +61,9 @@ export class HomeEffects {
             }
         );
 
-    constructor(private actions$: Actions, private router: Router, private candidateService: CandidateService,
+    constructor(private actions$: Actions,
+                private router: Router,
+                private candidateService: CandidateService,
                 private jobService: JobService) {
     }
 }

@@ -4,6 +4,16 @@ export enum ToolbarItem {
     RECRUITMENT_AGENCIES
 }
 
+export class CompaniesTab {
+    static readonly JOB_PUBLICATION = 'company-job-publication';
+    static readonly CANDIDATE_SEARCH = 'company-candidate-search';
+}
+
+export class AgenciesTab {
+    static readonly JOB_PUBLICATION = 'agency-job-publication';
+    static readonly CANDIDATE_SEARCH = 'agency-candidate-search';
+}
+
 export interface HomeLayoutState {
     activeToolbarItem: ToolbarItem,
     activeCompanyTabId: string,

@@ -7,15 +7,15 @@
             </h2>
         </li>
         <jr2-toolbar-item [icon]="'binoculars'" [active]="(activeToolbarItem$ | async) == ToolbarItem.JOB_SEEKERS"
-                          (select)="selectToolbarItem(ToolbarItem.JOB_SEEKERS)">
+                          routerLink="/jobseekers">
             {{'home.toolbar.jobSeekers' | translate}}
         </jr2-toolbar-item>
         <jr2-toolbar-item [icon]="'building'" [active]="(activeToolbarItem$ | async) == ToolbarItem.COMPANIES"
-                          (select)="selectToolbarItem(ToolbarItem.COMPANIES)">
+                          routerLink="/companies/jobpublication">
             {{'home.toolbar.companies' | translate}}
         </jr2-toolbar-item>
         <jr2-toolbar-item [icon]="'eye'" [active]="(activeToolbarItem$ | async) == ToolbarItem.RECRUITMENT_AGENCIES"
-                          (select)="selectToolbarItem(ToolbarItem.RECRUITMENT_AGENCIES)">
+                          routerLink="/agents/candidates">
             {{'home.toolbar.recruitmentAgencies' | translate}}
         </jr2-toolbar-item>
     </jr2-toolbar>
@@ -34,12 +34,12 @@
 
                 <div *ngSwitchCase="ToolbarItem.COMPANIES" id="companies">
                     <ngb-tabset type="tabs nav--job-room" (tabChange)="selectCompaniesTab($event)" [activeId]="activeCompanyTabId$ | async">
-                        <ngb-tab [title]="'home.tools.jobPublicationTab'| translate" id="company-job-publication">
+                        <ngb-tab [title]="'home.tools.jobPublicationTab'| translate" [id]="CompaniesTab.JOB_PUBLICATION">
                             <ng-template ngbTabContent>
                                 <jr2-job-publication-tool></jr2-job-publication-tool>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab [title]="'home.tools.candidateSearchTab' | translate" id="company-candidate-search">
+                        <ngb-tab [title]="'home.tools.candidateSearchTab' | translate" [id]="CompaniesTab.CANDIDATE_SEARCH">
                             <ng-template ngbTabContent>
                                 <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"></jr2-candidate-search-tool>
                             </ng-template>
@@ -49,12 +49,12 @@
 
                 <div *ngSwitchCase="ToolbarItem.RECRUITMENT_AGENCIES" id="agencies">
                     <ngb-tabset type="tabs nav--job-room" (tabChange)="selectRecruitmentAgenciesTab($event)" [activeId]="activeAgencyTabId$ | async">
-                        <ngb-tab [title]="'home.tools.candidateSearchTab'| translate" id="agency-candidate-search">
+                        <ngb-tab [title]="'home.tools.candidateSearchTab'| translate" [id]="AgenciesTab.CANDIDATE_SEARCH">
                             <ng-template ngbTabContent>
                                 <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"></jr2-candidate-search-tool>
                             </ng-template>
                         </ngb-tab>
-                        <ngb-tab [title]="'home.tools.jobPublicationTab' | translate" id="agency-job-publication">
+                        <ngb-tab [title]="'home.tools.jobPublicationTab' | translate" [id]="AgenciesTab.JOB_PUBLICATION">
                             <ng-template ngbTabContent>
                                 <jr2-job-publication-tool></jr2-job-publication-tool>
                             </ng-template>

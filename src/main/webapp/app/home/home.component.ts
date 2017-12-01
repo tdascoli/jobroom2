@@ -12,12 +12,8 @@ import {
     JobSearchToolState
 } from './state-management';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
-import {
-    SelectAgencyTabAction,
-    SelectCompanyTabAction,
-    SelectToolbarItemAction
-} from './state-management/actions/layout.actions';
-import { ToolbarItem } from './state-management/state/layout.state';
+import { ToolbarItem, CompaniesTab, AgenciesTab } from './state-management/state/layout.state';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'jhi-home',
@@ -28,6 +24,8 @@ import { ToolbarItem } from './state-management/state/layout.state';
 })
 export class HomeComponent {
     ToolbarItem: typeof ToolbarItem = ToolbarItem;
+    CompaniesTab: typeof CompaniesTab = CompaniesTab;
+    AgenciesTab: typeof AgenciesTab = AgenciesTab;
 
     activeToolbarItem$: Observable<ToolbarItem>;
     jobSearchToolModel$: Observable<JobSearchToolState>;
@@ -35,7 +33,8 @@ export class HomeComponent {
     activeCompanyTabId$: Observable<string>;
     activeAgencyTabId$: Observable<string>;
 
-    constructor(private store: Store<HomeState>) {
+    constructor(private store: Store<HomeState>,
+                private router: Router) {
         this.jobSearchToolModel$ = store.select(getJobSearchToolState);
         this.candidateSearchToolModel$ = store.select(getCandidateSearchToolState);
         this.activeToolbarItem$ = store.select(getActiveToolbarItem);
@@ -43,15 +42,13 @@ export class HomeComponent {
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
     }
 
-    selectToolbarItem(toolbarItem: ToolbarItem): void {
-        this.store.dispatch(new SelectToolbarItemAction(toolbarItem));
-    }
-
     selectCompaniesTab(event: NgbTabChangeEvent): void {
-        this.store.dispatch(new SelectCompanyTabAction(event.nextId));
+        const url = event.nextId === CompaniesTab.JOB_PUBLICATION ? '/companies/jobpublication' : '/companies/candidates';
+        this.router.navigate([url]);
     }
 
     selectRecruitmentAgenciesTab(event: NgbTabChangeEvent): void {
-        this.store.dispatch(new SelectAgencyTabAction(event.nextId));
+        const url = event.nextId === AgenciesTab.CANDIDATE_SEARCH ? '/agents/candidates' : '/agents/jobpublication';
+        this.router.navigate([url]);
     }
 }
