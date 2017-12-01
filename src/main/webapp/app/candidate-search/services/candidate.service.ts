@@ -8,6 +8,7 @@ import { CandidateSearchFilter } from '../state-management/state/candidate-searc
 import { createPageableURLSearchParams } from '../../shared/model/request-util';
 import { Experience } from '../../shared/model/shared-types';
 import { JhiBase64Service } from 'ng-jhipster';
+import { Principal } from '../../shared/auth/principal.service';
 
 @Injectable()
 export class CandidateService {
@@ -29,15 +30,27 @@ export class CandidateService {
     }
 
     constructor(private http: Http,
-                private base64Service: JhiBase64Service) {
+                private base64Service: JhiBase64Service,
+                private principal: Principal) {
     }
 
-    findCandidate(id: string): Observable<Candidate> {
-        return this.http.get(`${this.resourceUrl}/${id}`)
-            .map((res: Response) => {
-                const jsonResponse = res.json();
-                return jsonResponse as Candidate;
+    findCandidate(candidateProfile: CandidateProfile): Observable<Candidate> {
+        return this.canViewCandidateProtectedData(candidateProfile)
+            .filter((canViewProtectedData) => canViewProtectedData)
+            .flatMap((_) => {
+                return this.http.get(`${this.resourceUrl}/${candidateProfile.id}`)
+                    .map((res: Response) => {
+                        const jsonResponse = res.json();
+                        return jsonResponse as Candidate;
+                    });
             });
+    }
+
+    private canViewCandidateProtectedData(candidateProfile: CandidateProfile): Observable<boolean> {
+        return Observable.fromPromise(
+            this.principal
+                .hasAnyAuthority(['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE'])
+        ).map((isEmploymentAgentOrService) => isEmploymentAgentOrService && candidateProfile.showProtectedData);
     }
 
     findCandidateProfile(id: string): Observable<CandidateProfile> {

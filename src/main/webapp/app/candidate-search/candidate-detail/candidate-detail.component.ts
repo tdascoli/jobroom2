@@ -69,8 +69,7 @@ export class CandidateDetailComponent implements OnInit {
                 : Observable.empty());
 
         this.candidateProtectedData$ = this.candidateProfile$
-            .map((candidateProfile) => candidateProfile.id)
-            .flatMap((id) => this.candidateService.findCandidate(id));
+            .flatMap((candidateProfile) => this.candidateService.findCandidate(candidateProfile));
 
         this.candidateUrl = window.location.href;
 

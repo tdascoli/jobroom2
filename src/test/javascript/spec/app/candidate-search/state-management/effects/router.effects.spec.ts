@@ -15,6 +15,8 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { CandidateService } from '../../../../../../../main/webapp/app/candidate-search/services/candidate.service';
 import { JhiBase64Service } from 'ng-jhipster';
 import { Http } from '@angular/http';
+import { Principal } from '../../../../../../../main/webapp/app/shared/auth/principal.service';
+import { AccountService } from '../../../../../../../main/webapp/app/shared/auth/account.service';
 
 describe('RouterEffects', () => {
     const testFilter = 'eyJza2lsbHMiOltdLCJsYW5ndWFnZVNraWxscyI6W3siY29kZSI6ImRlIiwid3Jpd' +
@@ -39,6 +41,8 @@ describe('RouterEffects', () => {
                 JhiBase64Service,
                 CandidateService,
                 RouterEffects,
+                Principal,
+                AccountService,
                 provideMockActions(() => actions$),
                 { provide: Router, useValue: mockRouter },
                 { provide: Http, useValue: null }
