@@ -2,50 +2,50 @@ page,key,de,en,fr,it
 activate,activate.messages.error,"<strong>Ihr Benutzer konnte nicht aktiviert werden.</strong> Bitte benutzen Sie die Registrierungsmaske, um sich zu registrieren.",<strong>Your user could not be activated.</strong> Please use the registration form to sign up.,<strong>Votre compte utilisateur n'a pas pu être activé.</strong> Utilisez le formulaire d'enregistrement pour en créer un nouveau.,<strong>Il tuo account non può essere attivato.</strong> Si prega di usare il modulo di registrazione per iscriversi.
 activate,activate.messages.success,"<strong>Ihr Benutzer wurde aktiviert.</strong> Bitte ","<strong>Your user account has been activated.</strong> Please ","<strong>Votre compte utilisateur a été activé.</strong> Merci de vous ",<strong>Il tuo account è stato attivato.</strong> Si prega di
 activate,activate.title,Aktivierung,Activation,Activation,Attivazione
-audits,audits.filter.button.clear,leeren,clear,Effacer,cancella
-audits,audits.filter.button.close,abschliessen,close,Fermer,chiudi
-audits,audits.filter.button.today,heute,today,Aujourd'hui,oggi
+audits,audits.filter.button.clear,leeren,clear,effacer,cancella
+audits,audits.filter.button.close,abschliessen,close,fermer,chiudi
+audits,audits.filter.button.today,heute,today,aujourd'hui,oggi
 audits,audits.filter.button.weeks,Wochen,Weeks,Semaines,Settimane
-audits,audits.filter.from,von,from,De,da
+audits,audits.filter.from,von,from,de,da
 audits,audits.filter.title,Nach Datum filtern,Filter per date,Filtrer par date,Filtra per data
 audits,audits.filter.to,bis,to,à,a
 audits,audits.table.data.remoteAddress,Remote-Adresse:,Remote Address:,Adresse Distante :,Indirizzo remoto:
-audits,audits.table.header.data,Zusatzinformationen,Extra data,Autres données,Altre informazioni
+audits,audits.table.header.data,Zusatzinformationen,Additional data,Autres données,Altre informazioni
 audits,audits.table.header.date,Datum,Date,Date,Data
 audits,audits.table.header.principal,Benutzer,User,Utilisateur,Utente
-audits,audits.table.header.status,Stand,Status,Etat,Stato
+audits,audits.table.header.status,Stand,Status,État,Stato
 audits,audits.title,Audits,Audits,Audits,Cambiamenti
-candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Driving licence categories,Catégories de permis de conduire,Categorie patente
+candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Driving licences,Permis de conduire,Categorie patente
 candidate-detail,candidate-detail.additional-information.education.label,Ausbildung,Education,Formation,Formazione
 candidate-detail,candidate-detail.additional-information.gender.label,Geschlecht,Gender,Sexe,Sesso
 candidate-detail,candidate-detail.additional-information.highestEducationLevel.label,Höchste Bildungsstufe,Highest education level,Niveau de formation le plus élevé,Massimo titolo di studio
 candidate-detail,candidate-detail.additional-information.no-information,Keine Angaben,No information,Aucune indication,Nessuna indicazione
-candidate-detail,candidate-detail.additional-information.preferredWorkRegions.label,Gesuchte Arbeitsregion/en,Preferred work region(s),Région/s de travail recherchée/s,Regione/i di ricerca
+candidate-detail,candidate-detail.additional-information.preferredWorkRegions.label,Gesuchte Arbeitsregionen,Preferred work regions,Régions de travail recherchées,Regioni di ricerca
 candidate-detail,candidate-detail.additional-information.title,Weitere Angaben,Additional information,Autres indications,Altri dati
 candidate-detail,candidate-detail.additional-information.workForm.label,Arbeitsform,Work form,Forme de travail,Tipologia lavorativa
 candidate-detail,candidate-detail.back,Zurück zu den Suchergebnissen,Back to search results,Retour aux résultats,"Torna ai risultati della ricerca "
 candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Copy link,Copier le lien,Copia link
 candidate-detail,candidate-detail.candidate-print,Drucken,Print,Imprimer,Stampa
-candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Save candidate profile,Sauvegarder le profil du candidat,salva candidato
+candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Save candidate profile,Sauvegarder le profil du candidat,Salva candidato
 candidate-detail,candidate-detail.candidate-send-link,Link versenden,Send link,Envoyer le lien,Invia link
-candidate-detail,candidate-detail.graduation.ACCEPTED,CH anerkannt,Accepted in Switzerland,Reconnu en Suisse,Riconosciuto in CH
-candidate-detail,candidate-detail.graduation.CH,CH,Swiss,Suisse,CH
+candidate-detail,candidate-detail.graduation.ACCEPTED,Schweiz anerkannt,Swiss recognized,Reconnu en Suisse,Riconosciuto in Svizzera
+candidate-detail,candidate-detail.graduation.CH,Schweiz,Swiss,Suisse,Svizzero
 candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
-candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,Ausländisch,Foreign,Etranger,Straniero
+candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,In der Schweiz nicht anerkannt,In Switzerland not recognized,Diplôme non reconnu en Suisse,Diploma non riconosciuto in Svizzera
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
-candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Ausbildung,Ausbildung,Ausbildung
+candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Training,Formation,Formazione
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, aptitudes","Conoscenze, competenze, skills"
 candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Level of education,"Niveau de formation ",Livello formativo
-candidate-detail,candidate-detail.job-experience.experience.label,Erfahrungsjahre auf dem Beruf,Number of years experience,Années d'expérience dans la profession,Anni di esperienza professionale
-candidate-detail,candidate-detail.job-experience.graduation.label,Berufsabschluss,Professional degree,Diplôme dans la profession,Titolo professionale
-candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Professional title,Désignation de la profession,Denominazione professionale
+candidate-detail,candidate-detail.job-experience.experience.label,Berufserfahrung,Professional experience,Années d'expérience,Anni di esperienza
+candidate-detail,candidate-detail.job-experience.graduation.label,Berufsabschluss,Professional degree,Diplôme,Titolo professionale
+candidate-detail,candidate-detail.job-experience.job.label,Berufsbezeichnung,Occupation,Profession,Professione
 candidate-detail,candidate-detail.job-experience.last-job.label,Zuletzt ausgeübter Beruf,Last job,Dernière profession exercée,Ultima professione svolta
 candidate-detail,candidate-detail.job-experience.title,Berufliche Qualifikation,Professional qualification,Qualifications professionnelles,Qualifica professionale
 candidate-detail,candidate-detail.personal-information.address.label,Adresse,Address,Adresse,Indirizzo
 candidate-detail,candidate-detail.personal-information.e-mail.label,E-Mail,Email,E-mail,email
-candidate-detail,candidate-detail.personal-information.mobile.label,Mobile,Mobile number,Tél. mobile,Cellulare
+candidate-detail,candidate-detail.personal-information.mobile.label,Mobiltelefon,Mobile number,Tél. mobile,Cellulare
 candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname,Last name / First name,Nom / prénom,Cognome / nome
 candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Nationality,"Nationalité ",Cittadinanza
 candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telephone,Téléphone,Telefono
@@ -66,20 +66,20 @@ candidate-search,candidate-search.education.label,Bildungsstufe,Level of educati
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer le résultat de la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
-candidate-search,candidate-search.graduation.ACCEPTED,CH-Abschluss oder CH anerkannt,Swiss degree or accepted in Switzerland,Diplôme suisse ou reconnu en Suisse,Titolo CH o riconosciuto in CH
-candidate-search,candidate-search.graduation.CH,CH-Abschluss,Swiss degree,Diplôme suisse,Titolo CH
+candidate-search,candidate-search.graduation.ACCEPTED, Schweiz oder anerkannt,Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
+candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Titolo svizzero
 candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
-candidate-search,candidate-search.graduation.NOT_ACCEPTED,Abschluss CH oder ausländisch,Swiss degree or foreign degree,Diplôme suisse ou étranger,Titolo CH o straniero
+candidate-search,candidate-search.graduation.NOT_ACCEPTED,Schweiz oder ausländisch,Swiss or foreign degree,Diplôme suisse ou étranger,Titolo svizzero o estero
 candidate-search,candidate-search.graduation.label,Abschluss,Degree,Diplôme,Titolo
 candidate-search,candidate-search.keywords.label,Suchbegriffe,Search terms,Critères de recherche,Termini ricercati
 candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
 candidate-search,candidate-search.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
-candidate-search,candidate-search.skills.label,"Fähigkeiten, Skills","Competencies, skills","Compétences, aptitudes",Competenze skills
-candidate-search,candidate-search.skills.placeholder,z.B. Tiefbau,E.g. Civil engineering,p. ex. génie civil,es. genio civile
+candidate-search,candidate-search.skills.label,Suchbegriffe,Key words,Mots-clés,Parole chiave
+candidate-search,candidate-search.skills.placeholder,"Fähigkeiten, Skills","Competencies, skills","Compétences, aptitudes",Competenze skills
 candidate-search,candidate-search.title,Kandidatensuche,Candidate search,Recherche de candidats,Cerca candidati
 candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen,Select degree,Sélectionner un diplôme,Seleziona titolo...
 candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Degree,Diplôme,Titolo
-candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Professional title,Désignation de la profession,Denominazione professionale
+candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Occupation,Profession,Professione
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Canton of residence,Canton de domicile,Luogo di domicilio: Cantone
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Cantons,Cantons,Cantoni
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Home-based work,Travail à domicile,Telelavoro
@@ -88,7 +88,7 @@ candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Shift work,T
 candidate-search,candidate-search.workForm.SUNDAY_AND_HOLIDAYS,Sonn- und Feiertagsarbeit,Sunday and holiday work,Travail le dimanche et les jours fériés,Lavoro domenicale e festivo
 candidate-search,candidate-search.workForm.label,Arbeitsform,Work form,Forme de travail,Tipologia lavorativa
 candidate-search,candidate-search.workLocation.label,Arbeitsort,Work location,Lieu de travail,Sede di lavoro
-candidate-search,candidate-search.workload.label,Arbeitspensum,FT/PT,Taux d'occupation,Grado di occupazione
+candidate-search,candidate-search.workload.label,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 candidate-search,candidate-search.workplace.label,Arbeitsort,Work location,Lieu de travail,"Sede di lavoro "
 candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Location, municipality, canton","Lieu, commune, canton","Località, Comune, Cantone"
 companyType,jobroomApp.CompanyType.AVG,AVG,AVG,AVG,AVG
@@ -150,7 +150,7 @@ global,error.NotNull,Feld {{fieldName}} darf nicht leer sein!,Field {{ fieldName
 global,error.Size,Feld {{fieldName}} erfüllt nicht die minimalen/maximalen Voraussetzungen!,Field {{ fieldName }} does not meet min/max size requirements!,Le champ {{fieldName}} ne respecte pas les critères minimums et maximums !,Il campo {{ fieldName }} non è conforme ai requisiti di lunghezza min/max!
 global,error.emailexists,Email wird bereits verwendet!,Email is already in use!,E-mail déjà utilisé !,L'email è già in uso!
 global,error.idexists,Ein neuer {{entityName}} kann noch keine ID haben,A new {{ entityName }} cannot have an ID yet.,La nouvelle entité {{entityName}} ne peut pas encore avoir d'ID !,Un(a) nuovo/a {{entityName}} non può già avere un ID
-global,error.internalServerError,Internal server error,Internal server error,Erreur interne du serveur,Errore interno server
+global,error.internalServerError,Interner Serverfehler,Internal server error,Erreur interne du serveur,Errore interno server
 global,error.server.not.reachable,Server ist nicht erreichbar,Server not reachable,Serveur inaccessible,Server non raggiungibile
 global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
 global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Nom d'utilisateur déjà utilisé !,Il nome utente è già in uso!
@@ -196,7 +196,7 @@ global,global.drivingLicenceCategory.DE,DE,DE,DE,DE
 global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
-global,global.drivingLicenceCategory.label,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie,Führerausweiskategorie
+global,global.drivingLicenceCategory.label,Führerausweiskategorie,Driving licence level,Catégorie de permis de conduire,Categoria patente
 global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,degré primaire - ISCED 1,Livello primario - ISCED 1
 global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,degré secondaire I - ISCED 2,Livello secondario I - ISCED 2
 global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,degré secondaire II - ISCED 3,Livello secondario II - ISCED 3
@@ -205,6 +205,7 @@ global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED
 global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,degré tertiaire II - ISCED 6,Livello terziario II - ISCED 6
 global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,Less than 1 year,Moins d'un an,meno di 1 anno
 global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,More than 1 year,Plus d'un an,più di 1 anno
+global,global.experience.1_TO_3_YEAR,1 bis 3 Jahre,1 to 3 years,1 - 3 ans,1 - 3 anni
 global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,More than 3 years,Plus de trois ans,più di 3 anni
 global,global.experience.NONE,Keine Erfahrung,No experience,Aucune expérience,nessuna esperienza
 global,global.field.id,ID,ID,ID,ID
@@ -247,7 +248,7 @@ global,global.menu.home,Startseite,Home,Page d'accueil,Home
 global,global.menu.jhipster-needle-menu-add-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
 global,global.menu.language,Sprache,Language,Langue,Lingua
 global,global.messages.error.dontmatch,Das bestätigte Passwort entspricht nicht dem neuen Passwort!,The confirmed password and the new password do not match!,La confirmation du mot de passe ne correspond pas au nouveau mot de passe !,La password e la sua conferma non corrispondono!
-global,global.messages.info.authenticated.link,anmelden,sign in,Se connecter,Accedi
+global,global.messages.info.authenticated.link,Anmelden,Sign in,Se connecter,Accedi
 global,global.messages.info.authenticated.prefix,"Wenn Sie sich ","If you’d like, ","Si vous voulez vous ",Se vuoi
 global,global.messages.info.authenticated.suffix,"möchten, versuchen Sie es mit <br/>- Administrator (Name=""admin"" und Passwort=""admin"")<br/>- Benutzer (Name=""user"" und Passwort=""user"").","you can try the default accounts:<br/>- Administrator (login=""admin"" and password=""admin"") <br/>- User (login=""user"" and password=""user"").",", vous pouvez utiliser les comptes par défaut : <br/> - Administrateur (nom d'utilisateur=""admin"" et mot de passe =""admin"") <br/> - Utilisateur (nom d'utilisateur=""user"" et mot de passe =""user"").",", puoi provare gli account di default: <br/> - Amministratore (user = ""admin"" e la password = ""admin"") <br/> - utente (user = ""user"" e la password = ""user"")"
 global,global.messages.info.register.link,Registrieren Sie sich,Register a new account,Créer un compte,Crea un account
@@ -272,11 +273,11 @@ global,global.reference.canton.BS,Basel-Stadt,Basel-Stadt,Bâle-Ville,Basilea-Ci
 global,global.reference.canton.CH,Schweiz,Schweiz,Suisse,Svizzera
 global,global.reference.canton.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Principato Liechtenstein
 global,global.reference.canton.FR,Freiburg,Freiburg,Fribourg,Friburgo
-global,global.reference.canton.GE,Genf,Genf,Genève,Ginevra
+global,global.reference.canton.GE,Genf,Geneva,Genève,Ginevra
 global,global.reference.canton.GL,Glarus,Glarus,Glaris,Glarona
 global,global.reference.canton.GR,Graubünden,Graubünden,Grisons,Grigioni
 global,global.reference.canton.JU,Jura,Jura,Jura,Giura
-global,global.reference.canton.LU,Luzern,Luzern,Lucerne,Lucerna
+global,global.reference.canton.LU,Luzern,Lucerne,Lucerne,Lucerna
 global,global.reference.canton.NE,Neuenburg,Neuenburg,Neuchâtel,Neuchâtel
 global,global.reference.canton.NW,Nidwalden,Nidwalden,Nidwald,Nidwaldo
 global,global.reference.canton.OW,Obwalden,Obwalden,Obwald,Obwaldo
@@ -291,49 +292,57 @@ global,global.reference.canton.VD,Waadt,Waadt,Vaud,Vaud
 global,global.reference.canton.VS,Wallis,Wallis,Valais,Vallese
 global,global.reference.canton.ZG,Zug,Zug,Zoug,Zugo
 global,global.reference.canton.ZH,Zürich,Zurich,Zurich,Zurigo
-global,global.reference.language.ar,Arabisch,Arabisch,Arabisch,Arabisch
-global,global.reference.language.bs,Bulgarisch,Bulgarisch,Bulgarisch,Bulgarisch
-global,global.reference.language.cs,Tschechisch,Tschechisch,Tschechisch,Tschechisch
-global,global.reference.language.da,Dänisch,Dänisch,Dänisch,Dänisch
-global,global.reference.language.de,Deutsch,Deutsch,Deutsch,Deutsch
-global,global.reference.language.de-ch,CH-Deutsch,CH-Deutsch,CH-Deutsch,CH-Deutsch
-global,global.reference.language.en,Englisch,Englisch,Englisch,Englisch
-global,global.reference.language.es,Spanisch,Spanisch,Spanisch,Spanisch
-global,global.reference.language.fi,Finnisch,Finnisch,Finnisch,Finnisch
-global,global.reference.language.fr,Französisch,Französisch,Französisch,Französisch
-global,global.reference.language.gr,Griechisch,Griechisch,Griechisch,Griechisch
-global,global.reference.language.hr,Kroatisch,Kroatisch,Kroatisch,Kroatisch
-global,global.reference.language.hu,Ungarisch,Ungarisch,Ungarisch,Ungarisch
-global,global.reference.language.it,Italienisch,Italienisch,Italienisch,Italienisch
-global,global.reference.language.jp,Japanisch,Japanisch,Japanisch,Japanisch
+global,global.reference.canton.AU,Ausland,Abroad,Étranger,Estero
+global,global.reference.language.ar,Arabisch,Arab,Arabe,Arabo
+global,global.reference.language.bg,Bulgarisch,Bulgarian,Bulgare,Bulgaro
+global,global.reference.language.bs,Bosnisch,Bosnian,Bosniaque,Bosniaco
+global,global.reference.language.ch,Schweizerdeutsch,Swiss German,Suisse Allemand,Svizzero tedesco
+global,global.reference.language.cs,Tschechisch,Czech,Tchèque,Ceco
+global,global.reference.language.da,Dänisch,Danish,Danois,Danese
+global,global.reference.language.de,Deutsch,German,Allemand,Tedesco
+global,global.reference.language.el,Griechisch,Greek,Grec,Greco
+global,global.reference.language.en,Englisch,English,Anglais,Inglese
+global,global.reference.language.es,Spanisch,Spanish,Espagnol,Spagnolo
+global,global.reference.language.fi,Finnisch,Finnish,Finlandais,Finlandese
+global,global.reference.language.fl,Flämisch,Flemish,Flamand,Fiammingo
+global,global.reference.language.fr,Französisch,French,Français,Francese
+global,global.reference.language.he,Hebräisch,Hebrew,Hébraïque,Ebreo
+global,global.reference.language.hr,Kroatisch,Croatian,Croate,Croato
+global,global.reference.language.hu,Ungarisch,Hungarian,Hongrois,Ungherese
+global,global.reference.language.it,Italienisch,Italian,Italien,Italiano
+global,global.reference.language.ja,Japanisch,Japanese,Japonais,Giapponese
 global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
-global,global.reference.language.ku,Kurdisch,Kurdisch,Kurdisch,Kurdisch
+global,global.reference.language.ku,Kurdisch,Kurdish,Kurde,Curdo
 global,global.reference.language.level.BASIC,Grundkenntnisse,Grundkentnisse,Grundkentnisse,Principiante
 global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Avanzato
 global,global.reference.language.level.NONE,keine Kenntnisse,keine Kentnisse,keine Kentnisse,nessuna conoscenza
 global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
-global,global.reference.language.lt,Litauisch,Litauisch,Litauisch,Litauisch
-global,global.reference.language.ne,Holländisch,Holländisch,Holländisch,Holländisch
-global,global.reference.language.no,Norwegisch,Norwegisch,Norwegisch,Norwegisch
+global,global.reference.language.lt,Litauisch,Lithuanian,Lituanien,Lituano
+global,global.reference.language.mk,Mazedonisch,Macedonian,Macédonien,Macedone
+global,global.reference.language.nl,Holländisch,Dutch,Hollandais,Olandese
+global,global.reference.language.no,Norwegisch,Norvegian,Norvégien,Norvegese
 global,global.reference.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Nessuna scelta
-global,global.reference.language.po,Polnisch,Polnisch,Polnisch,Polnisch
-global,global.reference.language.pt,Portugiesisch,Portugiesisch,Portugiesisch,Portugiesisch
-global,global.reference.language.ro,Rumänisch,Rumänisch,Rumänisch,Rumänisch
-global,global.reference.language.ru,Russisch,Russisch,Russisch,Russisch
-global,global.reference.language.sk,Slowakisch,Slowakisch,Slowakisch,Slowakisch
-global,global.reference.language.sl,Slowenisch,Slowenisch,Slowenisch,Slowenisch
+global,global.reference.language.pl,Polnisch,Polish,Polonais,Polacco
+global,global.reference.language.pt,Portugiesisch,Portuguese,Portugais,Portoghese
+global,global.reference.language.rm,Rätoromanisch,Rhaeto-Romanic,Rheto-Romanche,Reto-Romancio
+global,global.reference.language.ro,Rumänisch,Romanian,Roumain,Rumeno
+global,global.reference.language.ru,Russisch,Russian,Russe,Russo
+global,global.reference.language.sc,Serbokroatisch,Serbo-Croatian,Serbo-croate,Serbo croato
+global,global.reference.language.sk,Slovak,Slowakisch,Slovaque,Slovaco
+global,global.reference.language.sl,Slowenisch,Slovenian,Slovène,Sloveno
 global,global.reference.language.spoken,mündlich,mündlich,mündlich,orale
-global,global.reference.language.sq,Albanisch,Albanisch,Albanisch,Albanisch
-global,global.reference.language.sr,Serbisch,Serbisch,Serbisch,Serbisch
-global,global.reference.language.sv,Schwedisch,Schwedisch,Schwedisch,Schwedisch
-global,global.reference.language.ta,Tamil,Tamil,Tamil,Tamil
-global,global.reference.language.th,Thai,Thai,Thai,Thai
-global,global.reference.language.tr,Türkisch,Türkisch,Türkisch,Türkisch
-global,global.reference.language.vi,Vietnamesisch,Vietnamesisch,Vietnamesisch,Vietnamesisch
+global,global.reference.language.sq,Albanisch,Albanian,Albanais,Albanese
+global,global.reference.language.sr,Serbisch,Serbian,Serbe,Serbo
+global,global.reference.language.sv,Schwedisch,Swedish,Suédois,Svedese
+global,global.reference.language.ta,Tamil,Tamil,Tamoul,Tamil
+global,global.reference.language.th,Thai,Thai,Thaïlandais,Tailandese
+global,global.reference.language.tr,Türkisch,Turkish,Turc,Turco
+global,global.reference.language.vi,Vietnamesisch,Vietnamese,Vietnamien,Vietnamita
 global,global.reference.language.written,schriftlich,schriftlich,schriftlich,scritto
-global,global.reference.language.zh,Chinesisch,Chinesisch,Chinesisch,Chinesisch
+global,global.reference.language.zh,Chinesisch,Chinese,Chinois,Cinese
 global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Lingue
-global,global.reference.region.A,Ausland,Ausland,étranger,esteroLU05
+global,global.reference.region.AU,Ausland,Abroad,Étranger,Estero
+global,global.reference.region.A,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
 global,global.reference.region.AG02,Baden,Baden,Baden,Baden
 global,global.reference.region.AG03,Brugg,Brugg,Brugg,Brugg
@@ -346,8 +355,8 @@ global,global.reference.region.AG09,Wettingen,Wettingen,Wettingen,Wettingen
 global,global.reference.region.AG10,Wohlen,Wohlen,Wohlen,Wohlen
 global,global.reference.region.AG11,Zofingen,Zofingen,Zofingen,Zofingen
 global,global.reference.region.AG12,Zurzach,Zurzach,Zurzach,Zurzach
-global,global.reference.region.AI01,"Appenzell-I.Rh, ganzer Kanton","Appenzell-I.Rh, ganzer Kanton","Appenzell-I.Rh, tout le canton","Appenzell-I.Rh, tutto il cantone"
-global,global.reference.region.AR01,"Appenzell-A.Rh, ganzer Kanton","Appenzell-A.Rh, ganzer Kanton","Appenzell-A.Rh, tout le canton","Appenzell-A.Rh, tutto il cantone"
+global,global.reference.region.AI01,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
+global,global.reference.region.AR01,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
 global,global.reference.region.BE01,"Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen"
 global,global.reference.region.BE02,Frutigen,Frutigen,Frutigen,Frutigen
 global,global.reference.region.BE03,"Niedersimmental, Thun","Niedersimmental, Thun","Niedersimmental, Thoune","Niedersimmental, Thun"
@@ -371,8 +380,8 @@ global,global.reference.region.FR04,La Sarine,La Sarine,La Sarine,La Sarine
 global,global.reference.region.FR05,See/Lac,See/Lac,See/Lac,See/Lac
 global,global.reference.region.FR06,Sense/Singine,Sense/Singine,Sense/Singine,Sense/Singine
 global,global.reference.region.FR07,La Veveyse,La Veveyse,La Veveyse,La Veveyse
-global,global.reference.region.GE01,"Genf, ganzer Kanton","Genf, ganzer Kanton","Genève, tout le canton","Ginevra, tutto il cantone"
-global,global.reference.region.GL01,"Glarus, ganzer Kanton","Glarus, ganzer Kanton","Glaris, tout le canton","Glarona, tutto il cantone"
+global,global.reference.region.GE01,"Genf, ganzer Kanton","Geneva, entire canton","Genève, tout le canton","Ginevra, tutto il cantone"
+global,global.reference.region.GL01,"Glarus, ganzer Kanton","Glarus, entire canton","Glaris, tout le canton","Glarona, tutto il cantone"
 global,global.reference.region.GL02,Glarus,Glarus,Glaris,Glarona
 global,global.reference.region.GR01,"Plessur, Chur","Plessur, Chur","Plessur, Coire","Plessur, Coira"
 global,global.reference.region.GR02,Unterlandquart,Unterlandquart,Unterlandquart,Unterlandquart
@@ -395,10 +404,11 @@ global,global.reference.region.LU01,"Hochdorf, Luzern","Hochdorf, Luzern","Hochd
 global,global.reference.region.LU02,Sursee,Sursee,Sursee,Sursee
 global,global.reference.region.LU03,Willisau,Willisau,Willisau,Willisau
 global,global.reference.region.LU04,Entlebuch,Entlebuch,Entlebuch,Entlebuch
+global,global.reference.region.LU05,Emmen,Emmen,Emmen,Emmen
 global,global.reference.region.NE01,"Boudry, Neuenburg, Val-de-Ruz","Boudry, Neuenburg, Val-de-Ruz","Boudry, Neuchâtel, Val-de-Ruz","Boudry, Neuchâtel, Val-de-Ruz"
 global,global.reference.region.NE02,"La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers"
-global,global.reference.region.NW01,"Nidwalden, ganzer Kanton","Nidwalden, ganzer Kanton","Nidwalden, tout le canton","Nidwalden, tuttu il cantone"
-global,global.reference.region.OW01,"Obwalden, ganzer Kanton","Obwalden, ganzer Kanton","Obwalden, tout le canton","Obwalden, tutto il cantone"
+global,global.reference.region.NW01,"Nidwalden, ganzer Kanton","Nidwalden, entire canton","Nidwalden, tout le canton","Nidwalden, tutto il cantone"
+global,global.reference.region.OW01,"Obwalden, ganzer Kanton","Obwalden, entire canton","Obwalden, tout le canton","Obwalden, tutto il cantone"
 global,global.reference.region.SG01,Region St. Gallen,Region St. Gallen,Région St-Gall,Regione S. Gallo
 global,global.reference.region.SG02,Region Rorschach,Region Rorschach,Région Rorschach,Regione Rorschach
 global,global.reference.region.SG03,Region Heerbrugg,Region Heerbrugg,Région Heerbrugg,Regione Heerbrugg
@@ -427,7 +437,7 @@ global,global.reference.region.TI02,"Locarno, Vallemaggio","Locarno, Vallemaggio
 global,global.reference.region.TI03,Lugano,Lugano,Lugano,Lugano
 global,global.reference.region.TI04,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto,Basso Mendrisiotto
 global,global.reference.region.TI06,Bellinzonese,Bellinzonese,Bellinzonese,Bellinzonese
-global,global.reference.region.UR01,"Uri, ganzer Kanton","Uri, ganzer Kanton","Uri, tout le canton","Uri, tutto il cantone"
+global,global.reference.region.UR01,"Uri, ganzer Kanton","Uri, entire canton","Uri, tout le canton","Uri, tutto il cantone"
 global,global.reference.region.VD01,Lausanne,Lausanne,Lausanne,Losanna
 global,global.reference.region.VD02,"Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron","Cossonay, Echallens, Lavaux, Morges, Oron"
 global,global.reference.region.VD03,"Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon","Avenches, Grandson, Moudon, Orbe, Payerne, Yverdon"
@@ -453,14 +463,14 @@ global,global.reference.region.ZH08,Andelfingen,Andelfingen,Andelfingen,Andelfin
 global,global.reference.region.ZH09,Winterthur,Winterthur,Winterthur,Winterthur
 global,global.reference.region.ZH10,Pfäffikon,Pfäffikon,Pfäffikon,Pfäffikon
 global,global.reference.region.ZH11,Hinwil,Hinwil,Hinwil,Hinwil
-global,global.reference.region.ZH12,Stadt Zürich,Stadt Zürich,ville de Zurich,città di Zurigo
+global,global.reference.region.ZH12,Stadt Zürich,Zurich City,ville de Zurich,città di Zurigo
 global,global.ribbon.dev,Local,Local,Local,Local
-global,global.ribbon.development,Development,Development,Développement,Development
+global,global.ribbon.development,Entwicklung,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test
 global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
 global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
-global,navigation.next,Nächster,Next,Suivant,Seguente
-global,navigation.previous,Bisherige,Previous,Ancien,Precedente
+global,navigation.next,Weiter,Next,Suivant,Seguente
+global,navigation.previous,Zurück,Previous,Précédent,Precedente
 health,health.details.details,Details,Details,Détails,Dettagli
 health,health.details.error,Fehler,Error,Erreur,Errore
 health,health.details.name,Name,Name,Nom,Cognome
@@ -551,7 +561,7 @@ home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Dat
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
-home,home.tools.job-publication.workload,Arbeitspensum,Arbeitspensum,Arbeitspensum,Arbeitspensum
+home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.job-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs"
 home,home.tools.job-search.search-badge.none,Diesem Job-Profil entspricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs
@@ -599,7 +609,7 @@ job-search,job-search.filter.sort.option.DATE_ASC,Sortiere nach Datum aufsteigen
 job-search,job-search.filter.sort.option.DATE_DESC,Sortiere nach Datum absteigend,Sort by date descending,Tri par date - ordre décroissant,Ordine decrescente per data
 job-search,job-search.filter.sort.option.RELEVANCE_DESC,Sortiere nach Relevanz,Sort by relevance,Tri selon pertinence,Classifica per pertinenza
 job-search,job-search.filter.title,Suchergebnisse filtern,Filter search result,Filtrer les résultats,Filtra risultati della ricerca
-job-search,job-search.filter.working-time.label,Pensum,Workload,Taux d'occupation,Grado di occupazione
+job-search,job-search.filter.working-time.label,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
 job-search,job-search.job-search-list-item.badge.temporary,Befristet,Temporary,Durée limitée,A tempo determinato
 job-search,job-search.job-search-list.error-message,Jobsuche fehlgeschlagen,Failed to load job result list!,Les résultats de la recherche d'emplois n'ont pas pu être chargés,Impossibile caricare l'ultima lista di posti!
@@ -613,15 +623,12 @@ job-search,job-search.job-search-list.title.other.with-locality,{{count}} {{quer
 job-search,job-search.job-search-list.title.other.without-locality,{{count}} {{query}} Jobs,{{count}} {{query}} jobs,{{count}} {{query}} emplois,{{count}} {{query}} posti
 job-search,job-search.title,Job suchen,Job search,Chercher un emploi,Cerca posti
 job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Sélectionner le lieu actuel,selezione la mia posizione attuale
-job-search,job-search.toolbar.locality.placeholder,"Ort, Region, Kanton","Location, region, canton","Lieu, région, canton","Località, regione, Cantone"
-job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnung, Berufsgruppe, Fähigkeiten","Professional title, professional group, competencies","Désignation de la profession, groupe de profession, compétences","Denominazione professionale, gruppo professionale, competenze"
+job-search,job-search.toolbar.locality.placeholder,"Ortschaft oder Kanton","Location or canton","Lieu ou canton","Località o Cantone"
+job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnungen, Suchbegriffe","Occupations, keywords","Professions, mots-clés","Professioni, parole chiave"
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
-job-search,typeahead-multiselect.type.classification,Klassifizierung,Classification,Classification,Classificazione
+job-search,typeahead-multiselect.type.classification,Berufsarten,Berufsarten,Berufsarten,Berufsarten
 job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località
-job-search,typeahead-multiselect.type.occupation,Beschäftigungsgrad,Working time,Taux d'occupation,Grado di occupazione
-job,jobroomApp.job.ageMax,Max. Alter,Max age,Age Max,"Età max "
-job,jobroomApp.job.ageMin,Min. Alter,Min age,Age Min,Età min
-job,jobroomApp.job.ageRestrictionReason,Grund für Altersbeschränkung,Reason for age restriction,Raison de la limitation de l'âge,Motivo limitazione età
+job-search,typeahead-multiselect.type.occupation,Berufsbezeichnung,Occupation,Profession,Professione
 job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url
 job,jobroomApp.job.cancellationDate,Annulationsdatum,Cancellation date,Date d'annulation,Data di cancellazione
 job,jobroomApp.job.cancellationReason,Annluationsgrund,Cancellation reason,Motif de l'annulation,Motivo cancellazione
@@ -688,25 +695,25 @@ login,login.form.rememberme,Automatische Anmeldung,Remember me,Garder la session
 login,login.messages.error.authentication,<strong>Anmeldung fehlgeschlagen!</strong> Überprüfen Sie bitte Ihre Angaben und versuchen Sie es erneut.,<strong>Failed to sign in!</strong> Please check your credentials and try again.,<strong>Erreur d'authentification !</strong> Veuillez vérifier vos identifiants de connexion.,<strong>Accesso non riuscito!</strong> Si prega di controllare le credenziali e riprovare.
 login,login.password.forgot,Passwort vergessen,Did you forget your password?,Avez-vous oublié votre mot de passe ?,Password dimenticata?
 login,login.title,Anmelden,Sign in,Connexion,Accedi
-logs,audits.filter.button.clear,,,Effacer,Grado di occupazione ear
-logs,audits.filter.button.close,,,Fermer,Grado di occupazione ose
-logs,audits.filter.button.today,,,Aujourd'hui,Grado di occupazione day
-logs,audits.filter.button.weeks,,,Semaines,Grado di occupazione eks
-logs,audits.filter.from,,,De,Grado di occupazione rom
-logs,audits.filter.title,,,Filtrer par date,Grado di occupazione tle
-logs,audits.filter.to,,,à,Grado di occupazione .to
-logs,audits.table.data.remoteAddress,,,Adresse Distante :,Grado di occupazione address
-logs,audits.table.header.data,,,Autres données,Grado di occupazione ata
-logs,audits.table.header.date,,,Date,Grado di occupazione ate
-logs,audits.table.header.principal,,,Utilisateur,Grado di occupazione pal
-logs,audits.table.header.status,,,Status,Grado di occupazione tus
-logs,audits.title,,,Audits,Grado di occupazione tle
+logs,audits.filter.button.clear,Clear,Clear,Effacer,Clear
+logs,audits.filter.button.close,Close,Close,Fermer,Close
+logs,audits.filter.button.today,Heute,Today,Aujourd'hui,Oggi
+logs,audits.filter.button.weeks,Wochen,Weeks,Semaines,Settimane
+logs,audits.filter.from,Von,From,De,Da
+logs,audits.filter.title,Bezeichnung,Title,Title,Title
+logs,audits.filter.to,bis,to,à,a
+logs,audits.table.data.remoteAddress,Remote Address:,Remote Address:,Adresse Distante :,Remote Address:
+logs,audits.table.header.data,Other data,Other data,Autres données,Other data
+logs,audits.table.header.date,Datum,Date,Date,Data
+logs,audits.table.header.principal,Principal,Principal,Utilisateur,Principal
+logs,audits.table.header.status,Status,Status,Status
+logs,audits.title,Audits,Audits,Audits,Audits
 logs,logs.filter,Filter,Filter,Filtres,Filtro
 logs,logs.nbloggers,Es existieren {{ total }} Logger.,There are {{ total }} loggers.,"Total de {{ total }} ""loggers"".",Hai {{ total }} logger.
 logs,logs.table.level,Stufe,Level,Niveau,Livello
 logs,logs.table.name,Name,Name,Nom,Nome
 logs,logs.title,Protokolle,Logs,Logs,Log
-metrics,metrics.cache.averageGetTime,,Average get time (µs),Temps de lecture moyen (µs),Grado di occupazione time
+metrics,metrics.cache.averageGetTime,Average get time (µs),Average get time (µs),Temps de lecture moyen (µs),Grado di occupazione time
 metrics,metrics.cache.averagePutTime,,Average put time (µs),Temps d'écriture moyen (µs),Grado di occupazione time
 metrics,metrics.cache.averageRemoveTime,,Average remove time (µs),Temps de suppression moyen (µs),Grado di occupazione time
 metrics,metrics.cache.cachename,Cache Name,Cache name,Nom du cache,Nome Cache
