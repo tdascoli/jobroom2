@@ -110,11 +110,13 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
         this.populatePreferredWorkLocations();
 
         this.locationSubscription = this.location.subscribe((event) => {
-                if (event.type === 'popstate' && event.url.indexOf('candidate-detail') < 0) {
-                    // Technically, this could just be done in ngOnDestroy directly
+                if (event.type === 'popstate') {
                     this.profileLeft();
-                } else {
-                    // Log as nav!
+                    if (event.url.indexOf('candidate-detail') >= 0) {
+                        const url = event.url;
+                        const nextId = url.substring(url.lastIndexOf('/') + 1, url.length);
+                        this.loggingService.logProfileEvent({ event: 'brwsrnav', id: nextId });
+                    }
                 }
             }
         );
@@ -201,7 +203,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
     }
 
     public profileLeft(): void {
-        this.profileMetrics({ event: 'prflft', furthestAppearance: this.lastElementToAppear })
+        this.profileMetrics({ event: 'prflft', lowestVisible: this.lastElementToAppear })
     }
 
     public showDetails(candidate): void {

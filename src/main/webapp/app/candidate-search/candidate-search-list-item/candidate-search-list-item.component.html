@@ -17,9 +17,6 @@
         <span class="badge badge-gray">
             {{ profile.workLoad }}%
         </span>
-        <span class="badge badge-blue">
-            {{ 'global.gender.' + profile.gender | translate }}
-        </span>
     </div>
 
     <div class="line-clamp" *ngIf="validExperienceData" [innerHtml]="(jobExperience$ | async)?.remark | safeHtml"></div>

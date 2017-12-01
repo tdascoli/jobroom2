@@ -184,7 +184,9 @@
                 <jr2-details-page-pagination [currentItem]="candidateProfile$ | async"
                                              [itemsList]="candidateProfiles$ | async"
                                              [feature]="'candidate-detail'"
-                                             [totalSize]="candidateProfileListTotalSize$ | async"></jr2-details-page-pagination>
+                                             [totalSize]="candidateProfileListTotalSize$ | async"
+                                             (onNext)="profileLeft()"
+                                             (onPrev)="profileLeft()"></jr2-details-page-pagination>
 
                 <ul class="nav filter-nav flex-column">
                     <li *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">

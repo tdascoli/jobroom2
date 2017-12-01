@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
     Item, LoadNextItemAction,
@@ -22,12 +22,16 @@ export class DetailsPagePaginationComponent implements OnChanges {
     @Input() itemsList: Array<Item>;
     @Input() totalSize: number;
     @Input() feature: string;
+    @Output() onNext: EventEmitter<void>;
+    @Output() onPrev: EventEmitter<void>;
 
     navigationEnabled: boolean;
     first: boolean;
     last: boolean;
 
     constructor(private store: Store<any>) {
+        this.onNext = new EventEmitter<void>();
+        this.onPrev = new EventEmitter<void>();
     }
 
     ngOnChanges(changes: SimpleChanges): void {
@@ -48,10 +52,12 @@ export class DetailsPagePaginationComponent implements OnChanges {
     }
 
     previous(): void {
+        this.onPrev.emit();
         this.store.dispatch(new LoadPreviousItemAction(this.createPayload()));
     }
 
     next(): void {
+        this.onNext.emit();
         this.store.dispatch(new LoadNextItemAction(this.createPayload()));
     }
 
