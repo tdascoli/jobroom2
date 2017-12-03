@@ -12,7 +12,10 @@ import {
     ReferenceService
 } from '../../shared/reference-service/reference.service';
 import { CandidateService } from '../services/candidate.service';
-import { OccupationService } from '../../shared/index';
+import {
+    GenderAwareOccupationLabel,
+    OccupationPresentationService
+} from '../../shared/reference-service';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import {
@@ -22,7 +25,6 @@ import {
     getSearchFilter,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
-import { Occupation } from '../../shared/reference-service/occupation.service';
 import { Graduation } from '../../shared/model/shared-types';
 
 interface EnrichedJobExperience extends JobExperience {
@@ -53,7 +55,7 @@ export class CandidateDetailComponent implements OnInit {
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
                 private candidateService: CandidateService,
-                private occupationService: OccupationService,
+                private occupationPresentationService: OccupationPresentationService,
                 private translateService: TranslateService,
                 private store: Store<CandidateSearchState>) {
     }
@@ -91,7 +93,7 @@ export class CandidateDetailComponent implements OnInit {
                 .sort((a, b) => +b.lastJob - +a.lastJob));
 
         const occupationCode$ = this.store.select(getSearchFilter)
-            .map((searchFilter: CandidateSearchFilter) => searchFilter.occupation ? searchFilter.occupation.code : null);
+            .map((searchFilter: CandidateSearchFilter) => searchFilter.occupation ? searchFilter.occupation.key : null);
 
         this.relevantJobExperience$ = this.jobExperiences$
             .combineLatest(occupationCode$)
@@ -101,18 +103,17 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {
-        return this.occupationService.findOccupationByCode(jobExperience.occupationCode)
-            .map((occupation: Occupation) => Object.assign({}, jobExperience,
-                { occupationLabels: occupation.labels }));
+        return this.occupationPresentationService.findOccupationLabelsByBSFCode(jobExperience.occupationCode)
+            .map((occupationLabels: GenderAwareOccupationLabel) =>
+                Object.assign({}, jobExperience, { occupationLabels }));
     }
 
     private formatOccupationLabel(): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
         return (jobExperience: EnrichedJobExperience) => {
-            return Object.assign({}, jobExperience, {
-                occupation: jobExperience.occupationLabels.male +
-                ((jobExperience.occupationLabels.female && jobExperience.occupationLabels.male !== jobExperience.occupationLabels.female)
-                    ? ' / ' + jobExperience.occupationLabels.female : '')
-            });
+            const { male, female } = jobExperience.occupationLabels;
+            const occupation = male + ((female && male !== female) ? ' / ' + female : '');
+
+            return Object.assign({}, jobExperience, { occupation });
         }
     }
 

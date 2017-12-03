@@ -16,11 +16,10 @@ import { Subscription } from 'rxjs/Subscription';
 import { Graduation } from '../../shared/model/shared-types';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn,
+    FormatterFn, OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn,
 } from '../../shared/reference-service/occupation-presentation.service';
-import { OccupationSuggestion } from '../../shared/reference-service/occupation-autocomplete';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -50,8 +49,8 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     toolbarForm: FormGroup;
     residence: FormControl;
 
-    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
-    occupationFormatter: FormatterFn<OccupationSuggestion>;
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
+    occupationFormatter: FormatterFn<OccupationOption>;
 
     private subscription: Subscription;
 
@@ -79,7 +78,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             .map((residence: string) => Object.assign(this.toolbarForm.value, { residence }));
 
         this.subscription = Observable.merge(this.toolbarForm.valueChanges, residence$)
-            .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
+            .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) =>
                 this.search(formValue)
             );

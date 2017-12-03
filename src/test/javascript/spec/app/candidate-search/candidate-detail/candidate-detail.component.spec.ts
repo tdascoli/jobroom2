@@ -4,7 +4,7 @@ import { JobroomTestModule } from '../../../test.module';
 import { cold } from 'jasmine-marbles';
 import { ReferenceService } from '../../../../../../main/webapp/app/shared/reference-service/reference.service';
 import { CandidateService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.service';
-import { OccupationService } from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
+import { OccupationPresentationService } from '../../../../../../main/webapp/app/shared/reference-service';
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
@@ -26,7 +26,7 @@ describe('CandidateDetailComponent', () => {
     const mockActivatedRoute: any = { data: Observable.of({ 'candidateProfile': candidateProfile }) };
     const mockReferenceService = jasmine.createSpyObj('mockReferenceService', ['resolveJobCenter']);
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['findCandidate']);
-    const mockOccupationService = jasmine.createSpyObj('mockOccupationService', ['findOccupationByCode']);
+    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['findOccupationLabelsByBSFCode']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -36,11 +36,16 @@ describe('CandidateDetailComponent', () => {
                 { provide: ActivatedRoute, useValue: mockActivatedRoute },
                 { provide: ReferenceService, useValue: mockReferenceService },
                 { provide: CandidateService, useValue: mockCandidateService },
-                { provide: OccupationService, useValue: mockOccupationService },
-                { provide: TranslateService, useValue: {
+                {
+                    provide: OccupationPresentationService,
+                    useValue: mockOccupationOccupationPresentationService
+                },
+                {
+                    provide: TranslateService, useValue: {
                     currentLang: 'en',
                     onLangChange: Observable.never()
-                } },
+                }
+                },
             ]
         })
             .overrideTemplate(CandidateDetailComponent, '')
@@ -60,15 +65,11 @@ describe('CandidateDetailComponent', () => {
         // GIVEN
         const occupation$ = cold('-a', {
             a: {
-                id: '22222',
-                code: 22222,
-                labels: {
-                    male: 'Text-M',
-                    female: 'Text-F'
-                }
+                male: 'Text-M',
+                female: 'Text-F'
             }
         });
-        mockOccupationService.findOccupationByCode.and.returnValue(occupation$);
+        mockOccupationOccupationPresentationService.findOccupationLabelsByBSFCode.and.returnValue(occupation$);
 
         // WHEN
         fixture.detectChanges();

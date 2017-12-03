@@ -7,8 +7,8 @@ import {
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import { JobSearchRequest } from '../../../../../../../main/webapp/app/job-search/services/job-search-request';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
-import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
 import { LocalityInputType } from '../../../../../../../main/webapp/app/shared/reference-service/locality-autocomplete';
+import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 
 describe('createJobSearchRequest', () => {
     const defaultQuery: JobSearchQuery = {
@@ -88,8 +88,8 @@ describe('createJobSearchRequest', () => {
         const query: JobSearchQuery = {
             baseQuery: [
                 new TypeaheadMultiselectModel(OccupationInputType.FREE_TEXT, 'c1', 'l1'),
-                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'c2', 'l2'),
-                new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, 'c3', 'l3')
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'avam:11', 'l2'),
+                new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, 'sbn3:111', 'l3')
             ],
             localityQuery: [
                 new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, 'c4', 'l4'),
@@ -102,8 +102,11 @@ describe('createJobSearchRequest', () => {
 
         // THEN
         expect(jobSearchRequest.keywords).toEqual(['l1']);
-        expect(jobSearchRequest.occupations).toEqual(['c2']);
-        expect(jobSearchRequest.classifications).toEqual(['c3']);
+        expect(jobSearchRequest.occupationCodes[0].code).toEqual(11);
+        expect(jobSearchRequest.occupationCodes[0].type).toEqual('avam');
+        expect(jobSearchRequest.occupationCodes[1].code).toEqual(111);
+        expect(jobSearchRequest.occupationCodes[1].type).toEqual('sbn3');
+
         expect(jobSearchRequest.localities).toEqual(['c4']);
         expect(jobSearchRequest.cantons).toEqual(['c5']);
     });

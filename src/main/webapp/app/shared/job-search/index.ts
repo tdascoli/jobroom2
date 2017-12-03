@@ -1,5 +1,1 @@
-export * from '../reference-service/locality.service'
-export * from '../reference-service/locality-autocomplete'
-export * from '../reference-service/occupation-autocomplete'
-export * from '../reference-service/occupation.service'
 export * from './job-search-shared.module'

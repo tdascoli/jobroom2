@@ -6,10 +6,13 @@ import {
 } from '../state/job-search.state';
 import { JobSearchRequest } from '../../services/job-search-request';
 import { TypeaheadMultiselectModel } from '../../../shared/input-components';
-import { OccupationInputType } from '../../../shared/reference-service/occupation-autocomplete';
-import { LocalityInputType } from '../../../shared/reference-service/locality-autocomplete';
+import {
+    LocalityInputType,
+    OccupationInputType
+} from '../../../shared/reference-service';
 import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
 import { JobSearchToolState } from '../../../home/state-management/state/job-search-tool.state';
+import { OccupationCode } from '../../../shared/reference-service/occupation-presentation.service';
 
 const toCode = (value: TypeaheadMultiselectModel) => value.code;
 const toLabel = (value: TypeaheadMultiselectModel) => value.label;
@@ -41,9 +44,15 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
 
 function populateBaseQuery(request, baseQuery: Array<TypeaheadMultiselectModel>) {
     const keywords = baseQuery.filter(byValue(OccupationInputType.FREE_TEXT)).map(toLabel);
-    const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION)).map(toCode);
-    const classifications = baseQuery.filter(byValue(OccupationInputType.CLASSIFICATION)).map(toCode);
-    return Object.assign({}, request, { keywords, occupations, classifications });
+    const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION))
+        .map(toCode)
+        .map(OccupationCode.fromString);
+    const classifications = baseQuery.filter(byValue(OccupationInputType.CLASSIFICATION))
+        .map(toCode)
+        .map(OccupationCode.fromString);
+    const occupationCodes = [...occupations, ...classifications];
+
+    return Object.assign({}, request, { keywords, occupationCodes });
 }
 
 function populateLocalityQuery(request, localityQuery: Array<TypeaheadMultiselectModel>) {

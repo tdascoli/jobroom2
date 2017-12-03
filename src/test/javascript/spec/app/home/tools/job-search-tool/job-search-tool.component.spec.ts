@@ -1,14 +1,13 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobSearchToolComponent } from '../../../../../../../main/webapp/app/home/tools/job-search-tool/job-search-tool.component';
-import { OccupationService } from '../../../../../../../main/webapp/app/shared/reference-service/occupation.service';
-import { LocalityService } from '../../../../../../../main/webapp/app/shared/reference-service/locality.service';
+import { LocalityService, OccupationPresentationService } from '../../../../../../../main/webapp/app/shared/reference-service';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
 import { initialState } from '../../../../../../../main/webapp/app/home/state-management/state/job-search-tool.state';
 
 describe('JobSearchToolComponent', () => {
-    const mockOccupationService = jasmine.createSpyObj('mockOccupationService', ['fetchSuggestions']);
+    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['fetchSuggestions']);
     const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);
 
     const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
@@ -22,7 +21,7 @@ describe('JobSearchToolComponent', () => {
             imports: [ReactiveFormsModule],
             declarations: [JobSearchToolComponent],
             providers: [
-                { provide: OccupationService, useValue: mockOccupationService },
+                { provide: OccupationPresentationService, useValue: mockOccupationOccupationPresentationService },
                 { provide: LocalityService, useValue: mockLocalityService },
                 { provide: Store, useValue: mockStore }
             ]

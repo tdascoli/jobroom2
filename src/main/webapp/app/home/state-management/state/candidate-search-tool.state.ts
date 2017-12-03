@@ -1,8 +1,8 @@
-import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { Canton, Graduation } from '../../../shared/model/shared-types';
+import { OccupationOption } from '../../../shared/reference-service';
 
 export interface CandidateSearchToolState {
-    occupation?: OccupationSuggestion,
+    occupation?: OccupationOption,
     residence?: Array<Canton>,
     graduation?: Graduation,
     totalCount: number,

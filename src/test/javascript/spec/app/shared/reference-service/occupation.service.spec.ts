@@ -4,14 +4,16 @@ import { TranslateService } from '@ngx-translate/core';
 import { Response, ResponseOptions } from '@angular/http';
 import { JobroomTestModule } from '../../../test.module';
 import {
-    OccupationAutocomplete,
-    OccupationInputType,
+    Occupation,
     OccupationService,
-} from '../../../../../../main/webapp/app/shared/job-search';
+} from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
 import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components';
-import { OccupationSuggestion } from '../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
+import {
+    OccupationAutocomplete,
+    OccupationSuggestion
+} from '../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
+import { OccupationInputType } from '../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 import arrayContaining = jasmine.arrayContaining;
-import { Occupation } from '../../../../../../main/webapp/app/shared/reference-service/occupation.service';
 
 describe('OccupationService', () => {
 

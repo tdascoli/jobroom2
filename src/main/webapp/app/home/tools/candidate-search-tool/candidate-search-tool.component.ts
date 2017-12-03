@@ -8,7 +8,6 @@ import {
     CandidateSearchToolSubmittedAction,
     ResetCandidateSearchToolCountAction
 } from '../../state-management/actions/candidate-search-tool.actions';
-import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../../../candidate-search/services/canton.service';
 import { Subscription } from 'rxjs/Subscription';
@@ -16,6 +15,7 @@ import { Graduation } from '../../../shared/model/shared-types';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
     FormatterFn,
+    OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn
 } from '../../../shared/reference-service/occupation-presentation.service';
@@ -43,8 +43,8 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         dynamicTitleMaxItems: 1
     };
 
-    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
-    occupationFormatter: FormatterFn<OccupationSuggestion>;
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
+    occupationFormatter: FormatterFn<OccupationOption>;
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private store: Store<CandidateSearchToolState>,

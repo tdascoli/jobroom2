@@ -1,5 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
+import { OccupationOption } from '../../../shared/reference-service';
 import {
     Availability,
     Canton,
@@ -25,7 +25,7 @@ export interface CandidateSearchState {
 }
 
 export interface CandidateSearchFilter {
-    occupation?: OccupationSuggestion,
+    occupation?: OccupationOption,
     skills?: Array<string>,
     experience?: Experience,
     workplace?: TypeaheadItemDisplayModel,

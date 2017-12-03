@@ -2,7 +2,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../../../shared/input-components';
-import { OccupationService } from '../../../shared/reference-service/occupation.service';
+import { OccupationPresentationService } from '../../../shared/reference-service';
 import { LocalityService } from '../../../shared/reference-service/locality.service';
 import {
     LocalityInputType,
@@ -27,10 +27,13 @@ export class JobSearchToolComponent implements OnInit, OnDestroy {
 
     jobSearchForm: FormGroup;
     private subscription: Subscription;
-    fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(prefix);
-    fetchLocalitySuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(prefix);
 
-    constructor(private occupationService: OccupationService,
+    fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> =>
+        this.occupationPresentationService.fetchSuggestions(prefix);
+    fetchLocalitySuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> =>
+        this.localityService.fetchSuggestions(prefix);
+
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private localityService: LocalityService,
                 private store: Store<JobSearchToolState>,
                 private fb: FormBuilder) {

@@ -1,7 +1,6 @@
 export interface JobSearchRequest {
     keywords: Array<string>;
-    occupations: Array<string>;
-    classifications: Array<string>;
+    occupationCodes: Array<OccupationCode>;
     localities: Array<string>;
     regions: Array<string>;
     cantons: Array<string>;
@@ -13,4 +12,9 @@ export interface JobSearchRequest {
     onlineSince: number;
     page: number;
     size: number;
+}
+
+export interface OccupationCode {
+    type: string,
+    code: number
 }

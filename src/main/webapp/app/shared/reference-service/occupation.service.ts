@@ -5,10 +5,10 @@ import { TranslateService } from '@ngx-translate/core';
 import {
     ClassificationSuggestion,
     OccupationAutocomplete,
-    OccupationInputType,
     OccupationSuggestion
 } from './occupation-autocomplete';
 import { TypeaheadMultiselectModel } from '../input-components';
+import { OccupationInputType } from './occupation-presentation.service';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const SEARCH_URL = 'referenceservice/api/_search/occupations/synonym';
@@ -24,6 +24,12 @@ interface OccupationCache {
     [key: string]: Occupation
 }
 
+/**
+ * This service is getting depricated. Use the OccupationPresentationService and OccupationLabelService
+ * service classes instead of this.
+ *
+ * @deprecated
+ */
 @Injectable()
 export class OccupationService {
     private occupationCache: OccupationCache = {};

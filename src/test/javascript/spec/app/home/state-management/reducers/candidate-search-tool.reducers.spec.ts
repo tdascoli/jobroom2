@@ -15,7 +15,7 @@ describe('candidateSearchToolReducer', () => {
     it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
         // GIVEN
         const searchModel = {
-            occupation: { code: '11', name: 'test' },
+            occupation: { key: 'avam:11', label: 'test' },
             residence: new Array(Canton.BS),
             graduation: Graduation.ACCEPTED,
             totalCount: 0
@@ -32,7 +32,7 @@ describe('candidateSearchToolReducer', () => {
     it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_COUNT action', () => {
         // GIVEN
         const searchModel = {
-            occupation: { code: '7632', name: 'java' },
+            occupation: { key: 'avam:7632', label: 'java' },
             residence: null,
             graduation: Graduation.CH,
             totalCount: 0

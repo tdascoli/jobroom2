@@ -1,19 +1,22 @@
-export class OccupationInputType {
-    static OCCUPATION = 'occupation';
-    static CLASSIFICATION = 'classification';
-    static FREE_TEXT = 'free-text';
-}
-
+/**
+ * @deprecated
+ */
 export interface OccupationSuggestion {
     name: string;
     code: string;
 }
 
+/**
+ * @deprecated
+ */
 export interface ClassificationSuggestion {
     name: string;
     code: string;
 }
 
+/**
+ * @deprecated
+ */
 export interface OccupationAutocomplete {
     occupations: OccupationSuggestion[];
     classifications: ClassificationSuggestion[];

@@ -3,7 +3,6 @@ import {
     createCandidateSearchRequestFromToolState
 } from '../../../../../../../main/webapp/app/candidate-search/state-management/util/search-request-mapper';
 import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
-import { OccupationSuggestion } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-autocomplete';
 import {
     Availability,
     Canton,
@@ -25,6 +24,7 @@ import {
     TypeaheadMultiselectModel
 } from '../../../../../../../main/webapp/app/shared/input-components/index';
 import { CandidateSearchRequest } from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
+import { OccupationOption } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 
 describe('createCandidateSearchRequestFromFilter', () => {
 
@@ -44,9 +44,9 @@ describe('createCandidateSearchRequestFromFilter', () => {
 
     it('should map CandidateSearchFilter with occupation code', () => {
         // GIVEN
-        const occupation: OccupationSuggestion = {
-            name: 'Java',
-            code: '564236'
+        const occupation: OccupationOption = {
+            label: 'Java',
+            key: 'bfs:564236'
         };
         const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { 'occupation': occupation });
 
@@ -54,7 +54,7 @@ describe('createCandidateSearchRequestFromFilter', () => {
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
 
         // THEN
-        expect(candidateSearchRequest.occupation).toEqual(occupation.code)
+        expect(candidateSearchRequest.occupation).toEqual('564236')
     });
 
     it('should map CandidateSearchFilter with skills', () => {
@@ -233,17 +233,18 @@ describe('createCandidateSearchRequestFromToolState', () => {
 
     it('should map CandidateSearchFilter with occupation code', () => {
         // GIVEN
-        const occupation: OccupationSuggestion = {
-            name: 'C++',
-            code: '564556'
+        const occupation: OccupationOption = {
+            label: 'C++',
+            key: 'bfs:564236'
         };
+
         const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { 'occupation': occupation });
 
         // WHEN
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromToolState(filter);
 
         // THEN
-        expect(candidateSearchRequest.occupation).toEqual(occupation.code)
+        expect(candidateSearchRequest.occupation).toEqual('564236')
     });
 
     it('should map CandidateSearchFilter with residence', () => {

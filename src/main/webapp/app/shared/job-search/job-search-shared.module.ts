@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
-import { OccupationService } from '../reference-service/occupation.service';
 import { JobroomSharedLibsModule } from '../shared-libs.module';
 import { LocalityService, NAVIGATOR_TOKEN } from '../reference-service/locality.service';
 import { ReferenceService } from '../reference-service/reference.service';
 import { GeoLocationSelectComponent } from './geo-location-select/geo-location-select.component';
 import { OccupationPresentationService } from '../reference-service/occupation-presentation.service';
+import { OccupationLabelService } from '../reference-service/occupation-label.service';
 
 declare const navigator: NavigatorGeolocation;
 
@@ -23,7 +23,7 @@ export function navigatorFactory(): NavigatorGeolocation {
         GeoLocationSelectComponent
     ],
     providers: [
-        OccupationService,
+        OccupationLabelService,
         OccupationPresentationService,
         LocalityService,
         ReferenceService,

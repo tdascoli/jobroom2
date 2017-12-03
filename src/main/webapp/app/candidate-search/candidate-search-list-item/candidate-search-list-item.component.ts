@@ -2,9 +2,9 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CandidateProfile, JobExperience } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
 import {
-    Occupation,
-    OccupationService
-} from '../../shared/reference-service/occupation.service';
+    GenderAwareOccupationLabel,
+    OccupationPresentationService
+} from '../../shared/reference-service';
 import { CandidateService } from '../services/candidate.service';
 
 @Component({
@@ -19,7 +19,7 @@ export class CandidateSearchListItemComponent implements OnInit {
     jobExperience$: Observable<JobExperience>;
     validExperienceData = true;
 
-    constructor(private occupationService: OccupationService,
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private candidateService: CandidateService) {
     }
 
@@ -28,12 +28,12 @@ export class CandidateSearchListItemComponent implements OnInit {
             this.occupationCode, this.profile.jobExperiences);
 
         if (relevantJobExperience) {
-            this.jobExperience$ = this.occupationService.findOccupationByCode(relevantJobExperience.occupationCode)
-                .map((occupation: Occupation) => Object.assign({}, relevantJobExperience,
+            this.jobExperience$ = this.occupationPresentationService.findOccupationLabelsByBSFCode(relevantJobExperience.occupationCode)
+                .map((occupationLabels: GenderAwareOccupationLabel) => Object.assign({}, relevantJobExperience,
                     {
-                        occupation: occupation.labels.male +
-                        ((occupation.labels.female && occupation.labels.male !== occupation.labels.female )
-                            ? ' / ' + occupation.labels.female : '')
+                        occupation: occupationLabels.male +
+                        ((occupationLabels.female && occupationLabels.male !== occupationLabels.female )
+                            ? ' / ' + occupationLabels.female : '')
                     }));
         } else {
             this.validExperienceData = false;

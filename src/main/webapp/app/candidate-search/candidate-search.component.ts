@@ -15,7 +15,7 @@ import {
     SearchCandidatesAction
 } from './state-management/actions/candidate-search.actions';
 import { CandidateProfile } from './services/candidate';
-import { OccupationSuggestion } from '../shared/reference-service/occupation-autocomplete';
+import { OccupationOption } from '../shared/reference-service';
 import { CantonService } from './services/canton.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 
@@ -35,8 +35,6 @@ export class CandidateSearchComponent {
     occupationName$: Observable<string>;
     residenceFilterString$: Observable<string>;
 
-    private subscription;
-
     constructor(private store: Store<CandidateSearchState>,
                 private cantonService: CantonService) {
 
@@ -49,10 +47,10 @@ export class CandidateSearchComponent {
         this.candidateProfileList$ = store.select(getCandidateProfileList);
         this.occupationCode$ = store.select(getSearchFilter)
             .map(occupationMapper)
-            .map((occupation) => occupation.code);
+            .map((occupation) => occupation.key);
         this.occupationName$ = store.select(getSearchFilter)
             .map(occupationMapper)
-            .map((occupation) => occupation.name ? occupation.name : '');
+            .map((occupation) => occupation.label ? occupation.label : '');
         this.residenceFilterString$ = this.store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));
@@ -63,8 +61,8 @@ export class CandidateSearchComponent {
     }
 }
 
-function occupationMapper(searchFilter: CandidateSearchFilter): OccupationSuggestion {
-    return searchFilter.occupation || { code: '', name: '' };
+function occupationMapper(searchFilter: CandidateSearchFilter): OccupationOption {
+    return searchFilter.occupation || { key: '', label: '' };
 }
 
 function residenceMapper(searchFilter: CandidateSearchFilter, cantonOptions: IMultiSelectOption[]): string {

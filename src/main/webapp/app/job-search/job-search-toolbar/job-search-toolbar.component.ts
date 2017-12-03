@@ -3,8 +3,8 @@ import { Observable } from 'rxjs/Observable';
 import {
     LocalityService,
     LocalitySuggestion,
-    OccupationService
-} from '../../shared/job-search';
+    OccupationPresentationService
+} from '../../shared/reference-service';
 import { Store } from '@ngrx/store';
 import { JobSearchState, ToolbarChangedAction } from '../state-management';
 import { FormBuilder, FormGroup } from '@angular/forms';
@@ -26,7 +26,7 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
 
     private subscription: Subscription;
 
-    constructor(private occupationService: OccupationService,
+    constructor(private occupationPresentationService: OccupationPresentationService,
                 private localityService: LocalityService,
                 private store: Store<JobSearchState>,
                 private fb: FormBuilder) {
@@ -61,7 +61,9 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
         }
     }
 
-    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.occupationService.fetchSuggestions(query);
+    fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> =>
+        this.occupationPresentationService.fetchSuggestions(query);
 
-    fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> => this.localityService.fetchSuggestions(query);
+    fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> =>
+        this.localityService.fetchSuggestions(query);
 }

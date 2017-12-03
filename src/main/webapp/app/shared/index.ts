@@ -26,5 +26,6 @@ export * from './shared-libs.module';
 export * from './shared-common.module';
 export * from './shared.module';
 export * from './job-search';
+export * from './reference-service';
 export * from './model/shared-types';
 export * from './validation/regex-patterns';

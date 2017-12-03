@@ -1,7 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AbstractControl, FormBuilder, FormGroup, Validators, ValidatorFn } from '@angular/forms';
-import { OccupationSuggestion } from '../../../shared/reference-service/occupation-autocomplete';
+import {
+    AbstractControl,
+    FormBuilder,
+    FormGroup,
+    ValidatorFn,
+    Validators
+} from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import {
     DrivingLicenceCategory,
@@ -12,15 +17,15 @@ import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {
     FormatterFn,
+    OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn
 } from '../../../shared/reference-service/occupation-presentation.service';
 import { Translations } from './zip-code/zip-code.component';
 import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-patterns';
-import { TranslateService, LangChangeEvent } from '@ngx-translate/core';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
-import { POSTBOX_NUMBEB_REGEX } from '../../../shared/index';
-import { PHONE_NUMBER_REGEX } from '../../../shared/index';
+import { PHONE_NUMBER_REGEX, POSTBOX_NUMBEB_REGEX } from '../../../shared/index';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -44,11 +49,11 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     publicationStartDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
     publicationEndDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
 
-    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationSuggestion>>;
-    occupationFormatter: FormatterFn<OccupationSuggestion>;
+    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
+    occupationFormatter: FormatterFn<OccupationOption>;
 
     unsubscribe$ = new Subject<void>();
-    countries$: Observable<{key: string, value: string}[]>;
+    countries$: Observable<{ key: string, value: string }[]>;
 
     private static mapDateToNgbDateStruct(source?: Date): NgbDateStruct {
         const date = source ? source : new Date();
@@ -126,7 +131,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     disabled: true
                 }, []],
                 url: [{ value: '', disabled: true }, []],
-                phoneNumber: [{ value: '', disabled: true }, [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
+                phoneNumber: [{
+                    value: '',
+                    disabled: true
+                }, [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
                 additionalInfo: ['', [Validators.required, Validators.maxLength(this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)]],
             }),
             publication: fb.group({

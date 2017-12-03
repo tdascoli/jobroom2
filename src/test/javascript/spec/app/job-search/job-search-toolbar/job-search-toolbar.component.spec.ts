@@ -2,11 +2,11 @@ import { JobSearchToolbarComponent } from '../../../../../../main/webapp/app/job
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobroomTestModule } from '../../../test.module';
 import { Observable } from 'rxjs/Observable';
-import {
-    OccupationService,
-} from '../../../../../../main/webapp/app/shared/job-search';
 import { Store } from '@ngrx/store';
-import { LocalityService } from '../../../../../../main/webapp/app/shared/reference-service/locality.service';
+import {
+    LocalityService,
+    OccupationPresentationService
+} from '../../../../../../main/webapp/app/shared/reference-service';
 import { ReactiveFormsModule } from '@angular/forms';
 import { ToolbarChangedAction } from '../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { initialState } from '../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
@@ -14,10 +14,10 @@ import { LocalityInputType } from '../../../../../../main/webapp/app/shared/refe
 import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components';
 
 describe('JobSearchToolbarComponent', () => {
-    const mockOccupationService = jasmine.createSpyObj('mockOccupationService',
-        ['fetchSuggestions', 'getOccupations']);
+    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService',
+        ['fetchSuggestions']);
 
-    mockOccupationService.getOccupations.and.returnValue(Observable.of([new TypeaheadMultiselectModel('occupation', 'o1', 'O1')]));
+    mockOccupationOccupationPresentationService.fetchSuggestions.and.returnValue(Observable.of([new TypeaheadMultiselectModel('occupation', 'o1', 'O1')]));
 
     const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);
 
@@ -32,7 +32,10 @@ describe('JobSearchToolbarComponent', () => {
             imports: [JobroomTestModule, ReactiveFormsModule],
             declarations: [JobSearchToolbarComponent],
             providers: [
-                { provide: OccupationService, useValue: mockOccupationService },
+                {
+                    provide: OccupationPresentationService,
+                    useValue: mockOccupationOccupationPresentationService
+                },
                 { provide: LocalityService, useValue: mockLocalityService },
                 { provide: Store, useValue: mockStore }
             ]

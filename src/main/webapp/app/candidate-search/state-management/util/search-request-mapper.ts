@@ -18,6 +18,10 @@ import {
     CandidateSearchRequest,
     WorkLoad
 } from '../../services/candidate-search-request';
+import {
+    OccupationCode,
+    OccupationOption
+} from '../../../shared/reference-service/occupation-presentation.service';
 
 export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSearchFilter, page = 0): CandidateSearchRequest {
     const {
@@ -27,7 +31,7 @@ export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSe
     const workplace = mapWorkplace(searchFilter.workplace);
 
     return {
-        occupation: occupation ? occupation.code : null,
+        occupation: mapOccupationCode(occupation),
         skills: searchFilter.skills,
         experience: Experience[experience],
         residence: mapResidence(searchFilter.residence),
@@ -49,10 +53,16 @@ export function createCandidateSearchRequestFromToolState(toolState: CandidateSe
     const { occupation, graduation } = toolState;
 
     return {
-        occupation: occupation ? occupation.code : null,
+        occupation: mapOccupationCode(occupation),
         residence: mapResidence(toolState.residence),
         graduation: Graduation[graduation]
     } as CandidateSearchRequest;
+}
+
+function mapOccupationCode(occupation: OccupationOption): string {
+    return occupation
+        ? String(OccupationCode.fromString(occupation.key).code)
+        : null;
 }
 
 function mapResidence(residences: Array<Canton | string>): Array<string> {
