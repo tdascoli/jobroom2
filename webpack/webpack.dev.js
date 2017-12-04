@@ -14,7 +14,15 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './build/www',
-        proxy: [{
+            proxy: [        {
+                context: [
+                    '/candidateservice/api/_profilemetrics'
+                ],
+                target: 'http://127.0.0.1:8083',
+                pathRewrite: {'^/candidateservice' : ''},
+                secure: false
+            },
+            {
             context: [
                 /* jhipster-needle-add-entity-to-webpack - JHipster will add entity api paths here */
                 '/api',
