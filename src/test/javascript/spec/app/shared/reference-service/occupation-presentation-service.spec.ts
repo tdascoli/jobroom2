@@ -91,7 +91,7 @@ describe('OccupationPresentationService', () => {
             });
 
             // then
-            expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', ['avam', 'bfs', 'x28']);
+            expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', ['avam', 'x28', 'sbn3', 'sbn5']);
         });
 
         it('should map suggestion to TypeaheadMultiselectModel[]', () => {
@@ -111,7 +111,7 @@ describe('OccupationPresentationService', () => {
                         id: '20',
                         code: 20,
                         label: 'Bioinformatiker',
-                        type: 'bfs',
+                        type: 'x28',
                         mappings: null,
                         classifier: '',
                         language: 'de'
@@ -146,7 +146,7 @@ describe('OccupationPresentationService', () => {
             // then
             expect(suggestion).toEqual([
                 new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'avam:10', 'Informatiker', 0),
-                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'bfs:20', 'Bioinformatiker', 1),
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'x28:20', 'Bioinformatiker', 1),
                 new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'x28:30', 'Wirtschaftinformatiker', 2),
                 new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, 'sbn3:300', 'Berufe der Informatik', 3)
             ]);
@@ -186,16 +186,7 @@ describe('OccupationPresentationService', () => {
                         language: 'de'
                     } as OccupationLabelSuggestion,
                 ],
-                classifications: [
-                    {
-                        id: '300',
-                        code: 300,
-                        label: 'Berufe der Informatik',
-                        type: 'sbn3',
-                        classifier: '',
-                        language: 'de'
-                    } as OccupationLabel
-                ]
+                classifications: []
             };
             mockOccupationLabelService.suggestOccupation.and.returnValue(Observable.of(suggestResponse));
 
@@ -243,16 +234,7 @@ describe('OccupationPresentationService', () => {
                         language: 'de'
                     } as OccupationLabelSuggestion,
                 ],
-                classifications: [
-                    {
-                        id: '300',
-                        code: 300,
-                        label: 'Berufe der Informatik',
-                        type: 'sbn3',
-                        classifier: '',
-                        language: 'de'
-                    } as OccupationLabel
-                ]
+                classifications: []
             };
             mockOccupationLabelService.suggestOccupation.and.returnValue(Observable.of(suggestResponse));
 

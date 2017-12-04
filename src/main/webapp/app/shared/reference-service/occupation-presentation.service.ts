@@ -86,7 +86,7 @@ export class OccupationPresentationService {
         const occupationMapper = occupationLabelMapper(OccupationInputType.OCCUPATION);
         const classificationMapper = occupationLabelMapper(OccupationInputType.CLASSIFICATION);
 
-        return this.occupationLabelService.suggestOccupation(query, ['avam', 'bfs', 'x28'])
+        return this.occupationLabelService.suggestOccupation(query, ['avam', 'x28', 'sbn3', 'sbn5'])
             .map((occupationAutocomplete: OccupationLabelAutocomplete) => {
                 const { occupations, classifications } = occupationAutocomplete;
 
