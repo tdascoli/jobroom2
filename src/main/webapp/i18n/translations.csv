@@ -66,7 +66,7 @@ candidate-search,candidate-search.education.label,Bildungsstufe,Level of educati
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer le résultat de la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
-candidate-search,candidate-search.graduation.ACCEPTED, Schweiz oder anerkannt,Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
+candidate-search,candidate-search.graduation.ACCEPTED," Schweiz oder anerkannt",Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
 candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Titolo svizzero
 candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
 candidate-search,candidate-search.graduation.NOT_ACCEPTED,Schweiz oder ausländisch,Swiss or foreign degree,Diplôme suisse ou étranger,Titolo svizzero o estero
@@ -203,9 +203,9 @@ global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISC
 global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,degré post-secondaire non tertiaire ISCED 4,Seconda formazione - ISCED 4
 global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,degré tertiaire I - ISCED 5,Livello terziario I - ISCED 5
 global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,degré tertiaire II - ISCED 6,Livello terziario II - ISCED 6
+global,global.experience.1_TO_3_YEAR,1 bis 3 Jahre,1 to 3 years,1 - 3 ans,1 - 3 anni
 global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,Less than 1 year,Moins d'un an,meno di 1 anno
 global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,More than 1 year,Plus d'un an,più di 1 anno
-global,global.experience.1_TO_3_YEAR,1 bis 3 Jahre,1 to 3 years,1 - 3 ans,1 - 3 anni
 global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,More than 3 years,Plus de trois ans,più di 3 anni
 global,global.experience.NONE,Keine Erfahrung,No experience,Aucune expérience,nessuna esperienza
 global,global.field.id,ID,ID,ID,ID
@@ -267,6 +267,7 @@ global,global.messages.validate.newpassword.strength,Passwortstärke:,Password s
 global,global.reference.canton.AG,Aargau,Aargau,Argovie,Argovia
 global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
 global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
+global,global.reference.canton.AU,Ausland,Abroad,Étranger,Estero
 global,global.reference.canton.BE,Bern,Bern,Berne,Berna
 global,global.reference.canton.BL,Basel-Landschaft,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna
 global,global.reference.canton.BS,Basel-Stadt,Basel-Stadt,Bâle-Ville,Basilea-Città
@@ -292,7 +293,6 @@ global,global.reference.canton.VD,Waadt,Waadt,Vaud,Vaud
 global,global.reference.canton.VS,Wallis,Wallis,Valais,Vallese
 global,global.reference.canton.ZG,Zug,Zug,Zoug,Zugo
 global,global.reference.canton.ZH,Zürich,Zurich,Zurich,Zurigo
-global,global.reference.canton.AU,Ausland,Abroad,Étranger,Estero
 global,global.reference.language.ar,Arabisch,Arab,Arabe,Arabo
 global,global.reference.language.bg,Bulgarisch,Bulgarian,Bulgare,Bulgaro
 global,global.reference.language.bs,Bosnisch,Bosnian,Bosniaque,Bosniaco
@@ -341,7 +341,6 @@ global,global.reference.language.vi,Vietnamesisch,Vietnamese,Vietnamien,Vietnami
 global,global.reference.language.written,schriftlich,schriftlich,schriftlich,scritto
 global,global.reference.language.zh,Chinesisch,Chinese,Chinois,Cinese
 global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Lingue
-global,global.reference.region.AU,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.A,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
 global,global.reference.region.AG02,Baden,Baden,Baden,Baden
@@ -357,6 +356,7 @@ global,global.reference.region.AG11,Zofingen,Zofingen,Zofingen,Zofingen
 global,global.reference.region.AG12,Zurzach,Zurzach,Zurzach,Zurzach
 global,global.reference.region.AI01,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
 global,global.reference.region.AR01,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
+global,global.reference.region.AU,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.BE01,"Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen"
 global,global.reference.region.BE02,Frutigen,Frutigen,Frutigen,Frutigen
 global,global.reference.region.BE03,"Niedersimmental, Thun","Niedersimmental, Thun","Niedersimmental, Thoune","Niedersimmental, Thun"
@@ -562,11 +562,11 @@ home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stelle
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
-home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.job-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs"
 home,home.tools.job-search.search-badge.none,Diesem Job-Profil entspricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs
 home,home.tools.job-search.search-badge.one,"Diesem Job-Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs"
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
+home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Find your dream job now!,Partez à la recherche de l'emploi dont vous rêvez !,Trova adesso il tuo lavoro da sogno!
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Apply now,Postuler maintenant,Candidarsi ora
@@ -623,7 +623,7 @@ job-search,job-search.job-search-list.title.other.with-locality,{{count}} {{quer
 job-search,job-search.job-search-list.title.other.without-locality,{{count}} {{query}} Jobs,{{count}} {{query}} jobs,{{count}} {{query}} emplois,{{count}} {{query}} posti
 job-search,job-search.title,Job suchen,Job search,Chercher un emploi,Cerca posti
 job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Sélectionner le lieu actuel,selezione la mia posizione attuale
-job-search,job-search.toolbar.locality.placeholder,"Ortschaft oder Kanton","Location or canton","Lieu ou canton","Località o Cantone"
+job-search,job-search.toolbar.locality.placeholder,Ortschaft oder Kanton,Location or canton,Lieu ou canton,Località o Cantone
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnungen, Suchbegriffe","Occupations, keywords","Professions, mots-clés","Professioni, parole chiave"
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
 job-search,typeahead-multiselect.type.classification,Berufsarten,Berufsarten,Berufsarten,Berufsarten
@@ -706,7 +706,7 @@ logs,audits.table.data.remoteAddress,Remote Address:,Remote Address:,Adresse Dis
 logs,audits.table.header.data,Other data,Other data,Autres données,Other data
 logs,audits.table.header.date,Datum,Date,Date,Data
 logs,audits.table.header.principal,Principal,Principal,Utilisateur,Principal
-logs,audits.table.header.status,Status,Status,Status
+logs,audits.table.header.status,Status,Status,Status,Status
 logs,audits.title,Audits,Audits,Audits,Audits
 logs,logs.filter,Filter,Filter,Filtres,Filtro
 logs,logs.nbloggers,Es existieren {{ total }} Logger.,There are {{ total }} loggers.,"Total de {{ total }} ""loggers"".",Hai {{ total }} logger.
@@ -861,9 +861,6 @@ user-management,userManagement.delete.question,"Sind Sie sicher, dass Sie den Be
 user-management,userManagement.deleted,Ein Benutzer mit ID {{ param }} wurde gelöscht,A user was deleted with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été supprimé.,È stato eliminato l'utente identificato da {{ param }}
 user-management,userManagement.detail.title,Benutzer,User,Utilisateur,Utente
 user-management,userManagement.email,Email,Email,E-mail,Email
-user-management,userManagement.phone,Phone,Phone,Phone,Phone
-user-management,userManagement.phone.validation.invalid,Phone is invalid,Phone is invalid,Phone is invalid,Phone is invalid
-user-management,userManagement.organization,Organization,Organization,Organization,Organization
 user-management,userManagement.firstName,Vorname,First name,Prénom,Nome
 user-management,userManagement.home.createLabel,Neuer Benutzer erstellen,Create a new user,Créer un nouvel utilisateur,Crea un nuovo utente
 user-management,userManagement.home.createOrEditLabel,Benutzer erstellen oder bearbeiten,Create or edit a user,Créer ou éditer un utilisateur,Crea o modifica un utente
@@ -873,5 +870,8 @@ user-management,userManagement.lastModifiedBy,Bearbeitet von,Modified by,Modifi�
 user-management,userManagement.lastModifiedDate,Zuletzt bearbeitet,Modified date,Modifié le,Modificato il
 user-management,userManagement.lastName,Nachname,Last name,Nom,Cognome
 user-management,userManagement.login,Login,Login,Login,Login
+user-management,userManagement.organization,Organization,Organization,Organization,Organization
+user-management,userManagement.phone,Phone,Phone,Phone,Phone
+user-management,userManagement.phone.validation.invalid,Phone is invalid,Phone is invalid,Phone is invalid,Phone is invalid
 user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
 user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}

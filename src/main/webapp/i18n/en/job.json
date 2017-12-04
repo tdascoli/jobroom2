@@ -1,9 +1,6 @@
 {
     "jobroomApp": {
         "job": {
-            "ageMax": "Max age",
-            "ageMin": "Min age",
-            "ageRestrictionReason": "Reason for age restriction",
             "applicationUrl": "Application Url",
             "cancellationDate": "Cancellation date",
             "cancellationReason": "Cancellation reason",

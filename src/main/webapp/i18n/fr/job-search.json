@@ -65,19 +65,19 @@
                 "tooltip": "S\u00e9lectionner le lieu actuel"
             },
             "locality": {
-                "placeholder": "Lieu, r\u00e9gion, canton"
+                "placeholder": "Lieu ou canton"
             },
             "occupation": {
-                "placeholder": "D\u00e9signation de la profession, groupe de profession, comp\u00e9tences"
+                "placeholder": "Professions, mots-cl\u00e9s"
             }
         }
     },
     "typeahead-multiselect": {
         "type": {
             "canton": "Canton",
-            "classification": "Classification",
+            "classification": "Berufsarten",
             "locality": "Localit\u00e9",
-            "occupation": "Taux d'occupation"
+            "occupation": "Profession"
         }
     }
 }

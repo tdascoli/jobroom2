@@ -37,7 +37,7 @@
             "title": "Chercher des candidats"
         },
         "graduation": {
-            "ACCEPTED": "Dipl\u00f4me suisse ou reconnu en Suisse",
+            "ACCEPTED": "Suisse ou reconnu en Suisse",
             "CH": "Dipl\u00f4me suisse",
             "NONE": "Aucun dipl\u00f4me",
             "NOT_ACCEPTED": "Dipl\u00f4me suisse ou \u00e9tranger",
@@ -51,8 +51,8 @@
         },
         "no-selection": "Aucune s\u00e9lection",
         "skills": {
-            "label": "Comp\u00e9tences, aptitudes",
-            "placeholder": "p. ex. g\u00e9nie civil"
+            "label": "Mots-cl\u00e9s",
+            "placeholder": "Comp\u00e9tences, aptitudes"
         },
         "title": "Recherche de candidats",
         "toolbar": {
@@ -61,7 +61,7 @@
                 "label": "Dipl\u00f4me"
             },
             "occupation": {
-                "placeholder": "D\u00e9signation de la profession"
+                "placeholder": "Profession"
             },
             "residence": {
                 "placeholder": "Canton de domicile",

@@ -16,7 +16,7 @@
                 "remoteAddress": "Remote Address:"
             },
             "header": {
-                "data": "Extra data",
+                "data": "Additional data",
                 "date": "Date",
                 "principal": "User",
                 "status": "Status"

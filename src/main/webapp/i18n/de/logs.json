@@ -2,27 +2,27 @@
     "audits": {
         "filter": {
             "button": {
-                "clear": "",
-                "close": "",
-                "today": "",
-                "weeks": ""
+                "clear": "Clear",
+                "close": "Close",
+                "today": "Heute",
+                "weeks": "Wochen"
             },
-            "from": "",
-            "title": "",
-            "to": ""
+            "from": "Von",
+            "title": "Bezeichnung",
+            "to": "bis"
         },
         "table": {
             "data": {
-                "remoteAddress": ""
+                "remoteAddress": "Remote Address:"
             },
             "header": {
-                "data": "",
-                "date": "",
-                "principal": "",
-                "status": ""
+                "data": "Other data",
+                "date": "Datum",
+                "principal": "Principal",
+                "status": "Status"
             }
         },
-        "title": ""
+        "title": "Audits"
     },
     "logs": {
         "filter": "Filter",

@@ -65,19 +65,19 @@
                 "tooltip": "selezione la mia posizione attuale"
             },
             "locality": {
-                "placeholder": "Localit\u00e0, regione, Cantone"
+                "placeholder": "Localit\u00e0 o Cantone"
             },
             "occupation": {
-                "placeholder": "Denominazione professionale, gruppo professionale, competenze"
+                "placeholder": "Professioni, parole chiave"
             }
         }
     },
     "typeahead-multiselect": {
         "type": {
             "canton": "Cantone",
-            "classification": "Classificazione",
+            "classification": "Berufsarten",
             "locality": "Localit\u00e0",
-            "occupation": "Grado di occupazione"
+            "occupation": "Professione"
         }
     }
 }

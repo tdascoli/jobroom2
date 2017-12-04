@@ -1,9 +1,6 @@
 {
     "jobroomApp": {
         "job": {
-            "ageMax": "Max. Alter",
-            "ageMin": "Min. Alter",
-            "ageRestrictionReason": "Grund f\u00fcr Altersbeschr\u00e4nkung",
             "applicationUrl": "Application Url",
             "cancellationDate": "Annulationsdatum",
             "cancellationReason": "Annluationsgrund",

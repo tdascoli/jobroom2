@@ -29,7 +29,7 @@
             },
             "title": "Suchergebnisse filtern",
             "working-time": {
-                "label": "Pensum"
+                "label": "Arbeitspensum"
             }
         },
         "job-search-list-item": {
@@ -65,19 +65,19 @@
                 "tooltip": "Aktueller Standort w\u00e4hlen"
             },
             "locality": {
-                "placeholder": "Ort, Region, Kanton"
+                "placeholder": "Ortschaft oder Kanton"
             },
             "occupation": {
-                "placeholder": "Berufsbezeichnung, Berufsgruppe, F\u00e4higkeiten"
+                "placeholder": "Berufsbezeichnungen, Suchbegriffe"
             }
         }
     },
     "typeahead-multiselect": {
         "type": {
             "canton": "Kanton",
-            "classification": "Klassifizierung",
+            "classification": "Berufsarten",
             "locality": "Ortschaft",
-            "occupation": "Besch\u00e4ftigungsgrad"
+            "occupation": "Berufsbezeichnung"
         }
     }
 }

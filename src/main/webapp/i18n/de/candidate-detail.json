@@ -15,7 +15,7 @@
             },
             "no-information": "Keine Angaben",
             "preferredWorkRegions": {
-                "label": "Gesuchte Arbeitsregion/en"
+                "label": "Gesuchte Arbeitsregionen"
             },
             "title": "Weitere Angaben",
             "workForm": {
@@ -28,10 +28,10 @@
         "candidate-save": "Kandidatenprofil speichern",
         "candidate-send-link": "Link versenden",
         "graduation": {
-            "ACCEPTED": "CH anerkannt",
-            "CH": "CH",
+            "ACCEPTED": "Schweiz anerkannt",
+            "CH": "Schweiz",
             "NONE": "Kein Abschluss",
-            "NOT_ACCEPTED": "Ausl\u00e4ndisch"
+            "NOT_ACCEPTED": "In der Schweiz nicht anerkannt"
         },
         "job-center": {
             "email": {
@@ -53,7 +53,7 @@
                 "label": "Bildungsstufe"
             },
             "experience": {
-                "label": "Erfahrungsjahre auf dem Beruf"
+                "label": "Berufserfahrung"
             },
             "graduation": {
                 "label": "Berufsabschluss"
@@ -74,7 +74,7 @@
                 "label": "E-Mail"
             },
             "mobile": {
-                "label": "Mobile"
+                "label": "Mobiltelefon"
             },
             "name": {
                 "label": "Name / Vorname"

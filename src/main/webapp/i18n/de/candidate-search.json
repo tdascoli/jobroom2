@@ -37,10 +37,10 @@
             "title": "Kandidaten suchen"
         },
         "graduation": {
-            "ACCEPTED": "CH-Abschluss oder CH anerkannt",
-            "CH": "CH-Abschluss",
+            "ACCEPTED": " Schweiz oder anerkannt",
+            "CH": "Schweizer Abschluss",
             "NONE": "Kein Abschluss",
-            "NOT_ACCEPTED": "Abschluss CH oder ausl\u00e4ndisch",
+            "NOT_ACCEPTED": "Schweiz oder ausl\u00e4ndisch",
             "label": "Abschluss"
         },
         "keywords": {
@@ -51,8 +51,8 @@
         },
         "no-selection": "Keine Auswahl",
         "skills": {
-            "label": "F\u00e4higkeiten, Skills",
-            "placeholder": "z.B. Tiefbau"
+            "label": "Suchbegriffe",
+            "placeholder": "F\u00e4higkeiten, Skills"
         },
         "title": "Kandidatensuche",
         "toolbar": {

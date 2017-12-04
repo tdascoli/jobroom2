@@ -15,7 +15,7 @@
             },
             "no-information": "Nessuna indicazione",
             "preferredWorkRegions": {
-                "label": "Regione/i di ricerca"
+                "label": "Regioni di ricerca"
             },
             "title": "Altri dati",
             "workForm": {
@@ -25,13 +25,13 @@
         "back": "Torna ai risultati della ricerca ",
         "candidate-copy-link": "Copia link",
         "candidate-print": "Stampa",
-        "candidate-save": "salva candidato",
+        "candidate-save": "Salva candidato",
         "candidate-send-link": "Invia link",
         "graduation": {
-            "ACCEPTED": "Riconosciuto in CH",
-            "CH": "CH",
+            "ACCEPTED": "Riconosciuto in Svizzera",
+            "CH": "Svizzero",
             "NONE": "Nessun titolo",
-            "NOT_ACCEPTED": "Straniero"
+            "NOT_ACCEPTED": "Diploma non riconosciuto in Svizzera"
         },
         "job-center": {
             "email": {
@@ -44,7 +44,7 @@
         },
         "job-experience": {
             "degree": {
-                "label": "Ausbildung"
+                "label": "Formazione"
             },
             "description": {
                 "label": "Conoscenze, competenze, skills"
@@ -53,13 +53,13 @@
                 "label": "Livello formativo"
             },
             "experience": {
-                "label": "Anni di esperienza professionale"
+                "label": "Anni di esperienza"
             },
             "graduation": {
                 "label": "Titolo professionale"
             },
             "job": {
-                "label": "Denominazione professionale"
+                "label": "Professione"
             },
             "last-job": {
                 "label": "Ultima professione svolta"

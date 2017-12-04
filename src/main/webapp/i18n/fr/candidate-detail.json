@@ -2,7 +2,7 @@
     "candidate-detail": {
         "additional-information": {
             "drivingCategories": {
-                "label": "Cat\u00e9gories de permis de conduire"
+                "label": "Permis de conduire"
             },
             "education": {
                 "label": "Formation"
@@ -15,7 +15,7 @@
             },
             "no-information": "Aucune indication",
             "preferredWorkRegions": {
-                "label": "R\u00e9gion/s de travail recherch\u00e9e/s"
+                "label": "R\u00e9gions de travail recherch\u00e9es"
             },
             "title": "Autres indications",
             "workForm": {
@@ -31,7 +31,7 @@
             "ACCEPTED": "Reconnu en Suisse",
             "CH": "Suisse",
             "NONE": "Aucun dipl\u00f4me",
-            "NOT_ACCEPTED": "Etranger"
+            "NOT_ACCEPTED": "Dipl\u00f4me non reconnu en Suisse"
         },
         "job-center": {
             "email": {
@@ -44,7 +44,7 @@
         },
         "job-experience": {
             "degree": {
-                "label": "Ausbildung"
+                "label": "Formation"
             },
             "description": {
                 "label": "Connaissances, comp\u00e9tences, aptitudes"
@@ -53,13 +53,13 @@
                 "label": "Niveau de formation "
             },
             "experience": {
-                "label": "Ann\u00e9es d'exp\u00e9rience dans la profession"
+                "label": "Ann\u00e9es d'exp\u00e9rience"
             },
             "graduation": {
-                "label": "Dipl\u00f4me dans la profession"
+                "label": "Dipl\u00f4me"
             },
             "job": {
-                "label": "D\u00e9signation de la profession"
+                "label": "Profession"
             },
             "last-job": {
                 "label": "Derni\u00e8re profession exerc\u00e9e"

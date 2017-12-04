@@ -37,10 +37,10 @@
             "title": "Cerca candidati"
         },
         "graduation": {
-            "ACCEPTED": "Titolo CH o riconosciuto in CH",
-            "CH": "Titolo CH",
+            "ACCEPTED": "Svizzero o riconosciuto in Svizzera",
+            "CH": "Titolo svizzero",
             "NONE": "Nessun titolo",
-            "NOT_ACCEPTED": "Titolo CH o straniero",
+            "NOT_ACCEPTED": "Titolo svizzero o estero",
             "label": "Titolo"
         },
         "keywords": {
@@ -51,8 +51,8 @@
         },
         "no-selection": "Nessuna scelta",
         "skills": {
-            "label": "Competenze skills",
-            "placeholder": "es. genio civile"
+            "label": "Parole chiave",
+            "placeholder": "Competenze skills"
         },
         "title": "Cerca candidati",
         "toolbar": {
@@ -61,7 +61,7 @@
                 "label": "Titolo"
             },
             "occupation": {
-                "placeholder": "Denominazione professionale"
+                "placeholder": "Professione"
             },
             "residence": {
                 "placeholder": "Luogo di domicilio: Cantone",

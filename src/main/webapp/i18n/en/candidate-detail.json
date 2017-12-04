@@ -2,7 +2,7 @@
     "candidate-detail": {
         "additional-information": {
             "drivingCategories": {
-                "label": "Driving licence categories"
+                "label": "Driving licences"
             },
             "education": {
                 "label": "Education"
@@ -15,7 +15,7 @@
             },
             "no-information": "No information",
             "preferredWorkRegions": {
-                "label": "Preferred work region(s)"
+                "label": "Preferred work regions"
             },
             "title": "Additional information",
             "workForm": {
@@ -28,10 +28,10 @@
         "candidate-save": "Save candidate profile",
         "candidate-send-link": "Send link",
         "graduation": {
-            "ACCEPTED": "Accepted in Switzerland",
+            "ACCEPTED": "Swiss recognized",
             "CH": "Swiss",
             "NONE": "No degree",
-            "NOT_ACCEPTED": "Foreign"
+            "NOT_ACCEPTED": "In Switzerland not recognized"
         },
         "job-center": {
             "email": {
@@ -44,7 +44,7 @@
         },
         "job-experience": {
             "degree": {
-                "label": "Ausbildung"
+                "label": "Training"
             },
             "description": {
                 "label": "Expertise, competencies, skills"
@@ -53,13 +53,13 @@
                 "label": "Level of education"
             },
             "experience": {
-                "label": "Number of years experience"
+                "label": "Professional experience"
             },
             "graduation": {
                 "label": "Professional degree"
             },
             "job": {
-                "label": "Professional title"
+                "label": "Occupation"
             },
             "last-job": {
                 "label": "Last job"

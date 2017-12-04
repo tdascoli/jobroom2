@@ -1,7 +1,7 @@
 {
     "metrics": {
         "cache": {
-            "averageGetTime": "",
+            "averageGetTime": "Average get time (\u00b5s)",
             "averagePutTime": "",
             "averageRemoveTime": "",
             "cachename": "Cache Name",

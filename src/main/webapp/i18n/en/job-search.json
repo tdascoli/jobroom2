@@ -65,19 +65,19 @@
                 "tooltip": "Select my current location"
             },
             "locality": {
-                "placeholder": "Location, region, canton"
+                "placeholder": "Location or canton"
             },
             "occupation": {
-                "placeholder": "Professional title, professional group, competencies"
+                "placeholder": "Occupations, keywords"
             }
         }
     },
     "typeahead-multiselect": {
         "type": {
             "canton": "Canton",
-            "classification": "Classification",
+            "classification": "Berufsarten",
             "locality": "Locality",
-            "occupation": "Working time"
+            "occupation": "Occupation"
         }
     }
 }

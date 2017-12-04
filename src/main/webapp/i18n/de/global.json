@@ -36,7 +36,7 @@
         "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
         "emailexists": "Email wird bereits verwendet!",
         "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
-        "internalServerError": "Internal server error",
+        "internalServerError": "Interner Serverfehler",
         "server": {
             "not": {
                 "reachable": "Server ist nicht erreichbar"
@@ -128,6 +128,7 @@
         "experience": {
             "LESS_THAN_1_YEAR": "Weniger als 1 Jahr",
             "MORE_THAN_1_YEAR": "Mehr als 1 Jahr",
+            "1_TO_3_YEAR": "1 bis 3 Jahre",
             "MORE_THAN_3_YEARS": "Mehr als 3 Jahre",
             "NONE": "Keine Erfahrung"
         },
@@ -190,7 +191,7 @@
             },
             "info": {
                 "authenticated": {
-                    "link": "anmelden",
+                    "link": "Anmelden",
                     "prefix": "Wenn Sie sich ",
                     "suffix": "m\u00f6chten, versuchen Sie es mit <br/>- Administrator (Name=\"admin\" und Passwort=\"admin\")<br/>- Benutzer (Name=\"user\" und Passwort=\"user\")."
                 },
@@ -248,24 +249,28 @@
                 "VD": "Waadt",
                 "VS": "Wallis",
                 "ZG": "Zug",
-                "ZH": "Z\u00fcrich"
+                "ZH": "Z\u00fcrich",
+                "AU": "Ausland"
             },
             "language": {
                 "ar": "Arabisch",
-                "bs": "Bulgarisch",
+                "bg": "Bulgarisch",
+                "bs": "Bosnisch",
+                "ch": "Schweizerdeutsch",
                 "cs": "Tschechisch",
                 "da": "D\u00e4nisch",
                 "de": "Deutsch",
-                "de-ch": "CH-Deutsch",
+                "el": "Griechisch",
                 "en": "Englisch",
                 "es": "Spanisch",
                 "fi": "Finnisch",
+                "fl": "Fl\u00e4misch",
                 "fr": "Franz\u00f6sisch",
-                "gr": "Griechisch",
+                "he": "Hebr\u00e4isch",
                 "hr": "Kroatisch",
                 "hu": "Ungarisch",
                 "it": "Italienisch",
-                "jp": "Japanisch",
+                "ja": "Japanisch",
                 "km": "Khmer",
                 "ku": "Kurdisch",
                 "level": {
@@ -275,14 +280,17 @@
                     "PROFICIENT": "Professionell"
                 },
                 "lt": "Litauisch",
-                "ne": "Holl\u00e4ndisch",
+                "mk": "Mazedonisch",
+                "nl": "Holl\u00e4ndisch",
                 "no": "Norwegisch",
                 "no-selection": "Keine Auswahl",
-                "po": "Polnisch",
+                "pl": "Polnisch",
                 "pt": "Portugiesisch",
+                "rm": "R\u00e4toromanisch",
                 "ro": "Rum\u00e4nisch",
                 "ru": "Russisch",
-                "sk": "Slowakisch",
+                "sc": "Serbokroatisch",
+                "sk": "Slovak",
                 "sl": "Slowenisch",
                 "spoken": "m\u00fcndlich",
                 "sq": "Albanisch",
@@ -297,6 +305,7 @@
             },
             "languages": "Sprachkenntnisse",
             "region": {
+                "AU": "Ausland",
                 "A": "Ausland",
                 "AG01": "Aarau",
                 "AG02": "Baden",
@@ -310,8 +319,8 @@
                 "AG10": "Wohlen",
                 "AG11": "Zofingen",
                 "AG12": "Zurzach",
-                "AI01": "Appenzell-I.Rh, ganzer Kanton",
-                "AR01": "Appenzell-A.Rh, ganzer Kanton",
+                "AI01": "Appenzell Innerrhoden",
+                "AR01": "Appenzell Ausserrhoden",
                 "BE01": "Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen",
                 "BE02": "Frutigen",
                 "BE03": "Niedersimmental, Thun",
@@ -359,6 +368,7 @@
                 "LU02": "Sursee",
                 "LU03": "Willisau",
                 "LU04": "Entlebuch",
+                "LU05": "Emmen",
                 "NE01": "Boudry, Neuenburg, Val-de-Ruz",
                 "NE02": "La Chaux-de-Fonds, Le Locle, Val de Travers",
                 "NW01": "Nidwalden, ganzer Kanton",
@@ -422,7 +432,7 @@
         },
         "ribbon": {
             "dev": "Local",
-            "development": "Development",
+            "development": "Entwicklung",
             "test": "Test"
         },
         "title": "Jobroom"
@@ -431,7 +441,7 @@
         "title": "Arbeitslosenversicherung ALV"
     },
     "navigation": {
-        "next": "N\u00e4chster",
-        "previous": "Bisherige"
+        "next": "Weiter",
+        "previous": "Zur\u00fcck"
     }
 }

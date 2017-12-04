@@ -37,10 +37,10 @@
             "title": "Search candidates"
         },
         "graduation": {
-            "ACCEPTED": "Swiss degree or accepted in Switzerland",
+            "ACCEPTED": "Swiss or accepted in Switzerland",
             "CH": "Swiss degree",
             "NONE": "No degree",
-            "NOT_ACCEPTED": "Swiss degree or foreign degree",
+            "NOT_ACCEPTED": "Swiss or foreign degree",
             "label": "Degree"
         },
         "keywords": {
@@ -51,8 +51,8 @@
         },
         "no-selection": "No selection",
         "skills": {
-            "label": "Competencies, skills",
-            "placeholder": "E.g. Civil engineering"
+            "label": "Key words",
+            "placeholder": "Competencies, skills"
         },
         "title": "Candidate search",
         "toolbar": {
@@ -61,7 +61,7 @@
                 "label": "Degree"
             },
             "occupation": {
-                "placeholder": "Professional title"
+                "placeholder": "Occupation"
             },
             "residence": {
                 "placeholder": "Canton of residence",
@@ -79,7 +79,7 @@
             "label": "Work location"
         },
         "workload": {
-            "label": "FT/PT"
+            "label": "Workload"
         },
         "workplace": {
             "label": "Work location",

@@ -2,12 +2,12 @@
     "audits": {
         "filter": {
             "button": {
-                "clear": "Effacer",
-                "close": "Fermer",
-                "today": "Aujourd'hui",
+                "clear": "effacer",
+                "close": "fermer",
+                "today": "aujourd'hui",
                 "weeks": "Semaines"
             },
-            "from": "De",
+            "from": "de",
             "title": "Filtrer par date",
             "to": "\u00e0"
         },
@@ -19,7 +19,7 @@
                 "data": "Autres donn\u00e9es",
                 "date": "Date",
                 "principal": "Utilisateur",
-                "status": "Etat"
+                "status": "\u00c9tat"
             }
         },
         "title": "Audits"
