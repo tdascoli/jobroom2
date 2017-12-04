@@ -25,7 +25,7 @@ interface OccupationCache {
 }
 
 /**
- * This service is getting depricated. Use the OccupationPresentationService and OccupationLabelService
+ * This service is getting deprecated. Use the OccupationPresentationService and OccupationLabelService
  * service classes instead of this.
  *
  * @deprecated

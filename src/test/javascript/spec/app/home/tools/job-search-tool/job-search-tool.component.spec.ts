@@ -7,7 +7,7 @@ import { Store } from '@ngrx/store';
 import { initialState } from '../../../../../../../main/webapp/app/home/state-management/state/job-search-tool.state';
 
 describe('JobSearchToolComponent', () => {
-    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['fetchSuggestions']);
+    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['fetchJobSearchOccupationSuggestions']);
     const mockLocalityService = jasmine.createSpyObj('mockLocalityService', ['fetchSuggestions']);
 
     const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);

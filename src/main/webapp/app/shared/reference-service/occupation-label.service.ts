@@ -11,6 +11,10 @@ export interface OccupationLabelAutocomplete {
     classifications: OccupationLabel[];
 }
 
+interface Map<T> {
+    [key: string]: T;
+}
+
 export interface OccupationLabelSuggestion {
     id: string;
     code: number;
@@ -18,7 +22,7 @@ export interface OccupationLabelSuggestion {
     language: string;
     classifier: string;
     label: string;
-    mappings: Map<string, number>;
+    mappings: Map<number>;
 }
 
 export interface OccupationLabel {
@@ -52,7 +56,7 @@ export class OccupationLabelService {
     constructor(private http: Http) {
     }
 
-    suggestOccupation(prefix: string, types = ['avam', 'bfs', 'x28']): Observable<OccupationLabelAutocomplete> {
+    suggestOccupation(prefix: string, types: Array<string>): Observable<OccupationLabelAutocomplete> {
         const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;

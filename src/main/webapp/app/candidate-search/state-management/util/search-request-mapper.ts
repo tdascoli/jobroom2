@@ -18,10 +18,7 @@ import {
     CandidateSearchRequest,
     WorkLoad
 } from '../../services/candidate-search-request';
-import {
-    OccupationCode,
-    OccupationOption
-} from '../../../shared/reference-service/occupation-presentation.service';
+import { OccupationCode, OccupationOption } from '../../../shared/reference-service';
 
 export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSearchFilter, page = 0): CandidateSearchRequest {
     const {

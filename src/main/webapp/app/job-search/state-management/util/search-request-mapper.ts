@@ -12,7 +12,7 @@ import {
 } from '../../../shared/reference-service';
 import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
 import { JobSearchToolState } from '../../../home/state-management/state/job-search-tool.state';
-import { OccupationCode } from '../../../shared/reference-service/occupation-presentation.service';
+import { OccupationCode } from '../../../shared/reference-service/occupation-code';
 
 const toCode = (value: TypeaheadMultiselectModel) => value.code;
 const toLabel = (value: TypeaheadMultiselectModel) => value.label;

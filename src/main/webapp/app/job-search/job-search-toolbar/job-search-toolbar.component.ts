@@ -62,7 +62,7 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     }
 
     fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> =>
-        this.occupationPresentationService.fetchSuggestions(query);
+        this.occupationPresentationService.fetchJobSearchOccupationSuggestions(query);
 
     fetchLocalitySuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> =>
         this.localityService.fetchSuggestions(query);

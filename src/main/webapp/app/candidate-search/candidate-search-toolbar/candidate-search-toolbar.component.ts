@@ -57,7 +57,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private cantonService: CantonService,
                 private fb: FormBuilder) {
-        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 

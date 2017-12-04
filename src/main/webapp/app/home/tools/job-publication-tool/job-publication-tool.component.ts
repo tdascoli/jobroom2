@@ -72,7 +72,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 private fb: FormBuilder,
                 private languageSkillService: LanguageSkillService,
                 private translateService: TranslateService) {
-        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchJobPublicationOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
         this.languageSkills$ = languageSkillService.getLanguages();
         this.setupCountries();

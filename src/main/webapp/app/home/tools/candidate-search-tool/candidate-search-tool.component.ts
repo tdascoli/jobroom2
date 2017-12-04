@@ -50,7 +50,7 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
                 private store: Store<CandidateSearchToolState>,
                 private cantonService: CantonService,
                 private fb: FormBuilder) {
-        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchOccupationSuggestions;
+        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 

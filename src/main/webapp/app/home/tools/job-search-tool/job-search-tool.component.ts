@@ -29,7 +29,7 @@ export class JobSearchToolComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
 
     fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> =>
-        this.occupationPresentationService.fetchSuggestions(prefix);
+        this.occupationPresentationService.fetchJobSearchOccupationSuggestions(prefix);
     fetchLocalitySuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> =>
         this.localityService.fetchSuggestions(prefix);
 

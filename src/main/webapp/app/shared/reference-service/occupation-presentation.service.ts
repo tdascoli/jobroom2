@@ -10,6 +10,7 @@ import {
 } from './occupation-label.service';
 import { TypeaheadMultiselectModel } from '../input-components/typeahead/typeahead-multiselect-model';
 import { TranslateService } from '@ngx-translate/core';
+import { OccupationCode } from './occupation-code';
 
 export class OccupationInputType {
     static OCCUPATION = 'occupation';
@@ -25,37 +26,10 @@ export interface FormatterFn<T> {
     (obj: T): string;
 }
 
+// todo: Review if it is possible to use the same model interface for the TypeaheadMultiselect and a suggest input field.
 export interface OccupationOption {
     key: string;
     label: string;
-}
-
-export class OccupationCode {
-    static toString(occupationCode: OccupationCode) {
-        if (occupationCode.classifier) {
-            return `${occupationCode.type}:${occupationCode.code}:${occupationCode.classifier }`;
-        } else {
-            return `${occupationCode.type}:${occupationCode.code}`;
-        }
-    }
-
-    static fromString(codeAsString: string): OccupationCode {
-        const codeArray = codeAsString.split(':');
-        const type = codeArray[0];
-        const code = +codeArray[1];
-        const classifier = codeArray[2];
-
-        return new OccupationCode(code, type, classifier);
-    }
-
-    constructor(public code: number,
-                public type: string,
-                public classifier = null) {
-    }
-
-    toString(): string {
-        return OccupationCode.toString(this);
-    }
 }
 
 export interface GenderAwareOccupationLabel {
@@ -98,7 +72,7 @@ export class OccupationPresentationService {
             .map(labelDataMapper)
     }
 
-    fetchSuggestions(query: string): Observable<TypeaheadMultiselectModel[]> {
+    fetchJobSearchOccupationSuggestions(query: string): Observable<Array<TypeaheadMultiselectModel>> {
         const occupationLabelMapper =
             (type: string) =>
                 (startIdx: number) =>
@@ -112,7 +86,7 @@ export class OccupationPresentationService {
         const occupationMapper = occupationLabelMapper(OccupationInputType.OCCUPATION);
         const classificationMapper = occupationLabelMapper(OccupationInputType.CLASSIFICATION);
 
-        return this.occupationLabelService.suggestOccupation(query)
+        return this.occupationLabelService.suggestOccupation(query, ['avam', 'bfs', 'x28'])
             .map((occupationAutocomplete: OccupationLabelAutocomplete) => {
                 const { occupations, classifications } = occupationAutocomplete;
 
@@ -123,16 +97,29 @@ export class OccupationPresentationService {
             })
     }
 
-    fetchOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
+    fetchCandidateSearchOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
         prefix$
             .filter((prefix: string) => prefix.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
             .switchMap((prefix: string) =>
-                // todo: Review the candidate indexing.
                 this.occupationLabelService.suggestOccupation(prefix, ['avam'])
                     .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
                     .map((occupations: OccupationLabelSuggestion[]) =>
                         occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
+                            // Candidates are currently indexed by bfs code.
                             key: OccupationCode.toString(new OccupationCode(o.mappings['bfs'], 'bfs')),
+                            label: o.label
+                        })))
+            );
+
+    fetchJobPublicationOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
+        prefix$
+            .filter((prefix: string) => prefix.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
+            .switchMap((prefix: string) =>
+                this.occupationLabelService.suggestOccupation(prefix, ['avam'])
+                    .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
+                    .map((occupations: OccupationLabelSuggestion[]) =>
+                        occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
+                            key: OccupationCode.toString(new OccupationCode(o.code, 'avam')),
                             label: o.label
                         })))
             );
