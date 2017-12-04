@@ -21,6 +21,7 @@ export class Jobroom2LanguageService {
 
     init() {
         this.jhiLanguageService.init();
+        this.cookieService.put(LANGUAGE_KEY, this.jhiLanguageService.currentLang);
     }
 
     set currentLang(langKey: string) {
