@@ -144,11 +144,7 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     isDisplayDegree(degree: string) {
-        return degree && Degree[degree] >= Degree.EIDG_FACHAUSWEIS;
-    }
-
-    isDisplayHighestDegree(highestDegree: string) {
-        return highestDegree && Degree[highestDegree] >= Degree.SEKUNDARSCHULE_OBERSTUFE
-            && Degree[highestDegree] <= Degree.DOKTORAT;
+        return degree && Degree[degree] >= Degree.SEKUNDARSCHULE_OBERSTUFE
+            && Degree[degree] <= Degree.DOKTORAT;
     }
 }

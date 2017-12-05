@@ -106,7 +106,7 @@
                     <strong>{{ 'candidate-detail.additional-information.highestEducationLevel.label' | translate }}</strong>
                     <span>{{ 'global.education.' + candidateProfile.highestEducationLevel | translate }}</span>
                 </div>
-                <div *ngIf="isDisplayHighestDegree(candidateProfile.highestDegree)" class="content__item">
+                <div *ngIf="isDisplayDegree(candidateProfile.highestDegree)" class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.education.label' | translate }}</strong>
                     <span>{{ 'global.degree.' + candidateProfile.highestDegree | translate }}</span>
                 </div>
