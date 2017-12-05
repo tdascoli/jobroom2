@@ -25,13 +25,15 @@ export class LocalityService {
                 @Inject(NAVIGATOR_TOKEN) private navigator: NavigatorGeolocation) {
     }
 
-    fetchSuggestions<T = TypeaheadMultiselectModel[]>(prefix: string, resultMapper?: LocalityResultMapper<T>): Observable<T> {
+    fetchSuggestions<T = TypeaheadMultiselectModel[]>(prefix: string, resultMapper?: LocalityResultMapper<T>,
+                                                      distinctLocalities = true): Observable<T> {
         const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
 
         params.set('prefix', prefix);
         params.set('resultSize', DEFAULT_RESPONSE_SIZE);
+        params.set('distinctLocalities', distinctLocalities.toString());
 
         const _resultMapper = resultMapper
             ? resultMapper

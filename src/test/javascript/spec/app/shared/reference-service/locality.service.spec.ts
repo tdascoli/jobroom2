@@ -43,6 +43,7 @@ describe('LocalityService', () => {
                 const urlArray = lastConnection.request.url.split(/[?&]/);
                 expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/localities']));
                 expect(urlArray).toEqual(arrayContaining(['prefix=ber']));
+                expect(urlArray).toEqual(arrayContaining(['distinctLocalities=true']))
             }));
 
         it('should map the response Locality list without duplicates to an array of TypeaheadMultiselectModel',

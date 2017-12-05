@@ -80,7 +80,7 @@ export class ZipCodeComponent implements OnInit, OnChanges {
             .debounceTime(200)
             .distinctUntilChanged()
             .flatMap((term) => term.length < 2 ? Observable.empty()
-                : this.localityService.fetchSuggestions(term, ZipCodeComponent.localityResultMapper));
+                : this.localityService.fetchSuggestions(term, ZipCodeComponent.localityResultMapper, false));
 
     formatter = (result: any) => {
         return result.zip + (result.city ? ' ' : '') + result.city;
