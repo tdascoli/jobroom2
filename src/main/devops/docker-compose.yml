@@ -83,6 +83,22 @@ services:
         deploy:
             placement:
                 constraints: [node.labels.type == java]
+    jobpublicationservice-app:
+            build: dockerfiles/jobpublicationservice
+            image: localhost:5000/docker_jobpublicationservice-app
+            env_file: env.properties
+            environment:
+                - LIQUIBASE_DROPFIRST=false
+            ports:
+                - 8447:8447
+            networks:
+                - jobroom_data2
+            secrets:
+                - source: bootstrap.yml-1
+                  target: bootstrap.yml
+            deploy:
+                placement:
+                    constraints: [node.labels.type == java]
 
 volumes:
     batch-data:
