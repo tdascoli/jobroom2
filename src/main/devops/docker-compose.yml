@@ -5,7 +5,7 @@ services:
         image: localhost:5000/docker_jobroom-app
         env_file: env.properties
         environment:
-            - LIQUIBASE_DROPFIRST=true
+            - LIQUIBASE_DROPFIRST=false
         ports:
             - 8080:8080
         networks:
@@ -70,11 +70,12 @@ services:
         env_file: env.properties
         environment:
             - SPRING_PROFILES_ACTIVE=development
+            - SPRING_APPLICATION_NAME=jobroom_batch
         ports:
             - 9000:9000
         volumes:
             - batch-data:/build
-            - /tmp/sftp-inbound:/tmp/sftp-inbound
+            - batch-tmp-data:/tmp/batch/
         networks:
             - jobroom_data2
         secrets:
@@ -102,6 +103,8 @@ services:
 
 volumes:
     batch-data:
+        driver: local
+    batch-tmp-data:
         driver: local
 
 networks:
