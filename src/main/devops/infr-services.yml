@@ -42,8 +42,9 @@ services:
             - target: 443
               published: 8443
               mode: host
-        volumes:
-            - jobroom_proxy:/etc/nginx/conf.d/
+        configs:
+            - source: nginx.https.conf
+              target: /etc/nginx/conf.d/nginx.https.conf
         networks:
             - jobroom_data2
         secrets:
@@ -52,10 +53,6 @@ services:
         deploy:
             placement:
                 constraints: [node.labels.type == java]
-
-volumes:
-    jobroom_proxy:
-        external: true
 
 networks:
     jobroom_data2:
@@ -71,3 +68,6 @@ secrets:
     dev.job-room.ch.pem:
         external: true
 
+configs:
+  nginx.https.conf:
+    external: true
