@@ -16,5 +16,5 @@ export interface JobSearchRequest {
 
 export interface OccupationCode {
     type: string,
-    code: number
+    value: number
 }

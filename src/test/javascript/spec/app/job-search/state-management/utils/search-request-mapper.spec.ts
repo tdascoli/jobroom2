@@ -102,9 +102,9 @@ describe('createJobSearchRequest', () => {
 
         // THEN
         expect(jobSearchRequest.keywords).toEqual(['l1']);
-        expect(jobSearchRequest.occupationCodes[0].code).toEqual(11);
+        expect(jobSearchRequest.occupationCodes[0].value).toEqual(11);
         expect(jobSearchRequest.occupationCodes[0].type).toEqual('avam');
-        expect(jobSearchRequest.occupationCodes[1].code).toEqual(111);
+        expect(jobSearchRequest.occupationCodes[1].value).toEqual(111);
         expect(jobSearchRequest.occupationCodes[1].type).toEqual('sbn3');
 
         expect(jobSearchRequest.localities).toEqual(['c4']);

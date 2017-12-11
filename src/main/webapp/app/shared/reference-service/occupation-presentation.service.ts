@@ -78,7 +78,7 @@ export class OccupationPresentationService {
                 (startIdx: number) =>
                     (o: OccupationLabel, idx: number) =>
                         new TypeaheadMultiselectModel(type,
-                            OccupationCode.toString(o as OccupationCode),
+                            new OccupationCode(o.code, o.type).toString(),
                             o.label,
                             idx + startIdx
                         );

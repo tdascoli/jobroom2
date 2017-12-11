@@ -58,7 +58,7 @@ export function createCandidateSearchRequestFromToolState(toolState: CandidateSe
 
 function mapOccupationCode(occupation: OccupationOption): string {
     return occupation
-        ? String(OccupationCode.fromString(occupation.key).code)
+        ? String(OccupationCode.fromString(occupation.key).value)
         : null;
 }
 
