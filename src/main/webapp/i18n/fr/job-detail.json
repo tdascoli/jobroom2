@@ -27,8 +27,9 @@
         "reference.job-id": "Num\u00e9ro du poste",
         "reference.phone": "T\u00e9l\u00e9phone",
         "reference.responsible-job-center": "ORP comp\u00e9tent",
+        "startdate": "\u00c0 partir de {{startdate}}",
         "startsImmediately": "Entr\u00e9e en fonction",
-        "startsImmediately.false": "A convenir",
+        "startsImmediately.false": "\u00c0 convenir",
         "startsImmediately.true": "Tout de suite",
         "title": "D\u00e9tail de l'emploi"
     }

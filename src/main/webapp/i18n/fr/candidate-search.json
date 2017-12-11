@@ -1,7 +1,7 @@
 {
     "candidate-search": {
         "availability": {
-            "BY_ARRANGEMENT": "A convenir",
+            "BY_ARRANGEMENT": "\u00c0 convenir",
             "IMMEDIATE": "Tout de suite",
             "label": "Disponibilit\u00e9"
         },
@@ -33,7 +33,7 @@
             "label": "Exp\u00e9rience professionnelle"
         },
         "filter": {
-            "candidate-search-link": "Envoyer le r\u00e9sultat de la recherche comme lien",
+            "candidate-search-link": "Envoyer la recherche comme lien",
             "title": "Chercher des candidats"
         },
         "graduation": {

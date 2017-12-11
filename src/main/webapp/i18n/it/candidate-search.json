@@ -1,7 +1,7 @@
 {
     "candidate-search": {
         "availability": {
-            "BY_ARRANGEMENT": "Da concordare",
+            "BY_ARRANGEMENT": "Previo accordo",
             "IMMEDIATE": "Da subito",
             "label": "Disponibilit\u00e0"
         },

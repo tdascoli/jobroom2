@@ -1,4 +1,7 @@
 {
+    "job-detail": {
+        "enddate": "Befristet bis {{enddate}}"
+    },
     "job-search": {
         "filter": {
             "company-name": {
@@ -9,8 +12,8 @@
                 "label": "Vertragsart",
                 "option": {
                     "ALL": "Alle",
-                    "PERMANENT": "unbefristet",
-                    "TEMPORARY": "befristet"
+                    "PERMANENT": "Unbefristet",
+                    "TEMPORARY": "Befristet"
                 }
             },
             "online-since": {
@@ -75,7 +78,7 @@
     "typeahead-multiselect": {
         "type": {
             "canton": "Kanton",
-            "classification": "Berufsarten",
+            "classification": "Berufskategorie",
             "locality": "Ortschaft",
             "occupation": "Berufsbezeichnung"
         }

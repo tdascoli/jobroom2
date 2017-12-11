@@ -1,4 +1,7 @@
 {
+    "job-detail": {
+        "enddate": "Jusqu'au {{enddate}}"
+    },
     "job-search": {
         "filter": {
             "company-name": {
@@ -9,8 +12,8 @@
                 "label": "Type de contrat",
                 "option": {
                     "ALL": "Tous",
-                    "PERMANENT": "ind\u00e9termin\u00e9",
-                    "TEMPORARY": "dur\u00e9e limit\u00e9e"
+                    "PERMANENT": "Ind\u00e9termin\u00e9",
+                    "TEMPORARY": "Dur\u00e9e limit\u00e9e"
                 }
             },
             "online-since": {
@@ -75,7 +78,7 @@
     "typeahead-multiselect": {
         "type": {
             "canton": "Canton",
-            "classification": "Berufsarten",
+            "classification": "Cat\u00e9gorie",
             "locality": "Localit\u00e9",
             "occupation": "Profession"
         }

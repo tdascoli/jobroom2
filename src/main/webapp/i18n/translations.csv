@@ -50,7 +50,7 @@ candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname
 candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Nationality,"Nationalité ",Cittadinanza
 candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personal information / Candidate contact details,Coordonnées du candidat,Generalità / coordinate del candidato
-candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By arrangement,A convenir,Da concordare
+candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
 candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Immediately,Tout de suite,Da subito
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Availability,Disponibilité,Disponibilità
 candidate-search,candidate-search.candidate-search-list.error-message,Die Resultate der Kandidatensuche konnten nicht geladen werden,Failed to load candidate result list.,Les résultats de la recherche de candidats n'ont pas pu être chargés,Impossibile caricare la lista risultati dei candidati!
@@ -64,9 +64,9 @@ candidate-search,candidate-search.candidate-search-list.title.other.with-localit
 candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Kandidaten,{{count}} {{query}} candidates,{{count}} {{query}} candidats,{{count}} {{query}} candidati
 candidate-search,candidate-search.education.label,Bildungsstufe,Level of education,Niveau de formation,Livello formativo
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
-candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer le résultat de la recherche comme lien,Invia ricerca come link
+candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
-candidate-search,candidate-search.graduation.ACCEPTED," Schweiz oder anerkannt",Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
+candidate-search,candidate-search.graduation.ACCEPTED,Schweiz oder anerkannt,Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
 candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Titolo svizzero
 candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
 candidate-search,candidate-search.graduation.NOT_ACCEPTED,Schweiz oder ausländisch,Swiss or foreign degree,Diplôme suisse ou étranger,Titolo svizzero o estero
@@ -162,23 +162,23 @@ global,global.button.add.title,Add,Add,Add,Add
 global,global.button.remove.title,Remove,Remove,Remove,Remove
 global,global.contactPerson.salutation.MR,Herr,Mr,Monsieur,Signor
 global,global.contactPerson.salutation.MS,Frau,Ms,Madame,Signora
-global,global.degree.BACHELOR_FACHHOCHSCHULE,Tertiär - Bachelor Fachhochschule od. äq.,Tertiär - Bachelor Fachhochschule od. äq.,Tertiaire – Bachelor HES ou équivalent,Terziario – Bachelor SUP o equivalente
-global,global.degree.BACHELOR_UNIVERSITY,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiaire – Bachelor HEU ou équivalent,Terziario – Bachelor scuola univ./poli. o equiv.
-global,global.degree.BERUFSMATURA,Sek. II - Berufsmaturität od. äq.,Sek. II - Berufsmaturität od. äq.,Sec. II – Maturité professionnelle ou équiv.,Sec. II – Maturità professionale o equiv.
-global,global.degree.DOKTORAT,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiaire – Doctorat HEU ou équivalent,Terziario – Dottorato scuola univ./poli. o equiv.
-global,global.degree.EIDG_BERUFSATTEST,Sek. II - Berufliche Grundbildung EBA od. äq.,Sek. II - Berufliche Grundbildung EBA od. äq.,Sec. II – Form. prof. initiale AFP ou équiv.,Sec. II – Form. prof. di base CFP o equiv.
-global,global.degree.EIDG_DIPLOM,Tertiär - Höhere Berufsbildung," Dipl. od. äq.",Tertiär - Höhere Berufsbildung," Dipl. od. äq."
-global,global.degree.EIDG_FACHAUSWEIS,Tertiär - Höhere Berufsbildung," eidg. FA od. äq.",Tertiär - Höhere Berufsbildung," eidg. FA od. äq."
-global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sec. II – Form. prof. initiale CFC ou équiv.,Sec. II – Form. prof. di base AFC o equiv.
-global,global.degree.FACHMATURA,Sek. II - Fachmaturität od. äq.,Sek. II - Fachmaturität od. äq.,Sec. II – Maturité spécialisée ou équiv.,Sec. II – Maturità specializzata o equiv.
-global,global.degree.FACHMITTELSCHULE,Sek. II - Fachmittelschule oder äq.,Sek. II - Fachmittelschule oder äq.,Sec. II – Ecole de culture générale ou équiv.,Sec. II – Scuola specializzata o equiv.
-global,global.degree.GYMNASIUM_MATURA,Sek. II - Gymnasiale Maturität od. äq.,Sek. II - Gymnasiale Maturität od. äq.,Sec. II – Maturité gymnasiale ou équiv.,Sec. II – Maturità liceale o equiv.
-global,global.degree.MASTER_FACHHOCHSCHULE,Tertiär - Master Fachhochschule od. äq.,Tertiär - Master Fachhochschule od. äq.,Tertiaire – Master HES ou équivalent,Terziario – Master SUP o equivalente
-global,global.degree.MASTER_UNIVERSITY,Tertiär - Master universitäre Hochschule od. äq.,Tertiär - Master universitäre Hochschule od. äq.,Tertiaire –  Master HEU ou équivalent,Terziario – Master scuola univ./poli. o equiv.
+global,global.degree.BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor Fachhochschule oder äquivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
+global,global.degree.BACHELOR_UNIVERSITY,Bachelor universitäre Hochschule oder äquivalent,Bachelor universitäre Hochschule oder äquivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
+global,global.degree.BERUFSMATURA,Berufsmaturität oder äquivalent,Berufsmaturität oder äquivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
+global,global.degree.DOKTORAT,Doktorat universitäre Hochschule oder äquivalent,Doktorat universitäre Hochschule oder äquivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
+global,global.degree.EIDG_BERUFSATTEST,Berufliche Grundbildung EBA oder äquivalent,Berufliche Grundbildung EBA oder äquivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
+global,global.degree.EIDG_DIPLOM,"Höhere Berufsbildung, Diplom oder äquivalent","Höhere Berufsbildung, Diplom oder äquivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
+global,global.degree.EIDG_FACHAUSWEIS,"Höhere Berufsbildung, eidg. FA oder äquivalent","Höhere Berufsbildung, eidg. FA oder äquivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
+global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Berufliche Grundbildung EFZ oder äquivalent,Berufliche Grundbildung EFZ oder äquivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
+global,global.degree.FACHMATURA,Fachmaturität oder äquivalent,Fachmaturität oder äquivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
+global,global.degree.FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Fachmittelschule oder äquivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
+global,global.degree.GYMNASIUM_MATURA,Gymnasiale Maturität oder äquivalent,Gymnasiale Maturität oder äquivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
+global,global.degree.MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master Fachhochschule oder äquivalent,Master HES ou équivalent,Master SUP o equivalente
+global,global.degree.MASTER_UNIVERSITY,Master universitäre Hochschule oder äquivalent,Master universitäre Hochschule oder äquivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
 global,global.degree.NA,keine Angabe,keine Angabe,aucune indication,nessuna risposta
-global,global.degree.PRIMARSCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire – Ecole obligatoire,Elementare – Scuola obligatoria
-global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Sek. II - Weiterführende Schule od. äq.,Sek. II - Weiterführende Schule od. äq.,Sec. II – Ecole supérieure ou équivalent,Sec. II – Scuola superiore o equiv.
-global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Sek. I - obligatorische Schule,Sek. I - obligatorische Schule,Sec. I – Ecole obligatoire,Sec. I – Scuola obligatoria
+global,global.degree.PRIMARSCHULE,Obligatorische Schule (Primarstufe),Obligatorische Schule (Primarstufe),École obligatoire (Primaire),Scuola obligatoria (Elementare)
+global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Weiterführende Schule (Sek. II),Weiterführende Schule (Sek. II),Ecole supérieure (Sec. II),Sec. II – Scuola superiore (Sec. II)
+global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Obligatorische Schule (Sek. I),Obligatorische Schule (Sek. I),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
 global,global.degree.UNBEKANNT,weiss nicht,weiss nicht,ne sait pas,non sa
 global,global.drivingLicenceCategory.A,A,A,A,A
 global,global.drivingLicenceCategory.A1,A1,A1,A1,A1
@@ -555,8 +555,8 @@ home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befris
 home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,unbefristet,unbefristet,unbefristet
 home,home.tools.job-publication.publicationEndDate.temporary,befristet bis,befristet bis,befristet bis,befristet bis
 home,home.tools.job-publication.publicationEndDate.title,Anstellungsdauer,Anstellungsdauer,Anstellungsdauer,Anstellungsdauer
-home,home.tools.job-publication.publicationStartDate.by-arrangement,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung,nach Vereinbarung
-home,home.tools.job-publication.publicationStartDate.immediately,ab Sofort,ab Sofort,ab Sofort,ab Sofort
+home,home.tools.job-publication.publicationStartDate.by-arrangement,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
+home,home.tools.job-publication.publicationStartDate.immediately,Ab Sofort,Immediately,Tout de suite,Da subito
 home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Datum,Stellenantritt ab Datum,Stellenantritt ab Datum,Stellenantritt ab Datum
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
@@ -592,16 +592,18 @@ job-detail,job-detail.reference,Referenz,Reference,Référence,Riferimento
 job-detail,job-detail.reference.job-id,Stellennummer,Job ID,Numéro du poste,Numero posto
 job-detail,job-detail.reference.phone,Telefon,Telephone,Téléphone,Telefono
 job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Responsible job centre,ORP compétent,URC competente
+job-detail,job-detail.startdate,Ab {{startdate}},From {{startdate}},À partir de {{startdate}},Da {{startdate}}
 job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fonction,Entrata in funzione
-job-detail,job-detail.startsImmediately.false,nach Vereinbarung,By arrangement,A convenir,previo accordo
-job-detail,job-detail.startsImmediately.true,ab Sofort,Immediately,Tout de suite,subito
+job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
+job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite,Da subito
 job-detail,job-detail.title,Job detail,Job detail,Détail de l'emploi,Dettagli sul posto
+job-search,job-detail.enddate,Befristet bis {{enddate}},Until {{enddate}},Jusqu'au {{enddate}},A {{enddate}}
 job-search,job-search.filter.company-name.label,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
 job-search,job-search.filter.company-name.placeholder,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
 job-search,job-search.filter.contract-type.label,Vertragsart,Contract type,Type de contrat,Tipologia di contratto
 job-search,job-search.filter.contract-type.option.ALL,Alle,All,Tous,Tutto
-job-search,job-search.filter.contract-type.option.PERMANENT,unbefristet,Permanent,indéterminé,A tempo indeterminato
-job-search,job-search.filter.contract-type.option.TEMPORARY,befristet,Temporary,durée limitée,A tempo determinato
+job-search,job-search.filter.contract-type.option.PERMANENT,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
+job-search,job-search.filter.contract-type.option.TEMPORARY,Befristet,Temporary,Durée limitée,A tempo determinato
 job-search,job-search.filter.online-since.days.label,Tage(n),Days(n),Jour(s),Giorno(i)
 job-search,job-search.filter.online-since.label,Online seit,Online since,En ligne depuis,Online dal
 job-search,job-search.filter.sort.label,Sortierung,Sort,Tri,Classificazione
@@ -626,7 +628,7 @@ job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen
 job-search,job-search.toolbar.locality.placeholder,Ortschaft oder Kanton,Location or canton,Lieu ou canton,Località o Cantone
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnungen, Suchbegriffe","Occupations, keywords","Professions, mots-clés","Professioni, parole chiave"
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
-job-search,typeahead-multiselect.type.classification,Berufsarten,Berufsarten,Berufsarten,Berufsarten
+job-search,typeahead-multiselect.type.classification,Berufskategorie,Category,Catégorie,Categoria
 job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località
 job-search,typeahead-multiselect.type.occupation,Berufsbezeichnung,Occupation,Profession,Professione
 job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url

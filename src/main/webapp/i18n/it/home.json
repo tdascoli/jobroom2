@@ -94,8 +94,8 @@
                     "title": "Anstellungsdauer"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "nach Vereinbarung",
-                    "immediately": "ab Sofort",
+                    "by-arrangement": "Previo accordo",
+                    "immediately": "Da subito",
                     "label": "Stellenantritt ab Datum",
                     "title": "Stellenantritt"
                 },
@@ -104,14 +104,14 @@
                 "workload": "Grado di occupazione"
             },
             "job-search": {
-                "search-button": {
-                    "title": "Trova il lavoro da sogno!"
-                },
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
                     "none": "Diesem Job-Profil enstpricht keine Jobs",
                     "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Jobs",
                     "show": "Jetzt anzeigen!"
+                },
+                "search-button": {
+                    "title": "Trova il lavoro da sogno!"
                 }
             },
             "jobPublicationTab": "Pubblica lavoro",

@@ -94,8 +94,8 @@
                     "title": "Anstellungsdauer"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "nach Vereinbarung",
-                    "immediately": "ab Sofort",
+                    "by-arrangement": "By arrangement",
+                    "immediately": "Immediately",
                     "label": "Stellenantritt ab Datum",
                     "title": "Stellenantritt"
                 },
@@ -104,14 +104,14 @@
                 "workload": "Workload"
             },
             "job-search": {
-                "search-button": {
-                    "title": "Find your dream job!"
-                },
                 "search-badge": {
                     "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
                     "none": "Diesem Job-Profil enstpricht keine Jobs",
                     "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Jobs",
                     "show": "Jetzt anzeigen!"
+                },
+                "search-button": {
+                    "title": "Find your dream job!"
                 }
             },
             "jobPublicationTab": "Publish job",

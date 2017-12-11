@@ -13,9 +13,6 @@
             "title": "Utente"
         },
         "email": "Email",
-        "phone": "Phone",
-        "phone.validation.invalid": "Phone is invalid",
-        "organization": "Organization",
         "firstName": "Nome",
         "home": {
             "createLabel": "Crea un nuovo utente",
@@ -27,6 +24,9 @@
         "lastModifiedDate": "Modificato il",
         "lastName": "Cognome",
         "login": "Login",
+        "organization": "Organization",
+        "phone": "Phone",
+        "phone.validation.invalid": "Phone is invalid",
         "profiles": "Profili",
         "updated": "Sono stato aggiornati i dati dell'utente identificato da {{ param }}"
     }

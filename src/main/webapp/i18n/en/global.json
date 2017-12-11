@@ -79,23 +79,23 @@
             }
         },
         "degree": {
-            "BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
-            "BACHELOR_UNIVERSITY": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
-            "BERUFSMATURA": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
-            "DOKTORAT": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
-            "EIDG_BERUFSATTEST": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
-            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
-            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
-            "FACHMATURA": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
-            "FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
-            "GYMNASIUM_MATURA": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
-            "MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
-            "MASTER_UNIVERSITY": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q.",
+            "BACHELOR_FACHHOCHSCHULE": "Bachelor Fachhochschule oder \u00e4quivalent",
+            "BACHELOR_UNIVERSITY": "Bachelor universit\u00e4re Hochschule oder \u00e4quivalent",
+            "BERUFSMATURA": "Berufsmaturit\u00e4t oder \u00e4quivalent",
+            "DOKTORAT": "Doktorat universit\u00e4re Hochschule oder \u00e4quivalent",
+            "EIDG_BERUFSATTEST": "Berufliche Grundbildung EBA oder \u00e4quivalent",
+            "EIDG_DIPLOM": "H\u00f6here Berufsbildung, Diplom oder \u00e4quivalent",
+            "EIDG_FACHAUSWEIS": "H\u00f6here Berufsbildung, eidg. FA oder \u00e4quivalent",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Berufliche Grundbildung EFZ oder \u00e4quivalent",
+            "FACHMATURA": "Fachmaturit\u00e4t oder \u00e4quivalent",
+            "FACHMITTELSCHULE": "Fachmittelschule oder \u00e4quivalent",
+            "GYMNASIUM_MATURA": "Gymnasiale Maturit\u00e4t oder \u00e4quivalent",
+            "MASTER_FACHHOCHSCHULE": "Master Fachhochschule oder \u00e4quivalent",
+            "MASTER_UNIVERSITY": "Master universit\u00e4re Hochschule oder \u00e4quivalent",
             "NA": "keine Angabe",
-            "PRIMARSCHULE": "Primarstufe - obligatorische Schule",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sek. I - obligatorische Schule",
+            "PRIMARSCHULE": "Obligatorische Schule (Primarstufe)",
+            "SEKUNDARSCHULE_OBERSTUFE": "Weiterf\u00fchrende Schule (Sek. II)",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Obligatorische Schule (Sek. I)",
             "UNBEKANNT": "weiss nicht"
         },
         "drivingLicenceCategory": {
@@ -126,9 +126,9 @@
             "ISCED6": "Terti\u00e4rstufe II - ISCED 6"
         },
         "experience": {
+            "1_TO_3_YEAR": "1 to 3 years",
             "LESS_THAN_1_YEAR": "Less than 1 year",
             "MORE_THAN_1_YEAR": "More than 1 year",
-            "1_TO_3_YEAR": "1 to 3 years",
             "MORE_THAN_3_YEARS": "More than 3 years",
             "NONE": "No experience"
         },
@@ -225,6 +225,7 @@
                 "AG": "Aargau",
                 "AI": "Appenzell Innerrhoden",
                 "AR": "Appenzell Ausserrhoden",
+                "AU": "Abroad",
                 "BE": "Bern",
                 "BL": "Basel-Landschaft",
                 "BS": "Basel-Stadt",
@@ -249,8 +250,7 @@
                 "VD": "Waadt",
                 "VS": "Wallis",
                 "ZG": "Zug",
-                "ZH": "Zurich",
-                "AU": "Abroad"
+                "ZH": "Zurich"
             },
             "language": {
                 "ar": "Arab",
@@ -305,7 +305,6 @@
             },
             "languages": "Sprachkenntnisse",
             "region": {
-                "AU": "Abroad",
                 "A": "Abroad",
                 "AG01": "Aarau",
                 "AG02": "Baden",
@@ -321,6 +320,7 @@
                 "AG12": "Zurzach",
                 "AI01": "Appenzell Innerrhoden",
                 "AR01": "Appenzell Ausserrhoden",
+                "AU": "Abroad",
                 "BE01": "Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen",
                 "BE02": "Frutigen",
                 "BE03": "Niedersimmental, Thun",

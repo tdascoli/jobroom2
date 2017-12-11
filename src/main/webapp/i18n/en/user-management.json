@@ -13,9 +13,6 @@
             "title": "User"
         },
         "email": "Email",
-        "phone": "Phone",
-        "phone.validation.invalid": "Phone is invalid",
-        "organization": "Organization",
         "firstName": "First name",
         "home": {
             "createLabel": "Create a new user",
@@ -27,6 +24,9 @@
         "lastModifiedDate": "Modified date",
         "lastName": "Last name",
         "login": "Login",
+        "organization": "Organization",
+        "phone": "Phone",
+        "phone.validation.invalid": "Phone is invalid",
         "profiles": "Profiles",
         "updated": "A user was updated with identifier {{ param }}"
     }

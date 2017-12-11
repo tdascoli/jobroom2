@@ -79,23 +79,23 @@
             }
         },
         "degree": {
-            "BACHELOR_FACHHOCHSCHULE": "Terziario \u2013 Bachelor SUP o equivalente",
-            "BACHELOR_UNIVERSITY": "Terziario \u2013 Bachelor scuola univ./poli. o equiv.",
-            "BERUFSMATURA": "Sec. II \u2013 Maturit\u00e0 professionale o equiv.",
-            "DOKTORAT": "Terziario \u2013 Dottorato scuola univ./poli. o equiv.",
-            "EIDG_BERUFSATTEST": "Sec. II \u2013 Form. prof. di base CFP o equiv.",
-            "EIDG_DIPLOM": " Dipl. od. \u00e4q.",
-            "EIDG_FACHAUSWEIS": " eidg. FA od. \u00e4q.",
-            "EIDG_FAEHIGKEITSZEUGNIS": "Sec. II \u2013 Form. prof. di base AFC o equiv.",
-            "FACHMATURA": "Sec. II \u2013 Maturit\u00e0 specializzata o equiv.",
-            "FACHMITTELSCHULE": "Sec. II \u2013 Scuola specializzata o equiv.",
-            "GYMNASIUM_MATURA": "Sec. II \u2013 Maturit\u00e0 liceale o equiv.",
-            "MASTER_FACHHOCHSCHULE": "Terziario \u2013 Master SUP o equivalente",
-            "MASTER_UNIVERSITY": "Terziario \u2013 Master scuola univ./poli. o equiv.",
+            "BACHELOR_FACHHOCHSCHULE": "Bachelor SUP o equivalente",
+            "BACHELOR_UNIVERSITY": "Bachelor scuola univ./poli. o equivalente",
+            "BERUFSMATURA": "Maturit\u00e0 professionale o equivalente",
+            "DOKTORAT": "Dottorato scuola univ./poli. o equivalente",
+            "EIDG_BERUFSATTEST": "Formazione professionale di base CFP o equivalente",
+            "EIDG_DIPLOM": "Formazione professionale superiore, diploma o equivalente",
+            "EIDG_FACHAUSWEIS": "Formazione professionale superiore APF o equivalente",
+            "EIDG_FAEHIGKEITSZEUGNIS": "Formazione professionale di base AFC o equivalente",
+            "FACHMATURA": "Maturit\u00e0 specializzata o equivalente",
+            "FACHMITTELSCHULE": "Scuola specializzata o equivalente",
+            "GYMNASIUM_MATURA": "Maturit\u00e0 liceale o equivalente",
+            "MASTER_FACHHOCHSCHULE": "Master SUP o equivalente",
+            "MASTER_UNIVERSITY": "Master scuola univ./poli. o equivalente",
             "NA": "nessuna risposta",
-            "PRIMARSCHULE": "Elementare \u2013 Scuola obligatoria",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Scuola superiore o equiv.",
-            "SEKUNDARSCHULE_UNTERSTUFE": "Sec. I \u2013 Scuola obligatoria",
+            "PRIMARSCHULE": "Scuola obligatoria (Elementare)",
+            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Scuola superiore (Sec. II)",
+            "SEKUNDARSCHULE_UNTERSTUFE": "Scuola obligatoria (Sec. I)",
             "UNBEKANNT": "non sa"
         },
         "drivingLicenceCategory": {
@@ -126,9 +126,9 @@
             "ISCED6": "Livello terziario II - ISCED 6"
         },
         "experience": {
+            "1_TO_3_YEAR": "1 - 3 anni",
             "LESS_THAN_1_YEAR": "meno di 1 anno",
             "MORE_THAN_1_YEAR": "pi\u00f9 di 1 anno",
-            "1_TO_3_YEAR": "1 - 3 anni",
             "MORE_THAN_3_YEARS": "pi\u00f9 di 3 anni",
             "NONE": "nessuna esperienza"
         },
@@ -225,6 +225,7 @@
                 "AG": "Argovia",
                 "AI": "Appenzello Interno",
                 "AR": "Appenzello Esterno",
+                "AU": "Estero",
                 "BE": "Berna",
                 "BL": "Basilea-Campagna",
                 "BS": "Basilea-Citt\u00e0",
@@ -249,8 +250,7 @@
                 "VD": "Vaud",
                 "VS": "Vallese",
                 "ZG": "Zugo",
-                "ZH": "Zurigo",
-                "AU": "Estero"
+                "ZH": "Zurigo"
             },
             "language": {
                 "ar": "Arabo",
@@ -305,7 +305,6 @@
             },
             "languages": "Lingue",
             "region": {
-                "AU": "Estero",
                 "A": "Estero",
                 "AG01": "Aarau",
                 "AG02": "Baden",
@@ -321,6 +320,7 @@
                 "AG12": "Zurzach",
                 "AI01": "Appenzello Interno",
                 "AR01": "Appenzello Esterno",
+                "AU": "Estero",
                 "BE01": "Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen",
                 "BE02": "Frutigen",
                 "BE03": "Niedersimmental, Thun",
