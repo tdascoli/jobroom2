@@ -14,12 +14,13 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
     devtool: 'eval-source-map',
     devServer: {
         contentBase: './build/www',
-            proxy: [        {
+            proxy: [
+	    {
                 context: [
-                    '/candidateservice/api/_profilemetrics'
+                    '/eventloggingservice/api/events'
                 ],
-                target: 'http://127.0.0.1:8083',
-                pathRewrite: {'^/candidateservice' : ''},
+                target: 'http://localhost:8089',
+                pathRewrite: {'^/eventloggingservice' : ''},
                 secure: false
             },
             {
