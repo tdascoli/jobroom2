@@ -21,6 +21,7 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
                 '/jobservice',
                 '/referenceservice',
                 '/candidateservice',
+                '/jobpublicationservice',
                 '/management',
                 '/swagger-resources',
                 '/v2/api-docs',

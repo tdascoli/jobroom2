@@ -12,7 +12,8 @@ export class PEAGuard implements CanActivate {
     canActivate() {
         return this.principal.identity()
             .then((account) =>
-                this.principal.hasAnyAuthority(['ROLE_PRIVATE_EMPLOYMENT_AGENT']));
+                this.principal.hasAnyAuthority(['ROLE_PRIVATE_EMPLOYMENT_AGENT',
+                    'ROLE_PUBLIC_EMPLOYMENT_SERVICE']));
     }
 }
 
@@ -21,7 +22,7 @@ const routes = [
         path: 'dashboard',
         component: DashboardComponent,
         canActivate: [PEAGuard],
-        data: { pageTitle: 'dashboard-title' }
+        data: { pageTitle: 'dashboard.title' }
     }
 ];
 

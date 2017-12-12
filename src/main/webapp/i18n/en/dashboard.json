@@ -1,0 +1,38 @@
+{
+    "dashboard": {
+        "title": "Dashboard",
+        "job-publication": {
+            "title": "Jobs bewirtschaften",
+            "job-name": {
+                "placeholder": "In Stellen suchen"
+            },
+            "publication-period": {
+                "label": "Alter der Stellen",
+                "week": "{{ week }} Week",
+                "month": "{{ month }} Month",
+                "months": "{{ months }} Months",
+                "year": "{{ years }} Year",
+                "all": "All"
+            },
+            "job-room-id": "#Job-Room",
+            "avam": "#AVAM",
+            "publication-date": "Meldedatum",
+            "job-title": "Stellenbezeichnung",
+            "location": "Arbeitsort",
+            "status": "Status",
+            "status.INITIAL": "In progress",
+            "status.IN_PROGRESS": "In progress",
+            "status.DISMISSED": "Refused",
+            "status.ACTIVE": "Active",
+            "status.UNSUBSCRIBED": "Canceled",
+            "status.UNKNOWN": "Unknown",
+            "action": "Aktion",
+            "action.view": "Stelle sichten",
+            "action.copy": "Stelle kopieren",
+            "action.delete": "Stelle abmelden",
+            "user-information": {
+                "title": "Sie sind eingeloggt als"
+            }
+        }
+    }
+}

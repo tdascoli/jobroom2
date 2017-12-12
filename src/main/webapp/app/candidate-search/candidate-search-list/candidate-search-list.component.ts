@@ -44,7 +44,7 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
     constructor(private store: Store<CandidateSearchState>,
                 @Inject(WINDOW)
                 private window: Window) {
-        const subscription = this.store
+        this.subscription = this.store
             .select(getCandidateListScrollY)
             .subscribe((scrollY: number) => {
                 this.scrollY = scrollY;

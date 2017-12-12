@@ -12,7 +12,7 @@ import {
     DrivingLicenceCategory,
     Experience,
     ISCED_1997
-} from '../../../shared/model/shared-types';
+} from '../../../shared';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {
@@ -26,6 +26,7 @@ import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-pattern
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
 import { PHONE_NUMBER_REGEX, POSTBOX_NUMBEB_REGEX } from '../../../shared/index';
+import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -71,7 +72,8 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private fb: FormBuilder,
                 private languageSkillService: LanguageSkillService,
-                private translateService: TranslateService) {
+                private translateService: TranslateService,
+                private jobPublicationService: JobPublicationService) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchJobPublicationOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
         this.languageSkills$ = languageSkillService.getLanguages();
@@ -106,7 +108,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 drivingLicenseLevel: [],
                 location: fb.group({
                     countryCode: [this.SWITZ_KEY, Validators.required],
-                    text: []
+                    additionalDetails: []
                 })
             }),
             company: fb.group({
@@ -264,13 +266,14 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     onSubmit(): void {
         const jobPublication: any = Object.assign({}, this.jobPublicationForm.value);
         if (this.jobPublicationForm.contains('job.occupation.occupationSuggestion')) {
-            jobPublication.job.occupation.code = this.jobPublicationForm.get('job.occupation.occupationSuggestion').value.code;
+            jobPublication.job.occupation.avamCode = this.jobPublicationForm.get('job.occupation.occupationSuggestion').value.code;
         }
 
-        jobPublication.job.workingTimePercentageFrom = jobPublication.job.workload[0];
-        jobPublication.job.workingTimePercentageTo = jobPublication.job.workload[1];
+        jobPublication.job.workingTimePercentageMin = jobPublication.job.workload[0];
+        jobPublication.job.workingTimePercentageMax = jobPublication.job.workload[1];
 
-        console.log(jobPublication);
+        this.jobPublicationService.save(jobPublication)
+            .subscribe();
     }
 
     private validateTextField(textFieldPath: string, maxLength: number) {

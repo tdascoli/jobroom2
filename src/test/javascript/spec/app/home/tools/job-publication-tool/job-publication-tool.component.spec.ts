@@ -5,6 +5,7 @@ import { LanguageSkillService } from '../../../../../../../main/webapp/app/candi
 import { OccupationPresentationService } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
+import { JobPublicationService } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.service';
 
 describe('JobPublicationToolComponent', () => {
     let component: JobPublicationToolComponent;
@@ -12,6 +13,7 @@ describe('JobPublicationToolComponent', () => {
     const mockOccupationPresentationService = jasmine.createSpyObj('mockOccupationPresentationService',
         ['fetchOccupationSuggestions', 'occupationFormatter']);
     const mockLanguageSkillService = jasmine.createSpyObj('mockLanguageSkillService', ['getLanguages']);
+    const mockJobPublicationService = jasmine.createSpyObj('mockJobPublicationService', ['findById', 'save']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -21,6 +23,10 @@ describe('JobPublicationToolComponent', () => {
                 {
                     provide: OccupationPresentationService,
                     useValue: mockOccupationPresentationService
+                },
+                {
+                    provide: JobPublicationService,
+                    useValue: mockJobPublicationService
                 },
                 { provide: LanguageSkillService, useValue: mockLanguageSkillService },
                 { provide: TranslateService, useValue: { currentLang: 'de', onLangChange: Observable.never() } }

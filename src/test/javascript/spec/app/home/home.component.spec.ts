@@ -2,9 +2,10 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { HomeComponent } from '../../../../../main/webapp/app/home/home.component';
 import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AgenciesTab, CompaniesTab } from '../../../../../main/webapp/app/home/state-management/state/layout.state';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
+import { MockActivatedRoute } from '../../helpers/mock-route.service';
 
 describe('HomeComponent', () => {
     const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
@@ -19,7 +20,11 @@ describe('HomeComponent', () => {
             declarations: [HomeComponent],
             providers: [
                 { provide: Store, useValue: mockStore },
-                { provide: Router, useValue: mockRouter }
+                { provide: Router, useValue: mockRouter },
+                {
+                    provide: ActivatedRoute,
+                    useValue: new MockActivatedRoute()
+                }
             ]
         })
             .overrideTemplate(HomeComponent, '')

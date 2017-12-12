@@ -1,105 +1,90 @@
 <div class="base dashboard">
-    <!--todo: implement dashboard-->
     <div class="base__content--wide">
         <div class="alv-logo-box md-whiteframe-1dp">
             <h2 class="dashboard__title text--light">
                 <span class="dashboard__icon"><span class="fa fa-table" aria-hidden="true"></span></span>
-                Jobs bewirtschaften
+                {{ 'dashboard.job-publication.title' | translate }}
             </h2>
 
             <div class="dashboard__actions">
-                <div class="form-inline">
+                <form [formGroup]="jobFilterForm" #jobFilter="ngForm" (ngSubmit)="filter()" class="form-inline">
                     <div class="form-group">
-                        <label for="table-search" class="sr-only">In Stellen suchen</label>
+                        <label for="table-search" class="sr-only">{{ 'dashboard.job-publication.job-name.placeholder' | translate }}</label>
                         <div class="form-group--icon">
-                            <input id="table-search" class="form-control" placeholder="In Stellen suchen">
-                            <span class="fa-stack form-control--icon">
+                            <input formControlName="jobTitle" id="table-search" class="form-control" placeholder="{{ 'dashboard.job-publication.job-name.placeholder' | translate }}">
+                            <span class="fa-stack form-control--icon" (click)="jobFilter.ngSubmit.emit()">
 								<span aria-hidden="true" class="fa fa-search fa-stack-1x"></span>
 							</span>
                         </div>
                     </div>
 
                     <div class="form-group">
-                        <label for="filter-age" class="col-form-label">Alter der Stellen</label>
+                        <label for="filter-age" class="col-form-label">{{ 'dashboard.job-publication.publication-period.label' | translate }}</label>
                         <div>
-                            <select class="form-control custom-select" id="filter-age">
-                                <option selected="">3 Monate</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                            <select formControlName="onlineSinceDays" (change)="jobFilter.ngSubmit.emit()" class="form-control custom-select" id="filter-age">
+                                <option [ngValue]="7">{{ 'dashboard.job-publication.publication-period.week' | translate:'{ week: 1 }' }}</option>
+                                <option [ngValue]="30">{{ 'dashboard.job-publication.publication-period.month' | translate:'{ month: 1 }' }}</option>
+                                <option [ngValue]="90">{{ 'dashboard.job-publication.publication-period.months' | translate:'{ months: 3 }' }}</option>
+                                <option [ngValue]="180">{{ 'dashboard.job-publication.publication-period.months' | translate:'{ months: 6 }' }}</option>
+                                <option [ngValue]="365">{{ 'dashboard.job-publication.publication-period.year' | translate:'{ years: 1 }' }}</option>
+                                <option [ngValue]="null">{{ 'dashboard.job-publication.publication-period.all' | translate }}</option>
                             </select>
                         </div>
                     </div>
-                </div>
+                </form>
             </div>
 
             <div class="dashboard__content--table">
                 <table class="table table-striped table-hover table-sm">
                     <thead>
-                    <tr>
-                        <th scope="col">#Job-Room</th>
-                        <th scope="col">#AVAM</th>
-                        <th scope="col">Meldedatum</th>
-                        <th scope="col">Stellenbezeichnung</th>
-                        <th scope="col">Arbeitsort</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Aktion</th>
-                    </tr>
+                        <tr>
+                            <th scope="col">{{ 'dashboard.job-publication.job-room-id' | translate }}</th>
+                            <th scope="col">{{ 'dashboard.job-publication.avam' | translate }}</th>
+                            <th scope="col">{{ 'dashboard.job-publication.publication-date' | translate }}</th>
+                            <th scope="col">{{ 'dashboard.job-publication.job-title' | translate }}</th>
+                            <th scope="col">{{ 'dashboard.job-publication.location' | translate }}</th>
+                            <th scope="col">{{ 'dashboard.job-publication.status' | translate }}</th>
+                            <th scope="col">{{ 'dashboard.job-publication.action' | translate }}</th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <th scope="row">1234</th>
-                        <td>1234</td>
-                        <td>01.05.2017</td>
-                        <td>Test Stelle</td>
-                        <td>Bern</td>
-                        <td>publiziert</td>
-                        <td>
-                            <div class="actions">
-                                <a href="#" aria-label="Stelle sichten" data-toggle="tooltip" data-placement="top" title="Stelle sichten"><span class="fa fa-fw fa-eye" aria-hidden="true"></span></a>
-                                <a href="#" aria-label="Stelle kopieren" data-toggle="tooltip" data-placement="top" title="Stelle kopieren"><span class="fa fa-fw fa-clone" aria-hidden="true"></span></a>
-                                <a href="#" aria-label="Stelle abmelden" data-toggle="tooltip" data-placement="top" title="Stelle abmelden"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span></a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1234</th>
-                        <td>1234</td>
-                        <td>01.05.2017</td>
-                        <td>Test Stelle</td>
-                        <td>Bern</td>
-                        <td>abgemeldet</td>
-                        <td>
-                            <div class="actions">
-                                <a href="#" aria-label="Stelle sichten" data-toggle="tooltip" data-placement="top" title="Stelle sichten"><span class="fa fa-fw fa-eye" aria-hidden="true"></span></a>
-                                <a href="#" aria-label="Stelle kopieren" data-toggle="tooltip" data-placement="top" title="Stelle kopieren"><span class="fa fa-fw fa-clone" aria-hidden="true"></span></a>
-                                <a href="#" aria-label="Stelle abmelden" data-toggle="tooltip" data-placement="top" title="Stelle abmelden"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span></a>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <th scope="row">1234</th>
-                        <td>1234</td>
-                        <td>01.05.2017</td>
-                        <td>Test Stelle</td>
-                        <td>Bern</td>
-                        <td>offen</td>
-                        <td>
-                            <div class="actions">
-                                <a href="#" aria-label="Stelle sichten" data-toggle="tooltip" data-placement="top" title="Stelle sichten"><span class="fa fa-fw fa-eye" aria-hidden="true"></span></a>
-                                <a href="#" aria-label="Stelle kopieren" data-toggle="tooltip" data-placement="top" title="Stelle kopieren"><span class="fa fa-fw fa-clone" aria-hidden="true"></span></a>
-                                <a href="#" aria-label="Stelle abmelden" data-toggle="tooltip" data-placement="top" title="Stelle abmelden"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span></a>
-                            </div>
-                        </td>
-                    </tr>
+                        <tr *ngFor="let jobPublication of jobPublicationList">
+                            <th scope="row">{{ jobPublication.id }}</th>
+                            <td>{{ jobPublication.idAvam }}</td>
+                            <td>{{ jobPublication.creationDate | date:'dd.MM.yyyy' }}</td>
+                            <td>{{ jobPublication.job.title }}</td>
+                            <td>{{ jobPublication.job.location.city }}</td>
+                            <td>{{ 'dashboard.job-publication.status.' + jobPublication.status | translate }}</td>
+                            <td>
+                                <div class="actions">
+                                    <a href="javascript:void(0);" [attr.aria-label]="'dashboard.job-publication.action.view' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.view' | translate">
+                                        <span class="fa fa-fw fa-eye" aria-hidden="true"></span>
+                                    </a>
+                                    <a [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id }]" [attr.aria-label]="'dashboard.job-publication.action.copy' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.copy' | translate">
+                                        <span class="fa fa-fw fa-clone" aria-hidden="true"></span>
+                                    </a>
+                                    <a href="javascript:void(0);" [attr.aria-label]="'dashboard.job-publication.action.delete' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.delete' | translate">
+                                        <span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>
+                                    </a>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
+                <nav>
+                    <ngb-pagination class="pagination-alv__table"
+                                    [collectionSize]="totalCount"
+                                    [maxSize]="10"
+                                    [page]="page + 1"
+                                    (pageChange)="changePage($event)"
+                                    [pageSize]="PAGE_SIZE"></ngb-pagination>
+                </nav>
             </div>
         </div>
     </div>
-    <div class="base__related">
-        <div class="dashboard__subtitle">Sie sind eingeloggt als</div>
-        <strong>Vorname Name</strong><br>
-        Firmenname
+    <div *ngIf="identity$ | async as identity" class="base__related">
+        <div class="dashboard__subtitle">{{ 'dashboard.job-publication.user-information.title' | translate }}</div>
+        <strong>{{ identity.firstName }} {{ identity.lastName }}</strong><br>
+        {{ (organization$ | async)?.name }}
     </div>
 </div>

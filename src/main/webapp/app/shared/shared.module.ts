@@ -24,6 +24,7 @@ import { DetailsPagePaginationComponent } from './components/details-page-pagina
 import { dateParserFormatterProvider } from './input-components/datepicker/ngb-date-moment-parser-formatter';
 import { datepickerI18nService } from './input-components/datepicker/ngb-datepicker-i18n-service';
 import { OrganizationService } from './organization/organization.service';
+import { JobPublicationService } from './job-publication/job-publication.service';
 
 @NgModule({
     imports: [
@@ -55,7 +56,8 @@ import { OrganizationService } from './organization/organization.service';
         SafeHtmlPipe,
         dateParserFormatterProvider(),
         datepickerI18nService(),
-        OrganizationService
+        OrganizationService,
+        JobPublicationService
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [

@@ -15,26 +15,20 @@ export class HomeRouterEffects {
         .ofType(ROUTER_NAVIGATION)
         .do((action: RouterNavigationAction) => {
             const url = action.payload.event.url;
-            switch (url) {
-                case '/jobseekers':
-                    this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.JOB_SEEKERS));
-                    break;
-                case '/companies/jobpublication':
-                    this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.COMPANIES));
-                    this.store.dispatch(new SelectCompanyTabAction(CompaniesTab.JOB_PUBLICATION));
-                    break;
-                case '/companies/candidates':
-                    this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.COMPANIES));
-                    this.store.dispatch(new SelectCompanyTabAction(CompaniesTab.CANDIDATE_SEARCH));
-                    break;
-                case '/agents/candidates':
-                    this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.RECRUITMENT_AGENCIES));
-                    this.store.dispatch(new SelectAgencyTabAction(AgenciesTab.CANDIDATE_SEARCH));
-                    break;
-                case '/agents/jobpublication':
-                    this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.RECRUITMENT_AGENCIES));
-                    this.store.dispatch(new SelectAgencyTabAction(AgenciesTab.JOB_PUBLICATION));
-                    break;
+            if (url.includes('/jobseekers')) {
+                this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.JOB_SEEKERS));
+            } else if (url.includes('/companies/jobpublication')) {
+                this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.COMPANIES));
+                this.store.dispatch(new SelectCompanyTabAction(CompaniesTab.JOB_PUBLICATION));
+            } else if (url.includes('/companies/candidates')) {
+                this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.COMPANIES));
+                this.store.dispatch(new SelectCompanyTabAction(CompaniesTab.CANDIDATE_SEARCH));
+            } else if (url.includes('/agents/candidates')) {
+                this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.RECRUITMENT_AGENCIES));
+                this.store.dispatch(new SelectAgencyTabAction(AgenciesTab.CANDIDATE_SEARCH));
+            } else if (url.includes('/agents/jobpublication')) {
+                this.store.dispatch(new SelectToolbarItemAction(ToolbarItem.RECRUITMENT_AGENCIES));
+                this.store.dispatch(new SelectAgencyTabAction(AgenciesTab.JOB_PUBLICATION));
             }
         });
 
