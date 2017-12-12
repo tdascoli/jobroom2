@@ -73,7 +73,9 @@ Toolbar (alv-styleguide)
     }
 
     jr2-job-search .base__subnavbar,
-    jr2-candidate-search .base__subnavbar {
+    jr2-job-search .base__content--wide,
+    jr2-candidate-search .base__subnavbar,
+    jr2-candidate-search .base__content--wide {
         padding-top: calc((#{$toolbar-height} + #{$toolbar-margin-bottom}) - #{$header-margin});
     }
 }
