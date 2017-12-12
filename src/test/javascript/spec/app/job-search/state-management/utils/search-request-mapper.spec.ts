@@ -88,7 +88,8 @@ describe('createJobSearchRequest', () => {
         const query: JobSearchQuery = {
             baseQuery: [
                 new TypeaheadMultiselectModel(OccupationInputType.FREE_TEXT, 'c1', 'l1'),
-                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'avam:11', 'l2'),
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'x28:33,avam:11', 'l2'),
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'avam:12', 'l22'),
                 new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, 'sbn3:111', 'l3')
             ],
             localityQuery: [
@@ -102,10 +103,17 @@ describe('createJobSearchRequest', () => {
 
         // THEN
         expect(jobSearchRequest.keywords).toEqual(['l1']);
-        expect(jobSearchRequest.occupationCodes[0].value).toEqual(11);
-        expect(jobSearchRequest.occupationCodes[0].type).toEqual('avam');
-        expect(jobSearchRequest.occupationCodes[1].value).toEqual(111);
-        expect(jobSearchRequest.occupationCodes[1].type).toEqual('sbn3');
+        expect(jobSearchRequest.occupationCodes[0].value).toEqual(33);
+        expect(jobSearchRequest.occupationCodes[0].type).toEqual('x28');
+
+        expect(jobSearchRequest.occupationCodes[1].value).toEqual(11);
+        expect(jobSearchRequest.occupationCodes[1].type).toEqual('avam');
+
+        expect(jobSearchRequest.occupationCodes[2].value).toEqual(12);
+        expect(jobSearchRequest.occupationCodes[2].type).toEqual('avam');
+
+        expect(jobSearchRequest.occupationCodes[3].value).toEqual(111);
+        expect(jobSearchRequest.occupationCodes[3].type).toEqual('sbn3');
 
         expect(jobSearchRequest.localities).toEqual(['c4']);
         expect(jobSearchRequest.cantons).toEqual(['c5']);

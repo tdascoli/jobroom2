@@ -121,7 +121,7 @@ describe('OccupationPresentationService', () => {
                         code: 30,
                         label: 'Wirtschaftinformatiker',
                         type: 'x28',
-                        mappings: null,
+                        mappings: { 'avam': 111 },
                         classifier: '',
                         language: 'de'
                     } as OccupationLabelSuggestion,
@@ -147,7 +147,7 @@ describe('OccupationPresentationService', () => {
             expect(suggestion).toEqual([
                 new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'avam:10', 'Informatiker', 0),
                 new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'x28:20', 'Bioinformatiker', 1),
-                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'x28:30', 'Wirtschaftinformatiker', 2),
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'x28:30,avam:111', 'Wirtschaftinformatiker', 2),
                 new TypeaheadMultiselectModel(OccupationInputType.CLASSIFICATION, 'sbn3:300', 'Berufe der Informatik', 3)
             ]);
         });

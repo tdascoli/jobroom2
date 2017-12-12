@@ -76,12 +76,15 @@ export class OccupationPresentationService {
         const occupationLabelMapper =
             (type: string) =>
                 (startIdx: number) =>
-                    (o: OccupationLabel, idx: number) =>
-                        new TypeaheadMultiselectModel(type,
-                            new OccupationCode(o.code, o.type).toString(),
-                            o.label,
-                            idx + startIdx
-                        );
+                    (o: OccupationLabel | OccupationLabelSuggestion, idx: number) => {
+                        const defaultCode = new OccupationCode(o.code, o.type).toString();
+                        const avamCode = o['mappings'] && o['mappings'].avam && o.type === 'x28'
+                            ? new OccupationCode(o['mappings'].avam, 'avam').toString()
+                            : null;
+                        const code = avamCode ? `${defaultCode},${avamCode}` : defaultCode;
+
+                        return new TypeaheadMultiselectModel(type, code, o.label, idx + startIdx);
+                    };
 
         const occupationMapper = occupationLabelMapper(OccupationInputType.OCCUPATION);
         const classificationMapper = occupationLabelMapper(OccupationInputType.CLASSIFICATION);

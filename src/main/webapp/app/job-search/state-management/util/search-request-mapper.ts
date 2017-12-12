@@ -46,6 +46,8 @@ function populateBaseQuery(request, baseQuery: Array<TypeaheadMultiselectModel>)
     const keywords = baseQuery.filter(byValue(OccupationInputType.FREE_TEXT)).map(toLabel);
     const occupations = baseQuery.filter(byValue(OccupationInputType.OCCUPATION))
         .map(toCode)
+        .map((code: string) => code.split(','))
+        .reduce((prev: string[], curr: string[]) => prev.concat(curr), [])
         .map(OccupationCode.fromString);
     const classifications = baseQuery.filter(byValue(OccupationInputType.CLASSIFICATION))
         .map(toCode)
