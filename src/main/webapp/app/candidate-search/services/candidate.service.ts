@@ -9,6 +9,7 @@ import { createPageableURLSearchParams } from '../../shared/model/request-util';
 import { Experience } from '../../shared/model/shared-types';
 import { JhiBase64Service } from 'ng-jhipster';
 import { Principal } from '../../shared/auth/principal.service';
+import { CandidateLoggingService } from './candidate.logging.service';
 
 @Injectable()
 export class CandidateService {
@@ -64,6 +65,10 @@ export class CandidateService {
     search(req: CandidateSearchRequest): Observable<ResponseWrapper> {
         const options = new BaseRequestOptions();
         options.params = createPageableURLSearchParams(req);
+
+        if (req.page === 0) {
+            this.eventLoggingService.logSearchEvent(req);
+        }
 
         return this.http.post(this.searchUrl, req, options)
             .map((res: Response) => CandidateService.convertResponse(res));
