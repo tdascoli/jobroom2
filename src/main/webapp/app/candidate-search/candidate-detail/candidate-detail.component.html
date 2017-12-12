@@ -169,23 +169,23 @@
                 <ul class="nav filter-nav flex-column">
                     <li *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
                         <a class="nav-link">
-                            <i class="fa fa-star-o" aria-hidden="true"></i> {{ 'candidate-detail.candidate-save' | translate }}
+                            <span class="fa fa-star-o" aria-hidden="true"></span> {{ 'candidate-detail.candidate-save' | translate }}
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" [class.active]="isCopied" ngxClipboard
                            [cbContent]="candidateUrl" (cbOnSuccess)="isCopied = true">
-                            <i class="fa fa-share" aria-hidden="true"></i> {{ 'candidate-detail.candidate-copy-link' | translate }}
+                            <span class="fa fa-share" aria-hidden="true"></span> {{ 'candidate-detail.candidate-copy-link' | translate }}
                         </a>
                     </li>
                     <li class="nav-item">
                        <a class="nav-link" href="{{'mailto:?body=' + candidateUrl}}">
-                           <i class="fa fa-envelope"></i> {{ 'candidate-detail.candidate-send-link' | translate }}
+                           <span class="fa fa-envelope"></span> {{ 'candidate-detail.candidate-send-link' | translate }}
                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="printCandidateDetails()">
-                            <i class="fa fa-print" aria-hidden="true"></i> {{ 'candidate-detail.candidate-print' | translate }}
+                            <span class="fa fa-print" aria-hidden="true"></span> {{ 'candidate-detail.candidate-print' | translate }}
                         </a>
                     </li>
                 </ul>
