@@ -1,11 +1,9 @@
+@import '../../../content/scss/jbr2_variables.scss';
+
 .sticky-top {
     position: sticky;
     top: 90px;
     z-index: 100;
-}
-
-.toolbar-form .form-group {
-    max-width: 33%;
 }
 
 :host /deep/ ngb-typeahead-window {
@@ -41,4 +39,18 @@
 
 ss-multiselect-dropdown {
     width: 100%;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+    :host /deep/ button.dropdown-toggle,
+    select.form-control-lg:not([size]):not([multiple]) {
+        height: 2.4rem;
+    }
+}
+
+@media screen and (max-width: 479px){
+    .toolbar {
+        margin-bottom: ($grid-gutter-width / -2);
+        border-bottom-color: transparent;
+    }
 }

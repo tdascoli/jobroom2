@@ -1,9 +1,5 @@
 @import '../../../content/scss/jbr2_variables.scss';
 
-.toolbar-form .form-group {
-    max-width: 33%;
-}
-
 :host /deep/ .typeahead-multiselect__type-label--classification {
     background-color: $main-accent-color-400;
 }
@@ -34,5 +30,12 @@
 
     :host /deep/  + .container {
         padding-top: ($header-alv-height + $header-navbar-height);
+    }
+}
+
+@media screen and (max-width: 479px){
+    .toolbar {
+        margin-bottom: ($grid-gutter-width / -2);
+        border-bottom-color: transparent;
     }
 }

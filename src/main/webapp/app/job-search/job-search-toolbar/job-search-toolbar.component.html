@@ -1,7 +1,7 @@
 <div class="toolbar toolbar--light md-whiteframe-3dp sticked--top sticked">
     <div class="container">
         <form [formGroup]="toolbarForm" (ngSubmit)="search(toolbarForm.value)" novalidate
-              class="form-inline toolbar-form job-search__form">
+              class="form-inline toolbar-form">
                 <div class="form-group form-group--wide">
                     <jr2-typeahead-multiselect formControlName="baseQuery"
                                                [itemLoader]="fetchOccupationSuggestions"

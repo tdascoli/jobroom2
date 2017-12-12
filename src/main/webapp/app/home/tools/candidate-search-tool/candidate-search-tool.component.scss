@@ -32,3 +32,9 @@
         color: #ffffff;
     }
 }
+
+@media screen and (max-width: 767px){
+    .candidate-search__radar {
+        display: none;
+    }
+}

@@ -1,0 +1,18 @@
+.search-button {
+    width: 4rem;
+    height: 3rem;
+    border-radius: 0;
+}
+
+@media screen and (max-width: 1024px) and (min-width: 480px) {
+    .search-button {
+        height: 2.4rem;
+        width: 3rem;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    :host /deep/ {
+        display: none;
+    }
+}

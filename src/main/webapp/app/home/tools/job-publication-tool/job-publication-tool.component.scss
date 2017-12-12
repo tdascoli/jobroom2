@@ -18,3 +18,9 @@
 /deep/ .d-inline-block select {
     margin: 0;
 }
+
+@media screen and (max-width: 767px){
+    .job-publication__form {
+        width: 100%;
+    }
+}

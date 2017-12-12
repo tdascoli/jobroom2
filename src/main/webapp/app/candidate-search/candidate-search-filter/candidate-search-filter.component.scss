@@ -1,12 +1,25 @@
 @import '../../../content/scss/jbr2_variables.scss';
 
-@media screen and (min-width: 480px){
+@media screen and (min-width: 768px){
     .sticky-top {
         position: sticky;
         top: calc(#{$header-alv-height + $header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom});
         overflow-y: auto;
         height: calc(100vh - (#{$header-alv-height + $header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom}));
         z-index: 100;
+    }
+}
+
+@media screen and (max-width: 479px){
+    .sticky-top {
+        margin-right: ($grid-gutter-width / -2);
+        margin-left:  ($grid-gutter-width / -2);
+
+        padding-right: ($grid-gutter-width / 2);
+        padding-left:  ($grid-gutter-width / 2);
+
+        background-color: rgba($main-color-gray-50, 1.0);
+        border-bottom: 1px solid $main-color-gray-lighter;
     }
 }
 

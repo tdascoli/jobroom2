@@ -22,7 +22,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 @Component({
     selector: 'jr2-candidate-search',
     templateUrl: './candidate-search.component.html',
-    styles: [],
+    styleUrls: ['./candidate-search.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CandidateSearchComponent {

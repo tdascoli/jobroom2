@@ -1,0 +1,14 @@
+@media screen and (max-width: 767px){
+    .base__subnavbar {
+        flex-basis: 100%;
+        max-width: 100%;
+
+        .sticky-top {
+            z-index: 100 !important;
+        }
+    }
+
+    .base__content--wide {
+        order: 2;
+    }
+}

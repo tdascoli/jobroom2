@@ -3,6 +3,14 @@
  * because the AOT compiler can not resolve the imports.
  * The yarn start works but yarn install fails while executing ngc -p tsconfig-aot.json.
  */
+$main-color-black: 			#333333;
+$main-color-gray-dark: 		#636363; //darken($main-color-gray, 13%);
+$main-color-gray: 			#808080;
+$main-color-gray-light: 	#CFCFCF;
+$main-color-gray-lighter: 	#F1F1F1;
+$main-color-gray-lightest: 	#F8F8F8;
+$main-color-white: 			#FFFFFF;
+
 $additional-accent-amber: #ffc500;
 $additional-accent-green: #64b500;
 $main-accent-color-400: #439cc5;
@@ -11,6 +19,8 @@ $main-color-black: #323232;
 $main-color-gray-100: #ececec; // lighten 42.5%
 $main-color-gray-light-400: #d7d7d7; // lighten 5.5%
 $main-color-gray-light-50: #fcfcfc; // lighten 20%
+
+$main-color-gray-50:  $main-color-gray-lightest;
 $text-weight-light: 300;
 
 $margin-x-general: 1.5rem;
@@ -25,3 +35,6 @@ $header-navbar-height: 60px;
 
 $toolbar-height: 110px;
 $toolbar-margin-bottom: $margin-x-filter;
+
+// grid
+$grid-gutter-width: 30px;

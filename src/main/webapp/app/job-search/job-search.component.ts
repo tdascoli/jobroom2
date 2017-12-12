@@ -21,7 +21,7 @@ import { InitJobSearchAction } from './state-management/actions/job-search.actio
 @Component({
     selector: 'jr2-job-search',
     templateUrl: './job-search.component.html',
-    styles: [],
+    styleUrls: ['./job-search.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JobSearchComponent {

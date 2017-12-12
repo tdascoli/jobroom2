@@ -29,3 +29,9 @@
         color: #ffffff;
     }
 }
+
+@media screen and (max-width: 767px){
+    .job-search__radar {
+        display: none;
+    }
+}

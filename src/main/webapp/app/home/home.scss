@@ -24,7 +24,3 @@ only screen and (min-resolution: 2dppx) {
         background-size: contain;
     }
 }
-
-:host .jumbotron {
-    min-height: calc(100vh - #{$header-navbar-height});
-}

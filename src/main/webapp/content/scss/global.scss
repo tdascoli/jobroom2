@@ -21,20 +21,9 @@ button.close {
     cursor: pointer;
 }
 
-div.main {
-    min-height: 100vh;
-    margin-bottom: -61px;
-}
-
 div.main:after {
     content: "";
     display: block;
-}
-
-footer,
-.footer,
-div.main:after {
-    height: 61px;
 }
 
 footer,
@@ -75,19 +64,16 @@ footer,
 Toolbar (alv-styleguide)
 =================================================================================== */
 
-.sticked--top .toolbar-form,
-.sticky-top .toolbar-form {
-    margin-top: 0;
-    padding-top: 2.5rem;
-}
-
 @media screen and (min-width: 480px){
-    body:not(.has-jumbotron) .jumbotron,
-    body:not(.has-toolbar) .toolbar.sticked--top {
-        margin-top: -($header-margin);
+    .fixed-top~jr2-job-search .toolbar,
+    .fixed-top~jr2-candidate-search .toolbar{
+        top: 90px;
+        position: fixed;
+        width: 100%;
     }
 
-    body:not(.has-toolbar) .toolbar.sticked--top {
-        top: ($header-alv-height + $header-navbar-height);
+    jr2-job-search .base__subnavbar,
+    jr2-candidate-search .base__subnavbar {
+        padding-top: calc((#{$toolbar-height} + #{$toolbar-margin-bottom}) - #{$header-margin});
     }
 }
