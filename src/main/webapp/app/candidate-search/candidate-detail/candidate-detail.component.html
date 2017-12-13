@@ -24,6 +24,7 @@
                             {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a><br/>
                             {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
                         </p>
+                        <strong>{{'candidate-detail.external-id' | translate}}: {{(candidateProfile$ | async).externalId}}</strong>
                     </div>
                 </div>
             </div>
@@ -46,7 +47,8 @@
 
             <!-- Occupation -->
             <div *ngIf="candidateProfile.jobExperiences.length" class="candidate-detail__content">
-                <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
+                <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate
+                    }}</h4>
 
                 <div *ngFor="let jobExperience of jobExperiences$ | async"
                      class="candidate-detail__content candidate-detail--occupation">
@@ -179,9 +181,9 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                       <a class="nav-link" href="{{'mailto:?body=' + candidateUrl}}">
-                           <i class="fa fa-envelope"></i> {{ 'candidate-detail.candidate-send-link' | translate }}
-                       </a>
+                        <a class="nav-link" href="{{'mailto:?body=' + candidateUrl}}">
+                            <i class="fa fa-envelope"></i> {{ 'candidate-detail.candidate-send-link' | translate }}
+                        </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="printCandidateDetails()">

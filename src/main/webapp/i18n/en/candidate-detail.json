@@ -27,6 +27,7 @@
         "candidate-print": "Print",
         "candidate-save": "Save candidate profile",
         "candidate-send-link": "Send link",
+        "external-id": "Candidate-ID",
         "graduation": {
             "ACCEPTED": "Swiss recognized",
             "CH": "Swiss",

@@ -11,7 +11,6 @@ export interface Address {
 
 export interface Candidate {
     id: string;
-    externalId: string;
     firstName: string;
     lastName: string;
     phone: string;
@@ -59,6 +58,7 @@ export interface CandidateProfile {
     id: string;
     gender: Gender;
     availability: Availability;
+    externalId: string;
     residenceCantonCode: string;
     workLoad: number;
     isPublic: boolean;

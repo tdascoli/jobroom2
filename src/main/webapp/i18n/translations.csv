@@ -28,6 +28,7 @@ candidate-detail,candidate-detail.candidate-copy-link,Link kopieren,Copy link,Co
 candidate-detail,candidate-detail.candidate-print,Drucken,Print,Imprimer,Stampa
 candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Save candidate profile,Sauvegarder le profil du candidat,Salva candidato
 candidate-detail,candidate-detail.candidate-send-link,Link versenden,Send link,Envoyer le lien,Invia link
+candidate-detail,candidate-detail.external-id,STES-ID,Candidate-ID,ID-DE,PCI-DE
 candidate-detail,candidate-detail.graduation.ACCEPTED,Schweiz anerkannt,Swiss recognized,Reconnu en Suisse,Riconosciuto in Svizzera
 candidate-detail,candidate-detail.graduation.CH,Schweiz,Swiss,Suisse,Svizzero
 candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
