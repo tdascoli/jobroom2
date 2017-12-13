@@ -115,7 +115,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
                     if (event.url.indexOf('candidate-detail') >= 0) {
                         const url = event.url;
                         const nextId = url.substring(url.lastIndexOf('/') + 1, url.length);
-                        this.loggingService.logProfileEvent({ event: 'brwsrnav', id: nextId });
+                        this.loggingService.logProfileEvent({ event: 'browsernav', id: nextId });
                     }
                 }
             }
@@ -164,7 +164,7 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
     }
 
     public printCandidateDetails(): void {
-        this.profileMetrics({ event: 'prnt' });
+        this.profileMetrics({ event: 'print' });
         window.print();
     }
 
@@ -178,11 +178,11 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
     }
 
     public sendAsMail(): void {
-        this.profileMetrics({ event: 'sndlnk' });
+        this.profileMetrics({ event: 'sendlink' });
     }
 
     public copyLink(): void {
-        this.profileMetrics({ event: 'cpylnk' });
+        this.profileMetrics({ event: 'copylink' });
     }
 
     public  backToResults(): void {
@@ -203,29 +203,29 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
     }
 
     public profileLeft(): void {
-        this.profileMetrics({ event: 'prflft', lowestVisible: this.lastElementToAppear })
+        this.profileMetrics({ event: 'profileleft', lowestVisible: this.lastElementToAppear })
     }
 
     public showDetails(candidate): void {
         if (candidate) {
             this.candidateContactVisible = true;
-            this.profileMetrics({ event: 'shwcnd' });
+            this.profileMetrics({ event: 'showcand' });
         } else {
             this.RAVContactVisible = true;
-            this.profileMetrics({ event: 'shwrav' });
+            this.profileMetrics({ event: 'showrav' });
         }
     }
 
     public phoneClicked(candidate): void {
-        this.profileMetrics({ event: candidate ? 'phncnd' : 'phnrav' });
+        this.profileMetrics({ event: candidate ? 'phonecand' : 'phonerav' });
     }
 
     public mailClicked(candidate): void {
-        this.profileMetrics({ event: candidate ? 'mailcnd' : 'mailrav' });
+        this.profileMetrics({ event: candidate ? 'mailcand' : 'mailrav' });
     }
 
     public addToFavorites(): void {
-        this.profileMetrics({ event: 'favadd' })
+        this.profileMetrics({ event: 'addtofavs' })
     }
 
     public onAppear(element): void {
