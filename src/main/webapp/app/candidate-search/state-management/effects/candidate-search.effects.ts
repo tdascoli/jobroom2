@@ -2,7 +2,7 @@ import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import {
-    CandidateSearchState, getCandidateProfileList,
+    CandidateSearchState,
     getCandidateSearchState
 } from '../state/candidate-search.state';
 import { Scheduler } from 'rxjs/Scheduler';
@@ -52,7 +52,9 @@ export class CandidateSearchEffects {
         .withLatestFrom(this.store.select(getCandidateSearchState))
         .switchMap(([action, state]) => {
             if (state.initialState) {
-                return this.candidateService.search(toInitialSearchRequest(state))
+                const searchRequest = toInitialSearchRequest(state);
+                this.loggingService.logSearchEvent(searchRequest);
+                return this.candidateService.search(searchRequest)
                     .map(toCandidateProfileListLoadedAction)
                     .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)));
             } else {
@@ -66,10 +68,13 @@ export class CandidateSearchEffects {
         .ofType(SEARCH_CANDIDATES, CANDIDATE_SEARCH_TOOL_CHANGED)
         .debounceTime(this.debounce || 300, this.scheduler || async)
         .do((action) => this.window.scroll(0, 0))
-        .switchMap((action: SearchCandidatesAction | CandidateSearchToolChangedAction) =>
-            this.candidateService.search(toSearchRequest(action))
-                .map(toCandidateProfileListLoadedAction)
-                .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
+        .switchMap((action: SearchCandidatesAction | CandidateSearchToolChangedAction) => {
+                const searchRequest = toSearchRequest(action);
+                this.loggingService.logSearchEvent(searchRequest);
+                return this.candidateService.search(searchRequest)
+                        .map(toCandidateProfileListLoadedAction)
+                        .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
+            }
         );
 
     @Effect()
@@ -87,7 +92,6 @@ export class CandidateSearchEffects {
         .ofType(NEXT_PAGE_LOADED, CANDIDATE_LIST_LOADED)
         .withLatestFrom(this.store.select(getCandidateSearchState))
         .map(([action, searchState]) => {
-            console.log(searchState);
             // TODO: It looks like the new results are already in the state here. Can we rely on that always being the case?
             this.loggingService.logResultsList(searchState);
             return null;
