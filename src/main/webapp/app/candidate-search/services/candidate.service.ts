@@ -66,10 +66,6 @@ export class CandidateService {
         const options = new BaseRequestOptions();
         options.params = createPageableURLSearchParams(req);
 
-        if (req.page === 0) {
-            this.eventLoggingService.logSearchEvent(req);
-        }
-
         return this.http.post(this.searchUrl, req, options)
             .map((res: Response) => CandidateService.convertResponse(res));
     }

@@ -2,12 +2,13 @@ import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import {
-    CandidateSearchState,
+    CandidateSearchState, getCandidateProfileList,
     getCandidateSearchState
 } from '../state/candidate-search.state';
 import { Scheduler } from 'rxjs/Scheduler';
 import { Observable } from 'rxjs/Observable';
 import {
+    CANDIDATE_LIST_LOADED,
     CANDIDATE_SEARCH_TOOL_CHANGED,
     CandidateProfileListLoadedAction,
     CandidateSearchToolChangedAction,
@@ -41,6 +42,7 @@ import { WINDOW } from '../../../shared/shared-libs.module';
 export const CANDIDATE_SEARCH_DEBOUNCE = new InjectionToken<number>('CANDIDATE_SEARCH_DEBOUNCE');
 export const CANDIDATE_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('CANDIDATE_SEARCH_SCHEDULER');
 const CANDIDATE_DETAIL_FEATURE = 'candidate-detail';
+import { CandidateLoggingService } from '../../services/candidate.logging.service';
 
 @Injectable()
 export class CandidateSearchEffects {
@@ -80,6 +82,17 @@ export class CandidateSearchEffects {
                 .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
         );
 
+    @Effect({ dispatch: false })
+    logResultsPage$: Observable<void> = this.actions$
+        .ofType(NEXT_PAGE_LOADED, CANDIDATE_LIST_LOADED)
+        .withLatestFrom(this.store.select(getCandidateSearchState))
+        .map(([action, searchState]) => {
+            console.log(searchState);
+            // TODO: It looks like the new results are already in the state here. Can we rely on that always being the case?
+            this.loggingService.logResultsList(searchState);
+            return null;
+        });
+
     @Effect()
     nextItemsPageLoaded$: Observable<Action> = this.actions$
         .ofType(LOAD_NEXT_ITEMS_PAGE)
@@ -114,6 +127,7 @@ export class CandidateSearchEffects {
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,
                 private candidateService: CandidateService,
+                private loggingService: CandidateLoggingService,
                 @Optional()
                 @Inject(CANDIDATE_SEARCH_DEBOUNCE)
                 private debounce,
