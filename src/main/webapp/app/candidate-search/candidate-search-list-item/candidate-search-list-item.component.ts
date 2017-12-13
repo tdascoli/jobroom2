@@ -28,7 +28,7 @@ export class CandidateSearchListItemComponent implements OnInit {
             this.occupationCode, this.profile.jobExperiences);
 
         if (relevantJobExperience) {
-            this.jobExperience$ = this.occupationPresentationService.findOccupationLabelsByBSFCode(relevantJobExperience.occupationCode)
+            this.jobExperience$ = this.occupationPresentationService.findOccupationLabelsByAvamCode(relevantJobExperience.occupationCode)
                 .map((occupationLabels: GenderAwareOccupationLabel) => Object.assign({}, relevantJobExperience,
                     {
                         occupation: occupationLabels.male +

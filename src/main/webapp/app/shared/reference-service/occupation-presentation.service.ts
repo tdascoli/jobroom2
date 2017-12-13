@@ -49,7 +49,11 @@ export class OccupationPresentationService {
                 private translateService: TranslateService) {
     }
 
-    findOccupationLabelsByBSFCode(bfsCode: number): Observable<GenderAwareOccupationLabel> {
+    findOccupationLabelsByAvamCode(avamCode: number): Observable<GenderAwareOccupationLabel> {
+        return this.findOccupationLabelsByCode(new OccupationCode(avamCode, 'avam').toString());
+    }
+
+    findOccupationLabelsByBFSCode(bfsCode: number): Observable<GenderAwareOccupationLabel> {
         return this.findOccupationLabelsByCode(new OccupationCode(bfsCode, 'bfs').toString());
     }
 
@@ -108,8 +112,7 @@ export class OccupationPresentationService {
                     .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
                     .map((occupations: OccupationLabelSuggestion[]) =>
                         occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
-                            // Candidates are currently indexed by bfs code.
-                            key: OccupationCode.toString(new OccupationCode(o.mappings['bfs'], 'bfs')),
+                            key: new OccupationCode(o.code, 'avam').toString(),
                             label: o.label
                         })))
             );
@@ -122,7 +125,7 @@ export class OccupationPresentationService {
                     .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
                     .map((occupations: OccupationLabelSuggestion[]) =>
                         occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
-                            key: OccupationCode.toString(new OccupationCode(o.code, 'avam')),
+                            key: new OccupationCode(o.code, 'avam').toString(),
                             label: o.label
                         })))
             );

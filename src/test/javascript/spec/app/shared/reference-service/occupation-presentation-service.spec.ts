@@ -26,7 +26,7 @@ describe('OccupationPresentationService', () => {
         sut = new OccupationPresentationService(mockOccupationLabelService, mockTranslateService);
     });
 
-    describe('findOccupationLabelsByBSFCode', () => {
+    describe('findOccupationLabelsByBFSCode', () => {
         it('should map parameter to bfs code string', () => {
             // given
             mockOccupationLabelService.getOccupationLabelsByKey.and.returnValue(Observable.of({
@@ -36,10 +36,27 @@ describe('OccupationPresentationService', () => {
 
             // when
             let labels: GenderAwareOccupationLabel;
-            sut.findOccupationLabelsByBSFCode(11).subscribe((l: GenderAwareOccupationLabel) => labels = l);
+            sut.findOccupationLabelsByBFSCode(11).subscribe((l: GenderAwareOccupationLabel) => labels = l);
 
             // then
             expect(mockOccupationLabelService.getOccupationLabelsByKey).toHaveBeenCalledWith('bfs:11');
+        });
+    });
+
+    describe('findOccupationLabelsByAvamCode', () => {
+        it('should map parameter to avam code string', () => {
+            // given
+            mockOccupationLabelService.getOccupationLabelsByKey.and.returnValue(Observable.of({
+                f: 'female label',
+                m: 'male label'
+            }));
+
+            // when
+            let labels: GenderAwareOccupationLabel;
+            sut.findOccupationLabelsByAvamCode(11).subscribe((l: GenderAwareOccupationLabel) => labels = l);
+
+            // then
+            expect(mockOccupationLabelService.getOccupationLabelsByKey).toHaveBeenCalledWith('avam:11');
         });
     });
 
@@ -169,7 +186,7 @@ describe('OccupationPresentationService', () => {
             expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', ['avam']);
         });
 
-        it('should map suggestion to OccupationOption[] using the bfs code', () => {
+        it('should map suggestion to OccupationOption[] using the avam code', () => {
             // given
             const suggestResponse: OccupationLabelAutocomplete = {
                 occupations: [
@@ -196,7 +213,7 @@ describe('OccupationPresentationService', () => {
 
             // then
             expect(suggestion).toEqual([
-                { key: 'bfs:12', label: 'Informatiker' }
+                { key: 'avam:10', label: 'Informatiker' }
             ]);
         });
     });

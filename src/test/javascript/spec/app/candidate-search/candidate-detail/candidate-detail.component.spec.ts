@@ -26,7 +26,7 @@ describe('CandidateDetailComponent', () => {
     const mockActivatedRoute: any = { data: Observable.of({ 'candidateProfile': candidateProfile }) };
     const mockReferenceService = jasmine.createSpyObj('mockReferenceService', ['resolveJobCenter']);
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['findCandidate']);
-    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['findOccupationLabelsByBSFCode']);
+    const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['findOccupationLabelsByAvamCode']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -69,7 +69,7 @@ describe('CandidateDetailComponent', () => {
                 female: 'Text-F'
             }
         });
-        mockOccupationOccupationPresentationService.findOccupationLabelsByBSFCode.and.returnValue(occupation$);
+        mockOccupationOccupationPresentationService.findOccupationLabelsByAvamCode.and.returnValue(occupation$);
 
         // WHEN
         fixture.detectChanges();

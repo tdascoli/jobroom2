@@ -103,7 +103,7 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {
-        return this.occupationPresentationService.findOccupationLabelsByBSFCode(jobExperience.occupationCode)
+        return this.occupationPresentationService.findOccupationLabelsByAvamCode(jobExperience.occupationCode)
             .map((occupationLabels: GenderAwareOccupationLabel) =>
                 Object.assign({}, jobExperience, { occupationLabels }));
     }
