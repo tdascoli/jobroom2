@@ -17,6 +17,8 @@ export class CandidateLoggingService {
     }
 
     public logSearchEvent(event: CandidateSearchRequest): void {
+        const e = event as Object;
+        e['event'] = 'search';
         this.http.post(this.loggingUrl, event).subscribe();
     }
 
@@ -29,6 +31,6 @@ export class CandidateLoggingService {
                 hasSkills: this.candidateService.getRelevantJobExperience(occupationCode, value.jobExperiences).remark != null
             };
         });
-        this.http.post(this.loggingUrl, itemsToLog).subscribe();
+        this.http.post(this.loggingUrl, { event: 'results', resultsList: itemsToLog }).subscribe();
     }
 }
