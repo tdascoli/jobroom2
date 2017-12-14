@@ -12,7 +12,7 @@ import {
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
 
 describe('candidateSearchToolReducer', () => {
-    it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
+    it('should reset CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
         // GIVEN
         const searchModel = {
             occupation: { key: 'avam:11', label: 'test' },
@@ -26,7 +26,7 @@ describe('candidateSearchToolReducer', () => {
         const newState = candidateSearchToolReducer(initialState, action);
 
         // THEN
-        expect(newState).toEqual(searchModel);
+        expect(newState).toEqual(initialState);
     });
 
     it('should update CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_COUNT action', () => {

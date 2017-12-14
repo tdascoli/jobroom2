@@ -14,7 +14,7 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
     let newState;
     switch (action.type) {
         case CANDIDATE_SEARCH_TOOL_SUBMITTED:
-            newState = Object.assign({}, state, action.payload);
+            newState = Object.assign({}, initialState);
             break;
         case CANDIDATE_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, action.payload);

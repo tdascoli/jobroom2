@@ -64,7 +64,7 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
 
         this.subscription = this.candidateSearchForm.valueChanges
             .distinctUntilChanged()
-            .filter((formValue: any) => !formValue.occupation || formValue.occupation.code)
+            .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) => this.filterChanged(formValue));
     }
 
@@ -77,7 +77,7 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
     clearInvalidValue(event: any) {
         const occupationControl = this.candidateSearchForm.get('occupation');
         const value = occupationControl.value;
-        if (value && value.code === undefined) {
+        if (value && value.key === undefined) {
             occupationControl.setValue(undefined, {
                 emitEvent: true,
             });
@@ -112,7 +112,7 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
 
     private filterChanged(formValue: any) {
         const { occupation, residence, graduation } = formValue;
-        const isFilterSelected = (occupation && occupation.code)
+        const isFilterSelected = (occupation && occupation.key)
             || (residence && residence.length > 0)
             || (graduation != null && graduation >= 0);
 

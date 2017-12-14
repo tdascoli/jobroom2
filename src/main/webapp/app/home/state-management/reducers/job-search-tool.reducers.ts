@@ -9,7 +9,7 @@ export function jobSearchToolReducer(state = initialState, action: Actions): Job
     let newState;
     switch (action.type) {
         case JOB_SEARCH_TOOL_SUBMITTED:
-            newState = Object.assign({}, state, action.payload);
+            newState = Object.assign({}, initialState);
             break;
         case JOB_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, action.payload);
