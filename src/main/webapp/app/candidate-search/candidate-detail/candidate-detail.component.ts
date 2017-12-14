@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, DoCheck, OnDestroy, HostListener } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
     Candidate,
@@ -41,7 +41,7 @@ interface EnrichedJobExperience extends JobExperience {
     templateUrl: './candidate-detail.component.html',
     styleUrls: ['./candidate-detail.component.scss']
 })
-export class CandidateDetailComponent implements OnInit, OnDestroy {
+export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
     candidateProfile$: Observable<CandidateProfile>;
     jobExperiences$: Observable<Array<EnrichedJobExperience>>;
     jobCenter$: Observable<JobCenter>;
@@ -124,6 +124,18 @@ export class CandidateDetailComponent implements OnInit, OnDestroy {
         this.RAVContactVisible = false;
         this.candidateContactVisible = false;
         this.lastElementToAppear = 'none';
+    }
+
+    ngDoCheck() {
+        if(this.candidateUrl !== window.location.href) {
+            this.candidateUrl = window.location.href;
+            this.isCopied = false;
+            this.RAVContactVisible = false;
+            this.candidateContactVisible = false;
+
+            const that = this;
+            window.setTimeout(() => that.lastElementToAppear = 'none', 250);
+        }
     }
 
     ngOnDestroy() {
