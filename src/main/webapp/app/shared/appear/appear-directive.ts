@@ -28,6 +28,8 @@ export class AppearDirective implements AfterViewInit, OnDestroy, DoCheck {
 
     windowLocation: string;
 
+    TIME_TO_ARM = 300;
+
     constructor(private element: ElementRef) {
         this.jhiAppear = new EventEmitter<void>();
         this.windowLocation = window.location.href;
@@ -92,19 +94,18 @@ export class AppearDirective implements AfterViewInit, OnDestroy, DoCheck {
         const theOtherOne = this;
         window.setTimeout(function(){
             theOtherOne.subscribe();
-        }, 250);
+        }, this.TIME_TO_ARM);
     }
 
     public ngOnDestroy(): void {
         this.unsubscribe();
     }
 
-    // ETTODO: There has to be a better way...
     public ngDoCheck() {
         const currentLoc = window.location.href;
         if (currentLoc !== this.windowLocation) {
             this.windowLocation = currentLoc;
-            this.reArm();
+            window.setTimeout(this.reArm.bind(this), this.TIME_TO_ARM);
         }
     }
 
