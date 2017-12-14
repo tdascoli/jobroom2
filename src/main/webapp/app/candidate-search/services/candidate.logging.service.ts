@@ -21,7 +21,7 @@ export class CandidateLoggingService {
     }
 
     public logResultsList(state: CandidateSearchState): void {
-        const occupationCode = state.searchFilter.occupation ? +state.searchFilter.occupation.code : null;
+        const occupationCode = state.searchFilter.occupation ? state.searchFilter.occupation.key : null;
         const itemsToLog = state.candidateProfileList.map((value, index, array) => {
             return {
                 id: value.id,
