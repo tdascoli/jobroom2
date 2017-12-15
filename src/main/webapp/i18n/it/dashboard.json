@@ -1,38 +1,38 @@
 {
     "dashboard": {
-        "title": "Dashboard",
         "job-publication": {
-            "title": "Jobs bewirtschaften",
+            "action": "Aktion",
+            "action.copy": "Stelle kopieren",
+            "action.delete": "Stelle abmelden",
+            "action.view": "Stelle sichten",
+            "avam": "#AVAM",
             "job-name": {
                 "placeholder": "In Stellen suchen"
             },
-            "publication-period": {
-                "label": "Alter der Stellen",
-                "week": "{{ week }} Week",
-                "month": "{{ month }} Monat",
-                "months": "{{ months }} Monate",
-                "year": "{{ years }} Jahr",
-                "all": "All"
-            },
             "job-room-id": "#Job-Room",
-            "avam": "#AVAM",
-            "publication-date": "Meldedatum",
             "job-title": "Stellenbezeichnung",
             "location": "Arbeitsort",
+            "publication-date": "Meldedatum",
+            "publication-period": {
+                "all": "All",
+                "label": "Alter der Stellen",
+                "month": "{{ month }} Monat",
+                "months": "{{ months }} Monate",
+                "week": "{{ week }} Week",
+                "year": "{{ years }} Jahr"
+            },
             "status": "Status",
+            "status.ACTIVE": "Attivo",
+            "status.DISMISSED": "Rifiutato",
             "status.INITIAL": "In lavorazione",
             "status.IN_PROGRESS": "In lavorazione",
-            "status.DISMISSED": "Rifiutato",
-            "status.ACTIVE": "Attivo",
-            "status.UNSUBSCRIBED": "Annullato",
             "status.UNKNOWN": "Ignoto",
-            "action": "Aktion",
-            "action.view": "Stelle sichten",
-            "action.copy": "Stelle kopieren",
-            "action.delete": "Stelle abmelden",
+            "status.UNSUBSCRIBED": "Annullato",
+            "title": "Jobs bewirtschaften",
             "user-information": {
                 "title": "Sie sind eingeloggt als"
             }
-        }
+        },
+        "title": "Dashboard"
     }
 }

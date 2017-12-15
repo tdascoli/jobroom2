@@ -9,7 +9,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { Store } from '@ngrx/store';
 import {
     ContractType,
-    initialState, Sort
+    initialState,
+    Sort
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import { FilterChangedAction } from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 
@@ -50,7 +51,7 @@ describe('JobSearchFilterComponent', () => {
                 contractType: ContractType.PERMANENT,
                 workingTime: [80, 100],
                 sort: Sort.DATE_ASC,
-                onlineSince: 20
+                onlineSince: 30
             }, { emitEvent: true });
 
             // THEN
@@ -59,7 +60,7 @@ describe('JobSearchFilterComponent', () => {
                 workingTime: [80, 100],
                 sort: Sort.DATE_ASC,
                 companyName: null,
-                onlineSince: 20
+                onlineSince: 30
             }));
         });
 
@@ -74,7 +75,7 @@ describe('JobSearchFilterComponent', () => {
                 workingTime: [0, 100],
                 sort: Sort.RELEVANCE_DESC,
                 companyName: 'ab',
-                onlineSince: 20
+                onlineSince: 30
             }));
         }));
 
@@ -89,7 +90,7 @@ describe('JobSearchFilterComponent', () => {
                 workingTime: [0, 100],
                 sort: null,
                 companyName: 'a',
-                onlineSince: 20
+                onlineSince: 30
             }));
         }));
     });

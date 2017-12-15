@@ -1,4 +1,7 @@
-import { createJobSearchRequest } from '../../../../../../../main/webapp/app/job-search/state-management/util/search-request-mapper';
+import {
+    createJobSearchRequest,
+    createJobSearchRequestFromToolState
+} from '../../../../../../../main/webapp/app/job-search/state-management/util/search-request-mapper';
 import {
     ContractType,
     JobSearchFilter,
@@ -9,6 +12,7 @@ import { JobSearchRequest } from '../../../../../../../main/webapp/app/job-searc
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 import { LocalityInputType } from '../../../../../../../main/webapp/app/shared/reference-service/locality-autocomplete';
 import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { JobSearchToolState } from '../../../../../../../main/webapp/app/home/state-management/state/job-search-tool.state';
 
 describe('createJobSearchRequest', () => {
     const defaultQuery: JobSearchQuery = {
@@ -125,5 +129,23 @@ describe('createJobSearchRequest', () => {
 
         // THEN
         expect(jobSearchRequest.onlineSince).toEqual(60);
+    })
+});
+
+describe('createJobSearchRequestFromToolState', () => {
+
+    const defaultFilter: JobSearchToolState = {
+        baseQuery: [],
+        localityQuery: [],
+        totalCount: -1,
+        onlineSince: 33
+    };
+
+    it('should map JobSearchToolState with onlineSince value', () => {
+        // WHEN
+        const jobSearchRequest: JobSearchRequest = createJobSearchRequestFromToolState(defaultFilter);
+
+        // THEN
+        expect(jobSearchRequest.onlineSince).toEqual(33);
     })
 });

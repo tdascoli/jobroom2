@@ -105,9 +105,9 @@
             },
             "job-search": {
                 "search-badge": {
-                    "many": "Diesem Job-Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
-                    "none": "Diesem Job-Profil entspricht keine Jobs",
-                    "one": "Diesem Job-Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Jobs",
+                    "many": "Found <br><span class=\"badge badge-radar\">{{count}}</span><br> Jobs matching the search request online since {{since}} days",
+                    "none": "Did not found any Jobs matching the search request online since {{since}} days",
+                    "one": "Found <br><span class=\"badge badge-radar\">1</span><br> Job matching the search request online since {{since}} days",
                     "show": "Jetzt anzeigen!"
                 },
                 "search-button": {

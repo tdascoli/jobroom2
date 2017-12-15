@@ -1,6 +1,7 @@
 import { TypeaheadMultiselectModel } from '../../../shared/input-components';
 import { Job } from '../../services';
 import { createFeatureSelector, createSelector } from '@ngrx/store';
+import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../shared/constants/job-search.constants';
 
 export enum Sort {
     RELEVANCE_DESC,
@@ -51,7 +52,7 @@ export const initialState: JobSearchState = {
         contractType: ContractType.ALL,
         workingTime: [0, 100],
         sort: Sort.RELEVANCE_DESC,
-        onlineSince: 20
+        onlineSince: ONLINE_SINCE_DEFAULT_VALUE
     },
     totalJobCount: 0,
     page: 0,

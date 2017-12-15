@@ -99,6 +99,32 @@ configuration,configuration.filter,Filter (nach Präfix),Filter (by prefix),Filt
 configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
 configuration,configuration.title,Konfiguration,Configuration,Configuration,Configurazione
+dashboard,dashboard.job-publication.action,Aktion,Aktion,Aktion,Aktion
+dashboard,dashboard.job-publication.action.copy,Stelle kopieren,Stelle kopieren,Stelle kopieren,Stelle kopieren
+dashboard,dashboard.job-publication.action.delete,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+dashboard,dashboard.job-publication.action.view,Stelle sichten,Stelle sichten,Stelle sichten,Stelle sichten
+dashboard,dashboard.job-publication.avam,"#AVAM","#AVAM","#AVAM","#AVAM"
+dashboard,dashboard.job-publication.job-name.placeholder,In Stellen suchen,In Stellen suchen,In Stellen suchen,In Stellen suchen
+dashboard,dashboard.job-publication.job-room-id,"#Job-Room","#Job-Room","#Job-Room","#Job-Room"
+dashboard,dashboard.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
+dashboard,dashboard.job-publication.location,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
+dashboard,dashboard.job-publication.publication-date,Meldedatum,Meldedatum,Meldedatum,Meldedatum
+dashboard,dashboard.job-publication.publication-period.all,All,All,All,All
+dashboard,dashboard.job-publication.publication-period.label,Alter der Stellen,Alter der Stellen,Alter der Stellen,Alter der Stellen
+dashboard,dashboard.job-publication.publication-period.month,{{ month }} Monat,{{ month }} Month,{{ month }} Monat,{{ month }} Monat
+dashboard,dashboard.job-publication.publication-period.months,{{ months }} Monate,{{ months }} Months,{{ months }} Monate,{{ months }} Monate
+dashboard,dashboard.job-publication.publication-period.week,{{ week }} Week,{{ week }} Week,{{ week }} Week,{{ week }} Week
+dashboard,dashboard.job-publication.publication-period.year,{{ years }} Jahr,{{ years }} Year,{{ years }} Jahr,{{ years }} Jahr
+dashboard,dashboard.job-publication.status,Status,Status,Status,Status
+dashboard,dashboard.job-publication.status.ACTIVE,Aktiv,Active,Active,Attivo
+dashboard,dashboard.job-publication.status.DISMISSED,Abgelehnt,Refused,Refusée,Rifiutato
+dashboard,dashboard.job-publication.status.INITIAL,In Arbeit,In progress,En cours,In lavorazione
+dashboard,dashboard.job-publication.status.IN_PROGRESS,In Arbeit,In progress,En cours,In lavorazione
+dashboard,dashboard.job-publication.status.UNKNOWN,Unbekannt,Unknown,Inconnue,Ignoto
+dashboard,dashboard.job-publication.status.UNSUBSCRIBED,Abgemeldet,Canceled,Annulée,Annullato
+dashboard,dashboard.job-publication.title,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften
+dashboard,dashboard.job-publication.user-information.title,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als
+dashboard,dashboard.title,Dashboard,Dashboard,Dashboard,Dashboard
 elasticsearch-reindex,elasticsearch.reindex.accepted,"Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing."
 elasticsearch-reindex,elasticsearch.reindex.dialog.cancel,Cancel,Cancel,Cancel,Cancel
 elasticsearch-reindex,elasticsearch.reindex.dialog.confirm,Reindex,Reindex,Reindex,Reindex
@@ -563,9 +589,9 @@ home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stelle
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
-home,home.tools.job-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs"
-home,home.tools.job-search.search-badge.none,Diesem Job-Profil entspricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs,Diesem Job-Profil enstpricht keine Jobs
-home,home.tools.job-search.search-badge.one,"Diesem Job-Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Jobs"
+home,home.tools.job-search.search-badge.many,"Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days"
+home,home.tools.job-search.search-badge.none,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days
+home,home.tools.job-search.search-badge.one,"Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days"
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
@@ -878,29 +904,3 @@ user-management,userManagement.phone,Phone,Phone,Phone,Phone
 user-management,userManagement.phone.validation.invalid,Phone is invalid,Phone is invalid,Phone is invalid,Phone is invalid
 user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
 user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}
-dashboard,dashboard.title,Dashboard,Dashboard,Dashboard,Dashboard
-dashboard,dashboard.job-publication.title,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften
-dashboard,dashboard.job-publication.job-name.placeholder,In Stellen suchen,In Stellen suchen,In Stellen suchen,In Stellen suchen
-dashboard,dashboard.job-publication.publication-period.label,Alter der Stellen,Alter der Stellen,Alter der Stellen,Alter der Stellen
-dashboard,dashboard.job-publication.publication-period.week,{{ week }} Week,{{ week }} Week,{{ week }} Week,{{ week }} Week
-dashboard,dashboard.job-publication.publication-period.month,{{ month }} Monat,{{ month }} Month,{{ month }} Monat,{{ month }} Monat
-dashboard,dashboard.job-publication.publication-period.months,{{ months }} Monate,{{ months }} Months,{{ months }} Monate,{{ months }} Monate
-dashboard,dashboard.job-publication.publication-period.year,{{ years }} Jahr,{{ years }} Year,{{ years }} Jahr,{{ years }} Jahr
-dashboard,dashboard.job-publication.publication-period.all,All,All,All,All
-dashboard,dashboard.job-publication.job-room-id,#Job-Room,#Job-Room,#Job-Room,#Job-Room
-dashboard,dashboard.job-publication.avam,#AVAM,#AVAM,#AVAM,#AVAM
-dashboard,dashboard.job-publication.publication-date,Meldedatum,Meldedatum,Meldedatum,Meldedatum
-dashboard,dashboard.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
-dashboard,dashboard.job-publication.location,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
-dashboard,dashboard.job-publication.status,Status,Status,Status,Status
-dashboard,dashboard.job-publication.status.INITIAL,In Arbeit,In progress,En cours,In lavorazione
-dashboard,dashboard.job-publication.status.IN_PROGRESS,In Arbeit,In progress,En cours,In lavorazione
-dashboard,dashboard.job-publication.status.DISMISSED,Abgelehnt,Refused,Refusée,Rifiutato
-dashboard,dashboard.job-publication.status.ACTIVE,Aktiv,Active,Active,Attivo
-dashboard,dashboard.job-publication.status.UNSUBSCRIBED,Abgemeldet,Canceled,Annulée,Annullato
-dashboard,dashboard.job-publication.status.UNKNOWN,Unbekannt,Unknown,Inconnue,Ignoto
-dashboard,dashboard.job-publication.action,Aktion,Aktion,Aktion,Aktion
-dashboard,dashboard.job-publication.action.view,Stelle sichten,Stelle sichten,Stelle sichten,Stelle sichten
-dashboard,dashboard.job-publication.action.copy,Stelle kopieren,Stelle kopieren,Stelle kopieren,Stelle kopieren
-dashboard,dashboard.job-publication.action.delete,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
-dashboard,dashboard.job-publication.user-information.title,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als

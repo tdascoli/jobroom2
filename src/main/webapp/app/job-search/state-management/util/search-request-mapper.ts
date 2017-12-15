@@ -64,8 +64,8 @@ function populateLocalityQuery(request, localityQuery: Array<TypeaheadMultiselec
 }
 
 export function createJobSearchRequestFromToolState(toolState: JobSearchToolState): JobSearchRequest {
-    const { baseQuery, localityQuery } = toolState;
-    const request = populateBaseQuery({}, baseQuery);
+    const { baseQuery, localityQuery, onlineSince } = toolState;
+    const request = populateBaseQuery({ onlineSince }, baseQuery);
     return populateLocalityQuery(request, localityQuery);
 }
 

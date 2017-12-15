@@ -85,10 +85,12 @@ export class JobSearchToolComponent implements OnInit, OnDestroy {
 
     private filterChanged(formValue: any): void {
         const { baseQuery, localityQuery } = formValue;
+        const onlineSince = this.jobSearchToolModel.onlineSince;
         const isFilterSelected = !!baseQuery.length || !!localityQuery.length;
 
         if (isFilterSelected) {
-            this.store.dispatch(new JobSearchToolCountAction(formValue));
+            const payload = Object.assign({}, formValue, { onlineSince });
+            this.store.dispatch(new JobSearchToolCountAction(payload));
         } else {
             this.store.dispatch(new ResetJobSearchToolCountAction());
         }
