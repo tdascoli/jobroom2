@@ -175,14 +175,20 @@ dependencies {
     compile "io.dropwizard.metrics:metrics-servlet:${dropwizard_metrics_version}"
     compile "io.dropwizard.metrics:metrics-json:${dropwizard_metrics_version}"
     compile "io.dropwizard.metrics:metrics-servlets:${dropwizard_metrics_version}"
-    compile "net.logstash.logback:logstash-logback-encoder:${logstash_logback_encoder_version}"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-json-org"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-hppc"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310"
-    compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5"
-    compile "com.fasterxml.jackson.core:jackson-annotations"
-    compile "com.fasterxml.jackson.core:jackson-databind"
-    compile "com.fasterxml.jackson.module:jackson-module-afterburner"
+    compile("net.logstash.logback:logstash-logback-encoder:${logstash_logback_encoder_version}") {
+        exclude(group: 'ch.qos.logback')
+    }
+    compile "com.fasterxml.jackson.core:jackson-core:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jackson_version}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jdk8:${jackson_version}"
+    compile "com.fasterxml.jackson.module:jackson-module-parameter-names:${jackson_version}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-json-org:${jackson_version}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-hppc:${jackson_version}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jackson_version}"
+    compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jackson_version}"
+    compile "com.fasterxml.jackson.core:jackson-databind:${jackson_version}"
+    compile "com.fasterxml.jackson.module:jackson-module-afterburner:${jackson_version}"
     compile("com.ryantenney.metrics:metrics-spring:${metrics_spring_version}")
     compile "com.hazelcast:hazelcast"
     compile "com.hazelcast:hazelcast-hibernate52:${hazelcast_hibernate52_version}"
