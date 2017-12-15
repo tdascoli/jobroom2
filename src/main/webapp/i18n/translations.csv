@@ -349,11 +349,11 @@ global,global.reference.language.ch,Schweizerdeutsch,Swiss German,Suisse Alleman
 global,global.reference.language.cs,Tschechisch,Czech,Tchèque,Ceco
 global,global.reference.language.da,Dänisch,Danish,Danois,Danese
 global,global.reference.language.de,Deutsch,German,Allemand,Tedesco
+global,global.reference.language.de-ch,Schweizerdeutsch,Swiss German,Suisse allemand,Svizzero tedesco
 global,global.reference.language.el,Griechisch,Greek,Grec,Greco
 global,global.reference.language.en,Englisch,English,Anglais,Inglese
 global,global.reference.language.es,Spanisch,Spanish,Espagnol,Spagnolo
 global,global.reference.language.fi,Finnisch,Finnish,Finlandais,Finlandese
-global,global.reference.language.fl,Flämisch,Flemish,Flamand,Fiammingo
 global,global.reference.language.fr,Französisch,French,Français,Francese
 global,global.reference.language.he,Hebräisch,Hebrew,Hébraïque,Ebreo
 global,global.reference.language.hr,Kroatisch,Croatian,Croate,Croato
@@ -362,24 +362,17 @@ global,global.reference.language.it,Italienisch,Italian,Italien,Italiano
 global,global.reference.language.ja,Japanisch,Japanese,Japonais,Giapponese
 global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
 global,global.reference.language.ku,Kurdisch,Kurdish,Kurde,Curdo
-global,global.reference.language.level.BASIC,Grundkenntnisse,Grundkentnisse,Grundkentnisse,Principiante
-global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Avanzato
-global,global.reference.language.level.NONE,keine Kenntnisse,keine Kentnisse,keine Kentnisse,nessuna conoscenza
-global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
 global,global.reference.language.lt,Litauisch,Lithuanian,Lituanien,Lituano
 global,global.reference.language.mk,Mazedonisch,Macedonian,Macédonien,Macedone
 global,global.reference.language.nl,Holländisch,Dutch,Hollandais,Olandese
 global,global.reference.language.no,Norwegisch,Norvegian,Norvégien,Norvegese
-global,global.reference.language.no-selection,Keine Auswahl,Keine Auswahl,Keine Auswahl,Nessuna scelta
 global,global.reference.language.pl,Polnisch,Polish,Polonais,Polacco
 global,global.reference.language.pt,Portugiesisch,Portuguese,Portugais,Portoghese
 global,global.reference.language.rm,Rätoromanisch,Rhaeto-Romanic,Rheto-Romanche,Reto-Romancio
 global,global.reference.language.ro,Rumänisch,Romanian,Roumain,Rumeno
 global,global.reference.language.ru,Russisch,Russian,Russe,Russo
-global,global.reference.language.sc,Serbokroatisch,Serbo-Croatian,Serbo-croate,Serbo croato
 global,global.reference.language.sk,Slovak,Slowakisch,Slovaque,Slovaco
 global,global.reference.language.sl,Slowenisch,Slovenian,Slovène,Sloveno
-global,global.reference.language.spoken,mündlich,mündlich,mündlich,orale
 global,global.reference.language.sq,Albanisch,Albanian,Albanais,Albanese
 global,global.reference.language.sr,Serbisch,Serbian,Serbe,Serbo
 global,global.reference.language.sv,Schwedisch,Swedish,Suédois,Svedese
@@ -387,9 +380,15 @@ global,global.reference.language.ta,Tamil,Tamil,Tamoul,Tamil
 global,global.reference.language.th,Thai,Thai,Thaïlandais,Tailandese
 global,global.reference.language.tr,Türkisch,Turkish,Turc,Turco
 global,global.reference.language.vi,Vietnamesisch,Vietnamese,Vietnamien,Vietnamita
-global,global.reference.language.written,schriftlich,schriftlich,schriftlich,scritto
 global,global.reference.language.zh,Chinesisch,Chinese,Chinois,Cinese
-global,global.reference.languages,Sprachkenntnisse,Sprachkenntnisse,Sprachen,Lingue
+global,global.reference.language.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
+global,global.reference.languages,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
+global,global.reference.language.level.BASIC,Grundkenntnisse,Grundkentnisse,Grundkentnisse,Principiante
+global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Avanzato
+global,global.reference.language.level.NONE,keine Kenntnisse,keine Kentnisse,keine Kentnisse,nessuna conoscenza
+global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
+global,global.reference.language.spoken,mündlich,orally,orale,orale
+global,global.reference.language.written,schriftlich,written,écrit,scritto
 global,global.reference.region.A,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
 global,global.reference.region.AG02,Baden,Baden,Baden,Baden
@@ -593,7 +592,7 @@ home,home.tools.job-publication.education,Ausbildung,Ausbildung,Ausbildung,Ausbi
 home,home.tools.job-publication.experience,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
 home,home.tools.job-publication.job-description,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung
 home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
-home,home.tools.job-publication.language-skills,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse,Sprachkenntnisse
+home,home.tools.job-publication.language-skills,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
 home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Language skill is required,Language skill is required
 home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
 home,home.tools.job-publication.locality.city,Ort,Ort,Ort,Ort
