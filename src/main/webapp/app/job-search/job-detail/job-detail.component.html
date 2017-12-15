@@ -10,8 +10,8 @@
 
                 <hr class="visible-print-block d-none"/>
 
-                <div class="job-detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
-                    <div class="job-detail__content" *ngIf="job.company">
+                <div class="detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                    <div class="detail__content" *ngIf="job.company">
                         <address>
                             <h4>{{ job.company.name }}</h4>
                             <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
@@ -26,7 +26,7 @@
                     </div>
 
                     <div *ngIf="job.contact">
-                        <div class="job-detail__content">
+                        <div class="detail__content">
                             <h4>{{'job-detail.contactPerson' | translate}}</h4>
                             <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
                                 {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
@@ -38,8 +38,8 @@
                     </div>
                 </div>
 
-                <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
-                    <div class="job-detail__content">
+                <div *ngIf="jobCenter$ | async as jobCenter" class="detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                    <div class="detail__content">
                         <address>
                             <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
                             <p>{{jobCenter.address.name}}, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</p>
@@ -61,16 +61,16 @@
                 {{'job-detail.external-job-disclaimer' | translate}}
             </ngb-alert>
 
-            <div class="job-detail__title">
+            <div class="detail__title">
                 <h2 class="text--light">{{ job.title }}</h2>
                 <span class="text--primary-color">{{ job.company.name }}</span>
-                <small class="job-detail__date">
+                <small class="detail__date">
                     {{'job-detail.onlineSince' | translate}} {{ job.publicationStartDate |
                     jr2Date }}
                 </small>
             </div>
 
-            <div class="job-detail__content">
+            <div class="detail__content">
                 <jr2-job-locality [locality]="job.locality"></jr2-job-locality>
                 <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
                 <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
@@ -79,7 +79,7 @@
             </div>
 
             <!-- job description -->
-            <div class="job-detail__content">
+            <div class="detail__content">
                 <markdown [data]="job.description"></markdown>
             </div>
 
@@ -87,8 +87,8 @@
             <jr2-languages [languages]="job.languages"></jr2-languages>
 
             <!-- Application -->
-            <div *ngIf="job.application" class="job-detail__content">
-                <h4 class="job-detail__content__title">{{ 'job-detail.application.title' | translate }}</h4>
+            <div *ngIf="job.application" class="detail__content">
+                <h4 class="detail__content__title">{{ 'job-detail.application.title' | translate }}</h4>
 
                 <div *ngIf="job.application.mailEnabled" class="content__item">
                     <strong>{{ 'job-detail.application.mail' | translate}}</strong>
@@ -113,23 +113,6 @@
             </div>
 
             <!-- /job description -->
-
-            <!--<div class="job-detail__features">-->
-            <!--<div class="logo-box flex-height md-whiteframe-1dp">-->
-            <!--<h4>{{ job.company.name }}</h4>-->
-            <!--<h4 class="text&#45;&#45;light">{{ job.company?.zipCode }} {{-->
-            <!--job.company?.city }}</h4>-->
-            <!--<a href="#" [jhiTranslate]="'job-detail.otherJobsCompany'"-->
-            <!--[translateValues]="{count: 12}"></a>-->
-            <!--</div>-->
-            <!--<div class="logo-box flex-height md-whiteframe-1dp">-->
-            <!--<h4>{{ job.title }}</h4>-->
-            <!--<h4 class="text&#45;&#45;light">{{ job.locality.zipCode }} {{-->
-            <!--job.locality.text }} ({{ job.locality.cantonCode }})</h4>-->
-            <!--<a href="#" [jhiTranslate]="'job-detail.otherJobsEquivalent'"-->
-            <!--[translateValues]="{count: 144}"></a>-->
-            <!--</div>-->
-            <!--</div>-->
 
         </div>
 

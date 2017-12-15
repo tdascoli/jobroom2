@@ -9,9 +9,9 @@
                 </ul>
 
                 <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
-                    <div class="candidate-detail__subtitle">{{ 'candidate-detail.job-center.title' | translate }}</div>
+                    <div class="detail__subtitle">{{ 'candidate-detail.job-center.title' | translate }}</div>
 
-                    <div class="candidate-detail__content">
+                    <div class="detail__content">
                         <address>
                             <p>
                                 <strong>{{ jobCenter.address.name }}</strong><br/>
@@ -31,11 +31,11 @@
         </div>
 
         <div *ngIf="candidateProfile$ | async as candidateProfile" class="col-12 col-md-8 order-3 base__content">
-            <div class="candidate-detail__title">
+            <div class="detail__title">
                 <h2 class="text--light">{{ (relevantJobExperience$ | async)?.occupation }}</h2>
             </div>
 
-            <div class="candidate-detail__content">
+            <div class="detail__content">
                 <span class="badge badge-blue">
                     {{ 'global.reference.canton.' + candidateProfile.residenceCantonCode | translate}}
                 </span>
@@ -47,11 +47,10 @@
 
             <!-- Occupation -->
             <div *ngIf="candidateProfile.jobExperiences.length" class="candidate-detail__content">
-                <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate
-                    }}</h4>
+                <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
 
                 <div *ngFor="let jobExperience of jobExperiences$ | async"
-                     class="candidate-detail__content candidate-detail--occupation">
+                     class="detail__content detail--occupation">
                     <div class="content__item">
                         <strong>
                             {{ (jobExperience.lastJob ? 'candidate-detail.job-experience.last-job.label' :
@@ -81,12 +80,12 @@
 
             <!-- Languages -->
             <jr2-languages [languages]="candidateProfile.languages"
-                           [containerClass]="'candidate-detail__content'"
-                           [titleClass]="'candidate-detail__content__title'"></jr2-languages>
+                           [containerClass]="'detail__content'"
+                           [titleClass]="'detail__content__title'"></jr2-languages>
 
             <!-- Additional information -->
-            <div class="candidate-detail__content">
-                <h4 class="candidate-detail__content__title">
+            <div class="detail__content">
+                <h4 class="detail__content__title">
                     {{ 'candidate-detail.additional-information.title' | translate }}
                 </h4>
                 <div class="content__item">
@@ -134,9 +133,9 @@
             </div>
 
             <div *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']"
-                 class="candidate-detail__content">
+                 class="detail__content">
                 <ng-container *ngIf="candidateProtectedData$ | async as candidateProtectedData">
-                    <h4 class="candidate-detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
+                    <h4 class="detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
                     <div *ngIf="candidateProtectedData.firstName || candidateProtectedData.lastName" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.name.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.firstName }} {{ candidateProtectedData.lastName }}</span>
