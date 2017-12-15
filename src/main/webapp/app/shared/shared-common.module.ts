@@ -17,6 +17,7 @@ import {
     TypeaheadMultiselectComponent,
     TypeaheadSingleselectComponent
 } from './input-components';
+import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 
 @NgModule({
     imports: [
@@ -32,7 +33,8 @@ import {
         MultiselectComponent,
         TypeaheadSingleselectComponent,
         LanguageFilterComponent,
-        SearchButtonComponent
+        SearchButtonComponent,
+        WorkingTimeRangePipe
     ],
     providers: [
         JhiLanguageHelper,
@@ -41,7 +43,8 @@ import {
             provide: LOCALE_ID,
             useValue: 'de'
         },
-        KeysPipe
+        KeysPipe,
+        WorkingTimeRangePipe
     ],
     exports: [
         JobroomSharedLibsModule,
@@ -54,7 +57,8 @@ import {
         TypeaheadSingleselectComponent,
         LanguageFilterComponent,
         SearchButtonComponent,
-        KeysPipe
+        KeysPipe,
+        WorkingTimeRangePipe
     ]
 })
 export class JobroomSharedCommonModule {

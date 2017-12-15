@@ -116,15 +116,37 @@ dashboard,dashboard.job-publication.publication-period.months,{{ months }} Monat
 dashboard,dashboard.job-publication.publication-period.week,{{ week }} Week,{{ week }} Week,{{ week }} Week,{{ week }} Week
 dashboard,dashboard.job-publication.publication-period.year,{{ years }} Jahr,{{ years }} Year,{{ years }} Jahr,{{ years }} Jahr
 dashboard,dashboard.job-publication.status,Status,Status,Status,Status
-dashboard,dashboard.job-publication.status.ACTIVE,Aktiv,Active,Active,Attivo
-dashboard,dashboard.job-publication.status.DISMISSED,Abgelehnt,Refused,Refusée,Rifiutato
-dashboard,dashboard.job-publication.status.INITIAL,In Arbeit,In progress,En cours,In lavorazione
-dashboard,dashboard.job-publication.status.IN_PROGRESS,In Arbeit,In progress,En cours,In lavorazione
-dashboard,dashboard.job-publication.status.UNKNOWN,Unbekannt,Unknown,Inconnue,Ignoto
-dashboard,dashboard.job-publication.status.UNSUBSCRIBED,Abgemeldet,Canceled,Annulée,Annullato
 dashboard,dashboard.job-publication.title,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften
 dashboard,dashboard.job-publication.user-information.title,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als
 dashboard,dashboard.title,Dashboard,Dashboard,Dashboard,Dashboard
+dashboard,job-publication-details.title,Job publication,Job publication,Job publication,Job publication
+dashboard,job-publication-details.cancel,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+dashboard,job-publication-details.copy,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren
+dashboard,job-publication-details.print,Drucken,Drucken,Drucken,Drucken
+dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
+dashboard,job-publication-details.contact.accountNumber,Stellennummer,Stellennummer,Stellennummer,Stellennummer
+dashboard,job-publication-details.contact.avam,AVAM,AVAM,AVAM,AVAM
+dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
+dashboard,job-publication-details.status,Status,Status,Status,Status
+dashboard,job-publication-details.startDate,Vakant seit,Vacant since,Libre depuis,Vacante dal
+dashboard,job-publication-details.permanent,Permanent,Permanent,Permanent,Permanent
+dashboard,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
+dashboard,job-publication-details.immediately,ab Sofort,ab Sofort,ab Sofort,ab Sofort
+dashboard,job-publication-details.byArrangement,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung
+dashboard,job-publication-details.application.title,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen
+dashboard,job-publication-details.application.email,E-Mail,E-Mail,E-Mail,E-Mail
+dashboard,job-publication-details.application.post,Post,Post,Post,Post
+dashboard,job-publication-details.application.telephone,Telefonisch,Telefonisch,Telefonisch,Telefonisch
+dashboard,job-publication-details.application.additionalInfo,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
+dashboard,job-publication-cancel.title,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+dashboard,job-publication-cancel.alert,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.
+dashboard,job-publication-cancel.job.occupied,Sie konnten die Stelle besetzen,Sie konnten die Stelle besetzen,Sie konnten die Stelle besetzen,Sie konnten die Stelle besetzen
+dashboard,job-publication-cancel.job.occupied.jobCenter,in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)
+dashboard,job-publication-cancel.job.occupied.privateAgency,in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)
+dashboard,job-publication-cancel.job.occupied.self,Sie konnten die Stelle selber besetzen,Sie konnten die Stelle selber besetzen,Sie konnten die Stelle selber besetzen,Sie konnten die Stelle selber besetzen
+dashboard,job-publication-cancel.job.not-occupied,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen
+dashboard,job-publication-cancel.job.confirm,Abmeldung bestätigen,Abmeldung bestätigen,Abmeldung bestätigen,Abmeldung bestätigen
+dashboard,job-publication-cancel.job.dismiss,Abbrechen,Abbrechen,Abbrechen,Abbrechen
 elasticsearch-reindex,elasticsearch.reindex.accepted,"Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing."
 elasticsearch-reindex,elasticsearch.reindex.dialog.cancel,Cancel,Cancel,Cancel,Cancel
 elasticsearch-reindex,elasticsearch.reindex.dialog.confirm,Reindex,Reindex,Reindex,Reindex
@@ -498,6 +520,12 @@ global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
 global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
 global,navigation.next,Weiter,Next,Suivant,Seguente
 global,navigation.previous,Zurück,Previous,Précédent,Precedente
+global,global.job-publication.status.INITIAL,In Arbeit,In progress,En cours,In lavorazione
+global,global.job-publication.status.IN_PROGRESS,In Arbeit,In progress,En cours,In lavorazione
+global,global.job-publication.status.DISMISSED,Abgelehnt,Refused,Refusée,Rifiutato
+global,global.job-publication.status.ACTIVE,Aktiv,Active,Active,Attivo
+global,global.job-publication.status.UNSUBSCRIBED,Abgemeldet,Canceled,Annulée,Annullato
+global,global.job-publication.status.UNKNOWN,Unbekannt,Unknown,Inconnue,Ignoto
 health,health.details.details,Details,Details,Détails,Dettagli
 health,health.details.error,Fehler,Error,Erreur,Errore
 health,health.details.name,Name,Name,Nom,Cognome

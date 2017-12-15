@@ -435,7 +435,17 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "job-publication": {
+            "status": {
+                "INITIAL": "In progress",
+                "IN_PROGRESS": "In progress",
+                "DISMISSED": "Refused",
+                "ACTIVE": "Active",
+                "UNSUBSCRIBED": "Canceled",
+                "UNKNOWN": "Unknown"
+            }
+        }
     },
     "header": {
         "title": "Unemployment insurance"

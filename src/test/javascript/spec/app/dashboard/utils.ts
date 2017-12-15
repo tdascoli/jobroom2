@@ -64,9 +64,10 @@ export function createJobPublication(): JobPublication {
         },
         publication: {
             eures: true,
-                jobroom: true
+            jobroom: true
         },
         status: Status.ACTIVE,
+        accessToken: '832EDF45FEB5CF436897EEE1FA4C6EDE',
         creationDate: new Date()
     }
 }

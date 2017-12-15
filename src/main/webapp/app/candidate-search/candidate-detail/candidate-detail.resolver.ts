@@ -4,7 +4,7 @@ import {
     RouterStateSnapshot
 } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { Candidate, CandidateProfile } from '../services/candidate';
+import { CandidateProfile } from '../services/candidate';
 import { CandidateService } from '../services/candidate.service';
 
 @Injectable()

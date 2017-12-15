@@ -8,11 +8,7 @@ import {
     Validators
 } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
-import {
-    DrivingLicenceCategory,
-    Experience,
-    ISCED_1997
-} from '../../../shared';
+import { DrivingLicenceCategory, Experience, ISCED_1997 } from '../../../shared';
 import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {

@@ -435,7 +435,17 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "job-publication": {
+            "status": {
+                "INITIAL": "In lavorazione",
+                "IN_PROGRESS": "In lavorazione",
+                "DISMISSED": "Rifiutato",
+                "ACTIVE": "Attivo",
+                "UNSUBSCRIBED": "Annullato",
+                "UNKNOWN": "Ignoto"
+            }
+        }
     },
     "header": {
         "title": "Assicurazione contro la disoccupazione AD"

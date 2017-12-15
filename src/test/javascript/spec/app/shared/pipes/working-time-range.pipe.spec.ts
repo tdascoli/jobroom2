@@ -1,4 +1,4 @@
-import { WorkingTimeRangePipe } from '../../../../../../main/webapp/app/job-search/pipes/working-time-range.pipe';
+import { WorkingTimeRangePipe } from '../../../../../../main/webapp/app/shared/pipes/working-time-range.pipe';
 
 describe('WorkingTimeRangePipe', () => {
     let pipe: WorkingTimeRangePipe;

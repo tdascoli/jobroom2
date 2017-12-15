@@ -1,13 +1,20 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+    ChangeDetectionStrategy,
+    Component,
+    EventEmitter,
+    Input,
+    OnInit,
+    Output
+} from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { ITEMS_PER_PAGE, Principal } from '../../shared';
 import { JobPublication } from '../../shared/job-publication/job-publication.model';
 import { Organization } from '../../shared/organization/organization.model';
 import { OrganizationService } from '../../shared/organization/organization.service';
-import {
-    JobPublicationFilter
-} from '../state-management/state/dashboard.state';
+import { JobPublicationFilter } from '../state-management/state/dashboard.state';
+import { JobPublicationCancelDialogService } from '../dialogs/job-publication-cancel-dialog.service';
+import { JobPublicationService } from '../../shared/job-publication/job-publication.service';
 
 @Component({
     selector: 'jr2-pea-dashboard',
@@ -38,7 +45,9 @@ export class PeaDashboardComponent implements OnInit {
 
     constructor(private fb: FormBuilder,
                 private principal: Principal,
-                private organizationService: OrganizationService) {
+                private organizationService: OrganizationService,
+                private cancelDialogService: JobPublicationCancelDialogService,
+                private jobPublicationService: JobPublicationService) {
     }
 
     ngOnInit(): void {
@@ -60,4 +69,11 @@ export class PeaDashboardComponent implements OnInit {
         this.pageChange.emit(page);
     }
 
+    isJobPublicationCancellable(status: string) {
+        return this.jobPublicationService.isJobPublicationCancellable(status);
+    }
+
+    showCancellationDialog(id: string, accessToken: string) {
+        this.cancelDialogService.open(id, accessToken);
+    }
 }

@@ -20,7 +20,6 @@ import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter
 import { MarkdownModule } from 'angular2-markdown';
 import { JobDetailResolver } from './job-detail/job-detail.resolver';
 import { ClipboardModule } from 'ngx-clipboard';
-import { WorkingTimeRangePipe } from './pipes/working-time-range.pipe';
 import { JobService } from './services';
 import { JobLocalityComponent } from './job-locality/job-locality.component';
 import { DetailsPagePaginationEffects } from '../shared/components/details-page-pagination/state-management/effects/details-page-pagination.effects';
@@ -48,7 +47,6 @@ import { NouisliderModule } from 'ng2-nouislider';
         JobSearchListComponent,
         JobDetailComponent,
         JobSearchFilterComponent,
-        WorkingTimeRangePipe,
         JobLocalityComponent
     ],
     providers: [

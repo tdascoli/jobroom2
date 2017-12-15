@@ -2,6 +2,8 @@ import { Injectable, NgModule } from '@angular/core';
 import { CanActivate, RouterModule } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { Principal } from '../shared/auth/principal.service';
+import { JobPublicationDetailComponent } from './job-publication-detail/job-publication-detail.component';
+import { JobPublicationDetailResolver } from './job-publication-detail/job-publication-detail.resolver';
 
 @Injectable()
 export class PEAGuard implements CanActivate {
@@ -23,6 +25,15 @@ const routes = [
         component: DashboardComponent,
         canActivate: [PEAGuard],
         data: { pageTitle: 'dashboard.title' }
+    },
+    {
+        path: 'job-publication-detail/:id',
+        component: JobPublicationDetailComponent,
+        canActivate: [],
+        resolve: {
+            jobPublication: JobPublicationDetailResolver
+        },
+        data: { pageTitle: 'job-publication-details.title' }
     }
 ];
 

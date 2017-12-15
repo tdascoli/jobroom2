@@ -1,0 +1,108 @@
+<div class="container">
+    <div *ngIf="jobPublication$ | async as jobPublication" class="base">
+
+        <div class="base__subnavbar job-detail__references">
+            <div class="sticked sticked--top__parent">
+                <ul class="d-none d-md-flex flex-column nav filter-nav">
+                    <li *ngIf="isJobPublicationCancellable(jobPublication.status)" class="nav-item">
+                        <a class="nav-link" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span> {{ 'job-publication-details.cancel' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><span class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' | translate }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" (click)="printJobPublication()"><i class="fa fa-fw fa-print" aria-hidden="true"></i> {{ 'job-publication-details.print' | translate }}</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="job-detail__company alv-logo-box flex-height md-whiteframe-1dp">
+                <div *ngIf="jobPublication.company as company" class="job-detail__content">
+                    <address>
+                        <strong>{{ company.name }}</strong><br>
+                        {{ company.street }} {{ company.houseNumber }}<br>
+                        {{ company.zipCode }} {{ company.city }}<br>
+                    </address>
+                </div>
+
+                <div *ngIf="jobPublication.contact as contact" class="job-detail__content">
+                    <strong>{{ 'job-publication-details.contact.title' | translate }}</strong><br>
+                    {{ contact.firstName }} {{ contact.lastName }}<br>
+                    {{ contact.email }}<br>
+                    {{ contact.phoneNumber }}<br>
+                </div>
+            </div>
+
+            <div class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
+                <div class="job-detail__content">
+                    <strong>{{ 'job-publication-details.contact.accountNumber' | translate }}:</strong><br>
+                    <ng-container *ngIf="jobPublication.idAvam">
+                        {{ 'job-publication-details.contact.avam' | translate }}: {{ jobPublication.idAvam }}<br>
+                    </ng-container>
+                    <ng-container *ngIf="jobPublication.id">
+                        {{ 'job-publication-details.contact.jobRoom' | translate }}: {{ jobPublication.id }}
+                    </ng-container>
+                </div>
+            </div>
+        </div>
+
+        <div class="base__content job-detail__body">
+            <!-- Job details -->
+            <div class="job-detail__title">
+                <h2 class="text--light">{{ jobPublication.job.title }}</h2>
+                <h4 class="text--light">{{ 'job-publication-details.status' | translate }}: {{ 'global.job-publication.status.' + jobPublication.status | translate }}</h4>
+                <strong>{{ jobPublication.company.name }}</strong>
+                <small *ngIf="jobPublication.job.startDate" class="job-detail__date">
+                    {{ 'job-publication-details.startDate' | translate }} {{ jobPublication.job.startDate | jr2Date }}
+                </small>
+            </div>
+            <p></p>
+
+            <div *ngIf="jobPublication.job as job" class="job-detail__content">
+                <span class="badge badge-blue">
+                    {{ job.location.zipCode }} {{ job.location.city }}
+                    <ng-container *ngIf="job.location.countryCode">
+                      ({{ job.location.countryCode }})
+                    </ng-container>
+                </span>
+                <span class="badge badge-gray">{{ [job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange }}</span>
+                <span *ngIf="job.permanent" class="badge badge-green">{{ 'job-publication-details.permanent' | translate}}</span>
+                <span *ngIf="!job.permanent" class="badge badge-green">{{ 'job-publication-details.temporary' | translate }}</span>
+                <span *ngIf="job.startsImmediately" class="badge badge-yellow">{{ 'job-publication-details.immediately' | translate }}</span>
+                <span *ngIf="!job.startsImmediately" class="badge badge-yellow">{{ 'job-publication-details.byArrangement' | translate }}</span>
+            </div>
+
+            <div class="job-detail__content">
+                {{ jobPublication.job.description | safeHtml }}
+            </div>
+
+            <!-- Languages -->
+            <jr2-languages [languages]="jobPublication.job.languageSkills"></jr2-languages>
+
+        </div>
+
+        <div *ngIf="jobPublication.application as application" class="base__related job-detail__actions">
+            <div class="sticked sticked--top__parent" style="top: 154px;">
+
+                <!-- Contact person -->
+                <ul class="nav filter-nav flex-column job-detail__applications">
+                    <li class="nav-item">
+                        <span class="nav-title">{{ 'job-publication-details.application.title' | translate }}</span>
+                    </li>
+                    <li *ngIf="application.email" class="nav-item">
+                        <span class="nav-link">{{ 'job-publication-details.application.email' | translate }}: <a href="mailto:{{ application.email }}">{{ application.email }}</a></span>
+                    </li>
+                    <li *ngIf="application.url" class="nav-item">
+                        <span class="nav-link">{{ 'job-publication-details.application.post' | translate }}: <a href="{{ application.url }}">{{ application.url }}</a></span>
+                    </li>
+                    <li *ngIf="application.phoneNumber" class="nav-item">
+                        <span class="nav-link">{{ 'job-publication-details.application.telephone' | translate }}: {{ application.phoneNumber }}</span>
+                    </li>
+                    <li *ngIf="application.additionalInfo" class="nav-item">
+                        <span class="nav-link">{{ 'job-publication-details.application.additionalInfo' | translate }}: {{ application.additionalInfo }}</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

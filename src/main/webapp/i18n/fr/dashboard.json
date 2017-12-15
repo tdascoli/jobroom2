@@ -22,17 +22,49 @@
                 "year": "{{ years }} Jahr"
             },
             "status": "Status",
-            "status.ACTIVE": "Active",
-            "status.DISMISSED": "Refus\u00e9e",
-            "status.INITIAL": "En cours",
-            "status.IN_PROGRESS": "En cours",
-            "status.UNKNOWN": "Inconnue",
-            "status.UNSUBSCRIBED": "Annul\u00e9e",
             "title": "Jobs bewirtschaften",
             "user-information": {
                 "title": "Sie sind eingeloggt als"
             }
         },
         "title": "Dashboard"
+    },
+    "job-publication-details": {
+        "title": "Job publication",
+        "cancel": "Stelle abmelden",
+        "copy": "Stelle duplizieren",
+        "print": "Drucken",
+        "contact": {
+            "title": "Ihre Kontaktperson",
+            "accountNumber": "Stellennummer",
+            "avam": "AVAM",
+            "jobRoom": "Job-Room"
+        },
+        "status": "Status",
+        "startDate": "Libre depuis",
+        "permanent": "Permanent",
+        "temporary": "Temporary",
+        "immediately": "ab Sofort",
+        "byArrangement": "Nach Vereinbarung",
+        "application": {
+            "title": "Weitere Bewerbungsformen",
+            "email": "E-Mail",
+            "post": "Post",
+            "telephone": "Telefonisch",
+            "additionalInfo": "Erg\u00e4nzende Angaben"
+        }
+    },
+    "job-publication-cancel": {
+        "title": "Stelle abmelden",
+        "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung des Stellenangebots.",
+        "job": {
+            "occupied": "Sie konnten die Stelle besetzen",
+            "occupied.jobCenter": "in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)",
+            "occupied.privateAgency": "in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)",
+            "occupied.self": "Sie konnten die Stelle selber besetzen",
+            "not-occupied": "Sie konnten die Stelle nicht besetzen",
+            "confirm": "Abmeldung best\u00e4tigen",
+            "dismiss": "Abbrechen"
+        }
     }
 }

@@ -108,4 +108,13 @@ export interface JobPublication {
     publication: Publication;
     creationDate: Date;
     status?: Status;
+    accessToken: string
+}
+
+export enum CancellationReason {
+    POSITION_OCCUPIED_SELF,
+    POSITION_OCCUPIED_JOB_CENTER,
+    POSITION_OCCUPIED_PRIVATE_AGENCY,
+    POSITION_OCCUPIED_BOTH,
+    POSITION_NOT_OCCUPIED
 }

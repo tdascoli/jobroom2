@@ -435,7 +435,17 @@
             "development": "D\u00e9veloppement",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "job-publication": {
+            "status": {
+                "INITIAL": "En cours",
+                "IN_PROGRESS": "En cours",
+                "DISMISSED": "Refus\u00e9e",
+                "ACTIVE": "Active",
+                "UNSUBSCRIBED": "Annul\u00e9e",
+                "UNKNOWN": "Inconnue"
+            }
+        }
     },
     "header": {
         "title": "Assurance-ch\u00f4mage AC"

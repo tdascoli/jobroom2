@@ -1,6 +1,5 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { EducationLevel, JobPublication } from '../../../shared/job-publication/job-publication.model';
-import { CEFR_Level, DrivingLicenceCategory, Experience } from '../../../shared';
+import { JobPublication } from '../../../shared/job-publication/job-publication.model';
 
 export interface JobPublicationFilter {
     jobTitle: string;

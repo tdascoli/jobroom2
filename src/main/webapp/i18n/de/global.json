@@ -435,7 +435,17 @@
             "development": "Entwicklung",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Jobroom",
+        "job-publication": {
+            "status": {
+                "INITIAL": "In Arbeit",
+                "IN_PROGRESS": "In Arbeit",
+                "DISMISSED": "Abgelehnt",
+                "ACTIVE": "Aktiv",
+                "UNSUBSCRIBED": "Abgemeldet",
+                "UNKNOWN": "Unbekannt"
+            }
+        }
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"

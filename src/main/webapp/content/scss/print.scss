@@ -1,5 +1,10 @@
 @media print {
 
+    body {
+        // Remove blank pages
+        height: auto;
+    }
+
     jhi-footer, jhi-page-ribbon, .base__related, .breadcrumb, .header, .pagination {
         display: none !important;
     }
@@ -41,6 +46,10 @@
 
     .job-detail__title, .job-detail__content {
         flex: 1 0 auto;
+
+        h2.text--light {
+            height: auto;
+        }
     }
 
     .candidate-detail__content *, .job-detail__content * {
