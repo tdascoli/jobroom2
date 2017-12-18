@@ -150,6 +150,16 @@
             "MALE": "maschio"
         },
         "item-count": "Mostra {{first}} - {{second}} di {{total}} articoli.",
+        "job-publication": {
+            "status": {
+                "ACTIVE": "Attivo",
+                "DISMISSED": "Rifiutato",
+                "INITIAL": "In lavorazione",
+                "IN_PROGRESS": "In lavorazione",
+                "UNKNOWN": "Ignoto",
+                "UNSUBSCRIBED": "Annullato"
+            }
+        },
         "menu": {
             "account": {
                 "login": "Accesso",
@@ -273,10 +283,17 @@
                 "ja": "Giapponese",
                 "km": "Khmer",
                 "ku": "Curdo",
+                "level": {
+                    "BASIC": "Principiante",
+                    "INTERMEDIATE": "Avanzato",
+                    "NONE": "Nessuna conoscenza",
+                    "PROFICIENT": "Competente"
+                },
                 "lt": "Lituano",
                 "mk": "Macedone",
                 "nl": "Olandese",
                 "no": "Norvegese",
+                "no-selection": "Nessuna scelta",
                 "pl": "Polacco",
                 "pt": "Portoghese",
                 "rm": "Reto-Romancio",
@@ -284,6 +301,7 @@
                 "ru": "Russo",
                 "sk": "Slovaco",
                 "sl": "Sloveno",
+                "spoken": "Orale",
                 "sq": "Albanese",
                 "sr": "Serbo",
                 "sv": "Svedese",
@@ -291,16 +309,8 @@
                 "th": "Tailandese",
                 "tr": "Turco",
                 "vi": "Vietnamita",
-                "zh": "Cinese",
-                "no-selection": "Nessuna scelta",
-                "level": {
-                    "BASIC": "Principiante",
-                    "INTERMEDIATE": "Avanzato",
-                    "NONE": "Nessuna conoscenza",
-                    "PROFICIENT": "Competente"
-                },
-                "spoken": "Orale",
-                "written": "Scritto"
+                "written": "Scritto",
+                "zh": "Cinese"
             },
             "languages": "Conoscenze linguistiche",
             "region": {
@@ -434,17 +444,7 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "job-publication": {
-            "status": {
-                "INITIAL": "In lavorazione",
-                "IN_PROGRESS": "In lavorazione",
-                "DISMISSED": "Rifiutato",
-                "ACTIVE": "Attivo",
-                "UNSUBSCRIBED": "Annullato",
-                "UNKNOWN": "Ignoto"
-            }
-        }
+        "title": "Jobroom"
     },
     "header": {
         "title": "Assicurazione contro la disoccupazione AD"

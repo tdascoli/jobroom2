@@ -1,6 +1,6 @@
 {
     "job-detail": {
-        "enddate": "Befristet bis {{enddate}}"
+        "endDate": "Befristet bis {{date}}"
     },
     "job-search": {
         "filter": {

@@ -669,7 +669,7 @@ job-detail,job-detail.reference,Referenz,Reference,Référence,Riferimento
 job-detail,job-detail.reference.job-id,Stellennummer,Job ID,Numéro du poste,Numero posto
 job-detail,job-detail.reference.phone,Telefon,Telephone,Téléphone,Telefono
 job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Responsible job centre,ORP compétent,URC competente
-job-detail,job-detail.startdate,Ab {{startdate}},From {{startdate}},À partir de {{startdate}},Da {{startdate}}
+job-detail,job-detail.startDate,Ab {{date}},From {{date}},À partir de {{date}},Da {{date}}
 job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fonction,Entrata in funzione
 job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
 job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite,Da subito
@@ -687,7 +687,7 @@ job-publication,job-publication-details.copy,Stelle duplizieren,Stelle duplizier
 job-publication,job-publication-details.permanent,Permanent,Permanent,Permanent,Permanent
 job-publication,job-publication-details.print,Drucken,Drucken,Drucken,Drucken
 job-publication,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
-job-search,job-detail.enddate,Befristet bis {{enddate}},Until {{enddate}},Jusqu'au {{enddate}},A {{enddate}}
+job-search,job-detail.endDate,Befristet bis {{date}},Until {{date}},Jusqu'au {{date}},A {{date}}
 job-search,job-search.filter.company-name.label,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
 job-search,job-search.filter.company-name.placeholder,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
 job-search,job-search.filter.contract-type.label,Vertragsart,Contract type,Type de contrat,Tipologia di contratto

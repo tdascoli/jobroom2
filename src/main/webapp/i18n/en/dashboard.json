@@ -29,42 +29,42 @@
         },
         "title": "Dashboard"
     },
-    "job-publication-details": {
-        "title": "Job publication",
-        "cancel": "Stelle abmelden",
-        "copy": "Stelle duplizieren",
-        "print": "Drucken",
-        "contact": {
-            "title": "Ihre Kontaktperson",
-            "accountNumber": "Stellennummer",
-            "avam": "AVAM",
-            "jobRoom": "Job-Room"
-        },
-        "status": "Status",
-        "startDate": "Vacant since",
-        "permanent": "Permanent",
-        "temporary": "Temporary",
-        "immediately": "ab Sofort",
-        "byArrangement": "Nach Vereinbarung",
-        "application": {
-            "title": "Weitere Bewerbungsformen",
-            "email": "E-Mail",
-            "post": "Post",
-            "telephone": "Telefonisch",
-            "additionalInfo": "Erg\u00e4nzende Angaben"
-        }
-    },
     "job-publication-cancel": {
-        "title": "Stelle abmelden",
         "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung des Stellenangebots.",
         "job": {
+            "confirm": "Abmeldung best\u00e4tigen",
+            "dismiss": "Abbrechen",
+            "not-occupied": "Sie konnten die Stelle nicht besetzen",
             "occupied": "Sie konnten die Stelle besetzen",
             "occupied.jobCenter": "in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)",
             "occupied.privateAgency": "in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)",
-            "occupied.self": "Sie konnten die Stelle selber besetzen",
-            "not-occupied": "Sie konnten die Stelle nicht besetzen",
-            "confirm": "Abmeldung best\u00e4tigen",
-            "dismiss": "Abbrechen"
-        }
+            "occupied.self": "Sie konnten die Stelle selber besetzen"
+        },
+        "title": "Stelle abmelden"
+    },
+    "job-publication-details": {
+        "application": {
+            "additionalInfo": "Erg\u00e4nzende Angaben",
+            "email": "E-Mail",
+            "post": "Post",
+            "telephone": "Telefonisch",
+            "title": "Weitere Bewerbungsformen"
+        },
+        "byArrangement": "Nach Vereinbarung",
+        "cancel": "Stelle abmelden",
+        "contact": {
+            "accountNumber": "Stellennummer",
+            "avam": "AVAM",
+            "jobRoom": "Job-Room",
+            "title": "Ihre Kontaktperson"
+        },
+        "copy": "Stelle duplizieren",
+        "immediately": "ab Sofort",
+        "permanent": "Permanent",
+        "print": "Drucken",
+        "startDate": "Vacant since",
+        "status": "Status",
+        "temporary": "Temporary",
+        "title": "Job publication"
     }
 }

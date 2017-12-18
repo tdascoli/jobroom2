@@ -1,21 +1,21 @@
 {
     "job-publication-details": {
-        "cancel": "Stelle abmelden",
-        "copy": "Stelle duplizieren",
-        "print": "Drucken",
-        "contact": {
-            "title": "Ihre Kontaktperson",
-            "accountNumber": "Stellennummer",
-            "jobRoom": "Job-Room"
-        },
-        "permanent": "Permanent",
-        "temporary": "Temporary",
         "application": {
-            "title": "Weitere Bewerbungsformen",
+            "additionalInfo": "Erg\u00e4nzende Angaben",
             "email": "E-Mail",
             "post": "Post",
             "telephone": "Telefonisch",
-            "additionalInfo": "Erg\u00e4nzende Angaben"
-        }
+            "title": "Weitere Bewerbungsformen"
+        },
+        "cancel": "Stelle abmelden",
+        "contact": {
+            "accountNumber": "Stellennummer",
+            "jobRoom": "Job-Room",
+            "title": "Ihre Kontaktperson"
+        },
+        "copy": "Stelle duplizieren",
+        "permanent": "Permanent",
+        "print": "Drucken",
+        "temporary": "Temporary"
     }
 }

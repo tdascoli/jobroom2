@@ -150,6 +150,16 @@
             "MALE": "m\u00e4nnlich"
         },
         "item-count": "Ergebnis {{first}} - {{second}} von {{total}} Elemente.",
+        "job-publication": {
+            "status": {
+                "ACTIVE": "Aktiv",
+                "DISMISSED": "Abgelehnt",
+                "INITIAL": "In Arbeit",
+                "IN_PROGRESS": "In Arbeit",
+                "UNKNOWN": "Unbekannt",
+                "UNSUBSCRIBED": "Abgemeldet"
+            }
+        },
         "menu": {
             "account": {
                 "login": "Anmelden",
@@ -273,10 +283,17 @@
                 "ja": "Japanisch",
                 "km": "Khmer",
                 "ku": "Kurdisch",
+                "level": {
+                    "BASIC": "Grundkenntnisse",
+                    "INTERMEDIATE": "Fortgeschritten",
+                    "NONE": "Keine Kenntnisse",
+                    "PROFICIENT": "Kompetent"
+                },
                 "lt": "Litauisch",
                 "mk": "Mazedonisch",
                 "nl": "Holl\u00e4ndisch",
                 "no": "Norwegisch",
+                "no-selection": "Keine Auswahl",
                 "pl": "Polnisch",
                 "pt": "Portugiesisch",
                 "rm": "R\u00e4toromanisch",
@@ -284,6 +301,7 @@
                 "ru": "Russisch",
                 "sk": "Slovak",
                 "sl": "Slowenisch",
+                "spoken": "M\u00fcndlich",
                 "sq": "Albanisch",
                 "sr": "Serbisch",
                 "sv": "Schwedisch",
@@ -291,16 +309,8 @@
                 "th": "Thai",
                 "tr": "T\u00fcrkisch",
                 "vi": "Vietnamesisch",
-                "zh": "Chinesisch",
-                "no-selection": "Keine Auswahl",
-                "level": {
-                    "BASIC": "Grundkenntnisse",
-                    "INTERMEDIATE": "Fortgeschritten",
-                    "NONE": "Keine Kenntnisse",
-                    "PROFICIENT": "Kompetent"
-                },
-                "spoken": "M\u00fcndlich",
-                "written": "Schriftlich"
+                "written": "Schriftlich",
+                "zh": "Chinesisch"
             },
             "languages": "Sprachkenntnisse",
             "region": {
@@ -434,17 +444,7 @@
             "development": "Entwicklung",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "job-publication": {
-            "status": {
-                "INITIAL": "In Arbeit",
-                "IN_PROGRESS": "In Arbeit",
-                "DISMISSED": "Abgelehnt",
-                "ACTIVE": "Aktiv",
-                "UNSUBSCRIBED": "Abgemeldet",
-                "UNKNOWN": "Unbekannt"
-            }
-        }
+        "title": "Jobroom"
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"

@@ -27,7 +27,7 @@
         "reference.job-id": "Job ID",
         "reference.phone": "Telephone",
         "reference.responsible-job-center": "Responsible job centre",
-        "startdate": "From {{startdate}}",
+        "startDate": "From {{date}}",
         "startsImmediately": "Start date",
         "startsImmediately.false": "By arrangement",
         "startsImmediately.true": "Immediately",

@@ -27,7 +27,7 @@
         "reference.job-id": "Stellennummer",
         "reference.phone": "Telefon",
         "reference.responsible-job-center": "Zust\u00e4ndiges RAV",
-        "startdate": "Ab {{startdate}}",
+        "startDate": "Ab {{date}}",
         "startsImmediately": "Stellenantritt",
         "startsImmediately.false": "Nach Vereinbarung",
         "startsImmediately.true": "Ab Sofort",

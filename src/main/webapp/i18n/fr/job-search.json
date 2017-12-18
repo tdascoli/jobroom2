@@ -1,6 +1,6 @@
 {
     "job-detail": {
-        "enddate": "Jusqu'au {{enddate}}"
+        "endDate": "Jusqu'au {{date}}"
     },
     "job-search": {
         "filter": {

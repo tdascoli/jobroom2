@@ -28,7 +28,7 @@
                     <div *ngIf="job.contact">
                         <div class="detail__content">
                             <h4>{{'job-detail.contactPerson' | translate}}</h4>
-                            <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' +job.contact.salutation | translate }}</span>
+                            <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
                                 {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                             </p>
                             <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone }}</a></p>
@@ -73,9 +73,11 @@
             <div class="detail__content">
                 <jr2-job-locality [locality]="job.locality"></jr2-job-locality>
                 <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
+                <span *ngIf="job.startDate" class="badge badge-yellow" translate="job-detail.startDate" [translateParams]="{date: job.startDate | jr2Date}"></span>
+                <span *ngIf="!job.startDate" class="badge badge-yellow">{{'job-detail.startsImmediately.' +  job.startsImmediately | translate}}</span>
                 <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
-                <span *ngIf="!job.permanent" class="badge badge-yellow">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
-                <span class="badge badge-yellow">{{'job-detail.startsImmediately.' +  job.startsImmediately | translate}}</span>
+                <span *ngIf="!job.permanent && job.endDate" class="badge badge-yellow" translate="job-detail.endDate" [translateParams]="{date: job.endDate | jr2Date}"></span>
+                <span *ngIf="!job.permanent && !job.endDate" class="badge badge-yellow">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
             </div>
 
             <!-- job description -->

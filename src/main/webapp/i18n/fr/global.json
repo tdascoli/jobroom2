@@ -150,6 +150,16 @@
             "MALE": "masculin"
         },
         "item-count": "Affichage {{first}} - {{second}} de {{total}} \u00e9l\u00e9ments.",
+        "job-publication": {
+            "status": {
+                "ACTIVE": "Active",
+                "DISMISSED": "Refus\u00e9e",
+                "INITIAL": "En cours",
+                "IN_PROGRESS": "En cours",
+                "UNKNOWN": "Inconnue",
+                "UNSUBSCRIBED": "Annul\u00e9e"
+            }
+        },
         "menu": {
             "account": {
                 "login": "Connexion",
@@ -273,10 +283,17 @@
                 "ja": "Japonais",
                 "km": "Khmer",
                 "ku": "Kurde",
+                "level": {
+                    "BASIC": "Connaissances de base",
+                    "INTERMEDIATE": "Avanc\u00e9",
+                    "NONE": "Pas de connaissances",
+                    "PROFICIENT": "Comp\u00e9tent"
+                },
                 "lt": "Lituanien",
                 "mk": "Mac\u00e9donien",
                 "nl": "Hollandais",
                 "no": "Norv\u00e9gien",
+                "no-selection": "Aucune s\u00e9lection",
                 "pl": "Polonais",
                 "pt": "Portugais",
                 "rm": "Rheto-Romanche",
@@ -284,6 +301,7 @@
                 "ru": "Russe",
                 "sk": "Slovaque",
                 "sl": "Slov\u00e8ne",
+                "spoken": "Orale",
                 "sq": "Albanais",
                 "sr": "Serbe",
                 "sv": "Su\u00e9dois",
@@ -291,16 +309,8 @@
                 "th": "Tha\u00eflandais",
                 "tr": "Turc",
                 "vi": "Vietnamien",
-                "zh": "Chinois",
-                "no-selection": "Aucune s\u00e9lection",
-                "level": {
-                    "BASIC": "Connaissances de base",
-                    "INTERMEDIATE": "Avanc\u00e9",
-                    "NONE": "Pas de connaissances",
-                    "PROFICIENT": "Comp\u00e9tent"
-                },
-                "spoken": "Orale",
-                "written": "\u00c9crit"
+                "written": "\u00c9crit",
+                "zh": "Chinois"
             },
             "languages": "Connaissances linguistiques",
             "region": {
@@ -434,17 +444,7 @@
             "development": "D\u00e9veloppement",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "job-publication": {
-            "status": {
-                "INITIAL": "En cours",
-                "IN_PROGRESS": "En cours",
-                "DISMISSED": "Refus\u00e9e",
-                "ACTIVE": "Active",
-                "UNSUBSCRIBED": "Annul\u00e9e",
-                "UNKNOWN": "Inconnue"
-            }
-        }
+        "title": "Jobroom"
     },
     "header": {
         "title": "Assurance-ch\u00f4mage AC"

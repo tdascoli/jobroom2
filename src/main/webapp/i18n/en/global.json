@@ -150,6 +150,16 @@
             "MALE": "Male"
         },
         "item-count": "Showing {{first}} - {{second}} of {{total}} items.",
+        "job-publication": {
+            "status": {
+                "ACTIVE": "Active",
+                "DISMISSED": "Refused",
+                "INITIAL": "In progress",
+                "IN_PROGRESS": "In progress",
+                "UNKNOWN": "Unknown",
+                "UNSUBSCRIBED": "Canceled"
+            }
+        },
         "menu": {
             "account": {
                 "login": "Sign in",
@@ -273,10 +283,17 @@
                 "ja": "Japanese",
                 "km": "Khmer",
                 "ku": "Kurdish",
+                "level": {
+                    "BASIC": "Basics",
+                    "INTERMEDIATE": "Intermediate",
+                    "NONE": "None",
+                    "PROFICIENT": "Proficient"
+                },
                 "lt": "Lithuanian",
                 "mk": "Macedonian",
                 "nl": "Dutch",
                 "no": "Norvegian",
+                "no-selection": "No selection",
                 "pl": "Polish",
                 "pt": "Portuguese",
                 "rm": "Rhaeto-Romanic",
@@ -284,6 +301,7 @@
                 "ru": "Russian",
                 "sk": "Slowakisch",
                 "sl": "Slovenian",
+                "spoken": "Orally",
                 "sq": "Albanian",
                 "sr": "Serbian",
                 "sv": "Swedish",
@@ -291,16 +309,8 @@
                 "th": "Thai",
                 "tr": "Turkish",
                 "vi": "Vietnamese",
-                "zh": "Chinese",
-                "no-selection": "No selection",
-                "level": {
-                    "BASIC": "Basics",
-                    "INTERMEDIATE": "Intermediate",
-                    "NONE": "None",
-                    "PROFICIENT": "Proficient"
-                },
-                "spoken": "Orally",
-                "written": "Written"
+                "written": "Written",
+                "zh": "Chinese"
             },
             "languages": "Language skills",
             "region": {
@@ -434,17 +444,7 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom",
-        "job-publication": {
-            "status": {
-                "INITIAL": "In progress",
-                "IN_PROGRESS": "In progress",
-                "DISMISSED": "Refused",
-                "ACTIVE": "Active",
-                "UNSUBSCRIBED": "Canceled",
-                "UNKNOWN": "Unknown"
-            }
-        }
+        "title": "Jobroom"
     },
     "header": {
         "title": "Unemployment insurance"

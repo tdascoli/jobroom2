@@ -1,6 +1,6 @@
 {
     "job-detail": {
-        "enddate": "A {{enddate}}"
+        "endDate": "A {{date}}"
     },
     "job-search": {
         "filter": {
