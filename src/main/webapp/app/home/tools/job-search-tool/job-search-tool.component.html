@@ -1,6 +1,6 @@
 <div class="d-flex flex-row">
     <div class="job-search__form">
-        <form [formGroup]="jobSearchForm" novalidate (submit)="search(jobSearchForm.value)" id="ngForm" #documentEditForm="ngForm">
+        <form [formGroup]="jobSearchForm" novalidate (submit)="search(jobSearchForm.value)">
             <div class="form-group form-group--wide">
                 <jr2-typeahead-multiselect
                     formControlName="baseQuery"
@@ -29,7 +29,7 @@
     <div class="job-search__radar">
         <div class="job-radar d-none d-md-inline-block" *ngIf="jobSearchToolModel.totalCount > -1">
             <div [innerHTML]="getBadgeKey() | translate: { count: jobSearchToolModel.totalCount | jr2Number,  since: jobSearchToolModel.onlineSince }"></div>
-            <button class="btn-link" form="ngForm" (click)="documentEditForm.ngSubmit.emit()">{{ 'home.tools.job-search.search-badge.show' | translate }}
+            <button class="btn-link" (click)="search(jobSearchForm.value)">{{ 'home.tools.job-search.search-badge.show' | translate }}
             </button>
         </div>
     </div>

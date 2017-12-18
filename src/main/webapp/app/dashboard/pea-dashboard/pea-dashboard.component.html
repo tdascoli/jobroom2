@@ -7,12 +7,12 @@
             </h2>
 
             <div class="dashboard__actions">
-                <form [formGroup]="jobFilterForm" #jobFilter="ngForm" (ngSubmit)="filter()" class="form-inline">
+                <form [formGroup]="jobFilterForm" (ngSubmit)="filter()" class="form-inline">
                     <div class="form-group">
                         <label for="table-search" class="sr-only">{{ 'dashboard.job-publication.job-name.placeholder' | translate }}</label>
                         <div class="form-group--icon">
                             <input formControlName="jobTitle" id="table-search" class="form-control" placeholder="{{ 'dashboard.job-publication.job-name.placeholder' | translate }}">
-                            <span class="fa-stack form-control--icon" (click)="jobFilter.ngSubmit.emit()">
+                            <span class="fa-stack form-control--icon" (click)="filter()">
 								<span aria-hidden="true" class="fa fa-search fa-stack-1x"></span>
 							</span>
                         </div>
@@ -21,7 +21,7 @@
                     <div class="form-group">
                         <label for="filter-age" class="col-form-label">{{ 'dashboard.job-publication.publication-period.label' | translate }}</label>
                         <div>
-                            <select formControlName="onlineSinceDays" (change)="jobFilter.ngSubmit.emit()" class="form-control custom-select" id="filter-age">
+                            <select formControlName="onlineSinceDays" (change)="filter()" class="form-control custom-select" id="filter-age">
                                 <option [ngValue]="7">{{ 'dashboard.job-publication.publication-period.week' | translate:'{ week: 1 }' }}</option>
                                 <option [ngValue]="30">{{ 'dashboard.job-publication.publication-period.month' | translate:'{ month: 1 }' }}</option>
                                 <option [ngValue]="90">{{ 'dashboard.job-publication.publication-period.months' | translate:'{ months: 3 }' }}</option>
