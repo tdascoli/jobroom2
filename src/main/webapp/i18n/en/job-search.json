@@ -18,7 +18,7 @@
             },
             "online-since": {
                 "days": {
-                    "label": "Days(n)"
+                    "label": "Days"
                 },
                 "label": "Online since"
             },

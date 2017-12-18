@@ -127,10 +127,10 @@
         },
         "experience": {
             "1_TO_3_YEAR": "1 - 3 anni",
-            "LESS_THAN_1_YEAR": "meno di 1 anno",
-            "MORE_THAN_1_YEAR": "pi\u00f9 di 1 anno",
-            "MORE_THAN_3_YEARS": "pi\u00f9 di 3 anni",
-            "NONE": "nessuna esperienza"
+            "LESS_THAN_1_YEAR": "Meno di 1 anno",
+            "MORE_THAN_1_YEAR": "Pi\u00f9 di 1 anno",
+            "MORE_THAN_3_YEARS": "Pi\u00f9 di 3 anni",
+            "NONE": "Nessuna esperienza"
         },
         "field": {
             "id": "ID"
@@ -238,8 +238,8 @@
                 "JU": "Giura",
                 "LU": "Lucerna",
                 "NE": "Neuch\u00e2tel",
-                "NW": "Nidwaldo",
-                "OW": "Obwaldo",
+                "NW": "Nidvaldo",
+                "OW": "Obvaldo",
                 "SG": "San Gallo",
                 "SH": "Sciaffusa",
                 "SO": "Soletta",
@@ -296,11 +296,11 @@
                 "level": {
                     "BASIC": "Principiante",
                     "INTERMEDIATE": "Avanzato",
-                    "NONE": "nessuna conoscenza",
-                    "PROFICIENT": "Proficient"
+                    "NONE": "Nessuna conoscenza",
+                    "PROFICIENT": "Competente"
                 },
-                "spoken": "orale",
-                "written": "scritto"
+                "spoken": "Orale",
+                "written": "Scritto"
             },
             "languages": "Conoscenze linguistiche",
             "region": {
@@ -335,7 +335,7 @@
                 "BL03": "Sissach",
                 "BL04": "Waldenburg",
                 "BL05": "Laufen",
-                "BS01": "Basilea-Citt\u00e0, tutto il cantone",
+                "BS01": "Basilea-Citt\u00e0",
                 "FR01": "La Broye",
                 "FR02": "La Gl\u00e2ne",
                 "FR03": "La Gruy\u00e8re",

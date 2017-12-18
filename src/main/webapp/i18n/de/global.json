@@ -296,11 +296,11 @@
                 "level": {
                     "BASIC": "Grundkenntnisse",
                     "INTERMEDIATE": "Fortgeschritten",
-                    "NONE": "keine Kenntnisse",
-                    "PROFICIENT": "Professionell"
+                    "NONE": "Keine Kenntnisse",
+                    "PROFICIENT": "Kompetent"
                 },
-                "spoken": "m\u00fcndlich",
-                "written": "schriftlich"
+                "spoken": "M\u00fcndlich",
+                "written": "Schriftlich"
             },
             "languages": "Sprachkenntnisse",
             "region": {
@@ -335,7 +335,7 @@
                 "BL03": "Sissach",
                 "BL04": "Waldenburg",
                 "BL05": "Laufen",
-                "BS01": "Basel-Stadt, ganzer Kanton",
+                "BS01": "Basel-Stadt",
                 "FR01": "La Broye",
                 "FR02": "La Gl\u00e2ne",
                 "FR03": "La Gruy\u00e8re",

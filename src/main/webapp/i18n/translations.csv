@@ -119,34 +119,34 @@ dashboard,dashboard.job-publication.status,Status,Status,Status,Status
 dashboard,dashboard.job-publication.title,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften,Jobs bewirtschaften
 dashboard,dashboard.job-publication.user-information.title,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als,Sie sind eingeloggt als
 dashboard,dashboard.title,Dashboard,Dashboard,Dashboard,Dashboard
-dashboard,job-publication-details.title,Job publication,Job publication,Job publication,Job publication
-dashboard,job-publication-details.cancel,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
-dashboard,job-publication-details.copy,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren
-dashboard,job-publication-details.print,Drucken,Drucken,Drucken,Drucken
-dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
-dashboard,job-publication-details.contact.accountNumber,Stellennummer,Stellennummer,Stellennummer,Stellennummer
-dashboard,job-publication-details.contact.avam,AVAM,AVAM,AVAM,AVAM
-dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
-dashboard,job-publication-details.status,Status,Status,Status,Status
-dashboard,job-publication-details.startDate,Vakant seit,Vacant since,Libre depuis,Vacante dal
-dashboard,job-publication-details.permanent,Permanent,Permanent,Permanent,Permanent
-dashboard,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
-dashboard,job-publication-details.immediately,ab Sofort,ab Sofort,ab Sofort,ab Sofort
-dashboard,job-publication-details.byArrangement,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung
-dashboard,job-publication-details.application.title,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen
-dashboard,job-publication-details.application.email,E-Mail,E-Mail,E-Mail,E-Mail
-dashboard,job-publication-details.application.post,Post,Post,Post,Post
-dashboard,job-publication-details.application.telephone,Telefonisch,Telefonisch,Telefonisch,Telefonisch
-dashboard,job-publication-details.application.additionalInfo,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
-dashboard,job-publication-cancel.title,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
 dashboard,job-publication-cancel.alert,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.
+dashboard,job-publication-cancel.job.confirm,Abmeldung bestätigen,Abmeldung bestätigen,Abmeldung bestätigen,Abmeldung bestätigen
+dashboard,job-publication-cancel.job.dismiss,Abbrechen,Abbrechen,Abbrechen,Abbrechen
+dashboard,job-publication-cancel.job.not-occupied,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen
 dashboard,job-publication-cancel.job.occupied,Sie konnten die Stelle besetzen,Sie konnten die Stelle besetzen,Sie konnten die Stelle besetzen,Sie konnten die Stelle besetzen
 dashboard,job-publication-cancel.job.occupied.jobCenter,in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)
 dashboard,job-publication-cancel.job.occupied.privateAgency,in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)
 dashboard,job-publication-cancel.job.occupied.self,Sie konnten die Stelle selber besetzen,Sie konnten die Stelle selber besetzen,Sie konnten die Stelle selber besetzen,Sie konnten die Stelle selber besetzen
-dashboard,job-publication-cancel.job.not-occupied,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen,Sie konnten die Stelle nicht besetzen
-dashboard,job-publication-cancel.job.confirm,Abmeldung bestätigen,Abmeldung bestätigen,Abmeldung bestätigen,Abmeldung bestätigen
-dashboard,job-publication-cancel.job.dismiss,Abbrechen,Abbrechen,Abbrechen,Abbrechen
+dashboard,job-publication-cancel.title,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+dashboard,job-publication-details.application.additionalInfo,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
+dashboard,job-publication-details.application.email,E-Mail,E-Mail,E-Mail,E-Mail
+dashboard,job-publication-details.application.post,Post,Post,Post,Post
+dashboard,job-publication-details.application.telephone,Telefonisch,Telefonisch,Telefonisch,Telefonisch
+dashboard,job-publication-details.application.title,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen
+dashboard,job-publication-details.byArrangement,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung
+dashboard,job-publication-details.cancel,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+dashboard,job-publication-details.contact.accountNumber,Stellennummer,Stellennummer,Stellennummer,Stellennummer
+dashboard,job-publication-details.contact.avam,AVAM,AVAM,AVAM,AVAM
+dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
+dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
+dashboard,job-publication-details.copy,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren
+dashboard,job-publication-details.immediately,ab Sofort,ab Sofort,ab Sofort,ab Sofort
+dashboard,job-publication-details.permanent,Permanent,Permanent,Permanent,Permanent
+dashboard,job-publication-details.print,Drucken,Drucken,Drucken,Drucken
+dashboard,job-publication-details.startDate,Vakant seit,Vacant since,Libre depuis,Vacante dal
+dashboard,job-publication-details.status,Status,Status,Status,Status
+dashboard,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
+dashboard,job-publication-details.title,Job publication,Job publication,Job publication,Job publication
 elasticsearch-reindex,elasticsearch.reindex.accepted,"Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing.","Request accepted, performing full Elasticsearch reindexing."
 elasticsearch-reindex,elasticsearch.reindex.dialog.cancel,Cancel,Cancel,Cancel,Cancel
 elasticsearch-reindex,elasticsearch.reindex.dialog.confirm,Reindex,Reindex,Reindex,Reindex
@@ -246,17 +246,17 @@ global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
 global,global.drivingLicenceCategory.label,Führerausweiskategorie,Driving licence level,Catégorie de permis de conduire,Categoria patente
-global,global.education.ISCED1,Primarstufe - ISCED 1,Primarstufe - ISCED 1,degré primaire - ISCED 1,Livello primario - ISCED 1
-global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Sekundarstufe I - ISCED 2,degré secondaire I - ISCED 2,Livello secondario I - ISCED 2
-global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Sekundarstufe II - ISCED 3,degré secondaire II - ISCED 3,Livello secondario II - ISCED 3
-global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,degré post-secondaire non tertiaire ISCED 4,Seconda formazione - ISCED 4
-global,global.education.ISCED5,Tertiärstufe I - ISCED 5,Tertiärstufe I - ISCED 5,degré tertiaire I - ISCED 5,Livello terziario I - ISCED 5
-global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Tertiärstufe II - ISCED 6,degré tertiaire II - ISCED 6,Livello terziario II - ISCED 6
+global,global.education.ISCED1,Primarstufe - ISCED 1,Primary level - ISCED 1,Degré primaire - ISCED 1,Livello primario - ISCED 1
+global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Lower secondary level - ISCED 2,Degré secondaire I - ISCED 2,Livello secondario I - ISCED 2
+global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Upper secondary level - ISCED 3,Degré secondaire II - ISCED 3,Livello secondario II - ISCED 3
+global,global.education.ISCED4,Zweitausbildung nicht tertiäre Stufe - ISCED 4,Post-secondary non-tertiary level - ISCED 4,Degré post-secondaire non tertiaire ISCED 4,Seconda formazione - ISCED 4
+global,global.education.ISCED5,Tertiärstufe I - ISCED 5,First stage of tertiary - ISCED 5,Degré tertiaire I - ISCED 5,Livello terziario I - ISCED 5
+global,global.education.ISCED6,Tertiärstufe II - ISCED 6,Second stage of tertiary - ISCED 6,Degré tertiaire II - ISCED 6,Livello terziario II - ISCED 6
 global,global.experience.1_TO_3_YEAR,1 bis 3 Jahre,1 to 3 years,1 - 3 ans,1 - 3 anni
-global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,Less than 1 year,Moins d'un an,meno di 1 anno
-global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,More than 1 year,Plus d'un an,più di 1 anno
-global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,More than 3 years,Plus de trois ans,più di 3 anni
-global,global.experience.NONE,Keine Erfahrung,No experience,Aucune expérience,nessuna esperienza
+global,global.experience.LESS_THAN_1_YEAR,Weniger als 1 Jahr,Less than 1 year,Moins d'un an,Meno di 1 anno
+global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,More than 1 year,Plus d'un an,Più di 1 anno
+global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,More than 3 years,Plus de trois ans,Più di 3 anni
+global,global.experience.NONE,Keine Erfahrung,No experience,Aucune expérience,Nessuna esperienza
 global,global.field.id,ID,ID,ID,ID
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmer le nouveau mot de passe,Conferma nuova password
 global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Please confirm your new password,Confirmez votre nouveau mot de passe,Conferma nuova password
@@ -269,6 +269,12 @@ global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom
 global,global.gender.FEMALE,weiblich,Female,féminin,femmina
 global,global.gender.MALE,männlich,Male,masculin,maschio
 global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} éléments.,Mostra {{first}} - {{second}} di {{total}} articoli.
+global,global.job-publication.status.ACTIVE,Aktiv,Active,Active,Attivo
+global,global.job-publication.status.DISMISSED,Abgelehnt,Refused,Refusée,Rifiutato
+global,global.job-publication.status.INITIAL,In Arbeit,In progress,En cours,In lavorazione
+global,global.job-publication.status.IN_PROGRESS,In Arbeit,In progress,En cours,In lavorazione
+global,global.job-publication.status.UNKNOWN,Unbekannt,Unknown,Inconnue,Ignoto
+global,global.job-publication.status.UNSUBSCRIBED,Abgemeldet,Canceled,Annulée,Annullato
 global,global.menu.account.login,Anmelden,Sign in,Connexion,Accesso
 global,global.menu.account.logout,Abmelden,Sign out,Déconnexion,Esci
 global,global.menu.account.main,Zugang,Account,Compte,Utente
@@ -313,33 +319,33 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,The new password must be at least 5 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,A new password is required.,Un nouveau mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Sicurezza della password:
-global,global.reference.canton.AG,Aargau,Aargau,Argovie,Argovia
-global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
-global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
+global,global.reference.canton.AG,Aargau,Aargovia,Argovie,Argovia
+global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Inner-Rhodes,Appenzell Rhodes-Intérieures,Appenzello Interno
+global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Outer-Rhodes,Appenzell Rhodes-Extérieures,Appenzello Esterno
 global,global.reference.canton.AU,Ausland,Abroad,Étranger,Estero
-global,global.reference.canton.BE,Bern,Bern,Berne,Berna
-global,global.reference.canton.BL,Basel-Landschaft,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna
-global,global.reference.canton.BS,Basel-Stadt,Basel-Stadt,Bâle-Ville,Basilea-Città
-global,global.reference.canton.CH,Schweiz,Schweiz,Suisse,Svizzera
-global,global.reference.canton.FL,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Fürstentum Liechtenstein,Principato Liechtenstein
+global,global.reference.canton.BE,Bern,Berne,Berne,Berna
+global,global.reference.canton.BL,Basel-Landschaft,Basle-Country,Bâle-Campagne,Basilea-Campagna
+global,global.reference.canton.BS,Basel-Stadt,Basle-City,Bâle-Ville,Basilea-Città
+global,global.reference.canton.CH,Schweiz,Switzerland,Suisse,Svizzera
+global,global.reference.canton.FL,Fürstentum Liechtenstein,Principality of Liechtenstein,Fürstentum Liechtenstein,Principato Liechtenstein
 global,global.reference.canton.FR,Freiburg,Freiburg,Fribourg,Friburgo
 global,global.reference.canton.GE,Genf,Geneva,Genève,Ginevra
-global,global.reference.canton.GL,Glarus,Glarus,Glaris,Glarona
-global,global.reference.canton.GR,Graubünden,Graubünden,Grisons,Grigioni
+global,global.reference.canton.GL,Glarus,Glaris,Glaris,Glarona
+global,global.reference.canton.GR,Graubünden,Grisons,Grisons,Grigioni
 global,global.reference.canton.JU,Jura,Jura,Jura,Giura
 global,global.reference.canton.LU,Luzern,Lucerne,Lucerne,Lucerna
 global,global.reference.canton.NE,Neuenburg,Neuenburg,Neuchâtel,Neuchâtel
-global,global.reference.canton.NW,Nidwalden,Nidwalden,Nidwald,Nidwaldo
-global,global.reference.canton.OW,Obwalden,Obwalden,Obwald,Obwaldo
-global,global.reference.canton.SG,St. Gallen,St. Gallen,St-Gall,San Gallo
-global,global.reference.canton.SH,Schaffhausen,Schaffhausen,Schaffhouse,Sciaffusa
-global,global.reference.canton.SO,Solothurn,Solothurn,Soleure,Soletta
+global,global.reference.canton.NW,Nidwalden,Nidwald,Nidwald,Nidvaldo
+global,global.reference.canton.OW,Obwalden,Obwald,Obwald,Obvaldo
+global,global.reference.canton.SG,St. Gallen,St. Gall,St-Gall,San Gallo
+global,global.reference.canton.SH,Schaffhausen,Schaffhouse,Schaffhouse,Sciaffusa
+global,global.reference.canton.SO,Solothurn,Soleure,Soleure,Soletta
 global,global.reference.canton.SZ,Schwyz,Schwyz,Schwyz,Svitto
-global,global.reference.canton.TG,Thurgau,Thurgau,Thurgovie,Turgovia
+global,global.reference.canton.TG,Thurgau,Thurgovia,Thurgovie,Turgovia
 global,global.reference.canton.TI,Tessin,Tessin,Tessin,Ticino
 global,global.reference.canton.UR,Uri,Uri,Uri,Uri
-global,global.reference.canton.VD,Waadt,Waadt,Vaud,Vaud
-global,global.reference.canton.VS,Wallis,Wallis,Valais,Vallese
+global,global.reference.canton.VD,Waadt,Vaud,Vaud,Vaud
+global,global.reference.canton.VS,Wallis,Valais,Valais,Vallese
 global,global.reference.canton.ZG,Zug,Zug,Zoug,Zugo
 global,global.reference.canton.ZH,Zürich,Zurich,Zurich,Zurigo
 global,global.reference.language.ar,Arabisch,Arab,Arabe,Arabo
@@ -362,10 +368,15 @@ global,global.reference.language.it,Italienisch,Italian,Italien,Italiano
 global,global.reference.language.ja,Japanisch,Japanese,Japonais,Giapponese
 global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
 global,global.reference.language.ku,Kurdisch,Kurdish,Kurde,Curdo
+global,global.reference.language.level.BASIC,Grundkenntnisse,Basics,Connaissances de base,Principiante
+global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Avancé,Avanzato
+global,global.reference.language.level.NONE,Keine Kenntnisse,None,Pas de connaissances,Nessuna conoscenza
+global,global.reference.language.level.PROFICIENT,Kompetent,Proficient,Compétent,Competente
 global,global.reference.language.lt,Litauisch,Lithuanian,Lituanien,Lituano
 global,global.reference.language.mk,Mazedonisch,Macedonian,Macédonien,Macedone
 global,global.reference.language.nl,Holländisch,Dutch,Hollandais,Olandese
 global,global.reference.language.no,Norwegisch,Norvegian,Norvégien,Norvegese
+global,global.reference.language.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
 global,global.reference.language.pl,Polnisch,Polish,Polonais,Polacco
 global,global.reference.language.pt,Portugiesisch,Portuguese,Portugais,Portoghese
 global,global.reference.language.rm,Rätoromanisch,Rhaeto-Romanic,Rheto-Romanche,Reto-Romancio
@@ -373,6 +384,7 @@ global,global.reference.language.ro,Rumänisch,Romanian,Roumain,Rumeno
 global,global.reference.language.ru,Russisch,Russian,Russe,Russo
 global,global.reference.language.sk,Slovak,Slowakisch,Slovaque,Slovaco
 global,global.reference.language.sl,Slowenisch,Slovenian,Slovène,Sloveno
+global,global.reference.language.spoken,Mündlich,Orally,Orale,Orale
 global,global.reference.language.sq,Albanisch,Albanian,Albanais,Albanese
 global,global.reference.language.sr,Serbisch,Serbian,Serbe,Serbo
 global,global.reference.language.sv,Schwedisch,Swedish,Suédois,Svedese
@@ -380,15 +392,9 @@ global,global.reference.language.ta,Tamil,Tamil,Tamoul,Tamil
 global,global.reference.language.th,Thai,Thai,Thaïlandais,Tailandese
 global,global.reference.language.tr,Türkisch,Turkish,Turc,Turco
 global,global.reference.language.vi,Vietnamesisch,Vietnamese,Vietnamien,Vietnamita
+global,global.reference.language.written,Schriftlich,Written,Écrit,Scritto
 global,global.reference.language.zh,Chinesisch,Chinese,Chinois,Cinese
-global,global.reference.language.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
 global,global.reference.languages,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
-global,global.reference.language.level.BASIC,Grundkenntnisse,Grundkentnisse,Grundkentnisse,Principiante
-global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Fortgeschritten,Avanzato
-global,global.reference.language.level.NONE,keine Kenntnisse,keine Kentnisse,keine Kentnisse,nessuna conoscenza
-global,global.reference.language.level.PROFICIENT,Professionell,Proficient,Proficient,Proficient
-global,global.reference.language.spoken,mündlich,orally,orale,orale
-global,global.reference.language.written,schriftlich,written,écrit,scritto
 global,global.reference.region.A,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
 global,global.reference.region.AG02,Baden,Baden,Baden,Baden
@@ -402,10 +408,10 @@ global,global.reference.region.AG09,Wettingen,Wettingen,Wettingen,Wettingen
 global,global.reference.region.AG10,Wohlen,Wohlen,Wohlen,Wohlen
 global,global.reference.region.AG11,Zofingen,Zofingen,Zofingen,Zofingen
 global,global.reference.region.AG12,Zurzach,Zurzach,Zurzach,Zurzach
-global,global.reference.region.AI01,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
-global,global.reference.region.AR01,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
+global,global.reference.region.AI01,Appenzell Innerrhoden,Appenzell Inner-Rhodes,Appenzell Rhodes-Intérieures,Appenzello Interno
+global,global.reference.region.AR01,Appenzell Ausserrhoden,Appenzell Outer-Rhodes,Appenzell Rhodes-Extérieures,Appenzello Esterno
 global,global.reference.region.AU,Ausland,Abroad,Étranger,Estero
-global,global.reference.region.BE01,"Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen"
+global,global.reference.region.BE01,"Bern, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berne, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen","Berna, Laupen, Fraubrunnen, Konolfingen, Schwarzenburg, Seftigen"
 global,global.reference.region.BE02,Frutigen,Frutigen,Frutigen,Frutigen
 global,global.reference.region.BE03,"Niedersimmental, Thun","Niedersimmental, Thun","Niedersimmental, Thoune","Niedersimmental, Thun"
 global,global.reference.region.BE04,"Obersimmental, Saanen","Obersimmental, Saanen","Obersimmental, Saanen","Obersimmental, Saanen"
@@ -415,12 +421,12 @@ global,global.reference.region.BE07,"Aarwangen, Wangen","Aarwangen, Wangen","Aar
 global,global.reference.region.BE08,"Aarberg, Biel, Büren, Erlach, Nidau","Aarberg, Biel, Büren, Erlach, Nidau","Aarberg, Bienne, Büren, Erlach, Nidau","Aarberg, Bienna, Büren, Erlach, Nidau"
 global,global.reference.region.BE09,"Courtelary, Neuenstadt, Münster","Courtelary, Neuenstadt, Münster","Courtelary, La Neuveville, Moutier","Courtelary, La Neuveville, Moutier"
 global,global.reference.region.BE10,Laufental,Laufental,Laufental,Laufental
-global,global.reference.region.BL01,"Basel-Landschaft, Suchregion 01","Basel-Landschaft, Suchregion 01","Bâle-Campagne, région de recherche 01","Basilea-Campagna, regione ricerca 01"
+global,global.reference.region.BL01,"Basel-Landschaft, Suchregion 01","Basle-Country, region 01","Bâle-Campagne, région de recherche 01","Basilea-Campagna, regione ricerca 01"
 global,global.reference.region.BL02,Liestal,Liestal,Liestal,Liestal
 global,global.reference.region.BL03,Sissach,Sissach,Sissach,Sissach
 global,global.reference.region.BL04,Waldenburg,Waldenburg,Waldenburg,Waldenburg
 global,global.reference.region.BL05,Laufen,Laufen,Laufen,Laufen
-global,global.reference.region.BS01,"Basel-Stadt, ganzer Kanton","Basel-Stadt, ganzer Kanton","Bâle-Ville, tout le canton","Basilea-Città, tutto il cantone"
+global,global.reference.region.BS01,Basel-Stadt,Basle-City,Bâle-Ville,Basilea-Città
 global,global.reference.region.FR01,La Broye,La Broye,La Broye,La Broye
 global,global.reference.region.FR02,La Glâne,La Glâne,La Glâne,La Glâne
 global,global.reference.region.FR03,La Gruyère,La Gruyère,La Gruyère,La Gruyère
@@ -429,8 +435,8 @@ global,global.reference.region.FR05,See/Lac,See/Lac,See/Lac,See/Lac
 global,global.reference.region.FR06,Sense/Singine,Sense/Singine,Sense/Singine,Sense/Singine
 global,global.reference.region.FR07,La Veveyse,La Veveyse,La Veveyse,La Veveyse
 global,global.reference.region.GE01,"Genf, ganzer Kanton","Geneva, entire canton","Genève, tout le canton","Ginevra, tutto il cantone"
-global,global.reference.region.GL01,"Glarus, ganzer Kanton","Glarus, entire canton","Glaris, tout le canton","Glarona, tutto il cantone"
-global,global.reference.region.GL02,Glarus,Glarus,Glaris,Glarona
+global,global.reference.region.GL01,"Glarus, ganzer Kanton","Glaris, entire canton","Glaris, tout le canton","Glarona, tutto il cantone"
+global,global.reference.region.GL02,Glarus,Glaris,Glaris,Glarona
 global,global.reference.region.GR01,"Plessur, Chur","Plessur, Chur","Plessur, Coire","Plessur, Coira"
 global,global.reference.region.GR02,Unterlandquart,Unterlandquart,Unterlandquart,Unterlandquart
 global,global.reference.region.GR03,Oberlandquart,Oberlandquart,Oberlandquart,Oberlandquart
@@ -457,7 +463,7 @@ global,global.reference.region.NE01,"Boudry, Neuenburg, Val-de-Ruz","Boudry, Neu
 global,global.reference.region.NE02,"La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers","La Chaux-de-Fonds, Le Locle, Val de Travers"
 global,global.reference.region.NW01,"Nidwalden, ganzer Kanton","Nidwalden, entire canton","Nidwalden, tout le canton","Nidwalden, tutto il cantone"
 global,global.reference.region.OW01,"Obwalden, ganzer Kanton","Obwalden, entire canton","Obwalden, tout le canton","Obwalden, tutto il cantone"
-global,global.reference.region.SG01,Region St. Gallen,Region St. Gallen,Région St-Gall,Regione S. Gallo
+global,global.reference.region.SG01,Region St. Gallen,Region St. Gall,Région St-Gall,Regione S. Gallo
 global,global.reference.region.SG02,Region Rorschach,Region Rorschach,Région Rorschach,Regione Rorschach
 global,global.reference.region.SG03,Region Heerbrugg,Region Heerbrugg,Région Heerbrugg,Regione Heerbrugg
 global,global.reference.region.SG04,Region Buchs,Region Buchs,Région Buchs,Regione Buchs
@@ -465,13 +471,13 @@ global,global.reference.region.SG05,Region Sargans,Region Sargans,Région Sargan
 global,global.reference.region.SG06,Region Rapperswil,Region Rapperswil,Région Rapperswil,Regione Rapperswil
 global,global.reference.region.SG07,Region Wattwil,Region Wattwil,Région Wattwil,Regione Wattwil
 global,global.reference.region.SG08,Region Oberuzwil,Region Oberuzwil,Région Oberuzwil,Regione Oberuzwil
-global,global.reference.region.SH01,"Schaffhausen, ganzer Kanton","Schaffhausen, ganzer Kanton","Schaffhouse, tout le canton","Sciaffusa, tutto il cantone"
+global,global.reference.region.SH01,"Schaffhausen, ganzer Kanton","Schaffhausen, entire Kanton","Schaffhouse, tout le canton","Sciaffusa, tutto il cantone"
 global,global.reference.region.SO01,"Kriegstetten, Lebern, Solothurn","Kriegstetten, Lebern, Solothurn","Kriegstetten, Lebern, Soleure","Kriegstetten, Lebern, Soletta"
 global,global.reference.region.SO02,Bucheggberg,Bucheggberg,Bucheggberg,Bucheggberg
 global,global.reference.region.SO03,"Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten","Balsthal-Gäu, Gösgen, Olten"
 global,global.reference.region.SO04,Balsthal-Tal,Balsthal-Tal,Balsthal-Tal,Balsthal-Tal
 global,global.reference.region.SO05,"Dorneck, Thierstein","Dorneck, Thierstein","Dorneck, Thierstein","Dorneck, Thierstein"
-global,global.reference.region.SZ01,"Schwyz, ganzer Kanton","Schwyz, ganzer Kanton","Schwyz, tout le canton","Svitto, tutto il cantone"
+global,global.reference.region.SZ01,"Schwyz, ganzer Kanton","Schwyz, entire Kanton","Schwyz, tout le canton","Svitto, tutto il cantone"
 global,global.reference.region.TG01,Arbon,Arbon,Arbon,Arbon
 global,global.reference.region.TG02,Bischofszell,Bischofszell,Bischofszell,Bischofszell
 global,global.reference.region.TG03,Diessenhofen,Diessenhofen,Diessenhofen,Diessenhofen
@@ -519,12 +525,6 @@ global,global.title,Jobroom,Jobroom,Jobroom,Jobroom
 global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
 global,navigation.next,Weiter,Next,Suivant,Seguente
 global,navigation.previous,Zurück,Previous,Précédent,Precedente
-global,global.job-publication.status.INITIAL,In Arbeit,In progress,En cours,In lavorazione
-global,global.job-publication.status.IN_PROGRESS,In Arbeit,In progress,En cours,In lavorazione
-global,global.job-publication.status.DISMISSED,Abgelehnt,Refused,Refusée,Rifiutato
-global,global.job-publication.status.ACTIVE,Aktiv,Active,Active,Attivo
-global,global.job-publication.status.UNSUBSCRIBED,Abgemeldet,Canceled,Annulée,Annullato
-global,global.job-publication.status.UNKNOWN,Unbekannt,Unknown,Inconnue,Ignoto
 health,health.details.details,Details,Details,Détails,Dettagli
 health,health.details.error,Fehler,Error,Erreur,Errore
 health,health.details.name,Name,Name,Nom,Cognome
@@ -551,9 +551,9 @@ home,home.toolbar.companies,Unternehmen,Companies,Entreprise,Imprese
 home,home.toolbar.jobSeekers,Stellensuchende,Job seekers,Demandeur d'emploi,Persone in cerca d'impiego
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Recruitment agencies,Agence de placement,Collocatori
 home,home.toolbar.title,Job-Room bietet Leistungen für,Job Room offers services for,Job-Room offre des services pour,Job-Room offre servizi per
-home,home.tools.candidate-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchenden"
-home,home.tools.candidate-search.search-badge.none,Diesem Job-Profil entspricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende,Diesem Job-Profil enstpricht keine Stellensuchende
-home,home.tools.candidate-search.search-badge.one,"Diesem Job-Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende"
+home,home.tools.candidate-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende"
+home,home.tools.candidate-search.search-badge.none,Diesem Job-Profil ensprechen keine Stellensuchende,Diesem Job-Profil ensprechen keine Stellensuchenden,Diesem Job-Profil ensprechen keine Stellensuchenden,Diesem Job-Profil ensprechen keine Stellensuchenden
+home,home.tools.candidate-search.search-badge.one,"Diesem Job-Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende"
 home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
 home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Display candidates,Afficher des candidats,Visualizza candidati
 home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Find suitable candidates,Trouvez des candidats appropriés,Trova il candidato giusto
@@ -589,7 +589,28 @@ home,home.tools.job-publication.description.placeholder,max. 9000 Characters,max
 home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.","Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.","Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.","Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält."
 home,home.tools.job-publication.driving-licence,Führerausweis,Führerausweis,Führerausweis,Führerausweis
 home,home.tools.job-publication.education,Ausbildung,Ausbildung,Ausbildung,Ausbildung
+home,home.tools.job-publication.education-level.NOT_KNOWN,weiss nicht,weiss nicht,ne sait pas,non sa
+home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire ñ Ecole obligatoire,Elementare ñ Scuola obligatoria
+home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,Sek. II - Berufsmaturität od. äq.,Sek. II - Berufsmaturität od. äq.,Sec. II – Maturité professionnelle ou équiv.,Sec. II – Maturità professionale o equiv.
+home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,Sek. II - Fachmaturität od. äq.,Sek. II - Fachmaturität od. äq.,Sec. II – Maturité spécialisée ou équiv.,Sec. II – Maturità specializzata o equiv.
+home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,Sek. II - Fachmittelschule oder äq.,Sek. II - Fachmittelschule oder äq.,Sec. II – Ecole de culture générale ou équiv.,Sec. II – Scuola specializzata o equiv.
+home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EBA,Sek. II - Berufliche Grundbildung EBA od. äq.,Sek. II - Berufliche Grundbildung EBA od. äq.,Sec. II – Form. prof. initiale AFP ou équiv.,Sec. II – Form. prof. di base CFP o equiv.
+home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EFZ,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sec. II – Form. prof. initiale CFC ou équiv.,Sec. II – Form. prof. di base AFC o equiv.
+home,home.tools.job-publication.education-level.SEK_II_GYMNASIALE_MATURITAET,Sek. II - Gymnasiale Maturität od. äq.,Sek. II - Gymnasiale Maturität od. äq.,Sec. II – Maturité gymnasiale ou équiv.,Sec. II – Maturità liceale o equiv.
+home,home.tools.job-publication.education-level.SEK_II_WEITERFUEHRENDE_SCHULE,Sek. II - Weiterführende Schule od. äq.,Sek. II - Weiterführende Schule od. äq.,Sec. II – Ecole supérieure ou équivalent,Sec. II – Scuola superiore o equiv.
+home,home.tools.job-publication.education-level.SEK_I_OBLIGATORISCHE_SCHULE,Sek. I - obligatorische Schule,Sek. I - obligatorische Schule,Sec. I – Ecole obligatoire,Sec. I – Scuola obligatoria
+home,home.tools.job-publication.education-level.TER_BACHELOR_FACHHOCHSCHULE,Tertiär - Bachelor Fachhochschule od. äq.,Tertiär - Bachelor Fachhochschule od. äq.,Tertiaire – Bachelor HES ou équivalent,Terziario – Bachelor SUP o equivalente
+home,home.tools.job-publication.education-level.TER_BACHELOR_UNIVERSITAET,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiaire – Bachelor HEU ou équivalent,Terziario – Bachelor scuola univ./poli. o equiv.
+home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_DIPL,"Tertiär - Höhere Berufsbildung, Dipl. od. äq.","Tertiär - Höhere Berufsbildung, Dipl. od. äq.",Tertiaire – Form. prof. sup. diplôme ou équiv.,Terziario – Form. prof. sup. diploma o equiv.
+home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_FA,"Tertiär - Höhere Berufsbildung, eidg. FA od. äq.","Tertiär - Höhere Berufsbildung, eidg. FA od. äq.",Tertiaire – Form. prof. sup. BF ou équiv.,Terziario – Form. prof. sup. APF o equiv.
+home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiaire – Doctorat HEU ou équivalent,Terziario – Dottorato scuola univ./poli. o equiv.
+home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,Tertiär - Master Fachhochschule od. äq.,Tertiär - Master Fachhochschule od. äq.,Tertiaire – Master HES ou équivalent,Terziario – Master SUP o equivalente
+home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,Tertiär - Master universitäre Hochschule od. äq.,Tertiär - Master universitäre Hochschule od. äq.,Tertiaire –  Master HEU ou équivalent,Terziario – Master scuola univ./poli. o equiv.
 home,home.tools.job-publication.experience,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
+home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 Years,1 - 3 annÈes,1 - 3 anni
+home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,Less than 1 year,moins 1 annÈe,meno di 1 anno
+home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,More than 3 years,plus que 3 annÈes,pi˘ di 3 anni
+home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,No experience,sans expÈrience,senza esperienza
 home,home.tools.job-publication.job-description,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung
 home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
 home,home.tools.job-publication.language-skills,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
@@ -600,7 +621,7 @@ home,home.tools.job-publication.locality.country,Land,Land,Land,Land
 home,home.tools.job-publication.locality.title,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
 home,home.tools.job-publication.locality.zip,PLZ,PLZ,PLZ,PLZ
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
-home,home.tools.job-publication.no-selection,keine Auswahl,keine Auswahl,keine Auswahl,keine Auswahl
+home,home.tools.job-publication.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
 home,home.tools.job-publication.occupation.label,Beruf,Beruf,Beruf,Beruf
 home,home.tools.job-publication.occupation.placeholder,Beruf,Beruf,Beruf,Beruf
 home,home.tools.job-publication.optional,Optional,Optional,Optional,Optional
@@ -615,33 +636,12 @@ home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Dat
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
-home,home.tools.job-publication.submit.success,Job publication saved!,Job publication saved!,Job publication saved!,Job publication saved!
 home,home.tools.job-publication.submit.error,Job publication could not be saved!,Job could not be saved!,Job could not be saved!,Job could not be saved!
+home,home.tools.job-publication.submit.success,Job publication saved!,Job publication saved!,Job publication saved!,Job publication saved!
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 home,home.tools.job-search.search-badge.many,"Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days"
 home,home.tools.job-search.search-badge.none,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days
 home,home.tools.job-search.search-badge.one,"Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days"
-home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,"Primarstufe - obligatorische Schule","Primarstufe - obligatorische Schule","Primaire ñ Ecole obligatoire","Elementare ñ Scuola obligatoria"
-home,home.tools.job-publication.education-level.SEK_I_OBLIGATORISCHE_SCHULE,"Sek. I - obligatorische Schule","Sek. I - obligatorische Schule","Sec. I – Ecole obligatoire","Sec. I – Scuola obligatoria"
-home,home.tools.job-publication.education-level.SEK_II_WEITERFUEHRENDE_SCHULE,"Sek. II - Weiterführende Schule od. äq.","Sek. II - Weiterführende Schule od. äq.","Sec. II – Ecole supérieure ou équivalent","Sec. II – Scuola superiore o equiv."
-home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EBA,"Sek. II - Berufliche Grundbildung EBA od. äq.","Sek. II - Berufliche Grundbildung EBA od. äq.","Sec. II – Form. prof. initiale AFP ou équiv.","Sec. II – Form. prof. di base CFP o equiv."
-home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EFZ,"Sek. II - Berufliche Grundbildung EFZ od. äq.","Sek. II - Berufliche Grundbildung EFZ od. äq.","Sec. II – Form. prof. initiale CFC ou équiv.","Sec. II – Form. prof. di base AFC o equiv."
-home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,"Sek. II - Fachmittelschule oder äq.","Sek. II - Fachmittelschule oder äq.","Sec. II – Ecole de culture générale ou équiv.","Sec. II – Scuola specializzata o equiv."
-home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,"Sek. II - Berufsmaturität od. äq.","Sek. II - Berufsmaturität od. äq.","Sec. II – Maturité professionnelle ou équiv.","Sec. II – Maturità professionale o equiv."
-home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,"Sek. II - Fachmaturität od. äq.","Sek. II - Fachmaturität od. äq.","Sec. II – Maturité spécialisée ou équiv.","Sec. II – Maturità specializzata o equiv."
-home,home.tools.job-publication.education-level.SEK_II_GYMNASIALE_MATURITAET,"Sek. II - Gymnasiale Maturität od. äq.","Sek. II - Gymnasiale Maturität od. äq.","Sec. II – Maturité gymnasiale ou équiv.","Sec. II – Maturità liceale o equiv."
-home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_FA,"Tertiär - Höhere Berufsbildung, eidg. FA od. äq.","Tertiär - Höhere Berufsbildung, eidg. FA od. äq.","Tertiaire – Form. prof. sup. BF ou équiv.","Terziario – Form. prof. sup. APF o equiv."
-home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_DIPL,"Tertiär - Höhere Berufsbildung, Dipl. od. äq.","Tertiär - Höhere Berufsbildung, Dipl. od. äq.","Tertiaire – Form. prof. sup. diplôme ou équiv.","Terziario – Form. prof. sup. diploma o equiv."
-home,home.tools.job-publication.education-level.TER_BACHELOR_FACHHOCHSCHULE,"Tertiär - Bachelor Fachhochschule od. äq.","Tertiär - Bachelor Fachhochschule od. äq.","Tertiaire – Bachelor HES ou équivalent","Terziario – Bachelor SUP o equivalente"
-home,home.tools.job-publication.education-level.TER_BACHELOR_UNIVERSITAET,"Tertiär - Bachelor universitäre Hochschule od. äq.","Tertiär - Bachelor universitäre Hochschule od. äq.","Tertiaire – Bachelor HEU ou équivalent","Terziario – Bachelor scuola univ./poli. o equiv."
-home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,"Tertiär - Master Fachhochschule od. äq.","Tertiär - Master Fachhochschule od. äq.","Tertiaire – Master HES ou équivalent","Terziario – Master SUP o equivalente"
-home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,"Tertiär - Master universitäre Hochschule od. äq.","Tertiär - Master universitäre Hochschule od. äq.","Tertiaire –  Master HEU ou équivalent","Terziario – Master scuola univ./poli. o equiv."
-home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,"Tertiär - Doktorat universitäre Hochschule od. äq.","Tertiär - Doktorat universitäre Hochschule od. äq.","Tertiaire – Doctorat HEU ou équivalent","Terziario – Dottorato scuola univ./poli. o equiv."
-home,home.tools.job-publication.education-level.NOT_KNOWN,weiss nicht,weiss nicht,ne sait pas,non sa
-home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,No experience,sans expÈrience,senza esperienza
-home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,Less than 1 year,moins 1 annÈe,meno di 1 anno
-home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 Years,1 - 3 annÈes,1 - 3 anni
-home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,More than 3 years,plus que 3 annÈes,pi˘ di 3 anni
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
@@ -674,6 +674,19 @@ job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fon
 job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
 job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite,Da subito
 job-detail,job-detail.title,Job detail,Job detail,Détail de l'emploi,Dettagli sul posto
+job-publication,job-publication-details.application.additionalInfo,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
+job-publication,job-publication-details.application.email,E-Mail,E-Mail,E-Mail,E-Mail
+job-publication,job-publication-details.application.post,Post,Post,Post,Post
+job-publication,job-publication-details.application.telephone,Telefonisch,Telefonisch,Telefonisch,Telefonisch
+job-publication,job-publication-details.application.title,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen
+job-publication,job-publication-details.cancel,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+job-publication,job-publication-details.contact.accountNumber,Stellennummer,Stellennummer,Stellennummer,Stellennummer
+job-publication,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
+job-publication,job-publication-details.contact.title,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
+job-publication,job-publication-details.copy,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren
+job-publication,job-publication-details.permanent,Permanent,Permanent,Permanent,Permanent
+job-publication,job-publication-details.print,Drucken,Drucken,Drucken,Drucken
+job-publication,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
 job-search,job-detail.enddate,Befristet bis {{enddate}},Until {{enddate}},Jusqu'au {{enddate}},A {{enddate}}
 job-search,job-search.filter.company-name.label,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
 job-search,job-search.filter.company-name.placeholder,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
@@ -681,7 +694,7 @@ job-search,job-search.filter.contract-type.label,Vertragsart,Contract type,Type 
 job-search,job-search.filter.contract-type.option.ALL,Alle,All,Tous,Tutto
 job-search,job-search.filter.contract-type.option.PERMANENT,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
 job-search,job-search.filter.contract-type.option.TEMPORARY,Befristet,Temporary,Durée limitée,A tempo determinato
-job-search,job-search.filter.online-since.days.label,Tage(n),Days(n),Jour(s),Giorno(i)
+job-search,job-search.filter.online-since.days.label,Tagen,Days,Jours,Giorni
 job-search,job-search.filter.online-since.label,Online seit,Online since,En ligne depuis,Online dal
 job-search,job-search.filter.sort.label,Sortierung,Sort,Tri,Classificazione
 job-search,job-search.filter.sort.option.DATE_ASC,Sortiere nach Datum aufsteigend,Sort by date ascending,Tri par date - ordre croissant,Ordine crescente per data

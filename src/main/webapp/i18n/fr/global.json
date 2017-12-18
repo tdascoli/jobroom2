@@ -118,12 +118,12 @@
             "label": "Cat\u00e9gorie de permis de conduire"
         },
         "education": {
-            "ISCED1": "degr\u00e9 primaire - ISCED 1",
-            "ISCED2": "degr\u00e9 secondaire I - ISCED 2",
-            "ISCED3": "degr\u00e9 secondaire II - ISCED 3",
-            "ISCED4": "degr\u00e9 post-secondaire non tertiaire ISCED 4",
-            "ISCED5": "degr\u00e9 tertiaire I - ISCED 5",
-            "ISCED6": "degr\u00e9 tertiaire II - ISCED 6"
+            "ISCED1": "Degr\u00e9 primaire - ISCED 1",
+            "ISCED2": "Degr\u00e9 secondaire I - ISCED 2",
+            "ISCED3": "Degr\u00e9 secondaire II - ISCED 3",
+            "ISCED4": "Degr\u00e9 post-secondaire non tertiaire ISCED 4",
+            "ISCED5": "Degr\u00e9 tertiaire I - ISCED 5",
+            "ISCED6": "Degr\u00e9 tertiaire II - ISCED 6"
         },
         "experience": {
             "1_TO_3_YEAR": "1 - 3 ans",
@@ -294,13 +294,13 @@
                 "zh": "Chinois",
                 "no-selection": "Aucune s\u00e9lection",
                 "level": {
-                    "BASIC": "Grundkentnisse",
-                    "INTERMEDIATE": "Fortgeschritten",
-                    "NONE": "keine Kentnisse",
-                    "PROFICIENT": "Proficient"
+                    "BASIC": "Connaissances de base",
+                    "INTERMEDIATE": "Avanc\u00e9",
+                    "NONE": "Pas de connaissances",
+                    "PROFICIENT": "Comp\u00e9tent"
                 },
-                "spoken": "orale",
-                "written": "\u00e9crit"
+                "spoken": "Orale",
+                "written": "\u00c9crit"
             },
             "languages": "Connaissances linguistiques",
             "region": {
@@ -335,7 +335,7 @@
                 "BL03": "Sissach",
                 "BL04": "Waldenburg",
                 "BL05": "Laufen",
-                "BS01": "B\u00e2le-Ville, tout le canton",
+                "BS01": "B\u00e2le-Ville",
                 "FR01": "La Broye",
                 "FR02": "La Gl\u00e2ne",
                 "FR03": "La Gruy\u00e8re",

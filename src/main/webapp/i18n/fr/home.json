@@ -12,9 +12,9 @@
         "tools": {
             "candidate-search": {
                 "search-badge": {
-                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchenden",
-                    "none": "Diesem Job-Profil enstpricht keine Stellensuchende",
-                    "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
+                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchende",
+                    "none": "Diesem Job-Profil ensprechen keine Stellensuchenden",
+                    "one": "Diesem Job-Profil ensprechen <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
                 },
                 "search-button": {
@@ -78,7 +78,7 @@
                     "zip": "PLZ",
                     "zipcode": "PLZ / Ort"
                 },
-                "no-selection": "keine Auswahl",
+                "no-selection": "Aucune s\u00e9lection",
                 "occupation": {
                     "label": "Beruf",
                     "placeholder": "Beruf"
