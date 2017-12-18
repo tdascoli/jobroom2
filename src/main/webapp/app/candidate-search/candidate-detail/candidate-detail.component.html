@@ -118,7 +118,7 @@
                         <p *ngIf="candidateProfile.preferredWorkRegions?.length">
                             <ng-container *ngFor="let region of preferredWorkRegions$ | async | orderBy; let last = last">
                                 {{ region }}{{ last ? '' : ', '}}
-                            </ng-container>x
+                            </ng-container>
                         <p *ngIf="candidateProfile.preferredWorkCantons?.length">
                             <ng-container *ngFor="let canton of preferredWorkCantons$ | async | orderBy; let last = last">
                                 {{ canton }}{{ last ? '' : ', '}}
