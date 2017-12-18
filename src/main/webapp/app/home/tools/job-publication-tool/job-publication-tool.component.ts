@@ -94,7 +94,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.languageSkills$ = this.languageSkillService.getLanguages();
         this.setupCountries();
 
-        const formModel = this.jobPublication && Object.keys(this.jobPublication).length
+        const formModel = this.jobPublication
             ? this.populateFormWithJobPublicationData(this.jobPublication)
             : this.createDefaultFormModel();
 
@@ -329,8 +329,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     private validateCheckboxRelatedField(checkboxPath: string, relatedFieldPath: string[]) {
-        this.jobPublicationForm.get(checkboxPath).valueChanges
+        const checkbox = this.jobPublicationForm.get(checkboxPath);
+        checkbox.valueChanges
             .takeUntil(this.unsubscribe$)
+            .startWith(checkbox.value)
             .subscribe((enabled: boolean) => {
                 relatedFieldPath.forEach((path) => {
                     const relatedControl = this.jobPublicationForm.get(path);
@@ -346,8 +348,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     private validateElectronicApplicationFields(source: string, target: string, validator: ValidatorFn) {
-        this.jobPublicationForm.get(source).valueChanges
+        const field = this.jobPublicationForm.get(source);
+        field.valueChanges
             .takeUntil(this.unsubscribe$)
+            .startWith(field.value)
             .map((value) => value ? value : '')
             .distinctUntilChanged((a, b) => !a.length === !b.length)
             .subscribe((value) => {
