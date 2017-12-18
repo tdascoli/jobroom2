@@ -127,7 +127,7 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
     }
 
     ngDoCheck() {
-        if(this.candidateUrl !== window.location.href) {
+        if (this.candidateUrl !== window.location.href) {
             this.candidateUrl = window.location.href;
             this.isCopied = false;
             this.RAVContactVisible = false;
