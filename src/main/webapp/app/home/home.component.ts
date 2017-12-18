@@ -13,7 +13,8 @@ import {
 } from './state-management';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
 import { ToolbarItem, CompaniesTab, AgenciesTab } from './state-management/state/layout.state';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { JobPublication } from '../shared/job-publication/job-publication.model';
 
 @Component({
     selector: 'jhi-home',
@@ -32,14 +33,20 @@ export class HomeComponent {
     candidateSearchToolModel$: Observable<CandidateSearchToolState>;
     activeCompanyTabId$: Observable<string>;
     activeAgencyTabId$: Observable<string>;
+    jobPublication$: Observable<JobPublication>;
 
     constructor(private store: Store<HomeState>,
+                private route: ActivatedRoute,
                 private router: Router) {
         this.jobSearchToolModel$ = store.select(getJobSearchToolState);
         this.candidateSearchToolModel$ = store.select(getCandidateSearchToolState);
         this.activeToolbarItem$ = store.select(getActiveToolbarItem);
         this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
+
+        // TODO: refactor ?
+        this.jobPublication$ = this.route.data
+            .map((data) => data['jobPublication']);
     }
 
     selectCompaniesTab(event: NgbTabChangeEvent): void {

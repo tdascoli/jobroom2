@@ -44,7 +44,7 @@
                     "postbox-number": "Postfach-Nr.",
                     "postbox-zip": "Postfach PLZ",
                     "postbox-zipcode": "Postfach PLZ / Ort",
-                    "street": "Strasse",
+                    "street": "Strasse / Hausnummer",
                     "title": "Unternehmen",
                     "zipcode": "PLZ / Ort"
                 },
@@ -101,7 +101,32 @@
                 },
                 "reset": "Zur\u00fccksetzen",
                 "submit": "Job publizieren",
-                "workload": "Workload"
+                "submit.success": "Job publication saved!",
+                "submit.error": "Job could not be saved!",
+                "workload": "Workload",
+                "education-level": {
+                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Primarstufe - obligatorische Schule",
+                    "SEK_I_OBLIGATORISCHE_SCHULE": "Sek. I - obligatorische Schule",
+                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
+                    "SEK_II_GRUNDBILDUNG_EBA": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
+                    "SEK_II_GRUNDBILDUNG_EFZ": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
+                    "SEK_II_FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
+                    "SEK_II_BERUFSMATURITAET": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
+                    "SEK_II_FACHMATURITAET": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
+                    "SEK_II_GYMNASIALE_MATURITAET": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
+                    "TER_BERUFSBILDUNG_FA": "Terti\u00e4r - H\u00f6here Berufsbildung, eidg. FA od. \u00e4q.",
+                    "TER_BERUFSBILDUNG_DIPL": "Terti\u00e4r - H\u00f6here Berufsbildung, Dipl. od. \u00e4q.",
+                    "TER_BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
+                    "TER_BACHELOR_UNIVERSITAET": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
+                    "TER_MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
+                    "TER_MASTER_UNIVERSITAET": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q.",
+                    "TER_DOKTORAT_UNIVERSITAET": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
+                    "NOT_KNOWN": "weiss nicht"
+                },
+                "experience.NO_EXPERIENCE": "No experience",
+                "experience.LESS_THAN_1_YEAR": "Less than 1 year",
+                "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 Years",
+                "experience.MORE_THAN_3_YEARS": "More than 3 years"
             },
             "job-search": {
                 "search-badge": {

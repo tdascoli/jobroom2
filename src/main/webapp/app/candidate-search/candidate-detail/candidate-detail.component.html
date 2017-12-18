@@ -24,15 +24,15 @@
                             {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a><br/>
                             {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
                         </p>
-                        <strong>{{'candidate-detail.external-id' | translate}}: {{(candidateProfile$ | async).externalId}}</strong>
+                        <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
                     </div>
                 </div>
             </div>
         </div>
 
         <div *ngIf="candidateProfile$ | async as candidateProfile" class="col-12 col-md-8 order-3 base__content">
-            <div class="detail__title">
-                <h2 class="text--light">{{ (relevantJobExperience$ | async)?.occupation }}</h2>
+            <div *ngIf="relevantJobExperience$ | async as relevantJobExperience" class="detail__title">
+                <h2 class="text--light">{{ relevantJobExperience.occupation }}</h2>
             </div>
 
             <div class="detail__content">

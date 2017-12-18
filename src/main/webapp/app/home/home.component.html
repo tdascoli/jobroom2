@@ -56,7 +56,7 @@
                         </ngb-tab>
                         <ngb-tab [title]="'home.tools.jobPublicationTab' | translate" [id]="AgenciesTab.JOB_PUBLICATION">
                             <ng-template ngbTabContent>
-                                <jr2-job-publication-tool></jr2-job-publication-tool>
+                                <jr2-job-publication-tool [jobPublication]="jobPublication$ | async"></jr2-job-publication-tool>
                             </ng-template>
                         </ngb-tab>
                     </ngb-tabset>

@@ -38,9 +38,9 @@ export class ZipCodeComponent implements OnInit, OnChanges {
     zipAutocompleter: FormControl;
     zipGroup: FormGroup;
 
-    private static localityResultMapper(localityAutocomplete: LocalityAutocomplete): any {
+    static localityResultMapper(localityAutocomplete: LocalityAutocomplete): any {
         return localityAutocomplete.localities
-            .map((locality) => ({ zip: locality.zipCode, city: locality.city }));
+            .map((locality) => ({ zip: locality.zipCode, city: locality.city, communalCode: locality.communalCode }));
     }
 
     constructor(private fb: FormBuilder,
@@ -52,21 +52,31 @@ export class ZipCodeComponent implements OnInit, OnChanges {
 
     ngOnChanges(changes: SimpleChanges): void {
         if (changes['switzSelected']) {
+            let zipControlValue = {
+                zip: '',
+                city: ''
+            };
+
             if (changes['switzSelected'].firstChange) {
                 const validators = this.optional ? [] : [Validators.required];
                 this.zipAutocompleter = this.fb.control('', validators);
                 this.zipGroup = this.fb.group({
                     zip: ['', [...validators, Validators.pattern(/^\d*$/)]],
                     city: ['', validators]
-                })
+                });
+
+                if (this.group.get(this.controlName)) {
+                    zipControlValue = this.group.get(this.controlName).value;
+                }
             }
+
             this.group.removeControl(this.controlName);
             if (changes['switzSelected'].currentValue) {
+                this.zipAutocompleter.setValue(zipControlValue);
                 this.group.addControl(this.controlName, this.zipAutocompleter);
-                this.zipAutocompleter.reset();
             } else {
+                this.zipGroup.setValue(zipControlValue);
                 this.group.addControl(this.controlName, this.zipGroup);
-                this.zipGroup.reset();
             }
         }
     }
@@ -83,7 +93,7 @@ export class ZipCodeComponent implements OnInit, OnChanges {
                 : this.localityService.fetchSuggestions(term, ZipCodeComponent.localityResultMapper, false));
 
     formatter = (result: any) => {
-        return result.zip + (result.city ? ' ' : '') + result.city;
+        return (result.zip || '') + (result.city ? ' ' : '') + (result.city || '');
     };
 
     zipChange(): void {

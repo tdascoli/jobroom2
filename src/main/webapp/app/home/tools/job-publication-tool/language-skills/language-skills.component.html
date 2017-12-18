@@ -33,7 +33,7 @@
                     <label class="sr-only" [for]="'spoken-' + i" translate="global.reference.language.spoken"></label>
                     <select [id]="'spoken-'+i" class="form-control custom-select" formControlName="spoken">
                         <option [ngValue]="null">{{'global.reference.language.spoken'| translate}}</option>
-                        <option *ngFor="let languageLevel of languageLevels | keys: ['NONE']" [ngValue]="languageLevel.key">
+                        <option *ngFor="let languageLevel of languageLevels | keys: ['NONE']" [ngValue]="languageLevel.value">
                             {{'global.reference.language.level.'+languageLevel.value | translate}}
                         </option>
                     </select>
@@ -44,7 +44,7 @@
                     <label class="sr-only" [for]="'written-' + i" translate="global.reference.language.written"></label>
                     <select [id]="'written-'+i" class="form-control custom-select" formControlName="written">
                         <option [ngValue]="null">{{'global.reference.language.written'| translate}}</option>
-                        <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
+                        <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.value">
                             {{'global.reference.language.level.'+languageLevel.value | translate}}
                         </option>
                     </select>

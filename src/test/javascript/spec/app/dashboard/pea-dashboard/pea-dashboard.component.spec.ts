@@ -7,12 +7,14 @@ import { OrganizationService } from '../../../../../../main/webapp/app/shared/or
 import { JobPublicationCancelDialogService } from '../../../../../../main/webapp/app/dashboard/dialogs/job-publication-cancel-dialog.service';
 import { JobPublicationService } from '../../../../../../main/webapp/app/shared/job-publication/job-publication.service';
 import { HttpModule } from '@angular/http';
+import { TranslateService } from '@ngx-translate/core';
 
 describe('DashboardComponent', () => {
     let component: PeaDashboardComponent;
     let fixture: ComponentFixture<PeaDashboardComponent>;
     const mockOrganizationService = jasmine.createSpyObj('mockOrganizationService', ['findByExternalId']);
     const mockJobPublicationCancelDialogService = jasmine.createSpyObj('mockJobPublicationCancelDialogService', ['open']);
+    const mockTranslateService = jasmine.createSpyObj('mockTranslateService', ['v']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -30,6 +32,10 @@ describe('DashboardComponent', () => {
                 {
                     provide: JobPublicationCancelDialogService,
                     useValue: mockJobPublicationCancelDialogService
+                },
+                {
+                    provide: TranslateService,
+                    useValue: mockTranslateService
                 },
                 JobPublicationService
             ]

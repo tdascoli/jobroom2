@@ -15,7 +15,7 @@ export class JobPublicationDetailResolver implements Resolve<JobPublication> {
     }
 
     resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<JobPublication> {
-        return this.jobPublicationService.findById(route.params['id'], route.queryParams['accessToken'])
+        return this.jobPublicationService.findByIdAndAccessToken(route.params['id'], route.queryParams['accessToken'])
             .catch((_) => {
                 this.router.navigate(['/dashboard']);
                 return Observable.of(null);

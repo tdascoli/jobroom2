@@ -26,7 +26,15 @@ export class LanguageSkillsComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        this.group.addControl(this.controlName, this.fb.array([this.createEmptyGroup()]))
+        let value = [this.createEmptyGroup()];
+        if (this.group.get(this.controlName)
+                && this.group.get(this.controlName).value
+                && this.group.get(this.controlName).value.length) {
+            value = this.group.get(this.controlName).value
+                .map((val) => this.createGroup(val));
+        }
+        this.group.removeControl(this.controlName);
+        this.group.addControl(this.controlName, new FormArray(value));
     }
 
     addNewLanguageSkill() {
@@ -71,10 +79,18 @@ export class LanguageSkillsComponent implements OnInit {
     }
 
     private createEmptyGroup(): FormGroup {
+        return this.createGroup({
+            code: null,
+            spoken: null,
+            written: null
+        });
+    }
+
+    private createGroup(value): FormGroup {
         return this.fb.group({
-            code: [],
-            spoken: [],
-            written: []
+            code: [value.code],
+            spoken: [value.spoken],
+            written: [value.written]
         }, {
             validator: groupValidator
         })

@@ -23,7 +23,7 @@ export class DashboardEffects {
         .ofType(LOAD_NEXT_JOB_PUBLICATIONS_DASHBOARD_PAGE)
         .withLatestFrom(
             this.store.select(getJobPublicationDashboardState),
-            this.principal.identity())
+            this.principal.getAuthenticationState())
         .switchMap(([action, state, identity]: [LoadNextJobPublicationsDashboardPageAction, JobPublicationsDashboardState, any]) =>
             this.jobPublicationService.search(
                 this.createSearchRequest(state.jobPublicationFilter, action.payload.page, identity))
@@ -36,7 +36,7 @@ export class DashboardEffects {
         .ofType(FILTER_JOB_PUBLICATIONS_DASHBOARD)
         .withLatestFrom(
             this.store.select(getJobPublicationDashboardState),
-            this.principal.identity())
+            this.principal.getAuthenticationState())
         .switchMap(([action, state, identity]: [FilterJobPublicationsDashboardAction, JobPublicationsDashboardState, any]) =>
             this.jobPublicationService.search(
                     this.createSearchRequest(action.payload, state.page, identity))

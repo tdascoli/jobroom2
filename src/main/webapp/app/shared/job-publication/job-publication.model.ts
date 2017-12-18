@@ -1,4 +1,4 @@
-import { CEFR_Level, DrivingLicenceCategory, Experience } from '../';
+import { CEFR_Level, DrivingLicenceCategory } from '../';
 
 export enum EducationLevel {
     PRIMAR_OBLIGATORISCHE_SCHULE,
@@ -20,10 +20,18 @@ export enum EducationLevel {
     NOT_KNOWN
 }
 
+export enum Experience {
+    NO_EXPERIENCE,
+    LESS_THAN_1_YEAR,
+    BETWEEN_1_AND_3_YEARS,
+    MORE_THAN_3_YEARS
+}
+
 export interface Location {
     countryCode: string;
     zipCode?: string;
     city?: string;
+    communalCode?: string;
     additionalDetails: string;
 }
 
@@ -46,8 +54,8 @@ export interface Job {
     workingTimePercentageMin: number;
     workingTimePercentageMax: number;
     startsImmediately: boolean;
-    startDate: Date;
-    endDate: Date;
+    startDate: string;
+    endDate: string;
     permanent: boolean;
     drivingLicenseLevel?: DrivingLicenceCategory;
     languageSkills: LanguageSkill[];
@@ -98,17 +106,24 @@ export enum Status {
     UNKNOWN
 }
 
+export enum Locale {
+    DE,
+    FR,
+    IT
+}
+
 export interface JobPublication {
     id?: string;
     idAvam?: string;
+    accessToken: string;
     job: Job;
     company: Company;
     contact: Contact;
     application: Application;
     publication: Publication;
-    creationDate: Date;
+    creationDate: string;
+    locale: Locale
     status?: Status;
-    accessToken: string
 }
 
 export enum CancellationReason {

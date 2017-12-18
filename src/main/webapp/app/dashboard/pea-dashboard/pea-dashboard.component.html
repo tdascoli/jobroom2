@@ -60,7 +60,7 @@
                                     <a routerLink="/job-publication-detail/{{jobPublication.id}}?accessToken={{jobPublication.accessToken}}" [attr.aria-label]="'dashboard.job-publication.action.view' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.view' | translate">
                                         <span class="fa fa-fw fa-eye" aria-hidden="true"></span>
                                     </a>
-                                    <a [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id }]" [attr.aria-label]="'dashboard.job-publication.action.copy' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.copy' | translate">
+                                    <a [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id, accessToken: jobPublication.accessToken }]" [attr.aria-label]="'dashboard.job-publication.action.copy' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.copy' | translate">
                                         <span class="fa fa-fw fa-clone" aria-hidden="true"></span>
                                     </a>
                                     <a *ngIf="isJobPublicationCancellable(jobPublication.status)" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)" [attr.aria-label]="'dashboard.job-publication.action.delete' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.delete' | translate">

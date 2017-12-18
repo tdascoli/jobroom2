@@ -573,7 +573,7 @@ home,home.tools.job-publication.company.postbox-city,Ort,Ort,Ort,Ort
 home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.
 home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,Postfach PLZ,Postfach PLZ,Postfach PLZ
 home,home.tools.job-publication.company.postbox-zipcode,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort
-home,home.tools.job-publication.company.street,Strasse,Strasse,Strasse,Strasse
+home,home.tools.job-publication.company.street,Strasse / Hausnummer,Strasse / Hausnummer,Strasse / Hausnummer,Strasse / Hausnummer
 home,home.tools.job-publication.company.title,Unternehmen,Unternehmen,Unternehmen,Unternehmen
 home,home.tools.job-publication.company.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
 home,home.tools.job-publication.contact.email,E-Mail,E-Mail,E-Mail,E-Mail
@@ -615,10 +615,33 @@ home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Dat
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
 home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
 home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
+home,home.tools.job-publication.submit.success,Job publication saved!,Job publication saved!,Job publication saved!,Job publication saved!
+home,home.tools.job-publication.submit.error,Job publication could not be saved!,Job could not be saved!,Job could not be saved!,Job could not be saved!
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 home,home.tools.job-search.search-badge.many,"Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days"
 home,home.tools.job-search.search-badge.none,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days
 home,home.tools.job-search.search-badge.one,"Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days"
+home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,"Primarstufe - obligatorische Schule","Primarstufe - obligatorische Schule","Primaire ñ Ecole obligatoire","Elementare ñ Scuola obligatoria"
+home,home.tools.job-publication.education-level.SEK_I_OBLIGATORISCHE_SCHULE,"Sek. I - obligatorische Schule","Sek. I - obligatorische Schule","Sec. I – Ecole obligatoire","Sec. I – Scuola obligatoria"
+home,home.tools.job-publication.education-level.SEK_II_WEITERFUEHRENDE_SCHULE,"Sek. II - Weiterführende Schule od. äq.","Sek. II - Weiterführende Schule od. äq.","Sec. II – Ecole supérieure ou équivalent","Sec. II – Scuola superiore o equiv."
+home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EBA,"Sek. II - Berufliche Grundbildung EBA od. äq.","Sek. II - Berufliche Grundbildung EBA od. äq.","Sec. II – Form. prof. initiale AFP ou équiv.","Sec. II – Form. prof. di base CFP o equiv."
+home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EFZ,"Sek. II - Berufliche Grundbildung EFZ od. äq.","Sek. II - Berufliche Grundbildung EFZ od. äq.","Sec. II – Form. prof. initiale CFC ou équiv.","Sec. II – Form. prof. di base AFC o equiv."
+home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,"Sek. II - Fachmittelschule oder äq.","Sek. II - Fachmittelschule oder äq.","Sec. II – Ecole de culture générale ou équiv.","Sec. II – Scuola specializzata o equiv."
+home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,"Sek. II - Berufsmaturität od. äq.","Sek. II - Berufsmaturität od. äq.","Sec. II – Maturité professionnelle ou équiv.","Sec. II – Maturità professionale o equiv."
+home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,"Sek. II - Fachmaturität od. äq.","Sek. II - Fachmaturität od. äq.","Sec. II – Maturité spécialisée ou équiv.","Sec. II – Maturità specializzata o equiv."
+home,home.tools.job-publication.education-level.SEK_II_GYMNASIALE_MATURITAET,"Sek. II - Gymnasiale Maturität od. äq.","Sek. II - Gymnasiale Maturität od. äq.","Sec. II – Maturité gymnasiale ou équiv.","Sec. II – Maturità liceale o equiv."
+home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_FA,"Tertiär - Höhere Berufsbildung, eidg. FA od. äq.","Tertiär - Höhere Berufsbildung, eidg. FA od. äq.","Tertiaire – Form. prof. sup. BF ou équiv.","Terziario – Form. prof. sup. APF o equiv."
+home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_DIPL,"Tertiär - Höhere Berufsbildung, Dipl. od. äq.","Tertiär - Höhere Berufsbildung, Dipl. od. äq.","Tertiaire – Form. prof. sup. diplôme ou équiv.","Terziario – Form. prof. sup. diploma o equiv."
+home,home.tools.job-publication.education-level.TER_BACHELOR_FACHHOCHSCHULE,"Tertiär - Bachelor Fachhochschule od. äq.","Tertiär - Bachelor Fachhochschule od. äq.","Tertiaire – Bachelor HES ou équivalent","Terziario – Bachelor SUP o equivalente"
+home,home.tools.job-publication.education-level.TER_BACHELOR_UNIVERSITAET,"Tertiär - Bachelor universitäre Hochschule od. äq.","Tertiär - Bachelor universitäre Hochschule od. äq.","Tertiaire – Bachelor HEU ou équivalent","Terziario – Bachelor scuola univ./poli. o equiv."
+home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,"Tertiär - Master Fachhochschule od. äq.","Tertiär - Master Fachhochschule od. äq.","Tertiaire – Master HES ou équivalent","Terziario – Master SUP o equivalente"
+home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,"Tertiär - Master universitäre Hochschule od. äq.","Tertiär - Master universitäre Hochschule od. äq.","Tertiaire –  Master HEU ou équivalent","Terziario – Master scuola univ./poli. o equiv."
+home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,"Tertiär - Doktorat universitäre Hochschule od. äq.","Tertiär - Doktorat universitäre Hochschule od. äq.","Tertiaire – Doctorat HEU ou équivalent","Terziario – Dottorato scuola univ./poli. o equiv."
+home,home.tools.job-publication.education-level.NOT_KNOWN,weiss nicht,weiss nicht,ne sait pas,non sa
+home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,No experience,sans expÈrience,senza esperienza
+home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,Less than 1 year,moins 1 annÈe,meno di 1 anno
+home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 Years,1 - 3 annÈes,1 - 3 anni
+home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,More than 3 years,plus que 3 annÈes,pi˘ di 3 anni
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro

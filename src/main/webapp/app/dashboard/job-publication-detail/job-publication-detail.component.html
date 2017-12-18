@@ -8,7 +8,7 @@
                         <a class="nav-link" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)"><span class="fa fa-fw fa-trash-o" aria-hidden="true"></span> {{ 'job-publication-details.cancel' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><span class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' | translate }}</a>
+                        <a class="nav-link" [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id, accessToken: jobPublication.accessToken }]"><span class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' | translate }}</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" (click)="printJobPublication()"><i class="fa fa-fw fa-print" aria-hidden="true"></i> {{ 'job-publication-details.print' | translate }}</a>
@@ -72,8 +72,7 @@
                 <span *ngIf="!job.startsImmediately" class="badge badge-yellow">{{ 'job-publication-details.byArrangement' | translate }}</span>
             </div>
 
-            <div class="job-detail__content">
-                {{ jobPublication.job.description | safeHtml }}
+            <div class="job-detail__content" [innerHtml]="jobPublication.job.description | safeHtml">
             </div>
 
             <!-- Languages -->

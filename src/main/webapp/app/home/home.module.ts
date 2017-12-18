@@ -17,6 +17,7 @@ import { LanguageSkillsComponent } from './tools/job-publication-tool/language-s
 import { HomeRoutingModule } from './home-routing.module';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HomeRouterEffects } from './state-management/effects/router.effects';
+import { JobPublicationResolverService } from './job-publication-resolver.service';
 
 @NgModule({
     imports: [
@@ -41,7 +42,7 @@ import { HomeRouterEffects } from './state-management/effects/router.effects';
         ZipCodeComponent
     ],
     entryComponents: [],
-    providers: [],
+    providers: [JobPublicationResolverService],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JobroomHomeModule {

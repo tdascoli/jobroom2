@@ -22,11 +22,9 @@ describe('DashboardEffects', () => {
     let store: Store<DashboardState>;
 
     const mockJobPublicationService = jasmine.createSpyObj('mockJobPublicationService', ['search']);
-    const mockPrincipal = jasmine.createSpyObj('mockPrincipal', ['identity']);
+    const mockPrincipal = jasmine.createSpyObj('mockPrincipal', ['getAuthenticationState']);
 
-    // It's a life hack: we return Observable instead of Promise because of the issue
-    // https://github.com/ReactiveX/rxjs/issues/2633
-    mockPrincipal.identity.and.returnValue(Observable.of({ email: 'email' }));
+    mockPrincipal.getAuthenticationState.and.returnValue(Observable.of({ email: 'email' }));
 
     beforeEach(() => {
         TestBed.configureTestingModule({

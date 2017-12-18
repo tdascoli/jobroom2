@@ -5,12 +5,13 @@ import { Store } from '@ngrx/store';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AgenciesTab, CompaniesTab } from '../../../../../main/webapp/app/home/state-management/state/layout.state';
 import { NgbTabChangeEvent } from '@ng-bootstrap/ng-bootstrap';
-import { MockActivatedRoute } from '../../helpers/mock-route.service';
 
 describe('HomeComponent', () => {
     const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
     const mockRouter = jasmine.createSpyObj('mockRouter', ['navigate']);
+    const mockActivatedRoute = jasmine.createSpyObj('mockActivatedRoute', ['data']);
     mockStore.select.and.returnValue(Observable.of([]));
+    mockActivatedRoute.data = Observable.of({});
 
     let component: HomeComponent;
     let fixture: ComponentFixture<HomeComponent>;
@@ -21,10 +22,7 @@ describe('HomeComponent', () => {
             providers: [
                 { provide: Store, useValue: mockStore },
                 { provide: Router, useValue: mockRouter },
-                {
-                    provide: ActivatedRoute,
-                    useValue: new MockActivatedRoute()
-                }
+                { provide: ActivatedRoute, useValue: mockActivatedRoute }
             ]
         })
             .overrideTemplate(HomeComponent, '')

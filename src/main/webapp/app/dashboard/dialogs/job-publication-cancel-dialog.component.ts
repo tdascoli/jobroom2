@@ -15,7 +15,7 @@ export class JobPublicationCancelDialogComponent implements OnInit, OnDestroy {
     @Input() accessToken: string;
 
     jobCancelForm: FormGroup;
-    unsubscribe$ = new Subject<void>();
+    private unsubscribe$ = new Subject<void>();
 
     constructor(private jobPublicationService: JobPublicationService,
                 private fb: FormBuilder,

@@ -1,6 +1,9 @@
 <div class="tab-content--job-room">
     <div class="d-flex flex-row">
         <div class="job-publication__form">
+            <ngb-alert *ngIf="showSuccessSaveMessage" type="success" (close)="showSuccessSaveMessage = false">{{ 'home.tools.job-publication.submit.success' | translate }}</ngb-alert>
+            <ngb-alert *ngIf="showErrorSaveMessage" type="danger" (close)="showErrorSaveMessage = false">{{ 'home.tools.job-publication.submit.error' | translate }}</ngb-alert>
+
             <form [formGroup]="jobPublicationForm" (ngSubmit)="onSubmit()" novalidate>
 
                 <ng-container formGroupName="job">
@@ -44,8 +47,8 @@
                                             translate }}
                                         </option>
                                         <option *ngFor="let educationLevel of educationLevels | keys"
-                                                [ngValue]="educationLevel.key">
-                                            {{'global.education.' + educationLevel.value | translate}}
+                                                [ngValue]="educationLevel.value">
+                                            {{'home.tools.job-publication.education-level.' + educationLevel.value | translate}}
                                         </option>
                                     </select>
                                 </div>
@@ -62,8 +65,8 @@
                                             translate }}
                                         </option>
                                         <option *ngFor="let experience of experiences | keys"
-                                                [ngValue]="experience.key">
-                                            {{'global.experience.' + experience.value | translate}}
+                                                [ngValue]="experience.value">
+                                            {{'home.tools.job-publication.experience.' + experience.value | translate}}
                                         </option>
                                     </select>
                                 </div>
@@ -98,7 +101,7 @@
                                     | translate }}</label>
                                 <div class="form-group__inline">
                                     <div class="radio col-form-label">
-                                        <input formControlName="immediate" type="radio" id="fromNow" value="true"
+                                        <input formControlName="immediate" type="radio" id="fromNow" [value]="true"
                                                (click)="startDatePicker.close()"/>
                                         <label for="fromNow">
                                             {{ 'home.tools.job-publication.publicationStartDate.immediately' | translate
@@ -108,7 +111,7 @@
 
                                     <div class="radio col-form-label">
                                         <input formControlName="immediate" type="radio"
-                                               id="byArrangement" value="false"/>
+                                               id="byArrangement" [value]="false"/>
                                         <label for="byArrangement">
                                             {{ 'home.tools.job-publication.publicationStartDate.by-arrangement' |
                                             translate }}
@@ -148,14 +151,14 @@
                                     translate }}</label>
                                 <div class="form-group__inline">
                                     <div class="radio col-form-label">
-                                        <input type="radio" formControlName="permanent" id="permanent" value="true"/>
+                                        <input type="radio" formControlName="permanent" id="permanent" [value]="true"/>
                                         <label for="permanent">
                                             {{ 'home.tools.job-publication.publicationEndDate.permanent' | translate }}
                                         </label>
                                     </div>
 
                                     <div class="radio col-form-label">
-                                        <input type="radio" formControlName="permanent" id="temporary" value="false"
+                                        <input type="radio" formControlName="permanent" id="temporary" [value]="false"
                                                (click)="endDatePicker.close()"/>
                                         <label for="temporary">
                                             {{ 'home.tools.job-publication.publicationEndDate.temporary' | translate }}
@@ -197,7 +200,7 @@
                                         translate }}
                                     </option>
                                     <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys"
-                                            [ngValue]="drivingLicenceCategory.key">
+                                            [ngValue]="drivingLicenceCategory.value">
                                         {{'global.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
                                     </option>
                                 </select>
@@ -254,8 +257,9 @@
                     <div class="form-group">
                         <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' |
                             translate }}</label>
-                        <div>
-                            <input formControlName="street" type="text" class="form-control" id="unt-street"/>
+                        <div class="input-group">
+                            <input formControlName="street" type="text" class="form-control w-75" id="unt-street"/>
+                            <input formControlName="houseNumber" type="text" class="form-control w-25" id="unt-house-number"/>
                         </div>
                     </div>
 
@@ -302,13 +306,12 @@
                             | translate }}</label>
                         <div>
                             <select formControlName="salutation" class="form-control custom-select" id="kp-anrede">
-                                <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate
-                                    }}
+                                <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate }}
                                 </option>
-                                <option [value]="'global.contactPerson.salutation.MR' | translate">
+                                <option value="MR">
                                     {{ 'global.contactPerson.salutation.MR' | translate }}
                                 </option>
-                                <option [value]="'global.contactPerson.salutation.MS' | translate">
+                                <option value="MS">
                                     {{ 'global.contactPerson.salutation.MS' | translate }}
                                 </option>
                             </select>

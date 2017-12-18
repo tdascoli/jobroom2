@@ -1,8 +1,8 @@
 import {
-    EducationLevel,
-    JobPublication, Status
+    EducationLevel, Experience,
+    JobPublication, Locale, Status
 } from '../../../../../main/webapp/app/shared/job-publication/job-publication.model';
-import { CEFR_Level, DrivingLicenceCategory, Experience } from '../../../../../main/webapp/app/shared';
+import { CEFR_Level, DrivingLicenceCategory } from '../../../../../main/webapp/app/shared';
 
 export function createJobPublication(): JobPublication {
     return {
@@ -36,7 +36,7 @@ export function createJobPublication(): JobPublication {
         job: {
             description: 'qq',
                 drivingLicenseLevel: DrivingLicenceCategory.B,
-                endDate: new Date(),
+                endDate: '2017-12-14',
                 languageSkills: [
                 {
                     code: 'AVAM_2',
@@ -56,7 +56,7 @@ export function createJobPublication(): JobPublication {
                 experience: Experience.LESS_THAN_1_YEAR
             },
             permanent: true,
-                startDate: new Date(),
+                startDate: '2017-12-14',
                 startsImmediately: true,
                 title: 'Test Stelle',
                 workingTimePercentageMax: 80,
@@ -67,7 +67,8 @@ export function createJobPublication(): JobPublication {
             jobroom: true
         },
         status: Status.ACTIVE,
+        locale: Locale.DE,
         accessToken: '832EDF45FEB5CF436897EEE1FA4C6EDE',
-        creationDate: new Date()
+        creationDate: '2017-12-14'
     }
 }
