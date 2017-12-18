@@ -8,7 +8,9 @@ import {
 import { Scheduler } from 'rxjs/Scheduler';
 import { Observable } from 'rxjs/Observable';
 import {
+    CANDIDATE_SEARCH_TOOL_CHANGED,
     CandidateProfileListLoadedAction,
+    CandidateSearchToolChangedAction,
     INIT_CANDIDATE_SEARCH,
     LOAD_NEXT_PAGE,
     LoadNextPageAction,
@@ -59,10 +61,10 @@ export class CandidateSearchEffects {
 
     @Effect()
     loadCandidateList$: Observable<Action> = this.actions$
-        .ofType(SEARCH_CANDIDATES)
+        .ofType(SEARCH_CANDIDATES, CANDIDATE_SEARCH_TOOL_CHANGED)
         .debounceTime(this.debounce || 300, this.scheduler || async)
         .do((action) => this.window.scroll(0, 0))
-        .switchMap((action: SearchCandidatesAction) =>
+        .switchMap((action: SearchCandidatesAction | CandidateSearchToolChangedAction) =>
             this.candidateService.search(toSearchRequest(action))
                 .map(toCandidateProfileListLoadedAction)
                 .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
@@ -128,7 +130,7 @@ function toInitialSearchRequest(state: CandidateSearchState): CandidateSearchReq
     return createCandidateSearchRequestFromFilter(state.searchFilter, 0);
 }
 
-function toSearchRequest(action: SearchCandidatesAction): CandidateSearchRequest {
+function toSearchRequest(action: SearchCandidatesAction | CandidateSearchToolChangedAction): CandidateSearchRequest {
     return createCandidateSearchRequestFromFilter(action.payload, 0);
 }
 

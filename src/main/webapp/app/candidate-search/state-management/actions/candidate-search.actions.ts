@@ -4,6 +4,7 @@ import { CandidateProfile } from '../../services/candidate';
 
 export const INIT_CANDIDATE_SEARCH = 'CANDIDATES:INIT_CANDIDATE_SEARCH';
 export const SEARCH_CANDIDATES = 'CANDIDATES:SEARCH_CANDIDATES';
+export const CANDIDATE_SEARCH_TOOL_CHANGED = 'CANDIDATES:CANDIDATE_SEARCH_TOOL_CHANGED';
 export const LOAD_NEXT_PAGE = 'CANDIDATES:LOAD_NEXT_PAGE';
 export const NEXT_PAGE_LOADED = 'CANDIDATES:NEXT_PAGE_LOADED';
 export const CANDIDATE_LIST_LOADED = 'CANDIDATES:CANDIDATE_LIST_LOADED';
@@ -21,6 +22,13 @@ export class InitCandidateSearchAction implements Action {
 
 export class SearchCandidatesAction implements Action {
     readonly type = SEARCH_CANDIDATES;
+
+    constructor(public payload: CandidateSearchFilter) {
+    }
+}
+
+export class CandidateSearchToolChangedAction implements Action {
+    readonly type = CANDIDATE_SEARCH_TOOL_CHANGED;
 
     constructor(public payload: CandidateSearchFilter) {
     }
@@ -79,6 +87,7 @@ export class SaveScrollYAction implements Action {
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
+    | CandidateSearchToolChangedAction
     | LoadNextPageAction
     | NextPageLoadedAction
     | CandidateProfileListLoadedAction

@@ -1,5 +1,8 @@
 import { candidateSearchReducer } from '../../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
-import { initialState } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
+import {
+    CandidateSearchState,
+    initialState
+} from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import * as actions from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
 import { CandidateProfile } from '../../../../../../../main/webapp/app/candidate-search/services/candidate';
 import { createCandidateProfile } from '../utils';
@@ -94,6 +97,40 @@ describe('candidateSearchReducer', () => {
         expect(newState.loading).toBeTruthy();
         expect(newState.initialState).toBeFalsy();
         verifyUnchanged(newState, state, ['loading', 'searchFilter', 'initialState']);
+    });
+
+    it('should update CandidateSearchState for CANDIDATE_SEARCH_TOOL_CHANGED action', () => {
+        // GIVEN
+        const state: CandidateSearchState = {
+            searchFilter: {
+                skills: ['test'],
+                languageSkills: [],
+                workload: [0, 20]
+            },
+            loading: false,
+            totalCandidateCount: 0,
+            page: 0,
+            candidateProfileList: [],
+            initialState: true,
+            searchError: false,
+            candidateListScrollY: 0
+        };
+
+        const action = new actions.CandidateSearchToolChangedAction({
+            workplace: new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true)
+        });
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchFilter.workplace).toEqual(new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true));
+        expect(newState.searchFilter.skills).toEqual(initialState.searchFilter.skills);
+        expect(newState.searchFilter.workload).toEqual(initialState.searchFilter.workload);
+        expect(newState.loading).toBeTruthy();
+        expect(newState.initialState).toBeFalsy();
+        verifyUnchanged(newState, initialState, ['loading', 'initialState', 'searchFilter']);
+        verifyUnchanged(newState.searchFilter, initialState.searchFilter, ['workplace', 'skills', 'workload']);
     });
 
     it('should update CandidateSearchState for NEXT_PAGE_LOADED action', () => {

@@ -1,11 +1,8 @@
-import {
-    CandidateSearchFilter,
-    CandidateSearchState,
-    initialState
-} from '../state/candidate-search.state';
+import { CandidateSearchState, initialState } from '../state/candidate-search.state';
 import {
     Actions,
     CANDIDATE_LIST_LOADED,
+    CANDIDATE_SEARCH_TOOL_CHANGED,
     HIDE_CANDIDATE_LIST_ERROR,
     NEXT_PAGE_LOADED,
     SAVE_SCROLL_Y,
@@ -39,6 +36,14 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
         case SEARCH_CANDIDATES:
             newState = Object.assign({}, state, {
                 searchFilter: action.payload,
+                loading: true,
+                initialState: false
+            });
+            break;
+        case CANDIDATE_SEARCH_TOOL_CHANGED:
+            const searchFilter = Object.assign({}, initialState.searchFilter, action.payload);
+            newState = Object.assign({}, initialState, {
+                searchFilter,
                 loading: true,
                 initialState: false
             });

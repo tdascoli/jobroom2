@@ -4,10 +4,12 @@ import {
     initialState,
     JobSearchFilter,
     JobSearchQuery,
-    JobSearchState, Sort
+    JobSearchState,
+    Sort
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
+import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../../../../../main/webapp/app/shared/constants/job-search.constants';
 
 describe('jobSearchReducer', () => {
     it('should not change state for undefined action', () => {
@@ -42,6 +44,50 @@ describe('jobSearchReducer', () => {
         expect(newState.searchQuery).toEqual(searchQuery);
         expect(newState.loading).toBeTruthy();
         verifyUnchanged(newState, state, ['loading', 'searchQuery']);
+    });
+
+    it('should update JobSearchState for JOB_SEARCH_TOOL_CHANGED action', () => {
+        // GIVEN
+        const state: JobSearchState = {
+                jobListScrollY: 0,
+                loading: false,
+                searchError: false,
+                searchQuery: {
+                    baseQuery: [
+                        new TypeaheadMultiselectModel('some-free-text', 'x1', 'x1')
+                    ],
+                    localityQuery: []
+                },
+                searchFilter: {
+                    contractType: ContractType.PERMANENT,
+                    workingTime: [0, 80],
+                    sort: Sort.DATE_ASC,
+                    onlineSince: ONLINE_SINCE_DEFAULT_VALUE - 1
+                },
+                totalJobCount: 0,
+                page: 0,
+                jobList: [],
+                initialState: false
+            }
+        ;
+        const searchQuery: JobSearchQuery = {
+            baseQuery: [
+                new TypeaheadMultiselectModel('classification', 'c1', 'C1'),
+                new TypeaheadMultiselectModel('occupation', 'o1', 'O1'),
+                new TypeaheadMultiselectModel('free-text', 'q1', 'q1')
+            ],
+            localityQuery: []
+        };
+        const action = new actions.JobSearchToolChangedAction(searchQuery);
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.searchQuery).toEqual(searchQuery);
+        expect(newState.loading).toBeTruthy();
+        expect(newState.initialState).toBeFalsy();
+        verifyUnchanged(newState, initialState, ['loading', 'searchQuery', 'initialState']);
     });
 
     it('should update JobSearchState for FILTER_CHANGED action', () => {

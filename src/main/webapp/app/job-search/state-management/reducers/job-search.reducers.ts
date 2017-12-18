@@ -4,6 +4,7 @@ import {
     FILTER_CHANGED,
     HIDE_JOB_LIST_ERROR,
     JOB_LIST_LOADED,
+    JOB_SEARCH_TOOL_CHANGED,
     LOAD_NEXT_PAGE,
     NEXT_PAGE_LOADED,
     SAVE_SCROLL_Y,
@@ -23,7 +24,14 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
             const searchFilter = Object.assign({}, action.payload);
             newState = Object.assign({}, state, { searchFilter }, { loading: true });
             break;
-
+        case JOB_SEARCH_TOOL_CHANGED:
+            const toolSearchQuery = Object.assign({}, action.payload);
+            newState = Object.assign({}, initialState, {
+                searchQuery: toolSearchQuery,
+                loading: true,
+                initialState: false
+            });
+            break;
         case JOB_LIST_LOADED:
             newState = Object.assign({}, state, {
                 jobList: [...action.payload.jobList],
@@ -31,7 +39,7 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
                 searchError: false,
                 page: action.payload.page,
                 initialState: false,
-                loading: false,
+                loading: false
             });
             break;
 

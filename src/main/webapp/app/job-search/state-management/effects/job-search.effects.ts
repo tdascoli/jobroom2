@@ -1,15 +1,22 @@
 import { Inject, Injectable, InjectionToken, Optional } from '@angular/core';
 import { Actions, Effect } from '@ngrx/effects';
-import { JobSearchRequest, JobService, Job } from '../../services';
+import { Job, JobSearchRequest, JobService } from '../../services';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import { ResponseWrapper } from '../../../shared/model/response-wrapper.model';
-import { getJobSearchState, JobSearchState, LOAD_NEXT_PAGE, SHOW_JOB_LIST_ERROR } from '../index';
+import {
+    getJobSearchState,
+    JobSearchState,
+    LOAD_NEXT_PAGE,
+    SHOW_JOB_LIST_ERROR
+} from '../index';
 import {
     FILTER_CHANGED,
     FilterChangedAction,
     INIT_JOB_SEARCH,
+    JOB_SEARCH_TOOL_CHANGED,
     JobListLoadedAction,
+    JobSearchToolChangedAction,
     LoadNextPageAction,
     NEXT_PAGE_LOADED,
     NextPageLoadedAction,
@@ -22,16 +29,21 @@ import { async } from 'rxjs/scheduler/async';
 import { createJobSearchRequest } from '../util/search-request-mapper';
 import { Router } from '@angular/router';
 import {
+    LOAD_NEXT_ITEMS_PAGE,
+    LoadNextItemsPageAction,
+    LoadNextItemsPageErrorAction,
     NEXT_ITEM_LOADED,
     NextItemLoadedAction,
-    LOAD_NEXT_ITEMS_PAGE, NextItemsPageLoadedAction, LoadNextItemsPageErrorAction,
+    NextItemsPageLoadedAction,
 } from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
-import { LoadNextItemsPageAction } from '../../../shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 
 export const JOB_SEARCH_DEBOUNCE = new InjectionToken<number>('JOB_SEARCH_DEBOUNCE');
 export const JOB_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('JOB_SEARCH_SCHEDULER');
 
-type LoadJobTriggerAction = ToolbarChangedAction | FilterChangedAction;
+type LoadJobTriggerAction =
+    ToolbarChangedAction
+    | FilterChangedAction
+    | JobSearchToolChangedAction;
 
 const JOB_DETAIL_FEATURE = 'job-detail';
 
@@ -55,7 +67,7 @@ export class JobSearchEffects {
 
     @Effect()
     loadJobList$: Observable<Action> = this.actions$
-        .ofType(TOOLBAR_CHANGED, FILTER_CHANGED)
+        .ofType(TOOLBAR_CHANGED, FILTER_CHANGED, JOB_SEARCH_TOOL_CHANGED)
         .debounceTime(this.debounce || 300, this.scheduler || async)
         .withLatestFrom(this.store.select(getJobSearchState))
         .switchMap(([action, state]) =>
@@ -132,7 +144,7 @@ function toNextPageRequest(state: JobSearchState): JobSearchRequest {
 }
 
 function toJobSearchRequest(action: LoadJobTriggerAction, state: JobSearchState): JobSearchRequest {
-    if (action.type === TOOLBAR_CHANGED) {
+    if (action.type === TOOLBAR_CHANGED || action.type === JOB_SEARCH_TOOL_CHANGED) {
         return createJobSearchRequest(action.payload, state.searchFilter);
     } else {
         return createJobSearchRequest(state.searchQuery, action.payload);

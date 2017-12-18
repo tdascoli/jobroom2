@@ -7,7 +7,9 @@ import * as jobSearch from '../../../job-search/state-management/actions/job-sea
 import * as candidateSearch from '../../../candidate-search/state-management/actions/candidate-search.actions';
 import {
     JOB_SEARCH_TOOL_COUNT,
-    JOB_SEARCH_TOOL_SUBMITTED, JobSearchToolCountAction, JobSearchToolCountedAction,
+    JOB_SEARCH_TOOL_SUBMITTED,
+    JobSearchToolCountAction,
+    JobSearchToolCountedAction,
     JobSearchToolSubmittedAction
 } from '../actions/job-search-tool.actions';
 import {
@@ -20,9 +22,7 @@ import {
 import { CandidateService } from '../../../candidate-search/services/candidate.service';
 import { createCandidateSearchRequestFromToolState } from '../../../candidate-search/state-management/util/search-request-mapper';
 import { JobService } from '../../../job-search/services/job.service';
-import {
-    createJobSearchRequestFromToolState
-} from '../../../job-search/state-management/util/search-request-mapper';
+import { createJobSearchRequestFromToolState } from '../../../job-search/state-management/util/search-request-mapper';
 
 @Injectable()
 export class HomeEffects {
@@ -31,20 +31,20 @@ export class HomeEffects {
     jobSearchToolSubmitted$: Observable<Action> = this.actions$
         .ofType(JOB_SEARCH_TOOL_SUBMITTED)
         .do((action: JobSearchToolSubmittedAction) => this.router.navigate(['/job-search']))
-        .map((action: JobSearchToolSubmittedAction) => new jobSearch.ToolbarChangedAction(action.payload));
+        .map((action: JobSearchToolSubmittedAction) => new jobSearch.JobSearchToolChangedAction(action.payload));
 
     @Effect()
     candidateSearchToolSubmitted$: Observable<Action> = this.actions$
         .ofType(CANDIDATE_SEARCH_TOOL_SUBMITTED)
         .do((action: CandidateSearchToolSubmittedAction) => this.router.navigate(['/candidate-search']))
-        .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.SearchCandidatesAction(action.payload));
+        .map((action: CandidateSearchToolSubmittedAction) => new candidateSearch.CandidateSearchToolChangedAction(action.payload));
 
     @Effect()
     candidateSearchToolCount$: Observable<Action> = this.actions$
         .ofType(CANDIDATE_SEARCH_TOOL_COUNT)
         .switchMap((action: CandidateSearchToolCountAction) => {
-            const req = createCandidateSearchRequestFromToolState(action.payload);
-            return this.candidateService.count(req)
+                const req = createCandidateSearchRequestFromToolState(action.payload);
+                return this.candidateService.count(req)
                     .map((totalCount: number) => new CandidateSearchToolCountedAction(totalCount))
                     .catch((err: any) => Observable.of(new CandidateSearchToolCountedAction(0)))
             }
