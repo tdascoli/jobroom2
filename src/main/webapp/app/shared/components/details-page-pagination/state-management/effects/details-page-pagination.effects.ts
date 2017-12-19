@@ -61,10 +61,18 @@ export class DetailsPagePaginationEffects {
                     .map((action) => null))
                 .take(1);
 
-            nextItemObs.first().subscribe((profile) =>
-                this.loggingService.logProfileEvent(
-                    { event: 'nav', id: profile.id, dir: direction, index: nextItemIndex }
-                )
+            nextItemObs.first().subscribe((profile) => {
+                    if (profile) {
+                        this.loggingService.logProfileEvent(
+                            {
+                                event: 'nav',
+                                id: profile.id,
+                                dir: direction,
+                                index: nextItemIndex
+                            }
+                        )
+                    }
+                }
             );
 
             return nextItemObs;

@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { StoreModule } from '@ngrx/store';
 import { candidateSearchReducer } from '../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
+import { CandidateLoggingService } from '../../../../../../main/webapp/app/candidate-search/services/candidate.logging.service';
+import { Location } from '@angular/common';
 
 describe('CandidateDetailComponent', () => {
     let component: CandidateDetailComponent;
@@ -27,6 +29,8 @@ describe('CandidateDetailComponent', () => {
     const mockReferenceService = jasmine.createSpyObj('mockReferenceService', ['resolveJobCenter']);
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['findCandidate']);
     const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['findOccupationLabelsByAvamCode']);
+    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logProfileEvent']);
+    const mockLocation = jasmine.createSpyObj('mockLocation', ['subscribe']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
@@ -46,6 +50,8 @@ describe('CandidateDetailComponent', () => {
                     onLangChange: Observable.never()
                 }
                 },
+                { provide: CandidateLoggingService, useValue: mockCandidateLoggingService },
+                { provide: Location, useValue: mockLocation }
             ]
         })
             .overrideTemplate(CandidateDetailComponent, '')

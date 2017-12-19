@@ -28,6 +28,7 @@ import {
 } from '../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 import { WINDOW } from '../../../../../../../main/webapp/app/shared/shared-libs.module';
 import { ReplaySubject } from 'rxjs';
+import { CandidateLoggingService } from '../../../../../../../main/webapp/app/candidate-search/services/candidate.logging.service';
 
 describe('CandidateSearchEffects', () => {
     let effects: CandidateSearchEffects;
@@ -38,6 +39,8 @@ describe('CandidateSearchEffects', () => {
     const mockRouter = new MockRouter();
 
     const mockWindow = jasmine.createSpyObj('mockWindow', ['scroll']);
+
+    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logProfileEvent', 'logSearchEvent']);
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -51,7 +54,8 @@ describe('CandidateSearchEffects', () => {
                 { provide: Router, useValue: mockRouter },
                 { provide: CANDIDATE_SEARCH_SCHEDULER, useFactory: getTestScheduler },
                 { provide: CANDIDATE_SEARCH_DEBOUNCE, useValue: 30 },
-                { provide: WINDOW, useValue: mockWindow }
+                { provide: WINDOW, useValue: mockWindow },
+                { provide: CandidateLoggingService, useValue: mockCandidateLoggingService }
             ],
         });
 

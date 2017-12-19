@@ -11,11 +11,14 @@ import {
     NextItemLoadedAction,
     NextItemErrorAction, NextItemsPageLoadedAction, LoadNextItemsPageErrorAction
 } from '../../../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
+import { CandidateLoggingService } from '../../../../../../../../../main/webapp/app/candidate-search/services/candidate.logging.service';
 
 describe('DetailsPagePaginationEffects', () => {
     let effects: DetailsPagePaginationEffects;
     let actions$: Observable<any>;
     let store: Store<any>;
+
+    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logProfileEvent', 'logSearchEvent'])
 
     beforeEach(() => {
         TestBed.configureTestingModule({
@@ -24,7 +27,8 @@ describe('DetailsPagePaginationEffects', () => {
             ],
             providers: [
                 DetailsPagePaginationEffects,
-                provideMockActions(() => actions$)
+                provideMockActions(() => actions$),
+                { provide: CandidateLoggingService, useValue: mockCandidateLoggingService }
             ],
         });
 
