@@ -135,6 +135,10 @@
         "field": {
             "id": "ID"
         },
+        "filter": {
+            "from": "da",
+            "to": "a"
+        },
         "form": {
             "confirmpassword": "Conferma nuova password",
             "confirmpassword.placeholder": "Conferma nuova password",

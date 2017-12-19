@@ -135,6 +135,10 @@
         "field": {
             "id": "ID"
         },
+        "filter": {
+            "from": "from",
+            "to": "to"
+        },
         "form": {
             "confirmpassword": "New password confirmation",
             "confirmpassword.placeholder": "Please confirm your new password",

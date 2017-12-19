@@ -4,7 +4,6 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 @Component({
     selector: 'jr2-range-input',
     templateUrl: './range-input.component.html',
-    styleUrls: ['./range-input.component.scss'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => RangeInputComponent),
@@ -63,7 +62,7 @@ export class RangeInputComponent implements OnInit, ControlValueAccessor {
     }
 
     private _onChange = (_: any) => {
-    }
+    };
     private _onTouched = () => {
     }
 }

@@ -1,11 +1,20 @@
-<div class="form-group">
-    <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select" name="workingTimeMin" id="workingTimeMin"
-            [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
-        <option *ngFor="let i of options" [value]="i" [disabled]="i > range[1]">{{ i }} %</option>
-    </select>
-    <ng-container *ngIf="!hideDelimiter">-</ng-container>
-    <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)" class="form-control form-control-sm custom-select" name="workingTimeMax" id="workingTimeMax"
-            [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
-        <option *ngFor="let i of options" [value]="i" [disabled]="i < range[0]">{{ i }} %</option>
-    </select>
+<div class="form-row">
+    <div class="col">
+        <ng-container *ngIf="!hideDelimiter"><label class="small">{{'global.filter.from' | translate}}</label>
+        </ng-container>
+        <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select"
+                name="workingTimeMin" id="workingTimeMin"
+                [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
+            <option *ngFor="let i of options" [value]="i" [disabled]="i > range[1]">{{ i }} %</option>
+        </select>
+    </div>
+    <div class="col">
+        <ng-container *ngIf="!hideDelimiter"><label class="small">{{'global.filter.to' | translate}}</label>
+        </ng-container>
+        <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)"
+                class="form-control form-control-sm custom-select" name="workingTimeMax" id="workingTimeMax"
+                [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
+            <option *ngFor="let i of options" [value]="i" [disabled]="i < range[0]">{{ i }} %</option>
+        </select>
+    </div>
 </div>

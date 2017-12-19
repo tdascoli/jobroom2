@@ -135,6 +135,10 @@
         "field": {
             "id": "ID"
         },
+        "filter": {
+            "from": "de",
+            "to": "\u00e0"
+        },
         "form": {
             "confirmpassword": "Confirmer le nouveau mot de passe",
             "confirmpassword.placeholder": "Confirmez votre nouveau mot de passe",

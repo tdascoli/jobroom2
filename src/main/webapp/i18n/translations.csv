@@ -258,6 +258,8 @@ global,global.experience.MORE_THAN_1_YEAR,Mehr als 1 Jahr,More than 1 year,Plus 
 global,global.experience.MORE_THAN_3_YEARS,Mehr als 3 Jahre,More than 3 years,Plus de trois ans,Più di 3 anni
 global,global.experience.NONE,Keine Erfahrung,No experience,Aucune expérience,Nessuna esperienza
 global,global.field.id,ID,ID,ID,ID
+global,global.filter.from,von,from,de,da
+global,global.filter.to,bis,to,à,a
 global,global.form.confirmpassword,Neues Passwort bestätigen,New password confirmation,Confirmer le nouveau mot de passe,Conferma nuova password
 global,global.form.confirmpassword.placeholder,Bestätigen Sie Ihr neues Passwort,Please confirm your new password,Confirmez votre nouveau mot de passe,Conferma nuova password
 global,global.form.email,Email Adresse,Email address,Adresse e-mail,Email
