@@ -44,7 +44,6 @@ export class HomeComponent {
         this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
 
-        // TODO: refactor ?
         this.jobPublication$ = this.route.data
             .map((data) => data['jobPublication']);
     }

@@ -306,7 +306,8 @@
                             | translate }}</label>
                         <div>
                             <select formControlName="salutation" class="form-control custom-select" id="kp-anrede">
-                                <option value="null" selected>{{ 'home.tools.job-publication.no-selection' | translate }}
+                                <option [ngValue]="null">
+                                    {{ 'home.tools.job-publication.no-selection' | translate }}
                                 </option>
                                 <option value="MR">
                                     {{ 'global.contactPerson.salutation.MR' | translate }}
@@ -445,7 +446,7 @@
                                 [disabled]="!disclaimer.checked || jobPublicationForm.invalid"
                                 class="btn btn-primary btn-lg">{{ 'home.tools.job-publication.submit' | translate }}
                         </button>
-                        <button (click)="resetForm()" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' |
+                        <button type="button" (click)="resetForm()" class="btn btn-secondary btn-lg">{{ 'home.tools.job-publication.reset' |
                             translate }}
                         </button>
                     </div>

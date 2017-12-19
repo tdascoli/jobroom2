@@ -14,23 +14,23 @@ import { Subject } from 'rxjs/Subject';
 import {
     DrivingLicenceCategory, ResponseWrapper,
 } from '../../../shared';
-import { NgbDateStruct } from '@ng-bootstrap/ng-bootstrap';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {
     FormatterFn,
     OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn
-} from '../../../shared/reference-service/occupation-presentation.service';
+} from '../../../shared/reference-service';
 import { Translations } from './zip-code/zip-code.component';
-import { EMAIL_REGEX, URL_REGEX } from '../../../shared/validation/regex-patterns';
+import { EMAIL_REGEX, URL_REGEX } from '../../../shared';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
-import { PHONE_NUMBER_REGEX, POSTBOX_NUMBEB_REGEX } from '../../../shared/index';
+import { PHONE_NUMBER_REGEX, POSTBOX_NUMBEB_REGEX } from '../../../shared';
 import { EducationLevel, Experience, JobPublication } from '../../../shared/job-publication/job-publication.model';
 import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
 import { Subscriber } from 'rxjs/Subscriber';
-import * as moment from 'moment';
+import { DateUtils } from '../../../shared';
+import { JobPublicationMapper } from './job-publication-mapper';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -54,8 +54,8 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     jobPublicationForm: FormGroup;
     publicationStartDateByArrangement = true;
     publicationEndDateIsPermanent = true;
-    publicationStartDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
-    publicationEndDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct();
+    publicationStartDateMin = DateUtils.mapDateToNgbDateStruct();
+    publicationEndDateMin = DateUtils.mapDateToNgbDateStruct();
 
     fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
     occupationFormatter: FormatterFn<OccupationOption>;
@@ -66,19 +66,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     showErrorSaveMessage: boolean;
 
     private unsubscribe$ = new Subject<void>();
-
-    private static mapDateToNgbDateStruct(source?: Date): NgbDateStruct {
-        const date = source ? source : new Date();
-        return {
-            year: date.getFullYear(),
-            month: date.getMonth() + 1,
-            day: date.getDate()
-        };
-    }
-
-    private static mapNgbDateStructToDate(dateStruct: NgbDateStruct): Date {
-        return new Date(dateStruct.year, dateStruct.month - 1, dateStruct.day);
-    }
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private fb: FormBuilder,
@@ -95,10 +82,31 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.setupCountries();
 
         const formModel = this.jobPublication
-            ? this.populateFormWithJobPublicationData(this.jobPublication)
+            ? JobPublicationMapper.mapJobPublicationToFormModel(this.jobPublication)
             : this.createDefaultFormModel();
 
-        this.jobPublicationForm = this.fb.group({
+        this.jobPublicationForm = this.createJobPublicationForm(formModel);
+
+        this.validateCheckboxRelatedField('application.electronic',
+            ['application.email', 'application.url']);
+        this.validateCheckboxRelatedField('application.phoneEnabled', ['application.phoneNumber']);
+        this.validateElectronicApplicationFields('application.email',
+            'application.url', Validators.pattern(URL_REGEX));
+        this.validateElectronicApplicationFields('application.url',
+            'application.email', Validators.pattern(EMAIL_REGEX));
+
+        this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
+            (disabled) => this.publicationStartDateByArrangement = disabled);
+        this.configureDateInput('job.publicationEndDate.date', 'job.publicationEndDate.permanent',
+            (disabled) => this.publicationEndDateIsPermanent = disabled);
+        this.updatePublicationStartDateRelatedField();
+
+        this.validateTextField('job.description', this.JOB_DESCRIPTION_MAX_LENGTH);
+        this.validateTextField('application.additionalInfo', this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH);
+    }
+
+    private createJobPublicationForm(formModel: any): FormGroup {
+        return this.fb.group({
             job: this.fb.group({
                 title: [formModel.job.title, Validators.required],
                 occupation: this.fb.group({
@@ -169,23 +177,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 eures: [formModel.publication.eures],
             })
         });
-
-        this.validateCheckboxRelatedField('application.electronic',
-            ['application.email', 'application.url']);
-        this.validateCheckboxRelatedField('application.phoneEnabled', ['application.phoneNumber']);
-        this.validateElectronicApplicationFields('application.email',
-            'application.url', Validators.pattern(URL_REGEX));
-        this.validateElectronicApplicationFields('application.url',
-            'application.email', Validators.pattern(EMAIL_REGEX));
-
-        this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
-            (disabled) => this.publicationStartDateByArrangement = disabled);
-        this.configureDateInput('job.publicationEndDate.date', 'job.publicationEndDate.permanent',
-            (disabled) => this.publicationEndDateIsPermanent = disabled);
-        this.updatePublicationStartDateRelatedField();
-
-        this.validateTextField('job.description', this.JOB_DESCRIPTION_MAX_LENGTH);
-        this.validateTextField('application.additionalInfo', this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH);
     }
 
     private createDefaultFormModel(): any {
@@ -210,9 +201,10 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 drivingLicenseLevel: null,
                 location: {
                     countryCode: this.SWITZ_KEY,
-                    additionalDetails: ''
+                    additionalDetails: '',
+                    zipCode: ''
                 },
-                languageSkills: null
+                languageSkills: []
             },
             company: {
                 name: '',
@@ -222,7 +214,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 countryCode: this.SWITZ_KEY
             },
             contact: {
-                salutation: '',
+                salutation: null,
                 firstName: '',
                 lastName: '',
                 phoneNumber: '',
@@ -242,74 +234,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 eures: false
             }
         };
-    }
-
-    private populateFormWithJobPublicationData(jobPublication: JobPublication): any {
-        const value: any = Object.assign({}, jobPublication);
-        const workload = [jobPublication.job.workingTimePercentageMin,
-            jobPublication.job.workingTimePercentageMax];
-
-        value.job.occupation.occupationSuggestion = {
-            key: jobPublication.idAvam,
-            label: jobPublication.job.occupation.avamOccupation
-        } as OccupationOption;
-
-        value.job.languageSkills = value.job.languageSkills
-            .map((languageSkill) => ({
-                code: languageSkill.code,
-                spoken: languageSkill.spokenLevel,
-                written: languageSkill.writtenLevel
-            }));
-
-        Object.assign(value.job.location, {
-            zipCode: {
-                zip: jobPublication.job.location.zipCode,
-                city: jobPublication.job.location.city,
-                communalCode: jobPublication.job.location.communalCode
-            }
-        });
-
-        Object.assign(value.job, {
-            workload,
-            publicationStartDate: {
-                immediate: jobPublication.job.startsImmediately,
-                date: this.dateStringToToNgbDateStruct(jobPublication.job.startDate)
-            },
-            publicationEndDate: {
-                permanent: jobPublication.job.permanent,
-                date: this.dateStringToToNgbDateStruct(jobPublication.job.endDate)
-            },
-        });
-
-        Object.assign(value.company, {
-            zipCode: {
-                zip: jobPublication.company.zipCode,
-                city: jobPublication.company.city,
-            },
-            postboxZipCode: {
-                zip: jobPublication.company.postboxZipCode,
-                city: jobPublication.company.postboxCity,
-            }
-        });
-
-        return value;
-    }
-
-    private dateStringToToNgbDateStruct(date: string): NgbDateStruct {
-        if (!date) {
-            return null;
-        }
-
-        const [year, month, day] = date.split('-');
-        return {
-            year: +year,
-            month: +month,
-            day: +day
-        };
-    }
-
-    private convertNgbDateStructToString(date: NgbDateStruct): string {
-        return date ? moment(JobPublicationToolComponent.mapNgbDateStructToDate(date)).format('YYYY-MM-DD') : null;
     }
 
     ngOnDestroy(): void {
@@ -385,14 +309,14 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             .subscribe((value) => {
                 if (value) {
                     const publicationEndDateControl = this.jobPublicationForm.get('job.publicationEndDate.date');
-                    const publicationStartDate = JobPublicationToolComponent.mapNgbDateStructToDate(value);
-                    const publicationEndDate = JobPublicationToolComponent
-                        .mapNgbDateStructToDate(publicationEndDateControl.value ? publicationEndDateControl.value : this.publicationEndDateMin);
+                    const publicationStartDate = DateUtils.mapNgbDateStructToDate(value);
+                    const publicationEndDate = DateUtils.mapNgbDateStructToDate(
+                        publicationEndDateControl.value ? publicationEndDateControl.value : this.publicationEndDateMin);
 
                     if (publicationStartDate > publicationEndDate) {
                         publicationEndDateControl.setValue(null);
                     }
-                    this.publicationEndDateMin = JobPublicationToolComponent.mapDateToNgbDateStruct(publicationStartDate);
+                    this.publicationEndDateMin = DateUtils.mapDateToNgbDateStruct(publicationStartDate);
                 }
             });
     }
@@ -416,54 +340,8 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     onSubmit(): void {
-        const jobPublicationForm = JSON.parse(JSON.stringify(this.jobPublicationForm.value)); // deep copy
-        const jobPublication: JobPublication = Object.assign({}, jobPublicationForm);
-
-        const jobFormOccupation = this.jobPublicationForm.get('job.occupation.occupationSuggestion');
-        if (jobFormOccupation) {
-            jobPublication.job.occupation.avamOccupation = jobFormOccupation.value.label;
-        }
-
-        jobPublication.job.languageSkills = jobPublicationForm.job.languageSkills
-            .filter((languageSkill) => languageSkill.code && languageSkill.code.length)
-            .map((languageSkill) => ({
-                code: languageSkill.code,
-                spokenLevel: languageSkill.spoken,
-                writtenLevel: languageSkill.written
-            }));
-
-        Object.assign(jobPublication.job.location, {
-            zipCode: jobPublicationForm.job.location.zipCode.zip,
-            city: jobPublicationForm.job.location.zipCode.city,
-            communalCode: jobPublicationForm.job.location.zipCode.communalCode
-        });
-
-        Object.assign(jobPublication.job, {
-            workingTimePercentageMin: jobPublicationForm.job.workload[0],
-            workingTimePercentageMax: jobPublicationForm.job.workload[1],
-            startsImmediately: jobPublicationForm.job.publicationStartDate.immediate,
-            startDate: this.convertNgbDateStructToString(jobPublicationForm.job.publicationStartDate.date),
-            permanent: jobPublicationForm.job.publicationEndDate.permanent,
-            endDate: this.convertNgbDateStructToString(jobPublicationForm.job.publicationEndDate.date),
-        });
-
-        Object.assign(jobPublication.company, {
-            zipCode: jobPublicationForm.company.zipCode.zip,
-            city: jobPublicationForm.company.zipCode.city
-        });
-
-        if (jobPublicationForm.company.postboxZipCode) {
-            Object.assign(jobPublication.company, {
-                postboxZipCode: jobPublicationForm.company.postboxZipCode.zip,
-                postboxCity: jobPublicationForm.company.postboxZipCode.city
-            });
-        }
-
-        delete jobPublication.idAvam;
-        delete (<any> jobPublication).job.occupation.occupationSuggestion;
-        delete (<any> jobPublication).job.workload;
-        delete (<any> jobPublication).job.publicationStartDate;
-        delete (<any> jobPublication).job.publicationEndDate;
+        const jobPublication = JobPublicationMapper.mapJobPublicationFormToJobPublication(
+            this.jobPublicationForm.value);
 
         this.jobPublicationService.save(jobPublication)
             .subscribe(this.createSaveSubscriber());
@@ -495,6 +373,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         const textFieldControl = this.jobPublicationForm.get(textFieldPath);
         textFieldControl.valueChanges
             .takeUntil(this.unsubscribe$)
+            .map((value) => value ? value : '')
             .filter((value) => value.length > maxLength)
             .subscribe((value) =>
                 textFieldControl.setValue(value.substr(0, maxLength)));
@@ -517,16 +396,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     resetForm(): void {
-        this.jobPublicationForm.reset({
-            job: {
-                workload: [0, 100],
-                location: {
-                    countryCode: this.SWITZ_KEY
-                }
-            },
-            company: {
-                countryCode: this.SWITZ_KEY
-            }
-        });
+        this.jobPublicationForm.reset(this.createDefaultFormModel());
     }
 }

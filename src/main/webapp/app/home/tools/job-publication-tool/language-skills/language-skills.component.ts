@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import {
     AbstractControl,
     FormArray,
@@ -6,7 +6,8 @@ import {
     FormGroup,
     ValidationErrors
 } from '@angular/forms';
-import { CEFR_Level, LanguageSkill } from '../../../../shared/model/shared-types';
+import { CEFR_Level, LanguageSkill } from '../../../../shared';
+import { Subscription } from 'rxjs/Subscription';
 
 const MAX_LANGUAGE_OPTIONS_NUM = 5;
 
@@ -15,12 +16,14 @@ const MAX_LANGUAGE_OPTIONS_NUM = 5;
     templateUrl: './language-skills.component.html',
     styleUrls: []
 })
-export class LanguageSkillsComponent implements OnInit {
+export class LanguageSkillsComponent implements OnInit, OnDestroy {
     @Input() group: FormGroup;
     @Input() controlName: string;
     @Input() languageOptions: Array<string>;
 
     languageLevels = CEFR_Level;
+
+    private subscription: Subscription;
 
     constructor(private fb: FormBuilder) {
     }
@@ -35,6 +38,26 @@ export class LanguageSkillsComponent implements OnInit {
         }
         this.group.removeControl(this.controlName);
         this.group.addControl(this.controlName, new FormArray(value));
+
+        this.registerRemovingEmptyItems();
+    }
+
+    /*
+        It's a trick. FormArray.reset() does not care about array length, so when we reset to an empty array
+        (e.g.: formArray.reset([]))
+        it just resets all its values, but array length remains the same :(
+     */
+    private registerRemovingEmptyItems() {
+        this.subscription = this.group.get(this.controlName).valueChanges
+            .filter((change: any[]) => change && change.length > 1)
+            .filter((change: any[]) => change.every((el) => !el.code))
+            .subscribe((change: any[]) => {
+                this.removeByIndex(change.length - 1);
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.subscription.unsubscribe();
     }
 
     addNewLanguageSkill() {

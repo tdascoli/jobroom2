@@ -1,7 +1,7 @@
 import { LanguageSkillsComponent } from '../../../../../../../../main/webapp/app/home/tools/job-publication-tool/language-skills/language-skills.component';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormArray, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { CEFR_Level } from '../../../../../../../../main/webapp/app/shared/model/shared-types';
+import { CEFR_Level } from '../../../../../../../../main/webapp/app/shared';
 
 describe('LanguageSkillsComponent', () => {
     let component: LanguageSkillsComponent;
@@ -45,17 +45,12 @@ describe('LanguageSkillsComponent', () => {
     });
 
     describe('addNewLanguageSkill', () => {
-        it('should add an empty language skill', () => {
+        it('should not add second empty language skill', () => {
             component.ngOnInit();
 
             component.addNewLanguageSkill();
             const formArray = component.group.get('languageSkills');
             expect(formArray.value).toEqual([
-                {
-                    'code': null,
-                    'spoken': null,
-                    'written': null
-                },
                 {
                     'code': null,
                     'spoken': null,
