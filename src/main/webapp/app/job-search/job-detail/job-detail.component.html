@@ -76,7 +76,8 @@
                 <span *ngIf="job.startDate" class="badge badge-yellow" translate="job-detail.startDate" [translateParams]="{date: job.startDate | jr2Date}"></span>
                 <span *ngIf="!job.startDate" class="badge badge-yellow">{{'job-detail.startsImmediately.' +  job.startsImmediately | translate}}</span>
                 <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
-                <span *ngIf="!job.permanent && job.endDate" class="badge badge-yellow" translate="job-detail.endDate" [translateParams]="{date: job.endDate | jr2Date}"></span>
+                <span *ngIf="!job.permanent && !!job.endDate" class="badge badge-yellow" translate="job-detail.endDate"
+                      [translateParams]="{date: job.endDate | jr2Date}"></span>
                 <span *ngIf="!job.permanent && !job.endDate" class="badge badge-yellow">{{'job-search.job-search-list-item.badge.temporary' | translate}}</span>
             </div>
 
