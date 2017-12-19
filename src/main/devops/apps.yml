@@ -2,8 +2,8 @@ version: '3.3'
 services:
     jobroom-app:
         build: dockerfiles/jobroom
-        image: localhost:5000/docker_jobroom-app
-        env_file: env.properties
+        image: localhost:5000/jr2_jobroom-app
+        env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
@@ -18,8 +18,8 @@ services:
                 constraints: [node.labels.type == java]
     jobservice-app:
         build: dockerfiles/jobservice
-        image: localhost:5000/docker_jobservice-app
-        env_file: env.properties
+        image: localhost:5000/jr2_jobservice-app
+        env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
@@ -34,8 +34,8 @@ services:
                 constraints: [node.labels.type == java]
     referenceservice-app:
         build: dockerfiles/referenceservice
-        image: localhost:5000/docker_referenceservice-app
-        env_file: env.properties
+        image: localhost:5000/jr2_referenceservice-app
+        env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
@@ -50,8 +50,8 @@ services:
                 constraints: [node.labels.type == java]
     candidateservice-app:
         build: dockerfiles/candidateservice
-        image: localhost:5000/docker_candidateservice-app
-        env_file: env.properties
+        image: localhost:5000/jr2_candidateservice-app
+        env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
@@ -66,8 +66,8 @@ services:
                 constraints: [node.labels.type == java]
     jobroom-batch:
         build: dockerfiles/jobroom_batch
-        image: localhost:5000/docker_jobroom-batch
-        env_file: env.properties
+        image: localhost:5000/jr2_jobroom-batch
+        env_file: apps-env.properties
         environment:
             - SPRING_PROFILES_ACTIVE=development
             - SPRING_APPLICATION_NAME=jobroom_batch
@@ -86,9 +86,10 @@ services:
                 constraints: [node.labels.type == java]
     jobpublicationservice-app:
             build: dockerfiles/jobpublicationservice
-            image: localhost:5000/docker_jobpublicationservice-app
-            env_file: env.properties
+            image: localhost:5000/jr2_jobpublicationservice-app
+            env_file: apps-env.properties
             environment:
+                - LIQUIBASE_ENABLED=false
                 - LIQUIBASE_DROPFIRST=false
             ports:
                 - 8447:8447

@@ -37,13 +37,13 @@ task prepareDockerBuild {
 
 task docker_build(type: Exec) {
     dependsOn 'prepareDockerBuild'
-    commandLine 'docker-compose', 'build'
+    commandLine 'docker-compose', '-f', "apps.yml", 'build'
     workingDir "${buildDir}/docker/"
 }
 
 task docker_push(type: Exec) {
     dependsOn 'docker_build'
-    commandLine 'docker-compose', 'push'
+    commandLine 'docker-compose', '-f', "apps.yml", 'push'
     workingDir "${buildDir}/docker/"
 }
 
@@ -53,7 +53,7 @@ task build {
 
 task deploy(type: Exec) {
     dependsOn 'build'
-    commandLine 'docker', 'stack', 'deploy', '-c', "${buildDir}/docker/docker-compose.yml", 'dev'
+    commandLine 'docker', 'stack', 'deploy', '-c', "${buildDir}/docker/apps.yml", 'dev'
 }
 
 task stop(type: Exec) {
