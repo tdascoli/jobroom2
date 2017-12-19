@@ -14,7 +14,7 @@ import {
 } from '../../../../../../../main/webapp/app/dashboard/state-management/actions/dashboard.actions';
 import { JobPublicationService } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.service';
 import { Principal } from '../../../../../../../main/webapp/app/shared';
-import { createJobPublication } from '../../utils';
+import { createJobPublication } from '../../../shared/job-publication/utils';
 
 describe('DashboardEffects', () => {
     let effects: DashboardEffects;
