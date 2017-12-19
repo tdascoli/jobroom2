@@ -14,7 +14,7 @@
                             <label for="job-title" class="col-form-label">{{ 'home.tools.job-publication.job-title' |
                                 translate }}</label>
                             <div>
-                                <input type="text" class="form-control" id="job-title" formControlName="title"/>
+                                <input type="text" [jr2TextSizeLimit]="255" class="form-control" id="job-title" formControlName="title"/>
                             </div>
                         </div>
 
@@ -80,7 +80,7 @@
                             <textarea #jobDescription class="form-control" id="description" rows="5"
                                       [placeholder]="'home.tools.job-publication.description.placeholder' | translate"
                                       aria-describedby="maxChar" formControlName="description"
-                                      (keypress)="blockExtraCharacters($event, JOB_DESCRIPTION_MAX_LENGTH)"></textarea>
+                                      [jr2TextSizeLimit]="JOB_DESCRIPTION_MAX_LENGTH"></textarea>
                                 <small id="maxChar" class="form-text text-muted"
                                        jhiTranslate="home.tools.job-publication.description.characters-counter-text"
                                        translateValues="{count: {{ max(JOB_DESCRIPTION_MAX_LENGTH - jobDescription.value.length, 0) }}}">
@@ -237,7 +237,7 @@
                                 <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
                             </label>
                             <div>
-                                <input formControlName="additionalDetails" type="text" class="form-control" id="add-text"/>
+                                <input formControlName="additionalDetails" type="text" [jr2TextSizeLimit]="50" class="form-control" id="add-text"/>
                             </div>
                         </div>
                     </fieldset>
@@ -250,7 +250,7 @@
                         <label for="unt-name" class="col-form-label">{{ 'home.tools.job-publication.company.title' |
                             translate }}</label>
                         <div>
-                            <input formControlName="name" type="text" class="form-control" id="unt-name"/>
+                            <input formControlName="name" type="text" [jr2TextSizeLimit]="255" class="form-control" id="unt-name"/>
                         </div>
                     </div>
 
@@ -258,8 +258,8 @@
                         <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' |
                             translate }}</label>
                         <div class="input-group">
-                            <input formControlName="street" type="text" class="form-control w-75" id="unt-street"/>
-                            <input formControlName="houseNumber" type="text" class="form-control w-25" id="unt-house-number"/>
+                            <input formControlName="street" type="text" [jr2TextSizeLimit]="60" class="form-control w-75" id="unt-street"/>
+                            <input formControlName="houseNumber" type="text" [jr2TextSizeLimit]="50" class="form-control w-25" id="unt-house-number"/>
                         </div>
                     </div>
 
@@ -274,7 +274,7 @@
                             <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
                         </label>
                         <div>
-                            <input formControlName="postboxNumber" type="text" class="form-control" id="unt-pobox"/>
+                            <input formControlName="postboxNumber" [jr2TextSizeLimit]="6" type="text" class="form-control" id="unt-pobox"/>
                         </div>
                     </div>
 
@@ -323,28 +323,28 @@
                         <label for="kp-vorname" class="col-form-label">{{
                             'home.tools.job-publication.contact.first-name' | translate }}</label>
                         <div>
-                            <input formControlName="firstName" type="text" class="form-control" id="kp-vorname"/>
+                            <input formControlName="firstName" [jr2TextSizeLimit]="255" type="text" class="form-control" id="kp-vorname"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="kp-name" class="col-form-label">{{ 'home.tools.job-publication.contact.last-name' |
                             translate }}</label>
                         <div>
-                            <input formControlName="lastName" type="text" class="form-control" id="kp-name"/>
+                            <input formControlName="lastName" [jr2TextSizeLimit]="255" type="text" class="form-control" id="kp-name"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="kp-tel" class="col-form-label">{{ 'home.tools.job-publication.contact.phone' |
                             translate }}</label>
                         <div>
-                            <input formControlName="phoneNumber" type="text" class="form-control" id="kp-tel"/>
+                            <input formControlName="phoneNumber" [jr2TextSizeLimit]="50" type="text" class="form-control" id="kp-tel"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="kp-email" class="col-form-label">{{ 'home.tools.job-publication.contact.email' |
                             translate }}</label>
                         <div>
-                            <input formControlName="email" type="email" class="form-control" id="kp-email"/>
+                            <input formControlName="email" [jr2TextSizeLimit]="50" type="email" class="form-control" id="kp-email"/>
                         </div>
                     </div>
 
@@ -371,14 +371,14 @@
                         <label for="app-email" class="col-form-label">{{ 'home.tools.job-publication.application.email'
                             | translate }}</label>
                         <div>
-                            <input type="email" class="form-control" id="app-email" formControlName="email"/>
+                            <input type="email" [jr2TextSizeLimit]="50" class="form-control" id="app-email" formControlName="email"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="app-form" class="col-form-label">{{
                             'home.tools.job-publication.application.online-form' | translate }}</label>
                         <div>
-                            <input type="text" class="form-control" id="app-form" formControlName="url"/>
+                            <input type="text" [jr2TextSizeLimit]="50" class="form-control" id="app-form" formControlName="url"/>
                         </div>
                     </div>
 
@@ -392,7 +392,7 @@
                         <label for="app-phone" class="col-form-label">{{ 'home.tools.job-publication.application.phone'
                             | translate }}</label>
                         <div>
-                            <input type="text" class="form-control" id="app-phone" formControlName="phoneNumber"/>
+                            <input type="text" [jr2TextSizeLimit]="50" class="form-control" id="app-phone" formControlName="phoneNumber"/>
                         </div>
                     </div>
 
@@ -403,7 +403,7 @@
                             <textarea #additionalInfo class="form-control" id="app-text" rows="5"
                                       [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
                                       aria-describedby="maxChar2" formControlName="additionalInfo"
-                                      (keypress)="blockExtraCharacters($event, APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)"></textarea>
+                                      [jr2TextSizeLimit]="APPLICATION_ADDITIONAL_INFO_MAX_LENGTH"></textarea>
                             <small id="maxChar2" class="form-text text-muted"
                                    jhiTranslate="home.tools.job-publication.application.additional-info.characters-counter-text"
                                    translateValues="{count: {{ max(APPLICATION_ADDITIONAL_INFO_MAX_LENGTH - additionalInfo.value.length, 0) }}}">

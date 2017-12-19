@@ -103,7 +103,7 @@
         "object-literal-shorthand": true,
         "space-before-function-paren": [true, "never"],
 
-        "directive-selector": [true, "attribute", "jhi", "camelCase"],
+        "directive-selector": [true, "attribute", ["jhi", "jr2"], "camelCase"],
         "component-selector": [true, "element", ["jhi", "jr2"], "kebab-case"],
         "use-input-property-decorator": true,
         "use-output-property-decorator": true,

@@ -25,6 +25,7 @@ import { dateParserFormatterProvider } from './input-components/datepicker/ngb-d
 import { datepickerI18nService } from './input-components/datepicker/ngb-datepicker-i18n-service';
 import { OrganizationService } from './organization/organization.service';
 import { JobPublicationService } from './job-publication/job-publication.service';
+import { TextSizeLimitDirective } from './validation/text-size-limit.directive';
 
 @NgModule({
     imports: [
@@ -39,7 +40,8 @@ import { JobPublicationService } from './job-publication/job-publication.service
         SafeHtmlPipe,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
-        DetailsPagePaginationComponent
+        DetailsPagePaginationComponent,
+        TextSizeLimitDirective
     ],
     providers: [
         LoginService,
@@ -70,7 +72,8 @@ import { JobPublicationService } from './job-publication/job-publication.service
         SafeHtmlPipe,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
-        DetailsPagePaginationComponent
+        DetailsPagePaginationComponent,
+        TextSizeLimitDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

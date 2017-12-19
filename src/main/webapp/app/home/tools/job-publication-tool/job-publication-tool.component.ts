@@ -100,9 +100,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         this.configureDateInput('job.publicationEndDate.date', 'job.publicationEndDate.permanent',
             (disabled) => this.publicationEndDateIsPermanent = disabled);
         this.updatePublicationStartDateRelatedField();
-
-        this.validateTextField('job.description', this.JOB_DESCRIPTION_MAX_LENGTH);
-        this.validateTextField('application.additionalInfo', this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH);
     }
 
     private createJobPublicationForm(formModel: any): FormGroup {
@@ -325,12 +322,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         return Math.max(...values);
     }
 
-    blockExtraCharacters(event: any, maxLength: number): void {
-        if (event.target.value.length >= maxLength) {
-            event.preventDefault();
-        }
-    }
-
     getPoBoxZipCodeTranslations(): Translations {
         return {
             zipCode: 'home.tools.job-publication.company.postbox-zipcode',
@@ -367,16 +358,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             changeAlertStatus(false);
             this.cd.markForCheck();
         }, 5000);
-    }
-
-    private validateTextField(textFieldPath: string, maxLength: number) {
-        const textFieldControl = this.jobPublicationForm.get(textFieldPath);
-        textFieldControl.valueChanges
-            .takeUntil(this.unsubscribe$)
-            .map((value) => value ? value : '')
-            .filter((value) => value.length > maxLength)
-            .subscribe((value) =>
-                textFieldControl.setValue(value.substr(0, maxLength)));
     }
 
     private setupCountries(): void {
