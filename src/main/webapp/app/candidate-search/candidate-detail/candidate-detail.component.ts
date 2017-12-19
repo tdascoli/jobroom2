@@ -25,7 +25,7 @@ import {
     getSearchFilter,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
-import { Graduation } from '../../shared/model/shared-types';
+import { Gender, Graduation } from '../../shared/model/shared-types';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -86,8 +86,8 @@ export class CandidateDetailComponent implements OnInit {
         this.jobExperiences$ = this.candidateProfile$
             .map((profile: CandidateProfile) => profile.jobExperiences)
             .flatMap((experiences) => Observable.combineLatest(experiences.map(this.enrichWithLabels.bind(this))))
-            .combineLatest(currentLanguage$)
-            .map(([experiences, lang]) => experiences.map(this.formatOccupationLabel()))
+            .combineLatest(this.candidateProfile$, currentLanguage$)
+            .map(([experiences, profile, lang]) => experiences.map(this.formatOccupationLabel(profile.gender)))
             .map((experiences) => experiences
                 .filter((experience) => experience.wanted)
                 .sort((a, b) => +b.lastJob - +a.lastJob));
@@ -108,11 +108,10 @@ export class CandidateDetailComponent implements OnInit {
                 Object.assign({}, jobExperience, { occupationLabels }));
     }
 
-    private formatOccupationLabel(): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
+    private formatOccupationLabel(gender: Gender): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
         return (jobExperience: EnrichedJobExperience) => {
             const { male, female } = jobExperience.occupationLabels;
-            const occupation = male + ((female && male !== female) ? ' / ' + female : '');
-
+            const occupation = (gender === Gender.FEMALE && female) ? female : male;
             return Object.assign({}, jobExperience, { occupation });
         }
     }

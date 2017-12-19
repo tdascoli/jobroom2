@@ -82,7 +82,7 @@ describe('CandidateDetailComponent', () => {
                     male: 'Text-M',
                     female: 'Text-F'
                 },
-                occupation: 'Text-M / Text-F',
+                occupation: 'Text-M',
                 wanted: true
             }]
         });
