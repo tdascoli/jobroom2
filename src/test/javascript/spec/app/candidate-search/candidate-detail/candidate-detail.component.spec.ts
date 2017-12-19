@@ -29,9 +29,9 @@ describe('CandidateDetailComponent', () => {
     const mockReferenceService = jasmine.createSpyObj('mockReferenceService', ['resolveJobCenter']);
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['findCandidate']);
     const mockOccupationOccupationPresentationService = jasmine.createSpyObj('mockOccupationOccupationPresentationService', ['findOccupationLabelsByAvamCode']);
-    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logProfileEvent']);
+    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logCandidateEvent']);
     const mockLocation = Observable.of({ type: 'popstate', url: '/candidate-detail/blabla' });
-    
+
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [JobroomTestModule, StoreModule.forRoot({ candidateSearch: candidateSearchReducer })],

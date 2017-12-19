@@ -53,7 +53,7 @@ export class CandidateSearchEffects {
         .switchMap(([action, state]) => {
             if (state.initialState) {
                 const searchRequest = toInitialSearchRequest(state);
-                this.loggingService.logSearchEvent(searchRequest);
+                this.candidateLoggingService.logSearchEvent(searchRequest);
                 return this.candidateService.search(searchRequest)
                     .map(toCandidateProfileListLoadedAction)
                     .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)));
@@ -70,7 +70,7 @@ export class CandidateSearchEffects {
         .do((action) => this.window.scroll(0, 0))
         .switchMap((action: SearchCandidatesAction | CandidateSearchToolChangedAction) => {
                 const searchRequest = toSearchRequest(action);
-                this.loggingService.logSearchEvent(searchRequest);
+                this.candidateLoggingService.logSearchEvent(searchRequest);
                 return this.candidateService.search(searchRequest)
                         .map(toCandidateProfileListLoadedAction)
                         .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
@@ -93,7 +93,7 @@ export class CandidateSearchEffects {
         .withLatestFrom(this.store.select(getCandidateSearchState))
         .map(([action, searchState]) => {
             // TODO: It looks like the new results are already in the state here. Can we rely on that always being the case?
-            this.loggingService.logResultsList(searchState);
+            this.candidateLoggingService.logResultsList(searchState);
             return null;
         });
 
@@ -131,7 +131,7 @@ export class CandidateSearchEffects {
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,
                 private candidateService: CandidateService,
-                private loggingService: CandidateLoggingService,
+                private candidateLoggingService: CandidateLoggingService,
                 @Optional()
                 @Inject(CANDIDATE_SEARCH_DEBOUNCE)
                 private debounce,

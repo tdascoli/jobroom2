@@ -84,22 +84,13 @@
 
             <!-- Languages -->
             <jr2-languages [languages]="candidateProfile.languages"
-<<<<<<< 9525615d007cf11df51a9d45cc6863aa94955419
                            [containerClass]="'detail__content'"
-                           [titleClass]="'detail__content__title'"></jr2-languages>
+                           [titleClass]="'detail__content__title'">
+                            (jhiAppear)="onAppear('lang')"></jr2-languages>
 
             <!-- Additional information -->
             <div class="detail__content">
                 <h4 class="detail__content__title">
-=======
-                           [containerClass]="'candidate-detail__content'"
-                           [titleClass]="'candidate-detail__content__title'"
-                            (jhiAppear)="onAppear('lang')"></jr2-languages>
-
-            <!-- Additional information -->
-            <div class="candidate-detail__content">
-                <h4 class="candidate-detail__content__title" >
->>>>>>> Added 'element appeared' functionality'
                     {{ 'candidate-detail.additional-information.title' | translate }}
                 </h4>
                 <div class="content__item">

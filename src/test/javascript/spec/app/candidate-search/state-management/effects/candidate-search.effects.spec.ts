@@ -40,7 +40,7 @@ describe('CandidateSearchEffects', () => {
 
     const mockWindow = jasmine.createSpyObj('mockWindow', ['scroll']);
 
-    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logProfileEvent', 'logSearchEvent']);
+    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logCandidateEvent', 'logSearchEvent']);
 
     beforeEach(() => {
         TestBed.configureTestingModule({

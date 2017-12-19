@@ -27,7 +27,7 @@ export class DetailsPagePaginationEffects {
 
     constructor(private actions$: Actions,
                 private store: Store<any>,
-                private loggingService: CandidateLoggingService) {
+                private candidateLoggingService: CandidateLoggingService) {
     }
 
     private getNextItem(loadItemAction: LoadNextItemAction | LoadPreviousItemAction): Observable<Item> {
@@ -43,8 +43,8 @@ export class DetailsPagePaginationEffects {
         const nextItem = loadItemAction.payload.itemsList[nextItemIndex];
 
         if (nextItem) {
-            this.loggingService.logProfileEvent(
-                { event: 'nav', id: nextItem.id, dir: direction, index: nextItemIndex }
+            this.candidateLoggingService.logCandidateEvent(
+                { event: 'nav', id: nextItem.id, dir: direction, rank: nextItemIndex }
             );
             return Observable.of(nextItem);
         } else {
@@ -63,12 +63,12 @@ export class DetailsPagePaginationEffects {
 
             nextItemObs.first().subscribe((profile) => {
                     if (profile) {
-                        this.loggingService.logProfileEvent(
+                        this.candidateLoggingService.logCandidateEvent(
                             {
                                 event: 'nav',
                                 id: profile.id,
                                 dir: direction,
-                                index: nextItemIndex
+                                rank: nextItemIndex
                             }
                         )
                     }

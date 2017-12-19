@@ -52,6 +52,7 @@ candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname
 candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Nationality,"Nationalité ",Cittadinanza
 candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personal information / Candidate contact details,Coordonnées du candidat,Generalità / coordinate del candidato
+candidate-detail,candidate-detail.personal-information.show-contact,Kontaktdaten anzeigen,Kontaktdaten anzeigen,Kontaktdaten anzeigen,Kontaktdaten anzeigen
 candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
 candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Immediately,Tout de suite,Da subito
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Availability,Disponibilité,Disponibilità

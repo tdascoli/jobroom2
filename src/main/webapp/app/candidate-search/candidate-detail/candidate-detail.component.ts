@@ -65,7 +65,7 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
                 private translateService: TranslateService,
                 private store: Store<CandidateSearchState>,
                 private location: Location,
-                private loggingService: CandidateLoggingService) {
+                private candidateLoggingService: CandidateLoggingService) {
     }
 
     ngOnInit() {
@@ -115,7 +115,7 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
                     if (event.url.indexOf('candidate-detail') >= 0) {
                         const url = event.url;
                         const nextId = url.substring(url.lastIndexOf('/') + 1, url.length);
-                        this.loggingService.logProfileEvent({ event: 'browsernav', id: nextId });
+                        this.candidateLoggingService.logCandidateEvent({ event: 'browsernav', id: nextId });
                     }
                 }
             }
@@ -175,11 +175,6 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
         return Observable.of([]);
     }
 
-    public printCandidateDetails(): void {
-        this.profileMetrics({ event: 'print' });
-        window.print();
-    }
-
     isDisplayGraduation(graduation: string) {
         return graduation && graduation !== Graduation[Graduation.NONE];
     }
@@ -189,22 +184,27 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
             && Degree[degree] <= Degree.DOKTORAT;
     }
 
+    public printCandidateDetails(): void {
+        this.logCandidateEvent({ event: 'print' });
+        window.print();
+    }
+
     public sendAsMail(): void {
-        this.profileMetrics({ event: 'sendlink' });
+        this.logCandidateEvent({ event: 'sendlink' });
     }
 
     public copyLink(): void {
-        this.profileMetrics({ event: 'copylink' });
+        this.logCandidateEvent({ event: 'copylink' });
     }
 
     public  backToResults(): void {
         this.profileLeft();
     }
 
-    public  profileMetrics(event: Object): void {
+    public  logCandidateEvent(event: Object): void {
         this.candidateProfile$.first().subscribe((profile) => {
                 event['id'] = profile.id;
-                this.loggingService.logProfileEvent(event);
+                this.candidateLoggingService.logCandidateEvent(event);
             });
     }
 
@@ -215,29 +215,29 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
     }
 
     public profileLeft(): void {
-        this.profileMetrics({ event: 'profileleft', lowestVisible: this.lastElementToAppear })
+        this.logCandidateEvent({ event: 'profileleft', lowestVisible: this.lastElementToAppear })
     }
 
     public showDetails(candidate): void {
         if (candidate) {
             this.candidateContactVisible = true;
-            this.profileMetrics({ event: 'showcand' });
+            this.logCandidateEvent({ event: 'showcand' });
         } else {
             this.RAVContactVisible = true;
-            this.profileMetrics({ event: 'showrav' });
+            this.logCandidateEvent({ event: 'showrav' });
         }
     }
 
     public phoneClicked(candidate): void {
-        this.profileMetrics({ event: candidate ? 'phonecand' : 'phonerav' });
+        this.logCandidateEvent({ event: candidate ? 'phonecand' : 'phonerav' });
     }
 
     public mailClicked(candidate): void {
-        this.profileMetrics({ event: candidate ? 'mailcand' : 'mailrav' });
+        this.logCandidateEvent({ event: candidate ? 'mailcand' : 'mailrav' });
     }
 
     public addToFavorites(): void {
-        this.profileMetrics({ event: 'addtofavs' })
+        this.logCandidateEvent({ event: 'addtofavs' })
     }
 
     public onAppear(element): void {

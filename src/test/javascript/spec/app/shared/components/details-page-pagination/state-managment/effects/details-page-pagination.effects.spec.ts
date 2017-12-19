@@ -18,7 +18,7 @@ describe('DetailsPagePaginationEffects', () => {
     let actions$: Observable<any>;
     let store: Store<any>;
 
-    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['logProfileEvent', 'logSearchEvent'])
+    const mockCandidateLoggingService = jasmine.createSpyObj('mockCandidateLoggingService', ['locCandidateEvent', 'logSearchEvent'])
 
     beforeEach(() => {
         TestBed.configureTestingModule({

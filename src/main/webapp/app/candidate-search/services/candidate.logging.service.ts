@@ -12,16 +12,28 @@ export class CandidateLoggingService {
     constructor(private http: Http, private candidateService: CandidateService) {
     }
 
-    public logProfileEvent(event: Object): void {
+    /**
+     * Logs an arbitrary Object as a candidate event
+     * @param {Object} event Data to be logged
+     */
+    public logCandidateEvent(event: Object): void {
         this.http.post(this.loggingUrl, event).subscribe();
     }
 
+    /**
+     * Logs a search request
+     * @param {CandidateSearchRequest} event Search request to be logged
+     */
     public logSearchEvent(event: CandidateSearchRequest): void {
         const e = event as Object;
         e['event'] = 'search';
         this.http.post(this.loggingUrl, event).subscribe();
     }
 
+    /**
+     * Logs the IDs and positions of candidates in the results list
+     * @param {CandidateSearchState} state State of the search for which to log results
+     */
     public logResultsList(state: CandidateSearchState): void {
         const occupationCode = state.searchFilter.occupation ? state.searchFilter.occupation.key : null;
         const itemsToLog = state.candidateProfileList.map((value, index, array) => {

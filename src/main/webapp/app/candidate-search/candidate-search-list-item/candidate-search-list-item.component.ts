@@ -24,7 +24,7 @@ export class CandidateSearchListItemComponent implements OnInit {
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private candidateService: CandidateService,
-                private loggingService: CandidateLoggingService,
+                private candidateLoggingService: CandidateLoggingService,
                 private http: Http) {
     }
 
@@ -46,6 +46,6 @@ export class CandidateSearchListItemComponent implements OnInit {
     }
 
     logHit(): void {
-        this.loggingService.logProfileEvent({ event: 'hit', id: this.profile.id, index: this.index });
+        this.candidateLoggingService.logCandidateEvent({ event: 'hit', id: this.profile.id, rank: this.index });
     }
 }

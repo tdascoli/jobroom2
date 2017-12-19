@@ -1,7 +1,3 @@
-/**
- * https://stackoverflow.com/questions/43573489/angular-4-how-to-trigger-an-animation-when-a-div-comes-into-the-viewport
- */
-
 import {
     ElementRef, Output, Directive, AfterViewInit, OnDestroy, EventEmitter, DoCheck
 } from '@angular/core';
