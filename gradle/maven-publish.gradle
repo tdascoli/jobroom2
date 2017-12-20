@@ -11,8 +11,8 @@ publishing {
         }
     }
     publications {
-        mavenJava(MavenPublication) {
-            from components.web
+        bootJava(MavenPublication) {
+            artifact bootWar
         }
     }
 }

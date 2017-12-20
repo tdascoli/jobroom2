@@ -48,12 +48,9 @@ module.exports = (config) => {
             reportSuccess: true // Default: true, will notify when a suite was successful
         },
 
-
         remapIstanbulReporter: {
             reports: { // eslint-disable-line
-                'lcovonly': 'build/test-results/coverage/report-lcov/lcov.info',
-                'html': 'build/test-results/coverage',
-                'text-summary': null
+                'lcovonly': 'build/test-results/coverage/lcov.info'
             }
         },
 

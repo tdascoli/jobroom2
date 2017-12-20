@@ -1,19 +1,28 @@
 apply plugin: "org.sonarqube"
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = jacoco_version
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled true
+        html.enabled false
+    }
+}
 
 sonarqube {
     properties {
         property "sonar.host.url", 'https://sonarcloud.io'
         property "sonar.organization", 'alvchbot-github'
         property "sonar.login", System.env.SONARQUBE_LOGIN
+        property 'sonar.jacoco.reportPaths', jacoco.reportsDir
         property "sonar.sources", files(sourceSets.main.allSource.srcDirs,  fileTree(dir: 'src/main/webapp/app', include: '**/*', exclude: '*-aot.ts'))
         property "sonar.java.binaries", sourceSets.main.output.classesDirs
         property "sonar.java.test.binaries", sourceSets.test.output.classesDirs
         property "sonar.junit.reportPaths", files(new File(buildDir,"test-results/test"), new File(buildDir,"test-results/karma"))
         property "sonar.typescript.file.suffixes", ".ts"
-        property "sonar.typescript.lcov.reportPaths", new File(buildDir,"test-results/coverages/lcov.info")
+        property "sonar.typescript.lcov.reportPaths", new File(buildDir,"test-results/coverage/lcov.info")
     }
-}
-
-task dump(type: Exec) {
-    commandLine 'find', new File(buildDir,"test-results")
 }
