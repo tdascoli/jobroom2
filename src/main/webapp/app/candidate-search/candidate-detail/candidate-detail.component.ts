@@ -208,7 +208,6 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
             });
     }
 
-    // ETTODO: Forced refresh counts as unload...
     @HostListener('window:unload')
     windowClosed(): void {
         this.profileLeft();

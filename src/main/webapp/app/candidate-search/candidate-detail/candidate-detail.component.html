@@ -95,7 +95,7 @@
                 </h4>
                 <div class="content__item">
                     <strong>{{ 'candidate-detail.additional-information.workForm.label' | translate }}</strong>
-                    <span *ngIf="candidateProfile.workForm.length;else empty_workform">
+                    <span *ngIf="candidateProfile.workForm.length;else empty_workform" (jhiAppear)="onAppear('workform')">
                         <ng-container *ngFor="let workForm of candidateProfile.workForm | keys; last as isLast">
                             {{('candidate-search.workForm.' + workForm.value | translate) + (isLast ? '' : ' ,')}}
                         </ng-container>
@@ -108,16 +108,16 @@
                     <strong>{{ 'candidate-detail.additional-information.gender.label' | translate }}</strong>
                     <span>{{ 'global.gender.' + candidateProfile.gender | translate }}</span>
                 </div>
-                <div *ngIf="candidateProfile.highestEducationLevel" class="content__item" (jhiAppear)="onAppear('education')">
+                <div *ngIf="candidateProfile.highestEducationLevel" class="content__item" (jhiAppear)="onAppear('highestEducation')">
                     <strong>{{ 'candidate-detail.additional-information.highestEducationLevel.label' | translate }}</strong>
                     <span>{{ 'global.education.' + candidateProfile.highestEducationLevel | translate }}</span>
                 </div>
-                <div *ngIf="isDisplayDegree(candidateProfile.highestDegree)" class="content__item">
+                <div *ngIf="isDisplayDegree(candidateProfile.highestDegree)" class="content__item" (jhiAppear)="onAppear('education')">
                     <strong>{{ 'candidate-detail.additional-information.education.label' | translate }}</strong>
                     <span>{{ 'global.degree.' + candidateProfile.highestDegree | translate }}</span>
                 </div>
                 <div *ngIf="candidateProfile.preferredWorkRegions || candidateProfile.preferredWorkCantons"
-                     class="content__item">
+                     class="content__item" (jhiAppear)="onAppear('workRegions')">
                     <strong>{{ 'candidate-detail.additional-information.preferredWorkRegions.label' | translate }}</strong>
                     <span>
                         <p *ngIf="candidateProfile.preferredWorkRegions?.length">
@@ -131,7 +131,7 @@
                         </p>
                     </span>
                 </div>
-                <div *ngIf="candidateProfile.drivingCategories?.length" class="content__item">
+                <div *ngIf="candidateProfile.drivingCategories?.length" class="content__item" (jhiAppear)="onAppear('driversLicense')">
                     <strong>{{ 'candidate-detail.additional-information.drivingCategories.label' | translate }}</strong>
                     <span>{{ candidateProfile.drivingCategories.join(', ') }}</span>
                 </div>
