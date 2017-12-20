@@ -57,6 +57,7 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
     RAVContactVisible: boolean;
     candidateContactVisible: boolean;
     lastElementToAppear: string;
+    candidateContactShown: boolean;
 
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
@@ -123,6 +124,7 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
 
         this.RAVContactVisible = false;
         this.candidateContactVisible = false;
+        this.candidateContactShown = false;
         this.lastElementToAppear = 'none';
     }
 
@@ -132,6 +134,7 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
             this.isCopied = false;
             this.RAVContactVisible = false;
             this.candidateContactVisible = false;
+            this.candidateContactShown = false;
 
             const that = this;
             window.setTimeout(() => that.lastElementToAppear = 'none', 250);
@@ -220,10 +223,20 @@ export class CandidateDetailComponent implements OnInit, DoCheck, OnDestroy {
     public showDetails(candidate): void {
         if (candidate) {
             this.candidateContactVisible = true;
-            this.logCandidateEvent({ event: 'showcand' });
+            window.setTimeout( () => window.scrollTo(0, document.body.scrollHeight), 50);
+            if (!this.candidateContactShown) {
+                this.candidateContactShown = true;
+                this.logCandidateEvent({ event: 'showcand' });
+            }
         } else {
             this.RAVContactVisible = true;
             this.logCandidateEvent({ event: 'showrav' });
+        }
+    }
+
+    public hideDetails(candidate): void {
+        if (candidate) {
+            this.candidateContactVisible = false;
         }
     }
 

@@ -41,6 +41,7 @@
             "phone": {
                 "label": "Telefon"
             },
+            "show-contact": "Kontaktdaten anzeigen",
             "title": "Weitere Ausk\u00fcnfte erteilt Ihnen"
         },
         "job-experience": {
@@ -70,6 +71,11 @@
         "personal-information": {
             "address": {
                 "label": "Adresse"
+            },
+            "contact-data": {
+                "label": "Kontaktdaten",
+                "show": "Anzeigen",
+                "hide": "Verstecken"
             },
             "e-mail": {
                 "label": "E-Mail"

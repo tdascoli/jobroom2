@@ -149,9 +149,11 @@
                         <strong>{{ 'candidate-detail.personal-information.nationality.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.nationalityCode }}</span>
                     </div>
-                    <button *ngIf="!candidateContactVisible" (click)="showDetails(true);" class="btn btn-primary candidate-detail__contact-button">
-                        {{'candidate-detail.personal-information.show-contact' | translate}}
-                    </button>
+                    <div class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.contact-data.label' | translate }}</strong>
+                        <span *ngIf="!candidateContactVisible"><a (click)="showDetails(true)">{{ 'candidate-detail.personal-information.contact-data.show' | translate }}</a></span>
+                        <span *ngIf="candidateContactVisible == true"><a (click)="hideDetails(true)">{{ 'candidate-detail.personal-information.contact-data.hide' | translate }}</a></span>
+                    </div>
                     <div *ngIf="candidateContactVisible == true">
                         <div *ngIf="candidateProtectedData.address" class="content__item">
                             <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
