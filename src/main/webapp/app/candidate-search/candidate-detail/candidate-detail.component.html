@@ -24,7 +24,7 @@
                             {{'candidate-detail.job-center.show-contact' | translate}}
                         </button>
 
-                        <p *ngIf="RAVContactVisible">
+                        <p *ngIf="RAVContactVisible == true">
                             {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}" (click)="phoneClicked(false);">{{jobCenter.phone}}</a><br/>
                             {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}" (click)="mailClicked(false);">{{jobCenter.email}}</a>
                         </p>
@@ -152,7 +152,7 @@
                     <button *ngIf="!candidateContactVisible" (click)="showDetails(true);" class="btn btn-primary candidate-detail__contact-button">
                         {{'candidate-detail.personal-information.show-contact' | translate}}
                     </button>
-                    <div *ngIf="candidateContactVisible">
+                    <div *ngIf="candidateContactVisible == true">
                         <div *ngIf="candidateProtectedData.address" class="content__item">
                             <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
                             <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
@@ -186,7 +186,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" [class.active]="isCopied" ngxClipboard
+                        <a class="nav-link" [class.active]="isCopied == true" ngxClipboard
                            [cbContent]="candidateUrl" (cbOnSuccess)="isCopied = true"
                             (click)="copyLink()">
                             <i class="fa fa-share" aria-hidden="true"></i> {{ 'candidate-detail.candidate-copy-link' | translate }}
