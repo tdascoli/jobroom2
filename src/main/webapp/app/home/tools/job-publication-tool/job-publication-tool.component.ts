@@ -167,7 +167,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     disabled: true
                 }, [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
                 additionalInfo: [formModel.application.additionalInfo,
-                    [Validators.required, Validators.maxLength(this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)]],
+                    [Validators.maxLength(this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)]],
             }),
             publication: this.fb.group({
                 jobroom: [formModel.publication.jobroom],
