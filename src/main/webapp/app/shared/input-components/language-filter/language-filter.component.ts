@@ -8,7 +8,7 @@ const MAX_LANGUAGE_OPTIONS_NUM = 5;
 @Component({
     selector: 'jr2-language-filter',
     templateUrl: './language-filter.component.html',
-    styles: ['.language-selector-item {margin: 0.8rem 0 0 0}'],
+    styleUrls: ['./language-filter.component.scss'],
     providers: [{
         provide: NG_VALUE_ACCESSOR,
         useExisting: forwardRef(() => LanguageFilterComponent),
@@ -61,6 +61,9 @@ export class LanguageFilterComponent implements ControlValueAccessor {
             validSkills.splice(i, 1);
             this._onChange(validSkills);
         } else {
+            skills[i].spoken = CEFR_Level.NONE;
+            skills[i].written = CEFR_Level.NONE;
+
             this._onChange(skills);
         }
 

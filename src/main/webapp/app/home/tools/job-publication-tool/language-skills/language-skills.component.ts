@@ -14,7 +14,7 @@ const MAX_LANGUAGE_OPTIONS_NUM = 5;
 @Component({
     selector: 'jr2-language-skills',
     templateUrl: './language-skills.component.html',
-    styleUrls: []
+    styleUrls: ['./language-skills.component.scss']
 })
 export class LanguageSkillsComponent implements OnInit, OnDestroy {
     @Input() group: FormGroup;
@@ -31,8 +31,8 @@ export class LanguageSkillsComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         let value = [this.createEmptyGroup()];
         if (this.group.get(this.controlName)
-                && this.group.get(this.controlName).value
-                && this.group.get(this.controlName).value.length) {
+            && this.group.get(this.controlName).value
+            && this.group.get(this.controlName).value.length) {
             value = this.group.get(this.controlName).value
                 .map((val) => this.createGroup(val));
         }
@@ -104,8 +104,8 @@ export class LanguageSkillsComponent implements OnInit, OnDestroy {
     private createEmptyGroup(): FormGroup {
         return this.createGroup({
             code: null,
-            spoken: null,
-            written: null
+            spoken: CEFR_Level[CEFR_Level.BASIC],
+            written: CEFR_Level[CEFR_Level.NONE]
         });
     }
 
@@ -114,19 +114,6 @@ export class LanguageSkillsComponent implements OnInit, OnDestroy {
             code: [value.code],
             spoken: [value.spoken],
             written: [value.written]
-        }, {
-            validator: groupValidator
         })
-    }
-}
-
-function groupValidator(ctrl: AbstractControl): ValidationErrors | null {
-    const code = ctrl.get('code').value;
-    const spoken = ctrl.get('spoken').value;
-
-    if (code && (!spoken || spoken < CEFR_Level.BASIC)) {
-        return { 'invalid-spoken-level': spoken };
-    } else {
-        return null;
     }
 }

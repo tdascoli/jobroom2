@@ -104,7 +104,7 @@ describe('DateUtils', () => {
             // WHEN
             const result = DateUtils.convertNgbDateStructToString(dateStruct);
 
-            //THEN
+            // THEN
             expect(result).toBe('2017-12-19');
         });
 
@@ -112,7 +112,7 @@ describe('DateUtils', () => {
             // WHEN
             const result = DateUtils.convertNgbDateStructToString(null);
 
-            //THEN
+            // THEN
             expect(result).toBeNull();
         });
     });

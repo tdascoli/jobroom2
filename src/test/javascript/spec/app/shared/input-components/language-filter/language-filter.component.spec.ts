@@ -82,7 +82,7 @@ describe('LanguageFilterComponent', () => {
 
             // THEN
             const skills = [
-                { code: 'fr', spoken: null, written: null },
+                { code: 'fr', spoken: CEFR_Level.NONE, written: CEFR_Level.NONE },
                 { code: 'de', spoken: null, written: null },
                 { code: 'it', spoken: null, written: null }
             ];

@@ -37,8 +37,8 @@ describe('LanguageSkillsComponent', () => {
             expect(formArray.value).toEqual([
                 {
                     'code': null,
-                    'spoken': null,
-                    'written': null
+                    'spoken': CEFR_Level[CEFR_Level.BASIC],
+                    'written': CEFR_Level[CEFR_Level.NONE]
                 }
             ])
         });
@@ -53,15 +53,15 @@ describe('LanguageSkillsComponent', () => {
             expect(formArray.value).toEqual([
                 {
                     'code': null,
-                    'spoken': null,
-                    'written': null
+                    'spoken': CEFR_Level[CEFR_Level.BASIC],
+                    'written': CEFR_Level[CEFR_Level.NONE]
                 }
             ])
         });
     });
 
     describe('handleLanguageChange', () => {
-        it('it should remove the changed language skill if null is selected and there are more than one skill', () => {
+        it('it should remove the changed language skill if null is selected and there are more than one skills', () => {
             component.ngOnInit();
             component.addNewLanguageSkill();
 
@@ -71,8 +71,8 @@ describe('LanguageSkillsComponent', () => {
             expect(formArray.value).toEqual([
                 {
                     'code': null,
-                    'spoken': null,
-                    'written': null
+                    'spoken': CEFR_Level[CEFR_Level.BASIC],
+                    'written': CEFR_Level[CEFR_Level.NONE]
                 }
             ])
         })
@@ -88,32 +88,23 @@ describe('LanguageSkillsComponent', () => {
             expect(enabled).toBeFalsy();
         });
 
-        it('should be falsy if there is an invalid form group', () => {
-            const formArray = component.group.get('languageSkills') as FormArray;
-            const firstGroup = formArray.at(0);
-            firstGroup.get('code').setValue('en');
-
-            const enabled = component.isAddEnabled();
-            expect(enabled).toBeFalsy();
-        });
-
         it('should be falsy if all languages are selected', () => {
             const formArray = component.group.get('languageSkills') as FormArray;
 
             formArray.at(0).get('code').setValue('de');
-            formArray.at(0).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(0).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(1).get('code').setValue('fr');
-            formArray.at(1).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(2).get('code').setValue('it');
-            formArray.at(2).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(2).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(3).get('code').setValue('en');
-            formArray.at(3).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(3).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             const enabled = component.isAddEnabled();
             expect(enabled).toBeFalsy();
@@ -125,23 +116,23 @@ describe('LanguageSkillsComponent', () => {
             const formArray = component.group.get('languageSkills') as FormArray;
 
             formArray.at(0).get('code').setValue('de');
-            formArray.at(0).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(0).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(1).get('code').setValue('fr');
-            formArray.at(1).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(2).get('code').setValue('it');
-            formArray.at(2).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(2).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(3).get('code').setValue('en');
-            formArray.at(3).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(3).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(4).get('code').setValue('es');
-            formArray.at(4).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(4).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             const enabled = component.isAddEnabled();
             expect(enabled).toBeFalsy();
@@ -151,11 +142,11 @@ describe('LanguageSkillsComponent', () => {
             const formArray = component.group.get('languageSkills') as FormArray;
 
             formArray.at(0).get('code').setValue('de');
-            formArray.at(0).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(0).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(1).get('code').setValue('fr');
-            formArray.at(1).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             const enabled = component.isAddEnabled();
             expect(enabled).toBeTruthy();
@@ -168,11 +159,11 @@ describe('LanguageSkillsComponent', () => {
 
             const formArray = component.group.get('languageSkills') as FormArray;
             formArray.at(0).get('code').setValue('de');
-            formArray.at(0).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(0).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(1).get('code').setValue('fr');
-            formArray.at(1).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             const availableOptions = component.getLanguageOptions('de');
             expect(availableOptions).toEqual(['de', 'it', 'en'])
@@ -185,19 +176,19 @@ describe('LanguageSkillsComponent', () => {
 
             const formArray = component.group.get('languageSkills') as FormArray;
             formArray.at(0).get('code').setValue('de');
-            formArray.at(0).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(0).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.addNewLanguageSkill();
             formArray.at(1).get('code').setValue('fr');
-            formArray.at(1).get('spoken').setValue(CEFR_Level.BASIC);
+            formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
             component.removeByIndex(0)
 
             expect(formArray.value).toEqual([
                 {
                     'code': 'fr',
-                    'spoken': CEFR_Level.BASIC,
-                    'written': null
+                    'spoken': CEFR_Level[CEFR_Level.BASIC],
+                    'written': CEFR_Level[CEFR_Level.NONE]
                 }
             ])
         })

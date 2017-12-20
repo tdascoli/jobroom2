@@ -23,10 +23,9 @@
     <div *ngIf="languageSkill.code" class="form-row">
         <div class="col">
             <div class="form-group">
-                <label class="sr-only" [for]="'spoken-' + i" translate="global.reference.language.spoken"></label>
+                <label class="small" [for]="'spoken-' + i" translate="global.reference.language.spoken"></label>
                 <select [id]="'spoken-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.spoken"
                         (ngModelChange)="changeSpokenLevel(i, $event)">
-                    <option [ngValue]="null">{{'global.reference.language.spoken'| translate}}</option>
                     <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
                         {{'global.reference.language.level.'+languageLevel.value | translate}}
                     </option>
@@ -35,9 +34,8 @@
         </div>
         <div class="col">
             <div class="form-group">
-                <label class="sr-only" [for]="'written-' + i" translate="global.reference.language.written"></label>
+                <label class="small" [for]="'written-' + i" translate="global.reference.language.written"></label>
                 <select [id]="'written-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.written" (ngModelChange)="changeWrittenLevel(i, $event)">
-                    <option [ngValue]="null">{{'global.reference.language.written'| translate}}</option>
                     <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
                         {{'global.reference.language.level.'+languageLevel.value | translate}}
                     </option>
@@ -47,7 +45,7 @@
     </div>
 </div>
 
-<div class="button-bar" *ngIf="isAddEnabled()">
+<div class="button-bar mt-3" *ngIf="isAddEnabled()">
     <button class="btn btn-primary btn-sm" (click)="addNewLanguageSkill()"><span class="fa fa-plus" aria-hidden="true"></span>
         {{'global.button.add.title'| translate}}
     </button>

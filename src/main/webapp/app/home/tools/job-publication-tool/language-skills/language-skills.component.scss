@@ -1,0 +1,7 @@
+/* If the file begins with the selector, the component test fails with the following error message:
+ * ERROR: 'Unhandled Promise rejection:',
+ * 'Failed to load :host%20/deep/%20.form-row:nth-child(even)%20.form-group%20%7B%0A%20%20margin-bottom:%200;%20%7D%0A', '
+ */
+:host /deep/ .form-row:nth-child(even) .form-group {
+    margin-bottom: 0;
+}
