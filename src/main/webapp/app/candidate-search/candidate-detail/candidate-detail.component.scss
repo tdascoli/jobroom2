@@ -1,3 +1,13 @@
 .candidate-detail__content__title--occupation {
     margin-bottom: 0;
 }
+
+@media print {
+    .candidate-detail__print__visible {
+        display: block !important;
+    }
+
+    .candidate-detail__print__hidden {
+        display: none !important;
+    }
+}

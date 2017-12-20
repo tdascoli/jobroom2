@@ -20,11 +20,11 @@
                             </p>
                         </address>
 
-                        <button class="btn btn-primary" *ngIf="!RAVContactVisible" (click)="showDetails(false);">
+                        <button class="btn btn-primary candidate-detail__print__hidden" [hidden]="RAVContactVisible == true" (click)="showDetails(false);">
                             {{'candidate-detail.job-center.show-contact' | translate}}
                         </button>
 
-                        <p *ngIf="RAVContactVisible == true">
+                        <p class="candidate-detail__print__visible" [hidden]="RAVContactVisible == false">
                             {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}" (click)="phoneClicked(false);">{{jobCenter.phone}}</a><br/>
                             {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}" (click)="mailClicked(false);">{{jobCenter.email}}</a>
                         </p>
@@ -149,12 +149,12 @@
                         <strong>{{ 'candidate-detail.personal-information.nationality.label' | translate }}</strong>
                         <span>{{ candidateProtectedData.nationalityCode }}</span>
                     </div>
-                    <div class="content__item">
+                    <div class="content__item candidate-detail__print__hidden">
                         <strong>{{ 'candidate-detail.personal-information.contact-data.label' | translate }}</strong>
-                        <span *ngIf="!candidateContactVisible"><a (click)="showDetails(true)">{{ 'candidate-detail.personal-information.contact-data.show' | translate }}</a></span>
-                        <span *ngIf="candidateContactVisible == true"><a (click)="hideDetails(true)">{{ 'candidate-detail.personal-information.contact-data.hide' | translate }}</a></span>
+                        <span [hidden]="candidateContactVisible == true"><a (click)="showDetails(true)">{{ 'candidate-detail.personal-information.contact-data.show' | translate }}</a></span>
+                        <span [hidden]="candidateContactVisible == false"><a (click)="hideDetails(true)">{{ 'candidate-detail.personal-information.contact-data.hide' | translate }}</a></span>
                     </div>
-                    <div *ngIf="candidateContactVisible == true">
+                    <div class="candidate-detail__print__visible" [hidden]="candidateContactVisible == false">
                         <div *ngIf="candidateProtectedData.address" class="content__item">
                             <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
                             <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
