@@ -15,14 +15,6 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
     devServer: {
         contentBase: './build/www',
             proxy: [
-	    {
-                context: [
-                    '/eventloggingservice/api/events'
-                ],
-                target: 'http://localhost:8089',
-                pathRewrite: {'^/eventloggingservice' : ''},
-                secure: false
-            },
             {
             context: [
                 /* jhipster-needle-add-entity-to-webpack - JHipster will add entity api paths here */
@@ -36,8 +28,9 @@ module.exports = webpackMerge(commonConfig({ env: ENV }), {
                 '/h2-console',
                 '/auth',
                 '/jobpublicationservice',
-		'/candidateservice',
-                '/h2-console'
+		        '/candidateservice',
+                '/h2-console',
+                '/eventloggingservice'
             ],
             target: 'https://dev.job-room.ch:8443',
             secure: false
