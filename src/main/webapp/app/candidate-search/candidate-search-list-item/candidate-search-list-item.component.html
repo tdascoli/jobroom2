@@ -8,7 +8,7 @@
         <span class="badge badge-blue">
             {{ 'global.reference.canton.' + profile.residenceCantonCode | translate}}
         </span>
-        <span class="badge badge-gray" *ngIf="occupationCode && validExperienceData">
+        <span class="badge badge-gray" *ngIf="isDisplayExperience">
             {{ 'global.experience.' + (jobExperience$ | async)?.experience | translate }}
         </span>
         <span class="badge badge-yellow">
