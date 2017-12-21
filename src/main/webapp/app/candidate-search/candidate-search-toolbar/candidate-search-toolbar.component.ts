@@ -91,7 +91,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     clearInvalidValue(event: any) {
         const occupationControl = this.toolbarForm.get('occupation');
         const value = occupationControl.value;
-        if (value && value.code === undefined) {
+        if (value && value.key === undefined) {
             occupationControl.setValue(undefined, {
                 emitEvent: true,
             });
