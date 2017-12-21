@@ -76,8 +76,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @Column(length = 100, unique = true)
     private String email;
 
-    @Pattern(regexp = "^([+]\\d+)?$")
-    @Column(length = 50, unique = true)
+    @Column(length = 50)
     private String phone;
 
     @NotNull

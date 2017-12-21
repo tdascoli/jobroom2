@@ -34,7 +34,7 @@ install:
 - yarn install
 script:
 - yarn test
-- ./gradlew test jacocoTestReport sonarqube -Pprod
+- ./gradlew check jacocoTestReport sonarqube -Pprod
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:

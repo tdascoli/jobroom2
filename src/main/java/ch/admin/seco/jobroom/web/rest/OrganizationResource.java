@@ -173,7 +173,7 @@ public class OrganizationResource {
 
     @PostMapping("/organizations/housekeeping")
     @Timed
-    @Secured(AuthoritiesConstants.USER)
+    @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<Void> reindexAll() throws URISyntaxException {
         log.info("REST request to start housekeeping for Organizations by user : {}", SecurityUtils.getCurrentUserLogin());
         organizationService.housekeeping();
