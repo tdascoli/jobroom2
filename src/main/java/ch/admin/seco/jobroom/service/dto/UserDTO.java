@@ -39,7 +39,7 @@ public class UserDTO {
     @Size(min = 5, max = 100)
     private String email;
 
-    @Pattern(regexp = "^([+]\\d+)?$")
+    @Size(max = 50)
     private String phone;
 
     @Size(max = 256)

@@ -71,7 +71,7 @@ public class UserResourceIntTest {
     private static final String UPDATED_EMAIL = "jhipster@localhost";
 
     private static final String DEFAULT_PHONE = "+383923932992";
-    private static final String UPDATED_PHONE = "+383923932993";
+    private static final String UPDATED_PHONE = "044 123 45 67";
 
     private static final String DEFAULT_FIRSTNAME = "john";
     private static final String UPDATED_FIRSTNAME = "jhipsterFirstName";
@@ -372,7 +372,7 @@ public class UserResourceIntTest {
             UPDATED_FIRSTNAME,
             UPDATED_LASTNAME,
             UPDATED_EMAIL,
-            DEFAULT_PHONE,
+            UPDATED_PHONE,
             updatedUser.getActivated(),
             UPDATED_IMAGEURL,
             UPDATED_LANGKEY,
