@@ -1,8 +1,7 @@
-export interface JobCancellationRequest {
+import { CancellationReason } from './job-publication.model';
+
+export interface JobCancelRequest {
     id: string;
-    accessToken: string
-    positionOccupied: boolean;
-    occupiedWithJobCenter: boolean;
-    occupiedWithPrivateAgency: boolean;
-    selfOccupied: boolean;
+    accessToken: string;
+    cancellationReason: CancellationReason;
 }

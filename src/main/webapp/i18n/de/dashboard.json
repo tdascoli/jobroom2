@@ -60,6 +60,8 @@
         },
         "copy": "Stelle duplizieren",
         "immediately": "ab Sofort",
+        "cancel.success": "Job publication cancelled successfully.",
+        "cancel.error": "Failed to cancel job publication. Try again later.",
         "permanent": "Permanent",
         "print": "Drucken",
         "startDate": "Vakant seit",

@@ -1,9 +1,8 @@
-import { Component, Input, OnDestroy, OnInit } from '@angular/core';
-import { JobPublicationService } from '../../shared/job-publication/job-publication.service';
+import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormBuilder, FormGroup, ValidatorFn } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
-import { JobCancellationRequest } from '../../shared/job-publication/job-publication-cancel-request';
+import { CancellationData } from './cancellation-data';
 
 const jobCancelFormValidator: ValidatorFn = (jobCancelForm: FormGroup) => {
     const positionOccupiedValue = jobCancelForm.get('positionOccupied').value;
@@ -30,12 +29,12 @@ export class JobPublicationCancelDialogComponent implements OnInit, OnDestroy {
 
     @Input() id: string;
     @Input() accessToken: string;
+    @Output() submitCancellation = new EventEmitter<CancellationData>();
 
     jobCancelForm: FormGroup;
     private unsubscribe$ = new Subject<void>();
 
-    constructor(private jobPublicationService: JobPublicationService,
-                private fb: FormBuilder,
+    constructor(private fb: FormBuilder,
                 public activeModal: NgbActiveModal) {
     }
 
@@ -67,17 +66,13 @@ export class JobPublicationCancelDialogComponent implements OnInit, OnDestroy {
         this.unsubscribe$.complete();
     }
 
-    cancelJobPublication(): void {
-        const cancelRequest: JobCancellationRequest = {
+    cancelJobPublication(formValue: any) {
+        const cancellationData = Object.assign({}, {
             id: this.id,
             accessToken: this.accessToken,
-            positionOccupied: this.jobCancelForm.get('positionOccupied').value,
-            occupiedWithJobCenter: this.jobCancelForm.get('occupiedWith.jobCenter').value,
-            occupiedWithPrivateAgency: this.jobCancelForm.get('occupiedWith.privateAgency').value,
-            selfOccupied: this.jobCancelForm.get('occupiedWith.self').value
-        };
-        this.jobPublicationService
-            .cancelJobPublication(cancelRequest)
-            .subscribe((_) => this.activeModal.close())
+            cancellationReason: formValue
+        });
+        this.submitCancellation.emit(cancellationData);
+        this.activeModal.close()
     }
 }

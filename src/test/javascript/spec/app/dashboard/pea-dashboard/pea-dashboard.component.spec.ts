@@ -8,17 +8,24 @@ import { JobPublicationCancelDialogService } from '../../../../../../main/webapp
 import { JobPublicationService } from '../../../../../../main/webapp/app/shared/job-publication/job-publication.service';
 import { HttpModule } from '@angular/http';
 import { TranslateService } from '@ngx-translate/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs/Observable';
 
-describe('DashboardComponent', () => {
+describe('PEA-DashboardComponent', () => {
     let component: PeaDashboardComponent;
     let fixture: ComponentFixture<PeaDashboardComponent>;
+    const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
+    mockStore.select.and.returnValue(Observable.of([]));
     const mockOrganizationService = jasmine.createSpyObj('mockOrganizationService', ['findByExternalId']);
     const mockJobPublicationCancelDialogService = jasmine.createSpyObj('mockJobPublicationCancelDialogService', ['open']);
     const mockTranslateService = jasmine.createSpyObj('mockTranslateService', ['v']);
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [ReactiveFormsModule, HttpModule],
+            imports: [
+                ReactiveFormsModule,
+                HttpModule,
+            ],
             declarations: [PeaDashboardComponent],
             providers: [
                 {
@@ -37,6 +44,7 @@ describe('DashboardComponent', () => {
                     provide: TranslateService,
                     useValue: mockTranslateService
                 },
+                { provide: Store, useValue: mockStore },
                 JobPublicationService
             ]
         })

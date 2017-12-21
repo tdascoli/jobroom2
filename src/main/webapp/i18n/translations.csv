@@ -138,6 +138,8 @@ dashboard,job-publication-details.cancel,Stelle abmelden,Stelle abmelden,Stelle 
 dashboard,job-publication-details.contact.accountNumber,Stellennummer,Stellennummer,Stellennummer,Stellennummer
 dashboard,job-publication-details.contact.avam,AVAM,AVAM,AVAM,AVAM
 dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
+dashboard,job-publication-details.cancel.success,Job publication cancelled successfully.,Job publication cancelled successfully.,Job publication cancelled successfully.,Job publication cancelled successfully.
+dashboard,job-publication-details.cancel.error,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.
 dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 dashboard,job-publication-details.copy,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren
 dashboard,job-publication-details.immediately,ab Sofort,ab Sofort,ab Sofort,ab Sofort

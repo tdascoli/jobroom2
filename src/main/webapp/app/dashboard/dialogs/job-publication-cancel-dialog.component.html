@@ -6,7 +6,7 @@
         </button>
     </div>
     <div class="modal-body">
-        <form [formGroup]="jobCancelForm" (ngSubmit)="cancelJobPublication()">
+        <form [formGroup]="jobCancelForm" (ngSubmit)="cancelJobPublication(jobCancelForm.value)">
             <div class="alert alert-info" role="alert">
                 {{ 'job-publication-cancel.alert' | translate }}
             </div>

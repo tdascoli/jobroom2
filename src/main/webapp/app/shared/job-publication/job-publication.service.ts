@@ -3,10 +3,10 @@ import { Observable } from 'rxjs/Observable';
 import { BaseRequestOptions, Http, URLSearchParams } from '@angular/http';
 import { Principal, ResponseWrapper } from '../';
 import { JobPublicationSearchRequest } from './job-publication-search-request';
-import { CancellationReason, JobPublication, Locale, Status } from './job-publication.model';
+import { CancellationReason, JobPublication, Status } from './job-publication.model';
 import { createPageableURLSearchParams } from '../model/request-util';
 import { TranslateService } from '@ngx-translate/core';
-import { JobCancellationRequest } from './job-publication-cancel-request';
+import { JobCancelRequest } from './job-publication-cancel-request';
 
 @Injectable()
 export class JobPublicationService {
@@ -16,32 +16,11 @@ export class JobPublicationService {
     private readonly DEFAULT_LOCALE = 'DE';
     private readonly EN_LOCALE = 'EN';
 
-    private static createCancelJobPublicationParams(jobPublicationCancelRequest: JobCancellationRequest) {
+    private static createCancelJobPublicationParams(jobCancelRequest: JobCancelRequest) {
         const params = new URLSearchParams();
-        params.set('cancellationReason', JobPublicationService.getCancellationReason(jobPublicationCancelRequest));
-        params.set('accessToken', jobPublicationCancelRequest.accessToken);
+        params.set('accessToken', jobCancelRequest.accessToken);
+        params.set('cancellationReason', CancellationReason[jobCancelRequest.cancellationReason]);
         return params;
-    }
-
-    private static getCancellationReason(jobPublicationCancelRequest: JobCancellationRequest): string {
-        if (!jobPublicationCancelRequest.positionOccupied) {
-            return CancellationReason[CancellationReason.POSITION_NOT_OCCUPIED];
-        }
-
-        if (jobPublicationCancelRequest.selfOccupied) {
-            return CancellationReason[CancellationReason.POSITION_OCCUPIED_SELF];
-        }
-
-        if (jobPublicationCancelRequest.occupiedWithJobCenter
-            && jobPublicationCancelRequest.occupiedWithPrivateAgency) {
-            return CancellationReason[CancellationReason.POSITION_OCCUPIED_BOTH];
-        }
-
-        if (jobPublicationCancelRequest.occupiedWithJobCenter) {
-            return CancellationReason[CancellationReason.POSITION_OCCUPIED_JOB_CENTER];
-        }
-
-        return CancellationReason[CancellationReason.POSITION_OCCUPIED_PRIVATE_AGENCY];
     }
 
     constructor(private http: Http,
@@ -82,15 +61,15 @@ export class JobPublicationService {
             .map((resp) => resp.json() as JobPublication);
     }
 
-    cancelJobPublication(jobPublicationCancelRequest: JobCancellationRequest): Observable<void> {
+    cancelJobPublication(jobCancelRequest: JobCancelRequest): Observable<number> {
         const options = new BaseRequestOptions();
-        options.params = JobPublicationService.createCancelJobPublicationParams(jobPublicationCancelRequest);
-        return this.http.post(`${this.resourceUrl}/${jobPublicationCancelRequest.id}/cancel`, {}, options)
-            .map((_) => {
-            });
+        options.params = JobPublicationService.createCancelJobPublicationParams(jobCancelRequest);
+        return this.http.post(`${this.resourceUrl}/${jobCancelRequest.id}/cancel`, {}, options)
+            .map((result) => result.status);
     }
 
-    isJobPublicationCancellable(status: string): boolean {
-        return status !== Status[Status.DISMISSED] && status !== Status[Status.UNSUBSCRIBED];
+    isJobPublicationCancellable(status: string | Status): boolean {
+        const statusEnum = typeof status === 'string' ? Status[status] : status;
+        return statusEnum !== Status.DISMISSED && statusEnum !== Status.UNSUBSCRIBED;
     }
 }

@@ -13,8 +13,11 @@ import { JobPublication } from '../../shared/job-publication/job-publication.mod
 import { Organization } from '../../shared/organization/organization.model';
 import { OrganizationService } from '../../shared/organization/organization.service';
 import { JobPublicationFilter } from '../state-management/state/dashboard.state';
-import { JobPublicationCancelDialogService } from '../dialogs/job-publication-cancel-dialog.service';
 import { JobPublicationService } from '../../shared/job-publication/job-publication.service';
+import { Store } from '@ngrx/store';
+import { JobPublicationDetailState } from '../state-management/state/job-publication-detail.state';
+import { JobPublicationCancelDialogService } from '../dialogs/job-publication-cancel-dialog.service';
+import { SubmitCancellationAction } from '../state-management/actions/dashboard.actions';
 
 @Component({
     selector: 'jr2-pea-dashboard',
@@ -46,8 +49,9 @@ export class PeaDashboardComponent implements OnInit {
     constructor(private fb: FormBuilder,
                 private principal: Principal,
                 private organizationService: OrganizationService,
-                private cancelDialogService: JobPublicationCancelDialogService,
-                private jobPublicationService: JobPublicationService) {
+                private store: Store<JobPublicationDetailState>,
+                private jobPublicationService: JobPublicationService,
+                private jobPublicationCancelDialogService: JobPublicationCancelDialogService) {
     }
 
     ngOnInit(): void {
@@ -74,6 +78,7 @@ export class PeaDashboardComponent implements OnInit {
     }
 
     showCancellationDialog(id: string, accessToken: string) {
-        this.cancelDialogService.open(id, accessToken);
+        const onSubmit = (cancellationData) => this.store.dispatch(new SubmitCancellationAction(cancellationData));
+        this.jobPublicationCancelDialogService.open(id, accessToken, onSubmit);
     }
 }

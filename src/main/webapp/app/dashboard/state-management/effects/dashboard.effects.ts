@@ -3,21 +3,43 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Observable } from 'rxjs/Observable';
 import { Action, Store } from '@ngrx/store';
 import {
-    FILTER_JOB_PUBLICATIONS_DASHBOARD, FilterJobPublicationsDashboardAction,
+    CancellationSucceededAction,
+    FILTER_JOB_PUBLICATIONS_DASHBOARD,
+    FilterJobPublicationsDashboardAction,
     JobPublicationsLoadedAction,
-    JobPublicationsLoadErrorAction, LOAD_NEXT_JOB_PUBLICATIONS_DASHBOARD_PAGE,
-    LoadNextJobPublicationsDashboardPageAction
+    JobPublicationsLoadErrorAction,
+    LOAD_NEXT_JOB_PUBLICATIONS_DASHBOARD_PAGE,
+    LoadNextJobPublicationsDashboardPageAction,
+    SUBMIT_CANCELLATION,
+    SubmitCancellationAction
 } from '../actions/dashboard.actions';
 import { ITEMS_PER_PAGE, Principal } from '../../../shared';
 import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
 import {
-    DashboardState, getJobPublicationDashboardState, JobPublicationFilter,
+    DashboardState,
+    getJobPublicationDashboardState,
+    JobPublicationFilter,
     JobPublicationsDashboardState
 } from '../state/dashboard.state';
 import { JobPublicationSearchRequest } from '../../../shared/job-publication/job-publication-search-request';
+import { createJobPublicationCancellationRequest } from '../util/cancellation-request.mapper';
+import { JobCancelRequest } from '../../../shared/job-publication/job-publication-cancel-request';
+import { JobPublication } from '../../../shared/job-publication/job-publication.model';
 
 @Injectable()
 export class DashboardEffects {
+    @Effect()
+    cancelJobPublication$: Observable<Action> = this.actions$
+        .ofType(SUBMIT_CANCELLATION)
+        .map((action: SubmitCancellationAction) => createJobPublicationCancellationRequest(action.payload))
+        .switchMap((jobCancelRequest: JobCancelRequest) =>
+            this.jobPublicationService.cancelJobPublication(jobCancelRequest)
+                .flatMap((code) => this.jobPublicationService.findByIdAndAccessToken(jobCancelRequest.id, jobCancelRequest.accessToken))
+                // todo: JR2-582 - Update PEA dashboard
+                .map((jobPublication: JobPublication) => new CancellationSucceededAction(jobPublication))
+                .catch(() => Observable.of(new JobPublicationsLoadErrorAction()))
+        );
+
     @Effect()
     loadNextJobPublicationsPage$: Observable<Action> = this.actions$
         .ofType(LOAD_NEXT_JOB_PUBLICATIONS_DASHBOARD_PAGE)
@@ -39,7 +61,7 @@ export class DashboardEffects {
             this.principal.getAuthenticationState())
         .switchMap(([action, state, identity]: [FilterJobPublicationsDashboardAction, JobPublicationsDashboardState, any]) =>
             this.jobPublicationService.search(
-                    this.createSearchRequest(action.payload, state.page, identity))
+                this.createSearchRequest(action.payload, state.page, identity))
                 .map(this.toJobPublicationsLoadedActionAction)
                 .catch(() => Observable.of(new JobPublicationsLoadErrorAction()))
         );
