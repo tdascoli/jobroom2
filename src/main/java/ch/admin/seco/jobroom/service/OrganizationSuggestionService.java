@@ -39,13 +39,13 @@ public class OrganizationSuggestionService {
                 .prefix(prefix)
                 .size(resultSize));
 
-        SearchResponse suggest = elasticsearchTemplate.suggest(suggestBuilder, Organization.class);
+        SearchResponse searchResponse = elasticsearchTemplate.suggest(suggestBuilder, Organization.class);
 
-        if (Objects.isNull(suggest.getSuggest())) {
+        if (Objects.isNull(searchResponse.getSuggest())) {
             return new OrganizationAutocompleteDTO(Collections.emptyList());
         }
 
-        List<OrganizationSuggestionDTO> suggestions = suggest.getSuggest()
+        List<OrganizationSuggestionDTO> suggestions = searchResponse.getSuggest()
                 .<CompletionSuggestion>getSuggestion("organizations").getEntries().stream()
                 .flatMap(item -> item.getOptions().stream())
                 .map(this::convertToOrganizationSuggestion)

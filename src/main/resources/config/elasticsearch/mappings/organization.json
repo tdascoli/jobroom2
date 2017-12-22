@@ -3,7 +3,7 @@
         "properties": {
             "name": {
                 "type": "completion",
-                "analyzer": "keyword"
+                "analyzer": "ascii_folding"
             },
             "externalId": {
                 "type": "keyword"

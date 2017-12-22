@@ -19,6 +19,7 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Mapping;
+import org.springframework.data.elasticsearch.annotations.Setting;
 
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 
@@ -30,6 +31,7 @@ import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @Document(indexName = "organization")
 @Mapping(mappingPath = "config/elasticsearch/mappings/organization.json")
+@Setting(settingPath = "config/elasticsearch/settings/folding-analyzer.json")
 public class Organization extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

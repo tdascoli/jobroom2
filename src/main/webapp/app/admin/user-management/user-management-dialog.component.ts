@@ -85,7 +85,7 @@ export class UserMgmtDialogComponent implements OnInit {
                 : this.organizationService.suggest(term, UserMgmtDialogComponent.ORGANIZATION_SUGGESTIONS_SIZE))
                     .map((autocomplete: OrganizationAutocomplete) => autocomplete.organizations);
 
-    formatter = (suggestion: OrganizationSuggestion) => `${suggestion.name} ${suggestion.city}, ${suggestion.street}`;
+    formatter = (suggestion: OrganizationSuggestion) => `${suggestion.name}, ${suggestion.city}, ${suggestion.street}`;
 }
 
 @Component({
