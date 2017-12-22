@@ -37,7 +37,7 @@ export class JobPublicationDetailEffects {
             this.jobPublicationService.cancelJobPublication(jobCancelRequest)
                 .flatMap((code) => this.jobPublicationService.findByIdAndAccessToken(jobCancelRequest.id, jobCancelRequest.accessToken))
                 .map((jobPublication: JobPublication) => new CancellationSucceededAction(jobPublication))
-                .catch(() => Observable.of(new CancellationFailedAction()))
+                .catch((error) => Observable.of(new CancellationFailedAction(error)))
         );
 
     constructor(private actions$: Actions,

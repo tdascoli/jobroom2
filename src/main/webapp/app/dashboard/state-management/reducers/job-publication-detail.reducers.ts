@@ -21,7 +21,8 @@ export function jobPublicationDetailReducer(state = initialState, action: Action
             const updatedJobPublication = Object.assign({}, action.payload);
             newState = Object.assign({}, state, {
                 jobPublication: updatedJobPublication,
-                showCancellationSuccess: true
+                showCancellationSuccess: true,
+                showCancellationError: false,
             });
             break;
 
@@ -30,7 +31,10 @@ export function jobPublicationDetailReducer(state = initialState, action: Action
             break;
 
         case CANCELLATION_FAILED:
-            newState = Object.assign({}, state, { showCancellationError: true });
+            newState = Object.assign({}, state, {
+                showCancellationError: true,
+                showCancellationSuccess: false
+            });
             break;
 
         case HIDE_ERROR_MESSAGE:
