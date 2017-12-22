@@ -12,12 +12,15 @@ import { ITEMS_PER_PAGE, Principal } from '../../shared';
 import { JobPublication } from '../../shared/job-publication/job-publication.model';
 import { Organization } from '../../shared/organization/organization.model';
 import { OrganizationService } from '../../shared/organization/organization.service';
-import { JobPublicationFilter } from '../state-management/state/dashboard.state';
+import {
+    JobPublicationFilter,
+    PEADashboardState
+} from '../state-management/state/pea-dashboard.state';
 import { JobPublicationService } from '../../shared/job-publication/job-publication.service';
 import { Store } from '@ngrx/store';
 import { JobPublicationDetailState } from '../state-management/state/job-publication-detail.state';
 import { JobPublicationCancelDialogService } from '../dialogs/job-publication-cancel-dialog.service';
-import { SubmitCancellationAction } from '../state-management/actions/dashboard.actions';
+import { SubmitCancellationAction } from '../state-management/actions/pea-dashboard.actions';
 
 @Component({
     selector: 'jr2-pea-dashboard',
@@ -49,7 +52,7 @@ export class PeaDashboardComponent implements OnInit {
     constructor(private fb: FormBuilder,
                 private principal: Principal,
                 private organizationService: OrganizationService,
-                private store: Store<JobPublicationDetailState>,
+                private store: Store<PEADashboardState>,
                 private jobPublicationService: JobPublicationService,
                 private jobPublicationCancelDialogService: JobPublicationCancelDialogService) {
     }

@@ -1,23 +1,24 @@
 import { Observable } from 'rxjs/Observable';
 import { Store, StoreModule } from '@ngrx/store';
-import { DashboardEffects } from '../../../../../../../main/webapp/app/dashboard/state-management/effects/dashboard.effects';
+import { PEADashboardEffects } from '../../../../../../../main/webapp/app/dashboard/state-management/effects/pea-dashboard.effects';
 import { DashboardState } from '../../../../../../../main/webapp/app/dashboard/state-management/state/dashboard.state';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
-import { dashboardReducer } from '../../../../../../../main/webapp/app/dashboard/state-management/reducers/dashboard.reducers';
 import { cold, hot } from 'jasmine-marbles';
 import { Headers } from '@angular/http';
-import { ResponseWrapper } from '../../../../../../../main/webapp/app/shared';
+import { Principal, ResponseWrapper } from '../../../../../../../main/webapp/app/shared';
 import {
     FilterJobPublicationsDashboardAction,
-    JobPublicationsLoadedAction, JobPublicationsLoadErrorAction, LoadNextJobPublicationsDashboardPageAction
-} from '../../../../../../../main/webapp/app/dashboard/state-management/actions/dashboard.actions';
+    JobPublicationsLoadedAction,
+    JobPublicationsLoadErrorAction,
+    LoadNextJobPublicationsDashboardPageAction
+} from '../../../../../../../main/webapp/app/dashboard/state-management/actions/pea-dashboard.actions';
 import { JobPublicationService } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.service';
-import { Principal } from '../../../../../../../main/webapp/app/shared';
 import { createJobPublication } from '../../../shared/job-publication/utils';
+import { dashboardReducer } from '../../../../../../../main/webapp/app/dashboard/state-management/reducers/dahboard.reducers';
 
-describe('DashboardEffects', () => {
-    let effects: DashboardEffects;
+describe('PEADashboardEffects', () => {
+    let effects: PEADashboardEffects;
     let actions$: Observable<any>;
     let store: Store<DashboardState>;
 
@@ -29,10 +30,10 @@ describe('DashboardEffects', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [
-                StoreModule.forRoot({ dashboard: dashboardReducer })
+                StoreModule.forRoot(dashboardReducer)
             ],
             providers: [
-                DashboardEffects,
+                PEADashboardEffects,
                 provideMockActions(() => actions$),
                 {
                     provide: JobPublicationService,
@@ -43,9 +44,10 @@ describe('DashboardEffects', () => {
                     useValue: mockPrincipal
                 }
             ],
-        });
+        })
+        ;
 
-        effects = TestBed.get(DashboardEffects);
+        effects = TestBed.get(PEADashboardEffects);
         store = TestBed.get(Store);
     });
 

@@ -12,22 +12,20 @@ import {
     LoadNextJobPublicationsDashboardPageAction,
     SUBMIT_CANCELLATION,
     SubmitCancellationAction
-} from '../actions/dashboard.actions';
+} from '../actions/pea-dashboard.actions';
 import { ITEMS_PER_PAGE, Principal } from '../../../shared';
 import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
 import {
-    DashboardState,
-    getJobPublicationDashboardState,
-    JobPublicationFilter,
-    JobPublicationsDashboardState
-} from '../state/dashboard.state';
+    getJobPublicationDashboardState, JobPublicationFilter,
+    PEADashboardState
+} from '../state/pea-dashboard.state';
 import { JobPublicationSearchRequest } from '../../../shared/job-publication/job-publication-search-request';
 import { createJobPublicationCancellationRequest } from '../util/cancellation-request.mapper';
 import { JobCancelRequest } from '../../../shared/job-publication/job-publication-cancel-request';
 import { JobPublication } from '../../../shared/job-publication/job-publication.model';
 
 @Injectable()
-export class DashboardEffects {
+export class PEADashboardEffects {
     @Effect()
     cancelJobPublication$: Observable<Action> = this.actions$
         .ofType(SUBMIT_CANCELLATION)
@@ -35,7 +33,6 @@ export class DashboardEffects {
         .switchMap((jobCancelRequest: JobCancelRequest) =>
             this.jobPublicationService.cancelJobPublication(jobCancelRequest)
                 .flatMap((code) => this.jobPublicationService.findByIdAndAccessToken(jobCancelRequest.id, jobCancelRequest.accessToken))
-                // todo: JR2-582 - Update PEA dashboard
                 .map((jobPublication: JobPublication) => new CancellationSucceededAction(jobPublication))
                 .catch(() => Observable.of(new JobPublicationsLoadErrorAction()))
         );
@@ -46,7 +43,7 @@ export class DashboardEffects {
         .withLatestFrom(
             this.store.select(getJobPublicationDashboardState),
             this.principal.getAuthenticationState())
-        .switchMap(([action, state, identity]: [LoadNextJobPublicationsDashboardPageAction, JobPublicationsDashboardState, any]) =>
+        .switchMap(([action, state, identity]: [LoadNextJobPublicationsDashboardPageAction, PEADashboardState, any]) =>
             this.jobPublicationService.search(
                 this.createSearchRequest(state.jobPublicationFilter, action.payload.page, identity))
                 .map((resp) => this.toJobPublicationsLoadedActionAction(resp, action.payload.page))
@@ -59,7 +56,7 @@ export class DashboardEffects {
         .withLatestFrom(
             this.store.select(getJobPublicationDashboardState),
             this.principal.getAuthenticationState())
-        .switchMap(([action, state, identity]: [FilterJobPublicationsDashboardAction, JobPublicationsDashboardState, any]) =>
+        .switchMap(([action, state, identity]: [FilterJobPublicationsDashboardAction, PEADashboardState, any]) =>
             this.jobPublicationService.search(
                 this.createSearchRequest(action.payload, state.page, identity))
                 .map(this.toJobPublicationsLoadedActionAction)
@@ -67,7 +64,7 @@ export class DashboardEffects {
         );
 
     constructor(private actions$: Actions,
-                private store: Store<DashboardState>,
+                private store: Store<PEADashboardState>,
                 private principal: Principal,
                 private jobPublicationService: JobPublicationService) {
     }

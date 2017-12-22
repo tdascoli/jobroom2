@@ -1,7 +1,7 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { DashboardComponent } from '../../../../../main/webapp/app/dashboard/dashboard.component';
 import { StoreModule } from '@ngrx/store';
-import { dashboardReducer } from '../../../../../main/webapp/app/dashboard/state-management/reducers/dashboard.reducers';
+import { dashboardReducer } from '../../../../../main/webapp/app/dashboard/state-management/reducers/dahboard.reducers';
 
 describe('DashboardComponent', () => {
     let component: DashboardComponent;
@@ -10,7 +10,7 @@ describe('DashboardComponent', () => {
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [
-                StoreModule.forRoot({ 'dashboard': dashboardReducer })
+                StoreModule.forRoot(dashboardReducer)
             ],
             declarations: [DashboardComponent],
             providers: []

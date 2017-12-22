@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 import { JobPublication } from '../../../shared/job-publication/job-publication.model';
-import { JobPublicationFilter } from '../state/dashboard.state';
+import { JobPublicationFilter } from '../state/pea-dashboard.state';
 import { CancellationData } from '../../dialogs/cancellation-data';
 
 export const FILTER_JOB_PUBLICATIONS_DASHBOARD = 'DASHBOARD:FILTER_JOB_PUBLICATIONS_DASHBOARD';
@@ -34,7 +34,7 @@ export class JobPublicationsLoadedAction implements Action {
 export class JobPublicationsLoadErrorAction implements Action {
     readonly type = JOB_PUBLICATIONS_LOAD_ERROR;
 
-    constructor() {
+    constructor(public payload = {}) {
     }
 }
 
@@ -56,4 +56,6 @@ export type Actions =
     | FilterJobPublicationsDashboardAction
     | JobPublicationsLoadErrorAction
     | LoadNextJobPublicationsDashboardPageAction
+    | SubmitCancellationAction
+    | CancellationSucceededAction
     | JobPublicationsLoadedAction;
