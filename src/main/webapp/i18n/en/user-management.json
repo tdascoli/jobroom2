@@ -28,6 +28,9 @@
         "phone": "Phone",
         "phone.validation.invalid": "Phone is invalid",
         "profiles": "Profiles",
-        "updated": "A user was updated with identifier {{ param }}"
+        "updated": "A user was updated with identifier {{ param }}",
+        "search": {
+            "placeholder": "Search for user by username, name or email"
+        }
     }
 }

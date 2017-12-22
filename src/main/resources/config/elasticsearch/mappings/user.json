@@ -1,0 +1,35 @@
+{
+    "user": {
+        "properties": {
+            "id": {
+                "type": "keyword"
+            },
+            "login": {
+                "type": "keyword"
+            },
+            "firstName": {
+                "type": "text",
+                "analyzer": "ascii_folding"
+            },
+            "lastName": {
+                "type": "text",
+                "analyzer": "ascii_folding"
+            },
+            "email": {
+                "type": "keyword"
+            },
+            "langKey": {
+                "type": "keyword"
+            },
+            "createdDate": {
+                "type": "date"
+            },
+            "lastModifiedBy": {
+                "type": "keyword"
+            },
+            "lastModifiedDate": {
+                "type": "date"
+            }
+        }
+    }
+}

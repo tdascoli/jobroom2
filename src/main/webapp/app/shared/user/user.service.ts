@@ -10,6 +10,7 @@ import { createRequestOption } from '../model/request-util';
 @Injectable()
 export class UserService {
     private resourceUrl = SERVER_API_URL + 'api/users';
+    private searchUrl = SERVER_API_URL + 'api/_search/users';
 
     constructor(private http: Http) { }
 
@@ -30,6 +31,12 @@ export class UserService {
     query(req?: any): Observable<ResponseWrapper> {
         const options = createRequestOption(req);
         return this.http.get(this.resourceUrl, options)
+            .map((res: Response) => this.convertResponse(res));
+    }
+
+    search(req: any): Observable<ResponseWrapper> {
+        const options = createRequestOption(req);
+        return this.http.get(this.searchUrl, options)
             .map((res: Response) => this.convertResponse(res));
     }
 

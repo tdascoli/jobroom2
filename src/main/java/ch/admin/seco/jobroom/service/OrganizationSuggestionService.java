@@ -1,7 +1,9 @@
 package ch.admin.seco.jobroom.service;
 
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
@@ -39,11 +41,15 @@ public class OrganizationSuggestionService {
 
         SearchResponse suggest = elasticsearchTemplate.suggest(suggestBuilder, Organization.class);
 
+        if (Objects.isNull(suggest.getSuggest())) {
+            return new OrganizationAutocompleteDTO(Collections.emptyList());
+        }
+
         List<OrganizationSuggestionDTO> suggestions = suggest.getSuggest()
-            .<CompletionSuggestion>getSuggestion("organizations").getEntries().stream()
-            .flatMap(item -> item.getOptions().stream())
-            .map(this::convertToOrganizationSuggestion)
-            .collect(Collectors.toList());
+                .<CompletionSuggestion>getSuggestion("organizations").getEntries().stream()
+                .flatMap(item -> item.getOptions().stream())
+                .map(this::convertToOrganizationSuggestion)
+                .collect(Collectors.toList());
         return new OrganizationAutocompleteDTO(suggestions);
     }
 

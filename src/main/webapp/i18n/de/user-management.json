@@ -28,6 +28,9 @@
         "phone": "Phone",
         "phone.validation.invalid": "Phone is invalid",
         "profiles": "Profile",
-        "updated": "Ein Benutzer mit ID {{ param }} wurde ge\u00e4ndert"
+        "updated": "Ein Benutzer mit ID {{ param }} wurde ge\u00e4ndert",
+        "search": {
+            "placeholder": "Search for user by username, name or email"
+        }
     }
 }

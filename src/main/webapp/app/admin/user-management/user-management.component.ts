@@ -23,6 +23,7 @@ export class UserMgmtComponent implements OnInit, OnDestroy {
     predicate: any;
     previousPage: any;
     reverse: any;
+    currentSearch: string;
 
     constructor(
         private userService: UserService,
@@ -40,6 +41,7 @@ export class UserMgmtComponent implements OnInit, OnDestroy {
             this.reverse = data['pagingParams'].ascending;
             this.predicate = data['pagingParams'].predicate;
         });
+        this.currentSearch = activatedRoute.snapshot.params['search'] || '';
     }
 
     ngOnInit() {
@@ -75,6 +77,18 @@ export class UserMgmtComponent implements OnInit, OnDestroy {
     }
 
     loadAll() {
+        if (this.currentSearch) {
+            this.userService.search({
+                page: this.page - 1,
+                query: this.currentSearch,
+                size: this.itemsPerPage,
+                sort: this.sort()
+            }).subscribe(
+                (res: ResponseWrapper) => this.onSuccess(res.json, res.headers),
+                (res: ResponseWrapper) => this.onError(res.json)
+            );
+            return;
+        }
         this.userService.query({
             page: this.page - 1,
             size: this.itemsPerPage,
@@ -107,9 +121,34 @@ export class UserMgmtComponent implements OnInit, OnDestroy {
         this.router.navigate(['/user-management'], {
             queryParams: {
                 page: this.page,
+                search: this.currentSearch,
                 sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
             }
         });
+        this.loadAll();
+    }
+
+    clear() {
+        this.page = 0;
+        this.currentSearch = '';
+        this.router.navigate(['/user-management', {
+            page: this.page,
+            sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
+        }]);
+        this.loadAll();
+    }
+
+    search(query) {
+        if (!query) {
+            return this.clear();
+        }
+        this.page = 0;
+        this.currentSearch = query;
+        this.router.navigate(['/user-management', {
+            search: this.currentSearch,
+            page: this.page,
+            sort: this.predicate + ',' + (this.reverse ? 'asc' : 'desc')
+        }]);
         this.loadAll();
     }
 

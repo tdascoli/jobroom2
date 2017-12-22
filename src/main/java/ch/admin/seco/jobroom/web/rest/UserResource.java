@@ -6,8 +6,6 @@ import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 import javax.validation.Valid;
 
@@ -31,6 +29,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.admin.seco.jobroom.config.Constants;
@@ -240,17 +239,18 @@ public class UserResource {
     }
 
     /**
-     * SEARCH  /_search/users/:query : search for the User corresponding
+     * SEARCH  /_search/users/ : search for the User corresponding
      * to the query.
      *
      * @param query the query to search
+     * @param pageable pageable
      * @return the result of the search
      */
-    @GetMapping("/_search/users/{query}")
+    @GetMapping("/_search/users")
     @Timed
-    public List<User> search(@PathVariable String query) {
-        return StreamSupport
-            .stream(userSearchRepository.search(queryStringQuery(query)).spliterator(), false)
-            .collect(Collectors.toList());
+    public ResponseEntity<List<User>> search(@RequestParam String query, @ApiParam Pageable pageable) {
+        Page<User> page = userSearchRepository.search(queryStringQuery(query), pageable);
+        HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/users");
+        return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 }

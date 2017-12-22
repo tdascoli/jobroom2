@@ -971,3 +971,4 @@ user-management,userManagement.phone,Phone,Phone,Phone,Phone
 user-management,userManagement.phone.validation.invalid,Phone is invalid,Phone is invalid,Phone is invalid,Phone is invalid
 user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
 user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}
+user-management,userManagement.search.placeholder,"Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email"
