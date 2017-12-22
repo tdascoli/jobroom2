@@ -67,7 +67,7 @@
                 "education": "Ausbildung",
                 "education-level": {
                     "NOT_KNOWN": "non sa",
-                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Elementare \u00f1 Scuola obligatoria",
+                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Elementare \u2013 Scuola obligatoria",
                     "SEK_II_BERUFSMATURITAET": "Sec. II \u2013 Maturit\u00e0 professionale o equiv.",
                     "SEK_II_FACHMATURITAET": "Sec. II \u2013 Maturit\u00e0 specializzata o equiv.",
                     "SEK_II_FACHMITTELSCHULE": "Sec. II \u2013 Scuola specializzata o equiv.",
@@ -87,7 +87,7 @@
                 "experience": "Berufserfahrung",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 anni",
                 "experience.LESS_THAN_1_YEAR": "meno di 1 anno",
-                "experience.MORE_THAN_3_YEARS": "pi\u02d8 di 3 anni",
+                "experience.MORE_THAN_3_YEARS": "pi\u00f9 di 3 anni",
                 "experience.NO_EXPERIENCE": "senza esperienza",
                 "job-description": "Stellenbeschreibung",
                 "job-title": "Stellenbezeichnung",

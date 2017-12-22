@@ -594,7 +594,7 @@ home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber
 home,home.tools.job-publication.driving-licence,Führerausweis,Führerausweis,Führerausweis,Führerausweis
 home,home.tools.job-publication.education,Ausbildung,Ausbildung,Ausbildung,Ausbildung
 home,home.tools.job-publication.education-level.NOT_KNOWN,weiss nicht,weiss nicht,ne sait pas,non sa
-home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire ñ Ecole obligatoire,Elementare ñ Scuola obligatoria
+home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire – Ecole obligatoire,Elementare – Scuola obligatoria
 home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,Sek. II - Berufsmaturität od. äq.,Sek. II - Berufsmaturität od. äq.,Sec. II – Maturité professionnelle ou équiv.,Sec. II – Maturità professionale o equiv.
 home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,Sek. II - Fachmaturität od. äq.,Sek. II - Fachmaturität od. äq.,Sec. II – Maturité spécialisée ou équiv.,Sec. II – Maturità specializzata o equiv.
 home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,Sek. II - Fachmittelschule oder äq.,Sek. II - Fachmittelschule oder äq.,Sec. II – Ecole de culture générale ou équiv.,Sec. II – Scuola specializzata o equiv.
@@ -611,10 +611,10 @@ home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,Terti�
 home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,Tertiär - Master Fachhochschule od. äq.,Tertiär - Master Fachhochschule od. äq.,Tertiaire – Master HES ou équivalent,Terziario – Master SUP o equivalente
 home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,Tertiär - Master universitäre Hochschule od. äq.,Tertiär - Master universitäre Hochschule od. äq.,Tertiaire –  Master HEU ou équivalent,Terziario – Master scuola univ./poli. o equiv.
 home,home.tools.job-publication.experience,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
-home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 Years,1 - 3 annÈes,1 - 3 anni
-home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,Less than 1 year,moins 1 annÈe,meno di 1 anno
-home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,More than 3 years,plus que 3 annÈes,pi˘ di 3 anni
-home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,No experience,sans expÈrience,senza esperienza
+home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 Years,1 - 3 années,1 - 3 anni
+home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,Less than 1 year,moins de 1 année,meno di 1 anno
+home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,More than 3 years,plus de 3 années,più di 3 anni
+home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,No experience,sans expérience,senza esperienza
 home,home.tools.job-publication.job-description,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung
 home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
 home,home.tools.job-publication.language-skills,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
