@@ -397,8 +397,10 @@
                     </div>
 
                     <div class="form-group">
-                        <label for="app-text">{{ 'home.tools.job-publication.application.additional-info.label' |
-                            translate }}</label>
+                        <label for="app-text">
+                            {{ 'home.tools.job-publication.application.additional-info.label' | translate }}
+                            <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                        </label>
                         <div>
                             <textarea #additionalInfo class="form-control" id="app-text" rows="5"
                                       [placeholder]="'home.tools.job-publication.application.additional-info.placeholder' | translate"
