@@ -3,10 +3,11 @@ import {
     Component, Input, OnChanges,
     OnInit, SimpleChanges
 } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { LocalityAutocomplete } from '../../../../shared/reference-service/locality-autocomplete';
+import { LocalityAutocomplete } from '../../../../shared/reference-service';
 import { LocalityService } from '../../../../shared/index';
+import { AbstractControl } from '@angular/forms/src/model';
 
 export interface Translations {
     zipCode: string;
@@ -43,6 +44,11 @@ export class ZipCodeComponent implements OnInit, OnChanges {
             .map((locality) => ({ zip: locality.zipCode, city: locality.city, communalCode: locality.communalCode }));
     }
 
+    private static zipAutocompleterValidator(c: AbstractControl): ValidationErrors | null {
+        const validZip: boolean = !!c.value && !!c.value.zip && !!c.value.city;
+        return validZip ? null : { 'invalidZip': { value: c.value } };
+    }
+
     constructor(private fb: FormBuilder,
                 private localityService: LocalityService) {
     }
@@ -59,7 +65,7 @@ export class ZipCodeComponent implements OnInit, OnChanges {
 
             if (changes['switzSelected'].firstChange) {
                 const validators = this.optional ? [] : [Validators.required];
-                this.zipAutocompleter = this.fb.control('', validators);
+                this.zipAutocompleter = this.fb.control('', [...validators, ZipCodeComponent.zipAutocompleterValidator]);
                 this.zipGroup = this.fb.group({
                     zip: ['', [...validators, Validators.pattern(/^\d*$/)]],
                     city: ['', validators]
