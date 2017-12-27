@@ -86,10 +86,10 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
 
     handleKeyDown(event: KeyboardEvent) {
         if (event.which === Key.Enter || event.which === Key.Tab) {
-            this.selectFreeText();
-
-            event.preventDefault();
-            event.stopPropagation();
+            if (this.selectFreeText()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
         }
     }
 
@@ -106,14 +106,16 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
 
     selectFreeText() {
         const freeText = new TypeaheadMultiselectModel('free-text', this.inputValue, this.inputValue);
-        if (this.editable && !this.exists(freeText) && freeText.code.length > 2) {
+        if (this.editable && !this.exists(freeText) && freeText.code && freeText.code.length > 2) {
             const newItems = [...this.selectedItems, freeText];
 
             this._onChange(newItems);
             this.writeValue(newItems);
 
             this.inputEl.nativeElement.value = '';
+            return freeText;
         }
+        return null;
     }
 
     selectItem(event: any) {

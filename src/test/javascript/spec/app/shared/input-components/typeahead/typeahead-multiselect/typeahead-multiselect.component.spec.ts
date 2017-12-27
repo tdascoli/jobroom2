@@ -49,13 +49,15 @@ describe('TypeaheadMultiselectComponent', () => {
             component.selectedItems = [new TypeaheadMultiselectModel('type', 'code', 'label')];
 
             // WHEN
-            component.inputValue = 'free text value';
-            component.selectFreeText();
+            component.inputValue = 'free';
+            const freeText = component.selectFreeText();
 
             // THAN
+            const expectedFreeText = new TypeaheadMultiselectModel('free-text', 'free', 'free');
+            expect(freeText).toEqual(expectedFreeText);
             expect(component.selectedItems.length).toEqual(2);
             expect(component.selectedItems).toContain(new TypeaheadMultiselectModel('type', 'code', 'label'));
-            expect(component.selectedItems).toContain(new TypeaheadMultiselectModel('free-text', 'free text value', 'free text value'));
+            expect(component.selectedItems).toContain(freeText);
         });
 
         it('should not allow duplicates', () => {
@@ -64,11 +66,22 @@ describe('TypeaheadMultiselectComponent', () => {
 
             // WHEN
             component.inputValue = 'free text value';
-            component.selectFreeText();
+            const freeText = component.selectFreeText();
 
             // THAN
+            expect(freeText).toEqual(null);
             expect(component.selectedItems.length).toEqual(1);
             expect(component.selectedItems).toContain(new TypeaheadMultiselectModel('free-text', 'free text value', 'free text value'));
+        });
+
+        it('should not allow free text value with length < 3', () => {
+            // WHEN
+            component.inputValue = 'te';
+            const freeText = component.selectFreeText();
+
+            // THAN
+            expect(freeText).toEqual(null);
+            expect(component.selectedItems.length).toEqual(0);
         });
     });
 
