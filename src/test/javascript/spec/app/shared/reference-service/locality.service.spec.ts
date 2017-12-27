@@ -43,7 +43,7 @@ describe('LocalityService', () => {
                 const urlArray = lastConnection.request.url.split(/[?&]/);
                 expect(urlArray).toEqual(arrayContaining(['referenceservice/api/_search/localities']));
                 expect(urlArray).toEqual(arrayContaining(['prefix=ber']));
-                expect(urlArray).toEqual(arrayContaining(['distinctLocalities=true']))
+                expect(urlArray).toEqual(arrayContaining(['distinctByLocalityCity=true']))
             }));
 
         it('should map the response Locality list without duplicates to an array of TypeaheadMultiselectModel',
@@ -80,8 +80,8 @@ describe('LocalityService', () => {
                 expect(model.length).toEqual(3);
                 expect(model).toEqual([
                     new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '351', 'Bern', 0),
-                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '115', 'Bertschikon (Gossau ZH)', 0),
-                    new TypeaheadMultiselectModel(LocalityInputType.CANTON, 'BE', 'Bern / Berne (BE)', 0),
+                    new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, '115', 'Bertschikon (Gossau ZH)', 1),
+                    new TypeaheadMultiselectModel(LocalityInputType.CANTON, 'BE', 'Bern / Berne (BE)', 2),
                 ]);
 
             })

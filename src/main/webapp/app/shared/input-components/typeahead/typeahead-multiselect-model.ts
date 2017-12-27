@@ -11,6 +11,9 @@ export class TypeaheadMultiselectModel {
     }
 
     compare(other: TypeaheadMultiselectModel): number {
-        return this.order <= other.order ? (this.order === other.order ? 0 : -1) : 1;
+        if (this.order === other.order) {
+            return 0;
+        }
+        return this.order >= other.order ? 1 : -1;
     }
 }

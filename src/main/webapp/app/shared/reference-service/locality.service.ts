@@ -26,14 +26,14 @@ export class LocalityService {
     }
 
     fetchSuggestions<T = TypeaheadMultiselectModel[]>(prefix: string, resultMapper?: LocalityResultMapper<T>,
-                                                      distinctLocalities = true): Observable<T> {
+                                                      distinctByLocalityCity = true): Observable<T> {
         const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
 
         params.set('prefix', prefix);
         params.set('resultSize', DEFAULT_RESPONSE_SIZE);
-        params.set('distinctLocalities', distinctLocalities.toString());
+        params.set('distinctByLocalityCity', distinctByLocalityCity.toString());
 
         const _resultMapper = resultMapper
             ? resultMapper
@@ -84,12 +84,13 @@ export class LocalityService {
 
 function defaultLocalityAutocompleteMapper(localityAutocomplete: LocalityAutocomplete): TypeaheadMultiselectModel[] {
     const localities = localityAutocomplete.localities
-        .map((o: LocalitySuggestion) =>
-            new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, String(o.communalCode), o.city, 0));
+        .map((o: LocalitySuggestion, index) =>
+            new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, String(o.communalCode), o.city, index));
 
     const cantons = localityAutocomplete.cantons
-        .map((o: CantonSuggestion) =>
-            new TypeaheadMultiselectModel(LocalityInputType.CANTON, String(o.code), o.name + ' (' + o.code + ')', 0));
+        .map((o: CantonSuggestion, index) =>
+            new TypeaheadMultiselectModel(LocalityInputType.CANTON, String(o.code),
+                o.name + ' (' + o.code + ')', localities.length + index));
 
     return [...localities, ...cantons];
 }
