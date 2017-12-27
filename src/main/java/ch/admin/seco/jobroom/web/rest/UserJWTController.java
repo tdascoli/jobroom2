@@ -63,7 +63,7 @@ public class UserJWTController {
     @PostMapping(value = "/authenticate", consumes = MediaType.APPLICATION_FORM_URLENCODED_VALUE)
     @Timed
     public ResponseEntity authorizeOauth(@RequestParam String username, @RequestParam String password,
-        HttpServletRequest request, HttpServletResponse response) {
+        HttpServletRequest request) {
 
         UsernamePasswordAuthenticationToken authenticationToken =
             new UsernamePasswordAuthenticationToken(username, password);
@@ -71,9 +71,8 @@ public class UserJWTController {
 
         Authentication authentication = this.authenticationManager.authenticate(authenticationToken);
         SecurityContextHolder.getContext().setAuthentication(authentication);
-        String jwt = tokenProvider.createToken(authentication, false);
-        response.addHeader(JWTConfigurer.AUTHORIZATION_HEADER, "Bearer " + jwt);
-        return ResponseEntity.ok(new DefaultOAuth2AccessToken(jwt));
+        DefaultOAuth2AccessToken oAuth2AccessToken = tokenProvider.createAccessToken(authentication);
+        return ResponseEntity.ok(oAuth2AccessToken);
     }
 
     /**

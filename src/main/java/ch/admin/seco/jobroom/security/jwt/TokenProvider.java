@@ -1,5 +1,8 @@
 package ch.admin.seco.jobroom.security.jwt;
 
+import java.time.LocalDateTime;
+import java.time.ZoneOffset;
+import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Date;
@@ -23,6 +26,7 @@ import org.springframework.security.core.Authentication;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
+import org.springframework.security.oauth2.common.DefaultOAuth2AccessToken;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -51,24 +55,16 @@ public class TokenProvider {
     }
 
     public String createToken(Authentication authentication, Boolean rememberMe) {
-        String authorities = authentication.getAuthorities().stream()
-            .map(GrantedAuthority::getAuthority)
-            .collect(Collectors.joining(","));
+        return createToken(authentication, getAuthorities(authentication), getValidity(rememberMe));
+    }
 
-        long now = (new Date()).getTime();
-        Date validity;
-        if (rememberMe) {
-            validity = new Date(now + this.tokenValidityInMillisecondsForRememberMe);
-        } else {
-            validity = new Date(now + this.tokenValidityInMilliseconds);
-        }
+    public DefaultOAuth2AccessToken createAccessToken(Authentication authentication) {
+        Date validity = getValidity(false);
+        String jwt = createToken(authentication, getAuthorities(authentication), validity);
 
-        return Jwts.builder()
-            .setSubject(authentication.getName())
-            .claim(AUTHORITIES_KEY, authorities)
-            .signWith(SignatureAlgorithm.HS512, secretKey)
-            .setExpiration(validity)
-            .compact();
+        DefaultOAuth2AccessToken oAuth2AccessToken = new DefaultOAuth2AccessToken(jwt);
+        oAuth2AccessToken.setExpiration(validity);
+        return oAuth2AccessToken;
     }
 
     public Authentication getAuthentication(String token) {
@@ -108,5 +104,26 @@ public class TokenProvider {
             log.trace("JWT token compact of handler are invalid trace: {}", e);
         }
         return false;
+    }
+
+    private String getAuthorities(Authentication authentication) {
+        return authentication.getAuthorities().stream()
+            .map(GrantedAuthority::getAuthority)
+            .collect(Collectors.joining(","));
+    }
+
+    private String createToken(Authentication authentication, String authorities, Date validity) {
+        return Jwts.builder()
+            .setSubject(authentication.getName())
+            .claim(AUTHORITIES_KEY, authorities)
+            .signWith(SignatureAlgorithm.HS512, secretKey)
+            .setExpiration(validity)
+            .compact();
+    }
+
+    private Date getValidity(Boolean rememberMe) {
+        return Date.from(LocalDateTime.now()
+            .plus(rememberMe ? this.tokenValidityInMillisecondsForRememberMe : this.tokenValidityInMilliseconds, ChronoUnit.MILLIS)
+            .toInstant(ZoneOffset.UTC));
     }
 }
