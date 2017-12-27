@@ -1,5 +1,5 @@
 id;login;password_hash;first_name;last_name;email;image_url;activated;lang_key;created_by;last_modified_by
-8d9b707a-ddf4-11e5-b86d-9a79f06e9478;system;$2a$10$mE.qmcV0mFU5NcKh73TZx.z4ueI/.bDWbj0T1BYyqP481kGGarKLG;System;System;system@localhost;;true;de;system;system
-8d9b7412-ddf4-11e5-b86d-9a79f06e9478;anonymoususer;$2a$10$j8S5d7Sr7.8VTOYNviDPOeWX8KcYILUVJBsYV83Y5NtECayypx9lO;Anonymous;User;anonymous@localhost;;true;de;system;system
-8d9b77f0-ddf4-11e5-b86d-9a79f06e9478;admin;$2a$10$gSAhZrxMllrbgj/kkK9UceBPpChGWJA7SYIb1Mqo.n5aNLq1/oRrC;Administrator;Administrator;admin@localhost;;true;de;system;system
-00f9722b-7056-45b7-b10f-30db8a60afce;batch;$2a$10$y4okOuuTSwClrb6XYyAm.Og2LFO3HZiZQLR7Oqc.MiYPvypRwcPky;Batch;Batch;batch@localhost;;true;de;system;system
+8d9b707a-ddf4-11e5-b86d-9a79f06e9478;system;03f94cb5ec5b968809ab7c896bc59f5e;System;System;system@localhost;;true;de;system;system
+8d9b7412-ddf4-11e5-b86d-9a79f06e9478;anonymoususer;fddaaa970cd843faf51003342a303e84;Anonymous;User;anonymous@localhost;;true;de;system;system
+8d9b77f0-ddf4-11e5-b86d-9a79f06e9478;admin;21232f297a57a5a743894a0e4a801fc3;Administrator;Administrator;admin@localhost;;true;de;system;system
+00f9722b-7056-45b7-b10f-30db8a60afce;batch;86108e84f0e7392fabcba581e4b6d45b;Batch;Batch;batch@localhost;;true;de;system;system

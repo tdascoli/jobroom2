@@ -21,6 +21,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PatchMapping;
@@ -159,23 +160,25 @@ public class UserResource {
     @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<UserDTO> importUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
         log.debug("REST request to import User : {}", managedUserVM);
-        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail());
+        Optional<User> existingUser = userRepository.findOneByLogin(managedUserVM.getLogin());
 
         // update existing user
         if (existingUser.isPresent()) {
             User user = existingUser.get();
-            if (!user.getLogin().equals(managedUserVM.getLogin())) {
-                throw new LoginAlreadyUsedException();
-            }
-
             managedUserVM.setId(user.getId());
             Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
+            if (StringUtils.hasText(managedUserVM.getPassword())) {
+                userService.updatePassword(managedUserVM.getLogin(), managedUserVM.getPassword());
+            }
             return ResponseUtil.wrapOrNotFound(updatedUser,
                 HeaderUtil.createAlert("userManagement.updated", managedUserVM.getLogin()));
         }
 
         // create new user
         User newUser = userService.createUser(managedUserVM);
+        if (StringUtils.hasText(managedUserVM.getPassword())) {
+            userService.updatePassword(managedUserVM.getLogin(), managedUserVM.getPassword());
+        }
         return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
             .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
             .body(new UserDTO(newUser));

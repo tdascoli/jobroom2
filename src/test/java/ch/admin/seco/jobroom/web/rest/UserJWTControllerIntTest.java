@@ -146,7 +146,6 @@ public class UserJWTControllerIntTest {
         mockMvc.perform(post("/api/authenticate")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(login)))
-            .andDo(handler -> System.out.println(handler.getResponse().getContentAsString()))
             .andExpect(status().isUnauthorized());
     }
 
