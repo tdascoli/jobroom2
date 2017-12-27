@@ -24,8 +24,7 @@ module.exports = webpackMerge(commonConfig({env: ENV}), {
                 '/management',
                 '/swagger-resources',
                 '/v2/api-docs',
-                '/h2-console',
-                '/jobpublicationservice'
+                '/h2-console'
             ],
             target: 'https://dev.job-room.ch:8443',
             secure: false

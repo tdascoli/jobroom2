@@ -13,8 +13,13 @@ function parseVersion() {
     // const buildGradle = fs.readFileSync('build.gradle', 'utf8');
     // return versionRegex.exec(buildGradle);
     const versionRegex = /^build.version\s*=\s*(.*)/gm; // Match and group the version number
-    const buildInfo = fs.readFileSync('build/resources/main/META-INF/build-info.properties', 'utf8');
-    return versionRegex.exec(buildInfo)[1];
+    const buildInfoFileName = 'build/resources/main/META-INF/build-info.properties';
+    if (fs.existsSync(buildInfoFileName)) {
+        const buildInfo = fs.readFileSync('build/resources/main/META-INF/build-info.properties', 'utf8');
+        return versionRegex.exec(buildInfo)[1];
+    } else {
+        return 'undefined';
+    }
 }
 
 const _root = path.resolve(__dirname, '..');

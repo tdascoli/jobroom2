@@ -1,14 +1,12 @@
 import {
-    GenderAwareOccupationLabel,
-    OccupationInputType,
+    GenderAwareOccupationLabel, OccupationInputType,
     OccupationPresentationService
 } from '../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-multiselect-model';
 import {
-    OccupationLabel,
-    OccupationLabelAutocomplete,
+    OccupationLabel, OccupationLabelAutocomplete,
     OccupationLabelSuggestion
 } from '../../../../../../main/webapp/app/shared/reference-service/occupation-label.service';
 
@@ -64,6 +62,7 @@ describe('OccupationPresentationService', () => {
         it('should map to GenderAwareOccupationLabel', () => {
             // given
             mockOccupationLabelService.getOccupationLabelsByKey.and.returnValue(Observable.of({
+                default: 'male/female label',
                 f: 'female label',
                 m: 'male label'
             }));
@@ -74,6 +73,7 @@ describe('OccupationPresentationService', () => {
 
             // then
             expect(labels).toEqual({
+                default: 'male/female label',
                 female: 'female label',
                 male: 'male label'
             })
@@ -82,6 +82,7 @@ describe('OccupationPresentationService', () => {
         it('should cache occupationLabelService response', () => {
             // given
             mockOccupationLabelService.getOccupationLabelsByKey.and.returnValue(Observable.of({
+                default: 'male/female label',
                 f: 'female label',
                 m: 'male label'
             }));

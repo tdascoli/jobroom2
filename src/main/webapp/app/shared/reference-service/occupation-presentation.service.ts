@@ -2,11 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { TYPEAHEAD_QUERY_MIN_LENGTH } from '../../app.constants';
 import {
-    OccupationLabel,
-    OccupationLabelAutocomplete,
-    OccupationLabelData,
-    OccupationLabelService,
-    OccupationLabelSuggestion
+    OccupationLabel, OccupationLabelAutocomplete, OccupationLabelData,
+    OccupationLabelService, OccupationLabelSuggestion
 } from './occupation-label.service';
 import { TypeaheadMultiselectModel } from '../input-components/typeahead/typeahead-multiselect-model';
 import { TranslateService } from '@ngx-translate/core';
@@ -33,6 +30,7 @@ export interface OccupationOption {
 }
 
 export interface GenderAwareOccupationLabel {
+    default: string;
     male: string;
     female: string;
 }
@@ -59,6 +57,7 @@ export class OccupationPresentationService {
 
     findOccupationLabelsByCode(occupationCodeString: string): Observable<GenderAwareOccupationLabel> {
         const labelDataMapper = (labelData: OccupationLabelData) => Object.assign({}, {
+            default: labelData['default'],
             male: labelData['m'],
             female: labelData['f']
         });

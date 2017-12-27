@@ -33,9 +33,7 @@ export class CandidateSearchListItemComponent implements OnInit {
             this.jobExperience$ = this.occupationPresentationService.findOccupationLabelsByAvamCode(relevantJobExperience.occupationCode)
                 .map((occupationLabels: GenderAwareOccupationLabel) => Object.assign({}, relevantJobExperience,
                     {
-                        occupation: occupationLabels.male +
-                        ((occupationLabels.female && occupationLabels.male !== occupationLabels.female)
-                            ? ' / ' + occupationLabels.female : '')
+                        occupation: occupationLabels.default
                     }));
         } else {
             this.validExperienceData = false;

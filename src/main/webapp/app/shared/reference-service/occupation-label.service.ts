@@ -78,10 +78,9 @@ export class OccupationLabelService {
         const params: URLSearchParams = new URLSearchParams();
         options.params = params;
 
-        params.set('code', String(code));
-        params.set('type', type);
+        let url = OCCUPATION_LABEL_RESOURCE_URL + '/' + type + '/' + code;
         if (classifier) {
-            params.set('classifier', classifier);
+            url += '/' + classifier;
         }
 
         return this.http.get(OCCUPATION_LABEL_RESOURCE_URL, options)
@@ -89,31 +88,24 @@ export class OccupationLabelService {
     }
 
     getOccupationLabelsByKey(key: string): Observable<OccupationLabelData> {
-        const options = new BaseRequestOptions();
-
-        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/${key}`, options)
+        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/${key.replace(':', '/')}`)
             .map((res: Response) => <OccupationLabelData>res.json())
     }
 
     getOccupationMappingByAvamCode(code: number): Observable<OccupationLabelMapping> {
-        return this.getOccupationMapping(code, 'avamCode');
+        return this.getOccupationMapping(code, 'avam');
     }
 
     getOccupationMappingByBFSCode(code: number): Observable<OccupationLabelMapping> {
-        return this.getOccupationMapping(code, 'bfsCode');
+        return this.getOccupationMapping(code, 'bfs');
     }
 
     getOccupationMappingByX28Code(code: number): Observable<OccupationLabelMapping> {
-        return this.getOccupationMapping(code, 'x28Code');
+        return this.getOccupationMapping(code, 'x28');
     }
 
     private getOccupationMapping(code: number, type: string): Observable<OccupationLabelMapping> {
-        const options = new BaseRequestOptions();
-        const params: URLSearchParams = new URLSearchParams();
-        options.params = params;
-        params.set('type', type);
-
-        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/mapping/${code}`, options)
+        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/mapping/${type}/${code}`)
             .map((res: Response) => <OccupationLabelMapping>res.json())
     }
 }
