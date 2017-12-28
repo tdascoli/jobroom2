@@ -154,13 +154,26 @@ public class UserResource {
     @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<UserDTO> importUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
         log.debug("REST request to import User : {}", managedUserVM);
-        Optional<User> existingUser = userRepository.findOneByLogin(managedUserVM.getLogin());
+        if (managedUserVM.getAuthorities().size() <= 1) {
+            log.warn("User : {}", managedUserVM);
+        }
+        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail());
 
         // update existing user
         if (existingUser.isPresent()) {
             User user = existingUser.get();
+            if (!user.getLogin().equals(managedUserVM.getLogin())) {
+                throw new LoginAlreadyUsedException();
+            }
+
             managedUserVM.setId(user.getId());
             Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
+            updatedUser.ifPresent(uuser -> {
+                if (uuser.getAuthorities().size() <= 1) {
+                    log.warn("Update User : {}", uuser);
+                }
+            });
+
             if (StringUtils.hasText(managedUserVM.getPassword())) {
                 userService.updatePassword(managedUserVM.getLogin(), managedUserVM.getPassword());
             }
@@ -170,13 +183,16 @@ public class UserResource {
 
         // create new user
         User newUser = userService.createUser(managedUserVM);
+        if (newUser.getAuthorities().size() <= 1) {
+            log.warn("Update User : {}", newUser);
+        }
+
         if (StringUtils.hasText(managedUserVM.getPassword())) {
             userService.updatePassword(managedUserVM.getLogin(), managedUserVM.getPassword());
         }
         return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
             .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
             .body(new UserDTO(newUser));
-
     }
 
     /**

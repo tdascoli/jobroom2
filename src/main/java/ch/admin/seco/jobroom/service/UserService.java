@@ -228,9 +228,10 @@ public class UserService {
                 user.setLangKey(userDTO.getLangKey());
                 Set<Authority> managedAuthorities = user.getAuthorities();
                 managedAuthorities.clear();
-                userDTO.getAuthorities().stream()
-                    .map(authorityRepository::getOne)
-                    .forEach(managedAuthorities::add);
+                managedAuthorities.addAll(
+                    userDTO.getAuthorities().stream()
+                        .map(authorityRepository::getOne)
+                        .collect(Collectors.toSet()));
                 if (nonNull(userDTO.getOrganizationId())) {
                     organizationRepository.findByExternalId(userDTO.getOrganizationId())
                         .ifPresent(user::setOrganization);
