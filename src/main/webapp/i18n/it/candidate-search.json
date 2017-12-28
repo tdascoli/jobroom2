@@ -38,9 +38,9 @@
         },
         "graduation": {
             "ACCEPTED": "Svizzero o riconosciuto in Svizzera",
-            "CH": "Titolo svizzero",
-            "NONE": "Nessun titolo",
-            "NOT_ACCEPTED": "Titolo svizzero o estero",
+            "CH": "Diploma svizzero",
+            "NONE": "Nessun diploma",
+            "NOT_ACCEPTED": "Diploma svizzero o estero",
             "label": "Titolo"
         },
         "keywords": {

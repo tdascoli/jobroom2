@@ -12,9 +12,9 @@
         "tools": {
             "candidate-search": {
                 "search-badge": {
-                    "many": "Diesem Job-Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchende",
-                    "none": "Diesem Job-Profil ensprechen keine Stellensuchende",
-                    "one": "Diesem Job-Profil ensprechen <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
+                    "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchende",
+                    "none": "Diesem Profil ensprechen keine Stellensuchenden",
+                    "one": "Diesem Profil ensprechen <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
                     "show": "Jetzt anzeigen!"
                 },
                 "search-button": {
@@ -26,9 +26,9 @@
             "job-publication": {
                 "application": {
                     "additional-info": {
-                        "characters-counter-text": "{{count}} characters available",
+                        "characters-counter-text": "{{count}} Zeichen verbleibend.",
                         "label": "Erg\u00e4nzende Angaben",
-                        "placeholder": "max. 240 Characters"
+                        "placeholder": "max. 240 Zeichen"
                     },
                     "email": "E-Mail",
                     "email-enabled": "Elektronische Bewerbung",
@@ -44,7 +44,7 @@
                     "postbox-number": "Postfach-Nr.",
                     "postbox-zip": "Postfach PLZ",
                     "postbox-zipcode": "Postfach PLZ / Ort",
-                    "street": "Strasse / Hausnummer",
+                    "street": "Strasse",
                     "title": "Unternehmen",
                     "zipcode": "PLZ / Ort"
                 },
@@ -58,31 +58,30 @@
                 },
                 "date-placeholder": "TT.MM.JJJJ",
                 "description": {
-                    "characters-counter-text": "{{count}} characters available",
+                    "characters-counter-text": "{{count}} Zeichen verbleibend.",
                     "label": "T\u00e4tigkeit /Anforderungen",
-                    "placeholder": "max. 9000 Characters"
+                    "placeholder": "max. 9000 Zeichen"
                 },
                 "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
                 "driving-licence": "F\u00fchrerausweis",
                 "education": "Ausbildung",
                 "education-level": {
-                    "NOT_KNOWN": "weiss nicht",
-                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Primarstufe - obligatorische Schule",
-                    "SEK_II_BERUFSMATURITAET": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
-                    "SEK_II_FACHMATURITAET": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
-                    "SEK_II_FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
-                    "SEK_II_GRUNDBILDUNG_EBA": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
-                    "SEK_II_GRUNDBILDUNG_EFZ": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
-                    "SEK_II_GYMNASIALE_MATURITAET": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
-                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
-                    "SEK_I_OBLIGATORISCHE_SCHULE": "Sek. I - obligatorische Schule",
-                    "TER_BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
-                    "TER_BACHELOR_UNIVERSITAET": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
-                    "TER_BERUFSBILDUNG_DIPL": "Terti\u00e4r - H\u00f6here Berufsbildung, Dipl. od. \u00e4q.",
-                    "TER_BERUFSBILDUNG_FA": "Terti\u00e4r - H\u00f6here Berufsbildung, eidg. FA od. \u00e4q.",
-                    "TER_DOKTORAT_UNIVERSITAET": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
-                    "TER_MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
-                    "TER_MASTER_UNIVERSITAET": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q."
+                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Obligatorische Schule (Primarstufe)",
+                    "SEK_II_BERUFSMATURITAET": "Berufsmaturit\u00e4t oder \u00e4quivalent",
+                    "SEK_II_FACHMATURITAET": "Fachmaturit\u00e4t oder \u00e4quivalent",
+                    "SEK_II_FACHMITTELSCHULE": "Fachmittelschule oder \u00e4quivalent",
+                    "SEK_II_GRUNDBILDUNG_EBA": "Berufliche Grundbildung EBA oder \u00e4quivalent",
+                    "SEK_II_GRUNDBILDUNG_EFZ": "Berufliche Grundbildung EFZ oder \u00e4quivalent",
+                    "SEK_II_GYMNASIALE_MATURITAET": "Gymnasiale Maturit\u00e4t oder \u00e4quivalent",
+                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Weiterf\u00fchrende Schule (Sek. II)",
+                    "SEK_I_OBLIGATORISCHE_SCHULE": "Obligatorische Schule (Sek. I)",
+                    "TER_BACHELOR_FACHHOCHSCHULE": "Bachelor Fachhochschule oder \u00e4quivalent",
+                    "TER_BACHELOR_UNIVERSITAET": "Bachelor universit\u00e4re Hochschule oder \u00e4quivalent",
+                    "TER_BERUFSBILDUNG_DIPL": "H\u00f6here Berufsbildung, Diplom oder \u00e4quivalent",
+                    "TER_BERUFSBILDUNG_FA": "H\u00f6here Berufsbildung, eidg. FA oder \u00e4quivalent",
+                    "TER_DOKTORAT_UNIVERSITAET": "Doktorat universit\u00e4re Hochschule oder \u00e4quivalent",
+                    "TER_MASTER_FACHHOCHSCHULE": "Master Fachhochschule oder \u00e4quivalent",
+                    "TER_MASTER_UNIVERSITAET": "Master universit\u00e4re Hochschule oder \u00e4quivalent"
                 },
                 "experience": "Berufserfahrung",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 Jahre",
@@ -101,7 +100,7 @@
                     "zip": "PLZ",
                     "zipcode": "PLZ / Ort"
                 },
-                "no-selection": "Keine Auswahl",
+                "no-selection": "keine Auswahl",
                 "occupation": {
                     "label": "Beruf",
                     "placeholder": "Beruf"
@@ -124,15 +123,15 @@
                 },
                 "reset": "Zur\u00fccksetzen",
                 "submit": "Job publizieren",
-                "submit.error": "Job publication could not be saved!",
-                "submit.success": "Job publication saved!",
+                "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
+                "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
                 "workload": "Arbeitspensum"
             },
             "job-search": {
                 "search-badge": {
-                    "many": "Found <br><span class=\"badge badge-radar\">{{count}}</span><br> Jobs matching the search request online since {{since}} days",
-                    "none": "Did not found any Jobs matching the search request online since {{since}} days",
-                    "one": "Found <br><span class=\"badge badge-radar\">1</span><br> Job matching the search request online since {{since}} days",
+                    "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
+                    "none": "Diesem Profil entsprechen keine Jobs",
+                    "one": "Diesem Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Job",
                     "show": "Jetzt anzeigen!"
                 },
                 "search-button": {

@@ -29,9 +29,9 @@ candidate-detail,candidate-detail.candidate-print,Drucken,Print,Imprimer,Stampa
 candidate-detail,candidate-detail.candidate-save,Kandidatenprofil speichern,Save candidate profile,Sauvegarder le profil du candidat,Salva candidato
 candidate-detail,candidate-detail.candidate-send-link,Link versenden,Send link,Envoyer le lien,Invia link
 candidate-detail,candidate-detail.external-id,STES-ID,Candidate-ID,ID-DE,PCI-DE
-candidate-detail,candidate-detail.graduation.ACCEPTED,Schweiz anerkannt,Swiss recognized,Reconnu en Suisse,Riconosciuto in Svizzera
-candidate-detail,candidate-detail.graduation.CH,Schweiz,Swiss,Suisse,Svizzero
-candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
+candidate-detail,candidate-detail.graduation.ACCEPTED,Schweiz anerkannt,Swiss recognized,Diplôme reconnu en Suisse,Riconosciuto in Svizzera
+candidate-detail,candidate-detail.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Diploma svizzero
+candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun diploma
 candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,In der Schweiz nicht anerkannt,In Switzerland not recognized,Diplôme non reconnu en Suisse,Diploma non riconosciuto in Svizzera
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
@@ -68,12 +68,12 @@ candidate-search,candidate-search.experience.label,Berufserfahrung,Professional 
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
 candidate-search,candidate-search.graduation.ACCEPTED,Schweiz oder anerkannt,Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
-candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Titolo svizzero
-candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun titolo
-candidate-search,candidate-search.graduation.NOT_ACCEPTED,Schweiz oder ausländisch,Swiss or foreign degree,Diplôme suisse ou étranger,Titolo svizzero o estero
+candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Diploma svizzero
+candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun diploma
+candidate-search,candidate-search.graduation.NOT_ACCEPTED,Schweiz oder ausländisch,Swiss or foreign degree,Diplôme suisse ou étranger,Diploma svizzero o estero
 candidate-search,candidate-search.graduation.label,Abschluss,Degree,Diplôme,Titolo
 candidate-search,candidate-search.keywords.label,Suchbegriffe,Search terms,Critères de recherche,Termini ricercati
-candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
+candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Languages,Connaissances linguistiques,Conoscenze linguistiche
 candidate-search,candidate-search.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
 candidate-search,candidate-search.skills.label,Suchbegriffe,Key words,Mots-clés,Parole chiave
 candidate-search,candidate-search.skills.placeholder,"Fähigkeiten, Skills","Competencies, skills","Compétences, aptitudes",Competenze skills
@@ -213,24 +213,24 @@ global,global.button.add.title,Add,Add,Add,Add
 global,global.button.remove.title,Remove,Remove,Remove,Remove
 global,global.contactPerson.salutation.MR,Herr,Mr,Monsieur,Signor
 global,global.contactPerson.salutation.MS,Frau,Ms,Madame,Signora
-global,global.degree.BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor Fachhochschule oder äquivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
-global,global.degree.BACHELOR_UNIVERSITY,Bachelor universitäre Hochschule oder äquivalent,Bachelor universitäre Hochschule oder äquivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
-global,global.degree.BERUFSMATURA,Berufsmaturität oder äquivalent,Berufsmaturität oder äquivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
-global,global.degree.DOKTORAT,Doktorat universitäre Hochschule oder äquivalent,Doktorat universitäre Hochschule oder äquivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
-global,global.degree.EIDG_BERUFSATTEST,Berufliche Grundbildung EBA oder äquivalent,Berufliche Grundbildung EBA oder äquivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
-global,global.degree.EIDG_DIPLOM,"Höhere Berufsbildung, Diplom oder äquivalent","Höhere Berufsbildung, Diplom oder äquivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
-global,global.degree.EIDG_FACHAUSWEIS,"Höhere Berufsbildung, eidg. FA oder äquivalent","Höhere Berufsbildung, eidg. FA oder äquivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
-global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Berufliche Grundbildung EFZ oder äquivalent,Berufliche Grundbildung EFZ oder äquivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
-global,global.degree.FACHMATURA,Fachmaturität oder äquivalent,Fachmaturität oder äquivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
-global,global.degree.FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Fachmittelschule oder äquivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
-global,global.degree.GYMNASIUM_MATURA,Gymnasiale Maturität oder äquivalent,Gymnasiale Maturität oder äquivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
-global,global.degree.MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master Fachhochschule oder äquivalent,Master HES ou équivalent,Master SUP o equivalente
-global,global.degree.MASTER_UNIVERSITY,Master universitäre Hochschule oder äquivalent,Master universitäre Hochschule oder äquivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
-global,global.degree.NA,keine Angabe,keine Angabe,aucune indication,nessuna risposta
-global,global.degree.PRIMARSCHULE,Obligatorische Schule (Primarstufe),Obligatorische Schule (Primarstufe),École obligatoire (Primaire),Scuola obligatoria (Elementare)
-global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Weiterführende Schule (Sek. II),Weiterführende Schule (Sek. II),Ecole supérieure (Sec. II),Sec. II – Scuola superiore (Sec. II)
-global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Obligatorische Schule (Sek. I),Obligatorische Schule (Sek. I),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
-global,global.degree.UNBEKANNT,weiss nicht,weiss nicht,ne sait pas,non sa
+global,global.degree.BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor’s degree from a university of applied sciences or equivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
+global,global.degree.BACHELOR_UNIVERSITY,Bachelor universitäre Hochschule oder äquivalent,Bachelor’s degree from a university or equivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
+global,global.degree.BERUFSMATURA,Berufsmaturität oder äquivalent,Vocational and professional school-leaving certificate or equivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
+global,global.degree.DOKTORAT,Doktorat universitäre Hochschule oder äquivalent,Doctorate from a university or equivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
+global,global.degree.EIDG_BERUFSATTEST,Berufliche Grundbildung EBA oder äquivalent,Vocational education and training with the Swiss Federal VET Certificate or equivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
+global,global.degree.EIDG_DIPLOM,"Höhere Berufsbildung, Diplom oder äquivalent","Higher professional education and training, diploma or equivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
+global,global.degree.EIDG_FACHAUSWEIS,"Höhere Berufsbildung, eidg. FA oder äquivalent","Higher professional education and training, Swiss Federal PET diploma or equivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
+global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Berufliche Grundbildung EFZ oder äquivalent,Vocational education and training with the Swiss Federal VET Diploma or equivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
+global,global.degree.FACHMATURA,Fachmaturität oder äquivalent,Specialised school-leaving certificate or equivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
+global,global.degree.FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Upper-secondary specialised school or equivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
+global,global.degree.GYMNASIUM_MATURA,Gymnasiale Maturität oder äquivalent,Baccalaureate school-leaving certificate or equivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
+global,global.degree.MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master’s degree from a university of applied sciences or equivalent,Master HES ou équivalent,Master SUP o equivalente
+global,global.degree.MASTER_UNIVERSITY,Master universitäre Hochschule oder äquivalent,Master’s degree from a university or equivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
+global,global.degree.NA,keine Angabe,no information,aucune indication,nessuna risposta
+global,global.degree.PRIMARSCHULE,Obligatorische Schule (Primarstufe),Compulsory school (primary education),École obligatoire (Primaire),Scuola obligatoria (Elementare)
+global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Weiterführende Schule (Sek. II),Secondary school (upper-secondary education),Ecole supérieure (Sec. II),Scuola superiore (Sec. II)
+global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Obligatorische Schule (Sek. I),Compulsory school (lower-secondary education),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
+global,global.degree.UNBEKANNT,Unbekannt,Unknown,Inconnue,Ignoto
 global,global.drivingLicenceCategory.A,A,A,A,A
 global,global.drivingLicenceCategory.A1,A1,A1,A1,A1
 global,global.drivingLicenceCategory.B,B,B,B,B
@@ -323,30 +323,30 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,The new password must be at least 5 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,A new password is required.,Un nouveau mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Sicurezza della password:
-global,global.reference.canton.AG,Aargau,Aargovia,Argovie,Argovia
-global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Inner-Rhodes,Appenzell Rhodes-Intérieures,Appenzello Interno
-global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Outer-Rhodes,Appenzell Rhodes-Extérieures,Appenzello Esterno
+global,global.reference.canton.AG,Aargau,Aargau,Argovie,Argovia
+global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
+global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
 global,global.reference.canton.AU,Ausland,Abroad,Étranger,Estero
-global,global.reference.canton.BE,Bern,Berne,Berne,Berna
-global,global.reference.canton.BL,Basel-Landschaft,Basle-Country,Bâle-Campagne,Basilea-Campagna
-global,global.reference.canton.BS,Basel-Stadt,Basle-City,Bâle-Ville,Basilea-Città
+global,global.reference.canton.BE,Bern,Bern,Berne,Berna
+global,global.reference.canton.BL,Basel-Landschaft,Basel-Landschaft,Bâle-Campagne,Basilea-Campagna
+global,global.reference.canton.BS,Basel-Stadt,Basel-Stadt,Bâle-Ville,Basilea-Città
 global,global.reference.canton.CH,Schweiz,Switzerland,Suisse,Svizzera
 global,global.reference.canton.FL,Fürstentum Liechtenstein,Principality of Liechtenstein,Fürstentum Liechtenstein,Principato Liechtenstein
-global,global.reference.canton.FR,Freiburg,Freiburg,Fribourg,Friburgo
+global,global.reference.canton.FR,Freiburg,Fribourg,Fribourg,Friburgo
 global,global.reference.canton.GE,Genf,Geneva,Genève,Ginevra
-global,global.reference.canton.GL,Glarus,Glaris,Glaris,Glarona
-global,global.reference.canton.GR,Graubünden,Grisons,Grisons,Grigioni
+global,global.reference.canton.GL,Glarus,Glarus,Glaris,Glarona
+global,global.reference.canton.GR,Graubünden,Graubünden,Grisons,Grigioni
 global,global.reference.canton.JU,Jura,Jura,Jura,Giura
 global,global.reference.canton.LU,Luzern,Lucerne,Lucerne,Lucerna
-global,global.reference.canton.NE,Neuenburg,Neuenburg,Neuchâtel,Neuchâtel
-global,global.reference.canton.NW,Nidwalden,Nidwald,Nidwald,Nidvaldo
-global,global.reference.canton.OW,Obwalden,Obwald,Obwald,Obvaldo
-global,global.reference.canton.SG,St. Gallen,St. Gall,St-Gall,San Gallo
-global,global.reference.canton.SH,Schaffhausen,Schaffhouse,Schaffhouse,Sciaffusa
-global,global.reference.canton.SO,Solothurn,Soleure,Soleure,Soletta
+global,global.reference.canton.NE,Neuenburg,Neuchâtel,Neuchâtel,Neuchâtel
+global,global.reference.canton.NW,Nidwalden,Nidwalden,Nidwald,Nidvaldo
+global,global.reference.canton.OW,Obwalden,Obwalden,Obwald,Obvaldo
+global,global.reference.canton.SG,St. Gallen,Saint Gallen,Saint-Gall,San Gallo
+global,global.reference.canton.SH,Schaffhausen,Schaffhausen,Schaffhouse,Sciaffusa
+global,global.reference.canton.SO,Solothurn,Solothurn,Soleure,Soletta
 global,global.reference.canton.SZ,Schwyz,Schwyz,Schwyz,Svitto
-global,global.reference.canton.TG,Thurgau,Thurgovia,Thurgovie,Turgovia
-global,global.reference.canton.TI,Tessin,Tessin,Tessin,Ticino
+global,global.reference.canton.TG,Thurgau,Thurgau,Thurgovie,Turgovia
+global,global.reference.canton.TI,Tessin,Ticino,Tessin,Ticino
 global,global.reference.canton.UR,Uri,Uri,Uri,Uri
 global,global.reference.canton.VD,Waadt,Vaud,Vaud,Vaud
 global,global.reference.canton.VS,Wallis,Valais,Valais,Vallese
@@ -398,7 +398,7 @@ global,global.reference.language.tr,Türkisch,Turkish,Turc,Turco
 global,global.reference.language.vi,Vietnamesisch,Vietnamese,Vietnamien,Vietnamita
 global,global.reference.language.written,Schriftlich,Written,Écrit,Scritto
 global,global.reference.language.zh,Chinesisch,Chinese,Chinois,Cinese
-global,global.reference.languages,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
+global,global.reference.languages,Sprachkenntnisse,Languages,Connaissances linguistiques,Conoscenze linguistiche
 global,global.reference.region.A,Ausland,Abroad,Étranger,Estero
 global,global.reference.region.AG01,Aarau,Aarau,Aarau,Aarau
 global,global.reference.region.AG02,Baden,Baden,Baden,Baden
@@ -555,98 +555,97 @@ home,home.toolbar.companies,Unternehmen,Companies,Entreprise,Imprese
 home,home.toolbar.jobSeekers,Stellensuchende,Job seekers,Demandeur d'emploi,Persone in cerca d'impiego
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Recruitment agencies,Agence de placement,Collocatori
 home,home.toolbar.title,Job-Room bietet Leistungen für,Job Room offers services for,Job-Room offre des services pour,Job-Room offre servizi per
-home,home.tools.candidate-search.search-badge.many,"Diesem Job-Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","Diesem Job-Profil enstprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende"
-home,home.tools.candidate-search.search-badge.none,Diesem Job-Profil ensprechen keine Stellensuchende,Diesem Job-Profil ensprechen keine Stellensuchenden,Diesem Job-Profil ensprechen keine Stellensuchenden,Diesem Job-Profil ensprechen keine Stellensuchenden
-home,home.tools.candidate-search.search-badge.one,"Diesem Job-Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","Diesem Job-Profil enstpricht <br><span class=""badge badge-radar"">1</span><br>Stellensuchende"
-home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
+home,home.tools.candidate-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>candidates","<br><span class=""badge badge-radar"">{{count}}</span><br>candidats correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>candidati"
+home,home.tools.candidate-search.search-badge.none,Diesem Profil ensprechen keine Stellensuchenden,No candidates match this profile,Aucun candidat correspond à ce profil,Non ci sono candidati corrispondenti a questo profilo
+home,home.tools.candidate-search.search-badge.one,"Diesem Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","This profile matches <br><span class=""badge badge-radar"">1</span><br>candidate","<br><span class=""badge badge-radar"">1</span><br>candidat correspond à ce profil","A questo profilo corrisponde<br><span class=""badge badge-radar"">1</span><br>candidato"
+home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen!,Show search results.,Afficher maintenant,Visualizza ora!
 home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Display candidates,Afficher des candidats,Visualizza candidati
 home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Find suitable candidates,Trouvez des candidats appropriés,Trova il candidato giusto
 home,home.tools.candidateSearchTab,Kandidaten finden,Find candidates,Trouver des candidats,Trova candidati
-home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} characters available,{{count}} characters available,{{count}} characters available,{{count}} characters available
-home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben,Ergänzende Angaben
-home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Characters,max. 240 Characters,max. 240 Characters,max. 240 Characters
-home,home.tools.job-publication.application.email,E-Mail,E-Mail,E-Mail,E-Mail
-home,home.tools.job-publication.application.email-enabled,Elektronische Bewerbung,Elektronische Bewerbung,Elektronische Bewerbung,Elektronische Bewerbung
-home,home.tools.job-publication.application.mail-enabled,Schriftliche Bewerbung,Schriftliche Bewerbung,Schriftliche Bewerbung,Schriftliche Bewerbung
-home,home.tools.job-publication.application.online-form,Online-Formular,Online-Formular,Online-Formular,Online-Formular
-home,home.tools.job-publication.application.phone,Telefon,Telefon,Telefon,Telefon
-home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung,Telefonische Bewerbung
-home,home.tools.job-publication.application.title,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen,Bewerbungsformen
-home,home.tools.job-publication.company.country,Land,Land,Land,Land
-home,home.tools.job-publication.company.postbox-city,Ort,Ort,Ort,Ort
-home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.,Postfach-Nr.
-home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,Postfach PLZ,Postfach PLZ,Postfach PLZ
-home,home.tools.job-publication.company.postbox-zipcode,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort,Postfach PLZ / Ort
-home,home.tools.job-publication.company.street,Strasse / Hausnummer,Strasse / Hausnummer,Strasse / Hausnummer,Strasse / Hausnummer
-home,home.tools.job-publication.company.title,Unternehmen,Unternehmen,Unternehmen,Unternehmen
-home,home.tools.job-publication.company.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
-home,home.tools.job-publication.contact.email,E-Mail,E-Mail,E-Mail,E-Mail
-home,home.tools.job-publication.contact.first-name,Vorname,Vorname,Vorname,Vorname
-home,home.tools.job-publication.contact.last-name,Nachname,Nachname,Nachname,Nachname
-home,home.tools.job-publication.contact.phone,Telefon,Telefon,Telefon,Telefon
-home,home.tools.job-publication.contact.salutation,Anrede,Anrede,Anrede,Anrede
-home,home.tools.job-publication.contact.title,Kontaktperson,Kontaktperson,Kontaktperson,Kontaktperson
+home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} Zeichen verbleibend.,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
+home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Supplementary information,Indications complémentaires,Dati complementari
+home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Zeichen,Max. 240 characters,max. 240 caractères,max. 240 caratteri
+home,home.tools.job-publication.application.email,E-Mail,Email,E-mail,E-mail
+home,home.tools.job-publication.application.email-enabled,Elektronische Bewerbung,Electronic application,Postulation en ligne,Candidatura elettronica
+home,home.tools.job-publication.application.mail-enabled,Schriftliche Bewerbung,Written application,Postulation par écrit,Candidatura cartacea
+home,home.tools.job-publication.application.online-form,Online-Formular,Online form,Formulaire en ligne,Modulo online
+home,home.tools.job-publication.application.phone,Telefon,Telephone number,Téléphone,telefono
+home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Application by telephone,Postulation par téléphone,Candidatura telefonica
+home,home.tools.job-publication.application.title,Bewerbungsformen,Application forms,Formes de postulation,Forme di candidatura
+home,home.tools.job-publication.company.country,Land,Country,Pays,Paese
+home,home.tools.job-publication.company.postbox-city,Ort,City,Lieu,Luogo
+home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,PO box no.,Numéro de case postale,N. casella postale
+home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,PO box Postcode,Case postale NPA,Casella postale NPA
+home,home.tools.job-publication.company.postbox-zipcode,Postfach PLZ / Ort,PO box Postcode / City,Case postale NPA / Lieu,Casella postale NPA/Luogo
+home,home.tools.job-publication.company.street,Strasse,Street,Rue,Via
+home,home.tools.job-publication.company.title,Unternehmen,Business,Entreprise,Impresa
+home,home.tools.job-publication.company.zipcode,PLZ / Ort,Postcode / City,NPA / Lieu,NPA / Luogo
+home,home.tools.job-publication.contact.email,E-Mail,Email,E-mail,E-mail
+home,home.tools.job-publication.contact.first-name,Vorname,First name,Prénom,Nome
+home,home.tools.job-publication.contact.last-name,Nachname,Last name,Nom,Cognome
+home,home.tools.job-publication.contact.phone,Telefon,Telephone number,Téléphone,Telefono
+home,home.tools.job-publication.contact.salutation,Anrede,Title,Titre,Forma di cortesia
+home,home.tools.job-publication.contact.title,Kontaktperson,Contact person,Personne de contact,Persona di contatto
 home,home.tools.job-publication.date-placeholder,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
-home,home.tools.job-publication.description.characters-counter-text,{{count}} characters available,{{count}} characters available,{{count}} characters available,{{count}} characters available
-home,home.tools.job-publication.description.label,Tätigkeit /Anforderungen,Tätigkeit /Anforderungen,Tätigkeit /Anforderungen,Tätigkeit /Anforderungen
-home,home.tools.job-publication.description.placeholder,max. 9000 Characters,max. 9000 Characters,max. 9000 Characters,max. 9000 Characters
-home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.","Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.","Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.","Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält."
-home,home.tools.job-publication.driving-licence,Führerausweis,Führerausweis,Führerausweis,Führerausweis
-home,home.tools.job-publication.education,Ausbildung,Ausbildung,Ausbildung,Ausbildung
-home,home.tools.job-publication.education-level.NOT_KNOWN,weiss nicht,weiss nicht,ne sait pas,non sa
-home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,Primarstufe - obligatorische Schule,Primarstufe - obligatorische Schule,Primaire – Ecole obligatoire,Elementare – Scuola obligatoria
-home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,Sek. II - Berufsmaturität od. äq.,Sek. II - Berufsmaturität od. äq.,Sec. II – Maturité professionnelle ou équiv.,Sec. II – Maturità professionale o equiv.
-home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,Sek. II - Fachmaturität od. äq.,Sek. II - Fachmaturität od. äq.,Sec. II – Maturité spécialisée ou équiv.,Sec. II – Maturità specializzata o equiv.
-home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,Sek. II - Fachmittelschule oder äq.,Sek. II - Fachmittelschule oder äq.,Sec. II – Ecole de culture générale ou équiv.,Sec. II – Scuola specializzata o equiv.
-home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EBA,Sek. II - Berufliche Grundbildung EBA od. äq.,Sek. II - Berufliche Grundbildung EBA od. äq.,Sec. II – Form. prof. initiale AFP ou équiv.,Sec. II – Form. prof. di base CFP o equiv.
-home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EFZ,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sek. II - Berufliche Grundbildung EFZ od. äq.,Sec. II – Form. prof. initiale CFC ou équiv.,Sec. II – Form. prof. di base AFC o equiv.
-home,home.tools.job-publication.education-level.SEK_II_GYMNASIALE_MATURITAET,Sek. II - Gymnasiale Maturität od. äq.,Sek. II - Gymnasiale Maturität od. äq.,Sec. II – Maturité gymnasiale ou équiv.,Sec. II – Maturità liceale o equiv.
-home,home.tools.job-publication.education-level.SEK_II_WEITERFUEHRENDE_SCHULE,Sek. II - Weiterführende Schule od. äq.,Sek. II - Weiterführende Schule od. äq.,Sec. II – Ecole supérieure ou équivalent,Sec. II – Scuola superiore o equiv.
-home,home.tools.job-publication.education-level.SEK_I_OBLIGATORISCHE_SCHULE,Sek. I - obligatorische Schule,Sek. I - obligatorische Schule,Sec. I – Ecole obligatoire,Sec. I – Scuola obligatoria
-home,home.tools.job-publication.education-level.TER_BACHELOR_FACHHOCHSCHULE,Tertiär - Bachelor Fachhochschule od. äq.,Tertiär - Bachelor Fachhochschule od. äq.,Tertiaire – Bachelor HES ou équivalent,Terziario – Bachelor SUP o equivalente
-home,home.tools.job-publication.education-level.TER_BACHELOR_UNIVERSITAET,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiär - Bachelor universitäre Hochschule od. äq.,Tertiaire – Bachelor HEU ou équivalent,Terziario – Bachelor scuola univ./poli. o equiv.
-home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_DIPL,"Tertiär - Höhere Berufsbildung, Dipl. od. äq.","Tertiär - Höhere Berufsbildung, Dipl. od. äq.",Tertiaire – Form. prof. sup. diplôme ou équiv.,Terziario – Form. prof. sup. diploma o equiv.
-home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_FA,"Tertiär - Höhere Berufsbildung, eidg. FA od. äq.","Tertiär - Höhere Berufsbildung, eidg. FA od. äq.",Tertiaire – Form. prof. sup. BF ou équiv.,Terziario – Form. prof. sup. APF o equiv.
-home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiär - Doktorat universitäre Hochschule od. äq.,Tertiaire – Doctorat HEU ou équivalent,Terziario – Dottorato scuola univ./poli. o equiv.
-home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,Tertiär - Master Fachhochschule od. äq.,Tertiär - Master Fachhochschule od. äq.,Tertiaire – Master HES ou équivalent,Terziario – Master SUP o equivalente
-home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,Tertiär - Master universitäre Hochschule od. äq.,Tertiär - Master universitäre Hochschule od. äq.,Tertiaire –  Master HEU ou équivalent,Terziario – Master scuola univ./poli. o equiv.
-home,home.tools.job-publication.experience,Berufserfahrung,Berufserfahrung,Berufserfahrung,Berufserfahrung
-home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 Years,1 - 3 années,1 - 3 anni
-home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,Less than 1 year,moins de 1 année,meno di 1 anno
-home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,More than 3 years,plus de 3 années,più di 3 anni
-home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,No experience,sans expérience,senza esperienza
-home,home.tools.job-publication.job-description,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung,Stellenbeschreibung
-home,home.tools.job-publication.job-title,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung,Stellenbezeichnung
-home,home.tools.job-publication.language-skills,Sprachkenntnisse,Language skills,Connaissances linguistiques,Conoscenze linguistiche
-home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Language skill is required,Language skill is required
-home,home.tools.job-publication.locality.additional-text,Zusatztext,Zusatztext,Zusatztext,Zusatztext
-home,home.tools.job-publication.locality.city,Ort,Ort,Ort,Ort
-home,home.tools.job-publication.locality.country,Land,Land,Land,Land
-home,home.tools.job-publication.locality.title,Arbeitsort,Arbeitsort,Arbeitsort,Arbeitsort
-home,home.tools.job-publication.locality.zip,PLZ,PLZ,PLZ,PLZ
-home,home.tools.job-publication.locality.zipcode,PLZ / Ort,PLZ / Ort,PLZ / Ort,PLZ / Ort
-home,home.tools.job-publication.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
-home,home.tools.job-publication.occupation.label,Beruf,Beruf,Beruf,Beruf
-home,home.tools.job-publication.occupation.placeholder,Beruf,Beruf,Beruf,Beruf
-home,home.tools.job-publication.optional,Optional,Optional,Optional,Optional
-home,home.tools.job-publication.publication.title,Publikationsmedien,Publikationsmedien,Publikationsmedien,Publikationsmedien
-home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum,Anstellungsdauer befristet bis Datum
-home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,unbefristet,unbefristet,unbefristet
-home,home.tools.job-publication.publicationEndDate.temporary,befristet bis,befristet bis,befristet bis,befristet bis
-home,home.tools.job-publication.publicationEndDate.title,Anstellungsdauer,Anstellungsdauer,Anstellungsdauer,Anstellungsdauer
-home,home.tools.job-publication.publicationStartDate.by-arrangement,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
+home,home.tools.job-publication.description.characters-counter-text,{{count}} Zeichen verbleibend.,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
+home,home.tools.job-publication.description.label,Tätigkeit /Anforderungen,Employment / requirements,Activité / Exigences,Attività / requisiti
+home,home.tools.job-publication.description.placeholder,max. 9000 Zeichen,"max. 9,000 characters",max. 9000 caractères,max. 9000 caratteri
+home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",I certify that the employer complies with local and industry-standard wage and working conditions.,Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localité.,Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attività viene svolta.
+home,home.tools.job-publication.driving-licence,Führerausweis,Driving licence,Permis de conduire,Patente
+home,home.tools.job-publication.education,Ausbildung,Education,Formation,Formazione
+home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,Obligatorische Schule (Primarstufe),Compulsory school (primary education),École obligatoire (Primaire),Scuola obligatoria (Elementare)
+home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,Berufsmaturität oder äquivalent,Vocational and professional school-leaving certificate or equivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
+home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,Fachmaturität oder äquivalent,Specialised school-leaving certificate or equivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
+home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Upper-secondary specialised school or equivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
+home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EBA,Berufliche Grundbildung EBA oder äquivalent,Vocational education and training with the Swiss Federal VET Certificate or equivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
+home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EFZ,Berufliche Grundbildung EFZ oder äquivalent,Vocational education and training with the Swiss Federal VET Diploma or equivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
+home,home.tools.job-publication.education-level.SEK_II_GYMNASIALE_MATURITAET,Gymnasiale Maturität oder äquivalent,Baccalaureate school-leaving certificate or equivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
+home,home.tools.job-publication.education-level.SEK_II_WEITERFUEHRENDE_SCHULE,Weiterführende Schule (Sek. II),Secondary school (upper-secondary education),Ecole supérieure (Sec. II),Scuola superiore (Sec. II)
+home,home.tools.job-publication.education-level.SEK_I_OBLIGATORISCHE_SCHULE,Obligatorische Schule (Sek. I),Compulsory school (lower-secondary education),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
+home,home.tools.job-publication.education-level.TER_BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor’s degree from a university of applied sciences or equivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
+home,home.tools.job-publication.education-level.TER_BACHELOR_UNIVERSITAET,Bachelor universitäre Hochschule oder äquivalent,Bachelor’s degree from a university or equivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
+home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_DIPL,"Höhere Berufsbildung, Diplom oder äquivalent","Higher professional education and training, diploma or equivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
+home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_FA,"Höhere Berufsbildung, eidg. FA oder äquivalent","Higher professional education and training, Swiss Federal PET diploma or equivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
+home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,Doktorat universitäre Hochschule oder äquivalent,Doctorate from a university or equivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
+home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master’s degree from a university of applied sciences or equivalent,Master HES ou équivalent,Master SUP o equivalente
+home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,Master universitäre Hochschule oder äquivalent,Master’s degree from a university or equivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
+home,home.tools.job-publication.experience,Berufserfahrung,Work experience,Expérience professionnelle,Esperienza professionale
+home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 years,1 - 3 années,1 - 3 anni
+home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,less than 1 year,moins de 1 année,meno di 1 anno
+home,home.tools.job-publication.experience.MORE_THAN_3_YEARS,mehr als 3 Jahre,more than 3 years,plus de 3 années,più di 3 anni
+home,home.tools.job-publication.experience.NO_EXPERIENCE,keine Erfahrung,no experience,sans expérience,senza esperienza
+home,home.tools.job-publication.job-description,Stellenbeschreibung,Job description,Descriptif du poste,Descrizione del posto
+home,home.tools.job-publication.job-title,Stellenbezeichnung,Job title,Désignation du poste,Denominazione del posto
+home,home.tools.job-publication.language-skills,Sprachkenntnisse,Languages,Connaissances linguistiques,Conoscenze linguistiche
+home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Des connaissances linguistiques sont requises,Conoscenze linguistiche obbligatorie
+home,home.tools.job-publication.locality.additional-text,Zusatztext,Additional text,Texte complémentaire,testo aggiuntivo
+home,home.tools.job-publication.locality.city,Ort,City,Lieu,Luogo
+home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
+home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Sede di lavoro
+home,home.tools.job-publication.locality.zip,PLZ,Postcode,NPA  ,NPA / Luogo
+home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postcode / City,NPA / Lieu,NPA / Luogo
+home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta
+home,home.tools.job-publication.occupation.label,Beruf,Occupation,Profession,Professione
+home,home.tools.job-publication.occupation.placeholder,Beruf,Occupation,Profession,Professione
+home,home.tools.job-publication.optional,Optional,Optional,Optionnel,Opzionale
+home,home.tools.job-publication.publication.title,Publikationsmedien,Publication media,Mödia de publication,Media di pubblicazione
+home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Temporary employment to date,Engagement limité au [date],a tempo determinato fino al
+home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,Permanent,illimité,a tempo indeterminato
+home,home.tools.job-publication.publicationEndDate.temporary,befristet bis,Temporary until,limité au,a tempo determinato fino al
+home,home.tools.job-publication.publicationEndDate.title,Anstellungsdauer,Employment duration,Durée de l'engagement,Durata dell'assunzione
+home,home.tools.job-publication.publicationStartDate.by-arrangement,Nach Vereinbarung,By arrangement / by agreement?,À convenir,Previo accordo
 home,home.tools.job-publication.publicationStartDate.immediately,Ab Sofort,Immediately,Tout de suite,Da subito
-home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Datum,Stellenantritt ab Datum,Stellenantritt ab Datum,Stellenantritt ab Datum
-home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Stellenantritt,Stellenantritt,Stellenantritt
-home,home.tools.job-publication.reset,Zurücksetzen,Zurücksetzen,Zurücksetzen,Zurücksetzen
-home,home.tools.job-publication.submit,Job publizieren,Job publizieren,Job publizieren,Job publizieren
-home,home.tools.job-publication.submit.error,Job publication could not be saved!,Job could not be saved!,Job could not be saved!,Job could not be saved!
-home,home.tools.job-publication.submit.success,Job publication saved!,Job publication saved!,Job publication saved!,Job publication saved!
+home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Datum,Employment start date,Entrée en fonction le [date],Inizio dell'attività da Data
+home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Employment start,Entrée en fonction  ,Inizio dell'attività
+home,home.tools.job-publication.reset,Zurücksetzen,Reset,Rétablir,Ripristina
+home,home.tools.job-publication.submit,Job publizieren,Publish job,Publier un emploi,Pubblica posto
+home,home.tools.job-publication.submit.error,Das Stellenangebot konnte nicht gespeichert werden!,Job could not be saved!,Job could not be saved!,Job could not be saved!
+home,home.tools.job-publication.submit.success,Besten Dank für Ihr Stellenangebot. Dieses wird nach der Prüfung durch das RAV publiziert. Sie erhalten dazu in Kürze eine E-Mail.,Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.,Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel dès sa publication.,Grazie dell'offerta di lavoro, che verrà pubblicata dopo la verifica da parte dell'URC. A breve Le verrà inviata un'e-mail.
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
-home,home.tools.job-search.search-badge.many,"Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">{{count}}</span><br> Jobs matching the search request online since {{since}} days"
-home,home.tools.job-search.search-badge.none,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days,Did not found any Jobs matching the search request online since {{since}} days
-home,home.tools.job-search.search-badge.one,"Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days","Found <br><span class=""badge badge-radar"">1</span><br> Job matching the search request online since {{since}} days"
-home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!,Jetzt anzeigen!
+home,home.tools.job-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>jobs","<br><span class=""badge badge-radar"">{{count}}</span><br>emplois correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>posti"
+home,home.tools.job-search.search-badge.none,Diesem Profil entsprechen keine Jobs,No jobs match this profile,Aucun emploi correspond à ce profil,Non ci sono posti corrispondenti a questo profilo
+home,home.tools.job-search.search-badge.one,"Diesem Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Job","This profile matches <br><span class=""badge badge-radar"">1</span><br>job","<br><span class=""badge badge-radar"">1</span><br>emploi correspond à ce profil","A questo profilo corrisponde<br><span class=""badge badge-radar"">1</span><br>posto"
+home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Show search results.,Afficher maintenant,Visualizza ora!
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
 home,home.tools.jobSearch.title,Finden Sie jetzt Ihren Traumjob!,Find your dream job now!,Partez à la recherche de l'emploi dont vous rêvez !,Trova adesso il tuo lavoro da sogno!
@@ -778,7 +777,7 @@ job,jobroomApp.job.publicationStartDate,Publizieren ab,Publication start date,Pu
 job,jobroomApp.job.registrationDate,Registriert am,Registration date,Saisi le,Data di registrazione
 job,jobroomApp.job.startDate,Verfügbar ab,Available from,Disponible à partir du,Data d'inizio
 job,jobroomApp.job.startsImmediately,sofort Verfügbar,Available immediately,Disponible tout de suite,Inizio immediato
-job,jobroomApp.job.title,Titel,Title,Titre,Titolo
+job,jobroomApp.job.title,Stellentitel,Job title,Titre du poste,Titolo del posto
 job,jobroomApp.job.workingTimePercentageMax,Max. Beschäftigungsgrad,Maximum working time percentage,Taux d'occupation maximal,Grado di occupazione max
 job,jobroomApp.job.workingTimePercentageMin,Min. Beschäftigungsgrad,Minimum working time percentage,Taux d'occupation minimal,Grado di occupazione min
 job,jobserviceApp.job.created,Job mit ID {{ param }} erstellt,A new job is created with identifier {{ param }},"Un emploi portant l'ID {{ param }} a été créé ",È stato generato un nuovo posto con identificatore { param }}

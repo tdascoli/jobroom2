@@ -96,7 +96,7 @@
             "PRIMARSCHULE": "Obligatorische Schule (Primarstufe)",
             "SEKUNDARSCHULE_OBERSTUFE": "Weiterf\u00fchrende Schule (Sek. II)",
             "SEKUNDARSCHULE_UNTERSTUFE": "Obligatorische Schule (Sek. I)",
-            "UNBEKANNT": "weiss nicht"
+            "UNBEKANNT": "Unbekannt"
         },
         "drivingLicenceCategory": {
             "A": "A",

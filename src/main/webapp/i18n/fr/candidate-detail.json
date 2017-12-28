@@ -29,8 +29,8 @@
         "candidate-send-link": "Envoyer le lien",
         "external-id": "ID-DE",
         "graduation": {
-            "ACCEPTED": "Reconnu en Suisse",
-            "CH": "Suisse",
+            "ACCEPTED": "Dipl\u00f4me reconnu en Suisse",
+            "CH": "Dipl\u00f4me suisse",
             "NONE": "Aucun dipl\u00f4me",
             "NOT_ACCEPTED": "Dipl\u00f4me non reconnu en Suisse"
         },

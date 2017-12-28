@@ -30,7 +30,7 @@
         "external-id": "Candidate-ID",
         "graduation": {
             "ACCEPTED": "Swiss recognized",
-            "CH": "Swiss",
+            "CH": "Swiss degree",
             "NONE": "No degree",
             "NOT_ACCEPTED": "In Switzerland not recognized"
         },

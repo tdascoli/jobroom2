@@ -30,8 +30,8 @@
         "external-id": "PCI-DE",
         "graduation": {
             "ACCEPTED": "Riconosciuto in Svizzera",
-            "CH": "Svizzero",
-            "NONE": "Nessun titolo",
+            "CH": "Diploma svizzero",
+            "NONE": "Nessun diploma",
             "NOT_ACCEPTED": "Diploma non riconosciuto in Svizzera"
         },
         "job-center": {

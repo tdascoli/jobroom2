@@ -12,10 +12,10 @@
         "tools": {
             "candidate-search": {
                 "search-badge": {
-                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchende",
-                    "none": "Diesem Job-Profil ensprechen keine Stellensuchenden",
-                    "one": "Diesem Job-Profil enstpricht <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
-                    "show": "Jetzt anzeigen!"
+                    "many": "A questo profilo corrispondono <br><span class=\"badge badge-radar\">{{count}}</span><br>candidati",
+                    "none": "Non ci sono candidati corrispondenti a questo profilo",
+                    "one": "A questo profilo corrisponde<br><span class=\"badge badge-radar\">1</span><br>candidato",
+                    "show": "Visualizza ora!"
                 },
                 "search-button": {
                     "title": "Visualizza candidati"
@@ -26,114 +26,113 @@
             "job-publication": {
                 "application": {
                     "additional-info": {
-                        "characters-counter-text": "{{count}} characters available",
-                        "label": "Erg\u00e4nzende Angaben",
-                        "placeholder": "max. 240 Characters"
+                        "characters-counter-text": "{{count}} caratteri disponibili",
+                        "label": "Dati complementari",
+                        "placeholder": "max. 240 caratteri"
                     },
-                    "email": "E-Mail",
-                    "email-enabled": "Elektronische Bewerbung",
-                    "mail-enabled": "Schriftliche Bewerbung",
-                    "online-form": "Online-Formular",
-                    "phone": "Telefon",
-                    "phone-enabled": "Telefonische Bewerbung",
-                    "title": "Bewerbungsformen"
+                    "email": "E-mail",
+                    "email-enabled": "Candidatura elettronica",
+                    "mail-enabled": "Candidatura cartacea",
+                    "online-form": "Modulo online",
+                    "phone": "telefono",
+                    "phone-enabled": "Candidatura telefonica",
+                    "title": "Forme di candidatura"
                 },
                 "company": {
-                    "country": "Land",
-                    "postbox-city": "Ort",
-                    "postbox-number": "Postfach-Nr.",
-                    "postbox-zip": "Postfach PLZ",
-                    "postbox-zipcode": "Postfach PLZ / Ort",
-                    "street": "Strasse / Hausnummer",
-                    "title": "Unternehmen",
-                    "zipcode": "PLZ / Ort"
+                    "country": "Paese",
+                    "postbox-city": "Luogo",
+                    "postbox-number": "N. casella postale",
+                    "postbox-zip": "Casella postale NPA",
+                    "postbox-zipcode": "Casella postale NPA/Luogo",
+                    "street": "Via",
+                    "title": "Impresa",
+                    "zipcode": "NPA / Luogo"
                 },
                 "contact": {
-                    "email": "E-Mail",
-                    "first-name": "Vorname",
-                    "last-name": "Nachname",
-                    "phone": "Telefon",
-                    "salutation": "Anrede",
-                    "title": "Kontaktperson"
+                    "email": "E-mail",
+                    "first-name": "Nome",
+                    "last-name": "Cognome",
+                    "phone": "Telefono",
+                    "salutation": "Forma di cortesia",
+                    "title": "Persona di contatto"
                 },
                 "date-placeholder": "GG.MM.AAAA",
                 "description": {
-                    "characters-counter-text": "{{count}} characters available",
-                    "label": "T\u00e4tigkeit /Anforderungen",
-                    "placeholder": "max. 9000 Characters"
+                    "characters-counter-text": "{{count}} caratteri disponibili",
+                    "label": "Attivit\u00e0 / requisiti",
+                    "placeholder": "max. 9000 caratteri"
                 },
-                "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
-                "driving-licence": "F\u00fchrerausweis",
-                "education": "Ausbildung",
+                "disclaimer": "Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attivit\u00e0 viene svolta.",
+                "driving-licence": "Patente",
+                "education": "Formazione",
                 "education-level": {
-                    "NOT_KNOWN": "non sa",
-                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Elementare \u2013 Scuola obligatoria",
-                    "SEK_II_BERUFSMATURITAET": "Sec. II \u2013 Maturit\u00e0 professionale o equiv.",
-                    "SEK_II_FACHMATURITAET": "Sec. II \u2013 Maturit\u00e0 specializzata o equiv.",
-                    "SEK_II_FACHMITTELSCHULE": "Sec. II \u2013 Scuola specializzata o equiv.",
-                    "SEK_II_GRUNDBILDUNG_EBA": "Sec. II \u2013 Form. prof. di base CFP o equiv.",
-                    "SEK_II_GRUNDBILDUNG_EFZ": "Sec. II \u2013 Form. prof. di base AFC o equiv.",
-                    "SEK_II_GYMNASIALE_MATURITAET": "Sec. II \u2013 Maturit\u00e0 liceale o equiv.",
-                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Sec. II \u2013 Scuola superiore o equiv.",
-                    "SEK_I_OBLIGATORISCHE_SCHULE": "Sec. I \u2013 Scuola obligatoria",
-                    "TER_BACHELOR_FACHHOCHSCHULE": "Terziario \u2013 Bachelor SUP o equivalente",
-                    "TER_BACHELOR_UNIVERSITAET": "Terziario \u2013 Bachelor scuola univ./poli. o equiv.",
-                    "TER_BERUFSBILDUNG_DIPL": "Terziario \u2013 Form. prof. sup. diploma o equiv.",
-                    "TER_BERUFSBILDUNG_FA": "Terziario \u2013 Form. prof. sup. APF o equiv.",
-                    "TER_DOKTORAT_UNIVERSITAET": "Terziario \u2013 Dottorato scuola univ./poli. o equiv.",
-                    "TER_MASTER_FACHHOCHSCHULE": "Terziario \u2013 Master SUP o equivalente",
-                    "TER_MASTER_UNIVERSITAET": "Terziario \u2013 Master scuola univ./poli. o equiv."
+                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Scuola obligatoria (Elementare)",
+                    "SEK_II_BERUFSMATURITAET": "Maturit\u00e0 professionale o equivalente",
+                    "SEK_II_FACHMATURITAET": "Maturit\u00e0 specializzata o equivalente",
+                    "SEK_II_FACHMITTELSCHULE": "Scuola specializzata o equivalente",
+                    "SEK_II_GRUNDBILDUNG_EBA": "Formazione professionale di base CFP o equivalente",
+                    "SEK_II_GRUNDBILDUNG_EFZ": "Formazione professionale di base AFC o equivalente",
+                    "SEK_II_GYMNASIALE_MATURITAET": "Maturit\u00e0 liceale o equivalente",
+                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Scuola superiore (Sec. II)",
+                    "SEK_I_OBLIGATORISCHE_SCHULE": "Scuola obligatoria (Sec. I)",
+                    "TER_BACHELOR_FACHHOCHSCHULE": "Bachelor SUP o equivalente",
+                    "TER_BACHELOR_UNIVERSITAET": "Bachelor scuola univ./poli. o equivalente",
+                    "TER_BERUFSBILDUNG_DIPL": "Formazione professionale superiore, diploma o equivalente",
+                    "TER_BERUFSBILDUNG_FA": "Formazione professionale superiore APF o equivalente",
+                    "TER_DOKTORAT_UNIVERSITAET": "Dottorato scuola univ./poli. o equivalente",
+                    "TER_MASTER_FACHHOCHSCHULE": "Master SUP o equivalente",
+                    "TER_MASTER_UNIVERSITAET": "Master scuola univ./poli. o equivalente"
                 },
-                "experience": "Berufserfahrung",
+                "experience": "Esperienza professionale",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 anni",
                 "experience.LESS_THAN_1_YEAR": "meno di 1 anno",
                 "experience.MORE_THAN_3_YEARS": "pi\u00f9 di 3 anni",
                 "experience.NO_EXPERIENCE": "senza esperienza",
-                "job-description": "Stellenbeschreibung",
-                "job-title": "Stellenbezeichnung",
+                "job-description": "Descrizione del posto",
+                "job-title": "Denominazione del posto",
                 "language-skills": "Conoscenze linguistiche",
-                "language-skills.spoken.error": "Language skill is required",
+                "language-skills.spoken.error": "Conoscenze linguistiche obbligatorie",
                 "locality": {
-                    "additional-text": "Zusatztext",
-                    "city": "Ort",
-                    "country": "Land",
-                    "title": "Arbeitsort",
-                    "zip": "PLZ",
-                    "zipcode": "PLZ / Ort"
+                    "additional-text": "testo aggiuntivo",
+                    "city": "Luogo",
+                    "country": "Paese",
+                    "title": "Sede di lavoro",
+                    "zip": "NPA / Luogo",
+                    "zipcode": "NPA / Luogo"
                 },
-                "no-selection": "Nessuna scelta",
+                "no-selection": "nessuna scelta",
                 "occupation": {
-                    "label": "Beruf",
-                    "placeholder": "Beruf"
+                    "label": "Professione",
+                    "placeholder": "Professione"
                 },
-                "optional": "Optional",
+                "optional": "Opzionale",
                 "publication": {
-                    "title": "Publikationsmedien"
+                    "title": "Media di pubblicazione"
                 },
                 "publicationEndDate": {
-                    "label": "Anstellungsdauer befristet bis Datum",
-                    "permanent": "unbefristet",
-                    "temporary": "befristet bis",
-                    "title": "Anstellungsdauer"
+                    "label": "a tempo determinato fino al",
+                    "permanent": "a tempo indeterminato",
+                    "temporary": "a tempo determinato fino al",
+                    "title": "Durata dell'assunzione"
                 },
                 "publicationStartDate": {
                     "by-arrangement": "Previo accordo",
                     "immediately": "Da subito",
-                    "label": "Stellenantritt ab Datum",
-                    "title": "Stellenantritt"
+                    "label": "Inizio dell'attivit\u00e0 da Data",
+                    "title": "Inizio dell'attivit\u00e0"
                 },
-                "reset": "Zur\u00fccksetzen",
-                "submit": "Job publizieren",
+                "reset": "Ripristina",
+                "submit": "Pubblica posto",
                 "submit.error": "Job could not be saved!",
-                "submit.success": "Job publication saved!",
+                "submit.success": "Grazie dell'offerta di lavoro",
                 "workload": "Grado di occupazione"
             },
             "job-search": {
                 "search-badge": {
-                    "many": "Found <br><span class=\"badge badge-radar\">{{count}}</span><br> Jobs matching the search request online since {{since}} days",
-                    "none": "Did not found any Jobs matching the search request online since {{since}} days",
-                    "one": "Found <br><span class=\"badge badge-radar\">1</span><br> Job matching the search request online since {{since}} days",
-                    "show": "Jetzt anzeigen!"
+                    "many": "A questo profilo corrispondono <br><span class=\"badge badge-radar\">{{count}}</span><br>posti",
+                    "none": "Non ci sono posti corrispondenti a questo profilo",
+                    "one": "A questo profilo corrisponde<br><span class=\"badge badge-radar\">1</span><br>posto",
+                    "show": "Visualizza ora!"
                 },
                 "search-button": {
                     "title": "Trova il lavoro da sogno!"

@@ -94,9 +94,9 @@
             "MASTER_UNIVERSITY": "Master scuola univ./poli. o equivalente",
             "NA": "nessuna risposta",
             "PRIMARSCHULE": "Scuola obligatoria (Elementare)",
-            "SEKUNDARSCHULE_OBERSTUFE": "Sec. II \u2013 Scuola superiore (Sec. II)",
+            "SEKUNDARSCHULE_OBERSTUFE": "Scuola superiore (Sec. II)",
             "SEKUNDARSCHULE_UNTERSTUFE": "Scuola obligatoria (Sec. I)",
-            "UNBEKANNT": "non sa"
+            "UNBEKANNT": "Ignoto"
         },
         "drivingLicenceCategory": {
             "A": "A",

@@ -30,7 +30,7 @@
         "external-id": "STES-ID",
         "graduation": {
             "ACCEPTED": "Schweiz anerkannt",
-            "CH": "Schweiz",
+            "CH": "Schweizer Abschluss",
             "NONE": "Kein Abschluss",
             "NOT_ACCEPTED": "In der Schweiz nicht anerkannt"
         },

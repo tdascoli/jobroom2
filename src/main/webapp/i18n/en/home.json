@@ -12,10 +12,10 @@
         "tools": {
             "candidate-search": {
                 "search-badge": {
-                    "many": "Diesem Job-Profil enstprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchende",
-                    "none": "Diesem Job-Profil ensprechen keine Stellensuchenden",
-                    "one": "Diesem Job-Profil ensprechen <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
-                    "show": "Jetzt anzeigen!"
+                    "many": "This profile matches <br><span class=\"badge badge-radar\">{{count}}</span><br>candidates",
+                    "none": "No candidates match this profile",
+                    "one": "This profile matches <br><span class=\"badge badge-radar\">1</span><br>candidate",
+                    "show": "Show search results."
                 },
                 "search-button": {
                     "title": "Display candidates"
@@ -27,113 +27,112 @@
                 "application": {
                     "additional-info": {
                         "characters-counter-text": "{{count}} characters available",
-                        "label": "Erg\u00e4nzende Angaben",
-                        "placeholder": "max. 240 Characters"
+                        "label": "Supplementary information",
+                        "placeholder": "Max. 240 characters"
                     },
-                    "email": "E-Mail",
-                    "email-enabled": "Elektronische Bewerbung",
-                    "mail-enabled": "Schriftliche Bewerbung",
-                    "online-form": "Online-Formular",
-                    "phone": "Telefon",
-                    "phone-enabled": "Telefonische Bewerbung",
-                    "title": "Bewerbungsformen"
+                    "email": "Email",
+                    "email-enabled": "Electronic application",
+                    "mail-enabled": "Written application",
+                    "online-form": "Online form",
+                    "phone": "Telephone number",
+                    "phone-enabled": "Application by telephone",
+                    "title": "Application forms"
                 },
                 "company": {
-                    "country": "Land",
-                    "postbox-city": "Ort",
-                    "postbox-number": "Postfach-Nr.",
-                    "postbox-zip": "Postfach PLZ",
-                    "postbox-zipcode": "Postfach PLZ / Ort",
-                    "street": "Strasse / Hausnummer",
-                    "title": "Unternehmen",
-                    "zipcode": "PLZ / Ort"
+                    "country": "Country",
+                    "postbox-city": "City",
+                    "postbox-number": "PO box no.",
+                    "postbox-zip": "PO box Postcode",
+                    "postbox-zipcode": "PO box Postcode / City",
+                    "street": "Street",
+                    "title": "Business",
+                    "zipcode": "Postcode / City"
                 },
                 "contact": {
-                    "email": "E-Mail",
-                    "first-name": "Vorname",
-                    "last-name": "Nachname",
-                    "phone": "Telefon",
-                    "salutation": "Anrede",
-                    "title": "Kontaktperson"
+                    "email": "Email",
+                    "first-name": "First name",
+                    "last-name": "Last name",
+                    "phone": "Telephone number",
+                    "salutation": "Title",
+                    "title": "Contact person"
                 },
                 "date-placeholder": "DD.MM.YYYY",
                 "description": {
                     "characters-counter-text": "{{count}} characters available",
-                    "label": "T\u00e4tigkeit /Anforderungen",
-                    "placeholder": "max. 9000 Characters"
+                    "label": "Employment / requirements",
+                    "placeholder": "max. 9,000 characters"
                 },
-                "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
-                "driving-licence": "F\u00fchrerausweis",
-                "education": "Ausbildung",
+                "disclaimer": "I certify that the employer complies with local and industry-standard wage and working conditions.",
+                "driving-licence": "Driving licence",
+                "education": "Education",
                 "education-level": {
-                    "NOT_KNOWN": "weiss nicht",
-                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Primarstufe - obligatorische Schule",
-                    "SEK_II_BERUFSMATURITAET": "Sek. II - Berufsmaturit\u00e4t od. \u00e4q.",
-                    "SEK_II_FACHMATURITAET": "Sek. II - Fachmaturit\u00e4t od. \u00e4q.",
-                    "SEK_II_FACHMITTELSCHULE": "Sek. II - Fachmittelschule oder \u00e4q.",
-                    "SEK_II_GRUNDBILDUNG_EBA": "Sek. II - Berufliche Grundbildung EBA od. \u00e4q.",
-                    "SEK_II_GRUNDBILDUNG_EFZ": "Sek. II - Berufliche Grundbildung EFZ od. \u00e4q.",
-                    "SEK_II_GYMNASIALE_MATURITAET": "Sek. II - Gymnasiale Maturit\u00e4t od. \u00e4q.",
-                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Sek. II - Weiterf\u00fchrende Schule od. \u00e4q.",
-                    "SEK_I_OBLIGATORISCHE_SCHULE": "Sek. I - obligatorische Schule",
-                    "TER_BACHELOR_FACHHOCHSCHULE": "Terti\u00e4r - Bachelor Fachhochschule od. \u00e4q.",
-                    "TER_BACHELOR_UNIVERSITAET": "Terti\u00e4r - Bachelor universit\u00e4re Hochschule od. \u00e4q.",
-                    "TER_BERUFSBILDUNG_DIPL": "Terti\u00e4r - H\u00f6here Berufsbildung, Dipl. od. \u00e4q.",
-                    "TER_BERUFSBILDUNG_FA": "Terti\u00e4r - H\u00f6here Berufsbildung, eidg. FA od. \u00e4q.",
-                    "TER_DOKTORAT_UNIVERSITAET": "Terti\u00e4r - Doktorat universit\u00e4re Hochschule od. \u00e4q.",
-                    "TER_MASTER_FACHHOCHSCHULE": "Terti\u00e4r - Master Fachhochschule od. \u00e4q.",
-                    "TER_MASTER_UNIVERSITAET": "Terti\u00e4r - Master universit\u00e4re Hochschule od. \u00e4q."
+                    "PRIMAR_OBLIGATORISCHE_SCHULE": "Compulsory school (primary education)",
+                    "SEK_II_BERUFSMATURITAET": "Vocational and professional school-leaving certificate or equivalent",
+                    "SEK_II_FACHMATURITAET": "Specialised school-leaving certificate or equivalent",
+                    "SEK_II_FACHMITTELSCHULE": "Upper-secondary specialised school or equivalent",
+                    "SEK_II_GRUNDBILDUNG_EBA": "Vocational education and training with the Swiss Federal VET Certificate or equivalent",
+                    "SEK_II_GRUNDBILDUNG_EFZ": "Vocational education and training with the Swiss Federal VET Diploma or equivalent",
+                    "SEK_II_GYMNASIALE_MATURITAET": "Baccalaureate school-leaving certificate or equivalent",
+                    "SEK_II_WEITERFUEHRENDE_SCHULE": "Secondary school (upper-secondary education)",
+                    "SEK_I_OBLIGATORISCHE_SCHULE": "Compulsory school (lower-secondary education)",
+                    "TER_BACHELOR_FACHHOCHSCHULE": "Bachelor\u2019s degree from a university of applied sciences or equivalent",
+                    "TER_BACHELOR_UNIVERSITAET": "Bachelor\u2019s degree from a university or equivalent",
+                    "TER_BERUFSBILDUNG_DIPL": "Higher professional education and training, diploma or equivalent",
+                    "TER_BERUFSBILDUNG_FA": "Higher professional education and training, Swiss Federal PET diploma or equivalent",
+                    "TER_DOKTORAT_UNIVERSITAET": "Doctorate from a university or equivalent",
+                    "TER_MASTER_FACHHOCHSCHULE": "Master\u2019s degree from a university of applied sciences or equivalent",
+                    "TER_MASTER_UNIVERSITAET": "Master\u2019s degree from a university or equivalent"
                 },
-                "experience": "Berufserfahrung",
-                "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 Years",
-                "experience.LESS_THAN_1_YEAR": "Less than 1 year",
-                "experience.MORE_THAN_3_YEARS": "More than 3 years",
-                "experience.NO_EXPERIENCE": "No experience",
-                "job-description": "Stellenbeschreibung",
-                "job-title": "Stellenbezeichnung",
-                "language-skills": "Language skills",
+                "experience": "Work experience",
+                "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 years",
+                "experience.LESS_THAN_1_YEAR": "less than 1 year",
+                "experience.MORE_THAN_3_YEARS": "more than 3 years",
+                "experience.NO_EXPERIENCE": "no experience",
+                "job-description": "Job description",
+                "job-title": "Job title",
+                "language-skills": "Languages",
                 "language-skills.spoken.error": "Language skill is required",
                 "locality": {
-                    "additional-text": "Zusatztext",
-                    "city": "Ort",
-                    "country": "Land",
-                    "title": "Arbeitsort",
-                    "zip": "PLZ",
-                    "zipcode": "PLZ / Ort"
+                    "additional-text": "Additional text",
+                    "city": "City",
+                    "country": "Country",
+                    "title": "Place of work",
+                    "zip": "Postcode",
+                    "zipcode": "Postcode / City"
                 },
                 "no-selection": "No selection",
                 "occupation": {
-                    "label": "Beruf",
-                    "placeholder": "Beruf"
+                    "label": "Occupation",
+                    "placeholder": "Occupation"
                 },
                 "optional": "Optional",
                 "publication": {
-                    "title": "Publikationsmedien"
+                    "title": "Publication media"
                 },
                 "publicationEndDate": {
-                    "label": "Anstellungsdauer befristet bis Datum",
-                    "permanent": "unbefristet",
-                    "temporary": "befristet bis",
-                    "title": "Anstellungsdauer"
+                    "label": "Temporary employment to date",
+                    "permanent": "Permanent",
+                    "temporary": "Temporary until",
+                    "title": "Employment duration"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "By arrangement",
+                    "by-arrangement": "By arrangement / by agreement?",
                     "immediately": "Immediately",
-                    "label": "Stellenantritt ab Datum",
-                    "title": "Stellenantritt"
+                    "label": "Employment start date",
+                    "title": "Employment start"
                 },
-                "reset": "Zur\u00fccksetzen",
-                "submit": "Job publizieren",
+                "reset": "Reset",
+                "submit": "Publish job",
                 "submit.error": "Job could not be saved!",
-                "submit.success": "Job publication saved!",
+                "submit.success": "Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.",
                 "workload": "Workload"
             },
             "job-search": {
                 "search-badge": {
-                    "many": "Found <br><span class=\"badge badge-radar\">{{count}}</span><br> Jobs matching the search request online since {{since}} days",
-                    "none": "Did not found any Jobs matching the search request online since {{since}} days",
-                    "one": "Found <br><span class=\"badge badge-radar\">1</span><br> Job matching the search request online since {{since}} days",
-                    "show": "Jetzt anzeigen!"
+                    "many": "This profile matches <br><span class=\"badge badge-radar\">{{count}}</span><br>jobs",
+                    "none": "No jobs match this profile",
+                    "one": "This profile matches <br><span class=\"badge badge-radar\">1</span><br>job",
+                    "show": "Show search results."
                 },
                 "search-button": {
                     "title": "Find your dream job!"

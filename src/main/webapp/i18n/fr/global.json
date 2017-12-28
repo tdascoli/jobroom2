@@ -96,7 +96,7 @@
             "PRIMARSCHULE": "\u00c9cole obligatoire (Primaire)",
             "SEKUNDARSCHULE_OBERSTUFE": "Ecole sup\u00e9rieure (Sec. II)",
             "SEKUNDARSCHULE_UNTERSTUFE": "\u00c9cole obligatoire (Sec. I)",
-            "UNBEKANNT": "ne sait pas"
+            "UNBEKANNT": "Inconnue"
         },
         "drivingLicenceCategory": {
             "A": "A",
@@ -254,7 +254,7 @@
                 "NE": "Neuch\u00e2tel",
                 "NW": "Nidwald",
                 "OW": "Obwald",
-                "SG": "St-Gall",
+                "SG": "Saint-Gall",
                 "SH": "Schaffhouse",
                 "SO": "Soleure",
                 "SZ": "Schwyz",
