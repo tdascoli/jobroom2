@@ -30,10 +30,6 @@ import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Mapping;
-import org.springframework.data.elasticsearch.annotations.Setting;
-
 import ch.admin.seco.jobroom.config.Constants;
 
 /**
@@ -42,9 +38,6 @@ import ch.admin.seco.jobroom.config.Constants;
 @Entity
 @Table(name = "jhi_user")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@Document(indexName = "user")
-@Mapping(mappingPath = "config/elasticsearch/mappings/user.json")
-@Setting(settingPath = "config/elasticsearch/settings/folding-analyzer.json")
 public class User extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;

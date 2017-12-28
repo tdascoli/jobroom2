@@ -3,6 +3,7 @@ package ch.admin.seco.jobroom.service;
 import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.List;
+import java.util.function.Function;
 
 import com.codahale.metrics.annotation.Timed;
 import org.slf4j.Logger;
@@ -15,9 +16,10 @@ import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.domain.search.UserDocument;
 import ch.admin.seco.jobroom.repository.UserRepository;
 import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
+import ch.admin.seco.jobroom.service.mapper.UserDocumentMapper;
 
 @Service
 public class ElasticsearchIndexService {
@@ -30,38 +32,48 @@ public class ElasticsearchIndexService {
 
     private final ElasticsearchTemplate elasticsearchTemplate;
 
+    private final UserDocumentMapper userDocumentMapper;
+
     public ElasticsearchIndexService(
         UserRepository userRepository,
         UserSearchRepository userSearchRepository,
-        ElasticsearchTemplate elasticsearchTemplate) {
+        ElasticsearchTemplate elasticsearchTemplate,
+        UserDocumentMapper userDocumentMapper) {
         this.userRepository = userRepository;
         this.userSearchRepository = userSearchRepository;
         this.elasticsearchTemplate = elasticsearchTemplate;
+        this.userDocumentMapper = userDocumentMapper;
     }
 
     @Async
     @Timed
     public void reindexAll() {
-        reindexForClass(User.class, userRepository, userSearchRepository);
+        reindexForClass(UserDocument.class,
+            userRepository,
+            userSearchRepository,
+            userDocumentMapper::usersToUserDocuments);
 
         log.info("Elasticsearch: Successfully performed reindexing");
     }
 
     @Transactional(readOnly = true)
     @SuppressWarnings("unchecked")
-    <T, ID extends Serializable> void reindexForClass(Class<T> entityClass, JpaRepository<T, ID> jpaRepository,
-        ElasticsearchRepository<T, ID> elasticsearchRepository) {
-        elasticsearchTemplate.deleteIndex(entityClass);
-        elasticsearchTemplate.createIndex(entityClass);
-        elasticsearchTemplate.putMapping(entityClass);
+    <D, T, ID extends Serializable> void reindexForClass(Class<D> documentClass,
+        JpaRepository<T, ID> jpaRepository,
+        ElasticsearchRepository<D, ID> elasticsearchRepository,
+        Function<List<T>, List<D>> entitiesToDocumentsMapper) {
+        elasticsearchTemplate.deleteIndex(documentClass);
+        elasticsearchTemplate.createIndex(documentClass);
+        elasticsearchTemplate.putMapping(documentClass);
+
         if (jpaRepository.count() > 0) {
             try {
                 Method m = jpaRepository.getClass().getMethod("findAllWithEagerRelationships");
-                elasticsearchRepository.saveAll((List<T>) m.invoke(jpaRepository));
+                elasticsearchRepository.saveAll(entitiesToDocumentsMapper.apply((List<T>) m.invoke(jpaRepository)));
             } catch (Exception e) {
-                elasticsearchRepository.saveAll(jpaRepository.findAll());
+                elasticsearchRepository.saveAll(entitiesToDocumentsMapper.apply(jpaRepository.findAll()));
             }
         }
-        log.info("Elasticsearch: Indexed all rows for " + entityClass.getSimpleName());
+        log.info("Elasticsearch: Indexed all rows for " + documentClass.getSimpleName());
     }
 }

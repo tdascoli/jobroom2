@@ -1,7 +1,5 @@
 package ch.admin.seco.jobroom.web.rest;
 
-import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
-
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -36,7 +34,6 @@ import org.springframework.web.bind.annotation.RestController;
 import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.repository.UserRepository;
-import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.service.MailService;
 import ch.admin.seco.jobroom.service.UserService;
@@ -84,14 +81,11 @@ public class UserResource {
 
     private final MailService mailService;
 
-    private final UserSearchRepository userSearchRepository;
-
-    public UserResource(UserRepository userRepository, UserService userService, MailService mailService, UserSearchRepository userSearchRepository) {
+    public UserResource(UserRepository userRepository, UserService userService, MailService mailService) {
 
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
-        this.userSearchRepository = userSearchRepository;
     }
 
     /**
@@ -251,8 +245,8 @@ public class UserResource {
      */
     @GetMapping("/_search/users")
     @Timed
-    public ResponseEntity<List<User>> search(@RequestParam String query, @ApiParam Pageable pageable) {
-        Page<User> page = userSearchRepository.search(queryStringQuery(query), pageable);
+    public ResponseEntity<List<UserDTO>> search(@RequestParam String query, @ApiParam Pageable pageable) {
+        Page<UserDTO> page = userService.searchByQuery(query, pageable);
         HttpHeaders headers = PaginationUtil.generateSearchPaginationHttpHeaders(query, page, "/api/_search/users");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

@@ -32,6 +32,8 @@ import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 import ch.admin.seco.jobroom.security.SecurityUtils;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
+import ch.admin.seco.jobroom.service.mapper.UserDocumentMapper;
+import ch.admin.seco.jobroom.service.search.UserSearchService;
 import ch.admin.seco.jobroom.service.util.RandomUtil;
 import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 
@@ -56,13 +58,26 @@ public class UserService {
 
     private final CacheManager cacheManager;
 
-    public UserService(UserRepository userRepository, PasswordEncoder passwordEncoder, UserSearchRepository userSearchRepository, OrganizationRepository organizationRepository, AuthorityRepository authorityRepository, CacheManager cacheManager) {
+    private final UserDocumentMapper userDocumentMapper;
+
+    private final UserSearchService userSearchService;
+
+    public UserService(UserRepository userRepository,
+        PasswordEncoder passwordEncoder,
+        UserSearchRepository userSearchRepository,
+        OrganizationRepository organizationRepository,
+        AuthorityRepository authorityRepository,
+        CacheManager cacheManager,
+        UserDocumentMapper userDocumentMapper,
+        UserSearchService userSearchService) {
         this.userRepository = userRepository;
         this.passwordEncoder = passwordEncoder;
         this.userSearchRepository = userSearchRepository;
         this.organizationRepository = organizationRepository;
         this.authorityRepository = authorityRepository;
         this.cacheManager = cacheManager;
+        this.userDocumentMapper = userDocumentMapper;
+        this.userSearchService = userSearchService;
     }
 
     public Optional<User> activateRegistration(String key) {
@@ -72,7 +87,7 @@ public class UserService {
                 // activate given user for the registration key.
                 user.setActivated(true);
                 user.setActivationKey(null);
-                userSearchRepository.save(user);
+                userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
                 cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Activated user: {}", user);
                 return user;
@@ -130,7 +145,7 @@ public class UserService {
                 .ifPresent(newUser::setOrganization);
         }
         userRepository.save(newUser);
-        userSearchRepository.save(newUser);
+        userSearchRepository.save(userDocumentMapper.userToUserDocument(newUser));
         log.debug("Created Information for User: {}", newUser);
         return newUser;
     }
@@ -164,7 +179,7 @@ public class UserService {
                 .ifPresent(user::setOrganization);
         }
         userRepository.save(user);
-        userSearchRepository.save(user);
+        userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
         log.debug("Created Information for User: {}", user);
         return user;
     }
@@ -187,7 +202,7 @@ public class UserService {
             user.setPhone(phone);
             user.setLangKey(langKey);
             user.setImageUrl(imageUrl);
-            userSearchRepository.save(user);
+            userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
             cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
             log.debug("Changed Information for User: {}", user);
         });
@@ -220,7 +235,7 @@ public class UserService {
                     organizationRepository.findByExternalId(userDTO.getOrganizationId())
                         .ifPresent(user::setOrganization);
                 }
-                userSearchRepository.save(user);
+                userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
                 cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
                 log.debug("Changed Information for User: {}", user);
                 return user;
@@ -231,7 +246,7 @@ public class UserService {
     public void deleteUser(String login) {
         userRepository.findOneByLogin(login).ifPresent(user -> {
             userRepository.delete(user);
-            userSearchRepository.delete(user);
+            userSearchRepository.delete(userDocumentMapper.userToUserDocument(user));
             cacheManager.getCache(USERS_CACHE).evict(login);
             log.debug("Deleted User: {}", user);
         });
@@ -285,7 +300,7 @@ public class UserService {
         for (User user : users) {
             log.debug("Deleting not activated user {}", user.getLogin());
             userRepository.delete(user);
-            userSearchRepository.delete(user);
+            userSearchRepository.delete(userDocumentMapper.userToUserDocument(user));
             cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
         }
     }
@@ -297,5 +312,10 @@ public class UserService {
      */
     public List<String> getAuthorities() {
         return authorityRepository.findAll().stream().map(Authority::getName).collect(Collectors.toList());
+    }
+
+    @Transactional(readOnly = true)
+    public Page<UserDTO> searchByQuery(String query, Pageable pageable) {
+        return userSearchService.searchByQuery(query, pageable);
     }
 }
