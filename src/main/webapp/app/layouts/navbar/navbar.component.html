@@ -8,13 +8,10 @@
             <span class="fa fa-bars" aria-hidden="true"></span>
         </button>
 
-        <a class="navbar-brand alv-logo alv-logo--inverse" routerLink="home">
-            <strong class="alv-logo__brand--job-room">Job-Room</strong>
-            <!--
-            <div class="alv-logo__title-small">
-                <strong>{{ 'home.title.portal' | translate }}</strong><span class="title__plus-ch">swiss</span>
+        <a class="navbar-brand portal-logo" routerLink="home">
+            <div class="portal-logo__image">
+                <img src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_de.svg" />
             </div>
-            -->
         </a>
 
         <div class="ml-auto">
@@ -146,16 +143,9 @@
                                 </div>
                             </div>
                         </li>
-                        <!--
                         <li class="nav-item">
                             <a class="nav-link" [href]="'home.title.portal-url' | translate" target="work.swiss">
                                 <span class="d-sm-none">zu</span>{{ 'home.title.portal' | translate }}.swiss
-                            </a>
-                        </li>
-                        -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://www.amstat.ch" target="amstat.ch">
-                                <span class="d-sm-none">zu</span>amstat
                             </a>
                         </li>
                         <li class="nav-item d-none d-sm-block" *ngIf="!isAuthenticated()">
