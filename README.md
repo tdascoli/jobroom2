@@ -35,7 +35,11 @@ auto-refreshes when files change on your hard drive.
     
 To connect your local front-end to the development environment run
 
-    yarn start-development     
+    yarn start-development
+    
+To run your local front-end in mixed mode e.i connect to local reference service on 8082 port and development environment run
+
+    yarn start --env.localUrl='/referenceservice' --env.localPort=8082
 
 [Yarn][] is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in [package.json](package.json). You can also run `yarn update` and `yarn install` to manage dependencies.
