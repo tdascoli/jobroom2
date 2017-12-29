@@ -13,21 +13,26 @@
     -->
     <changeSet id="00000000000001" author="jhipster">
         <createTable tableName="jhi_user">
-            <column name="id" type="uuid" >
+            <column name="id" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="login" type="varchar(50)">
-                <constraints unique="true" nullable="false" uniqueConstraintName="ux_user_login"/>
+                <constraints unique="true" nullable="false"
+                             uniqueConstraintName="ux_user_login"/>
             </column>
             <column name="password_hash" type="varchar(60)"/>
             <column name="first_name" type="varchar(50)"/>
             <column name="last_name" type="varchar(50)"/>
+            <column name="gender" type="varchar(6)"/>
             <column name="email" type="varchar(100)">
-                <constraints unique="true" nullable="true" uniqueConstraintName="ux_user_email"/>
+                <constraints unique="false" nullable="true"/>
+            </column>
+            <column name="phone" type="varchar(50)">
+                <constraints nullable="true"/>
             </column>
             <column name="image_url" type="varchar(256)"/>
             <column name="activated" type="boolean" valueBoolean="false">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="lang_key" type="varchar(6)"/>
             <column name="activation_key" type="varchar(20)"/>
@@ -46,14 +51,14 @@
             <column name="last_modified_date" type="timestamp"/>
         </createTable>
         <createIndex indexName="idx_user_login"
-            tableName="jhi_user"
-            unique="true">
+                     tableName="jhi_user"
+                     unique="true">
             <column name="login" type="varchar(50)"/>
         </createIndex>
 
         <createIndex indexName="idx_user_email"
-            tableName="jhi_user"
-            unique="true">
+                     tableName="jhi_user"
+                     unique="false">
             <column name="email" type="varchar(100)"/>
         </createIndex>
         <createTable tableName="jhi_authority">
@@ -71,7 +76,8 @@
             </column>
         </createTable>
 
-        <addPrimaryKey columnNames="user_id, authority_name" tableName="jhi_user_authority"/>
+        <addPrimaryKey columnNames="user_id, authority_name"
+                       tableName="jhi_user_authority"/>
 
         <addForeignKeyConstraint baseColumnNames="authority_name"
                                  baseTableName="jhi_user_authority"
@@ -90,7 +96,8 @@
             <column name="activated" type="boolean"/>
             <column name="created_date" type="timestamp"/>
         </loadData>
-        <dropDefaultValue tableName="jhi_user" columnName="created_date" columnDataType="datetime"/>
+        <dropDefaultValue tableName="jhi_user" columnName="created_date"
+                          columnDataType="datetime"/>
         <loadData encoding="UTF-8"
                   file="config/liquibase/authorities.csv"
                   separator=";"
@@ -101,11 +108,11 @@
                   separator=";"
                   tableName="jhi_user_authority"/>
         <createTable tableName="jhi_persistent_audit_event">
-            <column name="event_id" type="uuid" >
+            <column name="event_id" type="uuid">
                 <constraints primaryKey="true" nullable="false"/>
             </column>
             <column name="principal" type="varchar(50)">
-                <constraints nullable="false" />
+                <constraints nullable="false"/>
             </column>
             <column name="event_date" type="timestamp"/>
             <column name="event_type" type="varchar(255)"/>
@@ -120,7 +127,8 @@
             </column>
             <column name="value" type="varchar(255)"/>
         </createTable>
-        <addPrimaryKey columnNames="event_id, name" tableName="jhi_persistent_audit_evt_data"/>
+        <addPrimaryKey columnNames="event_id, name"
+                       tableName="jhi_persistent_audit_evt_data"/>
 
         <createIndex indexName="idx_persistent_audit_event"
                      tableName="jhi_persistent_audit_event"

@@ -10,9 +10,6 @@
         file="config/liquibase/changelog/20171109071832_added_entity_Organization.xml"
         relativeToChangelogFile="false"/>
 
-    <include
-        file="config/liquibase/changelog/20171128144900_added_user_phone.xml"
-        relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

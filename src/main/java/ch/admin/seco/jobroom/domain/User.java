@@ -10,6 +10,8 @@ import java.util.UUID;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -31,6 +33,7 @@ import org.hibernate.annotations.GenericGenerator;
 import org.hibernate.validator.constraints.Email;
 
 import ch.admin.seco.jobroom.config.Constants;
+import ch.admin.seco.jobroom.domain.enumeration.Gender;
 
 /**
  * A user.
@@ -70,11 +73,15 @@ public class User extends AbstractAuditingEntity implements Serializable {
 
     @Email
     @Size(min = 5, max = 100)
-    @Column(length = 100, unique = true)
+    @Column(length = 100, unique = false)
     private String email;
 
     @Column(length = 50)
     private String phone;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 6)
+    private Gender gender;
 
     @NotNull
     @Column(nullable = false)
@@ -236,6 +243,15 @@ public class User extends AbstractAuditingEntity implements Serializable {
         this.phone = phone;
     }
 
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hashCode(getId());
@@ -262,6 +278,7 @@ public class User extends AbstractAuditingEntity implements Serializable {
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
             ", phone='" + phone + '\'' +
+            ", gender='" + gender + '\'' +
             ", imageUrl='" + imageUrl + '\'' +
             ", activated='" + activated + '\'' +
             ", langKey='" + langKey + '\'' +

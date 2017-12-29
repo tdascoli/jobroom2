@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
 import { NgbActiveModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
@@ -59,7 +59,9 @@ export class UserMgmtDialogComponent implements OnInit {
 
     save() {
         this.isSaving = true;
-        this.user.organizationId = this.userOrganization.externalId;
+        if (this.userOrganization) {
+            this.user.organizationId = this.userOrganization.externalId;
+        }
         if (this.user.id !== null) {
             this.userService.update(this.user).subscribe((response) => this.onSaveSuccess(response), () => this.onSaveError());
         } else {

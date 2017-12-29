@@ -303,11 +303,11 @@ public class UserResourceIntTest {
         restUserMockMvc.perform(post("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(managedUserVM)))
-            .andExpect(status().isBadRequest());
+            .andExpect(status().isCreated());
 
         // Validate the User in the database
         List<User> userList = userRepository.findAll();
-        assertThat(userList).hasSize(databaseSizeBeforeCreate);
+        assertThat(userList).hasSize(databaseSizeBeforeCreate + 1);
     }
 
     @Test
@@ -493,7 +493,7 @@ public class UserResourceIntTest {
         restUserMockMvc.perform(put("/api/users")
             .contentType(TestUtil.APPLICATION_JSON_UTF8)
             .content(TestUtil.convertObjectToJsonBytes(managedUserVM)))
-            .andExpect(status().isBadRequest());
+            .andExpect(status().isOk());
     }
 
     @Test
@@ -662,7 +662,7 @@ public class UserResourceIntTest {
     }
 
     @Test
-    public void testAuthorityEquals() throws Exception {
+    public void testAuthorityEquals() {
         Authority authorityA = new Authority();
         assertThat(authorityA).isEqualTo(authorityA);
         assertThat(authorityA).isNotEqualTo(null);

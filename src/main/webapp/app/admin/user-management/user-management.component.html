@@ -26,8 +26,11 @@
         <table class="table table-striped">
             <thead>
             <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
-                <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
                 <th jhiSortBy="login"><span jhiTranslate="userManagement.login">Login</span> <span class="fa fa-sort"></span></th>
+                <th jhiSortBy="lastName"><span jhiTranslate="userManagement.lastName">LastName</span> <span
+                    class="fa fa-sort"></span></th>
+                <th jhiSortBy="firstName"><span jhiTranslate="userManagement.firstName">FirstName</span> <span
+                    class="fa fa-sort"></span></th>
                 <th jhiSortBy="email"><span jhiTranslate="userManagement.email">Email</span> <span class="fa fa-sort"></span></th>
                 <th></th>
                 <th jhiSortBy="langKey"> <span jhiTranslate="userManagement.langKey">Lang Key</span> <span class="fa fa-sort"></span></th>
@@ -40,8 +43,9 @@
             </thead>
             <tbody *ngIf ="users">
             <tr *ngFor="let user of users; trackBy: trackIdentity">
-                <td><a [routerLink]="['../user-management', user.login]">{{user.id}}</a></td>
-                <td>{{user.login}}</td>
+                <td><a [routerLink]="['../user-management', user.login]">{{user.login}}</a></td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.firstName}}</td>
                 <td>{{user.email}}</td>
                 <td>
                     <button class="btn btn-danger btn-sm" (click)="setActive(user, true)" *ngIf="!user.activated"

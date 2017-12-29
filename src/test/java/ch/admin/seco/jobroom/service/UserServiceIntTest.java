@@ -61,10 +61,10 @@ public class UserServiceIntTest {
     @Transactional
     public void assertThatUserMustExistToResetPassword() {
         userRepository.saveAndFlush(user);
-        Optional<User> maybeUser = userService.requestPasswordReset("invalid.login@localhost");
+        Optional<User> maybeUser = userService.requestPasswordReset("invalid-login");
         assertThat(maybeUser).isNotPresent();
 
-        maybeUser = userService.requestPasswordReset(user.getEmail());
+        maybeUser = userService.requestPasswordReset(user.getLogin());
         assertThat(maybeUser).isPresent();
         assertThat(maybeUser.orElse(null).getEmail()).isEqualTo(user.getEmail());
         assertThat(maybeUser.orElse(null).getResetDate()).isNotNull();

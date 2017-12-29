@@ -10,13 +10,11 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import ch.admin.seco.jobroom.domain.User;
@@ -25,11 +23,9 @@ import ch.admin.seco.jobroom.security.SecurityUtils;
 import ch.admin.seco.jobroom.service.MailService;
 import ch.admin.seco.jobroom.service.UserService;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
-import ch.admin.seco.jobroom.web.rest.errors.EmailAlreadyUsedException;
-import ch.admin.seco.jobroom.web.rest.errors.EmailNotFoundException;
 import ch.admin.seco.jobroom.web.rest.errors.InternalServerErrorException;
 import ch.admin.seco.jobroom.web.rest.errors.InvalidPasswordException;
-import ch.admin.seco.jobroom.web.rest.errors.LoginAlreadyUsedException;
+import ch.admin.seco.jobroom.web.rest.errors.LoginNotFoundException;
 import ch.admin.seco.jobroom.web.rest.vm.KeyAndPasswordVM;
 import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 
@@ -53,31 +49,6 @@ public class AccountResource {
         this.userRepository = userRepository;
         this.userService = userService;
         this.mailService = mailService;
-    }
-
-    /**
-     * POST  /register : register the user.
-     *
-     * @param managedUserVM the managed user View Model
-     * @throws InvalidPasswordException 400 (Bad Request) if the password is incorrect
-     * @throws EmailAlreadyUsedException 400 (Bad Request) if the email is already used
-     * @throws LoginAlreadyUsedException 400 (Bad Request) if the login is already used
-     */
-    @PostMapping("/register")
-    @Timed
-    @ResponseStatus(HttpStatus.CREATED)
-    public void registerAccount(@Valid @RequestBody ManagedUserVM managedUserVM) {
-        if (!checkPasswordLength(managedUserVM.getPassword())) {
-            throw new InvalidPasswordException();
-        }
-        userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase()).ifPresent(u -> {
-            throw new LoginAlreadyUsedException();
-        });
-        userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail()).ifPresent(u -> {
-            throw new EmailAlreadyUsedException();
-        });
-        User user = userService.registerUser(managedUserVM);
-        mailService.sendActivationEmail(user);
     }
 
     /**
@@ -126,17 +97,12 @@ public class AccountResource {
      * POST  /account : update the current user information.
      *
      * @param userDTO the current user information
-     * @throws EmailAlreadyUsedException 400 (Bad Request) if the email is already used
      * @throws RuntimeException 500 (Internal Server Error) if the user login wasn't found
      */
     @PostMapping("/account")
     @Timed
     public void saveAccount(@Valid @RequestBody UserDTO userDTO) {
         final String userLogin = SecurityUtils.getCurrentUserLogin();
-        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(userDTO.getEmail());
-        if (existingUser.isPresent() && (!existingUser.get().getLogin().equalsIgnoreCase(userLogin))) {
-            throw new EmailAlreadyUsedException();
-        }
         Optional<User> user = userRepository.findOneByLogin(userLogin);
         if (!user.isPresent()) {
             throw new InternalServerErrorException("User could not be found");
@@ -163,15 +129,15 @@ public class AccountResource {
     /**
      * POST   /account/reset-password/init : Send an email to reset the password of the user.
      *
-     * @param mail the mail of the user
-     * @throws EmailNotFoundException 400 (Bad Request) if the email address is not registered
+     * @param login of the user
+     * @throws LoginNotFoundException 400 (Bad Request) if the login is not registered
      */
     @PostMapping(path = "/account/reset-password/init")
     @Timed
-    public void requestPasswordReset(@RequestBody String mail) {
+    public void requestPasswordReset(@RequestBody String login) {
         mailService.sendPasswordResetMail(
-            userService.requestPasswordReset(mail)
-                .orElseThrow(EmailNotFoundException::new)
+            userService.requestPasswordReset(login)
+                .orElseThrow(LoginNotFoundException::new)
         );
     }
 

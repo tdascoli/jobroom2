@@ -39,7 +39,6 @@ import ch.admin.seco.jobroom.service.MailService;
 import ch.admin.seco.jobroom.service.UserService;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
 import ch.admin.seco.jobroom.web.rest.errors.BadRequestAlertException;
-import ch.admin.seco.jobroom.web.rest.errors.EmailAlreadyUsedException;
 import ch.admin.seco.jobroom.web.rest.errors.LoginAlreadyUsedException;
 import ch.admin.seco.jobroom.web.rest.util.HeaderUtil;
 import ch.admin.seco.jobroom.web.rest.util.PaginationUtil;
@@ -91,7 +90,7 @@ public class UserResource {
     /**
      * POST  /users  : Creates a new user.
      *
-     * Creates a new user if the login and email are not already used, and sends an
+     * Creates a new user if the login is not already used, and sends an
      * mail with an activation link.
      * The user needs to be activated on creation.
      *
@@ -111,8 +110,6 @@ public class UserResource {
             // Lowercase the user login before comparing with database
         } else if (userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase()).isPresent()) {
             throw new LoginAlreadyUsedException();
-        } else if (userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail()).isPresent()) {
-            throw new EmailAlreadyUsedException();
         } else {
             User newUser = userService.createUser(managedUserVM);
             mailService.sendCreationEmail(newUser);
@@ -127,7 +124,6 @@ public class UserResource {
      *
      * @param managedUserVM the user to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated user
-     * @throws EmailAlreadyUsedException 400 (Bad Request) if the email is already in use
      * @throws LoginAlreadyUsedException 400 (Bad Request) if the login is already in use
      */
     @PutMapping("/users")
@@ -135,11 +131,7 @@ public class UserResource {
     @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<UserDTO> updateUser(@Valid @RequestBody ManagedUserVM managedUserVM) {
         log.debug("REST request to update User : {}", managedUserVM);
-        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail());
-        if (existingUser.isPresent() && (!existingUser.get().getId().equals(managedUserVM.getId()))) {
-            throw new EmailAlreadyUsedException();
-        }
-        existingUser = userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase());
+        Optional<User> existingUser = userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase());
         if (existingUser.isPresent() && (!existingUser.get().getId().equals(managedUserVM.getId()))) {
             throw new LoginAlreadyUsedException();
         }
@@ -154,44 +146,30 @@ public class UserResource {
     @Secured(AuthoritiesConstants.ADMIN)
     public ResponseEntity<UserDTO> importUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
         log.debug("REST request to import User : {}", managedUserVM);
-        if (managedUserVM.getAuthorities().size() <= 1) {
-            log.warn("User : {}", managedUserVM);
-        }
-        Optional<User> existingUser = userRepository.findOneByEmailIgnoreCase(managedUserVM.getEmail());
+        String login = managedUserVM.getLogin().toLowerCase();
+        Optional<User> existingUser = userRepository.findOneByLogin(login);
 
         // update existing user
         if (existingUser.isPresent()) {
             User user = existingUser.get();
-            if (!user.getLogin().equals(managedUserVM.getLogin())) {
-                throw new LoginAlreadyUsedException();
-            }
 
             managedUserVM.setId(user.getId());
             Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
-            updatedUser.ifPresent(uuser -> {
-                if (uuser.getAuthorities().size() <= 1) {
-                    log.warn("Update User : {}", uuser);
-                }
-            });
 
             if (StringUtils.hasText(managedUserVM.getPassword())) {
-                userService.updatePassword(managedUserVM.getLogin(), managedUserVM.getPassword());
+                userService.updatePassword(login, managedUserVM.getPassword());
             }
             return ResponseUtil.wrapOrNotFound(updatedUser,
-                HeaderUtil.createAlert("userManagement.updated", managedUserVM.getLogin()));
+                HeaderUtil.createAlert("userManagement.updated", login));
         }
 
         // create new user
         User newUser = userService.createUser(managedUserVM);
-        if (newUser.getAuthorities().size() <= 1) {
-            log.warn("Update User : {}", newUser);
-        }
-
         if (StringUtils.hasText(managedUserVM.getPassword())) {
-            userService.updatePassword(managedUserVM.getLogin(), managedUserVM.getPassword());
+            userService.updatePassword(login, managedUserVM.getPassword());
         }
-        return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
-            .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
+        return ResponseEntity.created(new URI("/api/users/" + login))
+            .headers(HeaderUtil.createAlert("userManagement.created", login))
             .body(new UserDTO(newUser));
     }
 
