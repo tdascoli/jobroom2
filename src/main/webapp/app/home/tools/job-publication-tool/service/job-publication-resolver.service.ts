@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRouteSnapshot, Resolve, RouterStateSnapshot } from '@angular/router';
-import { JobPublication } from '../shared/job-publication/job-publication.model';
+import { JobPublication } from '../../../../shared/job-publication/job-publication.model';
 import { Observable } from 'rxjs/Observable';
-import { JobPublicationService } from '../shared/job-publication/job-publication.service';
-import { LocalityService } from '../shared/reference-service';
-import { ZipCodeComponent } from './tools/job-publication-tool/zip-code/zip-code.component';
+import { JobPublicationService } from '../../../../shared/job-publication/job-publication.service';
+import { LocalityService } from '../../../../shared/reference-service';
+import { ZipCodeComponent } from '../zip-code/zip-code.component';
 
 @Injectable()
 export class JobPublicationResolverService implements Resolve<JobPublication> {

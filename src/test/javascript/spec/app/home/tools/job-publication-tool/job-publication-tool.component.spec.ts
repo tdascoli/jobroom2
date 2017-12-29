@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { JobPublicationToolComponent } from '../../../../../../../main/webapp/app/home/tools/job-publication-tool/job-publication-tool.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { LanguageSkillService } from '../../../../../../../main/webapp/app/candidate-search/services/language-skill.service';
-import { OccupationPresentationService } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { OccupationPresentationService } from '../../../../../../../main/webapp/app/shared/reference-service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
 import { JobPublicationService } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.service';
@@ -39,6 +39,7 @@ describe('JobPublicationToolComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(JobPublicationToolComponent);
         component = fixture.componentInstance;
+        component.userData = {};
         fixture.detectChanges();
     });
 

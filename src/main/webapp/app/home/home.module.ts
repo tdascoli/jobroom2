@@ -17,7 +17,8 @@ import { LanguageSkillsComponent } from './tools/job-publication-tool/language-s
 import { HomeRoutingModule } from './home-routing.module';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HomeRouterEffects } from './state-management/effects/router.effects';
-import { JobPublicationResolverService } from './job-publication-resolver.service';
+import { JobPublicationResolverService } from './tools/job-publication-tool/service/job-publication-resolver.service';
+import { UserDataResolverService } from './tools/job-publication-tool/service/user-data-resolver.service';
 
 @NgModule({
     imports: [
@@ -42,7 +43,10 @@ import { JobPublicationResolverService } from './job-publication-resolver.servic
         ZipCodeComponent
     ],
     entryComponents: [],
-    providers: [JobPublicationResolverService],
+    providers: [
+        JobPublicationResolverService,
+        UserDataResolverService
+    ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class JobroomHomeModule {

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home.component';
-import { JobPublicationResolverService } from './job-publication-resolver.service';
+import { JobPublicationResolverService } from './tools/job-publication-tool/service/job-publication-resolver.service';
+import { UserDataResolverService } from './tools/job-publication-tool/service/user-data-resolver.service';
 
 const routes: Routes = [
     {
@@ -23,6 +24,9 @@ const routes: Routes = [
     {
         path: 'companies/jobpublication',
         component: HomeComponent,
+        resolve: {
+            userData: UserDataResolverService
+        },
         data: {
             authorities: [],
             pageTitle: 'home.title'
@@ -48,7 +52,8 @@ const routes: Routes = [
         path: 'agents/jobpublication',
         component: HomeComponent,
         resolve: {
-            jobPublication: JobPublicationResolverService
+            jobPublication: JobPublicationResolverService,
+            userData: UserDataResolverService
         },
         data: {
             authorities: [],

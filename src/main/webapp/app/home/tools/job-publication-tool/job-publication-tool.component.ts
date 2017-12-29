@@ -12,7 +12,7 @@ import {
 } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import {
-    DrivingLicenceCategory, ResponseWrapper,
+    DrivingLicenceCategory, Gender, ResponseWrapper,
 } from '../../../shared';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {
@@ -31,6 +31,8 @@ import { JobPublicationService } from '../../../shared/job-publication/job-publi
 import { Subscriber } from 'rxjs/Subscriber';
 import { DateUtils } from '../../../shared';
 import { JobPublicationMapper } from './job-publication-mapper';
+import { Organization } from '../../../shared/organization/organization.model';
+import { UserData } from './service/user-data-resolver.service';
 
 @Component({
     selector: 'jr2-job-publication-tool',
@@ -45,6 +47,8 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
 
     @Input()
     jobPublication: JobPublication;
+    @Input()
+    userData: UserData;
 
     educationLevels = EducationLevel;
     experiences = Experience;
@@ -177,6 +181,9 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     private createDefaultFormModel(): any {
+        const userData: UserData = this.userData || {};
+        const company: Organization = userData.organization || {};
+
         return {
             job: {
                 title: '',
@@ -204,18 +211,26 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 languageSkills: []
             },
             company: {
-                name: '',
-                street: '',
-                houseNumber: '',
+                name: company.name,
+                street: company.street,
+                zipCode: {
+                    zip: company.zipCode,
+                    city: company.city
+                },
+                houseNumber: company.houseNumber,
                 postboxNumber: '',
+                postboxZipCode: {
+                    zip: '',
+                    city: ''
+                },
                 countryCode: this.SWITZ_KEY
             },
             contact: {
-                salutation: null,
-                firstName: '',
-                lastName: '',
-                phoneNumber: '',
-                email: ''
+                salutation: this.getSalutation(userData),
+                firstName: userData.firstName,
+                lastName: userData.lastName,
+                phoneNumber: userData.phone,
+                email: userData.email
             },
             application: {
                 written: false,
@@ -231,6 +246,14 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 eures: false
             }
         };
+    }
+
+    private getSalutation(userData: UserData) {
+        if (!userData.gender) {
+            return null;
+        }
+
+        return userData.gender === Gender.MALE ? 'MR' : 'MS';
     }
 
     ngOnDestroy(): void {

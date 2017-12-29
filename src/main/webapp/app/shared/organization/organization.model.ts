@@ -10,6 +10,7 @@ export class Organization implements BaseEntity {
                 public externalId?: string,
                 public name?: string,
                 public street?: string,
+                public houseNumber?: string,
                 public zipCode?: string,
                 public city?: string,
                 public email?: string,

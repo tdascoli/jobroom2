@@ -1,9 +1,12 @@
+import { Gender } from '../';
+
 export class User {
     public id?: any;
     public login?: string;
     public firstName?: string;
     public lastName?: string;
     public email?: string;
+    public gender?: Gender;
     public activated?: Boolean;
     public langKey?: string;
     public authorities?: any[];
@@ -21,6 +24,7 @@ export class User {
         firstName?: string,
         lastName?: string,
         email?: string,
+        gender?: Gender,
         activated?: Boolean,
         langKey?: string,
         authorities?: any[],
@@ -37,6 +41,7 @@ export class User {
         this.firstName = firstName ? firstName : null;
         this.lastName = lastName ? lastName : null;
         this.email = email ? email : null;
+        this.gender = gender ? gender : null;
         this.activated = activated ? activated : false;
         this.langKey = langKey ? langKey : null;
         this.authorities = authorities ? authorities : null;
