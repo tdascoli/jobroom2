@@ -37,6 +37,7 @@ import ch.admin.seco.jobroom.JobroomApp;
 import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.domain.enumeration.Gender;
 import ch.admin.seco.jobroom.repository.AuthorityRepository;
 import ch.admin.seco.jobroom.repository.UserRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
@@ -207,6 +208,7 @@ public class AccountResourceIntTest {
             "lastname",                  // lastName
             "save-account@example.com",    // email
             "+38238238238",    // phone
+            Gender.MALE,
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -254,6 +256,7 @@ public class AccountResourceIntTest {
             "lastname",                  // lastName
             "invalid email",    // email
             "+38238238238",    // phone
+            Gender.FEMALE,
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -300,6 +303,7 @@ public class AccountResourceIntTest {
             "lastname",                  // lastName
             "save-existing-email2@example.com",    // email
             "+38238238238",    // phone
+            Gender.MALE,
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey
@@ -339,6 +343,7 @@ public class AccountResourceIntTest {
             "lastname",                  // lastName
             "save-existing-email-and-login@example.com",    // email
             "+38238238238",    // phone
+            Gender.MALE,
             false,                   // activated
             "http://placehold.it/50x50", //imageUrl
             Constants.DEFAULT_LANGUAGE,// langKey

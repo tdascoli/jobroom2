@@ -107,7 +107,7 @@ public class AccountResource {
         if (!user.isPresent()) {
             throw new InternalServerErrorException("User could not be found");
         }
-        userService.updateUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(), userDTO.getPhone(),
+        userService.updateUser(userDTO.getFirstName(), userDTO.getLastName(), userDTO.getEmail(), userDTO.getPhone(), userDTO.getGender(),
             userDTO.getLangKey(), userDTO.getImageUrl());
     }
 

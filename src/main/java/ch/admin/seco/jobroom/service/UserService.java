@@ -25,6 +25,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.domain.enumeration.Gender;
 import ch.admin.seco.jobroom.repository.AuthorityRepository;
 import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.UserRepository;
@@ -132,6 +133,7 @@ public class UserService {
         newUser.setLastName(userDTO.getLastName());
         newUser.setEmail(userDTO.getEmail());
         newUser.setPhone(userDTO.getPhone());
+        newUser.setGender(userDTO.getGender());
         newUser.setImageUrl(userDTO.getImageUrl());
         newUser.setLangKey(userDTO.getLangKey());
         // new user is not active
@@ -157,6 +159,7 @@ public class UserService {
         user.setLastName(userDTO.getLastName());
         user.setEmail(userDTO.getEmail());
         user.setPhone(userDTO.getPhone());
+        user.setGender(userDTO.getGender());
         user.setImageUrl(userDTO.getImageUrl());
         if (userDTO.getLangKey() == null) {
             user.setLangKey(Constants.DEFAULT_LANGUAGE); // default language
@@ -191,15 +194,17 @@ public class UserService {
      * @param lastName last name of user
      * @param email email id of user
      * @param phone phone of user
+     * @param gender gender of user
      * @param langKey language key
      * @param imageUrl image URL of user
      */
-    public void updateUser(String firstName, String lastName, String email, String phone, String langKey, String imageUrl) {
+    public void updateUser(String firstName, String lastName, String email, String phone, Gender gender, String langKey, String imageUrl) {
         userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
             user.setFirstName(firstName);
             user.setLastName(lastName);
             user.setEmail(email);
             user.setPhone(phone);
+            user.setGender(gender);
             user.setLangKey(langKey);
             user.setImageUrl(imageUrl);
             userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
@@ -223,6 +228,7 @@ public class UserService {
                 user.setLastName(userDTO.getLastName());
                 user.setEmail(userDTO.getEmail());
                 user.setPhone(userDTO.getPhone());
+                user.setGender(userDTO.getGender());
                 user.setImageUrl(userDTO.getImageUrl());
                 user.setActivated(userDTO.isActivated());
                 user.setLangKey(userDTO.getLangKey());

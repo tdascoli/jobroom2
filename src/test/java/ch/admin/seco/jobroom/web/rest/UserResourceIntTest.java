@@ -40,6 +40,7 @@ import org.springframework.transaction.annotation.Transactional;
 import ch.admin.seco.jobroom.JobroomApp;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.domain.enumeration.Gender;
 import ch.admin.seco.jobroom.repository.UserRepository;
 import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
 import ch.admin.seco.jobroom.security.AuthoritiesConstants;
@@ -85,6 +86,9 @@ public class UserResourceIntTest {
 
     private static final String DEFAULT_LANGKEY = "en";
     private static final String UPDATED_LANGKEY = "fr";
+
+    private static final Gender DEFAULT_GENDER = Gender.MALE;
+    private static final Gender UPDATED_GENDER = Gender.FEMALE;
 
     @Autowired
     private UserRepository userRepository;
@@ -132,6 +136,7 @@ public class UserResourceIntTest {
         user.setPassword(RandomStringUtils.random(60));
         user.setActivated(true);
         user.setEmail(RandomStringUtils.randomAlphabetic(5) + DEFAULT_EMAIL);
+        user.setGender(DEFAULT_GENDER);
         user.setFirstName(DEFAULT_FIRSTNAME);
         user.setLastName(DEFAULT_LASTNAME);
         user.setImageUrl(DEFAULT_IMAGEURL);
@@ -173,6 +178,7 @@ public class UserResourceIntTest {
             DEFAULT_LASTNAME,
             DEFAULT_EMAIL,
             DEFAULT_PHONE,
+            DEFAULT_GENDER,
             true,
             DEFAULT_IMAGEURL,
             DEFAULT_LANGKEY,
@@ -195,6 +201,7 @@ public class UserResourceIntTest {
         assertThat(testUser.getFirstName()).isEqualTo(DEFAULT_FIRSTNAME);
         assertThat(testUser.getLastName()).isEqualTo(DEFAULT_LASTNAME);
         assertThat(testUser.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(testUser.getGender()).isEqualTo(DEFAULT_GENDER);
         assertThat(testUser.getImageUrl()).isEqualTo(DEFAULT_IMAGEURL);
         assertThat(testUser.getLangKey()).isEqualTo(DEFAULT_LANGKEY);
     }
@@ -214,6 +221,7 @@ public class UserResourceIntTest {
             DEFAULT_LASTNAME,
             DEFAULT_EMAIL,
             DEFAULT_PHONE,
+            DEFAULT_GENDER,
             true,
             DEFAULT_IMAGEURL,
             DEFAULT_LANGKEY,
@@ -252,6 +260,7 @@ public class UserResourceIntTest {
             DEFAULT_LASTNAME,
             "anothermail@localhost",
             DEFAULT_PHONE,
+            DEFAULT_GENDER,
             true,
             DEFAULT_IMAGEURL,
             DEFAULT_LANGKEY,
@@ -290,6 +299,7 @@ public class UserResourceIntTest {
             DEFAULT_LASTNAME,
             DEFAULT_EMAIL, // this email should already be used
             DEFAULT_PHONE,
+            DEFAULT_GENDER,
             true,
             DEFAULT_IMAGEURL,
             DEFAULT_LANGKEY,
@@ -320,12 +330,14 @@ public class UserResourceIntTest {
         // Get all the users
         restUserMockMvc.perform(get("/api/users?sort=id,desc")
             .accept(MediaType.APPLICATION_JSON))
+            .andDo(h -> System.out.println(h.getResponse().getContentAsString()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.[*].login").value(hasItem(DEFAULT_LOGIN)))
             .andExpect(jsonPath("$.[*].firstName").value(hasItem(DEFAULT_FIRSTNAME)))
             .andExpect(jsonPath("$.[*].lastName").value(hasItem(DEFAULT_LASTNAME)))
             .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL)))
+            .andExpect(jsonPath("$.[*].gender").value(hasItem(DEFAULT_GENDER.name())))
             .andExpect(jsonPath("$.[*].imageUrl").value(hasItem(DEFAULT_IMAGEURL)))
             .andExpect(jsonPath("$.[*].langKey").value(hasItem(DEFAULT_LANGKEY)));
     }
@@ -339,12 +351,14 @@ public class UserResourceIntTest {
 
         // Get the user
         restUserMockMvc.perform(get("/api/users/{login}", user.getLogin()))
+            .andDo(h -> System.out.println(h.getResponse().getContentAsString()))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.login").value(user.getLogin()))
             .andExpect(jsonPath("$.firstName").value(DEFAULT_FIRSTNAME))
             .andExpect(jsonPath("$.lastName").value(DEFAULT_LASTNAME))
             .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
+            .andExpect(jsonPath("$.gender").value(DEFAULT_GENDER.name()))
             .andExpect(jsonPath("$.imageUrl").value(DEFAULT_IMAGEURL))
             .andExpect(jsonPath("$.langKey").value(DEFAULT_LANGKEY));
     }
@@ -377,6 +391,7 @@ public class UserResourceIntTest {
             UPDATED_LASTNAME,
             UPDATED_EMAIL,
             UPDATED_PHONE,
+            UPDATED_GENDER,
             updatedUser.getActivated(),
             UPDATED_IMAGEURL,
             UPDATED_LANGKEY,
@@ -398,6 +413,7 @@ public class UserResourceIntTest {
         assertThat(testUser.getFirstName()).isEqualTo(UPDATED_FIRSTNAME);
         assertThat(testUser.getLastName()).isEqualTo(UPDATED_LASTNAME);
         assertThat(testUser.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testUser.getGender()).isEqualTo(UPDATED_GENDER);
         assertThat(testUser.getImageUrl()).isEqualTo(UPDATED_IMAGEURL);
         assertThat(testUser.getLangKey()).isEqualTo(UPDATED_LANGKEY);
     }
@@ -422,7 +438,8 @@ public class UserResourceIntTest {
             UPDATED_FIRSTNAME,
             UPDATED_LASTNAME,
             UPDATED_EMAIL,
-            DEFAULT_PHONE,
+            UPDATED_PHONE,
+            UPDATED_GENDER,
             updatedUser.getActivated(),
             UPDATED_IMAGEURL,
             UPDATED_LANGKEY,
@@ -445,6 +462,7 @@ public class UserResourceIntTest {
         assertThat(testUser.getFirstName()).isEqualTo(UPDATED_FIRSTNAME);
         assertThat(testUser.getLastName()).isEqualTo(UPDATED_LASTNAME);
         assertThat(testUser.getEmail()).isEqualTo(UPDATED_EMAIL);
+        assertThat(testUser.getGender()).isEqualTo(UPDATED_GENDER);
         assertThat(testUser.getImageUrl()).isEqualTo(UPDATED_IMAGEURL);
         assertThat(testUser.getLangKey()).isEqualTo(UPDATED_LANGKEY);
     }
@@ -481,6 +499,7 @@ public class UserResourceIntTest {
             updatedUser.getLastName(),
             "jhipster@localhost",  // this email should already be used by anotherUser
             DEFAULT_PHONE,
+            null,
             updatedUser.getActivated(),
             updatedUser.getImageUrl(),
             updatedUser.getLangKey(),
@@ -528,6 +547,7 @@ public class UserResourceIntTest {
             updatedUser.getLastName(),
             updatedUser.getEmail(),
             updatedUser.getPhone(),
+            updatedUser.getGender(),
             updatedUser.getActivated(),
             updatedUser.getImageUrl(),
             updatedUser.getLangKey(),
@@ -605,6 +625,7 @@ public class UserResourceIntTest {
             DEFAULT_LASTNAME,
             DEFAULT_EMAIL,
             DEFAULT_PHONE,
+            DEFAULT_GENDER,
             true,
             DEFAULT_IMAGEURL,
             DEFAULT_LANGKEY,
@@ -619,6 +640,7 @@ public class UserResourceIntTest {
         assertThat(user.getFirstName()).isEqualTo(DEFAULT_FIRSTNAME);
         assertThat(user.getLastName()).isEqualTo(DEFAULT_LASTNAME);
         assertThat(user.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(user.getGender()).isEqualTo(DEFAULT_GENDER);
         assertThat(user.getActivated()).isEqualTo(true);
         assertThat(user.getImageUrl()).isEqualTo(DEFAULT_IMAGEURL);
         assertThat(user.getLangKey()).isEqualTo(DEFAULT_LANGKEY);
@@ -650,6 +672,7 @@ public class UserResourceIntTest {
         assertThat(userDTO.getFirstName()).isEqualTo(DEFAULT_FIRSTNAME);
         assertThat(userDTO.getLastName()).isEqualTo(DEFAULT_LASTNAME);
         assertThat(userDTO.getEmail()).isEqualTo(DEFAULT_EMAIL);
+        assertThat(userDTO.getGender()).isEqualTo(DEFAULT_GENDER);
         assertThat(userDTO.isActivated()).isEqualTo(true);
         assertThat(userDTO.getImageUrl()).isEqualTo(DEFAULT_IMAGEURL);
         assertThat(userDTO.getLangKey()).isEqualTo(DEFAULT_LANGKEY);

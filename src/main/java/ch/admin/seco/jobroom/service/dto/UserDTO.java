@@ -8,6 +8,9 @@ import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
 
+import javax.persistence.Column;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -17,6 +20,7 @@ import org.hibernate.validator.constraints.NotBlank;
 import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.User;
+import ch.admin.seco.jobroom.domain.enumeration.Gender;
 
 /**
  * A DTO representing a user, with his authorities.
@@ -42,6 +46,10 @@ public class UserDTO {
 
     @Size(max = 50)
     private String phone;
+
+    @Enumerated(EnumType.STRING)
+    @Column(length = 6)
+    private Gender gender;
 
     @Size(max = 256)
     private String imageUrl;
@@ -69,7 +77,7 @@ public class UserDTO {
 
     public UserDTO(User user) {
         this(user.getId(), user.getLogin(), user.getFirstName(), user.getLastName(),
-            user.getEmail(), user.getPhone(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
+            user.getEmail(), user.getPhone(), user.getGender(), user.getActivated(), user.getImageUrl(), user.getLangKey(),
             user.getCreatedBy(), user.getCreatedDate(), user.getLastModifiedBy(), user.getLastModifiedDate(),
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet())
@@ -78,7 +86,7 @@ public class UserDTO {
     }
 
     public UserDTO(UUID id, String login, String firstName, String lastName,
-        String email, String phone, boolean activated, String imageUrl, String langKey,
+        String email, String phone, Gender gender, boolean activated, String imageUrl, String langKey,
         String createdBy, Instant createdDate, String lastModifiedBy, Instant lastModifiedDate,
         Set<String> authorities) {
 
@@ -88,6 +96,7 @@ public class UserDTO {
         this.lastName = lastName;
         this.email = email;
         this.phone = phone;
+        this.gender = gender;
         this.activated = activated;
         this.imageUrl = imageUrl;
         this.langKey = langKey;
@@ -144,6 +153,14 @@ public class UserDTO {
 
     public void setPhone(String phone) {
         this.phone = phone;
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
     }
 
     public String getImageUrl() {
@@ -226,6 +243,7 @@ public class UserDTO {
             ", lastName='" + lastName + '\'' +
             ", email='" + email + '\'' +
             ", phone='" + phone + '\'' +
+            ", gender='" + gender + '\'' +
             ", imageUrl='" + imageUrl + '\'' +
             ", activated=" + activated +
             ", langKey='" + langKey + '\'' +
