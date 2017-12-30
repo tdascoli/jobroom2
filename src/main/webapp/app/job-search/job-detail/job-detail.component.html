@@ -47,9 +47,10 @@
                             <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a></p>
                         </address>
 
-                        <ng-container *ngIf="job.externalId">
+                        <ng-container *ngIf="job.avamJobId || job.egovJobId">
                             <h4>{{'job-detail.reference.job-id' | translate}}:</h4>
-                            <p>AVAM: {{job.externalId}}</p>
+                            <p *ngIf="job.avamJobId">AVAM: {{job.avamJobId}}</p>
+                            <p *ngIf="job.egovJobId">Job-Room: {{job.egovJobId}}</p>
                         </ng-container>
                     </div>
                 </div>
