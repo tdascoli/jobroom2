@@ -5,8 +5,8 @@ import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../shared/constants/job-search
 
 export enum Sort {
     RELEVANCE_DESC,
-    DATE_ASC,
-    DATE_DESC
+    DATE_DESC,
+    DATE_ASC
 }
 
 export enum ContractType {

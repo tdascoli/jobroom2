@@ -3,9 +3,7 @@ import {
     createJobSearchRequestFromToolState
 } from '../../../../../../../main/webapp/app/job-search/state-management/util/search-request-mapper';
 import {
-    ContractType,
-    JobSearchFilter,
-    JobSearchQuery,
+    ContractType, JobSearchFilter, JobSearchQuery,
     Sort
 } from '../../../../../../../main/webapp/app/job-search/state-management/state/job-search.state';
 import { JobSearchRequest } from '../../../../../../../main/webapp/app/job-search/services/job-search-request';
@@ -32,7 +30,7 @@ describe('createJobSearchRequest', () => {
         const jobSearchRequest: JobSearchRequest = createJobSearchRequest(defaultQuery, defaultFilter);
 
         // THEN
-        expect(jobSearchRequest.sort).toEqual(null);
+        expect(jobSearchRequest.sort).toEqual(['_score,desc', 'registrationDate,desc']);
     });
 
     it('should map JobSearchFilter with sort by date asc', () => {
@@ -43,7 +41,7 @@ describe('createJobSearchRequest', () => {
         const jobSearchRequest: JobSearchRequest = createJobSearchRequest(defaultQuery, filter);
 
         // THEN
-        expect(jobSearchRequest.sort).toEqual('registrationDate,asc');
+        expect(jobSearchRequest.sort).toEqual(['registrationDate,asc', '_score,desc']);
     });
 
     it('should map JobSearchFilter with sort by date desc', () => {
@@ -54,7 +52,7 @@ describe('createJobSearchRequest', () => {
         const jobSearchRequest: JobSearchRequest = createJobSearchRequest(defaultQuery, filter);
 
         // THEN
-        expect(jobSearchRequest.sort).toEqual('registrationDate,desc');
+        expect(jobSearchRequest.sort).toEqual(['registrationDate,desc', '_score,desc']);
     });
 
     it('should map JobSearchFilter with default contract type', () => {

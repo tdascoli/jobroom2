@@ -1,7 +1,5 @@
 import {
-    ContractType,
-    JobSearchFilter,
-    JobSearchQuery,
+    ContractType, JobSearchFilter, JobSearchQuery,
     Sort
 } from '../state/job-search.state';
 import { JobSearchRequest } from '../../services/job-search-request';
@@ -29,7 +27,7 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
     const sort = mapSort(searchFilter.sort);
     const regions = [];
 
-    return Object.assign({
+    const req = Object.assign({
         regions,
         permanent,
         workingTimeMin: searchFilter.workingTime[0],
@@ -40,6 +38,7 @@ export function createJobSearchRequest(searchQuery: JobSearchQuery, searchFilter
         page,
         size: ITEMS_PER_PAGE
     }, request);
+    return req;
 }
 
 function populateBaseQuery(request, baseQuery: Array<TypeaheadMultiselectModel>) {
@@ -83,14 +82,14 @@ function mapContractType(contractType: ContractType): boolean {
 }
 
 function mapSort(sort: Sort): string {
-    let sortString;
+    let sortArray;
     if (sort === Sort.DATE_ASC) {
-        sortString = 'registrationDate,asc';
+        sortArray = ['registrationDate,asc', '_score,desc'];
     } else if (sort === Sort.DATE_DESC) {
-        sortString = 'registrationDate,desc';
+        sortArray = ['registrationDate,desc', '_score,desc'];
     } else {
-        sortString = null;
+        sortArray = ['_score,desc', 'registrationDate,desc'];
     }
 
-    return sortString;
+    return sortArray;
 }

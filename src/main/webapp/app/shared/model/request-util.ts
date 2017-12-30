@@ -21,7 +21,11 @@ export const createPageableURLSearchParams = (req?: any): URLSearchParams => {
     params.set('page', req.page);
     params.set('size', req.size);
     if (req.sort) {
-        params.set('sort', req.sort);
+        if (req.sort instanceof Array) {
+            req.sort.forEach((sort) => params.append('sort', sort));
+        } else {
+            params.set('sort', req.sort);
+        }
     }
     return params;
 };
