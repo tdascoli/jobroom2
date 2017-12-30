@@ -231,6 +231,12 @@
                     "minlength": "The new password must be at least 5 characters.",
                     "required": "A new password is required.",
                     "strength": "Password strength:"
+                },
+                "username": {
+                    "invalid": "Your usernaem address is invalid.",
+                    "maxlength": "Your username cannot be longer than 50 characters.",
+                    "minlength": "Your username must be at least 5 characters.",
+                    "required": "Your username is required."
                 }
             }
         },

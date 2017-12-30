@@ -231,6 +231,12 @@
                     "minlength": "Votre mot de passe doit comporter au moins 5 caract\u00e8res.",
                     "required": "Un nouveau mot de passe est requis.",
                     "strength": "Robustesse du mot de passe :"
+                },
+                "username": {
+                    "invalid": "Votre username n'est pas valide.",
+                    "maxlength": "Votre username ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Votre username doit comporter au moins 5 caract\u00e8res.",
+                    "required": "Votre username est requise."
                 }
             }
         },

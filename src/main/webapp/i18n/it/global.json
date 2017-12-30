@@ -231,6 +231,12 @@
                     "minlength": "La password deve essere di almeno 4 caratteri",
                     "required": "La password \u00e8 obbligatoria.",
                     "strength": "Sicurezza della password:"
+                },
+                "username": {
+                    "invalid": "L'indirizzo email non \u00e8 valido.",
+                    "maxlength": "Username non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
+                    "minlength": "Username deve essere di almeno 5 caratteri",
+                    "required": "Username \u00e8 obbligatorio."
                 }
             }
         },

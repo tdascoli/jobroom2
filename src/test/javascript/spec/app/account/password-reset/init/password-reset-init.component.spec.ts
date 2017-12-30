@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/Rx';
 import { JobroomTestModule } from '../../../../test.module';
 import { PasswordResetInitComponent } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.component';
 import { PasswordResetInitService } from '../../../../../../../main/webapp/app/account/password-reset/init/password-reset-init.service';
-import { EMAIL_NOT_FOUND_TYPE } from '../../../../../../../main/webapp/app/shared';
+import { USERNAME_NOT_FOUND_TYPE } from '../../../../../../../main/webapp/app/shared';
 
 describe('Component Tests', () => {
 
@@ -39,7 +39,7 @@ describe('Component Tests', () => {
         it('should define its initial state', () => {
             expect(comp.success).toBeUndefined();
             expect(comp.error).toBeUndefined();
-            expect(comp.errorEmailNotExists).toBeUndefined();
+            expect(comp.errorUsernameNotExists).toBeUndefined();
             expect(comp.resetAccount).toEqual({});
         });
 
@@ -57,7 +57,7 @@ describe('Component Tests', () => {
 
                 comp.ngAfterViewInit();
 
-                expect(element.querySelector).toHaveBeenCalledWith('#email');
+                expect(element.querySelector).toHaveBeenCalledWith('#username');
                 expect(node.focus).toHaveBeenCalled();
             })
         );
@@ -65,33 +65,33 @@ describe('Component Tests', () => {
         it('notifies of success upon successful requestReset',
             inject([PasswordResetInitService], (service: PasswordResetInitService) => {
                 spyOn(service, 'save').and.returnValue(Observable.of({}));
-                comp.resetAccount.email = 'user@domain.com';
+                comp.resetAccount.username = 'johndoe';
 
                 comp.requestReset();
 
-                expect(service.save).toHaveBeenCalledWith('user@domain.com');
+                expect(service.save).toHaveBeenCalledWith('johndoe');
                 expect(comp.success).toEqual('OK');
                 expect(comp.error).toBeNull();
-                expect(comp.errorEmailNotExists).toBeNull();
+                expect(comp.errorUsernameNotExists).toBeNull();
             })
         );
 
-        it('notifies of unknown email upon email address not registered/400',
+        it('notifies of unknown username/400',
             inject([PasswordResetInitService], (service: PasswordResetInitService) => {
                 spyOn(service, 'save').and.returnValue(Observable.throw({
                     status: 400,
                     json() {
-                        return { type: EMAIL_NOT_FOUND_TYPE }
+                        return { type: USERNAME_NOT_FOUND_TYPE }
                     }
                 }));
-                comp.resetAccount.email = 'user@domain.com';
+                comp.resetAccount.username = 'johndoe';
 
                 comp.requestReset();
 
-                expect(service.save).toHaveBeenCalledWith('user@domain.com');
+                expect(service.save).toHaveBeenCalledWith('johndoe');
                 expect(comp.success).toBeNull();
                 expect(comp.error).toBeNull();
-                expect(comp.errorEmailNotExists).toEqual('ERROR');
+                expect(comp.errorUsernameNotExists).toEqual('ERROR');
             })
         );
 
@@ -101,16 +101,15 @@ describe('Component Tests', () => {
                     status: 503,
                     data: 'something else'
                 }));
-                comp.resetAccount.email = 'user@domain.com';
+                comp.resetAccount.username = 'johndoe';
 
                 comp.requestReset();
 
-                expect(service.save).toHaveBeenCalledWith('user@domain.com');
+                expect(service.save).toHaveBeenCalledWith('johndoe');
                 expect(comp.success).toBeNull();
-                expect(comp.errorEmailNotExists).toBeNull();
+                expect(comp.errorUsernameNotExists).toBeNull();
                 expect(comp.error).toEqual('ERROR');
             })
         );
-
     });
 });

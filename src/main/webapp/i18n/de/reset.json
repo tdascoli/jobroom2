@@ -17,8 +17,8 @@
                 "button": "Passwort zur\u00fccksetzen"
             },
             "messages": {
-                "info": "Geben Sie die Email Adresse ein, welche Sie bei der Registrierung verwendet haben.",
-                "notfound": "<strong>Diese Email Adresse existiert nicht!</strong> \u00dcberpr\u00fcfen Sie Ihre Email Adresse und versuchen Sie es nocheinmal.",
+                "info": "Geben Sie Ihren Benutzername ein.",
+                "notfound": "<strong>Dieser Benutzername existiert nicht!</strong> \u00dcberpr\u00fcfen Sie Ihren Benutzername und versuchen Sie es nocheinmal.",
                 "success": "Eine Email mit weiteren Instruktionen f\u00fcr das Zur\u00fccksetzen des Passworts wurde gesendet."
             },
             "title": "Passwort zur\u00fccksetzen"

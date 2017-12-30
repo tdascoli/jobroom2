@@ -17,8 +17,8 @@
                 "button": "Reset password"
             },
             "messages": {
-                "info": "Enter the email address you used to register.",
-                "notfound": "<strong>Email address isn't registered!</strong> Please check and try again.",
+                "info": "Enter your username.",
+                "notfound": "<strong>Username isn't registered!</strong> Please check and try again.",
                 "success": "Check your emails for details on how to reset your password."
             },
             "title": "Reset your password."

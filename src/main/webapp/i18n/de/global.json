@@ -231,6 +231,12 @@
                     "minlength": "Das neue Passwort muss mindestens 5 Zeichen lang sein",
                     "required": "Ein neues Passwort wird ben\u00f6tigt.",
                     "strength": "Passwortst\u00e4rke:"
+                },
+                "username": {
+                    "invalid": "Ihr Benutzername ist ung\u00fcltig.",
+                    "maxlength": "Ihr Benutzername darf nicht l\u00e4nger als 50 Zeichen sein",
+                    "minlength": "Ihr Benutzername muss mindestens 5 Zeichen lang sein",
+                    "required": "Ihr Benutzername wird ben\u00f6tigt."
                 }
             }
         },

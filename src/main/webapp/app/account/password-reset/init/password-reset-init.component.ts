@@ -1,7 +1,7 @@
-import { Component, OnInit, AfterViewInit, Renderer, ElementRef } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, OnInit, Renderer } from '@angular/core';
 
 import { PasswordResetInitService } from './password-reset-init.service';
-import { EMAIL_NOT_FOUND_TYPE } from '../../../shared';
+import { USERNAME_NOT_FOUND_TYPE } from '../../../shared';
 
 @Component({
     selector: 'jhi-password-reset-init',
@@ -9,7 +9,7 @@ import { EMAIL_NOT_FOUND_TYPE } from '../../../shared';
 })
 export class PasswordResetInitComponent implements OnInit, AfterViewInit {
     error: string;
-    errorEmailNotExists: string;
+    errorUsernameNotExists: string;
     resetAccount: any;
     success: string;
 
@@ -25,19 +25,19 @@ export class PasswordResetInitComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit() {
-        this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#email'), 'focus', []);
+        this.renderer.invokeElementMethod(this.elementRef.nativeElement.querySelector('#username'), 'focus', []);
     }
 
     requestReset() {
         this.error = null;
-        this.errorEmailNotExists = null;
+        this.errorUsernameNotExists = null;
 
-        this.passwordResetInitService.save(this.resetAccount.email).subscribe(() => {
+        this.passwordResetInitService.save(this.resetAccount.username).subscribe(() => {
             this.success = 'OK';
         }, (response) => {
             this.success = null;
-            if (response.status === 400 && response.json().type === EMAIL_NOT_FOUND_TYPE) {
-                this.errorEmailNotExists = 'ERROR';
+            if (response.status === 400 && response.json().type === USERNAME_NOT_FOUND_TYPE) {
+                this.errorUsernameNotExists = 'ERROR';
             } else {
                 this.error = 'ERROR';
             }
