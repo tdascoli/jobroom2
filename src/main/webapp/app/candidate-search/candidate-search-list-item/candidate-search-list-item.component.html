@@ -19,5 +19,6 @@
         </span>
     </div>
 
-    <div class="line-clamp" *ngIf="validExperienceData" [innerHtml]="(jobExperience$ | async)?.remark | safeHtml"></div>
+    <div class="line-clamp" *ngIf="validExperienceData && (jobExperience$ | async)?.remark"
+         [innerHtml]="(jobExperience$ | async)?.remark | safeHtml"></div>
 </div>
