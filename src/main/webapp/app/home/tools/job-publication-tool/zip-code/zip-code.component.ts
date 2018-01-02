@@ -3,7 +3,7 @@ import {
     Component, Input, OnChanges,
     OnInit, SimpleChanges
 } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, ValidatorFn, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { LocalityAutocomplete } from '../../../../shared/reference-service';
 import { LocalityService } from '../../../../shared/index';
@@ -44,9 +44,40 @@ export class ZipCodeComponent implements OnInit, OnChanges {
             .map((locality) => ({ zip: locality.zipCode, city: locality.city, communalCode: locality.communalCode }));
     }
 
-    private static zipAutocompleterValidator(c: AbstractControl): ValidationErrors | null {
-        const validZip: boolean = !!c.value && !!c.value.zip && !!c.value.city;
-        return validZip ? null : { 'invalidZip': { value: c.value } };
+    private static zipAutocompleterRequiredValidator(control: AbstractControl): ValidationErrors | null {
+        return control.value && control.value.zip && control.value.city
+            ? null
+            : { 'required': { value: control.value } };
+    }
+
+    private static zipAutocompleterOptionalValidator(control: AbstractControl): ValidationErrors | null {
+        if (!control.value) {
+            return control.untouched ? null : { 'invalidZip': 'invalid' };
+        }
+
+        const touched: boolean = control.value.zip || control.value.city;
+        const validZip: boolean = control.value.zip && control.value.city;
+        return !touched || validZip ? null : { 'invalidZip': { value: control.value } };
+    }
+
+    private static zipGroupValidator(control: AbstractControl): ValidationErrors | null {
+        if (!control.value) {
+            return null;
+        }
+
+        const touched: boolean = control.value.zip || control.value.city;
+        const validZip: boolean = control.value.zip && control.value.city;
+        const isValid: boolean = !touched || validZip;
+
+        if (!isValid) {
+            const emptyControlName = !control.value.zip ? 'zip' : 'city';
+            control.get(emptyControlName).setErrors({ 'empty': emptyControlName });
+        } else {
+            control.get('zip').setErrors(null);
+            control.get('city').setErrors(null);
+        }
+
+        return isValid ? null : { 'invalidZip': { value: control.value } };
     }
 
     constructor(private fb: FormBuilder,
@@ -64,11 +95,16 @@ export class ZipCodeComponent implements OnInit, OnChanges {
             };
 
             if (changes['switzSelected'].firstChange) {
-                const validators = this.optional ? [] : [Validators.required];
-                this.zipAutocompleter = this.fb.control('', [...validators, ZipCodeComponent.zipAutocompleterValidator]);
+                const zipAutocompleterValidators = this.optional ? [ZipCodeComponent.zipAutocompleterOptionalValidator]
+                    : [ZipCodeComponent.zipAutocompleterRequiredValidator];
+                this.zipAutocompleter = this.fb.control('', zipAutocompleterValidators);
+
+                const zipGroupValidators = this.optional ? [] : [Validators.required];
                 this.zipGroup = this.fb.group({
-                    zip: ['', [...validators, Validators.pattern(/^\d*$/)]],
-                    city: ['', validators]
+                    zip: ['', [...zipGroupValidators, Validators.pattern(/^\d*$/)]],
+                    city: ['', zipGroupValidators]
+                }, {
+                    validator: ZipCodeComponent.zipGroupValidator
                 });
 
                 if (this.group.get(this.controlName)) {
