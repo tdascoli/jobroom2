@@ -23,7 +23,7 @@ services:
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
-            - 8444:8444
+            - 8081:8081
         networks:
             - jobroom_data2
         secrets:
@@ -39,7 +39,7 @@ services:
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
-            - 8445:8445
+            - 8082:8082
         networks:
             - jobroom_data2
         secrets:
@@ -55,7 +55,7 @@ services:
         environment:
             - LIQUIBASE_DROPFIRST=false
         ports:
-            - 8446:8446
+            - 8083:8083
         networks:
             - jobroom_data2
         secrets:
@@ -84,23 +84,24 @@ services:
         deploy:
             placement:
                 constraints: [node.labels.type == java]
+
     jobpublicationservice-app:
-            build: dockerfiles/jobpublicationservice
-            image: localhost:5000/jr2_jobpublicationservice-app
-            env_file: apps-env.properties
-            environment:
-                - LIQUIBASE_ENABLED=false
-                - LIQUIBASE_DROPFIRST=false
-            ports:
-                - 8447:8447
-            networks:
-                - jobroom_data2
-            secrets:
-                - source: bootstrap.yml-1
-                  target: bootstrap.yml
-            deploy:
-                placement:
-                    constraints: [node.labels.type == java]
+        build: dockerfiles/jobpublicationservice
+        image: localhost:5000/jr2_jobpublicationservice-app
+        env_file: apps-env.properties
+        environment:
+            - LIQUIBASE_ENABLED=false
+            - LIQUIBASE_DROPFIRST=false
+        ports:
+            - 8084:8084
+        networks:
+            - jobroom_data2
+        secrets:
+            - source: bootstrap.yml-1
+              target: bootstrap.yml
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
 
 volumes:
     batch-data:
