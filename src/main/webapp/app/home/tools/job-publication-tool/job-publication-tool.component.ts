@@ -242,7 +242,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 additionalInfo: ''
             },
             publication: {
-                jobroom: false,
+                jobroom: true,
                 eures: false
             }
         };
