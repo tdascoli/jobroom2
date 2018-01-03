@@ -1,25 +1,23 @@
 import {
-    Component,
-    EventEmitter,
-    Input,
-    OnDestroy,
-    OnInit,
-    Output,
+    Component, EventEmitter, Input, OnDestroy, OnInit, Output,
     ViewChild
 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { CandidateSearchFilter } from '../state-management/state/candidate-search.state';
+import {
+    CandidateSearchFilter, CandidateSearchState,
+    getResetSearchFilter
+} from '../state-management/state/candidate-search.state';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
-import { Subscription } from 'rxjs/Subscription';
-import { Graduation } from '../../shared/model/shared-types';
+import { Graduation } from '../../shared';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn, OccupationOption,
-    OccupationPresentationService,
+    FormatterFn, OccupationOption, OccupationPresentationService,
     SuggestionLoaderFn,
-} from '../../shared/reference-service/occupation-presentation.service';
+} from '../../shared/reference-service';
+import { Store } from '@ngrx/store';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -52,11 +50,12 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
     occupationFormatter: FormatterFn<OccupationOption>;
 
-    private subscription: Subscription;
+    private unsubscribe$ = new Subject<void>();
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private cantonService: CantonService,
-                private fb: FormBuilder) {
+                private fb: FormBuilder,
+                private store: Store<CandidateSearchState>) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
@@ -77,15 +76,24 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             .distinctUntilChanged()
             .map((residence: string) => Object.assign(this.toolbarForm.value, { residence }));
 
-        this.subscription = Observable.merge(this.toolbarForm.valueChanges, residence$)
+        Observable.merge(this.toolbarForm.valueChanges, residence$)
+            .takeUntil(this.unsubscribe$)
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) =>
                 this.search(formValue)
             );
+        this.store.select(getResetSearchFilter)
+            .takeUntil(this.unsubscribe$)
+            .filter((resetSearchFilter) => resetSearchFilter)
+            .subscribe((_) => {
+                this.toolbarForm.reset();
+                this.residence.reset();
+            });
     }
 
     ngOnDestroy(): void {
-        this.subscription.unsubscribe();
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
     }
 
     clearInvalidValue(event: any) {

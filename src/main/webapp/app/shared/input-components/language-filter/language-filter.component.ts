@@ -1,6 +1,6 @@
 import { Component, forwardRef, Input } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
-import { CEFR_Level, LanguageSkill } from '../../model/shared-types';
+import { CEFR_Level, LanguageSkill } from '../../';
 
 const MAX_LANGUAGE_OPTIONS_NUM = 5;
 
@@ -22,8 +22,9 @@ export class LanguageFilterComponent implements ControlValueAccessor {
     selectedLanguageSkills: Array<LanguageSkill> = [];
 
     writeValue(obj: any): void {
-        if (Array.isArray(obj)) {
-            this.selectedLanguageSkills = [...obj];
+        const value = obj === null ? [] : obj;
+        if (Array.isArray(value)) {
+            this.selectedLanguageSkills = [...value];
 
             if (this.selectedLanguageSkills.length === 0) {
                 this.addNewLanguageSkill();

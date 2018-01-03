@@ -9,9 +9,9 @@ import {
     ISCED_1997,
     LanguageSkill,
     WorkForm
-} from '../../../shared/model/shared-types';
+} from '../../../shared';
 import { CandidateProfile } from '../../services/candidate';
-import { TypeaheadItemDisplayModel } from '../../../shared/input-components/typeahead/typeahead-item-display-model';
+import { TypeaheadItemDisplayModel } from '../../../shared/input-components';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter;
@@ -22,6 +22,7 @@ export interface CandidateSearchState {
     candidateProfileList: Array<CandidateProfile>;
     initialState: boolean;
     candidateListScrollY: number;
+    resetSearchFilter: boolean;
 }
 
 export interface CandidateSearchFilter {
@@ -51,7 +52,8 @@ export const initialState: CandidateSearchState = {
     candidateProfileList: [],
     initialState: true,
     searchError: false,
-    candidateListScrollY: 0
+    candidateListScrollY: 0,
+    resetSearchFilter: false
 };
 
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
@@ -61,3 +63,4 @@ export const getLoading = createSelector(getCandidateSearchState, (state: Candid
 export const getSearchError = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchError);
 export const getTotalCandidateCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidateCount);
 export const getCandidateListScrollY = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.candidateListScrollY);
+export const getResetSearchFilter = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.resetSearchFilter);

@@ -1,9 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
-import { LanguageFilterComponent } from '../../../../../../../main/webapp/app/shared/input-components/language-filter/language-filter.component';
+import { LanguageFilterComponent } from '../../../../../../../main/webapp/app/shared/input-components';
 import {
     CEFR_Level,
     LanguageSkill
-} from '../../../../../../../main/webapp/app/shared/model/shared-types';
+} from '../../../../../../../main/webapp/app/shared';
 import { JobroomTestModule } from '../../../../test.module';
 
 describe('LanguageFilterComponent', () => {
@@ -34,8 +34,8 @@ describe('LanguageFilterComponent', () => {
     });
 
     describe('writeValue', () => {
-        it('should not fail with non arrays', () => {
-            component.writeValue(null);
+        it('should not fail with non array value', () => {
+            component.writeValue('free text');
 
             expect(component.selectedLanguageSkills).toEqual([]);
         });
@@ -54,12 +54,28 @@ describe('LanguageFilterComponent', () => {
             expect(component.selectedLanguageSkills).toEqual(selectedLanguageSkills);
         });
 
-        it('should add an empty skill if parameter is an emty array', () => {
+        it('should add an empty skill if parameter is an empty array', () => {
             // GIVEN
             const selectedLanguageSkills: Array<LanguageSkill> = [];
 
             // WHEN
             component.writeValue(selectedLanguageSkills);
+
+            // THEN
+            expect(component.selectedLanguageSkills).toEqual([
+                { code: null, spoken: null, written: null }
+            ]);
+        });
+
+        it('should add an empty skill if parameter is null', () => {
+            // GIVEN
+            component.selectedLanguageSkills = [
+                { code: 'en', spoken: null, written: null },
+                { code: 'de', spoken: null, written: null }
+            ];
+
+            // WHEN
+            component.writeValue(null);
 
             // THEN
             expect(component.selectedLanguageSkills).toEqual([

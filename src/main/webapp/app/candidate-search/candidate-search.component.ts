@@ -1,23 +1,20 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnDestroy, OnInit, } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
-    CandidateSearchFilter,
-    CandidateSearchState,
-    getCandidateProfileList,
-    getLoading,
-    getSearchError,
-    getSearchFilter,
-    getTotalCandidateCount,
+    CandidateSearchFilter, CandidateSearchState, getCandidateProfileList, getLoading,
+    getSearchError, getSearchFilter, getTotalCandidateCount
 } from './state-management/state/candidate-search.state';
 import { Store } from '@ngrx/store';
 import {
-    InitCandidateSearchAction,
+    InitCandidateSearchAction, ResetSearchFilterAction,
     SearchCandidatesAction
 } from './state-management/actions/candidate-search.actions';
 import { CandidateProfile } from './services/candidate';
 import { OccupationOption } from '../shared/reference-service';
 import { CantonService } from './services/canton.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { Subscription } from 'rxjs/Subscription';
 
 @Component({
     selector: 'jr2-candidate-search',
@@ -25,7 +22,7 @@ import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
     styleUrls: ['./candidate-search.component.scss'],
     changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CandidateSearchComponent {
+export class CandidateSearchComponent implements OnInit, OnDestroy {
     searchFilter$: Observable<CandidateSearchFilter>;
     totalCount$: Observable<number>;
     loading$: Observable<boolean>;
@@ -34,9 +31,11 @@ export class CandidateSearchComponent {
     occupationCode$: Observable<string>;
     occupationName$: Observable<string>;
     residenceFilterString$: Observable<string>;
+    private languageChangeSubscription: Subscription;
 
     constructor(private store: Store<CandidateSearchState>,
-                private cantonService: CantonService) {
+                private cantonService: CantonService,
+                private translateService: TranslateService) {
 
         this.store.dispatch(new InitCandidateSearchAction());
 
@@ -54,6 +53,17 @@ export class CandidateSearchComponent {
         this.residenceFilterString$ = this.store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));
+    }
+
+    ngOnInit(): void {
+        this.languageChangeSubscription = this.translateService.onLangChange
+            .subscribe((_: LangChangeEvent) => {
+                this.store.dispatch(new ResetSearchFilterAction())
+            });
+    }
+
+    ngOnDestroy(): void {
+        this.languageChangeSubscription.unsubscribe();
     }
 
     searchCandidates(filter: CandidateSearchFilter): void {

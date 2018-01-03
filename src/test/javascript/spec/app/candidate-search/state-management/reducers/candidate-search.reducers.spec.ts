@@ -4,10 +4,13 @@ import {
     initialState
 } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import * as actions from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
+import { ResetSearchFilterAction } from '../../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
 import { CandidateProfile } from '../../../../../../../main/webapp/app/candidate-search/services/candidate';
 import { createCandidateProfile } from '../utils';
-import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/index';
-import { TypeaheadItemDisplayModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-item-display-model';
+import {
+    TypeaheadItemDisplayModel,
+    TypeaheadMultiselectModel
+} from '../../../../../../../main/webapp/app/shared/input-components';
 
 describe('candidateSearchReducer', () => {
     it('should not update CandidateSearchState for INIT_CANDIDATE_SEARCH action', () => {
@@ -84,7 +87,10 @@ describe('candidateSearchReducer', () => {
 
     it('should update CandidateSearchState for SEARCH_CANDIDATES action', () => {
         // GIVEN
-        const state = Object.assign({}, initialState, { searchError: true });
+        const state = Object.assign({}, initialState, {
+            searchError: true,
+            resetSearchFilter: true
+        });
         const action = new actions.SearchCandidatesAction({
             workplace: new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true)
         });
@@ -96,7 +102,8 @@ describe('candidateSearchReducer', () => {
         expect(newState.searchFilter.workplace).toEqual(new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true));
         expect(newState.loading).toBeTruthy();
         expect(newState.initialState).toBeFalsy();
-        verifyUnchanged(newState, state, ['loading', 'searchFilter', 'initialState']);
+        expect(newState.resetSearchFilter).toBeFalsy();
+        verifyUnchanged(newState, state, ['loading', 'searchFilter', 'initialState', 'resetSearchFilter']);
     });
 
     it('should update CandidateSearchState for CANDIDATE_SEARCH_TOOL_CHANGED action', () => {
@@ -113,7 +120,8 @@ describe('candidateSearchReducer', () => {
             candidateProfileList: [],
             initialState: true,
             searchError: false,
-            candidateListScrollY: 0
+            candidateListScrollY: 0,
+            resetSearchFilter: false
         };
 
         const action = new actions.CandidateSearchToolChangedAction({
@@ -177,6 +185,17 @@ describe('candidateSearchReducer', () => {
         // THEN
         expect(newState.candidateListScrollY).toEqual(600);
         verifyUnchanged(newState, state, ['candidateListScrollY']);
+    });
+
+    it('should update CandidateSearchState for RESET_SEARCH_FILTER action', () => {
+        const state = initialState;
+        const action = new ResetSearchFilterAction();
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.resetSearchFilter).toBeTruthy()
     });
 });
 

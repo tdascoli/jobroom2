@@ -1,30 +1,24 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import {
-    CandidateSearchFilter,
-    CandidateSearchState,
+    CandidateSearchFilter, CandidateSearchState, getResetSearchFilter,
     getSearchFilter
 } from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { LocalityService } from '../../shared/reference-service/locality.service';
+import { LocalityService } from '../../shared/reference-service';
 import { LanguageSkillService } from '../services/language-skill.service';
 import { Subscription } from 'rxjs/Subscription';
 import {
-    CantonSuggestion,
-    LocalityAutocomplete,
-    LocalityInputType,
+    CantonSuggestion, LocalityAutocomplete, LocalityInputType,
     LocalitySuggestion
-} from '../../shared/reference-service/locality-autocomplete';
-import { TypeaheadMultiselectModel } from '../../shared/input-components/index';
+} from '../../shared/reference-service';
+import { TypeaheadMultiselectModel } from '../../shared/input-components';
 import { CandidateService } from '../services/candidate.service';
 import { Store } from '@ngrx/store';
 import {
-    Availability,
-    DrivingLicenceCategory,
-    Experience,
-    ISCED_1997,
+    Availability, DrivingLicenceCategory, Experience, ISCED_1997,
     WorkForm
-} from '../../shared/model/shared-types';
+} from '../../shared';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -74,6 +68,13 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
         this.candidateSearchUrl$ = this.store.select(getSearchFilter)
             .map((filter: CandidateSearchFilter) =>
                 `${window.location.href}/?searchFilter=${this.candidateService.encodeURISearchFilter(filter)}`);
+        this.store.select(getResetSearchFilter)
+            .filter((resetSearchFilter) => resetSearchFilter)
+            .subscribe((_) => {
+                this.filterForm.reset({
+                    workload: [0, 100]
+                });
+            });
     }
 
     ngOnDestroy(): void {

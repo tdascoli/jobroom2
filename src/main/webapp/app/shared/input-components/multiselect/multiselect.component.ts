@@ -57,8 +57,9 @@ export class MultiselectComponent implements ControlValueAccessor, AfterViewInit
     }
 
     writeValue(obj: any): void {
-        if (Array.isArray(obj)) {
-            this.selectedItems = [...obj];
+        const value = obj === null ? [] : obj;
+        if (Array.isArray(value)) {
+            this.selectedItems = [...value];
             this.changeDetectorRef.markForCheck();
         }
     }

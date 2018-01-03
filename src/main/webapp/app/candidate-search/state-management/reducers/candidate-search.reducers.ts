@@ -5,6 +5,7 @@ import {
     CANDIDATE_SEARCH_TOOL_CHANGED,
     HIDE_CANDIDATE_LIST_ERROR,
     NEXT_PAGE_LOADED,
+    RESET_SEARCH_FILTER,
     SAVE_SCROLL_Y,
     SEARCH_CANDIDATES,
     SHOW_CANDIDATE_LIST_ERROR
@@ -37,9 +38,11 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
             newState = Object.assign({}, state, {
                 searchFilter: action.payload,
                 loading: true,
-                initialState: false
+                initialState: false,
+                resetSearchFilter: false
             });
             break;
+
         case CANDIDATE_SEARCH_TOOL_CHANGED:
             const searchFilter = Object.assign({}, initialState.searchFilter, action.payload);
             newState = Object.assign({}, initialState, {
@@ -56,8 +59,13 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
                 loading: false
             });
             break;
+
         case SAVE_SCROLL_Y:
             newState = Object.assign({}, state, { candidateListScrollY: action.payload });
+            break;
+
+        case RESET_SEARCH_FILTER:
+            newState = Object.assign({}, state, { resetSearchFilter: true });
             break;
 
         default:
