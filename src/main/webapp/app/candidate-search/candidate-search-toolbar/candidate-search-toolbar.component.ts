@@ -1,19 +1,26 @@
 import {
-    Component, EventEmitter, Input, OnDestroy, OnInit, Output,
+    Component,
+    EventEmitter,
+    Input,
+    OnDestroy,
+    OnInit,
+    Output,
     ViewChild
 } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import {
-    CandidateSearchFilter, CandidateSearchState,
-    getResetSearchFilter
+    CandidateSearchFilter,
+    CandidateSearchState
 } from '../state-management/state/candidate-search.state';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
 import { Graduation } from '../../shared';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn, OccupationOption, OccupationPresentationService,
+    FormatterFn,
+    OccupationOption,
+    OccupationPresentationService,
     SuggestionLoaderFn,
 } from '../../shared/reference-service';
 import { Store } from '@ngrx/store';
@@ -29,6 +36,18 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     @Input() loading: boolean;
     @Input() searchFilter: CandidateSearchFilter;
+
+    @Input()
+    set reset(value: number) {
+        if (value && this.toolbarForm && this.residence) {
+            this.toolbarForm.reset({
+                occupation: this.searchFilter.occupation,
+                graduation: this.searchFilter.graduation
+            });
+            this.residence.reset(this.searchFilter.residence, { emitEvent: false });
+        }
+    };
+
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
@@ -82,13 +101,6 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
             .subscribe((formValue: any) =>
                 this.search(formValue)
             );
-        this.store.select(getResetSearchFilter)
-            .takeUntil(this.unsubscribe$)
-            .filter((resetSearchFilter) => resetSearchFilter)
-            .subscribe((_) => {
-                this.toolbarForm.reset();
-                this.residence.reset();
-            });
     }
 
     ngOnDestroy(): void {

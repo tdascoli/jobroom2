@@ -10,6 +10,7 @@ import {
     Canton,
     Graduation
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
+import { ResetAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('candidateSearchToolReducer', () => {
     it('should reset CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
@@ -69,5 +70,22 @@ describe('candidateSearchToolReducer', () => {
 
         // THEN
         expect(newState.totalCount).toEqual(initialState.totalCount);
+    });
+
+    it('should update CandidateSearchToolState for core.RESET action', () => {
+        // GIVEN
+        const action = new ResetAction(12);
+        const state = Object.assign({}, initialState, {
+            occupation: { key: 'avam:11', label: 'test' },
+            residence: new Array(Canton.BS),
+            graduation: Graduation.ACCEPTED,
+            totalCount: 0
+        });
+
+        // WHEN
+        const newState = candidateSearchToolReducer(state, action);
+
+        // THEN
+        expect(newState).toEqual(initialState);
     });
 });

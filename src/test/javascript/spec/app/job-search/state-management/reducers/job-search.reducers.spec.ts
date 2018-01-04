@@ -10,6 +10,7 @@ import {
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../../../../../main/webapp/app/shared/constants/job-search.constants';
+import { ResetAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('jobSearchReducer', () => {
     it('should not change state for undefined action', () => {
@@ -267,6 +268,39 @@ describe('jobSearchReducer', () => {
         // THEN
         expect(newState.jobListScrollY).toEqual(600);
         verifyUnchanged(newState, state, ['jobListScrollY']);
+    });
+
+    it('should update JobSearchState for core.ResetAction action', () => {
+        // GIVEN
+        const state: JobSearchState = {
+                jobListScrollY: 0,
+                loading: false,
+                searchError: false,
+                searchQuery: {
+                    baseQuery: [
+                        new TypeaheadMultiselectModel('some-free-text', 'x1', 'x1')
+                    ],
+                    localityQuery: []
+                },
+                searchFilter: {
+                    contractType: ContractType.PERMANENT,
+                    workingTime: [0, 80],
+                    sort: Sort.DATE_ASC,
+                    onlineSince: ONLINE_SINCE_DEFAULT_VALUE - 1
+                },
+                totalJobCount: 0,
+                page: 0,
+                jobList: [],
+                initialState: false
+            }
+        ;
+        const action = new ResetAction(12);
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState).toEqual(initialState);
     });
 });
 

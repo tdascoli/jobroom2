@@ -28,7 +28,7 @@
                 <div *ngSwitchCase="ToolbarItem.JOB_SEEKERS" id="job-seekers">
                     <div class="content--job-search">
                         <h1 class="tool__heading">{{'home.tools.jobSearch.title' | translate}}</h1>
-                        <jr2-job-search-tool [jobSearchToolModel]="jobSearchToolModel$ | async"></jr2-job-search-tool>
+                        <jr2-job-search-tool [jobSearchToolModel]="jobSearchToolModel$ | async" [reset]="reset$ | async"></jr2-job-search-tool>
                     </div>
                 </div>
 
@@ -41,7 +41,8 @@
                         </ngb-tab>
                         <ngb-tab [title]="'home.tools.candidateSearchTab' | translate" [id]="CompaniesTab.CANDIDATE_SEARCH">
                             <ng-template ngbTabContent>
-                                <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"></jr2-candidate-search-tool>
+                                <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"
+                                                           [reset]="reset$ | async"></jr2-candidate-search-tool>
                             </ng-template>
                         </ngb-tab>
                     </ngb-tabset>
@@ -51,7 +52,8 @@
                     <ngb-tabset type="tabs nav--job-room" (tabChange)="selectRecruitmentAgenciesTab($event)" [activeId]="activeAgencyTabId$ | async">
                         <ngb-tab [title]="'home.tools.candidateSearchTab'| translate" [id]="AgenciesTab.CANDIDATE_SEARCH">
                             <ng-template ngbTabContent>
-                                <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"></jr2-candidate-search-tool>
+                                <jr2-candidate-search-tool [candidateSearchToolModel]="candidateSearchToolModel$ | async"
+                                                           [reset]="reset$ | async"></jr2-candidate-search-tool>
                             </ng-template>
                         </ngb-tab>
                         <ngb-tab [title]="'home.tools.jobPublicationTab' | translate" [id]="AgenciesTab.JOB_PUBLICATION">

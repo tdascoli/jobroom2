@@ -6,7 +6,8 @@ import { JhiConfigService } from 'ng-jhipster/src/config.service';
 describe('Jobroom2LanguageService', () => {
     let mockTranslateService,
         mockJhiConfigService,
-        mockCookieService
+        mockCookieService,
+        mockStore
     ;
 
     beforeEach(() => {
@@ -14,12 +15,13 @@ describe('Jobroom2LanguageService', () => {
         mockTranslateService = jasmine.createSpyObj('mockTranslateService', ['getBrowserLang', 'use', 'setDefaultLang']);
         mockTranslateService.onLangChange = new EventEmitter<LangChangeEvent>();
         mockJhiConfigService = new JhiConfigService({ defaultI18nLang: 'de' });
+        mockStore = jasmine.createSpyObj('mockStore', ['dispatch']);
     });
 
     describe('defaultLanguage', () => {
         let sut;
         beforeEach(() => {
-            sut = new Jobroom2LanguageService(mockTranslateService, mockJhiConfigService, mockCookieService);
+            sut = new Jobroom2LanguageService(mockTranslateService, mockJhiConfigService, mockCookieService, mockStore);
         });
 
         it('should use valid browser language', () => {

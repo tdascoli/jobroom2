@@ -1,22 +1,28 @@
 import { Component, EventEmitter, Input, OnDestroy, OnInit, Output } from '@angular/core';
 import {
-    CandidateSearchFilter, CandidateSearchState, getResetSearchFilter,
+    CandidateSearchFilter,
+    CandidateSearchState,
     getSearchFilter
 } from '../state-management/state/candidate-search.state';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { LocalityService } from '../../shared/reference-service';
-import { LanguageSkillService } from '../services/language-skill.service';
-import { Subscription } from 'rxjs/Subscription';
 import {
-    CantonSuggestion, LocalityAutocomplete, LocalityInputType,
+    CantonSuggestion,
+    LocalityAutocomplete,
+    LocalityInputType,
+    LocalityService,
     LocalitySuggestion
 } from '../../shared/reference-service';
+import { LanguageSkillService } from '../services/language-skill.service';
+import { Subscription } from 'rxjs/Subscription';
 import { TypeaheadMultiselectModel } from '../../shared/input-components';
 import { CandidateService } from '../services/candidate.service';
 import { Store } from '@ngrx/store';
 import {
-    Availability, DrivingLicenceCategory, Experience, ISCED_1997,
+    Availability,
+    DrivingLicenceCategory,
+    Experience,
+    ISCED_1997,
     WorkForm
 } from '../../shared';
 
@@ -27,6 +33,25 @@ import {
 })
 export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     @Input() searchFilter: CandidateSearchFilter;
+
+    @Input()
+    set reset(value: number) {
+        if (value && this.filterForm) {
+            this.filterForm.reset({
+                experience: this.searchFilter.experience,
+                skills: [...this.searchFilter.skills || []],
+                workplace: this.searchFilter.workplace,
+                availability: this.searchFilter.availability,
+                workload: this.searchFilter.workload,
+                workForm: this.searchFilter.workForm,
+                educationLevel: this.searchFilter.educationLevel,
+                drivingLicenceCategory: this.searchFilter.drivingLicenceCategory,
+                languageSkills: [...this.searchFilter.languageSkills || []]
+            });
+
+        }
+    };
+
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
     experiences = Experience;
@@ -68,13 +93,6 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
         this.candidateSearchUrl$ = this.store.select(getSearchFilter)
             .map((filter: CandidateSearchFilter) =>
                 `${window.location.href}/?searchFilter=${this.candidateService.encodeURISearchFilter(filter)}`);
-        this.store.select(getResetSearchFilter)
-            .filter((resetSearchFilter) => resetSearchFilter)
-            .subscribe((_) => {
-                this.filterForm.reset({
-                    workload: [0, 100]
-                });
-            });
     }
 
     ngOnDestroy(): void {

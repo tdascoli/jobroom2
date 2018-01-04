@@ -22,6 +22,18 @@ export const COMPANY_DEBOUNCE_TIME = 500;
 export class JobSearchFilterComponent implements OnInit, OnDestroy {
     @Input() searchFilter: JobSearchFilter;
 
+    @Input()
+    set reset(value: number) {
+        if (value && this.filterForm && this.companyName) {
+            this.filterForm.reset({
+                workingTime: this.searchFilter.workingTime,
+                onlineSince: this.searchFilter.onlineSince,
+                sort: this.searchFilter.sort
+            });
+            this.companyName.reset(this.searchFilter.companyName, { emitEvent: false });
+        }
+    };
+
     filterForm: FormGroup;
     companyName: FormControl;
     contractTypes = ContractType;

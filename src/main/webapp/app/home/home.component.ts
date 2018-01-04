@@ -16,6 +16,7 @@ import { ToolbarItem, CompaniesTab, AgenciesTab } from './state-management/state
 import { ActivatedRoute, Router } from '@angular/router';
 import { JobPublication } from '../shared/job-publication/job-publication.model';
 import { UserData } from './tools/job-publication-tool/service/user-data-resolver.service';
+import { getReset } from '../shared/state-management/state/core.state';
 
 @Component({
     selector: 'jhi-home',
@@ -36,6 +37,7 @@ export class HomeComponent {
     activeAgencyTabId$: Observable<string>;
     jobPublication$: Observable<JobPublication>;
     userData$: Observable<UserData>;
+    reset$: Observable<number>;
 
     constructor(private store: Store<HomeState>,
                 private route: ActivatedRoute,
@@ -45,6 +47,7 @@ export class HomeComponent {
         this.activeToolbarItem$ = store.select(getActiveToolbarItem);
         this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
+        this.reset$ = store.select(getReset);
 
         this.jobPublication$ = this.route.data
             .map((data) => data['jobPublication']);

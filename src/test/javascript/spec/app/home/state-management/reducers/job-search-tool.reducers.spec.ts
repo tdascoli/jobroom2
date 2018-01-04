@@ -8,6 +8,8 @@ import {
 import { LocalityInputType } from '../../../../../../../main/webapp/app/shared/reference-service/locality-autocomplete';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 import { OccupationInputType } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { ResetAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
+import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../../../../../main/webapp/app/shared/constants/job-search.constants';
 
 describe('jobSearchToolReducer', () => {
     it('should reset JobSearchToolState for JOB_SEARCH_TOOL_SUBMITTED action', () => {
@@ -68,5 +70,22 @@ describe('jobSearchToolReducer', () => {
 
         // THEN
         expect(newState.totalCount).toEqual(totalCount);
+    });
+
+    it('should update JobSearchToolState for core.ResetAction action', () => {
+        // GIVEN
+        const action = new ResetAction(12);
+        const state = {
+            baseQuery: [],
+            localityQuery: [],
+            totalCount: 12,
+            onlineSince: ONLINE_SINCE_DEFAULT_VALUE - 2
+        };
+
+        // WHEN
+        const newState = jobSearchToolReducer(state, action);
+
+        // THEN
+        expect(newState).toEqual(initialState);
     });
 });

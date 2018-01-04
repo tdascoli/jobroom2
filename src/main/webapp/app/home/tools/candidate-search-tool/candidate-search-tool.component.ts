@@ -28,6 +28,19 @@ import {
 export class CandidateSearchToolComponent implements OnInit, OnDestroy {
 
     @Input() candidateSearchToolModel: CandidateSearchToolState;
+
+    @Input()
+    set reset(value: number) {
+        if (value && this.candidateSearchForm) {
+            this.candidateSearchForm.reset({
+                occupation: this.candidateSearchToolModel.occupation,
+                residence: this.candidateSearchToolModel.residence,
+                graduation: this.candidateSearchToolModel.graduation
+            });
+
+        }
+    };
+
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
     private subscription: Subscription;

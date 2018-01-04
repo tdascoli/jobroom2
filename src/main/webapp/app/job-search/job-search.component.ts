@@ -17,6 +17,7 @@ import {
 } from './state-management/state/job-search.state';
 import { Job } from './services';
 import { InitJobSearchAction } from './state-management/actions/job-search.actions';
+import { getReset } from '../shared/state-management/state/core.state';
 
 @Component({
     selector: 'jr2-job-search',
@@ -32,6 +33,7 @@ export class JobSearchComponent {
     totalCount$: Observable<number>;
     loading$: Observable<boolean>;
     initialized$: Observable<boolean>;
+    reset$: Observable<number>;
 
     constructor(private store: Store<JobSearchState>) {
         this.store.dispatch(new InitJobSearchAction());
@@ -43,6 +45,7 @@ export class JobSearchComponent {
         this.totalCount$ = store.select(getTotalJobCount);
         this.loading$ = store.select(getLoading);
         this.initialized$ = store.select(getInitialState).map((initialState: boolean) => !initialState);
+        this.reset$ = store.select(getReset);
     }
 }
 

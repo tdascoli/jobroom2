@@ -11,8 +11,9 @@ import {
     SHOW_JOB_LIST_ERROR,
     TOOLBAR_CHANGED
 } from '../actions/job-search.actions';
+import * as core from '../../../shared/state-management/actions/core.actions';
 
-export function jobSearchReducer(state = initialState, action: Actions): JobSearchState {
+export function jobSearchReducer(state = initialState, action: Actions | core.ResetAction): JobSearchState {
     let newState;
     switch (action.type) {
         case TOOLBAR_CHANGED:
@@ -64,6 +65,10 @@ export function jobSearchReducer(state = initialState, action: Actions): JobSear
 
         case SAVE_SCROLL_Y:
             newState = Object.assign({}, state, { jobListScrollY: action.payload });
+            break;
+
+        case core.RESET:
+            newState = Object.assign({}, initialState);
             break;
 
         default:

@@ -25,6 +25,17 @@ import {
 export class JobSearchToolComponent implements OnInit, OnDestroy {
     @Input() jobSearchToolModel: JobSearchToolState;
 
+    @Input()
+    set reset(value: number) {
+        if (value && this.jobSearchForm) {
+            this.jobSearchForm.reset({
+                baseQuery: [...this.jobSearchToolModel.baseQuery],
+                localityQuery: [...this.jobSearchToolModel.localityQuery]
+            });
+
+        }
+    };
+
     jobSearchForm: FormGroup;
     private subscription: Subscription;
 

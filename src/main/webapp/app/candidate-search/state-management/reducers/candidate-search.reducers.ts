@@ -5,13 +5,13 @@ import {
     CANDIDATE_SEARCH_TOOL_CHANGED,
     HIDE_CANDIDATE_LIST_ERROR,
     NEXT_PAGE_LOADED,
-    RESET_SEARCH_FILTER,
     SAVE_SCROLL_Y,
     SEARCH_CANDIDATES,
     SHOW_CANDIDATE_LIST_ERROR
 } from '../actions/candidate-search.actions';
+import * as core from '../../../shared/state-management/actions/core.actions';
 
-export function candidateSearchReducer(state = initialState, action: Actions): CandidateSearchState {
+export function candidateSearchReducer(state = initialState, action: Actions | core.ResetAction): CandidateSearchState {
     let newState;
     switch (action.type) {
         case CANDIDATE_LIST_LOADED:
@@ -38,8 +38,7 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
             newState = Object.assign({}, state, {
                 searchFilter: action.payload,
                 loading: true,
-                initialState: false,
-                resetSearchFilter: false
+                initialState: false
             });
             break;
 
@@ -64,8 +63,8 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
             newState = Object.assign({}, state, { candidateListScrollY: action.payload });
             break;
 
-        case RESET_SEARCH_FILTER:
-            newState = Object.assign({}, state, { resetSearchFilter: true });
+        case core.RESET:
+            newState = Object.assign({}, initialState);
             break;
 
         default:

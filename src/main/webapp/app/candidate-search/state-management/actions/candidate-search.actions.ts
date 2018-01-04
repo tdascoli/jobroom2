@@ -12,7 +12,6 @@ export const SHOW_CANDIDATE_LIST_ERROR = 'CANDIDATES:SHOW_CANDIDATE_LIST_ERROR';
 export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
 export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
-export const RESET_SEARCH_FILTER = 'CANDIDATES:RESET_SEARCH_FILTER';
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
@@ -85,13 +84,6 @@ export class SaveScrollYAction implements Action {
     }
 }
 
-export class ResetSearchFilterAction implements Action {
-    readonly type = RESET_SEARCH_FILTER;
-
-    constructor() {
-    }
-}
-
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
@@ -103,5 +95,4 @@ export type Actions =
     | HideCandidateListErrorAction
     | CountCandidatesAction
     | SaveScrollYAction
-    | ResetSearchFilterAction
     ;
