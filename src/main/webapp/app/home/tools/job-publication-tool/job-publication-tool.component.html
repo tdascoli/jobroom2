@@ -43,7 +43,7 @@
                                 <div>
                                     <select class="form-control custom-select" id="education"
                                             formControlName="educationLevel">
-                                        <option value="null" selected>{{ 'home.tools.job-publication.no-selection' |
+                                        <option [ngValue]="null">{{ 'home.tools.job-publication.no-selection' |
                                             translate }}
                                         </option>
                                         <option *ngFor="let educationLevel of educationLevels | keys"
@@ -61,7 +61,7 @@
                                 </label>
                                 <div>
                                     <select class="form-control custom-select" id="exp" formControlName="experience">
-                                        <option value="null" selected>{{ 'home.tools.job-publication.no-selection' |
+                                        <option [ngValue]="null">{{ 'home.tools.job-publication.no-selection' |
                                             translate }}
                                         </option>
                                         <option *ngFor="let experience of experiences | keys"
@@ -196,7 +196,7 @@
                             <div>
                                 <select formControlName="drivingLicenseLevel" class="form-control custom-select"
                                         id="driving-lic">
-                                    <option value="null" selected>{{ 'home.tools.job-publication.no-selection' |
+                                    <option [ngValue]="null">{{ 'home.tools.job-publication.no-selection' |
                                         translate }}
                                     </option>
                                     <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys"
