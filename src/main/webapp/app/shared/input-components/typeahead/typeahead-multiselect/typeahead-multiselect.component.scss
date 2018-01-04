@@ -3,10 +3,15 @@
 .typeahead-multiselect {
     width: 100%;
 
-    overflow-y: visible;
+    overflow-x: hidden;
+    overflow-y: auto;
+    min-height: 3rem;
     max-height: 4rem;
+    font-size: 1rem;
+    line-height: 1rem;
 
     .typeahead-multiselect__tag {
+        margin: 1px;
     }
 
     .typeahead-multiselect__tag-title {
@@ -16,7 +21,7 @@
         overflow: hidden;
         white-space: nowrap;
         text-overflow: ellipsis;
-        max-width: 200px;
+        max-width: 120px;
     }
 
     .typeahead-multiselect__input {
@@ -25,19 +30,22 @@
             box-shadow: none;
             outline: none;
         }
+        background: transparent;
         padding: 0;
         border: 0;
-        width: 100%;
+        width: inherit;
     }
 
     input {
-        width: 100%;
+        width: inherit;
+        max-width: 100%;
     }
 
 }
 
 :host /deep/ ngb-typeahead-window {
     max-width: 485px;
+    line-height: 1.3rem;
 
     button.dropdown-item {
         width: 100%;

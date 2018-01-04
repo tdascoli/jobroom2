@@ -1,5 +1,6 @@
 package ch.admin.seco.jobroom.config;
 
+import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.Iterator;
 
@@ -13,8 +14,11 @@ import ch.qos.logback.core.Appender;
 import ch.qos.logback.core.filter.EvaluatorFilter;
 import ch.qos.logback.core.spi.ContextAwareBase;
 import ch.qos.logback.core.spi.FilterReply;
+import com.fasterxml.jackson.core.JsonGenerator;
 import io.github.jhipster.config.JHipsterProperties;
 import net.logstash.logback.appender.LogstashTcpSocketAppender;
+import net.logstash.logback.composite.AbstractFieldJsonProvider;
+import net.logstash.logback.composite.JsonWritingUtils;
 import net.logstash.logback.encoder.LogstashEncoder;
 import net.logstash.logback.stacktrace.ShortenedThrowableConverter;
 import org.slf4j.Logger;
@@ -24,6 +28,8 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.cloud.netflix.eureka.EurekaInstanceConfigBean;
 import org.springframework.context.annotation.Configuration;
+
+import ch.admin.seco.jobroom.security.SecurityUtils;
 
 @Configuration
 @ConditionalOnProperty("eureka.client.enabled")
@@ -74,6 +80,8 @@ public class LoggingConfiguration {
 
         // More documentation is available at: https://github.com/logstash/logstash-logback-encoder
         LogstashEncoder logstashEncoder = new LogstashEncoder();
+        logstashEncoder.addProvider(new SecurityJsonProvider());
+
         // Set the Logstash appender config from JHipster properties
         logstashEncoder.setCustomFields(customFields);
         // Set the Logstash appender config from JHipster properties
@@ -157,4 +165,17 @@ public class LoggingConfiguration {
         }
     }
 
+    class SecurityJsonProvider extends AbstractFieldJsonProvider<ILoggingEvent> {
+
+        public static final String FIELD_LEVEL_VALUE = "remote_user";
+
+        SecurityJsonProvider() {
+            setFieldName(FIELD_LEVEL_VALUE);
+        }
+
+        @Override
+        public void writeTo(JsonGenerator generator, ILoggingEvent iLoggingEvent) throws IOException {
+            JsonWritingUtils.writeStringField(generator, getFieldName(), SecurityUtils.getCurrentUserLogin());
+        }
+    }
 }

@@ -7,9 +7,9 @@ import java.util.EnumSet;
 import javax.servlet.DispatcherType;
 import javax.servlet.FilterRegistration;
 import javax.servlet.ServletContext;
-import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
+import ch.qos.logback.classic.helpers.MDCInsertingServletFilter;
 import com.codahale.metrics.MetricRegistry;
 import com.codahale.metrics.servlet.InstrumentedFilter;
 import com.codahale.metrics.servlets.MetricsServlet;
@@ -55,7 +55,7 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
     }
 
     @Override
-    public void onStartup(ServletContext servletContext) throws ServletException {
+    public void onStartup(ServletContext servletContext) {
         if (env.getActiveProfiles().length != 0) {
             log.info("Web application configuration, using profiles: {}", (Object[]) env.getActiveProfiles());
         }
@@ -67,6 +67,7 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
         if (env.acceptsProfiles(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)) {
             initH2Console(servletContext);
         }
+        initMDCInserting(servletContext, disps);
         log.info("Web application fully configured");
     }
 
@@ -185,6 +186,18 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
         metricsAdminServlet.addMapping("/management/metrics/*");
         metricsAdminServlet.setAsyncSupported(true);
         metricsAdminServlet.setLoadOnStartup(2);
+    }
+
+    /*
+     * Initializes Metrics.
+     */
+    private void initMDCInserting(ServletContext servletContext, EnumSet<DispatcherType> disps) {
+        log.debug("Registering MDCInserting Filter");
+        FilterRegistration.Dynamic mdcInsertingFilter = servletContext.addFilter("webappMDCInsertingFilter",
+            new MDCInsertingServletFilter());
+
+        mdcInsertingFilter.addMappingForUrlPatterns(disps, true, "/*");
+        mdcInsertingFilter.setAsyncSupported(true);
     }
 
     /*

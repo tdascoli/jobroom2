@@ -7,4 +7,4 @@ export const EMAIL_REGEX = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*
 
 export const PHONE_NUMBER_REGEX = /^[+]\d+$/;
 
-export const POSTBOX_NUMBEB_REGEX = /^\d{0,6}$/;
+export const POSTBOX_NUMBER_REGEX = /^\d{0,6}$/;

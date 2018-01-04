@@ -4,32 +4,28 @@ import {
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
-    AbstractControl,
-    FormBuilder,
-    FormGroup,
-    ValidatorFn,
+    AbstractControl, FormBuilder, FormGroup, ValidatorFn,
     Validators
 } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import {
-    DrivingLicenceCategory, Gender, ResponseWrapper,
+    DateUtils, DrivingLicenceCategory, EMAIL_REGEX, Gender, PHONE_NUMBER_REGEX,
+    POSTBOX_NUMBER_REGEX, ResponseWrapper, URL_REGEX,
 } from '../../../shared';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {
-    FormatterFn,
-    OccupationOption,
-    OccupationPresentationService,
+    FormatterFn, OccupationOption, OccupationPresentationService,
     SuggestionLoaderFn
 } from '../../../shared/reference-service';
 import { Translations } from './zip-code/zip-code.component';
-import { EMAIL_REGEX, URL_REGEX } from '../../../shared';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
-import { PHONE_NUMBER_REGEX, POSTBOX_NUMBEB_REGEX } from '../../../shared';
-import { EducationLevel, Experience, JobPublication } from '../../../shared/job-publication/job-publication.model';
+import {
+    EducationLevel, Experience,
+    JobPublication
+} from '../../../shared/job-publication/job-publication.model';
 import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
 import { Subscriber } from 'rxjs/Subscriber';
-import { DateUtils } from '../../../shared';
 import { JobPublicationMapper } from './job-publication-mapper';
 import { Organization } from '../../../shared/organization/organization.model';
 import { UserData } from './service/user-data-resolver.service';
@@ -145,7 +141,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 street: [formModel.company.street, Validators.required],
                 houseNumber: [formModel.company.houseNumber],
                 zipCode: [formModel.company.zipCode],
-                postboxNumber: [formModel.company.postboxNumber, Validators.pattern(POSTBOX_NUMBEB_REGEX)],
+                postboxNumber: [formModel.company.postboxNumber, Validators.pattern(POSTBOX_NUMBER_REGEX)],
                 postboxZipCode: [formModel.company.postboxZipCode],
                 countryCode: [formModel.company.countryCode, Validators.required]
             }),
