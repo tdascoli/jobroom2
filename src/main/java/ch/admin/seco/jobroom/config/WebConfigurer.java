@@ -189,7 +189,7 @@ public class WebConfigurer implements ServletContextInitializer, WebServerFactor
     }
 
     /*
-     * Initializes Metrics.
+     * Initializes MDC Filter.
      */
     private void initMDCInserting(ServletContext servletContext, EnumSet<DispatcherType> disps) {
         log.debug("Registering MDCInserting Filter");
