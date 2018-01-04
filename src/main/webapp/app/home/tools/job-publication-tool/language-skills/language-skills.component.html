@@ -1,4 +1,4 @@
-<div class="form-group" [formGroup]="group">
+<div class="form-group" [formGroup]="group" *ngIf="languageOptionTranslations$ | async as languageOptionTranslations">
 
     <label class="col-form-label">
         {{ 'home.tools.job-publication.language-skills' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
@@ -8,12 +8,12 @@
 
         <div class="form-row" [formGroupName]="i">
             <div class="col">
-                <div class="form-group">
+                <div [formGroup]="languageSkill" class="form-group">
                     <label class="sr-only" [for]="'language-' + i" translate="global.reference.languages"></label>
                     <select [id]="'language-' + i" class="form-control custom-select" formControlName="code" (change)="handleLanguageChange(i)">
-                        <option [ngValue]="null">{{'global.reference.language.no-selection'| translate}}</option>
-                        <option *ngFor="let languageOption of getLanguageOptions(languageSkill.value.code)" [ngValue]="languageOption">
-                            {{'global.reference.language.'+languageOption | translate}}
+                        <option [ngValue]="null">{{ 'global.reference.language.no-selection' | translate }}</option>
+                        <option *ngFor="let languageOption of getLanguageOptionTranslation(languageSkill.value.code, languageOptionTranslations)" [value]="languageOption.key">
+                            {{ languageOption.value }}
                         </option>
                     </select>
                 </div>

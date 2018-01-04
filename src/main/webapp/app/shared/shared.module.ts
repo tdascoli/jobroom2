@@ -26,6 +26,7 @@ import { datepickerI18nService } from './input-components/datepicker/ngb-datepic
 import { OrganizationService } from './organization/organization.service';
 import { JobPublicationService } from './job-publication/job-publication.service';
 import { TextSizeLimitDirective } from './validation/text-size-limit.directive';
+import { LanguageFilterService } from './input-components/language-filter/language-filter.service';
 
 @NgModule({
     imports: [
@@ -59,7 +60,8 @@ import { TextSizeLimitDirective } from './validation/text-size-limit.directive';
         dateParserFormatterProvider(),
         datepickerI18nService(),
         OrganizationService,
-        JobPublicationService
+        JobPublicationService,
+        LanguageFilterService
     ],
     entryComponents: [JhiLoginModalComponent],
     exports: [

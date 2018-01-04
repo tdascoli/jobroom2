@@ -5,16 +5,40 @@ import {
     LanguageSkill
 } from '../../../../../../../main/webapp/app/shared';
 import { JobroomTestModule } from '../../../../test.module';
+import { LanguageFilterService } from '../../../../../../../main/webapp/app/shared/input-components/language-filter/language-filter.service';
 
 describe('LanguageFilterComponent', () => {
     let component: LanguageFilterComponent;
     let fixture: ComponentFixture<LanguageFilterComponent>;
     let mockModelChangeListener: { (newValue: any): void };
+    const mockLanguageFilterService = jasmine.createSpyObj('mockLanguageFilterService', ['getSorterLanguageTranslations']);
+
+    const translations = [
+        {
+            key: 'en',
+            value: 'English'
+        },
+        {
+            key: 'fr',
+            value: 'French'
+        },
+        {
+            key: 'de',
+            value: 'German'
+        },
+        {
+            key: 'it',
+            value: 'Italian'
+        },
+    ];
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [JobroomTestModule],
-            declarations: [LanguageFilterComponent]
+            declarations: [LanguageFilterComponent],
+            providers: [
+                { provide: LanguageFilterService, useValue: mockLanguageFilterService }
+            ]
         })
             .overrideTemplate(LanguageFilterComponent, '')
             .compileComponents();
@@ -179,7 +203,7 @@ describe('LanguageFilterComponent', () => {
         });
     });
 
-    describe('getLanguageOptions', () => {
+    describe('getLanguageOptionTranslation', () => {
         it('should not return already selected languages', () => {
             // GIVEN
             component.languageOptions = ['en', 'de', 'fr', 'it'];
@@ -189,10 +213,19 @@ describe('LanguageFilterComponent', () => {
             ];
 
             // WHEN
-            const languageOptions = component.getLanguageOptions(null);
+            const languageOptions = component.getLanguageOptionTranslation(null, translations);
 
             // THEN
-            expect(languageOptions).toEqual(['fr', 'it']);
+            expect(languageOptions).toEqual([
+                {
+                    key: 'fr',
+                    value: 'French'
+                },
+                {
+                    key: 'it',
+                    value: 'Italian'
+                }
+            ]);
         });
 
         it('should not return current selection', () => {
@@ -204,10 +237,23 @@ describe('LanguageFilterComponent', () => {
             ];
 
             // WHEN
-            const languageOptions = component.getLanguageOptions('en');
+            const languageOptions = component.getLanguageOptionTranslation('en', translations);
 
             // THEN
-            expect(languageOptions).toEqual(['en', 'fr', 'it']);
+            expect(languageOptions).toEqual([
+                {
+                    key: 'en',
+                    value: 'English'
+                },
+                {
+                    key: 'fr',
+                    value: 'French'
+                },
+                {
+                    key: 'it',
+                    value: 'Italian'
+                }
+            ]);
         });
     });
 

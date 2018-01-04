@@ -1,6 +1,8 @@
-import { Component, forwardRef, Input } from '@angular/core';
+import { Component, forwardRef, Input, OnInit } from '@angular/core';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { CEFR_Level, LanguageSkill } from '../../';
+import { LanguageFilterService } from './language-filter.service';
+import { Observable } from 'rxjs/Observable';
 
 const MAX_LANGUAGE_OPTIONS_NUM = 5;
 
@@ -15,11 +17,29 @@ const MAX_LANGUAGE_OPTIONS_NUM = 5;
         multi: true
     }]
 })
-export class LanguageFilterComponent implements ControlValueAccessor {
+export class LanguageFilterComponent implements ControlValueAccessor, OnInit {
     @Input() languageOptions: Array<string>;
 
     languageLevels = CEFR_Level;
     selectedLanguageSkills: Array<LanguageSkill> = [];
+
+    languageOptionTranslations$: Observable<Array<{ key: string, value: string }>>;
+
+    constructor(private languageFilterService: LanguageFilterService) {
+    }
+
+    ngOnInit(): void {
+        this.languageOptionTranslations$ = this.languageFilterService
+            .getSorterLanguageTranslations(this.languageOptions);
+    }
+
+    getLanguageOptionTranslation(currentValue, languageOptionTranslations): Array<{ key: string, value: string }> {
+        const codes = this.selectedLanguageSkills.map((skill) => skill.code);
+        return languageOptionTranslations
+            .filter((translation) => currentValue && currentValue === translation.key
+                ? true
+                : codes.indexOf(translation.key) < 0);
+    }
 
     writeValue(obj: any): void {
         const value = obj === null ? [] : obj;
@@ -87,17 +107,12 @@ export class LanguageFilterComponent implements ControlValueAccessor {
         this.writeValue(skills);
     }
 
-    getLanguageOptions(currentValue: string) {
-        const codes = this.selectedLanguageSkills.map((skill) => skill.code);
-        const options = this.languageOptions.filter((option) => codes.indexOf(option) < 0);
-
-        return currentValue ? [currentValue, ...options] : [...options];
-    }
-
     isAddEnabled() {
         const allValid = this.selectedLanguageSkills
             .reduce((acc, curr) => acc && !!curr.code, true);
-        const canSelect = this.getLanguageOptions(null).length > 0;
+        const selectedSkillCodes = this.selectedLanguageSkills.map((skill) => skill.code);
+        const canSelect = this.languageOptions
+            .some((option) => selectedSkillCodes.indexOf(option) < 0);
         const maxNotReached = this.selectedLanguageSkills.length < MAX_LANGUAGE_OPTIONS_NUM;
 
         return allValid && canSelect && maxNotReached;
@@ -112,8 +127,8 @@ export class LanguageFilterComponent implements ControlValueAccessor {
     }
 
     private _onChange = (_: any) => {
-    }
+    };
 
     private _onTouched = () => {
-    }
+    };
 }

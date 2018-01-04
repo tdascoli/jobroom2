@@ -2,15 +2,39 @@ import { LanguageSkillsComponent } from '../../../../../../../../main/webapp/app
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { FormArray, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CEFR_Level } from '../../../../../../../../main/webapp/app/shared';
+import { LanguageFilterService } from '../../../../../../../../main/webapp/app/shared/input-components/language-filter/language-filter.service';
 
 describe('LanguageSkillsComponent', () => {
     let component: LanguageSkillsComponent;
     let fixture: ComponentFixture<LanguageSkillsComponent>;
+    const mockLanguageFilterService = jasmine.createSpyObj('mockLanguageFilterService', ['getSorterLanguageTranslations']);
+
+    const translations = [
+        {
+            key: 'en',
+            value: 'English'
+        },
+        {
+            key: 'fr',
+            value: 'French'
+        },
+        {
+            key: 'de',
+            value: 'German'
+        },
+        {
+            key: 'it',
+            value: 'Italian'
+        },
+    ];
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
             imports: [ReactiveFormsModule],
-            declarations: [LanguageSkillsComponent]
+            declarations: [LanguageSkillsComponent],
+            providers: [
+                { provide: LanguageFilterService, useValue: mockLanguageFilterService }
+            ]
         })
             .overrideTemplate(LanguageSkillsComponent, '')
             .compileComponents();
@@ -153,7 +177,7 @@ describe('LanguageSkillsComponent', () => {
         });
     });
 
-    describe('getLanguageOptions', () => {
+    describe('getLanguageOptionTranslation', () => {
         it('should not return already selected language', () => {
             component.ngOnInit();
 
@@ -165,8 +189,21 @@ describe('LanguageSkillsComponent', () => {
             formArray.at(1).get('code').setValue('fr');
             formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
-            const availableOptions = component.getLanguageOptions('de');
-            expect(availableOptions).toEqual(['de', 'it', 'en'])
+            const availableOptions = component.getLanguageOptionTranslation('de', translations);
+            expect(availableOptions).toEqual([
+                {
+                    key: 'en',
+                    value: 'English'
+                },
+                {
+                    key: 'de',
+                    value: 'German'
+                },
+                {
+                    key: 'it',
+                    value: 'Italian'
+                }
+            ])
         })
     });
 
@@ -182,7 +219,7 @@ describe('LanguageSkillsComponent', () => {
             formArray.at(1).get('code').setValue('fr');
             formArray.at(1).get('spoken').setValue(CEFR_Level[CEFR_Level.BASIC]);
 
-            component.removeByIndex(0)
+            component.removeByIndex(0);
 
             expect(formArray.value).toEqual([
                 {

@@ -1,53 +1,56 @@
-<div *ngFor="let languageSkill of selectedLanguageSkills; let i = index; let first = first" [ngClass]="{'language-selector-item': !first && i > 0}">
-    <div class="form-row">
-        <div class="col">
-            <div class="form-group">
-                <label class="sr-only" [for]="'language-' + i" translate="global.reference.languages"></label>
-                <select [id]="'language-' + i" class="form-control-sm custom-select" [ngModel]="languageSkill.code" (ngModelChange)="changeLanguage(i, $event)">
-                    <option [ngValue]="null">{{'global.reference.language.no-selection'| translate}}</option>
-                    <option *ngFor="let languageOption of getLanguageOptions(languageSkill.code)" [ngValue]="languageOption">
-                        {{'global.reference.language.'+languageOption | translate}}
-                    </option>
-                </select>
+<ng-container *ngIf="languageOptionTranslations$ | async as languageOptionTranslations">
+    <div *ngFor="let languageSkill of selectedLanguageSkills; let i = index; let first = first" [ngClass]="{'language-selector-item': !first && i > 0}">
+        <div class="form-row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="sr-only" [for]="'language-' + i" translate="global.reference.languages"></label>
+                    <select [id]="'language-' + i" class="form-control-sm custom-select" [ngModel]="languageSkill.code" (ngModelChange)="changeLanguage(i, $event)">
+                        <option [ngValue]="null">{{'global.reference.language.no-selection'| translate}}</option>
+                        <option *ngFor="let languageOption of getLanguageOptionTranslation(languageSkill.code, languageOptionTranslations)" [value]="languageOption.key">
+                            {{ languageOption.value }}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div *ngIf="!first" class="col-auto">
+                <div class="form-group">
+                    <button class="btn btn-primary btn-sm" (click)="removeByIndex(i)" [title]="'global.button.remove.title'| translate">
+                        <span class="fa fa-minus" aria-hidden="true"></span>
+                    </button>
+                </div>
             </div>
         </div>
-        <div *ngIf="!first" class="col-auto">
-            <div class="form-group">
-                <button class="btn btn-primary btn-sm" (click)="removeByIndex(i)" [title]="'global.button.remove.title'| translate">
-                    <span class="fa fa-minus" aria-hidden="true"></span>
-                </button>
+
+        <div *ngIf="languageSkill.code" class="form-row">
+            <div class="col">
+                <div class="form-group">
+                    <label class="small" [for]="'spoken-' + i" translate="global.reference.language.spoken"></label>
+                    <select [id]="'spoken-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.spoken"
+                            (ngModelChange)="changeSpokenLevel(i, $event)">
+                        <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
+                            {{'global.reference.language.level.'+languageLevel.value | translate}}
+                        </option>
+                    </select>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group">
+                    <label class="small" [for]="'written-' + i" translate="global.reference.language.written"></label>
+                    <select [id]="'written-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.written" (ngModelChange)="changeWrittenLevel(i, $event)">
+                        <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
+                            {{'global.reference.language.level.'+languageLevel.value | translate}}
+                        </option>
+                    </select>
+                </div>
             </div>
         </div>
     </div>
 
-    <div *ngIf="languageSkill.code" class="form-row">
-        <div class="col">
-            <div class="form-group">
-                <label class="small" [for]="'spoken-' + i" translate="global.reference.language.spoken"></label>
-                <select [id]="'spoken-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.spoken"
-                        (ngModelChange)="changeSpokenLevel(i, $event)">
-                    <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
-                        {{'global.reference.language.level.'+languageLevel.value | translate}}
-                    </option>
-                </select>
-            </div>
-        </div>
-        <div class="col">
-            <div class="form-group">
-                <label class="small" [for]="'written-' + i" translate="global.reference.language.written"></label>
-                <select [id]="'written-'+i" class="form-control-sm custom-select" [ngModel]="languageSkill.written" (ngModelChange)="changeWrittenLevel(i, $event)">
-                    <option *ngFor="let languageLevel of languageLevels | keys" [ngValue]="languageLevel.key">
-                        {{'global.reference.language.level.'+languageLevel.value | translate}}
-                    </option>
-                </select>
-            </div>
-        </div>
+    <div class="button-bar mt-3" *ngIf="isAddEnabled()">
+        <button class="btn btn-primary btn-sm" (click)="addNewLanguageSkill()"><span class="fa fa-plus" aria-hidden="true"></span>
+            {{'global.button.add.title'| translate}}
+        </button>
     </div>
-</div>
+</ng-container>
 
-<div class="button-bar mt-3" *ngIf="isAddEnabled()">
-    <button class="btn btn-primary btn-sm" (click)="addNewLanguageSkill()"><span class="fa fa-plus" aria-hidden="true"></span>
-        {{'global.button.add.title'| translate}}
-    </button>
-</div>
 
