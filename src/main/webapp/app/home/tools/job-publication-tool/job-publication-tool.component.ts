@@ -143,7 +143,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             company: this.fb.group({
                 name: [formModel.company.name, Validators.required],
                 street: [formModel.company.street, Validators.required],
-                houseNumber: [formModel.company.houseNumber, Validators.required],
+                houseNumber: [formModel.company.houseNumber],
                 zipCode: [formModel.company.zipCode],
                 postboxNumber: [formModel.company.postboxNumber, Validators.pattern(POSTBOX_NUMBEB_REGEX)],
                 postboxZipCode: [formModel.company.postboxZipCode],
