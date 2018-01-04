@@ -1,6 +1,6 @@
 import { CEFR_Level, DrivingLicenceCategory } from '../';
 
-export enum EducationLevel {
+export enum Degree {
     PRIMAR_OBLIGATORISCHE_SCHULE,
     SEK_I_OBLIGATORISCHE_SCHULE,
     SEK_II_WEITERFUEHRENDE_SCHULE,
@@ -42,7 +42,7 @@ export interface LanguageSkill {
 
 export interface Occupation {
     avamOccupation: string;
-    educationLevel?: EducationLevel;
+    degree?: Degree;
     experience?: Experience;
 }
 

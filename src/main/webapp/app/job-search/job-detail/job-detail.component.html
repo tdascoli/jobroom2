@@ -110,9 +110,9 @@
                         {{job.contact?.phone || job.company?.phone}}
                     </a></span>
                 </div>
-                <div *ngIf="job.application.hints" class="content__item">
-                    <strong>{{ 'job-detail.application.hints' | translate}}</strong>
-                    <span>{{job.application.hints}}</span>
+                <div *ngIf="job.application.additionalInfo" class="content__item">
+                    <strong>{{ 'job-detail.application.additionalInfo' | translate}}</strong>
+                    <span>{{job.application.additionalInfo}}</span>
                 </div>
             </div>
 

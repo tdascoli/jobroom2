@@ -11,7 +11,7 @@
         },
         "application": {
             "email": "Per E-Mail",
-            "hints": "Erg\u00e4nzende Angaben",
+            "additionalInfo": "Erg\u00e4nzende Angaben",
             "mail": "Per Post",
             "mail.text": "siehe Adresse des Unternehmens",
             "phone": "Telefonisch",

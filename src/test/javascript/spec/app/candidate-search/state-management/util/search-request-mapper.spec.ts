@@ -4,15 +4,8 @@ import {
 } from '../../../../../../../main/webapp/app/candidate-search/state-management/util/search-request-mapper';
 import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import {
-    Availability,
-    Canton,
-    CEFR_Level,
-    DrivingLicenceCategory,
-    Experience,
-    Graduation,
-    ISCED_1997,
-    LanguageSkill,
-    WorkForm
+    Availability, Canton, CEFR_Level, DrivingLicenceCategory, Experience, Graduation,
+    ISCED_1997, LanguageSkill, WorkForm
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
 import { ITEMS_PER_PAGE } from '../../../../../../../main/webapp/app/shared/constants/pagination.constants';
 import {
@@ -128,7 +121,7 @@ describe('createCandidateSearchRequestFromFilter', () => {
         expect(candidateSearchRequest.workForm).toEqual(WorkForm[workForm]);
     });
 
-    it('should map CandidateSearchFilter with educationLevel', () => {
+    it('should map CandidateSearchFilter with degree', () => {
         // GIVEN
         const educationLevel: ISCED_1997 = ISCED_1997.ISCED6;
         const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { 'educationLevel': educationLevel });

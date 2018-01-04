@@ -11,7 +11,7 @@
         },
         "application": {
             "email": "Via email",
-            "hints": "Additional information",
+            "additionalInfo": "Additional information",
             "mail": "Via post",
             "mail.text": "See company address",
             "phone": "By phone",

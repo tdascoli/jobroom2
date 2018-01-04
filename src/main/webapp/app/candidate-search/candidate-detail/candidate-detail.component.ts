@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
-    Candidate,
-    CandidateProfile,
-    Degree,
+    Candidate, CandidateProfile, Degree,
     JobExperience
 } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
@@ -19,11 +17,8 @@ import {
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import {
-    CandidateSearchFilter,
-    CandidateSearchState,
-    getCandidateProfileList,
-    getSearchFilter,
-    getTotalCandidateCount
+    CandidateSearchFilter, CandidateSearchState, getCandidateProfileList,
+    getSearchFilter, getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Gender, Graduation } from '../../shared/model/shared-types';
 
@@ -145,7 +140,7 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     isDisplayDegree(degree: string) {
-        return degree && Degree[degree] >= Degree.SEKUNDARSCHULE_OBERSTUFE
-            && Degree[degree] <= Degree.DOKTORAT;
+        return degree && Degree[degree] >= Degree.SEK_II_WEITERFUEHRENDE_SCHULE
+            && Degree[degree] <= Degree.TER_DOKTORAT_UNIVERSITAET;
     }
 }

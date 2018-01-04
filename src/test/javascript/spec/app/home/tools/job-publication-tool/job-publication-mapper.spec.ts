@@ -1,8 +1,11 @@
 import { JobPublicationMapper } from '../../../../../../../main/webapp/app/home/tools/job-publication-tool/job-publication-mapper';
 import { createJobPublication } from '../../../shared/job-publication/utils';
-import { CEFR_Level, DrivingLicenceCategory } from '../../../../../../../main/webapp/app/shared';
 import {
-    EducationLevel, Experience, Locale,
+    CEFR_Level,
+    DrivingLicenceCategory
+} from '../../../../../../../main/webapp/app/shared';
+import {
+    Degree, Experience, Locale,
     Status
 } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.model';
 
@@ -65,7 +68,7 @@ describe('JobPublicationMapper', () => {
             },
             occupation: {
                 avamOccupation: 'sfsfa',
-                educationLevel: EducationLevel.PRIMAR_OBLIGATORISCHE_SCHULE,
+                degree: Degree.PRIMAR_OBLIGATORISCHE_SCHULE,
                 experience: Experience.LESS_THAN_1_YEAR,
                 occupationSuggestion: {
                     key: '12312412',

@@ -109,7 +109,7 @@ describe('OccupationPresentationService', () => {
             });
 
             // then
-            expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', ['avam', 'x28', 'sbn3', 'sbn5']);
+            expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', ['x28', 'sbn3', 'sbn5']);
         });
 
         it('should map suggestion to TypeaheadMultiselectModel[]', () => {

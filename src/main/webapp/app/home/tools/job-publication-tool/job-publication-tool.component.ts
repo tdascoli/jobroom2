@@ -21,7 +21,7 @@ import { Translations } from './zip-code/zip-code.component';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
 import {
-    EducationLevel, Experience,
+    Degree, Experience,
     JobPublication
 } from '../../../shared/job-publication/job-publication.model';
 import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
@@ -46,7 +46,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     @Input()
     userData: UserData;
 
-    educationLevels = EducationLevel;
+    degrees = Degree;
     experiences = Experience;
     drivingLicenceCategories = DrivingLicenceCategory;
     languageSkills$: Observable<Array<string>>;
@@ -108,7 +108,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 title: [formModel.job.title, Validators.required],
                 occupation: this.fb.group({
                     occupationSuggestion: [formModel.job.occupation.occupationSuggestion, Validators.required],
-                    educationLevel: [formModel.job.occupation.educationLevel],
+                    degree: [formModel.job.occupation.degree],
                     experience: [formModel.job.occupation.experience]
                 }),
                 description: [formModel.job.description,
@@ -185,7 +185,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 title: '',
                 occupation: {
                     occupationSuggestion: null,
-                    educationLevel: null,
+                    degree: null,
                     experience: null
                 },
                 description: '',

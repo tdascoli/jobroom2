@@ -11,7 +11,7 @@
         },
         "application": {
             "email": "Via email",
-            "hints": "Dati complementari",
+            "additionalInfo": "Dati complementari",
             "mail": "Per posta",
             "mail.text": "V. indirizzo dell'impresa",
             "phone": "Telefonicamente",

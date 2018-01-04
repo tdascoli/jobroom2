@@ -37,18 +37,18 @@
                             </div>
 
                             <div class="form-group">
-                                <label for="education" class="col-form-label">
-                                    {{ 'home.tools.job-publication.education' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
+                                <label for="degree" class="col-form-label">
+                                    {{ 'home.tools.job-publication.degree' | translate }} <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
                                 </label>
                                 <div>
-                                    <select class="form-control custom-select" id="education"
-                                            formControlName="educationLevel">
-                                        <option [ngValue]="null">{{ 'home.tools.job-publication.no-selection' |
+                                    <select class="form-control custom-select" id="degree"
+                                            formControlName="degree">
+                                        <option [ngValue]="null" selected>{{ 'home.tools.job-publication.no-selection' |
                                             translate }}
                                         </option>
-                                        <option *ngFor="let educationLevel of educationLevels | keys"
-                                                [ngValue]="educationLevel.value">
-                                            {{'home.tools.job-publication.education-level.' + educationLevel.value | translate}}
+                                        <option *ngFor="let degree of degrees | keys"
+                                                [ngValue]="degree.value">
+                                            {{'global.degree.' + degree.value | translate}}
                                         </option>
                                     </select>
                                 </div>

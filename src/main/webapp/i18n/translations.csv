@@ -213,24 +213,23 @@ global,global.button.add.title,Add,Add,Add,Add
 global,global.button.remove.title,Remove,Remove,Remove,Remove
 global,global.contactPerson.salutation.MR,Herr,Mr,Monsieur,Signor
 global,global.contactPerson.salutation.MS,Frau,Ms,Madame,Signora
-global,global.degree.BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor’s degree from a university of applied sciences or equivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
-global,global.degree.BACHELOR_UNIVERSITY,Bachelor universitäre Hochschule oder äquivalent,Bachelor’s degree from a university or equivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
-global,global.degree.BERUFSMATURA,Berufsmaturität oder äquivalent,Vocational and professional school-leaving certificate or equivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
-global,global.degree.DOKTORAT,Doktorat universitäre Hochschule oder äquivalent,Doctorate from a university or equivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
-global,global.degree.EIDG_BERUFSATTEST,Berufliche Grundbildung EBA oder äquivalent,Vocational education and training with the Swiss Federal VET Certificate or equivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
-global,global.degree.EIDG_DIPLOM,"Höhere Berufsbildung, Diplom oder äquivalent","Higher professional education and training, diploma or equivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
-global,global.degree.EIDG_FACHAUSWEIS,"Höhere Berufsbildung, eidg. FA oder äquivalent","Higher professional education and training, Swiss Federal PET diploma or equivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
-global,global.degree.EIDG_FAEHIGKEITSZEUGNIS,Berufliche Grundbildung EFZ oder äquivalent,Vocational education and training with the Swiss Federal VET Diploma or equivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
-global,global.degree.FACHMATURA,Fachmaturität oder äquivalent,Specialised school-leaving certificate or equivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
-global,global.degree.FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Upper-secondary specialised school or equivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
-global,global.degree.GYMNASIUM_MATURA,Gymnasiale Maturität oder äquivalent,Baccalaureate school-leaving certificate or equivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
-global,global.degree.MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master’s degree from a university of applied sciences or equivalent,Master HES ou équivalent,Master SUP o equivalente
-global,global.degree.MASTER_UNIVERSITY,Master universitäre Hochschule oder äquivalent,Master’s degree from a university or equivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
-global,global.degree.NA,keine Angabe,no information,aucune indication,nessuna risposta
-global,global.degree.PRIMARSCHULE,Obligatorische Schule (Primarstufe),Compulsory school (primary education),École obligatoire (Primaire),Scuola obligatoria (Elementare)
-global,global.degree.SEKUNDARSCHULE_OBERSTUFE,Weiterführende Schule (Sek. II),Secondary school (upper-secondary education),Ecole supérieure (Sec. II),Scuola superiore (Sec. II)
-global,global.degree.SEKUNDARSCHULE_UNTERSTUFE,Obligatorische Schule (Sek. I),Compulsory school (lower-secondary education),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
-global,global.degree.UNBEKANNT,Unbekannt,Unknown,Inconnue,Ignoto
+global,global.degree.TER_BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor’s degree from a university of applied sciences or equivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
+global,global.degree.TER_BACHELOR_UNIVERSITAET,Bachelor universitäre Hochschule oder äquivalent,Bachelor’s degree from a university or equivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
+global,global.degree.SEK_II_BERUFSMATURITAET,Berufsmaturität oder äquivalent,Vocational and professional school-leaving certificate or equivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
+global,global.degree.TER_DOKTORAT_UNIVERSITAET,Doktorat universitäre Hochschule oder äquivalent,Doctorate from a university or equivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
+global,global.degree.SEK_II_GRUNDBILDUNG_EBA,Berufliche Grundbildung EBA oder äquivalent,Vocational education and training with the Swiss Federal VET Certificate or equivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
+global,global.degree.TER_BERUFSBILDUNG_DIPL,"Höhere Berufsbildung, Diplom oder äquivalent","Higher professional education and training, diploma or equivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
+global,global.degree.TER_BERUFSBILDUNG_FA,"Höhere Berufsbildung, eidg. FA oder äquivalent","Higher professional education and training, Swiss Federal PET diploma or equivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
+global,global.degree.SEK_II_GRUNDBILDUNG_EFZ,Berufliche Grundbildung EFZ oder äquivalent,Vocational education and training with the Swiss Federal VET Diploma or equivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
+global,global.degree.SEK_II_FACHMATURITAET,Fachmaturität oder äquivalent,Specialised school-leaving certificate or equivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
+global,global.degree.SEK_II_FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Upper-secondary specialised school or equivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
+global,global.degree.SEK_II_GYMNASIALE_MATURITAET,Gymnasiale Maturität oder äquivalent,Baccalaureate school-leaving certificate or equivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
+global,global.degree.TER_MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master’s degree from a university of applied sciences or equivalent,Master HES ou équivalent,Master SUP o equivalente
+global,global.degree.TER_MASTER_UNIVERSITAET,Master universitäre Hochschule oder äquivalent,Master’s degree from a university or equivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
+global,global.degree.PRIMAR_OBLIGATORISCHE_SCHULE,Obligatorische Schule (Primarstufe),Compulsory school (primary education),École obligatoire (Primaire),Scuola obligatoria (Elementare)
+global,global.degree.SEK_II_WEITERFUEHRENDE_SCHULE,Weiterführende Schule (Sek. II),Secondary school (upper-secondary education),Ecole supérieure (Sec. II),Scuola superiore (Sec. II)
+global,global.degree.SEK_I_OBLIGATORISCHE_SCHULE,Obligatorische Schule (Sek. I),Compulsory school (lower-secondary education),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
+global,global.degree.NOT_KNOWN,Unbekannt,Unknown,Inconnue,Ignoto
 global,global.drivingLicenceCategory.A,A,A,A,A
 global,global.drivingLicenceCategory.A1,A1,A1,A1,A1
 global,global.drivingLicenceCategory.B,B,B,B,B
@@ -596,23 +595,7 @@ home,home.tools.job-publication.description.label,Tätigkeit /Anforderungen,Empl
 home,home.tools.job-publication.description.placeholder,max. 9000 Zeichen,"max. 9,000 characters",max. 9000 caractères,max. 9000 caratteri
 home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",I certify that the employer complies with local and industry-standard wage and working conditions.,Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localité.,Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attività viene svolta.
 home,home.tools.job-publication.driving-licence,Führerausweis,Driving licence,Permis de conduire,Patente
-home,home.tools.job-publication.education,Ausbildung,Education,Formation,Formazione
-home,home.tools.job-publication.education-level.PRIMAR_OBLIGATORISCHE_SCHULE,Obligatorische Schule (Primarstufe),Compulsory school (primary education),École obligatoire (Primaire),Scuola obligatoria (Elementare)
-home,home.tools.job-publication.education-level.SEK_II_BERUFSMATURITAET,Berufsmaturität oder äquivalent,Vocational and professional school-leaving certificate or equivalent,Maturité professionnelle ou équivalent,Maturità professionale o equivalente
-home,home.tools.job-publication.education-level.SEK_II_FACHMATURITAET,Fachmaturität oder äquivalent,Specialised school-leaving certificate or equivalent,Maturité spécialisée ou équivalent,Maturità specializzata o equivalente
-home,home.tools.job-publication.education-level.SEK_II_FACHMITTELSCHULE,Fachmittelschule oder äquivalent,Upper-secondary specialised school or equivalent,Ecole de culture générale ou équivalent,Scuola specializzata o equivalente
-home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EBA,Berufliche Grundbildung EBA oder äquivalent,Vocational education and training with the Swiss Federal VET Certificate or equivalent,Formation professionnelle initiale AFP ou équivalent,Formazione professionale di base CFP o equivalente
-home,home.tools.job-publication.education-level.SEK_II_GRUNDBILDUNG_EFZ,Berufliche Grundbildung EFZ oder äquivalent,Vocational education and training with the Swiss Federal VET Diploma or equivalent,Formation professionnelle initiale CFC ou équivalent,Formazione professionale di base AFC o equivalente
-home,home.tools.job-publication.education-level.SEK_II_GYMNASIALE_MATURITAET,Gymnasiale Maturität oder äquivalent,Baccalaureate school-leaving certificate or equivalent,Maturité gymnasiale ou équivalent,Maturità liceale o equivalente
-home,home.tools.job-publication.education-level.SEK_II_WEITERFUEHRENDE_SCHULE,Weiterführende Schule (Sek. II),Secondary school (upper-secondary education),Ecole supérieure (Sec. II),Scuola superiore (Sec. II)
-home,home.tools.job-publication.education-level.SEK_I_OBLIGATORISCHE_SCHULE,Obligatorische Schule (Sek. I),Compulsory school (lower-secondary education),École obligatoire (Sec. I),Scuola obligatoria (Sec. I)
-home,home.tools.job-publication.education-level.TER_BACHELOR_FACHHOCHSCHULE,Bachelor Fachhochschule oder äquivalent,Bachelor’s degree from a university of applied sciences or equivalent,Bachelor HES ou équivalent,Bachelor SUP o equivalente
-home,home.tools.job-publication.education-level.TER_BACHELOR_UNIVERSITAET,Bachelor universitäre Hochschule oder äquivalent,Bachelor’s degree from a university or equivalent,Bachelor HEU ou équivalent,Bachelor scuola univ./poli. o equivalente
-home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_DIPL,"Höhere Berufsbildung, Diplom oder äquivalent","Higher professional education and training, diploma or equivalent","Formation professionnelle supérieure, diplôme ou équivalent","Formazione professionale superiore, diploma o equivalente"
-home,home.tools.job-publication.education-level.TER_BERUFSBILDUNG_FA,"Höhere Berufsbildung, eidg. FA oder äquivalent","Higher professional education and training, Swiss Federal PET diploma or equivalent",Formation professionnelle supérieure BF ou équivalent,Formazione professionale superiore APF o equivalente
-home,home.tools.job-publication.education-level.TER_DOKTORAT_UNIVERSITAET,Doktorat universitäre Hochschule oder äquivalent,Doctorate from a university or equivalent,Doctorat HEU ou équivalent,Dottorato scuola univ./poli. o equivalente
-home,home.tools.job-publication.education-level.TER_MASTER_FACHHOCHSCHULE,Master Fachhochschule oder äquivalent,Master’s degree from a university of applied sciences or equivalent,Master HES ou équivalent,Master SUP o equivalente
-home,home.tools.job-publication.education-level.TER_MASTER_UNIVERSITAET,Master universitäre Hochschule oder äquivalent,Master’s degree from a university or equivalent,Master HEU ou équivalent,Master scuola univ./poli. o equivalente
+home,home.tools.job-publication.degree,Ausbildung,Education,Formation,Formazione
 home,home.tools.job-publication.experience,Berufserfahrung,Work experience,Expérience professionnelle,Esperienza professionale
 home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 years,1 - 3 années,1 - 3 anni
 home,home.tools.job-publication.experience.LESS_THAN_1_YEAR,weniger als 1 Jahr,less than 1 year,moins de 1 année,meno di 1 anno
@@ -661,7 +644,7 @@ job-detail,job-detail.action.savePdf,Als PDF speichern,Save as PDF,Sauvegarder e
 job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Send via email,Envoyer par e-mail,Invia per email
 job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Link to external job posting,Vers l'offre d'emploi externe,vai all'annuncio esterno
 job-detail,job-detail.application.email,Per E-Mail,Via email,Par e-mail,Via email
-job-detail,job-detail.application.hints,Ergänzende Angaben,Additional information,Indications complémentaires,Dati complementari
+job-detail,job-detail.application.additionalInfo,Ergänzende Angaben,Additional information,Indications complémentaires,Dati complementari
 job-detail,job-detail.application.mail,Per Post,Via post,Par la poste,Per posta
 job-detail,job-detail.application.mail.text,siehe Adresse des Unternehmens,See company address,Voir l'adresse de l'entreprise,V. indirizzo dell'impresa
 job-detail,job-detail.application.phone,Telefonisch,By phone,Par téléphone,Telefonicamente

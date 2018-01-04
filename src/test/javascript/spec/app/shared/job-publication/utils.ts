@@ -1,8 +1,11 @@
 import {
-    EducationLevel, Experience,
-    JobPublication, Locale, Status
+    Degree, Experience, JobPublication, Locale,
+    Status
 } from '../../../../../../main/webapp/app/shared/job-publication/job-publication.model';
-import { CEFR_Level, DrivingLicenceCategory } from '../../../../../../main/webapp/app/shared';
+import {
+    CEFR_Level,
+    DrivingLicenceCategory
+} from '../../../../../../main/webapp/app/shared';
 
 export function createJobPublication(): JobPublication {
     return {
@@ -53,7 +56,7 @@ export function createJobPublication(): JobPublication {
             },
             occupation: {
                 avamOccupation: 'sfsfa',
-                educationLevel: EducationLevel.PRIMAR_OBLIGATORISCHE_SCHULE,
+                degree: Degree.PRIMAR_OBLIGATORISCHE_SCHULE,
                 experience: Experience.LESS_THAN_1_YEAR
             },
             permanent: true,
