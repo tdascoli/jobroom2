@@ -34,7 +34,8 @@ export class CandidateSearchListItemComponent implements OnInit {
                 .map((occupationLabels: GenderAwareOccupationLabel) => Object.assign({}, relevantJobExperience,
                     {
                         occupation: occupationLabels.default
-                    }));
+                    }))
+                .share();
         } else {
             this.validExperienceData = false;
         }
