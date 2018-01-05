@@ -1,0 +1,49 @@
+entity Authority {
+    name String required
+}
+
+entity Organization {
+    id UUID required
+    externalId String required
+    name String required
+    street String
+    zipCode String
+    city String
+    email String
+    phone String
+    type CompanyType
+    active Boolean required
+}
+
+enum CompanyType {
+    AVG, RAV
+}
+
+entity User {
+    id UUID required
+    login String required
+    password String required
+    firstName String
+    lastName String
+    email String
+    phone String
+    gender Gender
+    activated Boolean required
+    langKey String
+    imageUrl String
+    activationKey String
+    resetKey String
+    resetDate Instant
+}
+
+enum Gender {
+    MALE, FEMALE
+}
+
+relationship ManyToOne {
+    User{organization} to Organization
+}
+
+relationship ManyToMany {
+    User{authorities(name)} to Authority{user}
+}
