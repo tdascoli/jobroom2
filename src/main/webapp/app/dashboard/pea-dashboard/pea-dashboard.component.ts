@@ -18,9 +18,11 @@ import {
 } from '../state-management/state/pea-dashboard.state';
 import { JobPublicationService } from '../../shared/job-publication/job-publication.service';
 import { Store } from '@ngrx/store';
-import { JobPublicationDetailState } from '../state-management/state/job-publication-detail.state';
 import { JobPublicationCancelDialogService } from '../dialogs/job-publication-cancel-dialog.service';
-import { SubmitCancellationAction } from '../state-management/actions/pea-dashboard.actions';
+import {
+    LoadNextJobPublicationsDashboardPageAction,
+    SubmitCancellationAction
+} from '../state-management/actions/pea-dashboard.actions';
 
 @Component({
     selector: 'jr2-pea-dashboard',
@@ -58,6 +60,8 @@ export class PeaDashboardComponent implements OnInit {
     }
 
     ngOnInit(): void {
+        this.store.dispatch(new LoadNextJobPublicationsDashboardPageAction({ page: this.page }));
+
         this.jobFilterForm = this.fb.group({
             jobTitle: [this.jobPublicationFilter.jobTitle],
             onlineSinceDays: [this.jobPublicationFilter.onlineSinceDays]

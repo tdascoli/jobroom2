@@ -20,7 +20,7 @@ export const initialState: PEADashboardState = {
     },
     jobPublications: [],
     totalCount: 0,
-    page: -1
+    page: 0
 };
 
 export const getJobPublicationDashboardState = createFeatureSelector<PEADashboardState>('peaDashboard');
