@@ -26,6 +26,7 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
     set reset(value: number) {
         if (value && this.filterForm && this.companyName) {
             this.filterForm.reset({
+                contractType: this.searchFilter.contractType,
                 workingTime: this.searchFilter.workingTime,
                 onlineSince: this.searchFilter.onlineSince,
                 sort: this.searchFilter.sort
