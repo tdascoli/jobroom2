@@ -16,6 +16,7 @@ import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.validator.constraints.Email;
 
 import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Mapping;
@@ -63,6 +64,7 @@ public class Organization extends AbstractAuditingEntity implements Serializable
     private String city;
 
     @Size(max = 50)
+    @Email
     @Column(name = "email", length = 50)
     private String email;
 
