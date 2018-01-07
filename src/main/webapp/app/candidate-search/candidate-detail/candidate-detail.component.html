@@ -146,11 +146,16 @@
                     </div>
                     <div *ngIf="candidateProtectedData.address" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.address.label' | translate }}</strong>
-                        <span>{{ [candidateProtectedData.address.zipCode, candidateProtectedData.address.city, candidateProtectedData.address.street].join(', ') }}</span>
+                        <span>{{candidateProtectedData.address.street}}, {{candidateProtectedData.address.zipCode}} {{candidateProtectedData.address.city}}</span>
                     </div>
                     <div *ngIf="candidateProtectedData.phone" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
                         <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
+                    </div>
+                    <div *ngIf="candidateProtectedData.mobile" class="content__item">
+                        <strong>{{ 'candidate-detail.personal-information.mobile.label' | translate }}</strong>
+                        <span><a
+                                href="tel:{{candidateProtectedData.mobile}}">{{candidateProtectedData.mobile}}</a></span>
                     </div>
                     <div *ngIf="candidateProtectedData.email" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>
@@ -168,11 +173,11 @@
                                              [totalSize]="candidateProfileListTotalSize$ | async"></jr2-details-page-pagination>
 
                 <ul class="nav filter-nav flex-column">
-                    <li *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">
-                        <a class="nav-link">
-                            <i class="fa fa-star-o" aria-hidden="true"></i> {{ 'candidate-detail.candidate-save' | translate }}
-                        </a>
-                    </li>
+                    <!--<li *jhiHasAnyAuthority="['ROLE_PRIVATE_EMPLOYMENT_AGENT', 'ROLE_PUBLIC_EMPLOYMENT_SERVICE']" class="nav-item">-->
+                    <!--<a class="nav-link">-->
+                    <!--<i class="fa fa-star-o" aria-hidden="true"></i> {{ 'candidate-detail.candidate-save' | translate }}-->
+                    <!--</a>-->
+                    <!--</li>-->
                     <li class="nav-item">
                         <a class="nav-link" [class.active]="isCopied" ngxClipboard
                            [cbContent]="candidateUrl" (cbOnSuccess)="isCopied = true">

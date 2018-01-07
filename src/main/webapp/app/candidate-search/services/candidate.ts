@@ -14,6 +14,7 @@ export interface Candidate {
     firstName: string;
     lastName: string;
     phone: string;
+    mobile: string;
     email: string;
     address: Address;
     nationalityCode: string;
