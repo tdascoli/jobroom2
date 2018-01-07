@@ -8,6 +8,8 @@ import java.util.UUID;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Email;
+
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 
 /**
@@ -35,6 +37,7 @@ public class OrganizationDTO implements Serializable {
     private String city;
 
     @Size(max = 50)
+    @Email
     private String email;
 
     @Size(max = 20)
