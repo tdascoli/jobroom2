@@ -35,6 +35,7 @@ candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun
 candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,In der Schweiz nicht anerkannt,In Switzerland not recognized,Diplôme non reconnu en Suisse,Diploma non riconosciuto in Svizzera
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
+candidate-detail,candidate-detail.job-center.phone.label,Mobile,Mobile,Mobile,Tel. cellulare
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
 candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Training,Formation,Formazione
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, aptitudes","Conoscenze, competenze, skills"

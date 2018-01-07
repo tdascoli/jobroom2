@@ -36,13 +36,15 @@ export class CandidateService {
 
     findCandidate(candidateProfile: CandidateProfile): Observable<Candidate> {
         return this.canViewCandidateProtectedData(candidateProfile)
-            .filter((canViewProtectedData) => canViewProtectedData)
-            .flatMap((_) => {
-                return this.http.get(`${this.resourceUrl}/${candidateProfile.id}`)
-                    .map((res: Response) => {
-                        const jsonResponse = res.json();
-                        return jsonResponse as Candidate;
-                    });
+            .flatMap((canViewProtectedData) => {
+                if (canViewProtectedData) {
+                    return this.http.get(`${this.resourceUrl}/${candidateProfile.id}`)
+                        .map((res: Response) => {
+                            const jsonResponse = res.json();
+                            return jsonResponse as Candidate;
+                        });
+                }
+                return Observable.of(null as Candidate);
             });
     }
 

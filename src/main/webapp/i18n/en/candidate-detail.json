@@ -39,7 +39,7 @@
                 "label": "Email"
             },
             "phone": {
-                "label": "Telephone"
+              "label": "Mobile"
             },
             "title": "For more information contact"
         },
