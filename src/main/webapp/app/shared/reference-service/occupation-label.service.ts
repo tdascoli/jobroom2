@@ -1,6 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BaseRequestOptions, Http, Response, URLSearchParams } from '@angular/http';
+import {
+    BaseRequestOptions, Http, Response,
+    URLSearchParams
+} from '@angular/http';
 import { Observable } from 'rxjs/Observable';
+import { TranslateService } from '@ngx-translate/core';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const OCCUPATION_LABEL_RESOURCE_SEARCH_URL = 'referenceservice/api/_search/occupations/label';
@@ -53,7 +57,8 @@ export interface OccupationLabelMapping {
  */
 @Injectable()
 export class OccupationLabelService {
-    constructor(private http: Http) {
+    constructor(private http: Http,
+                private translateService: TranslateService) {
     }
 
     suggestOccupation(prefix: string, types: Array<string>): Observable<OccupationLabelAutocomplete> {
@@ -88,7 +93,9 @@ export class OccupationLabelService {
     }
 
     getOccupationLabelsByKey(key: string): Observable<OccupationLabelData> {
-        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/${key.replace(':', '/')}`)
+        const params: URLSearchParams = new URLSearchParams();
+        params.set('lang', this.translateService.currentLang);
+        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/${key.replace(':', '/')}`, { params })
             .map((res: Response) => <OccupationLabelData>res.json())
     }
 

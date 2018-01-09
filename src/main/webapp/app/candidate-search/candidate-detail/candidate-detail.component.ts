@@ -6,21 +6,17 @@ import {
 } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
 import {
-    JobCenter,
+    GenderAwareOccupationLabel, JobCenter, OccupationPresentationService,
     ReferenceService
-} from '../../shared/reference-service/reference.service';
-import { CandidateService } from '../services/candidate.service';
-import {
-    GenderAwareOccupationLabel,
-    OccupationPresentationService
 } from '../../shared/reference-service';
+import { CandidateService } from '../services/candidate.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import {
     CandidateSearchFilter, CandidateSearchState, getCandidateProfileList,
     getSearchFilter, getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
-import { Gender, Graduation } from '../../shared/model/shared-types';
+import { Gender, Graduation } from '../../shared';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -78,14 +74,14 @@ export class CandidateDetailComponent implements OnInit {
             this.translateService.onLangChange
                 .map((langChange) => langChange.lang));
 
-        this.jobExperiences$ = this.candidateProfile$
-            .map((profile: CandidateProfile) => profile.jobExperiences)
-            .flatMap((experiences) => Observable.combineLatest(experiences.map(this.enrichWithLabels.bind(this))))
-            .combineLatest(this.candidateProfile$, currentLanguage$)
-            .map(([experiences, profile, lang]) => experiences.map(this.formatOccupationLabel(profile.gender)))
-            .map((experiences) => experiences
-                .filter((experience) => experience.wanted)
-                .sort((a, b) => +b.lastJob - +a.lastJob))
+        this.jobExperiences$ = Observable.combineLatest(this.candidateProfile$, currentLanguage$)
+            .flatMap(([profile]) => {
+                const wantedJobExperiences = profile.jobExperiences
+                    .filter((experience) => experience.wanted);
+                return Observable.combineLatest(wantedJobExperiences.map(this.enrichWithLabels.bind(this)))
+                    .map((jobExperiences) => jobExperiences.map(this.formatOccupationLabel(profile.gender)))
+            })
+            .map((experiences) => experiences.sort((a, b) => +b.lastJob - +a.lastJob))
             .share();
 
         const occupationCode$ = this.store.select(getSearchFilter)
