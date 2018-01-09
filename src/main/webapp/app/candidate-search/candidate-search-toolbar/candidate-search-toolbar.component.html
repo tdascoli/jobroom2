@@ -11,22 +11,18 @@
                        [resultFormatter]="occupationFormatter"
                        (blur)="clearInvalidValue($event)">
             </div>
+
+            <div class="form-group form-group--wide w-100">
+                <jr2-multiselect formControlName="skills" [placeholder]="'candidate-search.skills.placeholder' | translate"
+                                 class="form-control form-control-lg">
+                </jr2-multiselect>
+            </div>
+
             <div *ngIf="cantonOptions$ | async as cantonOptions" class="form-group form-group--wide">
                 <ss-multiselect-dropdown [options]="cantonOptions"
                                          [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
                                          [settings]="multiSelectSettings"
                                          [formControl]="residence"></ss-multiselect-dropdown>
-            </div>
-
-            <div class="form-group form-group--wide">
-                <label for="graduation" class="sr-only">{{ 'candidate-search.toolbar.graduation.label' |
-                    translate}}</label>
-                <select formControlName="graduation" class="form-control form-control-lg custom-select" id="graduation">
-                    <option selected="" value="null" translate="candidate-search.toolbar.graduation.default"></option>
-                    <option *ngFor="let graduation of graduations | keys"
-                            [ngValue]="graduation.key">{{'candidate-search.graduation.' + graduation.value | translate}}
-                    </option>
-                </select>
             </div>
 
             <jr2-search-button [loading]="loading"></jr2-search-button>

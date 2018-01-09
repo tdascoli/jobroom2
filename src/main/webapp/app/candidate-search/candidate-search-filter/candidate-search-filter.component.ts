@@ -21,7 +21,7 @@ import { Store } from '@ngrx/store';
 import {
     Availability,
     DrivingLicenceCategory,
-    Experience,
+    Experience, Graduation,
     ISCED_1997,
     WorkForm
 } from '../../shared';
@@ -38,8 +38,8 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     set reset(value: number) {
         if (value && this.filterForm) {
             this.filterForm.reset({
+                graduation: this.searchFilter.graduation,
                 experience: this.searchFilter.experience,
-                skills: [...this.searchFilter.skills || []],
                 workplace: this.searchFilter.workplace,
                 availability: this.searchFilter.availability,
                 workload: this.searchFilter.workload,
@@ -54,6 +54,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
+    graduations = Graduation;
     experiences = Experience;
     availabilities = Availability;
     educationLevels = ISCED_1997;
@@ -73,8 +74,8 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
     ngOnInit(): void {
         this.filterForm = this.fb.group({
+            graduation: [this.searchFilter.graduation],
             experience: [this.searchFilter.experience],
-            skills: [[...this.searchFilter.skills || []]],
             workplace: [this.searchFilter.workplace],
             availability: [this.searchFilter.availability],
             workload: [this.searchFilter.workload],

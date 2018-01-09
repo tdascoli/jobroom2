@@ -11,11 +11,9 @@ import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import {
     CandidateSearchFilter,
-    CandidateSearchState
 } from '../state-management/state/candidate-search.state';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
-import { Graduation } from '../../shared';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
     FormatterFn,
@@ -23,7 +21,6 @@ import {
     OccupationPresentationService,
     SuggestionLoaderFn,
 } from '../../shared/reference-service';
-import { Store } from '@ngrx/store';
 import { Subject } from 'rxjs/Subject';
 
 @Component({
@@ -42,7 +39,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
         if (value && this.toolbarForm && this.residence) {
             this.toolbarForm.reset({
                 occupation: this.searchFilter.occupation,
-                graduation: this.searchFilter.graduation
+                skills: [...this.searchFilter.skills || []],
             });
             this.residence.reset(this.searchFilter.residence, { emitEvent: false });
         }
@@ -51,8 +48,6 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
-
-    graduations = Graduation;
 
     cantonOptions$: Observable<IMultiSelectOption[]>;
     multiSelectSettings: IMultiSelectSettings = {
@@ -73,8 +68,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private cantonService: CantonService,
-                private fb: FormBuilder,
-                private store: Store<CandidateSearchState>) {
+                private fb: FormBuilder) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
@@ -83,7 +77,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
         this.residence = this.fb.control(this.searchFilter.residence);
         this.toolbarForm = this.fb.group({
             occupation: [this.searchFilter.occupation],
-            graduation: [this.searchFilter.graduation]
+            skills: [[...this.searchFilter.skills || []]],
         });
 
         this.cantonOptions$ = this.cantonService.getCantonOptions();
