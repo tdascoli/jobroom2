@@ -6,3 +6,4 @@ export * from './typeahead/typeahead-singleselect/typeahead-singleselect-compone
 export * from './multiselect/multiselect.component';
 export * from './search-button/search-button.component';
 export * from './language-filter/language-filter.component';
+export * from './phone-number-input/phone-number-input.component';

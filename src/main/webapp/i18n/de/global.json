@@ -231,6 +231,9 @@
                     "required": "Ein neues Passwort wird ben\u00f6tigt.",
                     "strength": "Passwortst\u00e4rke:"
                 },
+                "phone": {
+                    "format": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx"
+                },
                 "username": {
                     "invalid": "Ihr Benutzername ist ung\u00fcltig.",
                     "maxlength": "Ihr Benutzername darf nicht l\u00e4nger als 50 Zeichen sein",

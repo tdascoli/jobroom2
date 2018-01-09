@@ -231,6 +231,9 @@
                     "required": "La password \u00e8 obbligatoria.",
                     "strength": "Sicurezza della password:"
                 },
+                "phone": {
+                    "format": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx"
+                },
                 "username": {
                     "invalid": "L'indirizzo email non \u00e8 valido.",
                     "maxlength": "Username non pu\u00f2 contenere pi\u00f9 di 50 caratteri",

@@ -52,14 +52,14 @@
         },
         "byArrangement": "Nach Vereinbarung",
         "cancel": "Stelle abmelden",
+        "cancel.error": "Failed to cancel job publication. Try again later.",
+        "cancel.success": "Job publication cancelled successfully.",
         "contact": {
             "accountNumber": "Stellennummer",
             "avam": "AVAM",
             "jobRoom": "Job-Room",
             "title": "Ihre Kontaktperson"
         },
-        "cancel.success": "Job publication cancelled successfully.",
-        "cancel.error": "Failed to cancel job publication. Try again later.",
         "copy": "Stelle duplizieren",
         "immediately": "ab Sofort",
         "permanent": "Permanent",

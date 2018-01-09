@@ -28,17 +28,17 @@ describe('LanguageFilterService', () => {
             mockTranslateService.getTranslation.and.returnValue(cold('-a', { a: translations }));
 
             // WHEN
-            let result = testedObject.getSorterLanguageTranslations();
+            const result = testedObject.getSorterLanguageTranslations();
 
             // THEN
-            let expected = [
-                { key: 'en', value: 'English'},
-                { key: 'fr', value: 'French'},
-                { key: 'de', value: 'German'},
-                { key: 'it', value: 'Italian'},
-                { key: 'ua', value: 'Ukrainian'},
+            const expected = [
+                { key: 'en', value: 'English' },
+                { key: 'fr', value: 'French' },
+                { key: 'de', value: 'German' },
+                { key: 'it', value: 'Italian' },
+                { key: 'ua', value: 'Ukrainian' },
             ];
-            let expectedObservable = cold('-a', { a: expected });
+            const expectedObservable = cold('-a', { a: expected });
             expect(result).toBeObservable(expectedObservable);
         });
 
@@ -47,14 +47,14 @@ describe('LanguageFilterService', () => {
             mockTranslateService.getTranslation.and.returnValue(cold('-a', { a: translations }));
 
             // WHEN
-            let result = testedObject.getSorterLanguageTranslations(['en', 'de']);
+            const result = testedObject.getSorterLanguageTranslations(['en', 'de']);
 
             // THEN
-            let expected = [
-                { key: 'en', value: 'English'},
-                { key: 'de', value: 'German'},
+            const expected = [
+                { key: 'en', value: 'English' },
+                { key: 'de', value: 'German' },
             ];
-            let expectedObservable = cold('-a', { a: expected });
+            const expectedObservable = cold('-a', { a: expected });
             expect(result).toBeObservable(expectedObservable);
         });
     });

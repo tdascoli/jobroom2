@@ -30,6 +30,7 @@
     "i18n-iso-countries": "^3.2.2",
     "jasmine-marbles": "^0.1.0",
     "jquery": "3.2.1",
+    "libphonenumber-js": "^0.4.48",
     "moment": "^2.19.2",
     "ng-jhipster": "0.2.12",
     "ng2-nouislider": "^1.7.3",

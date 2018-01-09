@@ -28,9 +28,9 @@
         "phone": "Phone",
         "phone.validation.invalid": "Phone is invalid",
         "profiles": "Profili",
-        "updated": "Sono stato aggiornati i dati dell'utente identificato da {{ param }}",
         "search": {
             "placeholder": "Search for user by username, name or email"
-        }
+        },
+        "updated": "Sono stato aggiornati i dati dell'utente identificato da {{ param }}"
     }
 }

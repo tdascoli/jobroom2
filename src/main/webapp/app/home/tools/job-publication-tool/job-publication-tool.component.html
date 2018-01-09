@@ -334,11 +334,13 @@
                         </div>
                     </div>
                     <div class="form-group">
-                        <label for="kp-tel" class="col-form-label">{{ 'home.tools.job-publication.contact.phone' |
-                            translate }}</label>
+                        <label for="kp-tel" class="col-form-label">{{ 'home.tools.job-publication.contact.phone' | translate }}</label>
                         <div>
-                            <input formControlName="phoneNumber" [jr2TextSizeLimit]="50" type="text" class="form-control" id="kp-tel"/>
+                            <jr2-phone-number-input id="kp-tel" formControlName="phoneNumber" [jr2TextSizeLimit]="50"></jr2-phone-number-input>
                         </div>
+                        <small class="form-text text-danger" *ngIf="jobPublicationForm.hasError('phoneValidator', ['contact', 'phoneNumber'])"
+                               jhiTranslate="global.messages.validate.phone.format">
+                        </small>
                     </div>
                     <div class="form-group">
                         <label for="kp-email" class="col-form-label">{{ 'home.tools.job-publication.contact.email' |
@@ -389,11 +391,13 @@
                         </label>
                     </div>
                     <div class="form-group">
-                        <label for="app-phone" class="col-form-label">{{ 'home.tools.job-publication.application.phone'
-                            | translate }}</label>
+                        <label for="app-phone" class="col-form-label">{{ 'home.tools.job-publication.application.phone' | translate }}</label>
                         <div>
-                            <input type="text" [jr2TextSizeLimit]="50" class="form-control" id="app-phone" formControlName="phoneNumber"/>
+                            <jr2-phone-number-input id="app-phone" formControlName="phoneNumber" [jr2TextSizeLimit]="50"></jr2-phone-number-input>
                         </div>
+                        <small class="form-text text-danger" *ngIf="jobPublicationForm.hasError('phoneValidator', ['application', 'phoneNumber'])"
+                               jhiTranslate="global.messages.validate.phone.format">
+                        </small>
                     </div>
 
                     <div class="form-group">
@@ -454,19 +458,6 @@
                     </div>
                 </div>
             </form>
-        </div>
-        <div class="job-publication__radar invisible">
-            <div class="candidate-radar d-none d-md-inline-block">
-                <!--
-                <button type="button" class="close" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-                -->
-                Diesem Job-Profil enstprechen bereits<br/>
-                <span class="badge badge-radar">1'644</span><br/>
-                Stellensuchenden
-                <a href="job-room/candidate-result-list.html">Jetzt anzeigen!</a>
-            </div>
         </div>
     </div>
 </div>

@@ -1,20 +1,34 @@
 import {
-    ChangeDetectionStrategy, ChangeDetectorRef, Component, Input, OnDestroy,
+    ChangeDetectionStrategy,
+    ChangeDetectorRef,
+    Component,
+    Input,
+    OnDestroy,
     OnInit
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
-    AbstractControl, FormBuilder, FormGroup, ValidatorFn,
+    AbstractControl,
+    FormBuilder,
+    FormGroup,
+    ValidatorFn,
     Validators
 } from '@angular/forms';
 import { Subject } from 'rxjs/Subject';
 import {
-    DateUtils, DrivingLicenceCategory, EMAIL_REGEX, Gender, PHONE_NUMBER_REGEX,
-    POSTBOX_NUMBER_REGEX, ResponseWrapper, URL_REGEX,
+    DateUtils,
+    DrivingLicenceCategory,
+    EMAIL_REGEX,
+    Gender,
+    POSTBOX_NUMBER_REGEX,
+    ResponseWrapper,
+    URL_REGEX,
 } from '../../../shared';
 import { LanguageSkillService } from '../../../candidate-search/services/language-skill.service';
 import {
-    FormatterFn, OccupationOption, OccupationPresentationService,
+    FormatterFn,
+    OccupationOption,
+    OccupationPresentationService,
     SuggestionLoaderFn
 } from '../../../shared/reference-service';
 import { Translations } from './zip-code/zip-code.component';
@@ -150,7 +164,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 firstName: [formModel.contact.firstName, Validators.required],
                 lastName: [formModel.contact.lastName, Validators.required],
                 phoneNumber: [formModel.contact.phoneNumber,
-                    [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
+                    [Validators.required]],
                 email: [formModel.contact.email, [Validators.required, Validators.pattern(EMAIL_REGEX)]],
             }),
             application: this.fb.group({
@@ -165,7 +179,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 phoneNumber: [{
                     value: formModel.application.phoneNumber,
                     disabled: true
-                }, [Validators.required, Validators.pattern(PHONE_NUMBER_REGEX)]],
+                }, [Validators.required]],
                 additionalInfo: [formModel.application.additionalInfo,
                     [Validators.maxLength(this.APPLICATION_ADDITIONAL_INFO_MAX_LENGTH)]],
             }),

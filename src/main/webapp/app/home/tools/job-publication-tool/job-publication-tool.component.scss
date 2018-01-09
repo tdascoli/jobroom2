@@ -8,6 +8,10 @@
     border-left: 5px solid #a94442;
 }
 
+/deep/ jr2-phone-number-input.ng-invalid input {
+    border-left: 5px solid #a94442;
+}
+
 .date__input {
     margin: 0;
     &:enabled {

@@ -7,7 +7,6 @@ import { JhiLanguageService, NgJhipsterModule } from 'ng-jhipster';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 import { CookieModule } from 'ngx-cookie';
 import { Jobroom2LanguageService } from './language/jobroom2-language.service';
-import { HttpClientModule } from '@angular/common/http';
 
 export const WINDOW = new InjectionToken<Window>('WindowToken');
 

@@ -136,11 +136,11 @@ dashboard,job-publication-details.application.telephone,Telefonisch,Telefonisch,
 dashboard,job-publication-details.application.title,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen,Weitere Bewerbungsformen
 dashboard,job-publication-details.byArrangement,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung,Nach Vereinbarung
 dashboard,job-publication-details.cancel,Stelle abmelden,Stelle abmelden,Stelle abmelden,Stelle abmelden
+dashboard,job-publication-details.cancel.error,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.
+dashboard,job-publication-details.cancel.success,Job publication cancelled successfully.,Job publication cancelled successfully.,Job publication cancelled successfully.,Job publication cancelled successfully.
 dashboard,job-publication-details.contact.accountNumber,Stellennummer,Stellennummer,Stellennummer,Stellennummer
 dashboard,job-publication-details.contact.avam,AVAM,AVAM,AVAM,AVAM
 dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
-dashboard,job-publication-details.cancel.success,Job publication cancelled successfully.,Job publication cancelled successfully.,Job publication cancelled successfully.,Job publication cancelled successfully.
-dashboard,job-publication-details.cancel.error,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.,Failed to cancel job publication. Try again later.
 dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson,Ihre Kontaktperson
 dashboard,job-publication-details.copy,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren,Stelle duplizieren
 dashboard,job-publication-details.immediately,ab Sofort,ab Sofort,ab Sofort,ab Sofort
@@ -323,6 +323,7 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,The new password must be at least 5 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,A new password is required.,Un nouveau mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Sicurezza della password:
+global,global.messages.validate.phone.format,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx
 global,global.messages.validate.username.invalid,Ihr Benutzername ist ungültig.,Your usernaem address is invalid.,Votre username n'est pas valide.,L'indirizzo email non è valido.
 global,global.messages.validate.username.maxlength,Ihr Benutzername darf nicht länger als 50 Zeichen sein,Your username cannot be longer than 50 characters.,Votre username ne doit pas comporter plus de 50 caractères.,Username non può contenere più di 50 caratteri
 global,global.messages.validate.username.minlength,Ihr Benutzername muss mindestens 5 Zeichen lang sein,Your username must be at least 5 characters.,Votre username doit comporter au moins 5 caractères.,Username deve essere di almeno 5 caratteri
@@ -610,7 +611,7 @@ home,home.tools.job-publication.locality.additional-text,Zusatztext,Additional t
 home,home.tools.job-publication.locality.city,Ort,City,Lieu,Luogo
 home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
 home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Sede di lavoro
-home,home.tools.job-publication.locality.zip,PLZ,Postcode,NPA  ,NPA / Luogo
+home,home.tools.job-publication.locality.zip,PLZ,Postcode,"NPA  ",NPA / Luogo
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postcode / City,NPA / Lieu,NPA / Luogo
 home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta
 home,home.tools.job-publication.occupation.label,Beruf,Occupation,Profession,Professione
@@ -624,11 +625,11 @@ home,home.tools.job-publication.publicationEndDate.title,Anstellungsdauer,Employ
 home,home.tools.job-publication.publicationStartDate.by-arrangement,Nach Vereinbarung,By arrangement / by agreement?,À convenir,Previo accordo
 home,home.tools.job-publication.publicationStartDate.immediately,Ab Sofort,Immediately,Tout de suite,Da subito
 home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Datum,Employment start date,Entrée en fonction le [date],Inizio dell'attività da Data
-home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Employment start,Entrée en fonction  ,Inizio dell'attività
+home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Employment start,"Entrée en fonction  ",Inizio dell'attività
 home,home.tools.job-publication.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 home,home.tools.job-publication.submit,Job publizieren,Publish job,Publier un emploi,Pubblica posto
 home,home.tools.job-publication.submit.error,Das Stellenangebot konnte nicht gespeichert werden!,Job could not be saved!,Job could not be saved!,Job could not be saved!
-home,home.tools.job-publication.submit.success,Besten Dank für Ihr Stellenangebot. Dieses wird nach der Prüfung durch das RAV publiziert. Sie erhalten dazu in Kürze eine E-Mail.,Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.,Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel dès sa publication.,Grazie dell'offerta di lavoro, che verrà pubblicata dopo la verifica da parte dell'URC. A breve Le verrà inviata un'e-mail.
+home,home.tools.job-publication.submit.success,Besten Dank für Ihr Stellenangebot. Dieses wird nach der Prüfung durch das RAV publiziert. Sie erhalten dazu in Kürze eine E-Mail.,Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.,Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel dès sa publication.,Grazie dell'offerta di lavoro
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 home,home.tools.job-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Jobs","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>jobs","<br><span class=""badge badge-radar"">{{count}}</span><br>emplois correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>posti"
 home,home.tools.job-search.search-badge.none,Diesem Profil entsprechen keine Jobs,No jobs match this profile,Aucun emploi correspond à ce profil,Non ci sono posti corrispondenti a questo profilo
@@ -908,7 +909,7 @@ reset,reset.finish.messages.keymissing,Der Reset Schlüssel fehlt.,The reset key
 reset,reset.finish.messages.success,"<strong>Ihr Passwort wurde zurückgesetzt.</strong> ","<strong>Your password has been reset.</strong> ",<strong>Votre mot de passe a été réinitialisé.</strong>,<strong>La tua password è stata reimpostata .</strong> Per favore
 reset,reset.finish.title,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Cambia Password
 reset,reset.request.form.button,Passwort zurücksetzen,Reset password,Réinitialiser le mot de passe,Reimposta Password
-reset,reset.request.messages.info,"Geben Sie Ihren Benutzername ein.",Enter your username.,Veuillez indiquer username.,Inserisci l'indirizzo useranme.
+reset,reset.request.messages.info,Geben Sie Ihren Benutzername ein.,Enter your username.,Veuillez indiquer username.,Inserisci l'indirizzo useranme.
 reset,reset.request.messages.notfound,<strong>Dieser Benutzername existiert nicht!</strong> Überprüfen Sie Ihren Benutzername und versuchen Sie es nocheinmal.,<strong>Username isn't registered!</strong> Please check and try again.,<strong>Username n'existe pas !</strong> Merci de la vérifier et de réessayer.,<strong>Username non registrata!</strong> Si prega di verificarla e riprovare!
 reset,reset.request.messages.success,Eine Email mit weiteren Instruktionen für das Zurücksetzen des Passworts wurde gesendet.,Check your emails for details on how to reset your password.,"Un e-mail vous a été envoyé, contenant les instructions pour réinitialiser votre mot de passe.",Controlla la tua email per i dettagli su come reimpostare la password.
 reset,reset.request.title,Passwort zurücksetzen,Reset your password.,Réinitialiser le mot de passe,Reimposta Password
@@ -957,5 +958,5 @@ user-management,userManagement.organization,Organization,Organization,Organizati
 user-management,userManagement.phone,Phone,Phone,Phone,Phone
 user-management,userManagement.phone.validation.invalid,Phone is invalid,Phone is invalid,Phone is invalid,Phone is invalid
 user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
-user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}
 user-management,userManagement.search.placeholder,"Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email"
+user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}

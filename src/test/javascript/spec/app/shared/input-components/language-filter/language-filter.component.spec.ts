@@ -1,9 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { LanguageFilterComponent } from '../../../../../../../main/webapp/app/shared/input-components';
-import {
-    CEFR_Level,
-    LanguageSkill
-} from '../../../../../../../main/webapp/app/shared';
+import { CEFR_Level, LanguageSkill } from '../../../../../../../main/webapp/app/shared';
 import { JobroomTestModule } from '../../../../test.module';
 import { LanguageFilterService } from '../../../../../../../main/webapp/app/shared/input-components/language-filter/language-filter.service';
 
