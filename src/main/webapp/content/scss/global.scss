@@ -16,21 +16,20 @@ Print configuration
 @import 'jbr2_variables.scss';
 
 /* jhipster-needle-scss-add-main JHipster will add new css style */
+html, body {
+    height:100%;
+}
 
-jhi-main {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    align-items: stretch;
+.main {
+    display: block;
+    position: relative;
+    min-height:100%;
+
+    padding-bottom: 60px;
 }
 
 button.close {
     cursor: pointer;
-}
-
-.main {
-    height: 100%;
-    border-bottom: 1px solid #504d48;
 }
 
 @media screen and (min-width: 480px) {

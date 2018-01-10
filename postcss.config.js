@@ -1,3 +1,6 @@
 module.exports = {
-    plugins: []
+    plugins: [
+        require('autoprefixer'),
+        require('postcss-flexbox')
+    ]
 }
