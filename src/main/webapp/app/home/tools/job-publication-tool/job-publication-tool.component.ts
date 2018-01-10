@@ -35,7 +35,8 @@ import { Translations } from './zip-code/zip-code.component';
 import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 import * as countries from 'i18n-iso-countries';
 import {
-    Degree, Experience,
+    Degree,
+    Experience,
     JobPublication
 } from '../../../shared/job-publication/job-publication.model';
 import { JobPublicationService } from '../../../shared/job-publication/job-publication.service';
@@ -186,7 +187,8 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             publication: this.fb.group({
                 jobroom: [formModel.publication.jobroom],
                 eures: [formModel.publication.eures],
-            })
+            }),
+            disclaimer: this.fb.control(false)
         });
     }
 
@@ -366,7 +368,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     onSubmit(): void {
         const jobPublication = JobPublicationMapper.mapJobPublicationFormToJobPublication(
             this.jobPublicationForm.value);
-
+        this.jobPublicationForm.get('disclaimer').setValue(false);
         this.jobPublicationService.save(jobPublication)
             .subscribe(this.createSaveSubscriber());
     }

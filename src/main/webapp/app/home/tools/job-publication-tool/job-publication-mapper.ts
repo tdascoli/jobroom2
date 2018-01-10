@@ -103,6 +103,7 @@ export class JobPublicationMapper {
         delete (<any> jobPublication).job.workload;
         delete (<any> jobPublication).job.publicationStartDate;
         delete (<any> jobPublication).job.publicationEndDate;
+        delete (<any> jobPublication).disclaimer;
 
         return jobPublication;
     }
