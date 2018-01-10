@@ -34,7 +34,7 @@ candidate-detail,candidate-detail.graduation.CH,Schweizer Abschluss,Swiss degree
 candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun diploma
 candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,In der Schweiz nicht anerkannt,In Switzerland not recognized,Diplôme non reconnu en Suisse,Diploma non riconosciuto in Svizzera
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
-candidate-detail,candidate-detail.job-center.phone.label,Mobile,Mobile,Mobile,Tel. cellulare
+candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
 candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Training,Formation,Formazione
 candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, aptitudes","Conoscenze, competenze, skills"
@@ -206,7 +206,8 @@ global,error.server.not.reachable,Server ist nicht erreichbar,Server not reachab
 global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
 global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Nom d'utilisateur déjà utilisé !,Il nome utente è già in uso!
 global,footer.link.abbreviation.text,Abkürzungen,Abbreviations,Abréviations,Abbreviazioni
-global,footer.link.legal.text,Rechtliche Grundlagen,Legal framework,Bases juridiques,Basi giuridiche
+global,footer.link.legal.text,Rechtliche Hinweise,Legal information,Droits d'usage,Avvertenze giuridiche
+global,footer.link.legal.url,https://www.arbeit.swiss/home/service/rechtliche-hinweise.html,https://www.work.swiss/home/service/rechtliche-hinweise.html,https://www.travail.swiss/home/service/rechtliche-hinweise.html,https://www.lavoro.swiss/home/service/rechtliche-hinweise.html
 global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Unemployment insurance/Labour market,Assurance-chômage / marché du travail AC,Assicurazione contro la disoccupazione / Mercato del lavoro AD
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
 global,global.button.add.title,Add,Add,Add,Add

@@ -10,8 +10,8 @@
             "showExternalPage": "Link to external job posting"
         },
         "application": {
-            "email": "Via email",
             "additionalInfo": "Additional information",
+          "email": "Via email",
             "mail": "Via post",
             "mail.text": "See company address",
             "phone": "By phone",

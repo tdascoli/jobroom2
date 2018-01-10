@@ -10,8 +10,8 @@
             "showExternalPage": "Zum externen Stelleninserat"
         },
         "application": {
-            "email": "Per E-Mail",
             "additionalInfo": "Erg\u00e4nzende Angaben",
+          "email": "Per E-Mail",
             "mail": "Per Post",
             "mail.text": "siehe Adresse des Unternehmens",
             "phone": "Telefonisch",

@@ -62,7 +62,7 @@
                 <td>{{organization.zipCode}}</td>
                 <td>{{organization.city}}</td>
                 <td>{{organization.email}}</td>
-                <td>{{organization.phone}}</td>
+                <td>{{organization.phone | jr2PhoneNumber}}</td>
                 <td jhiTranslate="{{'jobroomApp.CompanyType.' + organization.type}}">{{organization.type}}</td>
                 <td>{{organization.active}}</td>
                 <td class="text-right">

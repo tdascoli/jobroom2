@@ -35,7 +35,7 @@
                     <strong>{{ 'job-publication-details.contact.title' | translate }}</strong><br>
                     {{ contact.firstName }} {{ contact.lastName }}<br>
                     {{ contact.email }}<br>
-                    {{ contact.phoneNumber }}<br>
+                    {{ contact.phoneNumber | jr2PhoneNumber }}<br>
                 </div>
             </div>
 
@@ -108,7 +108,7 @@
                         <span class="nav-link">{{ 'job-publication-details.application.post' | translate }}: <a href="{{ application.url }}">{{ application.url }}</a></span>
                     </li>
                     <li *ngIf="application.phoneNumber" class="nav-item">
-                        <span class="nav-link">{{ 'job-publication-details.application.telephone' | translate }}: {{ application.phoneNumber }}</span>
+                        <span class="nav-link">{{ 'job-publication-details.application.telephone' | translate }}: {{ application.phoneNumber | jr2PhoneNumber }}</span>
                     </li>
                     <li *ngIf="application.additionalInfo" class="nav-item">
                         <span class="nav-link">{{ 'job-publication-details.application.additionalInfo' | translate }}: {{ application.additionalInfo }}</span>

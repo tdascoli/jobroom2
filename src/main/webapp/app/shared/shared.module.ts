@@ -2,21 +2,13 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    AccountService,
-    AuthServerProvider,
-    CSRFService,
-    HasAnyAuthorityDirective,
-    JhiLoginModalComponent,
-    JobroomSharedCommonModule,
-    JobroomSharedLibsModule,
-    LoginModalService,
-    LoginService,
-    Principal,
-    StateStorageService,
-    UserService
+    AccountService, AuthServerProvider, CSRFService, HasAnyAuthorityDirective,
+    JhiLoginModalComponent, JobroomSharedCommonModule, JobroomSharedLibsModule,
+    LoginModalService, LoginService, Principal, StateStorageService, UserService
 } from './';
 import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
 import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
+import { PhoneNumberPipe } from './pipes/phone-number.pipe';
 import { SafeHtmlPipe } from './pipes/safe-html.pipe';
 import { LanguageComponent } from './components/language/language.component';
 import { DetailsPagePaginationControlsComponent } from './components/details-page-pagination-controls/details-page-pagination-controls.component';
@@ -38,6 +30,7 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         HasAnyAuthorityDirective,
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
+        PhoneNumberPipe,
         SafeHtmlPipe,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
@@ -56,6 +49,7 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         DatePipe,
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
+        PhoneNumberPipe,
         SafeHtmlPipe,
         dateParserFormatterProvider(),
         datepickerI18nService(),
@@ -71,6 +65,7 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         DatePipe,
         LocaleAwareDatePipe,
         LocaleAwareDecimalPipe,
+        PhoneNumberPipe,
         SafeHtmlPipe,
         LanguageComponent,
         DetailsPagePaginationControlsComponent,

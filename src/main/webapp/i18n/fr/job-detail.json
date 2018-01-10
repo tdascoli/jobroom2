@@ -10,8 +10,8 @@
             "showExternalPage": "Vers l'offre d'emploi externe"
         },
         "application": {
-            "email": "Par e-mail",
             "additionalInfo": "Indications compl\u00e9mentaires",
+          "email": "Par e-mail",
             "mail": "Par la poste",
             "mail.text": "Voir l'adresse de l'entreprise",
             "phone": "Par t\u00e9l\u00e9phone",

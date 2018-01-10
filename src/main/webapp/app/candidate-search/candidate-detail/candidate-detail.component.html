@@ -21,7 +21,8 @@
                         </address>
 
                         <p>
-                            {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a><br/>
+                            {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone
+                            | jr2PhoneNumber}}</a><br/>
                         <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
                             {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
                         </div>
@@ -152,12 +153,12 @@
                     </div>
                     <div *ngIf="candidateProtectedData.phone" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.phone.label' | translate }}</strong>
-                        <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone}}</a></span>
+                        <span><a href="tel:{{candidateProtectedData.phone}}">{{candidateProtectedData.phone | jr2PhoneNumber}}</a></span>
                     </div>
                     <div *ngIf="candidateProtectedData.mobile" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.mobile.label' | translate }}</strong>
                         <span><a
-                                href="tel:{{candidateProtectedData.mobile}}">{{candidateProtectedData.mobile}}</a></span>
+                                href="tel:{{candidateProtectedData.mobile}}">{{candidateProtectedData.mobile | jr2PhoneNumber}}</a></span>
                     </div>
                     <div *ngIf="candidateProtectedData.email" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.e-mail.label' | translate }}</strong>

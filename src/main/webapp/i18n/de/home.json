@@ -57,6 +57,7 @@
                     "title": "Kontaktperson"
                 },
                 "date-placeholder": "TT.MM.JJJJ",
+              "degree": "Ausbildung",
                 "description": {
                     "characters-counter-text": "{{count}} Zeichen verbleibend.",
                     "label": "T\u00e4tigkeit /Anforderungen",
@@ -64,7 +65,6 @@
                 },
                 "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
                 "driving-licence": "F\u00fchrerausweis",
-                "degree": "Ausbildung",
                 "experience": "Berufserfahrung",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 Jahre",
                 "experience.LESS_THAN_1_YEAR": "weniger als 1 Jahr",
@@ -88,6 +88,11 @@
                     "placeholder": "Beruf"
                 },
                 "optional": "Optional",
+              "placeholders": {
+                "email": "muster@email.ch",
+                "phone": "031 999 99 99",
+                "url": "http://www.muster.ch"
+              },
                 "publication": {
                     "title": "Publikationsmedien"
                 },
@@ -107,12 +112,7 @@
                 "submit": "Job publizieren",
                 "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
                 "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
-                "workload": "Arbeitspensum",
-                "placeholders": {
-                    "phone": "031 999 99 99",
-                    "email": "muster@email.ch",
-                    "url": "http://www.muster.ch"
-                }
+              "workload": "Arbeitspensum"
             },
             "job-search": {
                 "search-badge": {

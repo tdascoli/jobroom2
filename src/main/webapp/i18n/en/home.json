@@ -57,6 +57,7 @@
                     "title": "Contact person"
                 },
                 "date-placeholder": "DD.MM.YYYY",
+              "degree": "Education",
                 "description": {
                     "characters-counter-text": "{{count}} characters available",
                     "label": "Employment / requirements",
@@ -64,7 +65,6 @@
                 },
                 "disclaimer": "I certify that the employer complies with local and industry-standard wage and working conditions.",
                 "driving-licence": "Driving licence",
-                "degree": "Education",
                 "experience": "Work experience",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 years",
                 "experience.LESS_THAN_1_YEAR": "less than 1 year",
@@ -88,6 +88,11 @@
                     "placeholder": "Occupation"
                 },
                 "optional": "Optional",
+              "placeholders": {
+                "email": "example@email.ch",
+                "phone": "031 999 99 99",
+                "url": "http://www.example.ch"
+              },
                 "publication": {
                     "title": "Publication media"
                 },
@@ -107,12 +112,7 @@
                 "submit": "Publish job",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.",
-                "workload": "Workload",
-                "placeholders": {
-                    "phone": "031 999 99 99",
-                    "email": "example@email.ch",
-                    "url": "http://www.example.ch"
-                }
+              "workload": "Workload"
             },
             "job-search": {
                 "search-badge": {

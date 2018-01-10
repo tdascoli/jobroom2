@@ -10,8 +10,8 @@
             "showExternalPage": "vai all'annuncio esterno"
         },
         "application": {
-            "email": "Via email",
             "additionalInfo": "Dati complementari",
+          "email": "Via email",
             "mail": "Per posta",
             "mail.text": "V. indirizzo dell'impresa",
             "phone": "Telefonicamente",
