@@ -25,11 +25,11 @@
     .sticked--top.toolbar {
         margin-top: 0 !important;
         width: 100%;
-        top: ($header-alv-height + $header-navbar-height) !important;
+        top: ($header-navbar-height) !important;
     }
 
     :host /deep/  + .container {
-        padding-top: ($header-alv-height + $header-navbar-height);
+        padding-top: ($header-navbar-height);
     }
 }
 

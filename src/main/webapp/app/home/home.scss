@@ -24,7 +24,36 @@ only screen and (min-resolution: 2dppx) {
         background-size: contain;
     }
 }
-
-.background--job-room {
+.background--jobseeker,
+.background--companies,
+.background--pea {
     min-height: 100vh;
 }
+
+.background--jobseeker {
+    background: url("../../content/images/bg-jobseeker.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.background--companies {
+    background: url("../../content/images/bg-companies.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.background--pea {
+    background: url("../../content/images/bg-companies.jpeg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.mobile-toggle {
+    cursor: pointer;
+}
+
+

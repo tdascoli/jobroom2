@@ -3,9 +3,9 @@
 @media screen and (min-width: 480px) {
     .sticky-top {
         position: sticky;
-        top: calc(#{$header-alv-height + $header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom});
+        top: calc(#{$header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom});
         overflow-y: auto;
-        height: calc(100vh - (#{$header-alv-height + $header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom}));
+        height: calc(100vh - (#{$header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom}));
         z-index: 100;
     }
 }

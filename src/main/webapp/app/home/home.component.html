@@ -1,21 +1,29 @@
-<div class="jumbotron jumbotron-fluid jumbotron--has-toolbar jumbotron--job-room background--job-room">
+<div class="jumbotron jumbotron-fluid jumbotron--has-toolbar jumbotron--job-room" [ngClass]="{'background--jobseeker': ((activeToolbarItem$ | async) == ToolbarItem.JOB_SEEKERS), 'background--companies': ((activeToolbarItem$ | async) == ToolbarItem.COMPANIES), 'background--pea': ((activeToolbarItem$ | async) == ToolbarItem.RECRUITMENT_AGENCIES)}">
 
     <jr2-toolbar>
         <li class="nav-title">
-            <h2 class="light">
-                {{'home.toolbar.title' | translate}}
-            </h2>
+            <!-- DESKTOP -->
+            <h2 class="light d-none d-sm-block">{{'home.toolbar.title' | translate}}</h2>
+
+            <!-- MOBILE -->
+            <h2 class="light d-sm-none mobile-toggle" (click)="toggleSubnavbar()">{{'home.toolbar.title' | translate}}</h2>
         </li>
         <jr2-toolbar-item [icon]="'binoculars'" [active]="(activeToolbarItem$ | async) == ToolbarItem.JOB_SEEKERS"
-                          routerLink="/jobseekers">
+                          routerLink="/jobseekers"
+                          (click)="collapseSubnavbar()"
+                          [ngClass]="{show: !isSubnavCollapsed}">
             {{'home.toolbar.jobSeekers' | translate}}
         </jr2-toolbar-item>
         <jr2-toolbar-item [icon]="'building'" [active]="(activeToolbarItem$ | async) == ToolbarItem.COMPANIES"
-                          routerLink="/companies/jobpublication">
+                          routerLink="/companies/jobpublication"
+                          (click)="collapseSubnavbar()"
+                          [ngClass]="{show: !isSubnavCollapsed}">
             {{'home.toolbar.companies' | translate}}
         </jr2-toolbar-item>
         <jr2-toolbar-item [icon]="'eye'" [active]="(activeToolbarItem$ | async) == ToolbarItem.RECRUITMENT_AGENCIES"
-                          routerLink="/agents/candidates">
+                          routerLink="/agents/candidates"
+                          (click)="collapseSubnavbar()"
+                          [ngClass]="{show: !isSubnavCollapsed}">
             {{'home.toolbar.recruitmentAgencies' | translate}}
         </jr2-toolbar-item>
     </jr2-toolbar>

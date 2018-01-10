@@ -3,24 +3,41 @@
  * because the AOT compiler can not resolve the imports.
  * The yarn start works but yarn install fails while executing ngc -p tsconfig-aot.json.
  */
-$main-color-black: 			#333333;
+$main-color-black: 			#504d48;
 $main-color-gray-dark: 		#636363; //darken($main-color-gray, 13%);
 $main-color-gray: 			#808080;
-$main-color-gray-light: 	#CFCFCF;
-$main-color-gray-lighter: 	#F1F1F1;
-$main-color-gray-lightest: 	#F8F8F8;
+$main-color-gray-light: 	#c1c0c0;
+$main-color-gray-lighter: 	#f2efe8;
+$main-color-gray-lightest: 	lighten($main-color-gray-lighter, 3%);
 $main-color-white: 			#FFFFFF;
 
-$additional-accent-amber: #ffc500;
-$additional-accent-green: #64b500;
-$main-accent-color-400: #439cc5;
-$main-accent-color: #007AB1;
-$main-color-black: #323232;
-$main-color-gray-100: #ececec; // lighten 42.5%
-$main-color-gray-light-400: #d7d7d7; // lighten 5.5%
-$main-color-gray-light-50: #fcfcfc; // lighten 20%
+$other-colors-red:    		#C73734;
 
-$main-color-gray-50:  $main-color-gray-lightest;
+$main-accent-color: 		$other-colors-red;  				// #017AB1;
+$main-accent-color-hover:	lighten($main-accent-color, 20%); 	// #008CBD;
+$main-accent-color-dark:	darken($main-accent-color, 20%);
+
+$additional-accent-amber: 	#ffc501;
+$additional-accent-yellow: 	#ffb120;
+$additional-accent-green: 	#64b500;
+
+$main-accent-color-400: #439cc5;
+
+// Gray
+$main-color-gray-50:  $main-color-gray-lightest; // lighten 46.1%
+$main-color-gray-100: $main-color-gray-lighter; // lighten 42.5%
+$main-color-gray-200: $main-color-gray-light; // lighten 33.7%
+$main-color-gray-300: $main-color-gray; // lighten 26%
+$main-color-gray-400: $main-color-gray-dark; // lighten 13%
+
+// Gray-Light
+$main-color-gray-light-50:  #fcfcfc; // lighten 20%
+$main-color-gray-light-100: #f7f7f7; // lighten 18%
+$main-color-gray-light-200: #ededed; // lighten 14%
+$main-color-gray-light-300: #e5e5e5; // lighten 11%
+$main-color-gray-light-400: #d7d7d7; // lighten 5.5%
+
+
 $text-weight-light: 300;
 
 $margin-x-general: 1.5rem;
@@ -30,7 +47,6 @@ $margin-x-narrow: $margin-x-general/2;
 // Header + Toolbar
 $header-margin: 4rem;
 $header-mobile-margin: .5rem;
-$header-alv-height: 30px;
 $header-navbar-height: 60px;
 
 $toolbar-height: 110px;

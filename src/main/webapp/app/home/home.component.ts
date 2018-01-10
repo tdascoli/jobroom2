@@ -38,6 +38,7 @@ export class HomeComponent {
     jobPublication$: Observable<JobPublication>;
     userData$: Observable<UserData>;
     reset$: Observable<number>;
+    isSubnavCollapsed: boolean;
 
     constructor(private store: Store<HomeState>,
                 private route: ActivatedRoute,
@@ -48,6 +49,8 @@ export class HomeComponent {
         this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
         this.reset$ = store.select(getReset);
+
+        this.isSubnavCollapsed = true;
 
         this.jobPublication$ = this.route.data
             .map((data) => data['jobPublication']);
@@ -64,5 +67,15 @@ export class HomeComponent {
     selectRecruitmentAgenciesTab(event: NgbTabChangeEvent): void {
         const url = event.nextId === AgenciesTab.CANDIDATE_SEARCH ? '/agents/candidates' : '/agents/jobpublication';
         this.router.navigate([url]);
+    }
+
+    toggleSubnavbar() {
+        console.log('toggle');
+
+        this.isSubnavCollapsed = !this.isSubnavCollapsed;
+    }
+
+    collapseSubnavbar() {
+        this.isSubnavCollapsed = true;
     }
 }

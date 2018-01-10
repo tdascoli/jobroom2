@@ -4,7 +4,7 @@
         "title.portal": "arbeit",
         "title.portal-url": "https://www.arbeit.swiss",
         "toolbar": {
-            "companies": "Unternehmen",
+            "companies": "Arbeitgeber",
             "jobSeekers": "Stellensuchende",
             "recruitmentAgencies": "Arbeitsvermittler",
             "title": "Job-Room bietet Leistungen f\u00fcr"
@@ -122,7 +122,7 @@
             },
             "jobPublicationTab": "Job publizieren",
             "jobSearch": {
-                "title": "Finden Sie jetzt Ihren Traumjob!"
+                "title": "Finden Sie passende Jobs"
             }
         }
     }

@@ -1,4 +1,9 @@
 @media screen and (max-width: 767px){
+    .p-sm-relative {
+        position: relative;
+        z-index: 500;
+    }
+
     .base__subnavbar {
         flex-basis: 100%;
         max-width: 100%;

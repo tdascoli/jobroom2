@@ -16,5 +16,21 @@ Style guide customization
             color: $main-accent-color;
         }
     }
+
+    @media screen and (min-width: 768px){
+        .navbar-brand.portal-logo {
+            z-index: 100 !important;
+        }
+
+        .portal-logo__image span {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 767px){
+        .portal-logo__image img {
+            display: none;
+        }
+    }
 }
 

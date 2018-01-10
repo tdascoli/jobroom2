@@ -8,3 +8,7 @@
     width: 100% !important;
     max-width: 100% !important;
 }
+
+/deep/.show .nav-item {
+    display: block !important;
+}

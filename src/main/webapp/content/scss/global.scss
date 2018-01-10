@@ -21,20 +21,16 @@ jhi-main {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    align-items: stretch;
 }
 
 button.close {
     cursor: pointer;
 }
 
-.main:after {
-    content: "";
-    display: block;
-}
-
 .main {
-    flex: 1;
-    border-bottom: 1px solid #504d48
+    height: 100%;
+    border-bottom: 1px solid #504d48;
 }
 
 @media screen and (min-width: 480px) {
@@ -68,6 +64,24 @@ button.close {
     height: auto;
 }
 
+ngb-typeahead-window {
+    max-width: 485px;
+    line-height: 1.3rem;
+    z-index: 1000;
+
+    button.dropdown-item {
+        width: 100%;
+        height: auto !important;
+    }
+}
+
+@media screen and (max-width: 479px) {
+    ngb-typeahead-window {
+        max-width: 300px !important;
+        left: 20px !important;
+    }
+}
+
 /*=================================================================================
 Toolbar (alv-styleguide)
 =================================================================================== */
@@ -75,7 +89,7 @@ Toolbar (alv-styleguide)
 @media screen and (min-width: 480px){
     .fixed-top~jr2-job-search .toolbar,
     .fixed-top~jr2-candidate-search .toolbar{
-        top: 90px;
+        top: $header-navbar-height;
         position: fixed;
         width: 100%;
     }
