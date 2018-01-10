@@ -55,7 +55,8 @@
                 "text": "Abbreviations"
             },
             "legal": {
-                "text": "Legal framework"
+                "text": "Legal information",
+                "url": "https://www.work.swiss/home/service/rechtliche-hinweise.html"
             },
             "seco": {
                 "text": "Unemployment insurance/Labour market"
