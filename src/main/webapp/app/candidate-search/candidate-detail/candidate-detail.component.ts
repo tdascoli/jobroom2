@@ -17,6 +17,7 @@ import {
     getSearchFilter, getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Gender, Graduation } from '../../shared';
+import { Principal } from '../../shared/auth/principal.service';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -48,6 +49,7 @@ export class CandidateDetailComponent implements OnInit {
                 private candidateService: CandidateService,
                 private occupationPresentationService: OccupationPresentationService,
                 private translateService: TranslateService,
+                private principal: Principal,
                 private store: Store<CandidateSearchState>) {
     }
 
@@ -138,5 +140,9 @@ export class CandidateDetailComponent implements OnInit {
     isDisplayDegree(degree: string) {
         return degree && Degree[degree] >= Degree.SEK_II_WEITERFUEHRENDE_SCHULE
             && Degree[degree] <= Degree.TER_DOKTORAT_UNIVERSITAET;
+    }
+
+    isAuthenticated() {
+        return this.principal.isAuthenticated();
     }
 }

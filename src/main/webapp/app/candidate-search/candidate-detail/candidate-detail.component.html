@@ -22,7 +22,9 @@
 
                         <p>
                             {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a><br/>
+                        <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
                             {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
+                        </div>
                         </p>
                         <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
                     </div>

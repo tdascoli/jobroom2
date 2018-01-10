@@ -10,6 +10,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { StoreModule } from '@ngrx/store';
 import { candidateSearchReducer } from '../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
+import { MockPrincipal } from '../../../helpers/mock-principal.service';
+import { Principal } from "../../../../../../main/webapp/app/shared";
 
 describe('CandidateDetailComponent', () => {
     let component: CandidateDetailComponent;
@@ -36,16 +38,17 @@ describe('CandidateDetailComponent', () => {
                 { provide: ActivatedRoute, useValue: mockActivatedRoute },
                 { provide: ReferenceService, useValue: mockReferenceService },
                 { provide: CandidateService, useValue: mockCandidateService },
+                { provide: Principal, useClass: MockPrincipal },
                 {
                     provide: OccupationPresentationService,
                     useValue: mockOccupationOccupationPresentationService
                 },
                 {
                     provide: TranslateService, useValue: {
-                    currentLang: 'en',
-                    onLangChange: Observable.never()
+                        currentLang: 'en',
+                        onLangChange: Observable.never()
+                    }
                 }
-                },
             ]
         })
             .overrideTemplate(CandidateDetailComponent, '')
