@@ -107,7 +107,12 @@
                 "submit": "Publier un emploi",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel d\u00e8s sa publication.",
-                "workload": "Taux d'occupation"
+                "workload": "Taux d'occupation",
+                "placeholders": {
+                    "phone": "031 999 99 99",
+                    "email": "exemple@email.ch",
+                    "url": "http://www.exemple.ch"
+                }
             },
             "job-search": {
                 "search-badge": {

@@ -296,10 +296,10 @@
                 "km": "Khmer",
                 "ku": "Kurdish",
                 "level": {
-                    "BASIC": "Basics",
-                    "INTERMEDIATE": "Intermediate",
+                    "BASIC": "Basic knowledge",
+                    "INTERMEDIATE": "Good knowledge",
                     "NONE": "None",
-                    "PROFICIENT": "Proficient"
+                    "PROFICIENT": "Very good knowledge"
                 },
                 "lt": "Lithuanian",
                 "mk": "Macedonian",

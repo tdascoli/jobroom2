@@ -107,7 +107,12 @@
                 "submit": "Publish job",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.",
-                "workload": "Workload"
+                "workload": "Workload",
+                "placeholders": {
+                    "phone": "031 999 99 99",
+                    "email": "example@email.ch",
+                    "url": "http://www.example.ch"
+                }
             },
             "job-search": {
                 "search-badge": {

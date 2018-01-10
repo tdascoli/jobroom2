@@ -346,7 +346,7 @@
                         <label for="kp-email" class="col-form-label">{{ 'home.tools.job-publication.contact.email' |
                             translate }}</label>
                         <div>
-                            <input formControlName="email" [jr2TextSizeLimit]="50" type="email" class="form-control" id="kp-email"/>
+                            <input formControlName="email" [jr2TextSizeLimit]="50" type="email" class="form-control" id="kp-email" [placeholder]="'home.tools.job-publication.placeholders.email' | translate"/>
                         </div>
                     </div>
 
@@ -373,14 +373,14 @@
                         <label for="app-email" class="col-form-label">{{ 'home.tools.job-publication.application.email'
                             | translate }}</label>
                         <div>
-                            <input type="email" [jr2TextSizeLimit]="50" class="form-control" id="app-email" formControlName="email"/>
+                            <input type="email" [jr2TextSizeLimit]="50" class="form-control" id="app-email" formControlName="email" [placeholder]="'home.tools.job-publication.placeholders.email' | translate"/>
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="app-form" class="col-form-label">{{
                             'home.tools.job-publication.application.online-form' | translate }}</label>
                         <div>
-                            <input type="text" [jr2TextSizeLimit]="50" class="form-control" id="app-form" formControlName="url"/>
+                            <input type="text" [jr2TextSizeLimit]="50" class="form-control" id="app-form" formControlName="url" [placeholder]="'home.tools.job-publication.placeholders.url' | translate"/>
                         </div>
                     </div>
 

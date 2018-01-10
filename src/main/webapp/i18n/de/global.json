@@ -297,9 +297,9 @@
                 "ku": "Kurdisch",
                 "level": {
                     "BASIC": "Grundkenntnisse",
-                    "INTERMEDIATE": "Fortgeschritten",
+                    "INTERMEDIATE": "Gute Kenntnisse",
                     "NONE": "Keine Kenntnisse",
-                    "PROFICIENT": "Kompetent"
+                    "PROFICIENT": "Sehr gute Kenntnisse"
                 },
                 "lt": "Litauisch",
                 "mk": "Mazedonisch",

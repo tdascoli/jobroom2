@@ -107,7 +107,12 @@
                 "submit": "Pubblica posto",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Grazie dell'offerta di lavoro",
-                "workload": "Grado di occupazione"
+                "workload": "Grado di occupazione",
+                "placeholders": {
+                    "phone": "031 999 99 99",
+                    "email": "esempio@email.ch",
+                    "url": "http://www.esempio.ch"
+                }
             },
             "job-search": {
                 "search-badge": {

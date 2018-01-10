@@ -107,7 +107,12 @@
                 "submit": "Job publizieren",
                 "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
                 "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
-                "workload": "Arbeitspensum"
+                "workload": "Arbeitspensum",
+                "placeholders": {
+                    "phone": "031 999 99 99",
+                    "email": "muster@email.ch",
+                    "url": "http://www.muster.ch"
+                }
             },
             "job-search": {
                 "search-badge": {

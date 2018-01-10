@@ -296,10 +296,10 @@
                 "km": "Khmer",
                 "ku": "Curdo",
                 "level": {
-                    "BASIC": "Principiante",
-                    "INTERMEDIATE": "Avanzato",
+                    "BASIC": "Conoscenza di base",
+                    "INTERMEDIATE": "Buona conoscenza",
                     "NONE": "Nessuna conoscenza",
-                    "PROFICIENT": "Competente"
+                    "PROFICIENT": "Conoscenza molto buona"
                 },
                 "lt": "Lituano",
                 "mk": "Macedone",

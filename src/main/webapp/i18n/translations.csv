@@ -34,7 +34,6 @@ candidate-detail,candidate-detail.graduation.CH,Schweizer Abschluss,Swiss degree
 candidate-detail,candidate-detail.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun diploma
 candidate-detail,candidate-detail.graduation.NOT_ACCEPTED,In der Schweiz nicht anerkannt,In Switzerland not recognized,Diplôme non reconnu en Suisse,Diploma non riconosciuto in Svizzera
 candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,email
-candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.job-center.phone.label,Mobile,Mobile,Mobile,Tel. cellulare
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
 candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Training,Formation,Formazione
@@ -377,10 +376,10 @@ global,global.reference.language.it,Italienisch,Italian,Italien,Italiano
 global,global.reference.language.ja,Japanisch,Japanese,Japonais,Giapponese
 global,global.reference.language.km,Khmer,Khmer,Khmer,Khmer
 global,global.reference.language.ku,Kurdisch,Kurdish,Kurde,Curdo
-global,global.reference.language.level.BASIC,Grundkenntnisse,Basics,Connaissances de base,Principiante
-global,global.reference.language.level.INTERMEDIATE,Fortgeschritten,Intermediate,Avancé,Avanzato
+global,global.reference.language.level.BASIC,Grundkenntnisse,Basic knowledge,Connaissances de base,Conoscenza di base
+global,global.reference.language.level.INTERMEDIATE,Gute Kenntnisse,Good knowledge,Bonnes connaissances,Buona conoscenza
 global,global.reference.language.level.NONE,Keine Kenntnisse,None,Pas de connaissances,Nessuna conoscenza
-global,global.reference.language.level.PROFICIENT,Kompetent,Proficient,Compétent,Competente
+global,global.reference.language.level.PROFICIENT,Sehr gute Kenntnisse,Very good knowledge,Très bonnes connaissances,Conoscenza molto buona
 global,global.reference.language.lt,Litauisch,Lithuanian,Lituanien,Lituano
 global,global.reference.language.mk,Mazedonisch,Macedonian,Macédonien,Macedone
 global,global.reference.language.nl,Holländisch,Dutch,Hollandais,Olandese
@@ -617,6 +616,9 @@ home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune s
 home,home.tools.job-publication.occupation.label,Beruf,Occupation,Profession,Professione
 home,home.tools.job-publication.occupation.placeholder,Beruf,Occupation,Profession,Professione
 home,home.tools.job-publication.optional,Optional,Optional,Optionnel,Opzionale
+home,home.tools.job-publication.placeholders.email,muster@email.ch,example@email.ch,exemple@email.ch,esempio@email.ch
+home,home.tools.job-publication.placeholders.phone,031 999 99 99,031 999 99 99,031 999 99 99,031 999 99 99
+home,home.tools.job-publication.placeholders.url,http://www.muster.ch,http://www.example.ch,http://www.exemple.ch,http://www.esempio.ch
 home,home.tools.job-publication.publication.title,Publikationsmedien,Publication media,Mödia de publication,Media di pubblicazione
 home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Temporary employment to date,Engagement limité au [date],a tempo determinato fino al
 home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,Permanent,illimité,a tempo indeterminato
