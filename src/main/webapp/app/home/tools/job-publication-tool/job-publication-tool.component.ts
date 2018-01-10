@@ -188,7 +188,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                 jobroom: [formModel.publication.jobroom],
                 eures: [formModel.publication.eures],
             }),
-            disclaimer: this.fb.control(false)
+            disclaimer: this.fb.control(false, Validators.requiredTrue)
         });
     }
 
@@ -366,11 +366,12 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     onSubmit(): void {
-        const jobPublication = JobPublicationMapper.mapJobPublicationFormToJobPublication(
-            this.jobPublicationForm.value);
-        this.jobPublicationForm.get('disclaimer').setValue(false);
-        this.jobPublicationService.save(jobPublication)
-            .subscribe(this.createSaveSubscriber());
+        if (this.jobPublicationForm.valid) {
+            const jobPublication = JobPublicationMapper.mapJobPublicationFormToJobPublication(this.jobPublicationForm.value);
+            this.jobPublicationForm.get('disclaimer').reset(false);
+            this.jobPublicationService.save(jobPublication)
+                .subscribe(this.createSaveSubscriber());
+        }
     }
 
     private createSaveSubscriber() {

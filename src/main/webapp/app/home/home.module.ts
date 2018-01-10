@@ -19,6 +19,7 @@ import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HomeRouterEffects } from './state-management/effects/router.effects';
 import { JobPublicationResolverService } from './tools/job-publication-tool/service/job-publication-resolver.service';
 import { UserDataResolverService } from './tools/job-publication-tool/service/user-data-resolver.service';
+import { ScrollToFirstInvalidDirective } from './tools/job-publication-tool/scroll-to-first-invalid.directive';
 
 @NgModule({
     imports: [
@@ -40,7 +41,8 @@ import { UserDataResolverService } from './tools/job-publication-tool/service/us
         ToolbarComponent,
         ToolbarItemComponent,
         LanguageSkillsComponent,
-        ZipCodeComponent
+        ZipCodeComponent,
+        ScrollToFirstInvalidDirective
     ],
     entryComponents: [],
     providers: [
