@@ -1,5 +1,5 @@
 import { CandidateSearchFilter } from '../state/candidate-search.state';
-import { ITEMS_PER_PAGE } from '../../../shared/constants/pagination.constants';
+import { ITEMS_PER_PAGE } from '../../../shared';
 import {
     Availability,
     Canton,
@@ -10,9 +10,9 @@ import {
     ISCED_1997,
     LanguageSkill,
     WorkForm
-} from '../../../shared/model/shared-types';
-import { CandidateSearchToolState } from '../../../home/state-management/state/candidate-search-tool.state';
-import { TypeaheadItemDisplayModel } from '../../../shared/input-components/typeahead/typeahead-item-display-model';
+} from '../../../shared';
+import { CandidateSearchToolState } from '../../../home/state-management';
+import { TypeaheadItemDisplayModel } from '../../../shared/input-components';
 import {
     CandidateLanguageSkill,
     CandidateSearchRequest,
@@ -47,12 +47,14 @@ export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSe
 }
 
 export function createCandidateSearchRequestFromToolState(toolState: CandidateSearchToolState): CandidateSearchRequest {
-    const { occupation, graduation } = toolState;
+    const { occupation, skills } = toolState;
+    const workplace = mapWorkplace(toolState.workplace);
 
     return {
         occupation: mapOccupationCode(occupation),
-        residence: mapResidence(toolState.residence),
-        graduation: Graduation[graduation]
+        cantonCode: workplace.pop(),
+        regionCode: workplace.pop(),
+        skills
     } as CandidateSearchRequest;
 }
 

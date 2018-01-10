@@ -240,26 +240,27 @@ describe('createCandidateSearchRequestFromToolState', () => {
         expect(candidateSearchRequest.occupation).toEqual('564236')
     });
 
-    it('should map CandidateSearchFilter with residence', () => {
-        const residence: Array<Canton> = [Canton['0'], Canton['1']];
-        const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { 'residence': residence });
+    it('should map CandidateSearchFilter with workplace', () => {
+        const workplace = new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'cc:bb', 'label'));
+        const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { workplace });
 
         // WHEN
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromToolState(filter);
 
         // THEN
-        expect(candidateSearchRequest.residence).toEqual(['AG', 'AI']);
+        expect(candidateSearchRequest.cantonCode).toEqual('cc');
+        expect(candidateSearchRequest.regionCode).toEqual('bb');
     });
 
-    it('should map CandidateSearchFilter with graduation', () => {
+    it('should map CandidateSearchFilter with skills', () => {
         // GIVEN
-        const graduation = Graduation.CH;
-        const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { 'graduation': graduation });
+        const skills = ['java'];
+        const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { skills });
 
         // WHEN
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromToolState(filter);
 
         // THEN
-        expect(candidateSearchRequest.graduation).toEqual(Graduation[graduation]);
+        expect(candidateSearchRequest.skills).toEqual(['java']);
     });
 });

@@ -15,20 +15,20 @@
                     </div>
 
                     <div class="form-group">
-                        <ss-multiselect-dropdown [options]="cantonOptions$ | async"
-                                                 [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
-                                                 [settings]="multiSelectSettings"
-                                                 formControlName="residence"></ss-multiselect-dropdown>
+                        <jr2-multiselect formControlName="skills" [placeholder]="'candidate-search.skills.placeholder' | translate"
+                                         class="form-control">
+                        </jr2-multiselect>
                     </div>
 
                     <div class="form-group">
-                        <select formControlName="graduation" class="form-control custom-select">
-                            <option [ngValue]="null" translate="candidate-search.toolbar.graduation.default"></option>
-                            <option *ngFor="let graduation of graduations | keys" [ngValue]="graduation.key"
-                                    translate="{{'candidate-search.graduation.' + graduation.value}}">
-                            </option>
-                        </select>
+                        <label class="sr-only" translate="candidate-search.workplace.label"></label>
+                        <jr2-typeahead-singleselect formControlName="workplace"
+                                                    [placeholder]="'candidate-search.workplace.placeholder' | translate"
+                                                    [itemLoader]="fetchLocalitySuggestions"
+                                                    [editable]="false"
+                                                    [size]="''"></jr2-typeahead-singleselect>
                     </div>
+
                     <button class="btn btn-primary btn-lg btn-block">
                         <span translate="home.tools.candidate-search.search-button.title"></span>
                     </button>

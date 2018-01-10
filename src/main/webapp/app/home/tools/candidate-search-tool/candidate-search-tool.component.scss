@@ -1,23 +1,5 @@
 @import '../../../../content/scss/jbr2_variables.scss';
 
-:host /deep/ button.dropdown-toggle {
-    margin: 0;
-    text-align: left;
-    //hide arrow
-    &:after {
-        display: none;
-    }
-}
-
-:host /deep/ .dropdown-menu a {
-    font-family: "Open Sans", "Helvetica Neue", Arial, sans-serif;
-    font-size: 1.125rem;
-    font-weight: normal;
-    line-height: 1.5;
-    color: #333333;
-    text-align: left;
-}
-
 .candidate-search__radar {
     width: 25%;
 

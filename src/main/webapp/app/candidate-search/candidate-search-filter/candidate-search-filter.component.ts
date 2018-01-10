@@ -108,7 +108,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
         this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
 }
 
-function customLocalityAutocompleteMapper(localityAutocomplete: LocalityAutocomplete): TypeaheadMultiselectModel[] {
+export function customLocalityAutocompleteMapper(localityAutocomplete: LocalityAutocomplete): TypeaheadMultiselectModel[] {
     const localities = localityAutocomplete.localities
         .map((o: LocalitySuggestion) =>
             new TypeaheadMultiselectModel(LocalityInputType.LOCALITY, `${o.cantonCode}:${o.regionCode}`, o.city, 0));

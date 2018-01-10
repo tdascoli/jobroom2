@@ -1,10 +1,10 @@
-import { Canton, Graduation } from '../../../shared/model/shared-types';
 import { OccupationOption } from '../../../shared/reference-service';
+import { TypeaheadItemDisplayModel } from '../../../shared/input-components';
 
 export interface CandidateSearchToolState {
     occupation?: OccupationOption,
-    residence?: Array<Canton>,
-    graduation?: Graduation,
+    workplace?: TypeaheadItemDisplayModel,
+    skills?: Array<string>,
     totalCount: number,
 }
 

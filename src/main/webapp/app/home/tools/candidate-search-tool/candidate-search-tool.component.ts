@@ -1,24 +1,21 @@
 import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
 import { Store } from '@ngrx/store';
-import { CandidateSearchToolState } from '../../state-management/state/candidate-search-tool.state';
+import { CandidateSearchToolState } from '../../state-management';
 import {
     CandidateSearchToolCountAction,
     CandidateSearchToolSubmittedAction,
     ResetCandidateSearchToolCountAction
-} from '../../state-management/actions/candidate-search-tool.actions';
-import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
-import { CantonService } from '../../../candidate-search/services/canton.service';
+} from '../../state-management';
 import { Subscription } from 'rxjs/Subscription';
-import { Graduation } from '../../../shared/model/shared-types';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn,
+    FormatterFn, LocalityService,
     OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn
-} from '../../../shared/reference-service/occupation-presentation.service';
+} from '../../../shared/reference-service';
+import { customLocalityAutocompleteMapper } from '../../../candidate-search/candidate-search-filter/candidate-search-filter.component';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -34,8 +31,8 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         if (value && this.candidateSearchForm) {
             this.candidateSearchForm.reset({
                 occupation: this.candidateSearchToolModel.occupation,
-                residence: this.candidateSearchToolModel.residence,
-                graduation: this.candidateSearchToolModel.graduation
+                workplace: this.candidateSearchToolModel.workplace,
+                skills: [...this.candidateSearchToolModel.skills || []]
             });
 
         }
@@ -46,23 +43,14 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
     private subscription: Subscription;
 
     candidateSearchForm: FormGroup;
-    graduations = Graduation;
-    cantonOptions$: Observable<IMultiSelectOption[]>;
-    multiSelectSettings: IMultiSelectSettings = {
-        buttonClasses: 'form-control custom-select',
-        containerClasses: '',
-        checkedStyle: 'fontawesome',
-        isLazyLoad: true,
-        dynamicTitleMaxItems: 1
-    };
 
     fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
     occupationFormatter: FormatterFn<OccupationOption>;
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private store: Store<CandidateSearchToolState>,
-                private cantonService: CantonService,
-                private fb: FormBuilder) {
+                private fb: FormBuilder,
+                private localityService: LocalityService) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
@@ -70,10 +58,9 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
     ngOnInit(): void {
         this.candidateSearchForm = this.fb.group({
             occupation: [this.candidateSearchToolModel.occupation],
-            residence: [this.candidateSearchToolModel.residence],
-            graduation: [this.candidateSearchToolModel.graduation]
+            workplace: [this.candidateSearchToolModel.workplace],
+            skills: [[...this.candidateSearchToolModel.skills || []]]
         });
-        this.cantonOptions$ = this.cantonService.getCantonOptions();
 
         this.subscription = this.candidateSearchForm.valueChanges
             .distinctUntilChanged()
@@ -123,11 +110,14 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         return key;
     }
 
+    fetchLocalitySuggestions = (prefix: string) =>
+        this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
+
     private filterChanged(formValue: any) {
-        const { occupation, residence, graduation } = formValue;
+        const { occupation, workplace, skills } = formValue;
         const isFilterSelected = (occupation && occupation.key)
-            || (residence && residence.length > 0)
-            || (graduation != null && graduation >= 0);
+            || (workplace && workplace.model)
+            || (skills && skills.length);
 
         if (isFilterSelected) {
             this.store.dispatch(new CandidateSearchToolCountAction(formValue));

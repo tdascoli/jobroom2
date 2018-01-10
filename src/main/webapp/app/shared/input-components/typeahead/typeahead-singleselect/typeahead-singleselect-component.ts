@@ -19,6 +19,7 @@ export class TypeaheadSingleselectComponent implements ControlValueAccessor {
     @Input() placeholder = '';
     @Input() itemLoader: (text: string) => Observable<TypeaheadMultiselectModel[]>;
     @Input() editable = true;
+    @Input() size: 'sm' | 'lg' = 'sm';
 
     selectedItem: TypeaheadMultiselectModel;
 
