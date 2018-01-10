@@ -84,7 +84,7 @@ export class CandidateDetailComponent implements OnInit {
                     .map((jobExperiences) => jobExperiences.map(this.formatOccupationLabel(profile.gender)))
             })
             .map((experiences) => experiences.sort((a, b) => +b.lastJob - +a.lastJob))
-            .share();
+            .shareReplay();
 
         const occupationCode$ = this.store.select(getSearchFilter)
             .map((searchFilter: CandidateSearchFilter) => searchFilter.occupation ? searchFilter.occupation.key : null);

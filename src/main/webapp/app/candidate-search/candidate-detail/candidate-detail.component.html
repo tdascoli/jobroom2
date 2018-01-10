@@ -48,10 +48,10 @@
             </div>
 
             <!-- Occupation -->
-            <div *ngIf="candidateProfile.jobExperiences.length" class="candidate-detail__content">
+            <div *ngIf="jobExperiences$ | async as jobExperiences" class="candidate-detail__content">
                 <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
 
-                <div *ngFor="let jobExperience of jobExperiences$ | async"
+                <div *ngFor="let jobExperience of jobExperiences"
                      class="detail__content detail--occupation">
                     <div class="content__item">
                         <strong>
