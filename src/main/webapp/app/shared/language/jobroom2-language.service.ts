@@ -36,8 +36,8 @@ export class Jobroom2LanguageService {
     }
 
     changeLanguage(languageKey: string) {
-        this.jhiLanguageService.changeLanguage(languageKey);
         this.cookieService.put(LANGUAGE_KEY, languageKey);
+        this.jhiLanguageService.changeLanguage(languageKey);
         this.store.dispatch(new ResetAction(new Date().getTime()));
     }
 

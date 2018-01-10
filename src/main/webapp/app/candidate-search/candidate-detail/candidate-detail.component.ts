@@ -88,7 +88,7 @@ export class CandidateDetailComponent implements OnInit {
             .map((searchFilter: CandidateSearchFilter) => searchFilter.occupation ? searchFilter.occupation.key : null);
 
         this.relevantJobExperience$ = this.jobExperiences$
-            .combineLatest(occupationCode$)
+            .combineLatest(occupationCode$, this.jobExperiences$)
             .map(([jobExperiences, occupationCode]) =>
                 this.candidateService.getRelevantJobExperience(occupationCode, jobExperiences));
         this.populatePreferredWorkLocations();

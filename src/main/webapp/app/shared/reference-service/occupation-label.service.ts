@@ -1,10 +1,6 @@
 import { Injectable } from '@angular/core';
-import {
-    BaseRequestOptions, Http, Response,
-    URLSearchParams
-} from '@angular/http';
+import { Http, Response, URLSearchParams } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { TranslateService } from '@ngx-translate/core';
 
 const DEFAULT_RESPONSE_SIZE = '10';
 const OCCUPATION_LABEL_RESOURCE_SEARCH_URL = 'referenceservice/api/_search/occupations/label';
@@ -57,20 +53,17 @@ export interface OccupationLabelMapping {
  */
 @Injectable()
 export class OccupationLabelService {
-    constructor(private http: Http,
-                private translateService: TranslateService) {
+    constructor(private http: Http) {
     }
 
     suggestOccupation(prefix: string, types: Array<string>): Observable<OccupationLabelAutocomplete> {
-        const options = new BaseRequestOptions();
         const params: URLSearchParams = new URLSearchParams();
-        options.params = params;
 
         params.set('prefix', prefix);
         params.set('types', types.join(','));
         params.set('resultSize', DEFAULT_RESPONSE_SIZE);
 
-        return this.http.get(OCCUPATION_LABEL_RESOURCE_SEARCH_URL, options)
+        return this.http.get(OCCUPATION_LABEL_RESOURCE_SEARCH_URL, { params })
             .map((res: Response) => <OccupationLabelAutocomplete>res.json())
     }
 
@@ -79,23 +72,17 @@ export class OccupationLabelService {
     }
 
     getOccupationLabelsByCodeAndTypeAndClassifier(code: number, type: string, classifier: string): Observable<OccupationLabelData> {
-        const options = new BaseRequestOptions();
-        const params: URLSearchParams = new URLSearchParams();
-        options.params = params;
-
         let url = OCCUPATION_LABEL_RESOURCE_URL + '/' + type + '/' + code;
         if (classifier) {
             url += '/' + classifier;
         }
 
-        return this.http.get(OCCUPATION_LABEL_RESOURCE_URL, options)
+        return this.http.get(OCCUPATION_LABEL_RESOURCE_URL)
             .map((res: Response) => <OccupationLabelData>res.json())
     }
 
     getOccupationLabelsByKey(key: string): Observable<OccupationLabelData> {
-        const params: URLSearchParams = new URLSearchParams();
-        params.set('lang', this.translateService.currentLang);
-        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/${key.replace(':', '/')}`, { params })
+        return this.http.get(`${OCCUPATION_LABEL_RESOURCE_URL}/${key.replace(':', '/')}`)
             .map((res: Response) => <OccupationLabelData>res.json())
     }
 
