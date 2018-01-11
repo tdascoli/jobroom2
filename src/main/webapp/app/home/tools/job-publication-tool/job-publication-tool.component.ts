@@ -390,10 +390,6 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
         changeAlertStatus(true);
         this.cd.markForCheck();
         window.scroll(0, 0);
-        setTimeout(() => {
-            changeAlertStatus(false);
-            this.cd.markForCheck();
-        }, 5000);
     }
 
     private setupCountries(): void {
