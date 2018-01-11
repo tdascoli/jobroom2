@@ -45,6 +45,7 @@
                     "postbox-zip": "PO box Postcode",
                     "postbox-zipcode": "PO box Postcode / City",
                     "street": "Street",
+                    "house-number":"No.",
                     "title": "Business",
                     "zipcode": "Postcode / City"
                 },

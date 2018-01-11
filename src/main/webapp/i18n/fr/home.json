@@ -45,6 +45,7 @@
                     "postbox-zip": "Case postale NPA",
                     "postbox-zipcode": "Case postale NPA / Lieu",
                     "street": "Rue",
+                    "house-number":"N°",
                     "title": "Entreprise",
                     "zipcode": "NPA / Lieu"
                 },

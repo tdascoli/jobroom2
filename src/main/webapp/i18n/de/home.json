@@ -45,6 +45,7 @@
                     "postbox-zip": "Postfach PLZ",
                     "postbox-zipcode": "Postfach PLZ / Ort",
                     "street": "Strasse",
+                    "house-number":"Nr.",
                     "title": "Unternehmen",
                     "zipcode": "PLZ / Ort"
                 },

@@ -254,12 +254,17 @@
                         </div>
                     </div>
 
-                    <div class="form-group">
-                        <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' |
+                    <div class="form-row">
+                        <div class="form-group col-md-9">
+                            <label for="unt-street" class="col-form-label">{{ 'home.tools.job-publication.company.street' |
                             translate }}</label>
-                        <div class="input-group">
-                            <input formControlName="street" type="text" [jr2TextSizeLimit]="60" class="form-control w-75" id="unt-street"/>
-                            <input formControlName="houseNumber" type="text" [jr2TextSizeLimit]="50" class="form-control w-25" id="unt-house-number"/>
+                            <input formControlName="street" type="text" [jr2TextSizeLimit]="60" class="form-control w-100" id="unt-street"/>
+                        </div>
+                        <div class="form-group col-md-3">
+                            <label for="unt-house-number" class="col-form-label">{{ 'home.tools.job-publication.company.house-number' |
+                                translate }}
+                                <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span></label>
+                            <input formControlName="houseNumber" type="text" [jr2TextSizeLimit]="50" class="form-control w-100" id="unt-house-number"/>
                         </div>
                     </div>
 
