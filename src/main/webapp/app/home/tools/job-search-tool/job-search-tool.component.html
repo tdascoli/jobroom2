@@ -29,7 +29,7 @@
     <div class="job-search__radar">
         <div class="job-radar d-none d-md-inline-block" *ngIf="jobSearchToolModel.totalCount > -1">
             <div [innerHTML]="getBadgeKey() | translate: { count: jobSearchToolModel.totalCount | jr2Number,  since: jobSearchToolModel.onlineSince }"></div>
-            <button class="btn-link" (click)="search(jobSearchForm.value)">{{ 'home.tools.job-search.search-badge.show' | translate }}
+            <button autofocus tabindex="0" class="btn-link" (click)="search(jobSearchForm.value)">{{ 'home.tools.job-search.search-badge.show' | translate }}
             </button>
         </div>
     </div>
