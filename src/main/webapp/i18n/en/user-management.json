@@ -26,7 +26,7 @@
         "login": "Login",
         "organization": "Organization",
         "phone": "Phone",
-        "phone.validation.invalid": "Phone is invalid",
+        "phone.validation.invalid": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx",
         "profiles": "Profiles",
         "search": {
             "placeholder": "Search for user by username, name or email"

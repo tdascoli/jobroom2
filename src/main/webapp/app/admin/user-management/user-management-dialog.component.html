@@ -90,13 +90,13 @@
 
         <div class="form-group">
             <label class="form-control-label" jhiTranslate="userManagement.phone">Phone</label>
-            <input type="text" class="form-control" name="phone" #phoneInput="ngModel"
-                   [(ngModel)]="user.phone" [pattern]="phoneRegex">
+            <jr2-phone-number-input id="phone" name="phone" [(ngModel)]="user.phone"
+                                    [jr2TextSizeLimit]="50" #phoneInput="ngModel"></jr2-phone-number-input>
 
             <div *ngIf="phoneInput.dirty && phoneInput.invalid">
                 <small class="form-text text-danger"
-                       *ngIf="phoneInput.errors.pattern" jhiTranslate="userManagement.phone.validation.invalid">
-                    Your phone is invalid.
+                       *ngIf="phoneInput.errors.phoneValidator" jhiTranslate="userManagement.phone.validation.invalid">
+                    Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx
                 </small>
             </div>
         </div>
