@@ -21,7 +21,8 @@ $additional-accent-amber: 	#ffc501;
 $additional-accent-yellow: 	#ffb120;
 $additional-accent-green: 	#64b500;
 
-$main-accent-color-400: #439cc5;
+$typeahead-color-canton: #439cc5;
+$typeahead-color-classification: $typeahead-color-canton;
 
 // Gray
 $main-color-gray-50:  $main-color-gray-lightest; // lighten 46.1%

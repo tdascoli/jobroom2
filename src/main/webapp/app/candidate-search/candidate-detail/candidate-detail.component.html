@@ -2,33 +2,35 @@
     <div class="row base">
         <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
             <div class="base__sticky-panel">
-                <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
-                    <li class="page-item">
-                        <a class="page-link" routerLink="/candidate-search">{{'candidate-detail.back' | translate}}</a>
-                    </li>
-                </ul>
+                <div class="d-flex d-sm-block flex-column-reverse">
+                    <ul class="pagination pagination--block pagination-alv d-md-flex">
+                        <li class="page-item">
+                            <a class="page-link" routerLink="/candidate-search">{{'candidate-detail.back' | translate}}</a>
+                        </li>
+                    </ul>
 
-                <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
-                    <div class="detail__subtitle">{{ 'candidate-detail.job-center.title' | translate }}</div>
+                    <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
+                        <div class="detail__subtitle">{{ 'candidate-detail.job-center.title' | translate }}</div>
 
-                    <div class="detail__content">
-                        <address>
-                            <p>
-                                <strong>{{ jobCenter.address.name }}</strong><br/>
-                                {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}<br/>
-                                {{jobCenter.address.zipCode}} {{jobCenter.address.city}}
-                            </p>
-                        </address>
+                        <div class="detail__content">
+                            <address>
+                                <p>
+                                    <strong>{{ jobCenter.address.name }}</strong><br/>
+                                    {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}<br/>
+                                    {{jobCenter.address.zipCode}} {{jobCenter.address.city}}
+                                </p>
+                            </address>
 
                         <p>
                             {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone
                             | jr2PhoneNumber}}</a><br/>
-                        <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
-                            {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
-                        </div>
+                            <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
+                                {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
+                            </div>
                         </p>
-                        <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
                     </div>
+                </div>
+
                 </div>
             </div>
         </div>
@@ -50,7 +52,7 @@
 
             <!-- Occupation -->
             <div *ngIf="jobExperiences$ | async as jobExperiences" class="candidate-detail__content">
-                <h4 class="candidate-detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
+                <h4 class="detail__content__title candidate-detail__content__title--occupation">{{ 'candidate-detail.job-experience.title' | translate }}</h4>
 
                 <div *ngFor="let jobExperience of jobExperiences"
                      class="detail__content detail--occupation">

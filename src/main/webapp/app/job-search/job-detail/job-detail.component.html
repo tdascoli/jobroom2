@@ -2,60 +2,58 @@
     <div class="row base">
         <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
             <div class="base__sticky-panel">
-                <ul class="pagination pagination--block pagination-alv  d-none d-md-flex">
-                    <li class="page-item">
-                        <a class="page-link" routerLink="/job-search">{{'job-detail.back' | translate}}</a>
-                    </li>
-                </ul>
+                <div class="d-flex d-sm-block flex-column-reverse">
+                    <ul class="pagination pagination--block pagination-alv d-flex">
+                        <li class="page-item">
+                            <a class="page-link" routerLink="/job-search">{{'job-detail.back' | translate}}</a>
+                        </li>
+                    </ul>
 
-                <hr class="visible-print-block d-none"/>
+                    <hr class="visible-print-block d-none"/>
 
-                <div class="detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
-                    <div class="detail__content" *ngIf="job.company">
-                        <address>
-                            <h4>{{ job.company.name }}</h4>
-                            <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
-                            <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
-                        </address>
+                    <div class="alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                        <div class="detail__content" *ngIf="job.company">
+                            <address>
+                                <h4>{{ job.company.name }}</h4>
+                                <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
+                                <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
+                            </address>
 
-                        <p><a href="tel:{{job.company.phone}}">{{ job.company.phone | jr2PhoneNumber }}</a></p>
-                        <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
-                            }}</a></p>
-                        <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
-                            truncateCharacters:30 }}</a></p>
-                    </div>
-
-                    <div *ngIf="job.contact">
-                        <div class="detail__content">
-                            <h4>{{'job-detail.contactPerson' | translate}}</h4>
-                            <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
-                                {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
-                            </p>
-                            <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone| jr2PhoneNumber }}</a></p>
+                            <p><a href="tel:{{job.company.phone}}">{{ job.company.phone }}</a></p>
                             <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
                                 }}</a></p>
+                            <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
+                                truncateCharacters:30 }}</a></p>
+                        </div>
+
+                        <div *ngIf="job.contact">
+                            <div class="detail__content">
+                                <h4>{{'job-detail.contactPerson' | translate}}</h4>
+                                <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
+                                    {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
+                                </p>
+                                <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone }}</a></p>
+                                <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
+                                    }}</a></p>
+                            </div>
                         </div>
                     </div>
-                </div>
+                  
+                    <div *ngIf="jobCenter$ | async as jobCenter" class="order-sm-2 alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                        <div class="detail__content">
+                            <address>
+                                <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
+                                <p>{{jobCenter.address.name}}, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</p>
+                                <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
+                                <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a></p>
+                            </address>
 
-                <div *ngIf="jobCenter$ | async as jobCenter"
-                     class="detail__company alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
-                    <div class="detail__content">
-                        <address>
-                            <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
-                            <p>{{jobCenter.address.name}}, {{jobCenter.address.street}}
-                                {{jobCenter.address.houseNumber}}</p>
-                            <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
-                            <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">
-                                {{jobCenter.phone | jr2PhoneNumber}}</a>
-                            </p>
-                        </address>
-
-                        <ng-container *ngIf="job.avamJobId || job.egovJobId">
-                            <h4>{{'job-detail.reference.job-id' | translate}}:</h4>
-                            <p *ngIf="job.avamJobId">AVAM: {{job.avamJobId}}</p>
-                            <p *ngIf="job.egovJobId">Job-Room: {{job.egovJobId}}</p>
-                        </ng-container>
+                            <ng-container *ngIf="job.avamJobId || job.egovJobId">
+                                <h4>{{'job-detail.reference.job-id' | translate}}:</h4>
+                                <p *ngIf="job.avamJobId">AVAM: {{job.avamJobId}}</p>
+                                <p *ngIf="job.egovJobId">Job-Room: {{job.egovJobId}}</p>
+                            </ng-container>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -164,7 +162,7 @@
                     <!--aria-hidden="true"></i>-->
                     <!--{{'job-detail.action.sendEmail' | translate}}</a>-->
                     <!--</li>-->
-                    <li class="nav-item">
+                    <li class="nav-item d-none d-md-block">
                         <a class="nav-link" (click)="printJob()">
                             <span class="fa fa-print" aria-hidden="true"></span>
                             {{'job-detail.action.print' | translate}}</a>

@@ -82,7 +82,10 @@ export class NavbarComponent implements OnInit {
         return this.principal.isAuthenticated();
     }
 
-    login() {
+    login(isMobile: boolean) {
+        if (isMobile) {
+            this.collapseNavbar();
+        }
         this.modalRef = this.loginModalService.open();
     }
 

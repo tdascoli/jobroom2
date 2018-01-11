@@ -33,4 +33,8 @@ Style guide customization
         }
     }
 }
-
+@media screen and (max-width: 767px){
+    .navbar-nav .dropdown-menu.show {
+        position: absolute;
+    }
+}

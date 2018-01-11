@@ -149,41 +149,40 @@
                             </a>
                         </li>
                         <li class="nav-item" *ngIf="!isAuthenticated()">
-                            <a class="nav-link nav-link--login" (click)="login()"
+                            <a class="nav-link nav-link--login" (click)="login(true)"
                                jhiTranslate="global.menu.account.login">
                                 Login
                             </a>
 
                         </li>
-                        <li ngbDropdown class="nav-item dropdown" *ngIf="isAuthenticated()">
-                            <a ngbDropdownToggle class="nav-link nav-link--account dropdown-toggle"
-                               href="javascript:void(0);">
+                        <li ngbDropdown class="nav-item" *ngIf="isAuthenticated()">
+                            <strong class="nav-link">
                                 {{account?.firstName}} {{account?.lastName}}
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-right dropdown-menu--account" ngbDropdownMenu>
-                                <li>
-                                    <a class="dropdown-item dropdown-item--account" routerLink="settings"
+                            </strong>
+                            <ul>
+                                <li class="nav-item">
+                                    <a routerLink="settings"
                                        routerLinkActive="active"
                                        (click)="collapseNavbar()">
                                         <span jhiTranslate="global.menu.account.settings">Settings</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item dropdown-item--account" routerLink="password"
+                                <li class="nav-item">
+                                    <a routerLink="password"
                                        routerLinkActive="active"
                                        (click)="collapseNavbar()">
                                         <span jhiTranslate="global.menu.account.password">Password</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item dropdown-item--account" id="logout"
+                                <li class="nav-item">
+                                    <a id="logout"
                                        routerLinkActive="active"
                                        (click)="logout()">
                                         <span jhiTranslate="global.menu.account.logout">Sign out</span>
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="dropdown-item dropdown-item--account" *jhiHasAnyAuthority="'ROLE_PRIVATE_EMPLOYMENT_AGENT'"
+                                <li class="nav-item">
+                                    <a *jhiHasAnyAuthority="'ROLE_PRIVATE_EMPLOYMENT_AGENT'"
                                        routerLink="dashboard" id="dashboard" (click)="collapseNavbar()">
                                         <span jhiTranslate="global.menu.dashboard">Dashboard</span>
                                     </a>
@@ -316,7 +315,7 @@
                     </a>
                 </li>
                 <li class="nav-item" *ngIf="!isAuthenticated()">
-                    <a class="nav-link nav-link--login" (click)="login()"
+                    <a class="nav-link nav-link--login" (click)="login(false)"
                        jhiTranslate="global.menu.account.login">
                         Login
                     </a>

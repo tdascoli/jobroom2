@@ -20,6 +20,7 @@ export const COMPANY_DEBOUNCE_TIME = 500;
     styleUrls: ['./job-search-filter.component.scss']
 })
 export class JobSearchFilterComponent implements OnInit, OnDestroy {
+    isFilterCollapsed: boolean;
     @Input() searchFilter: JobSearchFilter;
 
     @Input()
@@ -44,6 +45,8 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
 
     constructor(private store: Store<JobSearchState>,
                 private fb: FormBuilder) {
+        // todo review if the isFilterCollapsed should be part of the CandidateSearchState or not
+        this.isFilterCollapsed = true;
     }
 
     ngOnInit(): void {
@@ -74,5 +77,9 @@ export class JobSearchFilterComponent implements OnInit, OnDestroy {
         if (this.subscription) {
             this.subscription.unsubscribe();
         }
+    }
+
+    toggleFilter() {
+        this.isFilterCollapsed = !this.isFilterCollapsed;
     }
 }

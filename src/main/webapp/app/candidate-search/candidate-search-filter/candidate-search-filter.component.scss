@@ -21,10 +21,45 @@
         background-color: rgba($main-color-gray-50, 1.0);
         border-bottom: 1px solid $main-color-gray-lighter;
     }
+
+    /*
+    /deep/ jr2-job-search-filter {
+        display: block;
+        padding-top: ($grid-gutter-width / 2);
+    }
+    */
+
+    .filter__content {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .filter--toggler {
+        padding: 0 0.75rem 0.75rem;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+
+        &:before {
+            display: inline-block;
+            margin-right: .5em;
+            vertical-align: -0.05em;
+            font-family: FontAwesome;
+            font-size: inherit;
+            content: '\F13A';
+        }
+
+        &.show:before {
+            content: '\f0aa';
+        }
+    }
 }
 
 :host /deep/ .typeahead-singleselect__type-label--canton {
-    background-color: $main-accent-color-400;
+    background-color: $typeahead-color-canton;
 }
 
 :host /deep/ .typeahead-singleselect__type-label--locality {

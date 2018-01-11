@@ -1,3 +1,6 @@
+
+@import '../../../content/scss/jbr2_variables.scss';
+
 .btn-block {
     text-overflow: ellipsis;
     overflow: hidden;
@@ -5,7 +8,7 @@
 
 .logo-box__company {
     p {
-        margin-bottom: 0px;
+        margin-bottom: 0;
     }
 
     h4 {
@@ -22,4 +25,8 @@ td:first-of-type {
     margin-bottom: auto;
 }
 
-
+@media screen and (max-width: 479px) {
+    .logo-box__company {
+        margin-top: $margin-x-narrow;
+    }
+}

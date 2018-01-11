@@ -46,27 +46,3 @@
 :host {
     width: 100%;
 }
-
-/*
-:host /deep/ ngb-typeahead-window {
-    max-width: 485px;
-    line-height: 1.3rem;
-    z-index: 1000;
-
-    button.dropdown-item {
-        width: 100%;
-        height: auto !important;
-    }
-}
-
-:host {
-    width: 100%;
-}
-
-@media screen and (max-width: 479px) {
-    :host /deep/ ngb-typeahead-window {
-        max-width: 330px;
-        left: 20px !important;
-    }
-}
-  */

@@ -1,7 +1,7 @@
 @import '../../../../content/scss/jbr2_variables.scss';
 
 :host /deep/ .typeahead-multiselect__type-label--classification {
-    background-color: $main-accent-color-400;
+    background-color: $typeahead-color-classification;
 }
 
 :host /deep/ .typeahead-multiselect__type-label--occupation {
@@ -9,7 +9,7 @@
 }
 
 :host /deep/ .typeahead-multiselect__type-label--canton {
-    background-color: $main-accent-color-400;
+    background-color: $typeahead-color-canton;
 }
 
 :host /deep/ .typeahead-multiselect__type-label--locality {

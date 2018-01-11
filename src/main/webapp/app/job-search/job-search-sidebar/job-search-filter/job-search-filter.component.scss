@@ -42,3 +42,38 @@
         }
     }
 }
+
+@media screen and (max-width: 479px){
+    /deep/ jr2-job-search-filter {
+        display: block;
+        padding-top: ($grid-gutter-width / 2);
+    }
+
+    .filter__content {
+        display: none;
+
+        &.show {
+            display: block;
+        }
+    }
+
+    .filter--toggler {
+        padding: 0 0.75rem 0.75rem;
+        font-size: 1rem;
+        text-align: center;
+        margin: 0;
+
+        &:before {
+            display: inline-block;
+            margin-right: .5em;
+            vertical-align: -0.05em;
+            font-family: FontAwesome;
+            font-size: inherit;
+            content: '\F13A';
+        }
+
+        &.show:before {
+            content: '\f0aa';
+        }
+    }
+}

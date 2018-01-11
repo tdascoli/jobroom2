@@ -1,3 +1,11 @@
+
+@import '../../../content/scss/jbr2_variables.scss';
+
 .candidate-detail__content__title--occupation {
     margin-bottom: 0;
+}
+@media screen and (max-width: 479px) {
+    .job-detail__pes {
+        margin-top: $margin-x-narrow;
+    }
 }

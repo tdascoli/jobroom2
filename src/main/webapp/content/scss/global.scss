@@ -32,6 +32,12 @@ button.close {
     cursor: pointer;
 }
 
+@media screen and (max-width: 479px) {
+    .main {
+        padding-bottom: 135px;
+    }
+}
+
 @media screen and (min-width: 480px) {
     .base__sticky-panel {
         position: sticky;
@@ -78,6 +84,10 @@ ngb-typeahead-window {
     ngb-typeahead-window {
         max-width: 300px !important;
         left: 20px !important;
+
+        .dropdown-item {
+            white-space: normal;
+        }
     }
 }
 
@@ -99,4 +109,11 @@ Toolbar (alv-styleguide)
     jr2-candidate-search .base__content--wide {
         padding-top: calc((#{$toolbar-height} + #{$toolbar-margin-bottom}) - #{$header-margin});
     }
+}
+
+// remove after 0.1.5
+.typeahead-multiselect__tag--classification,
+.typeahead-multiselect__tag--canton {
+    background-color: $typeahead-color-classification !important;
+    border-color: $typeahead-color-classification !important;
 }

@@ -1,38 +1,41 @@
-<p class="filter__title text--line-height--h3">{{'job-search.filter.title' | translate}}</p>
+<p class="d-none d-sm-block filter__title text--line-height--h3">{{'job-search.filter.title' | translate}}</p>
 
-<form [formGroup]="filterForm" novalidate>
-    <div class="form-group">
-        <label for="sort" class="sr-only">{{'job-search.filter.sort.label' | translate}}</label>
-        <select class="form-control-sm custom-select" id="sort" formControlName="sort">
-            <option *ngFor="let sort of sortOptions | keys" [ngValue]="sort.key">
-                {{'job-search.filter.sort.option.'+ sort.value | translate}}
-            </option>
-        </select>
-    </div>
+<div class="filter__content" [ngClass]="{show: !isFilterCollapsed}">
+    <form [formGroup]="filterForm" novalidate>
+        <div class="form-group">
+            <label for="sort" class="sr-only">{{'job-search.filter.sort.label' | translate}}</label>
+            <select class="form-control-sm custom-select" id="sort" formControlName="sort">
+                <option *ngFor="let sort of sortOptions | keys" [ngValue]="sort.key">
+                    {{'job-search.filter.sort.option.'+ sort.value | translate}}
+                </option>
+            </select>
+        </div>
 
-    <div class="form-group">
-        <label for="companyName" class="small">{{'job-search.filter.company-name.label' | translate}}</label>
-        <input [formControl]="companyName" class="form-control form-control-sm" id="companyName"
-               [placeholder]="'job-search.filter.company-name.label' | translate">
-    </div>
+        <div class="form-group">
+            <label for="companyName" class="small">{{'job-search.filter.company-name.label' | translate}}</label>
+            <input [formControl]="companyName" class="form-control form-control-sm" id="companyName"
+                   [placeholder]="'job-search.filter.company-name.label' | translate">
+        </div>
 
-    <div class="form-group">
-        <label for="contractType" class="small">{{'job-search.filter.contract-type.label' | translate}}</label>
-        <select class="form-control-sm custom-select" formControlName="contractType" id="contractType">
-            <option *ngFor="let contractType of contractTypes | keys" [ngValue]="contractType.key">
-                {{'job-search.filter.contract-type.option.'+ contractType.value | translate}}
-            </option>
-        </select>
-    </div>
-    <div class="form-group">
-        <label class="small">{{'job-search.filter.working-time.label' | translate}}</label>
-        <jr2-range-input formControlName="workingTime" [min]="0" [max]="100" [step]="10" inputSize="sm"></jr2-range-input>
-    </div>
-    <div class="form-group range-slider">
-        <label class="small">{{ 'job-search.filter.online-since.label' | translate}}</label>
-        <nouislider [min]="1" [max]="60" [config]="{step: 1}" class="range-input"
-                    [formControl]="filterForm.get('onlineSince')"></nouislider>
-        <span class="range-slider__value range-slider__value--unit small"
-              [attr.data-unit]="'job-search.filter.online-since.days.label' | translate">{{ filterForm.get('onlineSince').value }}</span>
-    </div>
-</form>
+        <div class="form-group">
+            <label for="contractType" class="small">{{'job-search.filter.contract-type.label' | translate}}</label>
+            <select class="form-control-sm custom-select" formControlName="contractType" id="contractType">
+                <option *ngFor="let contractType of contractTypes | keys" [ngValue]="contractType.key">
+                    {{'job-search.filter.contract-type.option.'+ contractType.value | translate}}
+                </option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="small">{{'job-search.filter.working-time.label' | translate}}</label>
+            <jr2-range-input formControlName="workingTime" [min]="0" [max]="100" [step]="10" inputSize="sm"></jr2-range-input>
+        </div>
+        <div class="form-group range-slider">
+            <label class="small">{{ 'job-search.filter.online-since.label' | translate}}</label>
+            <nouislider [min]="1" [max]="60" [config]="{step: 1}" class="range-input"
+                        [formControl]="filterForm.get('onlineSince')"></nouislider>
+            <span class="range-slider__value range-slider__value--unit small"
+                  [attr.data-unit]="'job-search.filter.online-since.days.label' | translate">{{ filterForm.get('onlineSince').value }}</span>
+        </div>
+    </form>
+</div>
+<p (click)="toggleFilter()" class="d-sm-none filter--toggler" [ngClass]="{show: !isFilterCollapsed}">{{'job-search.filter.title' | translate}}</p>

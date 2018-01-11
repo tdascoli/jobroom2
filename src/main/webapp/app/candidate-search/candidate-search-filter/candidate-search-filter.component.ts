@@ -32,6 +32,7 @@ import {
     styleUrls: ['./candidate-search-filter.component.scss']
 })
 export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
+    isFilterCollapsed: boolean;
     @Input() searchFilter: CandidateSearchFilter;
 
     @Input()
@@ -70,6 +71,8 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
                 private fb: FormBuilder,
                 private store: Store<CandidateSearchState>,
                 private candidateService: CandidateService) {
+        // todo review if the isFilterCollapsed should be part of the CandidateSearchState or not
+        this.isFilterCollapsed = true;
     }
 
     ngOnInit(): void {
@@ -102,6 +105,10 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
     getLanguageOptions(): Observable<Array<string>> {
         return this.languageSkillService.getLanguages();
+    }
+
+    toggleFilter() {
+        this.isFilterCollapsed = !this.isFilterCollapsed;
     }
 
     fetchLocalitySuggestions = (prefix: string) =>
