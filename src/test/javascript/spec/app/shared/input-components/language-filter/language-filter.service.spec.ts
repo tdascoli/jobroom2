@@ -32,10 +32,10 @@ describe('LanguageFilterService', () => {
 
             // THEN
             const expected = [
-                { key: 'en', value: 'English' },
-                { key: 'fr', value: 'French' },
                 { key: 'de', value: 'German' },
+                { key: 'fr', value: 'French' },
                 { key: 'it', value: 'Italian' },
+                { key: 'en', value: 'English' },
                 { key: 'ua', value: 'Ukrainian' },
             ];
             const expectedObservable = cold('-a', { a: expected });
@@ -51,8 +51,8 @@ describe('LanguageFilterService', () => {
 
             // THEN
             const expected = [
-                { key: 'en', value: 'English' },
                 { key: 'de', value: 'German' },
+                { key: 'en', value: 'English' }
             ];
             const expectedObservable = cold('-a', { a: expected });
             expect(result).toBeObservable(expectedObservable);
