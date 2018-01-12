@@ -11,7 +11,6 @@ describe('Organization e2e test', () => {
     const fileToUpload = '../../../../main/webapp/content/images/logo-jhipster.png';
     const absolutePath = path.resolve(__dirname, fileToUpload);
 
-
     beforeAll(() => {
         browser.get('/');
         browser.waitForAngular();
@@ -51,7 +50,7 @@ describe('Organization e2e test', () => {
         organizationDialogPage.setPhoneInput('phone');
         expect(organizationDialogPage.getPhoneInput()).toMatch('phone');
         organizationDialogPage.typeSelectLastOption();
-        organizationDialogPage.getActiveInput().isSelected().then(function (selected) {
+        organizationDialogPage.getActiveInput().isSelected().then(function(selected) {
             if (selected) {
                 organizationDialogPage.getActiveInput().click();
                 expect(organizationDialogPage.getActiveInput().isSelected()).toBeFalsy();
@@ -96,58 +95,58 @@ export class OrganizationDialogPage {
     typeSelect = element(by.css('select#field_type'));
     activeInput = element(by.css('input#field_active'));
 
-    setExternalIdInput = function (externalId) {
+    setExternalIdInput = function(externalId) {
         this.externalIdInput.sendKeys(externalId);
     };
-    getExternalIdInput = function () {
+    getExternalIdInput = function() {
         return this.externalIdInput.getAttribute('value');
     };
-    setNameInput = function (name) {
+    setNameInput = function(name) {
         this.nameInput.sendKeys(name);
     };
-    getNameInput = function () {
+    getNameInput = function() {
         return this.nameInput.getAttribute('value');
     };
-    setStreetInput = function (street) {
+    setStreetInput = function(street) {
         this.streetInput.sendKeys(street);
     };
-    getStreetInput = function () {
+    getStreetInput = function() {
         return this.streetInput.getAttribute('value');
     };
-    setZipCodeInput = function (zipCode) {
+    setZipCodeInput = function(zipCode) {
         this.zipCodeInput.sendKeys(zipCode);
     };
-    getZipCodeInput = function () {
+    getZipCodeInput = function() {
         return this.zipCodeInput.getAttribute('value');
     };
-    setCityInput = function (city) {
+    setCityInput = function(city) {
         this.cityInput.sendKeys(city);
     };
-    getCityInput = function () {
+    getCityInput = function() {
         return this.cityInput.getAttribute('value');
     };
-    setEmailInput = function (email) {
+    setEmailInput = function(email) {
         this.emailInput.sendKeys(email);
     };
-    getEmailInput = function () {
+    getEmailInput = function() {
         return this.emailInput.getAttribute('value');
     };
-    setPhoneInput = function (phone) {
+    setPhoneInput = function(phone) {
         this.phoneInput.sendKeys(phone);
     };
-    getPhoneInput = function () {
+    getPhoneInput = function() {
         return this.phoneInput.getAttribute('value');
     };
-    setTypeSelect = function (type) {
+    setTypeSelect = function(type) {
         this.typeSelect.sendKeys(type);
     };
-    getTypeSelect = function () {
+    getTypeSelect = function() {
         return this.typeSelect.element(by.css('option:checked')).getText();
     };
-    typeSelectLastOption = function () {
+    typeSelectLastOption = function() {
         this.typeSelect.all(by.tagName('option')).last().click();
     };
-    getActiveInput = function () {
+    getActiveInput = function() {
         return this.activeInput;
     };
 

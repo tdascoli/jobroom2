@@ -4,8 +4,8 @@ import {
     URLSearchParams
 } from '@angular/http';
 import { JhiHttpInterceptor } from 'ng-jhipster';
-import { JhiBase64Service } from "ng-jhipster/src/service/base64.service";
-import { CookieService } from "ngx-cookie";
+import { JhiBase64Service } from 'ng-jhipster/src/service/base64.service';
+import { CookieService } from 'ngx-cookie';
 
 export class CacheKeyInterceptor extends JhiHttpInterceptor {
 

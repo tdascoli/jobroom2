@@ -7,9 +7,9 @@ import { LocalStorageService, SessionStorageService } from 'ng2-webstorage';
 import { AuthExpiredInterceptor } from './auth-expired.interceptor';
 import { ErrorHandlerInterceptor } from './errorhandler.interceptor';
 import { NotificationInterceptor } from './notification.interceptor';
-import { JhiBase64Service } from "ng-jhipster/src/service/base64.service";
-import { CookieService } from "ngx-cookie";
-import { CacheKeyInterceptor } from "./cache.interceptor";
+import { JhiBase64Service } from 'ng-jhipster/src/service/base64.service';
+import { CookieService } from 'ngx-cookie';
+import { CacheKeyInterceptor } from './cache.interceptor';
 
 export function interceptableFactory(backend: XHRBackend,
                                      defaultOptions: RequestOptions,

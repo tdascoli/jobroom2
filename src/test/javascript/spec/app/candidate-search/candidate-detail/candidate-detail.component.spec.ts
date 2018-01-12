@@ -11,7 +11,7 @@ import { Observable } from 'rxjs/Observable';
 import { StoreModule } from '@ngrx/store';
 import { candidateSearchReducer } from '../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
 import { MockPrincipal } from '../../../helpers/mock-principal.service';
-import { Principal } from "../../../../../../main/webapp/app/shared";
+import { Principal } from '../../../../../../main/webapp/app/shared';
 
 describe('CandidateDetailComponent', () => {
     let component: CandidateDetailComponent;
