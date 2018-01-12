@@ -118,12 +118,12 @@
                                                 jhiTranslate="global.menu.admin.apidocs">API</span>
                                         </a>
 
-                                        <a class="dropdown-item" routerLinkActive="active" (click)="collapseNavbar()">
+                                        <a class="dropdown-item" routerLinkActive="active"
+                                           (click)="isReindexMenuCollapsed = !isReindexMenuCollapsed">
                                             <span class="fa fa-fw fa-search"
                                                   aria-hidden="true"></span>
-                                            <span routerLink="elasticsearch-reindex"
-                                                  jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
-                                            <div class="nav flex-column navbar__nested-nav">
+                                            <span jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
+                                            <div (click)="collapseNavbar()" [ngbCollapse]="isReindexMenuCollapsed" class="navbar__nested-nav">
                                                 <a class="nav-link"  routerLink="elasticsearch-reindex" jhiTranslate="global.menu.admin.elasticsearch-reindex.all">All</a>
                                                 <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.users"
                                                    [routerLink]="['elasticsearch-reindex', { document: 'users' }]">Users</a>
@@ -135,6 +135,7 @@
                                                    [routerLink]="['elasticsearch-reindex', { document: 'reference-data' }]">Reference Data</a>
                                             </div>
                                         </a>
+
 
                                         <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
 
@@ -292,12 +293,12 @@
                                         jhiTranslate="global.menu.admin.apidocs">API</span>
                                 </a>
 
-                                <a class="dropdown-item" routerLinkActive="active" (click)="collapseNavbar()">
+                                <a class="dropdown-item" routerLinkActive="active"
+                                   (click)="isReindexMenuCollapsed = !isReindexMenuCollapsed">
                                     <span class="fa fa-fw fa-search"
                                           aria-hidden="true"></span>
-                                    <span routerLink="elasticsearch-reindex"
-                                        jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
-                                    <div class="nav flex-column navbar__nested-nav">
+                                    <span jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
+                                    <div (click)="collapseNavbar()" [ngbCollapse]="isReindexMenuCollapsed" class="navbar__nested-nav">
                                         <a class="nav-link"  routerLink="elasticsearch-reindex" jhiTranslate="global.menu.admin.elasticsearch-reindex.all">All</a>
                                         <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.users"
                                            [routerLink]="['elasticsearch-reindex', { document: 'users' }]">Users</a>

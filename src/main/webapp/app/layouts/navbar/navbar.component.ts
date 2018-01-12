@@ -29,6 +29,7 @@ export class NavbarComponent implements OnInit {
     swaggerEnabled: boolean;
     modalRef: NgbModalRef;
     version: string;
+    isReindexMenuCollapsed: boolean;
 
     constructor(private loginService: LoginService,
                 private eventManager: JhiEventManager,
@@ -41,6 +42,7 @@ export class NavbarComponent implements OnInit {
                 private elRef: ElementRef) {
         this.version = VERSION ? 'v' + VERSION : '';
         this.isNavbarCollapsed = true;
+        this.isReindexMenuCollapsed = true;
     }
 
     ngOnInit() {
@@ -76,6 +78,7 @@ export class NavbarComponent implements OnInit {
 
     collapseNavbar() {
         this.isNavbarCollapsed = true;
+        this.isReindexMenuCollapsed = true;
     }
 
     isAuthenticated() {
