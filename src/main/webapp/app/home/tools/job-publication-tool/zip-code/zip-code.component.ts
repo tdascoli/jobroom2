@@ -1,9 +1,18 @@
 import {
     ChangeDetectionStrategy,
-    Component, Input, OnChanges,
-    OnInit, SimpleChanges
+    Component,
+    Input,
+    OnChanges,
+    OnInit,
+    SimpleChanges
 } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, ValidationErrors, Validators } from '@angular/forms';
+import {
+    FormBuilder,
+    FormControl,
+    FormGroup,
+    ValidationErrors,
+    Validators
+} from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import { LocalityAutocomplete } from '../../../../shared/reference-service';
 import { LocalityService } from '../../../../shared/index';
@@ -41,7 +50,11 @@ export class ZipCodeComponent implements OnInit, OnChanges {
 
     static localityResultMapper(localityAutocomplete: LocalityAutocomplete): any {
         return localityAutocomplete.localities
-            .map((locality) => ({ zip: locality.zipCode, city: locality.city, communalCode: locality.communalCode }));
+            .map((locality) => ({
+                zip: locality.zipCode,
+                city: locality.city,
+                communalCode: locality.communalCode
+            }));
     }
 
     private static zipAutocompleterRequiredValidator(control: AbstractControl): ValidationErrors | null {
@@ -95,16 +108,24 @@ export class ZipCodeComponent implements OnInit, OnChanges {
             };
 
             if (changes['switzSelected'].firstChange) {
-                const zipAutocompleterValidators = this.optional ? [ZipCodeComponent.zipAutocompleterOptionalValidator]
+                const zipAutocompleterValidators = this.optional
+                    ? [ZipCodeComponent.zipAutocompleterOptionalValidator]
                     : [ZipCodeComponent.zipAutocompleterRequiredValidator];
                 this.zipAutocompleter = this.fb.control('', zipAutocompleterValidators);
 
-                const zipGroupValidators = this.optional ? [] : [Validators.required];
+                const zipGroupInputValidators = this.optional
+                    ? []
+                    : [Validators.required];
+
+                const zipGroupValidator = this.optional
+                    ? ZipCodeComponent.zipGroupValidator
+                    : null;
+
                 this.zipGroup = this.fb.group({
-                    zip: ['', [...zipGroupValidators, Validators.pattern(/^\d*$/)]],
-                    city: ['', zipGroupValidators]
+                    zip: ['', [...zipGroupInputValidators, Validators.pattern(/^\d*$/)]],
+                    city: ['', zipGroupInputValidators]
                 }, {
-                    validator: ZipCodeComponent.zipGroupValidator
+                    validator: zipGroupValidator
                 });
 
                 if (this.group.get(this.controlName)) {

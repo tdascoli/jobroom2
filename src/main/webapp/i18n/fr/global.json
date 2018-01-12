@@ -80,23 +80,23 @@
             }
         },
         "degree": {
-          "NOT_KNOWN": "Inconnue",
-          "PRIMAR_OBLIGATORISCHE_SCHULE": "\u00c9cole obligatoire (Primaire)",
+            "NOT_KNOWN": "Inconnue",
+            "PRIMAR_OBLIGATORISCHE_SCHULE": "\u00c9cole obligatoire (Primaire)",
             "SEK_II_BERUFSMATURITAET": "Maturit\u00e9 professionnelle ou \u00e9quivalent",
             "SEK_II_FACHMATURITAET": "Maturit\u00e9 sp\u00e9cialis\u00e9e ou \u00e9quivalent",
             "SEK_II_FACHMITTELSCHULE": "Ecole de culture g\u00e9n\u00e9rale ou \u00e9quivalent",
-          "SEK_II_GRUNDBILDUNG_EBA": "Formation professionnelle initiale AFP ou \u00e9quivalent",
-          "SEK_II_GRUNDBILDUNG_EFZ": "Formation professionnelle initiale CFC ou \u00e9quivalent",
+            "SEK_II_GRUNDBILDUNG_EBA": "Formation professionnelle initiale AFP ou \u00e9quivalent",
+            "SEK_II_GRUNDBILDUNG_EFZ": "Formation professionnelle initiale CFC ou \u00e9quivalent",
             "SEK_II_GYMNASIALE_MATURITAET": "Maturit\u00e9 gymnasiale ou \u00e9quivalent",
             "SEK_II_WEITERFUEHRENDE_SCHULE": "Ecole sup\u00e9rieure (Sec. II)",
             "SEK_I_OBLIGATORISCHE_SCHULE": "\u00c9cole obligatoire (Sec. I)",
-          "TER_BACHELOR_FACHHOCHSCHULE": "Bachelor HES ou \u00e9quivalent",
-          "TER_BACHELOR_UNIVERSITAET": "Bachelor HEU ou \u00e9quivalent",
-          "TER_BERUFSBILDUNG_DIPL": "Formation professionnelle sup\u00e9rieure, dipl\u00f4me ou \u00e9quivalent",
-          "TER_BERUFSBILDUNG_FA": "Formation professionnelle sup\u00e9rieure BF ou \u00e9quivalent",
-          "TER_DOKTORAT_UNIVERSITAET": "Doctorat HEU ou \u00e9quivalent",
-          "TER_MASTER_FACHHOCHSCHULE": "Master HES ou \u00e9quivalent",
-          "TER_MASTER_UNIVERSITAET": "Master HEU ou \u00e9quivalent"
+            "TER_BACHELOR_FACHHOCHSCHULE": "Bachelor HES ou \u00e9quivalent",
+            "TER_BACHELOR_UNIVERSITAET": "Bachelor HEU ou \u00e9quivalent",
+            "TER_BERUFSBILDUNG_DIPL": "Formation professionnelle sup\u00e9rieure, dipl\u00f4me ou \u00e9quivalent",
+            "TER_BERUFSBILDUNG_FA": "Formation professionnelle sup\u00e9rieure BF ou \u00e9quivalent",
+            "TER_DOKTORAT_UNIVERSITAET": "Doctorat HEU ou \u00e9quivalent",
+            "TER_MASTER_FACHHOCHSCHULE": "Master HES ou \u00e9quivalent",
+            "TER_MASTER_UNIVERSITAET": "Master HEU ou \u00e9quivalent"
         },
         "drivingLicenceCategory": {
             "A": "A",
@@ -300,7 +300,7 @@
                     "BASIC": "Connaissances de base",
                     "INTERMEDIATE": "Bonnes connaissances",
                     "NONE": "Pas de connaissances",
-                  "PROFICIENT": "Tr\u00e8s bonnes connaissances"
+                    "PROFICIENT": "Tr\u00e8s bonnes connaissances"
                 },
                 "lt": "Lituanien",
                 "mk": "Mac\u00e9donien",

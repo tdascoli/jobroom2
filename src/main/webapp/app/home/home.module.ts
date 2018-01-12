@@ -20,6 +20,7 @@ import { HomeRouterEffects } from './state-management/effects/router.effects';
 import { JobPublicationResolverService } from './tools/job-publication-tool/service/job-publication-resolver.service';
 import { UserDataResolverService } from './tools/job-publication-tool/service/user-data-resolver.service';
 import { ScrollToFirstInvalidDirective } from './tools/job-publication-tool/scroll-to-first-invalid.directive';
+import { InputErrorMessageComponent } from './tools/job-publication-tool/input-error-message/input-error-message.component';
 
 @NgModule({
     imports: [
@@ -42,7 +43,8 @@ import { ScrollToFirstInvalidDirective } from './tools/job-publication-tool/scro
         ToolbarItemComponent,
         LanguageSkillsComponent,
         ZipCodeComponent,
-        ScrollToFirstInvalidDirective
+        ScrollToFirstInvalidDirective,
+        InputErrorMessageComponent
     ],
     entryComponents: [],
     providers: [

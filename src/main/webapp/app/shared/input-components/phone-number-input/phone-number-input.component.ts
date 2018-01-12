@@ -102,6 +102,7 @@ export class PhoneNumberInputComponent implements OnInit, ControlValueAccessor, 
         } else {
             this._onChange(eventValue);
         }
+        this._onTouched();
     }
 
     onBlur(event: any) {
@@ -111,6 +112,7 @@ export class PhoneNumberInputComponent implements OnInit, ControlValueAccessor, 
         if (internationalValue) {
             this.inputViewChild.nativeElement.value = internationalValue;
         }
+        this._onTouched();
     }
 
     private _onChange = (_: any) => {

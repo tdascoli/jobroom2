@@ -58,7 +58,7 @@
                     "title": "Kontaktperson"
                 },
                 "date-placeholder": "TT.MM.JJJJ",
-              "degree": "Ausbildung",
+                "degree": "Ausbildung",
                 "description": {
                     "characters-counter-text": "{{count}} Zeichen verbleibend.",
                     "label": "T\u00e4tigkeit /Anforderungen",
@@ -89,11 +89,11 @@
                     "placeholder": "Beruf"
                 },
                 "optional": "Optional",
-              "placeholders": {
-                "email": "muster@email.ch",
-                "phone": "031 999 99 99",
-                "url": "http://www.muster.ch"
-              },
+                "placeholders": {
+                    "email": "muster@email.ch",
+                    "phone": "031 999 99 99",
+                    "url": "http://www.muster.ch"
+                },
                 "publication": {
                     "title": "Publikationsmedien"
                 },
@@ -113,7 +113,16 @@
                 "submit": "Job publizieren",
                 "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
                 "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
-              "workload": "Arbeitspensum"
+                "workload": "Arbeitspensum",
+                "messages": {
+                    "validate": {
+                        "required": "Field is required",
+                        "zip-format": "Invalid ZIP code format",
+                        "zip-or-city-format": "Invalid ZIP code or city value",
+                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
+                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)"
+                    }
+                }
             },
             "job-search": {
                 "search-badge": {

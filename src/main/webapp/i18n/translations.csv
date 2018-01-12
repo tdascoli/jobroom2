@@ -578,6 +578,7 @@ home,home.tools.job-publication.application.phone,Telefon,Telephone number,Tél�
 home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Application by telephone,Postulation par téléphone,Candidatura telefonica
 home,home.tools.job-publication.application.title,Bewerbungsformen,Application forms,Formes de postulation,Forme di candidatura
 home,home.tools.job-publication.company.country,Land,Country,Pays,Paese
+home,home.tools.job-publication.company.house-number,Nr.,No.,N°,N.
 home,home.tools.job-publication.company.postbox-city,Ort,City,Lieu,Luogo
 home,home.tools.job-publication.company.postbox-number,Postfach-Nr.,PO box no.,Numéro de case postale,N. casella postale
 home,home.tools.job-publication.company.postbox-zip,Postfach PLZ,PO box Postcode,Case postale NPA,Casella postale NPA
@@ -613,6 +614,11 @@ home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
 home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Sede di lavoro
 home,home.tools.job-publication.locality.zip,PLZ,Postcode,"NPA  ",NPA / Luogo
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postcode / City,NPA / Lieu,NPA / Luogo
+home,home.tools.job-publication.messages.validate.email-format,Invalid email address format (expected eg.: example-email@seco.ch),Invalid email address format (expected eg.: example-email@seco.ch),Invalid email address format (expected eg.: example-email@seco.ch),Invalid email address format (expected eg.: example-email@seco.ch)
+home,home.tools.job-publication.messages.validate.phone-format,Invalid phone number format (expected eg.: +41xxxxxxx),Invalid phone number format (expected eg.: +41xxxxxxx),Invalid phone number format (expected eg.: +41xxxxxxx),Invalid phone number format (expected eg.: +41xxxxxxx)
+home,home.tools.job-publication.messages.validate.required,Field is required,Field is required,Field is required,Field is required
+home,home.tools.job-publication.messages.validate.zip-format,Invalid ZIP code format,Invalid ZIP code format,Invalid ZIP code format,Invalid ZIP code format
+home,home.tools.job-publication.messages.validate.zip-or-city-format,Invalid ZIP code or city value,Invalid ZIP code or city value,Invalid ZIP code or city value,Invalid ZIP code or city value
 home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta
 home,home.tools.job-publication.occupation.label,Beruf,Occupation,Profession,Professione
 home,home.tools.job-publication.occupation.placeholder,Beruf,Occupation,Profession,Professione

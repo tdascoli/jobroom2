@@ -11,7 +11,7 @@
         },
         "application": {
             "additionalInfo": "Indications compl\u00e9mentaires",
-          "email": "Par e-mail",
+            "email": "Par e-mail",
             "mail": "Par la poste",
             "mail.text": "Voir l'adresse de l'entreprise",
             "phone": "Par t\u00e9l\u00e9phone",

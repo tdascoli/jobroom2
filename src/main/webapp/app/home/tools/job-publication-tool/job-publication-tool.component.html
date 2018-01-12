@@ -15,6 +15,10 @@
                                 translate }}</label>
                             <div>
                                 <input type="text" [jr2TextSizeLimit]="255" class="form-control" id="job-title" formControlName="title"/>
+                                <jr2-input-error-message [formGroup]="jobPublicationForm" path="job.title"
+                                                         [errorCodes]="['required']"
+                                                         [keys]="['home.tools.job-publication.messages.validate.required']">
+                                </jr2-input-error-message>
                             </div>
                         </div>
 
@@ -33,6 +37,10 @@
                                     <a href="#" class="fa-stack form-control--icon">
                                         <span class="fa fa-search fa-stack-1x" aria-hidden="true"></span>
                                     </a>
+                                    <jr2-input-error-message [formGroup]="jobPublicationForm" path="job.occupation.occupationSuggestion"
+                                                             [errorCodes]="['required']"
+                                                             [keys]="['home.tools.job-publication.messages.validate.required']">
+                                    </jr2-input-error-message>
                                 </div>
                             </div>
 
@@ -85,6 +93,10 @@
                                        jhiTranslate="home.tools.job-publication.description.characters-counter-text"
                                        translateValues="{count: {{ max(JOB_DESCRIPTION_MAX_LENGTH - jobDescription.value.length, 0) }}}">
                                 </small>
+                                <jr2-input-error-message [formGroup]="jobPublicationForm" path="job.description"
+                                                         [errorCodes]="['required']"
+                                                         [keys]="['home.tools.job-publication.messages.validate.required']">
+                                </jr2-input-error-message>
                             </div>
                         </div>
 
@@ -251,6 +263,10 @@
                             translate }}</label>
                         <div>
                             <input formControlName="name" type="text" [jr2TextSizeLimit]="255" class="form-control" id="unt-name"/>
+                            <jr2-input-error-message [formGroup]="jobPublicationForm" path="company.name"
+                                                     [errorCodes]="['required']"
+                                                     [keys]="['home.tools.job-publication.messages.validate.required']">
+                            </jr2-input-error-message>
                         </div>
                     </div>
 
@@ -266,6 +282,10 @@
                                 <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span></label>
                             <input formControlName="houseNumber" type="text" [jr2TextSizeLimit]="50" class="form-control w-100" id="unt-house-number"/>
                         </div>
+                        <jr2-input-error-message [formGroup]="jobPublicationForm" path="company.street"
+                                                 [errorCodes]="['required']"
+                                                 [keys]="['home.tools.job-publication.messages.validate.required']">
+                        </jr2-input-error-message>
                     </div>
 
                     <jr2-zip-code [group]="jobPublicationForm.get('company')"
@@ -321,6 +341,10 @@
                                     {{ 'global.contactPerson.salutation.MS' | translate }}
                                 </option>
                             </select>
+                            <jr2-input-error-message [formGroup]="jobPublicationForm" path="contact.salutation"
+                                                     [errorCodes]="['required']"
+                                                     [keys]="['home.tools.job-publication.messages.validate.required']">
+                            </jr2-input-error-message>
                         </div>
                     </div>
 
@@ -329,6 +353,10 @@
                             'home.tools.job-publication.contact.first-name' | translate }}</label>
                         <div>
                             <input formControlName="firstName" [jr2TextSizeLimit]="255" type="text" class="form-control" id="kp-vorname"/>
+                            <jr2-input-error-message [formGroup]="jobPublicationForm" path="contact.firstName"
+                                                     [errorCodes]="['required']"
+                                                     [keys]="['home.tools.job-publication.messages.validate.required']">
+                            </jr2-input-error-message>
                         </div>
                     </div>
                     <div class="form-group">
@@ -336,6 +364,10 @@
                             translate }}</label>
                         <div>
                             <input formControlName="lastName" [jr2TextSizeLimit]="255" type="text" class="form-control" id="kp-name"/>
+                            <jr2-input-error-message [formGroup]="jobPublicationForm" path="contact.lastName"
+                                                     [errorCodes]="['required']"
+                                                     [keys]="['home.tools.job-publication.messages.validate.required']">
+                            </jr2-input-error-message>
                         </div>
                     </div>
                     <div class="form-group">
@@ -343,15 +375,20 @@
                         <div>
                             <jr2-phone-number-input id="kp-tel" formControlName="phoneNumber" [jr2TextSizeLimit]="50"></jr2-phone-number-input>
                         </div>
-                        <small class="form-text text-danger" *ngIf="jobPublicationForm.hasError('phoneValidator', ['contact', 'phoneNumber'])"
-                               jhiTranslate="global.messages.validate.phone.format">
-                        </small>
+                        <jr2-input-error-message [formGroup]="jobPublicationForm" path="contact.phoneNumber"
+                                                 [errorCodes]="['required', 'phoneValidator']"
+                                                 [keys]="['home.tools.job-publication.messages.validate.required', 'home.tools.job-publication.messages.validate.phone-format']">
+                        </jr2-input-error-message>
                     </div>
                     <div class="form-group">
                         <label for="kp-email" class="col-form-label">{{ 'home.tools.job-publication.contact.email' |
                             translate }}</label>
                         <div>
                             <input formControlName="email" [jr2TextSizeLimit]="50" type="email" class="form-control" id="kp-email" [placeholder]="'home.tools.job-publication.placeholders.email' | translate"/>
+                            <jr2-input-error-message [formGroup]="jobPublicationForm" path="contact.email"
+                                                     [errorCodes]="['required', 'pattern']"
+                                                     [keys]="['home.tools.job-publication.messages.validate.required', 'home.tools.job-publication.messages.validate.email-format']">
+                            </jr2-input-error-message>
                         </div>
                     </div>
 
@@ -400,9 +437,10 @@
                         <div>
                             <jr2-phone-number-input id="app-phone" formControlName="phoneNumber" [jr2TextSizeLimit]="50"></jr2-phone-number-input>
                         </div>
-                        <small class="form-text text-danger" *ngIf="jobPublicationForm.hasError('phoneValidator', ['application', 'phoneNumber'])"
-                               jhiTranslate="global.messages.validate.phone.format">
-                        </small>
+                        <jr2-input-error-message [formGroup]="jobPublicationForm" path="application.phoneNumber"
+                                                 [errorCodes]="['required', 'phoneValidator']"
+                                                 [keys]="['home.tools.job-publication.messages.validate.required', 'home.tools.job-publication.messages.validate.phone-format']">
+                        </jr2-input-error-message>
                     </div>
 
                     <div class="form-group">

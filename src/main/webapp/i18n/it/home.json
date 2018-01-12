@@ -58,7 +58,7 @@
                     "title": "Persona di contatto"
                 },
                 "date-placeholder": "GG.MM.AAAA",
-              "degree": "Formazione",
+                "degree": "Formazione",
                 "description": {
                     "characters-counter-text": "{{count}} caratteri disponibili",
                     "label": "Attivit\u00e0 / requisiti",
@@ -89,11 +89,11 @@
                     "placeholder": "Professione"
                 },
                 "optional": "Opzionale",
-              "placeholders": {
-                "email": "esempio@email.ch",
-                "phone": "031 999 99 99",
-                "url": "http://www.esempio.ch"
-              },
+                "placeholders": {
+                    "email": "esempio@email.ch",
+                    "phone": "031 999 99 99",
+                    "url": "http://www.esempio.ch"
+                },
                 "publication": {
                     "title": "Media di pubblicazione"
                 },
@@ -113,7 +113,16 @@
                 "submit": "Pubblica posto",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Grazie dell'offerta di lavoro",
-              "workload": "Grado di occupazione"
+                "workload": "Grado di occupazione",
+                "messages": {
+                    "validate": {
+                        "required": "Field is required",
+                        "zip-format": "Invalid ZIP code format",
+                        "zip-or-city-format": "Invalid ZIP code or city value",
+                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
+                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)"
+                    }
+                }
             },
             "job-search": {
                 "search-badge": {

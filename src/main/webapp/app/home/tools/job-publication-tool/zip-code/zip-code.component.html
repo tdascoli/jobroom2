@@ -14,6 +14,11 @@
                    [editable]="false"
                    class="form-control"
                    name="zipCode"/>
+            <jr2-input-error-message [formGroup]="group" [path]="controlName"
+                                     [errorCodes]="['required', 'invalidZip']"
+                                     [keys]="['home.tools.job-publication.messages.validate.required',
+                                     'home.tools.job-publication.messages.validate.zip-format']">
+            </jr2-input-error-message>
         </div>
     </div>
 </ng-container>
@@ -44,5 +49,6 @@
                 <input type="text" formControlName="city" class="form-control" name="city"/>
             </div>
         </div>
+
     </div>
 </ng-template>
