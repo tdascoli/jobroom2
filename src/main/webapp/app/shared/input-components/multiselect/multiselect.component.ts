@@ -96,7 +96,9 @@ export class MultiselectComponent implements ControlValueAccessor, AfterViewInit
     }
 
     handleBlur(event: any) {
-        this.inputEl.nativeElement.value = '';
+        if (!this.selectInputValue()) {
+            this.inputEl.nativeElement.value = '';
+        }
     }
 
     handleKeyDown(event: KeyboardEvent) {
