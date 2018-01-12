@@ -711,9 +711,9 @@ job-search,job-search.filter.contract-type.label,Vertragsart,Contract type,Type 
 job-search,job-search.filter.contract-type.option.ALL,Alle,All,Tous,Tutto
 job-search,job-search.filter.contract-type.option.PERMANENT,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
 job-search,job-search.filter.contract-type.option.TEMPORARY,Befristet,Temporary,Durée limitée,A tempo determinato
-job-search,job-search.filter.online-since.days.label,Tagen,Days,Jours,Giorni
 job-search,job-search.filter.online-since.label,Online seit,Online since,En ligne depuis,Online dal
-job-search,job-search.filter.online-since.oneday.label,Tag,Day,Jour,Giorno
+job-search,job-search.filter.online-since.day.one,Tag,Day,Jour,Giorno
+job-search,job-search.filter.online-since.day.many,Tagen,Days,Jours,Giorni
 job-search,job-search.filter.sort.label,Sortierung,Sort,Tri,Classificazione
 job-search,job-search.filter.sort.option.DATE_ASC,Sortiere nach Datum aufsteigend,Sort by date ascending,Tri par date - ordre croissant,Ordine crescente per data
 job-search,job-search.filter.sort.option.DATE_DESC,Sortiere nach Datum absteigend,Sort by date descending,Tri par date - ordre décroissant,Ordine decrescente per data

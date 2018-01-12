@@ -17,12 +17,10 @@
                 }
             },
             "online-since": {
-                "days": {
-                    "label": "Jours"
-                },
                 "label": "En ligne depuis",
-                "oneday": {
-                    "label": "Jour"
+                "day": {
+                    "one": "Jour",
+                    "many": "Jours"
                 }
             },
             "sort": {
