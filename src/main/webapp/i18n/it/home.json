@@ -86,9 +86,9 @@
                 },
                 "messages": {
                     "validate": {
-                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)",
-                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
-                        "required": "Field is required",
+                        "email-format": "L'indirizzo email non \u00e8 valido.",
+                        "phone-format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99",
+                        "required": "Questo campo \u00e8 obbligatorio.",
                         "zip-format": "Invalid ZIP code format",
                         "zip-or-city-format": "Invalid ZIP code or city value"
                     }

@@ -628,9 +628,9 @@ home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
 home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Sede di lavoro
 home,home.tools.job-publication.locality.zip,PLZ,Postcode,"NPA  ",NPA / Luogo
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postcode / City,NPA / Lieu,NPA / Luogo
-home,home.tools.job-publication.messages.validate.email-format,Invalid email address format (expected eg.: example-email@seco.ch),Invalid email address format (expected eg.: example-email@seco.ch),Invalid email address format (expected eg.: example-email@seco.ch),Invalid email address format (expected eg.: example-email@seco.ch)
-home,home.tools.job-publication.messages.validate.phone-format,Invalid phone number format (expected eg.: +41xxxxxxx),Invalid phone number format (expected eg.: +41xxxxxxx),Invalid phone number format (expected eg.: +41xxxxxxx),Invalid phone number format (expected eg.: +41xxxxxxx)
-home,home.tools.job-publication.messages.validate.required,Field is required,Field is required,Field is required,Field is required
+home,home.tools.job-publication.messages.validate.email-format,Ihre Email Adresse ist ungültig.,Your email address is invalid.,Votre adresse e-mail n'est pas valide.,L'indirizzo email non è valido.
+home,home.tools.job-publication.messages.validate.phone-format,Bitte gültige Telefonnummer eingeben z. B. 031 999 99 99 oder +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99
+home,home.tools.job-publication.messages.validate.required,Pflichtfeld,This field is required.,Ce champ est obligatoire.,Questo campo è obbligatorio.
 home,home.tools.job-publication.messages.validate.zip-format,Invalid ZIP code format,Invalid ZIP code format,Invalid ZIP code format,Invalid ZIP code format
 home,home.tools.job-publication.messages.validate.zip-or-city-format,Invalid ZIP code or city value,Invalid ZIP code or city value,Invalid ZIP code or city value,Invalid ZIP code or city value
 home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta
@@ -982,7 +982,6 @@ user-management,userManagement.lastName,Nachname,Last name,Nom,Cognome
 user-management,userManagement.login,Login,Login,Login,Login
 user-management,userManagement.organization,Organization,Organization,Organization,Organization
 user-management,userManagement.phone,Phone,Phone,Phone,Phone
-user-management,userManagement.phone.validation.invalid,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx
 user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
 user-management,userManagement.search.placeholder,"Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email"
 user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}

@@ -95,8 +95,8 @@
 
             <div *ngIf="phoneInput.dirty && phoneInput.invalid">
                 <small class="form-text text-danger"
-                       *ngIf="phoneInput.errors.phoneValidator" jhiTranslate="userManagement.phone.validation.invalid">
-                    Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx
+                       *ngIf="phoneInput.errors.phoneValidator" jhiTranslate="global.messages.validate.phone.format">
+                    Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99
                 </small>
             </div>
         </div>
