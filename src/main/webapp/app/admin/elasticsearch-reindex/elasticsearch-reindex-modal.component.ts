@@ -9,12 +9,14 @@ import { ElasticsearchReindexService } from './elasticsearch-reindex.service';
 })
 export class ElasticsearchReindexModalComponent {
 
+    document: string;
+
     constructor(
         private elasticsearchReindexService: ElasticsearchReindexService,
         public activeModal: NgbActiveModal
     ) { }
 
     reindex() {
-        this.elasticsearchReindexService.reindex().subscribe(() => this.activeModal.dismiss());
+        this.elasticsearchReindexService.reindex(this.document).subscribe(() => this.activeModal.dismiss());
     }
 }

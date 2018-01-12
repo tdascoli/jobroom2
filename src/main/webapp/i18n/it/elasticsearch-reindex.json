@@ -1,7 +1,18 @@
 {
     "elasticsearch": {
         "reindex": {
-            "accepted": "Request accepted, performing full Elasticsearch reindexing.",
+            "jobroom": {
+                "accepted": "Request accepted, performing Users Elasticsearch reindexing."
+            },
+            "candidateservice": {
+                "accepted": "Request accepted, performing Candidates Elasticsearch reindexing."
+            },
+            "jobservice": {
+                "accepted": "Request accepted, performing Jobs Elasticsearch reindexing."
+            },
+            "referenceservice": {
+                "accepted": "Request accepted, performing Reference Data Elasticsearch reindexing."
+            },
             "dialog": {
                 "cancel": "Cancel",
                 "confirm": "Reindex",
@@ -11,7 +22,14 @@
             "go": "Go",
             "instructions1": "This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see \"Elasticsearch: Successfully performed reindexing\" in your logs when this is complete.",
             "instructions2": "This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.",
-            "title": "Reindex Elasticsearch"
+            "title": "Reindex Elasticsearch",
+            "document": {
+                "all": "All",
+                "users": "Users",
+                "jobs": "Jobs",
+                "candidates": "Candidates",
+                "reference-data": "Reference Data"
+            }
         }
     }
 }

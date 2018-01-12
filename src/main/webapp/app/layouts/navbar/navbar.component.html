@@ -118,14 +118,22 @@
                                                 jhiTranslate="global.menu.admin.apidocs">API</span>
                                         </a>
 
-                                        <a class="dropdown-item"
-                                           routerLink="elasticsearch-reindex"
-                                           routerLinkActive="active"
-                                           (click)="collapseNavbar()">
+                                        <a class="dropdown-item" routerLinkActive="active" (click)="collapseNavbar()">
                                             <span class="fa fa-fw fa-search"
                                                   aria-hidden="true"></span>
-                                            <span
-                                                jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
+                                            <span routerLink="elasticsearch-reindex"
+                                                  jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
+                                            <div class="nav flex-column navbar__nested-nav">
+                                                <a class="nav-link"  routerLink="elasticsearch-reindex" jhiTranslate="global.menu.admin.elasticsearch-reindex.all">All</a>
+                                                <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.users"
+                                                   [routerLink]="['elasticsearch-reindex', { document: 'users' }]">Users</a>
+                                                <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.jobs"
+                                                   [routerLink]="['elasticsearch-reindex', { document: 'jobs' }]">Jobs</a>
+                                                <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.candidates"
+                                                   [routerLink]="['elasticsearch-reindex', { document: 'candidates' }]">Candidates</a>
+                                                <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.reference-data"
+                                                   [routerLink]="['elasticsearch-reindex', { document: 'reference-data' }]">Reference Data</a>
+                                            </div>
                                         </a>
 
                                         <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
@@ -284,14 +292,22 @@
                                         jhiTranslate="global.menu.admin.apidocs">API</span>
                                 </a>
 
-                                <a class="dropdown-item"
-                                   routerLink="elasticsearch-reindex"
-                                   routerLinkActive="active"
-                                   (click)="collapseNavbar()">
+                                <a class="dropdown-item" routerLinkActive="active" (click)="collapseNavbar()">
                                     <span class="fa fa-fw fa-search"
                                           aria-hidden="true"></span>
-                                    <span
+                                    <span routerLink="elasticsearch-reindex"
                                         jhiTranslate="global.menu.admin.elasticsearch-reindex">Elasticsearch Reindex</span>
+                                    <div class="nav flex-column navbar__nested-nav">
+                                        <a class="nav-link"  routerLink="elasticsearch-reindex" jhiTranslate="global.menu.admin.elasticsearch-reindex.all">All</a>
+                                        <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.users"
+                                           [routerLink]="['elasticsearch-reindex', { document: 'users' }]">Users</a>
+                                        <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.jobs"
+                                           [routerLink]="['elasticsearch-reindex', { document: 'jobs' }]">Jobs</a>
+                                        <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.candidates"
+                                           [routerLink]="['elasticsearch-reindex', { document: 'candidates' }]">Candidates</a>
+                                        <a class="nav-link" jhiTranslate="global.menu.admin.elasticsearch-reindex.reference-data"
+                                           [routerLink]="['elasticsearch-reindex', { document: 'reference-data' }]">Reference Data</a>
+                                    </div>
                                 </a>
 
                                 <!-- jhipster-needle-add-element-to-admin-menu - JHipster will add entities to the admin menu here -->
