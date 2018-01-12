@@ -249,7 +249,8 @@
                                 <span class="optional">{{ 'home.tools.job-publication.optional' | translate }}</span>
                             </label>
                             <div>
-                                <input formControlName="additionalDetails" type="text" [jr2TextSizeLimit]="50" class="form-control" id="add-text"/>
+                                <input formControlName="additionalDetails" type="text" [jr2TextSizeLimit]="50" class="form-control" id="add-text"
+                                       placeholder="{{ 'home.tools.job-publication.locality.additional-text.placeholder' | translate}}"/>
                             </div>
                         </div>
                     </fieldset>
@@ -469,14 +470,14 @@
                     <div class="checkbox">
                         <input id="jr" type="checkbox" formControlName="jobroom"/>
                         <label for="jr">
-                            Job-Room <a href="http://www.job-room.ch" target="_blank">Job-Room Webseite</a>
+                            <a href="{{ 'home.tools.job-publication.publication.jobroom.url' | translate }}" target="_blank">{{ 'home.tools.job-publication.publication.jobroom' | translate }}</a>
                         </label>
                     </div>
 
                     <div class="checkbox">
                         <input id="eu" type="checkbox" formControlName="eures"/>
                         <label for="eu">
-                            EURES <a href="http://www.eures.ch" target="_blank">EURES Portal</a>
+                            <a href="{{ 'home.tools.job-publication.publication.eures.url' | translate }}" target="_blank">{{ 'home.tools.job-publication.publication.eures' | translate }}</a>
                         </label>
                     </div>
                 </fieldset>

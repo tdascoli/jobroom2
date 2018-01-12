@@ -106,7 +106,9 @@
                 },
                 "publication": {
                     "eures": "EURES Portal",
+                    "eures.url": "http://www.eures.ch",
                     "jobroom": "Job-Room Website",
+                    "jobroom.url": "http://www.job-room.ch",
                     "title": "Publikationsmedien"
                 },
                 "publicationEndDate": {

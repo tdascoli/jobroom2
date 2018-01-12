@@ -149,23 +149,23 @@ dashboard,job-publication-details.startDate,Vakant seit,Vacant since,Libre depui
 dashboard,job-publication-details.status,Status,Status,Status,Status
 dashboard,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
 dashboard,job-publication-details.title,Job publication,Job publication,Job publication,Job publication
-elasticsearch-reindex,elasticsearch.reindex.jobroom.accepted,"Request accepted, performing Users Elasticsearch reindexing.","Request accepted, performing Users Elasticsearch reindexing.","Request accepted, performing Users Elasticsearch reindexing.","Request accepted, performing Users Elasticsearch reindexing."
 elasticsearch-reindex,elasticsearch.reindex.candidateservice.accepted,"Request accepted, performing Candidates Elasticsearch reindexing.","Request accepted, performing Candidates Elasticsearch reindexing.","Request accepted, performing Candidates Elasticsearch reindexing.","Request accepted, performing Candidates Elasticsearch reindexing."
-elasticsearch-reindex,elasticsearch.reindex.jobservice.accepted,"Request accepted, performing Jobs Elasticsearch reindexing.","Request accepted, performing Jobs Elasticsearch reindexing.","Request accepted, performing Jobs Elasticsearch reindexing.","Request accepted, performing Jobs Elasticsearch reindexing."
-elasticsearch-reindex,elasticsearch.reindex.referenceservice.accepted,"Request accepted, performing Reference Data Elasticsearch reindexing.","Request accepted, performing Reference Data Elasticsearch reindexing.","Request accepted, performing Reference Data Elasticsearch reindexing.","Request accepted, performing Reference Data Elasticsearch reindexing."
 elasticsearch-reindex,elasticsearch.reindex.dialog.cancel,Cancel,Cancel,Cancel,Cancel
 elasticsearch-reindex,elasticsearch.reindex.dialog.confirm,Reindex,Reindex,Reindex,Reindex
 elasticsearch-reindex,elasticsearch.reindex.dialog.question,Are you sure you want to reindex Elasticsearch? This could take a while!,Are you sure you want to reindex Elasticsearch? This could take a while!,Are you sure you want to reindex Elasticsearch? This could take a while!,Are you sure you want to reindex Elasticsearch? This could take a while!
 elasticsearch-reindex,elasticsearch.reindex.dialog.title,Confirm Elasticsearch Reindex,Confirm Elasticsearch Reindex,Confirm Elasticsearch Reindex,Confirm Elasticsearch Reindex
+elasticsearch-reindex,elasticsearch.reindex.document.all,All,All,All,All
+elasticsearch-reindex,elasticsearch.reindex.document.candidates,Candidates,Candidates,Candidates,Candidates
+elasticsearch-reindex,elasticsearch.reindex.document.jobs,Jobs,Jobs,Jobs,Jobs
+elasticsearch-reindex,elasticsearch.reindex.document.reference-data,Reference Data,Reference Data,Reference Data,Reference Data
+elasticsearch-reindex,elasticsearch.reindex.document.users,Users,Users,Users,Users
 elasticsearch-reindex,elasticsearch.reindex.go,Go de,Go,Go,Go
 elasticsearch-reindex,elasticsearch.reindex.instructions1,"This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete.","This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete.","This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete.","This will send a request to reindex all data from your primary datasource into Elasticsearch. This will fix missing data and mapping issues, however you will lose any ES data and mapping that was defined outside of your application. This request will return immediately and the reindexing will run in the background. You will see ""Elasticsearch: Successfully performed reindexing"" in your logs when this is complete."
 elasticsearch-reindex,elasticsearch.reindex.instructions2,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.,This can take a long time and is susceptible to concurrency issues so it should be performed when the number of users is low.
+elasticsearch-reindex,elasticsearch.reindex.jobroom.accepted,"Request accepted, performing Users Elasticsearch reindexing.","Request accepted, performing Users Elasticsearch reindexing.","Request accepted, performing Users Elasticsearch reindexing.","Request accepted, performing Users Elasticsearch reindexing."
+elasticsearch-reindex,elasticsearch.reindex.jobservice.accepted,"Request accepted, performing Jobs Elasticsearch reindexing.","Request accepted, performing Jobs Elasticsearch reindexing.","Request accepted, performing Jobs Elasticsearch reindexing.","Request accepted, performing Jobs Elasticsearch reindexing."
+elasticsearch-reindex,elasticsearch.reindex.referenceservice.accepted,"Request accepted, performing Reference Data Elasticsearch reindexing.","Request accepted, performing Reference Data Elasticsearch reindexing.","Request accepted, performing Reference Data Elasticsearch reindexing.","Request accepted, performing Reference Data Elasticsearch reindexing."
 elasticsearch-reindex,elasticsearch.reindex.title,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch
-elasticsearch-reindex,elasticsearch.reindex.document.all,All,All,All,All
-elasticsearch-reindex,elasticsearch.reindex.document.users,Users,Users,Users,Users
-elasticsearch-reindex,elasticsearch.reindex.document.jobs,Jobs,Jobs,Jobs,Jobs
-elasticsearch-reindex,elasticsearch.reindex.document.candidates,Candidates,Candidates,Candidates,Candidates
-elasticsearch-reindex,elasticsearch.reindex.document.reference-data,Reference Data,Reference Data,Reference Data,Reference Data
 error,error.concurrencyFailure,Another user modified this data at the same time as you. Your changes were rejected.,Another user modified this data at the same time as you. Your changes were rejected.,Un autre utilisateur a modifié ces données en même temps que vous. Vos changements n'ont pas été sauvegardés.,Another user modified this data at the same time as you. Your changes were rejected.
 error,error.http.400,Bad request.,Bad request.,Mauvaise requête.,Bad request.
 error,error.http.403,Sie haben nicht die nötigen Berechtigungen diese Seite anzuzeigen.,You are not authorised to access this page.,Vous n'avez pas les droits nécessaires pour accéder à cette page.,Non hai i diritti per accedere a questa pagina.
@@ -300,10 +300,10 @@ global,global.menu.admin.configuration,Konfiguration,Configuration,Configuration
 global,global.menu.admin.database,Datenbank,Database,Base de données,Database
 global,global.menu.admin.elasticsearch-reindex,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch,Reindex Elasticsearch
 global,global.menu.admin.elasticsearch-reindex.all,All,All,All,All
-global,global.menu.admin.elasticsearch-reindex.users,Users,Users,Users,Users
-global,global.menu.admin.elasticsearch-reindex.jobs,Jobs,Jobs,Jobs,Jobs
 global,global.menu.admin.elasticsearch-reindex.candidates,Candidates,Candidates,Candidates,Candidates
+global,global.menu.admin.elasticsearch-reindex.jobs,Jobs,Jobs,Jobs,Jobs
 global,global.menu.admin.elasticsearch-reindex.reference-data,Reference Data,Reference Data,Reference Data,Reference Data
+global,global.menu.admin.elasticsearch-reindex.users,Users,Users,Users,Users
 global,global.menu.admin.gateway,Gateway,Gateway,Gateway,Gateway
 global,global.menu.admin.health,Status,Health,Diagnostics,Integrità
 global,global.menu.admin.jhipster-needle-menu-add-admin-element,JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!),JHipster will add additional menu entries here (do not translate!)
@@ -641,7 +641,9 @@ home,home.tools.job-publication.placeholders.email,muster@email.ch,example@email
 home,home.tools.job-publication.placeholders.phone,031 999 99 99 oder +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99,031 999 99 99 ou +41 31 999 99 99,031 999 99 99 o +41 31 999 99 99
 home,home.tools.job-publication.placeholders.url,http://www.muster.ch,http://www.example.ch,http://www.exemple.ch,http://www.esempio.ch
 home,home.tools.job-publication.publication.eures,EURES Portal,EURES Portal,Portal EURES," Portale EURES"
+home,home.tools.job-publication.publication.eures.url,http://www.eures.ch,http://www.eures.ch/en,http://www.eures.ch/fr,http://www.eures.ch/it
 home,home.tools.job-publication.publication.jobroom,Job-Room Website," Job-Room Website"," Site Job-Room"," Sito Job-Room"
+home,home.tools.job-publication.publication.jobroom.url,http://www.job-room.ch,http://www.job-room.ch,http://www.job-room.ch,http://www.job-room.ch
 home,home.tools.job-publication.publication.title,Publikationsmedien,Publication media,Moyens de publication,Mezzi di pubblicazione
 home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Temporary employment to date,Engagement limité au [date],a tempo determinato fino al
 home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,permanent,illimité,a tempo indeterminato
