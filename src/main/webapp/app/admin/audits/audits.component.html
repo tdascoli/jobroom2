@@ -1,4 +1,4 @@
-<div *ngIf="audits">
+<div *ngIf="audits" class="container-fluid">
     <h2 jhiTranslate="audits.title">Audits</h2>
 
     <div class="row">
@@ -39,7 +39,7 @@
             <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
         </div>
         <div class="row justify-content-center">
-            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            <ngb-pagination [collectionSize]="totalItems" [maxSize]="20" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
         </div>
     </div>
 </div>
