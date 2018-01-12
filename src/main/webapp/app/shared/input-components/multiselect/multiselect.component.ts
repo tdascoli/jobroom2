@@ -103,10 +103,10 @@ export class MultiselectComponent implements ControlValueAccessor, AfterViewInit
 
     handleKeyDown(event: KeyboardEvent) {
         if ((event.which === Key.Enter || event.which === Key.Tab) && !this.disabled) {
-            this.selectInputValue();
-
-            event.preventDefault();
-            event.stopPropagation();
+            if (this.selectInputValue()) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
         }
         this.lastKey = event.key;
     }
