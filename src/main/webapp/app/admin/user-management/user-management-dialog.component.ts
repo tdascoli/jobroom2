@@ -79,13 +79,13 @@ export class UserMgmtDialogComponent implements OnInit {
         this.isSaving = false;
     }
 
-    searchOrganizations = (text$: Observable<string>) =>
+    searchOrganizations = (text$: Observable<string>): Observable<Array<OrganizationSuggestion>> =>
         text$
             .debounceTime(200)
             .distinctUntilChanged()
-            .flatMap((term) => term.length < 2 ? Observable.empty()
+            .flatMap((term) => term.length < 2 ? Observable.of(null)
                 : this.organizationService.suggest(term, UserMgmtDialogComponent.ORGANIZATION_SUGGESTIONS_SIZE))
-                    .map((autocomplete: OrganizationAutocomplete) => autocomplete.organizations);
+                    .map((autocomplete: OrganizationAutocomplete) => autocomplete ? autocomplete.organizations : []);
 
     formatter = (suggestion: OrganizationSuggestion) => `${suggestion.name}, ${suggestion.city}, ${suggestion.street}`;
 }

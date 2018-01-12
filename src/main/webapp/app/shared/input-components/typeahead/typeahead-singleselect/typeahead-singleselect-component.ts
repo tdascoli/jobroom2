@@ -89,8 +89,10 @@ export class TypeaheadSingleselectComponent implements ControlValueAccessor {
             .map(toDisplayModel);
 
         return text$
-            .filter((query: string) => query.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
-            .switchMap((query: string) => this.itemLoader(query))
+            .switchMap((query: string) => query.length >= TYPEAHEAD_QUERY_MIN_LENGTH
+                ? this.itemLoader(query)
+                : Observable.of([])
+            )
             .map(toDisplayModelArray);
     };
 

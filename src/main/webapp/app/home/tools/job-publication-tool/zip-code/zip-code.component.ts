@@ -152,7 +152,7 @@ export class ZipCodeComponent implements OnInit, OnChanges {
         text$
             .debounceTime(200)
             .distinctUntilChanged()
-            .flatMap((term) => term.length < 2 ? Observable.empty()
+            .flatMap((term) => term.length < 2 ? Observable.of([])
                 : this.localityService.fetchSuggestions(term, ZipCodeComponent.localityResultMapper, false));
 
     formatter = (result: any) => {

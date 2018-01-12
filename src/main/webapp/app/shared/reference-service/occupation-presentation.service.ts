@@ -105,9 +105,9 @@ export class OccupationPresentationService {
 
     fetchCandidateSearchOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
         prefix$
-            .filter((prefix: string) => prefix.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
-            .switchMap((prefix: string) =>
-                this.occupationLabelService.suggestOccupation(prefix, ['avam'])
+            .switchMap((prefix: string) => prefix.length < TYPEAHEAD_QUERY_MIN_LENGTH
+                ? Observable.of([])
+                : this.occupationLabelService.suggestOccupation(prefix, ['avam'])
                     .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
                     .map((occupations: OccupationLabelSuggestion[]) =>
                         occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
@@ -118,9 +118,9 @@ export class OccupationPresentationService {
 
     fetchJobPublicationOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
         prefix$
-            .filter((prefix: string) => prefix.length >= TYPEAHEAD_QUERY_MIN_LENGTH)
-            .switchMap((prefix: string) =>
-                this.occupationLabelService.suggestOccupation(prefix, ['avam'])
+            .switchMap((prefix: string) => prefix.length < TYPEAHEAD_QUERY_MIN_LENGTH
+                ? Observable.of([])
+                : this.occupationLabelService.suggestOccupation(prefix, ['avam'])
                     .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
                     .map((occupations: OccupationLabelSuggestion[]) =>
                         occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
