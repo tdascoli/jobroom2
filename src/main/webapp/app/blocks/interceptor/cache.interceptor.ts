@@ -22,7 +22,10 @@ export class CacheKeyInterceptor extends JhiHttpInterceptor {
             requestOptions.params = new URLSearchParams();
         }
 
-        requestOptions.params.set('_ng', this.base64.encode(this.cookieService.get('NG_TRANSLATE_LANG_KEY')));
+        const translateLangKey = this.cookieService.get('NG_TRANSLATE_LANG_KEY');
+        if (translateLangKey) {
+            requestOptions.params.set('_ng', this.base64.encode(translateLangKey));
+        }
         options.params = requestOptions.params;
         return options;
     }
