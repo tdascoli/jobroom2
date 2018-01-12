@@ -11,6 +11,7 @@ import java.util.stream.Stream;
 import javax.persistence.QueryHint;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.jpa.repository.QueryHints;
 import org.springframework.stereotype.Repository;
 
@@ -29,7 +30,11 @@ public interface OrganizationRepository extends JpaRepository<Organization, UUID
     Optional<Organization> findFirstByOrderByLastModifiedDateDesc();
 
     @QueryHints({
-        @QueryHint(name = HINT_FETCH_SIZE, value = "1000"),
-        @QueryHint(name = HINT_CACHE_MODE, value = "IGNORE")})
+            @QueryHint(name = HINT_FETCH_SIZE, value = "1000"),
+            @QueryHint(name = HINT_CACHE_MODE, value = "IGNORE")})
     Stream<Organization> findByLastModifiedDateIsBefore(Instant instant);
+
+    @QueryHints(@QueryHint(name = HINT_FETCH_SIZE, value = "" + Integer.MAX_VALUE))
+    @Query("select o from Organization o")
+    Stream<Organization> streamAll();
 }
