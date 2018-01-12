@@ -55,14 +55,22 @@ candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,
 candidate-search,candidate-search.availability.IMMEDIATE,Ab sofort,Immediately,Tout de suite,Da subito
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Availability,Disponibilité,Disponibilità
 candidate-search,candidate-search.candidate-search-list.error-message,Die Resultate der Kandidatensuche konnten nicht geladen werden,Failed to load candidate result list.,Les résultats de la recherche de candidats n'ont pas pu être chargés,Impossibile caricare la lista risultati dei candidati!
-candidate-search,candidate-search.candidate-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Kandidaten in {{locality}},More than {{count}} {{query}} candidates in {{locality}},Plus de {{count}} {{query}} candidats à {{locality}},Più di {{count}} {{query}} candidati in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.many.without-locality,Mehr als {{count}} {{query}} Kandidaten,More than {{count}} {{query}} candidates,"Plus de {{count}} {{query}} candidats ",Più di  {{count}} {{query}} candidati
-candidate-search,candidate-search.candidate-search-list.title.none.with-locality,Keine {{query}} Kandidaten in {{locality}},No {{query}} candidates in {{locality}},Aucun {{query}} candidat à {{locality}},Nessun {{query}} candidato in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.none.without-locality,Keine {{query}} Kandidaten,No {{query}} candidates,"Aucun {{query}} candidat ",Nessun {{query}} candidato
-candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 {{query}} Kandidat in {{locality}},1 {{query}} candidate in {{locality}},1 {{query}} candidat à {{locality}},1 {{query}} candidato in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.one.without-locality,1 {{query}} Kandidat,1 {{query}} candidate,1 {{query}} candidat,1 {{query}} candidato
-candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} {{query}} Kandidaten in {{locality}},{{count}} {{query}} candidates in {{locality}},{{count}} {{query}} candidats à {{locality}},{{count}} {{query}} candidati in {{locality}}
-candidate-search,candidate-search.candidate-search-list.title.other.without-locality,{{count}} {{query}} Kandidaten,{{count}} {{query}} candidates,{{count}} {{query}} candidats,{{count}} {{query}} candidati
+candidate-search,candidate-search.candidate-search-list.title.many,Mehr als {{count}} Kandidaten,More than {{count}} candidates,"Plus de {{count}} candidats ",Più di {{count}} candidati
+candidate-search,candidate-search.candidate-search-list.title.many.with-query,Mehr als {{count}} '{{query}}' Kandidaten,More than {{count}} '{{query}}' candidates,"Plus de {{count}} candidats de '{{query}}'",Più di {{count}} candidati per '{{query}}'
+candidate-search,candidate-search.candidate-search-list.title.many.with-locality,Mehr als {{count}} Kandidaten in {{locality}},More than {{count}} candidates in {{locality}},Plus de {{count}} candidats de '{{query}}' à {{locality}},Più di {{count}} candidati per '{{query}}' in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.many.with-query.with-locality,Mehr als {{count}} '{{query}}' Kandidaten in {{locality}},More than {{count}} '{{query}}' candidates in {{locality}},Plus de {{count}} candidats à {{locality}},Più di {{count}} candidati in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.none,Keine Kandidaten,No candidates,"Aucun candidat ",Nessun candidato
+candidate-search,candidate-search.candidate-search-list.title.none.with-query,Keine '{{query}}' Kandidaten,No '{{query}}' candidates,"Aucun candidat de '{{query}}'",Nessun candidato per '{{query}}'
+candidate-search,candidate-search.candidate-search-list.title.none.with-locality,Keine Kandidaten in {{locality}},No candidates in {{locality}},Aucun candidat à {{locality}},Nessun candidato in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.none.with-query.with-locality,Keine '{{query}}' Kandidaten in {{locality}},No '{{query}}' candidates in {{locality}},Aucun candidat de '{{query}}' à {{locality}},Nessun candidato per '{{query}}' in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.one,1 Kandidat,1 candidate,1 candidat,1 candidato
+candidate-search,candidate-search.candidate-search-list.title.one.with-query,1 '{{query}}' Kandidat,1 '{{query}}' candidate,1 candidat de '{{query}}',1 candidato  per '{{query}}'
+candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 Kandidat in {{locality}},1 candidate in {{locality}},1 candidat à {{locality}},1 candidato in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.one.with-query.with-locality,1 '{{query}}' Kandidat in {{locality}},1 '{{query}}' candidate in {{locality}},1 candidat de '{{query}}' à {{locality}},1 candidato per '{{query}}' in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.other,{{count}} Kandidaten,{{count}} candidates,{{count}} candidats,{{count}} candidati
+candidate-search,candidate-search.candidate-search-list.title.other.with-query,{{count}} '{{query}}' Kandidaten,{{count}} '{{query}}' candidates,{{count}} candidats de '{{query}}',{{count}} candidati per '{{query}}'
+candidate-search,candidate-search.candidate-search-list.title.other.with-locality,{{count}} Kandidaten in {{locality}},{{count}} candidates in {{locality}},{{count}} candidats à {{locality}},{{count}} candidati in {{locality}}
+candidate-search,candidate-search.candidate-search-list.title.other.with-query.with-locality,{{count}} '{{query}}' Kandidaten in {{locality}},{{count}} '{{query}}' candidates in {{locality}},{{count}} candidats de '{{query}}' à {{locality}},{{count}} candidati per '{{query}}' in {{locality}}
 candidate-search,candidate-search.education.label,Bildungsstufe,Level of education,Niveau de formation,Livello formativo
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
@@ -726,14 +734,23 @@ job-search,job-search.filter.working-time.label,Arbeitspensum,Workload,Taux d'oc
 job-search,job-search.job-search-list-item.badge.permanent,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
 job-search,job-search.job-search-list-item.badge.temporary,Befristet,Temporary,Durée limitée,A tempo determinato
 job-search,job-search.job-search-list.error-message,Jobsuche fehlgeschlagen,Failed to load job result list!,Les résultats de la recherche d'emplois n'ont pas pu être chargés,Impossibile caricare l'ultima lista di posti!
-job-search,job-search.job-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Jobs in {{locality}},More than {{count}} {{query}} jobs in {{locality}},Plus de {{count}} {{query}} emplois à {{locality}},Più di {{count}} {{query}} posti in {{locality}}
-job-search,job-search.job-search-list.title.many.without-locality,Mehr als {{count}} {{query}} Jobs,More than {{count}} {{query}} jobs,Plus de {{count}} {{query}} emplois,Più di {{count}} {{query}} posti
-job-search,job-search.job-search-list.title.none.with-locality,Keine {{query}} Jobs in {{locality}},No {{query}} jobs in {{locality}},Aucun {{query}} emploi à {{locality}},Nessun {{query}} posto in {{locality}}
-job-search,job-search.job-search-list.title.none.without-locality,Keine {{query}} Jobs,No {{query}} jobs,Aucun {{query}} emploi,Nessun {{query}} posto
-job-search,job-search.job-search-list.title.one.with-locality,1 {{query}} Job in {{locality}},1 {{query}} job in {{locality}},1 {{query}} emploi à {{locality}},1 {{query}} posto in {{locality}}
-job-search,job-search.job-search-list.title.one.without-locality,1 {{query}} Job,1 {{query}} job,1 {{query}} emploi,1 {{query}} posto
-job-search,job-search.job-search-list.title.other.with-locality,{{count}} {{query}} Jobs in {{locality}},{{count}} {{query}} jobs in {{locality}},{{count}} {{query}} emplois à {{locality}},{{count}} {{query}} posti in {{locality}}
-job-search,job-search.job-search-list.title.other.without-locality,{{count}} {{query}} Jobs,{{count}} {{query}} jobs,{{count}} {{query}} emplois,{{count}} {{query}} posti
+
+job-search,job-search.job-search-list.title.many,Mehr als {{count}} Jobs,More than {{count}} jobs,Plus de {{count}} emplois,Più di {{count}} posti
+job-search,job-search.job-search-list.title.many.with-query,Mehr als {{count}} '{{query}}' Jobs,More than {{count}} '{{query}}' jobs,Plus de {{count}} emplois de '{{query}}',Più di {{count}} posti per '{{query}}'
+job-search,job-search.job-search-list.title.many.with-locality,Mehr als {{count}} Jobs in {{locality}},More than {{count}} jobs in {{locality}},Plus de {{count}} emplois à {{locality}},Più di {{count}} posti in {{locality}}
+job-search,job-search.job-search-list.title.many.with-query.with-locality,Mehr als {{count}} '{{query}}' Jobs in {{locality}},More than {{count}} '{{query}}' jobs in {{locality}},Plus de {{count}} emplois de '{{query}}' à {{locality}},Più di {{count}} posti per '{{query}}' in {{locality}}
+job-search,job-search.job-search-list.title.none,Keine '{{query}}' Jobs,No jobs,Aucunemploi,Nessun posto
+job-search,job-search.job-search-list.title.none.with-query,Keine '{{query}}' Jobs,No '{{query}}' jobs,Aucun '{{query}}' emploi,Nessun '{{query}}' posto
+job-search,job-search.job-search-list.title.none.with-locality,Keine Jobs in {{locality}},No jobs in {{locality}},Aucun emploi à {{locality}},Nessun posto in {{locality}}
+job-search,job-search.job-search-list.title.none.with-query.with-locality,Keine '{{query}}' Jobs in {{locality}},No '{{query}}' jobs in {{locality}},Aucun emploi de '{{query}}' à {{locality}},Nessun posto per '{{query}}' in {{locality}}
+job-search,job-search.job-search-list.title.one,1 Job,1 job,1 emploi,1 posto
+job-search,job-search.job-search-list.title.one.with-query,1 '{{query}}' Job,1 '{{query}}' job,1 '{{query}}' emploi,1 '{{query}}' posto
+job-search,job-search.job-search-list.title.one.with-locality,1 Job in {{locality}},1 job in {{locality}},1 emploi à {{locality}},1 posto in {{locality}}
+job-search,job-search.job-search-list.title.one.with-query.with-locality,1 '{{query}}' Job in {{locality}},1 '{{query}}' job in {{locality}},1 emploi de '{{query}}' à,1 posto per '{{query}}' in {{locality}}
+job-search,job-search.job-search-list.title.other,{{count}} Jobs,{{count}} jobs,{{count}} emplois,{{count}} posti
+job-search,job-search.job-search-list.title.other.with-query,{{count}} '{{query}}' Jobs,{{count}} '{{query}}' jobs,{{count}} emplois de '{{query}}',{{count}} posti per '{{query}}'
+job-search,job-search.job-search-list.title.other.with-locality,{{count}} Jobs in {{locality}},{{count}} jobs in {{locality}},{{count}} emplois à {{locality}},{{count}} posti in {{locality}}
+job-search,job-search.job-search-list.title.other.with-query.with-locality,{{count}} '{{query}}' Jobs in {{locality}},{{count}} '{{query}}' jobs in {{locality}},{{count}} emplois de '{{query}}' à {{locality}},{{count}} posti per '{{query}}' in {{locality}}
 job-search,job-search.title,Job suchen,Job search,Chercher un emploi,Cerca posti
 job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Sélectionner le lieu actuel,selezione la mia posizione attuale
 job-search,job-search.toolbar.locality.placeholder,Ortschaft oder Kanton,Location or canton,Lieu ou canton,Località o Cantone

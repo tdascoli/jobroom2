@@ -45,22 +45,22 @@
         "job-search-list": {
             "error-message": "Jobsuche fehlgeschlagen",
             "title": {
-                "many": {
-                    "with-locality": "Mehr als {{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "Mehr als {{count}} {{query}} Jobs"
-                },
-                "none": {
-                    "with-locality": "Keine {{query}} Jobs in {{locality}}",
-                    "without-locality": "Keine {{query}} Jobs"
-                },
-                "one": {
-                    "with-locality": "1 {{query}} Job in {{locality}}",
-                    "without-locality": "1 {{query}} Job"
-                },
-                "other": {
-                    "with-locality": "{{count}} {{query}} Jobs in {{locality}}",
-                    "without-locality": "{{count}} {{query}} Jobs"
-                }
+                "many": "Mehr als {{count}} Jobs",
+                "many.with-query": "Mehr als {{count}} '{{query}}' Jobs",
+                "many.with-locality": "Mehr als {{count}} Jobs in {{locality}}",
+                "many.with-query.with-locality": "Mehr als {{count}} '{{query}}' Jobs in {{locality}}",
+                "none": "Keine '{{query}}' Jobs",
+                "none.with-query": "Keine '{{query}}' Jobs",
+                "none.with-locality": "Keine Jobs in {{locality}}",
+                "none.with-query.with-locality": "Keine '{{query}}' Jobs in {{locality}}",
+                "one": "1 Job",
+                "one.with-query": "1 '{{query}}' Job",
+                "one.with-locality": "1 Job in {{locality}}",
+                "one.with-query.with-locality": "1 '{{query}}' Job in {{locality}}",
+                "other": "{{count}} Jobs",
+                "other.with-query": "{{count}} '{{query}}' Jobs",
+                "other.with-locality": "{{count}} Jobs in {{locality}}",
+                "other.with-query.with-locality": "{{count}} '{{query}}' Jobs in {{locality}}"
             }
         },
         "title": "Job suchen",

@@ -7,8 +7,6 @@ services:
         # Uncomment this section to have elasticsearch data loaded from a volume
         volumes:
             - log-data:/usr/share/elasticsearch/data
-        networks:
-            - jobroom_data2
         deploy:
             placement:
                 constraints: [node.labels.elk == apps]
@@ -21,10 +19,13 @@ services:
             - ELASTICSEARCH_HOST=jhipster-elasticsearch
             - ELASTICSEARCH_PORT=9200
             - LOGSTASH_DEBUG=false
+        ports:
+            - 9600:9600
         depends_on:
             - jhipster-elasticsearch
         networks:
             - jobroom_data2
+            - default
         deploy:
             placement:
                 constraints: [node.labels.elk == apps]
@@ -38,23 +39,21 @@ services:
             - 5602:5601
         depends_on:
             - jhipster-elasticsearch
-        networks:
-            - jobroom_data2
         deploy:
             placement:
                 constraints: [node.labels.elk == apps]
 
-    jhipster-import-dashboards:
-        image: jhipster/jhipster-import-dashboards
-        environment:
-            - ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
-        depends_on:
-            - jhipster-elasticsearch
-        networks:
-            - jobroom_data2
-        deploy:
-            placement:
-                constraints: [node.labels.elk == apps]
+    #jhipster-import-dashboards:
+    #    image: jhipster/jhipster-import-dashboards
+    #    environment:
+    #        - ELASTICSEARCH_URL=http://jhipster-elasticsearch:9200
+    #    networks:
+    #        - elk
+    #    depends_on:
+    #        - jhipster-elasticsearch
+    #    deploy:
+    #        placement:
+    #            constraints: [node.labels.elk == apps]
 
     # jhipster-alerter:
     #     build: jhipster-alerter/
