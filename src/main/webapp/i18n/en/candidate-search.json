@@ -37,7 +37,7 @@
             "title": "Search candidates"
         },
         "graduation": {
-            "ACCEPTED": "Swiss or accepted in Switzerland",
+            "ACCEPTED": "Swiss degree or accepted in Switzerland",
             "CH": "Swiss degree",
             "NONE": "No degree",
             "NOT_ACCEPTED": "Swiss or foreign degree",

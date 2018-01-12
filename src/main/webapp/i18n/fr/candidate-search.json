@@ -37,7 +37,7 @@
             "title": "Chercher des candidats"
         },
         "graduation": {
-            "ACCEPTED": "Suisse ou reconnu en Suisse",
+            "ACCEPTED": "Dipl\u00f4me suisse ou reconnu en Suisse",
             "CH": "Dipl\u00f4me suisse",
             "NONE": "Aucun dipl\u00f4me",
             "NOT_ACCEPTED": "Dipl\u00f4me suisse ou \u00e9tranger",
@@ -52,7 +52,7 @@
         "no-selection": "Aucune s\u00e9lection",
         "skills": {
             "label": "Mots-cl\u00e9s",
-            "placeholder": "Comp\u00e9tences, aptitudes"
+            "placeholder": "Comp\u00e9tences, skills"
         },
         "title": "Recherche de candidats",
         "toolbar": {

@@ -2,7 +2,7 @@
     "candidate-search": {
         "availability": {
             "BY_ARRANGEMENT": "Nach Vereinbarung",
-            "IMMEDIATE": "Ab Sofort",
+            "IMMEDIATE": "Ab sofort",
             "label": "Verf\u00fcgbarkeit"
         },
         "candidate-search-list": {
@@ -37,7 +37,7 @@
             "title": "Kandidaten suchen"
         },
         "graduation": {
-            "ACCEPTED": "Schweiz oder anerkannt",
+            "ACCEPTED": "Schweizer Abschluss oder anerkannt",
             "CH": "Schweizer Abschluss",
             "NONE": "Kein Abschluss",
             "NOT_ACCEPTED": "Schweiz oder ausl\u00e4ndisch",

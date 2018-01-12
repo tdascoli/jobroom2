@@ -27,7 +27,7 @@
         "reference.job-id": "Numero posto",
         "reference.phone": "Telefono",
         "reference.responsible-job-center": "URC competente",
-        "startDate": "Da {{date}}",
+        "startDate": "Dal {{date}}",
         "startsImmediately": "Entrata in funzione",
         "startsImmediately.false": "Previo accordo",
         "startsImmediately.true": "Da subito",

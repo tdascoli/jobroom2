@@ -4,7 +4,7 @@
         "title.portal": "travail",
         "title.portal-url": "https://www.travail.swiss",
         "toolbar": {
-            "companies": "Entreprise",
+            "companies": "Employeurs",
             "jobSeekers": "Demandeur d'emploi",
             "recruitmentAgencies": "Agence de placement",
             "title": "Job-Room offre des services pour"
@@ -40,12 +40,12 @@
                 },
                 "company": {
                     "country": "Pays",
+                    "house-number": "N\u00b0",
                     "postbox-city": "Lieu",
                     "postbox-number": "Num\u00e9ro de case postale",
                     "postbox-zip": "Case postale NPA",
                     "postbox-zipcode": "Case postale NPA / Lieu",
                     "street": "Rue",
-                    "house-number":"N°",
                     "title": "Entreprise",
                     "zipcode": "NPA / Lieu"
                 },
@@ -77,25 +77,37 @@
                 "language-skills.spoken.error": "Des connaissances linguistiques sont requises",
                 "locality": {
                     "additional-text": "Texte compl\u00e9mentaire",
+                    "additional-text.placeholder": "p. ex. service externe dans toute la Suisse",
                     "city": "Lieu",
                     "country": "Pays",
                     "title": "Lieu de travail",
                     "zip": "NPA  ",
                     "zipcode": "NPA / Lieu"
                 },
+                "messages": {
+                    "validate": {
+                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)",
+                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
+                        "required": "Field is required",
+                        "zip-format": "Invalid ZIP code format",
+                        "zip-or-city-format": "Invalid ZIP code or city value"
+                    }
+                },
                 "no-selection": "aucune s\u00e9lection",
                 "occupation": {
                     "label": "Profession",
-                    "placeholder": "Profession"
+                    "placeholder": ""
                 },
                 "optional": "Optionnel",
                 "placeholders": {
                     "email": "exemple@email.ch",
-                    "phone": "031 999 99 99",
+                    "phone": "031 999 99 99 ou +41 31 999 99 99",
                     "url": "http://www.exemple.ch"
                 },
                 "publication": {
-                    "title": "M\u00f6dia de publication"
+                    "eures": "Portal EURES",
+                    "jobroom": " Site Job-Room",
+                    "title": "Moyens de publication"
                 },
                 "publicationEndDate": {
                     "label": "Engagement limit\u00e9 au [date]",
@@ -104,8 +116,8 @@
                     "title": "Dur\u00e9e de l'engagement"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "\u00c0 convenir",
-                    "immediately": "Tout de suite",
+                    "by-arrangement": "du",
+                    "immediately": "tout de suite",
                     "label": "Entr\u00e9e en fonction le [date]",
                     "title": "Entr\u00e9e en fonction  "
                 },
@@ -113,16 +125,7 @@
                 "submit": "Publier un emploi",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel d\u00e8s sa publication.",
-                "workload": "Taux d'occupation",
-                "messages": {
-                    "validate": {
-                        "required": "Field is required",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value",
-                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
-                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)"
-                    }
-                }
+                "workload": "Taux d'occupation"
             },
             "job-search": {
                 "search-badge": {
@@ -137,7 +140,7 @@
             },
             "jobPublicationTab": "Publier une place vacante",
             "jobSearch": {
-                "title": "Partez \u00e0 la recherche de l'emploi dont vous r\u00eavez !"
+                "title": "Trouver le travail de vos r\u00eaves!"
             }
         }
     }

@@ -4,7 +4,7 @@
         "title.portal": "lavoro",
         "title.portal-url": "https://www.lavoro.swiss",
         "toolbar": {
-            "companies": "Imprese",
+            "companies": "Datori di lavoro",
             "jobSeekers": "Persone in cerca d'impiego",
             "recruitmentAgencies": "Collocatori",
             "title": "Job-Room offre servizi per"
@@ -34,18 +34,18 @@
                     "email-enabled": "Candidatura elettronica",
                     "mail-enabled": "Candidatura cartacea",
                     "online-form": "Modulo online",
-                    "phone": "telefono",
+                    "phone": "Telefono",
                     "phone-enabled": "Candidatura telefonica",
                     "title": "Forme di candidatura"
                 },
                 "company": {
                     "country": "Paese",
+                    "house-number": "N.",
                     "postbox-city": "Luogo",
                     "postbox-number": "N. casella postale",
                     "postbox-zip": "Casella postale NPA",
                     "postbox-zipcode": "Casella postale NPA/Luogo",
                     "street": "Via",
-                    "house-number":"N.",
                     "title": "Impresa",
                     "zipcode": "NPA / Luogo"
                 },
@@ -76,26 +76,38 @@
                 "language-skills": "Conoscenze linguistiche",
                 "language-skills.spoken.error": "Conoscenze linguistiche obbligatorie",
                 "locality": {
-                    "additional-text": "testo aggiuntivo",
+                    "additional-text": "Testo aggiuntivo",
+                    "additional-text.placeholder": "p. es. servizio esterno in tutta la Svizzera",
                     "city": "Luogo",
                     "country": "Paese",
                     "title": "Sede di lavoro",
                     "zip": "NPA / Luogo",
                     "zipcode": "NPA / Luogo"
                 },
+                "messages": {
+                    "validate": {
+                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)",
+                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
+                        "required": "Field is required",
+                        "zip-format": "Invalid ZIP code format",
+                        "zip-or-city-format": "Invalid ZIP code or city value"
+                    }
+                },
                 "no-selection": "nessuna scelta",
                 "occupation": {
                     "label": "Professione",
-                    "placeholder": "Professione"
+                    "placeholder": ""
                 },
                 "optional": "Opzionale",
                 "placeholders": {
                     "email": "esempio@email.ch",
-                    "phone": "031 999 99 99",
+                    "phone": "031 999 99 99 o +41 31 999 99 99",
                     "url": "http://www.esempio.ch"
                 },
                 "publication": {
-                    "title": "Media di pubblicazione"
+                    "eures": " Portale EURES",
+                    "jobroom": " Sito Job-Room",
+                    "title": "Mezzi di pubblicazione"
                 },
                 "publicationEndDate": {
                     "label": "a tempo determinato fino al",
@@ -104,8 +116,8 @@
                     "title": "Durata dell'assunzione"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "Previo accordo",
-                    "immediately": "Da subito",
+                    "by-arrangement": "dal",
+                    "immediately": "da subito",
                     "label": "Inizio dell'attivit\u00e0 da Data",
                     "title": "Inizio dell'attivit\u00e0"
                 },
@@ -113,16 +125,7 @@
                 "submit": "Pubblica posto",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Grazie dell'offerta di lavoro",
-                "workload": "Grado di occupazione",
-                "messages": {
-                    "validate": {
-                        "required": "Field is required",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value",
-                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
-                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)"
-                    }
-                }
+                "workload": "Grado di occupazione"
             },
             "job-search": {
                 "search-badge": {

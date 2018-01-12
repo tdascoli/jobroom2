@@ -5,7 +5,7 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Nome dell'impresa",
+                "label": "Datori di lavoro",
                 "placeholder": "Nome dell'impresa"
             },
             "contract-type": {
@@ -20,7 +20,10 @@
                 "days": {
                     "label": "Giorni"
                 },
-                "label": "Online dal"
+                "label": "Online dal",
+                "oneday": {
+                    "label": "Giorno"
+                }
             },
             "sort": {
                 "label": "Classificazione",

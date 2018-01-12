@@ -26,7 +26,7 @@
             "job-publication": {
                 "application": {
                     "additional-info": {
-                        "characters-counter-text": "{{count}} Zeichen verbleibend.",
+                        "characters-counter-text": "{{count}} Zeichen verbleibend",
                         "label": "Erg\u00e4nzende Angaben",
                         "placeholder": "max. 240 Zeichen"
                     },
@@ -40,12 +40,12 @@
                 },
                 "company": {
                     "country": "Land",
+                    "house-number": "Nr.",
                     "postbox-city": "Ort",
                     "postbox-number": "Postfach-Nr.",
                     "postbox-zip": "Postfach PLZ",
                     "postbox-zipcode": "Postfach PLZ / Ort",
                     "street": "Strasse",
-                    "house-number":"Nr.",
                     "title": "Unternehmen",
                     "zipcode": "PLZ / Ort"
                 },
@@ -77,24 +77,36 @@
                 "language-skills.spoken.error": "Language skill is required",
                 "locality": {
                     "additional-text": "Zusatztext",
+                    "additional-text.placeholder": "z. B. Aussendienst in der ganzen Schweiz",
                     "city": "Ort",
                     "country": "Land",
                     "title": "Arbeitsort",
                     "zip": "PLZ",
                     "zipcode": "PLZ / Ort"
                 },
+                "messages": {
+                    "validate": {
+                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)",
+                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
+                        "required": "Field is required",
+                        "zip-format": "Invalid ZIP code format",
+                        "zip-or-city-format": "Invalid ZIP code or city value"
+                    }
+                },
                 "no-selection": "keine Auswahl",
                 "occupation": {
                     "label": "Beruf",
-                    "placeholder": "Beruf"
+                    "placeholder": ""
                 },
                 "optional": "Optional",
                 "placeholders": {
                     "email": "muster@email.ch",
-                    "phone": "031 999 99 99",
+                    "phone": "031 999 99 99 oder +41 31 999 99 99",
                     "url": "http://www.muster.ch"
                 },
                 "publication": {
+                    "eures": "EURES Portal",
+                    "jobroom": "Job-Room Website",
                     "title": "Publikationsmedien"
                 },
                 "publicationEndDate": {
@@ -104,8 +116,8 @@
                     "title": "Anstellungsdauer"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "Nach Vereinbarung",
-                    "immediately": "Ab Sofort",
+                    "by-arrangement": "ab",
+                    "immediately": "ab sofort",
                     "label": "Stellenantritt ab Datum",
                     "title": "Stellenantritt"
                 },
@@ -113,16 +125,7 @@
                 "submit": "Job publizieren",
                 "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
                 "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
-                "workload": "Arbeitspensum",
-                "messages": {
-                    "validate": {
-                        "required": "Field is required",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value",
-                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
-                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)"
-                    }
-                }
+                "workload": "Arbeitspensum"
             },
             "job-search": {
                 "search-badge": {

@@ -14,7 +14,7 @@
             "companyPostboxCity": "Postfach",
             "companyPostboxNumber": "Postfachnummer",
             "companyPostboxZipCode": "Postleitzahl",
-            "companyWebsite": "Webseite",
+            "companyWebsite": "Website",
             "companyZipCode": "Postleitzahl",
             "contactEmail": "Kontakt E-Mail",
             "contactFirstName": "Kontakt Vorname",
@@ -29,7 +29,7 @@
             "detail": {
                 "title": "Job"
             },
-            "drivingLicenseLevel": "F\u00fchrerausweiskategorie",
+            "drivingLicenseLevel": "F\u00fchrerausweis",
             "endDate": "Enddatum",
             "externalId": "Externe ID",
             "externalUrl": "Externe URL",

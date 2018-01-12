@@ -4,7 +4,7 @@
         "title.portal": "work",
         "title.portal-url": "https://www.work.swiss",
         "toolbar": {
-            "companies": "Companies",
+            "companies": "Employers",
             "jobSeekers": "Job seekers",
             "recruitmentAgencies": "Recruitment agencies",
             "title": "Job Room offers services for"
@@ -40,12 +40,12 @@
                 },
                 "company": {
                     "country": "Country",
+                    "house-number": "No.",
                     "postbox-city": "City",
                     "postbox-number": "PO box no.",
                     "postbox-zip": "PO box Postcode",
                     "postbox-zipcode": "PO box Postcode / City",
                     "street": "Street",
-                    "house-number":"No.",
                     "title": "Business",
                     "zipcode": "Postcode / City"
                 },
@@ -62,7 +62,7 @@
                 "description": {
                     "characters-counter-text": "{{count}} characters available",
                     "label": "Employment / requirements",
-                    "placeholder": "max. 9,000 characters"
+                    "placeholder": "max. 9000 characters"
                 },
                 "disclaimer": "I certify that the employer complies with local and industry-standard wage and working conditions.",
                 "driving-licence": "Driving licence",
@@ -77,35 +77,47 @@
                 "language-skills.spoken.error": "Language skill is required",
                 "locality": {
                     "additional-text": "Additional text",
+                    "additional-text.placeholder": "e.g. in the field throughout Switzerland",
                     "city": "City",
                     "country": "Country",
                     "title": "Place of work",
                     "zip": "Postcode",
                     "zipcode": "Postcode / City"
                 },
+                "messages": {
+                    "validate": {
+                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)",
+                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
+                        "required": "Field is required",
+                        "zip-format": "Invalid ZIP code format",
+                        "zip-or-city-format": "Invalid ZIP code or city value"
+                    }
+                },
                 "no-selection": "No selection",
                 "occupation": {
                     "label": "Occupation",
-                    "placeholder": "Occupation"
+                    "placeholder": ""
                 },
                 "optional": "Optional",
                 "placeholders": {
                     "email": "example@email.ch",
-                    "phone": "031 999 99 99",
+                    "phone": "031 999 99 99 or +41 31 999 99 99",
                     "url": "http://www.example.ch"
                 },
                 "publication": {
+                    "eures": "EURES Portal",
+                    "jobroom": " Job-Room Website",
                     "title": "Publication media"
                 },
                 "publicationEndDate": {
                     "label": "Temporary employment to date",
-                    "permanent": "Permanent",
-                    "temporary": "Temporary until",
+                    "permanent": "permanent",
+                    "temporary": "temporary until",
                     "title": "Employment duration"
                 },
                 "publicationStartDate": {
-                    "by-arrangement": "By arrangement / by agreement?",
-                    "immediately": "Immediately",
+                    "by-arrangement": "from",
+                    "immediately": "immediately",
                     "label": "Employment start date",
                     "title": "Employment start"
                 },
@@ -113,16 +125,7 @@
                 "submit": "Publish job",
                 "submit.error": "Job could not be saved!",
                 "submit.success": "Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.",
-                "workload": "Workload",
-                "messages": {
-                    "validate": {
-                        "required": "Field is required",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value",
-                        "phone-format": "Invalid phone number format (expected eg.: +41xxxxxxx)",
-                        "email-format": "Invalid email address format (expected eg.: example-email@seco.ch)"
-                    }
-                }
+                "workload": "Workload"
             },
             "job-search": {
                 "search-badge": {

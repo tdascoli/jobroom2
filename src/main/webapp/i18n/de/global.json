@@ -67,10 +67,10 @@
         "browsehappy": "Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=\"http://browsehappy.com/?locale=de/\">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erh\u00f6hen.",
         "button": {
             "add": {
-                "title": "Add"
+                "title": "Hinzuf\u00fcgen"
             },
             "remove": {
-                "title": "Remove"
+                "title": "Entfernen"
             }
         },
         "contactPerson": {
@@ -115,7 +115,7 @@
             "F": "F",
             "G": "G",
             "M": "M",
-            "label": "F\u00fchrerausweiskategorie"
+            "label": "F\u00fchrerausweis"
         },
         "education": {
             "ISCED1": "Primarstufe - ISCED 1",
@@ -233,7 +233,7 @@
                     "strength": "Passwortst\u00e4rke:"
                 },
                 "phone": {
-                    "format": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx"
+                    "format": "Bitte g\u00fcltige Telefonnummer eingeben z. B. 031 999 99 99 oder +41 31 999 99 99"
                 },
                 "username": {
                     "invalid": "Ihr Benutzername ist ung\u00fcltig.",

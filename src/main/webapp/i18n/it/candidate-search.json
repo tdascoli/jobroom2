@@ -37,7 +37,7 @@
             "title": "Cerca candidati"
         },
         "graduation": {
-            "ACCEPTED": "Svizzero o riconosciuto in Svizzera",
+            "ACCEPTED": "Diploma svizzero o riconosciuto in Svizzera",
             "CH": "Diploma svizzero",
             "NONE": "Nessun diploma",
             "NOT_ACCEPTED": "Diploma svizzero o estero",
@@ -52,7 +52,7 @@
         "no-selection": "Nessuna scelta",
         "skills": {
             "label": "Parole chiave",
-            "placeholder": "Competenze skills"
+            "placeholder": "Competenze, skills"
         },
         "title": "Cerca candidati",
         "toolbar": {

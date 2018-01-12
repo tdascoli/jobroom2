@@ -5,7 +5,7 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Name des Unternehmens",
+                "label": "Arbeitgeber",
                 "placeholder": "Name des Unternehmens"
             },
             "contract-type": {
@@ -20,7 +20,10 @@
                 "days": {
                     "label": "Tagen"
                 },
-                "label": "Online seit"
+                "label": "Online seit",
+                "oneday": {
+                    "label": "Tag"
+                }
             },
             "sort": {
                 "label": "Sortierung",

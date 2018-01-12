@@ -67,10 +67,10 @@
         "browsehappy": "Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=\"http://browsehappy.com/?locale=fr\">mettre \u00e0 jour votre navigateur</a> pour une meilleure exp\u00e9rience.",
         "button": {
             "add": {
-                "title": "Add"
+                "title": "Ajouter"
             },
             "remove": {
-                "title": "Remove"
+                "title": "Supprimer"
             }
         },
         "contactPerson": {
@@ -115,7 +115,7 @@
             "F": "F",
             "G": "G",
             "M": "M",
-            "label": "Cat\u00e9gorie de permis de conduire"
+            "label": "Permis de conduire"
         },
         "education": {
             "ISCED1": "Degr\u00e9 primaire - ISCED 1",
@@ -233,13 +233,13 @@
                     "strength": "Robustesse du mot de passe :"
                 },
                 "phone": {
-                    "format": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx"
+                    "format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99"
                 },
                 "username": {
-                    "invalid": "Votre username n'est pas valide.",
-                    "maxlength": "Votre username ne doit pas comporter plus de 50 caract\u00e8res.",
-                    "minlength": "Votre username doit comporter au moins 5 caract\u00e8res.",
-                    "required": "Votre username est requise."
+                    "invalid": "Votre nom d'utilisateur n'est pas valide.",
+                    "maxlength": "Votre nom d'utilisateur ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Votre nom d'utilisateur doit comporter au moins 5 caract\u00e8res.",
+                    "required": "Votre nom d'utilisateur est requis."
                 }
             }
         },

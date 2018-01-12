@@ -115,7 +115,7 @@
             "F": "F",
             "G": "G",
             "M": "M",
-            "label": "Driving licence level"
+            "label": "Driving licence"
         },
         "education": {
             "ISCED1": "Primary level - ISCED 1",
@@ -233,10 +233,10 @@
                     "strength": "Password strength:"
                 },
                 "phone": {
-                    "format": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx"
+                    "format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99"
                 },
                 "username": {
-                    "invalid": "Your usernaem address is invalid.",
+                    "invalid": "Your username is invalid.",
                     "maxlength": "Your username cannot be longer than 50 characters.",
                     "minlength": "Your username must be at least 5 characters.",
                     "required": "Your username is required."

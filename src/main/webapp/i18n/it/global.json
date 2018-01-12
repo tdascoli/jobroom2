@@ -67,10 +67,10 @@
         "browsehappy": "Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=\"http://browsehappy.com/?locale=it\"> Aggiorna il tuo browser per </a> migliorare la tua esperienza.",
         "button": {
             "add": {
-                "title": "Add"
+                "title": "Aggiungere"
             },
             "remove": {
-                "title": "Remove"
+                "title": "Rimuovere"
             }
         },
         "contactPerson": {
@@ -115,7 +115,7 @@
             "F": "F",
             "G": "G",
             "M": "M",
-            "label": "Categoria patente"
+            "label": "Patente"
         },
         "education": {
             "ISCED1": "Livello primario - ISCED 1",
@@ -233,13 +233,13 @@
                     "strength": "Sicurezza della password:"
                 },
                 "phone": {
-                    "format": "Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx"
+                    "format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99"
                 },
                 "username": {
-                    "invalid": "L'indirizzo email non \u00e8 valido.",
-                    "maxlength": "Username non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
-                    "minlength": "Username deve essere di almeno 5 caratteri",
-                    "required": "Username \u00e8 obbligatorio."
+                    "invalid": "Nome utente non \u00e8 valido.",
+                    "maxlength": "Nome utente non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
+                    "minlength": "Nome utente deve essere di almeno 5 caratteri",
+                    "required": "Nome utente \u00e8 obbligatorio."
                 }
             }
         },

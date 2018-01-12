@@ -5,7 +5,7 @@
     "job-search": {
         "filter": {
             "company-name": {
-                "label": "Nom de l'entreprise",
+                "label": "Employeurs",
                 "placeholder": "Nom de l'entreprise"
             },
             "contract-type": {
@@ -20,7 +20,10 @@
                 "days": {
                     "label": "Jours"
                 },
-                "label": "En ligne depuis"
+                "label": "En ligne depuis",
+                "oneday": {
+                    "label": "Jour"
+                }
             },
             "sort": {
                 "label": "Tri",

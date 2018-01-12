@@ -15,7 +15,7 @@ audits,audits.table.header.date,Datum,Date,Date,Data
 audits,audits.table.header.principal,Benutzer,User,Utilisateur,Utente
 audits,audits.table.header.status,Stand,Status,État,Stato
 audits,audits.title,Audits,Audits,Audits,Cambiamenti
-candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweiskategorien,Driving licences,Permis de conduire,Categorie patente
+candidate-detail,candidate-detail.additional-information.drivingCategories.label,Führerausweise,Driving licences,Permis de conduire,Patenti
 candidate-detail,candidate-detail.additional-information.education.label,Ausbildung,Education,Formation,Formazione
 candidate-detail,candidate-detail.additional-information.gender.label,Geschlecht,Gender,Sexe,Sesso
 candidate-detail,candidate-detail.additional-information.highestEducationLevel.label,Höchste Bildungsstufe,Highest education level,Niveau de formation le plus élevé,Massimo titolo di studio
@@ -37,7 +37,7 @@ candidate-detail,candidate-detail.job-center.email.label,E-Mail,Email,E-mail,ema
 candidate-detail,candidate-detail.job-center.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.job-center.title,Weitere Auskünfte erteilt Ihnen,For more information contact,Autres renseignements donnés par,Per maggiori informazioni
 candidate-detail,candidate-detail.job-experience.degree.label,Ausbildung,Training,Formation,Formazione
-candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, aptitudes","Conoscenze, competenze, skills"
+candidate-detail,candidate-detail.job-experience.description.label,"Kenntnisse, Fähigkeiten, Skills","Expertise, competencies, skills","Connaissances, compétences, skills","Conoscenze, competenze, skills"
 candidate-detail,candidate-detail.job-experience.education.label,Bildungsstufe,Level of education,"Niveau de formation ",Livello formativo
 candidate-detail,candidate-detail.job-experience.experience.label,Berufserfahrung,Professional experience,Années d'expérience,Anni di esperienza
 candidate-detail,candidate-detail.job-experience.graduation.label,Berufsabschluss,Professional degree,Diplôme,Titolo professionale
@@ -52,7 +52,7 @@ candidate-detail,candidate-detail.personal-information.nationality.label,Staatsa
 candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personal information / Candidate contact details,Coordonnées du candidat,Generalità / coordinate del candidato
 candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
-candidate-search,candidate-search.availability.IMMEDIATE,Ab Sofort,Immediately,Tout de suite,Da subito
+candidate-search,candidate-search.availability.IMMEDIATE,Ab sofort,Immediately,Tout de suite,Da subito
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Availability,Disponibilité,Disponibilità
 candidate-search,candidate-search.candidate-search-list.error-message,Die Resultate der Kandidatensuche konnten nicht geladen werden,Failed to load candidate result list.,Les résultats de la recherche de candidats n'ont pas pu être chargés,Impossibile caricare la lista risultati dei candidati!
 candidate-search,candidate-search.candidate-search-list.title.many.with-locality,Mehr als {{count}} {{query}} Kandidaten in {{locality}},More than {{count}} {{query}} candidates in {{locality}},Plus de {{count}} {{query}} candidats à {{locality}},Più di {{count}} {{query}} candidati in {{locality}}
@@ -67,7 +67,7 @@ candidate-search,candidate-search.education.label,Bildungsstufe,Level of educati
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
-candidate-search,candidate-search.graduation.ACCEPTED,Schweiz oder anerkannt,Swiss or accepted in Switzerland,Suisse ou reconnu en Suisse,Svizzero o riconosciuto in Svizzera
+candidate-search,candidate-search.graduation.ACCEPTED,Schweizer Abschluss oder anerkannt,Swiss degree or accepted in Switzerland,Diplôme suisse ou reconnu en Suisse,Diploma svizzero o riconosciuto in Svizzera
 candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Diploma svizzero
 candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun diploma
 candidate-search,candidate-search.graduation.NOT_ACCEPTED,Schweiz oder ausländisch,Swiss or foreign degree,Diplôme suisse ou étranger,Diploma svizzero o estero
@@ -76,7 +76,7 @@ candidate-search,candidate-search.keywords.label,Suchbegriffe,Search terms,Crit�
 candidate-search,candidate-search.languageSkills.label,Sprachkenntnisse,Languages,Connaissances linguistiques,Conoscenze linguistiche
 candidate-search,candidate-search.no-selection,Keine Auswahl,No selection,Aucune sélection,Nessuna scelta
 candidate-search,candidate-search.skills.label,Suchbegriffe,Key words,Mots-clés,Parole chiave
-candidate-search,candidate-search.skills.placeholder,"Fähigkeiten, Skills","Competencies, skills","Compétences, aptitudes",Competenze skills
+candidate-search,candidate-search.skills.placeholder,"Fähigkeiten, Skills","Competencies, skills","Compétences, skills","Competenze, skills"
 candidate-search,candidate-search.title,Kandidatensuche,Candidate search,Recherche de candidats,Cerca candidati
 candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen,Select degree,Sélectionner un diplôme,Seleziona titolo...
 candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Degree,Diplôme,Titolo
@@ -210,8 +210,8 @@ global,footer.link.legal.text,Rechtliche Hinweise,Legal information,Droits d'usa
 global,footer.link.legal.url,https://www.arbeit.swiss/home/service/rechtliche-hinweise.html,https://www.work.swiss/home/service/rechtliche-hinweise.html,https://www.travail.swiss/home/service/rechtliche-hinweise.html,https://www.lavoro.swiss/home/service/rechtliche-hinweise.html
 global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Unemployment insurance/Labour market,Assurance-chômage / marché du travail AC,Assicurazione contro la disoccupazione / Mercato del lavoro AD
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
-global,global.button.add.title,Add,Add,Add,Add
-global,global.button.remove.title,Remove,Remove,Remove,Remove
+global,global.button.add.title,Hinzufügen,Add,Ajouter,Aggiungere
+global,global.button.remove.title,Entfernen,Remove,Supprimer,Rimuovere
 global,global.contactPerson.salutation.MR,Herr,Mr,Monsieur,Signor
 global,global.contactPerson.salutation.MS,Frau,Ms,Madame,Signora
 global,global.degree.NOT_KNOWN,Unbekannt,Unknown,Inconnue,Ignoto
@@ -247,7 +247,7 @@ global,global.drivingLicenceCategory.DE,DE,DE,DE,DE
 global,global.drivingLicenceCategory.F,F,F,F,F
 global,global.drivingLicenceCategory.G,G,G,G,G
 global,global.drivingLicenceCategory.M,M,M,M,M
-global,global.drivingLicenceCategory.label,Führerausweiskategorie,Driving licence level,Catégorie de permis de conduire,Categoria patente
+global,global.drivingLicenceCategory.label,Führerausweis,Driving licence,Permis de conduire,Patente
 global,global.education.ISCED1,Primarstufe - ISCED 1,Primary level - ISCED 1,Degré primaire - ISCED 1,Livello primario - ISCED 1
 global,global.education.ISCED2,Sekundarstufe I - ISCED 2,Lower secondary level - ISCED 2,Degré secondaire I - ISCED 2,Livello secondario I - ISCED 2
 global,global.education.ISCED3,Sekundarstufe II - ISCED 3,Upper secondary level - ISCED 3,Degré secondaire II - ISCED 3,Livello secondario II - ISCED 3
@@ -323,11 +323,11 @@ global,global.messages.validate.newpassword.maxlength,Das neue Passwort darf nic
 global,global.messages.validate.newpassword.minlength,Das neue Passwort muss mindestens 5 Zeichen lang sein,The new password must be at least 5 characters.,Votre mot de passe doit comporter au moins 5 caractères.,La password deve essere di almeno 4 caratteri
 global,global.messages.validate.newpassword.required,Ein neues Passwort wird benötigt.,A new password is required.,Un nouveau mot de passe est requis.,La password è obbligatoria.
 global,global.messages.validate.newpassword.strength,Passwortstärke:,Password strength:,Robustesse du mot de passe :,Sicurezza della password:
-global,global.messages.validate.phone.format,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx,Swiss or international telephone number expected:  xxxxxxxxx or +49 xxx xxxxxxxx
-global,global.messages.validate.username.invalid,Ihr Benutzername ist ungültig.,Your usernaem address is invalid.,Votre username n'est pas valide.,L'indirizzo email non è valido.
-global,global.messages.validate.username.maxlength,Ihr Benutzername darf nicht länger als 50 Zeichen sein,Your username cannot be longer than 50 characters.,Votre username ne doit pas comporter plus de 50 caractères.,Username non può contenere più di 50 caratteri
-global,global.messages.validate.username.minlength,Ihr Benutzername muss mindestens 5 Zeichen lang sein,Your username must be at least 5 characters.,Votre username doit comporter au moins 5 caractères.,Username deve essere di almeno 5 caratteri
-global,global.messages.validate.username.required,Ihr Benutzername wird benötigt.,Your username is required.,Votre username est requise.,Username è obbligatorio.
+global,global.messages.validate.phone.format,Bitte gültige Telefonnummer eingeben z. B. 031 999 99 99 oder +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99
+global,global.messages.validate.username.invalid,Ihr Benutzername ist ungültig.,Your username is invalid.,Votre nom d'utilisateur n'est pas valide.,Nome utente non è valido.
+global,global.messages.validate.username.maxlength,Ihr Benutzername darf nicht länger als 50 Zeichen sein,Your username cannot be longer than 50 characters.,Votre nom d'utilisateur ne doit pas comporter plus de 50 caractères.,Nome utente non può contenere più di 50 caratteri
+global,global.messages.validate.username.minlength,Ihr Benutzername muss mindestens 5 Zeichen lang sein,Your username must be at least 5 characters.,Votre nom d'utilisateur doit comporter au moins 5 caractères.,Nome utente deve essere di almeno 5 caratteri
+global,global.messages.validate.username.required,Ihr Benutzername wird benötigt.,Your username is required.,Votre nom d'utilisateur est requis.,Nome utente è obbligatorio.
 global,global.reference.canton.AG,Aargau,Aargau,Argovie,Argovia
 global,global.reference.canton.AI,Appenzell Innerrhoden,Appenzell Innerrhoden,Appenzell Rhodes-Intérieures,Appenzello Interno
 global,global.reference.canton.AR,Appenzell Ausserrhoden,Appenzell Ausserrhoden,Appenzell Rhodes-Extérieures,Appenzello Esterno
@@ -556,7 +556,7 @@ health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verific
 home,home.title,Job Room,Job Room,Job Room,Job Room
 home,home.title.portal,arbeit,work,travail,lavoro
 home,home.title.portal-url,https://www.arbeit.swiss,https://www.work.swiss,https://www.travail.swiss,https://www.lavoro.swiss
-home,home.toolbar.companies,Arbeitgeber,Companies,Entreprise,Imprese
+home,home.toolbar.companies,Arbeitgeber,Employers,Employeurs,Datori di lavoro
 home,home.toolbar.jobSeekers,Stellensuchende,Job seekers,Demandeur d'emploi,Persone in cerca d'impiego
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Recruitment agencies,Agence de placement,Collocatori
 home,home.toolbar.title,Job-Room bietet Leistungen für,Job Room offers services for,Job-Room offre des services pour,Job-Room offre servizi per
@@ -567,14 +567,14 @@ home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen!,Show search r
 home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Display candidates,Afficher des candidats,Visualizza candidati
 home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Find suitable candidates,Trouvez des candidats appropriés,Trova il candidato giusto
 home,home.tools.candidateSearchTab,Kandidaten finden,Find candidates,Trouver des candidats,Trova candidati
-home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} Zeichen verbleibend.,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
+home,home.tools.job-publication.application.additional-info.characters-counter-text,{{count}} Zeichen verbleibend,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
 home,home.tools.job-publication.application.additional-info.label,Ergänzende Angaben,Supplementary information,Indications complémentaires,Dati complementari
 home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Zeichen,Max. 240 characters,max. 240 caractères,max. 240 caratteri
 home,home.tools.job-publication.application.email,E-Mail,Email,E-mail,E-mail
 home,home.tools.job-publication.application.email-enabled,Elektronische Bewerbung,Electronic application,Postulation en ligne,Candidatura elettronica
 home,home.tools.job-publication.application.mail-enabled,Schriftliche Bewerbung,Written application,Postulation par écrit,Candidatura cartacea
 home,home.tools.job-publication.application.online-form,Online-Formular,Online form,Formulaire en ligne,Modulo online
-home,home.tools.job-publication.application.phone,Telefon,Telephone number,Téléphone,telefono
+home,home.tools.job-publication.application.phone,Telefon,Telephone number,Téléphone,Telefono
 home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Application by telephone,Postulation par téléphone,Candidatura telefonica
 home,home.tools.job-publication.application.title,Bewerbungsformen,Application forms,Formes de postulation,Forme di candidatura
 home,home.tools.job-publication.company.country,Land,Country,Pays,Paese
@@ -596,7 +596,7 @@ home,home.tools.job-publication.date-placeholder,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAA
 home,home.tools.job-publication.degree,Ausbildung,Education,Formation,Formazione
 home,home.tools.job-publication.description.characters-counter-text,{{count}} Zeichen verbleibend.,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
 home,home.tools.job-publication.description.label,Tätigkeit /Anforderungen,Employment / requirements,Activité / Exigences,Attività / requisiti
-home,home.tools.job-publication.description.placeholder,max. 9000 Zeichen,"max. 9,000 characters",max. 9000 caractères,max. 9000 caratteri
+home,home.tools.job-publication.description.placeholder,max. 9000 Zeichen,max. 9000 characters,max. 9000 caractères,max. 9000 caratteri
 home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",I certify that the employer complies with local and industry-standard wage and working conditions.,Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localité.,Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attività viene svolta.
 home,home.tools.job-publication.driving-licence,Führerausweis,Driving licence,Permis de conduire,Patente
 home,home.tools.job-publication.experience,Berufserfahrung,Work experience,Expérience professionnelle,Esperienza professionale
@@ -608,7 +608,8 @@ home,home.tools.job-publication.job-description,Stellenbeschreibung,Job descript
 home,home.tools.job-publication.job-title,Stellenbezeichnung,Job title,Désignation du poste,Denominazione del posto
 home,home.tools.job-publication.language-skills,Sprachkenntnisse,Languages,Connaissances linguistiques,Conoscenze linguistiche
 home,home.tools.job-publication.language-skills.spoken.error,Language skill is required,Language skill is required,Des connaissances linguistiques sont requises,Conoscenze linguistiche obbligatorie
-home,home.tools.job-publication.locality.additional-text,Zusatztext,Additional text,Texte complémentaire,testo aggiuntivo
+home,home.tools.job-publication.locality.additional-text,Zusatztext,Additional text,Texte complémentaire,Testo aggiuntivo
+home,home.tools.job-publication.locality.additional-text.placeholder,z. B. Aussendienst in der ganzen Schweiz,e.g. in the field throughout Switzerland,p. ex. service externe dans toute la Suisse,p. es. servizio esterno in tutta la Svizzera
 home,home.tools.job-publication.locality.city,Ort,City,Lieu,Luogo
 home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
 home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Sede di lavoro
@@ -621,18 +622,20 @@ home,home.tools.job-publication.messages.validate.zip-format,Invalid ZIP code fo
 home,home.tools.job-publication.messages.validate.zip-or-city-format,Invalid ZIP code or city value,Invalid ZIP code or city value,Invalid ZIP code or city value,Invalid ZIP code or city value
 home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta
 home,home.tools.job-publication.occupation.label,Beruf,Occupation,Profession,Professione
-home,home.tools.job-publication.occupation.placeholder,Beruf,Occupation,Profession,Professione
+home,home.tools.job-publication.occupation.placeholder,,,,
 home,home.tools.job-publication.optional,Optional,Optional,Optionnel,Opzionale
 home,home.tools.job-publication.placeholders.email,muster@email.ch,example@email.ch,exemple@email.ch,esempio@email.ch
-home,home.tools.job-publication.placeholders.phone,031 999 99 99,031 999 99 99,031 999 99 99,031 999 99 99
+home,home.tools.job-publication.placeholders.phone,031 999 99 99 oder +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99,031 999 99 99 ou +41 31 999 99 99,031 999 99 99 o +41 31 999 99 99
 home,home.tools.job-publication.placeholders.url,http://www.muster.ch,http://www.example.ch,http://www.exemple.ch,http://www.esempio.ch
-home,home.tools.job-publication.publication.title,Publikationsmedien,Publication media,Mödia de publication,Media di pubblicazione
+home,home.tools.job-publication.publication.eures,EURES Portal,EURES Portal,Portal EURES," Portale EURES"
+home,home.tools.job-publication.publication.jobroom,Job-Room Website," Job-Room Website"," Site Job-Room"," Sito Job-Room"
+home,home.tools.job-publication.publication.title,Publikationsmedien,Publication media,Moyens de publication,Mezzi di pubblicazione
 home,home.tools.job-publication.publicationEndDate.label,Anstellungsdauer befristet bis Datum,Temporary employment to date,Engagement limité au [date],a tempo determinato fino al
-home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,Permanent,illimité,a tempo indeterminato
-home,home.tools.job-publication.publicationEndDate.temporary,befristet bis,Temporary until,limité au,a tempo determinato fino al
+home,home.tools.job-publication.publicationEndDate.permanent,unbefristet,permanent,illimité,a tempo indeterminato
+home,home.tools.job-publication.publicationEndDate.temporary,befristet bis,temporary until,limité au,a tempo determinato fino al
 home,home.tools.job-publication.publicationEndDate.title,Anstellungsdauer,Employment duration,Durée de l'engagement,Durata dell'assunzione
-home,home.tools.job-publication.publicationStartDate.by-arrangement,Nach Vereinbarung,By arrangement / by agreement?,À convenir,Previo accordo
-home,home.tools.job-publication.publicationStartDate.immediately,Ab Sofort,Immediately,Tout de suite,Da subito
+home,home.tools.job-publication.publicationStartDate.by-arrangement,ab,from,du,dal
+home,home.tools.job-publication.publicationStartDate.immediately,ab sofort,immediately,tout de suite,da subito
 home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Datum,Employment start date,Entrée en fonction le [date],Inizio dell'attività da Data
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Employment start,"Entrée en fonction  ",Inizio dell'attività
 home,home.tools.job-publication.reset,Zurücksetzen,Reset,Rétablir,Ripristina
@@ -646,7 +649,7 @@ home,home.tools.job-search.search-badge.one,"Diesem Profil entspricht <br><span 
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Show search results.,Afficher maintenant,Visualizza ora!
 home,home.tools.job-search.search-button.title,Jobs anzeigen,Find your dream job!,Afficher les offres d'emploi,Trova il lavoro da sogno!
 home,home.tools.jobPublicationTab,Job publizieren,Publish job,Publier une place vacante,Pubblica lavoro
-home,home.tools.jobSearch.title,Finden Sie passende Jobs,Find your dream job now!,Partez à la recherche de l'emploi dont vous rêvez !,Trova adesso il tuo lavoro da sogno!
+home,home.tools.jobSearch.title,Finden Sie passende Jobs,Find your dream job now!,Trouver le travail de vos rêves!,Trova adesso il tuo lavoro da sogno!
 job-detail,job-detail.action.applyNow,Jetzt Bewerben,Apply now,Postuler maintenant,Candidarsi ora
 job-detail,job-detail.action.copyLink,Link kopieren,Copy link,Copier le lien,Copia link
 job-detail,job-detail.action.print,Drucken,Print,Imprimer,Stampa
@@ -670,7 +673,7 @@ job-detail,job-detail.reference,Referenz,Reference,Référence,Riferimento
 job-detail,job-detail.reference.job-id,Stellennummer,Job ID,Numéro du poste,Numero posto
 job-detail,job-detail.reference.phone,Telefon,Telephone,Téléphone,Telefono
 job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Responsible job centre,ORP compétent,URC competente
-job-detail,job-detail.startDate,Ab {{date}},From {{date}},À partir de {{date}},Da {{date}}
+job-detail,job-detail.startDate,Ab {{date}},From {{date}},Du {{date}},Dal {{date}}
 job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fonction,Entrata in funzione
 job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
 job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite,Da subito
@@ -689,7 +692,7 @@ job-publication,job-publication-details.permanent,Permanent,Permanent,Permanent,
 job-publication,job-publication-details.print,Drucken,Drucken,Drucken,Drucken
 job-publication,job-publication-details.temporary,Temporary,Temporary,Temporary,Temporary
 job-search,job-detail.endDate,Befristet bis {{date}},Until {{date}},Jusqu'au {{date}},A {{date}}
-job-search,job-search.filter.company-name.label,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
+job-search,job-search.filter.company-name.label,Arbeitgeber,Employers,Employeurs,Datori di lavoro
 job-search,job-search.filter.company-name.placeholder,Name des Unternehmens,Company name,Nom de l'entreprise,Nome dell'impresa
 job-search,job-search.filter.contract-type.label,Vertragsart,Contract type,Type de contrat,Tipologia di contratto
 job-search,job-search.filter.contract-type.option.ALL,Alle,All,Tous,Tutto
@@ -697,6 +700,7 @@ job-search,job-search.filter.contract-type.option.PERMANENT,Unbefristet,Permanen
 job-search,job-search.filter.contract-type.option.TEMPORARY,Befristet,Temporary,Durée limitée,A tempo determinato
 job-search,job-search.filter.online-since.days.label,Tagen,Days,Jours,Giorni
 job-search,job-search.filter.online-since.label,Online seit,Online since,En ligne depuis,Online dal
+job-search,job-search.filter.online-since.oneday.label,Tag,Day,Jour,Giorno
 job-search,job-search.filter.sort.label,Sortierung,Sort,Tri,Classificazione
 job-search,job-search.filter.sort.option.DATE_ASC,Sortiere nach Datum aufsteigend,Sort by date ascending,Tri par date - ordre croissant,Ordine crescente per data
 job-search,job-search.filter.sort.option.DATE_DESC,Sortiere nach Datum absteigend,Sort by date descending,Tri par date - ordre décroissant,Ordine decrescente per data
@@ -735,7 +739,7 @@ job,jobroomApp.job.companyPhone,Telefon,Company Phone,Téléphone,Telefono impre
 job,jobroomApp.job.companyPostboxCity,Postfach,Company Postbox City,Case postale,Casella postale Città impresa
 job,jobroomApp.job.companyPostboxNumber,Postfachnummer,Company Postbox Number,Numéro de la case postale,Numero casella postale impresa
 job,jobroomApp.job.companyPostboxZipCode,Postleitzahl,Company Postbox Zip Code,Code postal,Zip Code casella postale impresa
-job,jobroomApp.job.companyWebsite,Webseite,Company Website,Site web,Sito web impresa
+job,jobroomApp.job.companyWebsite,Website,Company Website,Site web,Sito web impresa
 job,jobroomApp.job.companyZipCode,Postleitzahl,Company Zip Code,Code postal,Zip Code impresa
 job,jobroomApp.job.contactEmail,Kontakt E-Mail,Contact Email,Contact - E-mail,Email contatto
 job,jobroomApp.job.contactFirstName,Kontakt Vorname,Contact First Name,Contact - Prénom,Nome contatto
@@ -746,7 +750,7 @@ job,jobroomApp.job.currencyCode,Währungscode,Currency Code,Monnaie,Codice valut
 job,jobroomApp.job.delete.question,Soll Job {{ id }} wirklich endgültig gelöscht werden?,Are you sure you want to delete the job {{ id }}?,Etes-vous certain de vouloir supprimer l'emploi {{ id }} ?,Sei sicuro di volere eliminare il posto {{ id }}?
 job,jobroomApp.job.description,Beschreibung,Description,Description,Descrizione
 job,jobroomApp.job.detail.title,Job,Job,Emploi,Posto
-job,jobroomApp.job.drivingLicenseLevel,Führerausweiskategorie,Driving licence level,Catégorie de permis de conduire,Categoria patente
+job,jobroomApp.job.drivingLicenseLevel,Führerausweis,Driving licence,Permis de conduire,Patente
 job,jobroomApp.job.endDate,Enddatum,End date,Date de fin,Data finale
 job,jobroomApp.job.externalId,Externe ID,External ID,ID externe,Id esterna
 job,jobroomApp.job.externalUrl,Externe URL,External Url,URL externe,Url esterna
