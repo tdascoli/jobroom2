@@ -19,7 +19,8 @@ import { asYouType, CountryCode, format, isValidNumber, parse, } from 'libphonen
 @Component({
     selector: 'jr2-phone-number-input',
     template: `<input [id]="id" #input [disabled]="disabled" (input)="onInput($event)"
-                      class="form-control" (blur)="onBlur($event)">`,
+                      class="form-control" (blur)="onBlur($event)"
+                      [placeholder]="placeholder">`,
     styles: [],
     providers: [
         {
@@ -38,6 +39,7 @@ export class PhoneNumberInputComponent implements OnInit, ControlValueAccessor, 
     @ViewChild('input') inputViewChild: ElementRef;
     @Input() defaultCountry: CountryCode = 'CH';
     @Input() id: string;
+    @Input() placeholder = '';
 
     disabled: boolean;
     country: CountryCode;

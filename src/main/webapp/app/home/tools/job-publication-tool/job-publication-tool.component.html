@@ -373,7 +373,8 @@
                     <div class="form-group">
                         <label for="kp-tel" class="col-form-label">{{ 'home.tools.job-publication.contact.phone' | translate }}</label>
                         <div>
-                            <jr2-phone-number-input id="kp-tel" formControlName="phoneNumber" [jr2TextSizeLimit]="50"></jr2-phone-number-input>
+                            <jr2-phone-number-input id="kp-tel" formControlName="phoneNumber" [jr2TextSizeLimit]="50" [placeholder]="'home.tools.job-publication.placeholders.phone' | translate">
+                            </jr2-phone-number-input>
                         </div>
                         <jr2-input-error-message [formGroup]="jobPublicationForm" path="contact.phoneNumber"
                                                  [errorCodes]="['required', 'phoneValidator']"
@@ -435,7 +436,8 @@
                     <div class="form-group">
                         <label for="app-phone" class="col-form-label">{{ 'home.tools.job-publication.application.phone' | translate }}</label>
                         <div>
-                            <jr2-phone-number-input id="app-phone" formControlName="phoneNumber" [jr2TextSizeLimit]="50"></jr2-phone-number-input>
+                            <jr2-phone-number-input id="app-phone" formControlName="phoneNumber" [jr2TextSizeLimit]="50" [placeholder]="'home.tools.job-publication.placeholders.phone' | translate">
+                            </jr2-phone-number-input>
                         </div>
                         <jr2-input-error-message [formGroup]="jobPublicationForm" path="application.phoneNumber"
                                                  [errorCodes]="['required', 'phoneValidator']"
