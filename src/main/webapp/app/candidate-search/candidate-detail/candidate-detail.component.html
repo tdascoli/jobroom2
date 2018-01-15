@@ -97,7 +97,7 @@
                     <strong>{{ 'candidate-detail.additional-information.workForm.label' | translate }}</strong>
                     <span>
                         <ng-container *ngFor="let workForm of candidateProfile.workForm | keys; last as isLast">
-                            {{('candidate-search.workForm.' + workForm.value | translate) + (isLast ? '' : ' ,')}}
+                            {{('candidate-search.workForm.' + workForm.value | translate) + (isLast ? '' : ', ')}}
                         </ng-container>
                     </span>
                 </div>
