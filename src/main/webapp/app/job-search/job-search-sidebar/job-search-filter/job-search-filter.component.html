@@ -31,12 +31,14 @@
         </div>
         <div class="form-group range-slider">
             <label class="small">{{ 'job-search.filter.online-since.label' | translate}}</label>
-            <nouislider [min]="1" [max]="60" [config]="{step: 1}" class="range-input"
+            <div>
+                <nouislider [min]="1" [max]="60" [config]="{step: 1}" class="range-input"
                         [formControl]="filterForm.get('onlineSince')"></nouislider>
-            <span class="range-slider__value range-slider__value--unit small"
-                  [attr.data-unit]="(filterForm.get('onlineSince').value > 1 ? 'job-search.filter.online-since.day.many' : 'job-search.filter.online-since.day.one') | translate">
-                {{ filterForm.get('onlineSince').value }}
-            </span>
+                <span class="range-slider__value range-slider__value--unit small"
+                      [attr.data-unit]="(filterForm.get('onlineSince').value > 1 ? 'job-search.filter.online-since.day.many' : 'job-search.filter.online-since.day.one') | translate">
+                    {{ filterForm.get('onlineSince').value }}
+                </span>
+            </div>
         </div>
     </form>
 </div>
