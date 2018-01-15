@@ -44,11 +44,21 @@
         <div [formGroup]="zipGroup" class="row">
             <div class="col-md-4">
                 <input type="text" formControlName="zip" class="form-control" name="zip"/>
+                <jr2-input-error-message [formGroup]="zipGroup" path="zip"
+                                         [errorCodes]="['pattern', 'empty', 'required']"
+                                         [keys]="['home.tools.job-publication.messages.validate.zip-format',
+                                         'home.tools.job-publication.messages.validate.required',
+                                         'home.tools.job-publication.messages.validate.required']">
+                </jr2-input-error-message>
             </div>
             <div class="col">
                 <input type="text" formControlName="city" class="form-control" name="city"/>
+                <jr2-input-error-message [formGroup]="zipGroup" path="city"
+                                         [errorCodes]="['empty', 'required']"
+                                         [keys]="['home.tools.job-publication.messages.validate.required',
+                                         'home.tools.job-publication.messages.validate.required']">
+                </jr2-input-error-message>
             </div>
         </div>
-
     </div>
 </ng-template>
