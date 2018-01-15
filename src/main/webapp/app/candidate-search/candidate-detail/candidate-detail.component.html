@@ -28,6 +28,7 @@
                                 {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
                             </div>
                         </p>
+                        <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
                     </div>
                 </div>
 
