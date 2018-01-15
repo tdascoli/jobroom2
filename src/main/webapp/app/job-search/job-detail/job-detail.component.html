@@ -19,7 +19,7 @@
                                 <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
                             </address>
 
-                            <p><a href="tel:{{job.company.phone}}">{{ job.company.phone }}</a></p>
+                            <p><a href="tel:{{job.company.phone}}">{{ job.company.phone | jr2PhoneNumber }}</a></p>
                             <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
                                 }}</a></p>
                             <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
@@ -32,13 +32,13 @@
                                 <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
                                     {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                                 </p>
-                                <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone }}</a></p>
+                                <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone | jr2PhoneNumber }}</a></p>
                                 <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
                                     }}</a></p>
                             </div>
                         </div>
                     </div>
-                  
+
                     <div *ngIf="jobCenter$ | async as jobCenter" class="order-sm-2 alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
                         <div class="detail__content">
                             <address>
