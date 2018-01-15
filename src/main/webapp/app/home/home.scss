@@ -38,14 +38,14 @@ only screen and (min-resolution: 2dppx) {
     background-size: cover;
 }
 .background--companies {
-    background: url("../../content/images/bg-companies.jpeg") no-repeat center center fixed;
+    background: url("../../content/images/bg-companies.jpeg") no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
 }
 .background--pea {
-    background: url("../../content/images/bg-companies.jpeg") no-repeat center center fixed;
+    background: url("../../content/images/bg-pea.jpeg") no-repeat top center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -56,4 +56,17 @@ only screen and (min-resolution: 2dppx) {
     cursor: pointer;
 }
 
+/*Edge*/
+@supports (-ms-ime-align:auto) {
+    .navbar-brand {
+        background: red !important;
+    }
+}
 
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .background--jobseeker,
+    .background--companies,
+    .background--pea {
+        background-attachment: scroll !important;
+    }
+}
