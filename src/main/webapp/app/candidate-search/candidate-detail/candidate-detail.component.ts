@@ -16,7 +16,7 @@ import {
     CandidateSearchFilter, CandidateSearchState, getCandidateProfileList,
     getSearchFilter, getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
-import { Gender, Graduation } from '../../shared';
+import { Contact, Gender, Graduation } from '../../shared';
 import { Principal } from '../../shared/auth/principal.service';
 
 interface EnrichedJobExperience extends JobExperience {
@@ -42,6 +42,7 @@ export class CandidateDetailComponent implements OnInit {
     candidateUrl: string;
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
+    contact: Contact;
 
     constructor(private route: ActivatedRoute,
                 private referenceService: ReferenceService,
@@ -93,6 +94,16 @@ export class CandidateDetailComponent implements OnInit {
             .map(([jobExperiences, occupationCode]) =>
                 this.candidateService.getRelevantJobExperience(occupationCode, jobExperiences));
         this.populatePreferredWorkLocations();
+
+        Observable.combineLatest(this.candidateProfile$, this.jobCenter$)
+            .subscribe(([candidateProfile, jobCenter]) => {
+                console.log(candidateProfile, jobCenter);
+                if (jobCenter && (jobCenter.code.startsWith('BEA') || jobCenter.code.startsWith('BSA'))) {
+                    this.contact =  { phone: jobCenter.phone, email: jobCenter.email };
+                } else {
+                    this.contact = candidateProfile.jobAdvisor;
+                }
+            });
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {
@@ -132,16 +143,16 @@ export class CandidateDetailComponent implements OnInit {
         window.print();
     }
 
-    isDisplayGraduation(graduation: string) {
+    isDisplayGraduation(graduation: string): boolean {
         return graduation && graduation !== Graduation[Graduation.NONE];
     }
 
-    isDisplayDegree(degree: string) {
+    isDisplayDegree(degree: string): boolean {
         return degree && Degree[degree] >= Degree.SEK_II_WEITERFUEHRENDE_SCHULE
             && Degree[degree] <= Degree.TER_DOKTORAT_UNIVERSITAET;
     }
 
-    isAuthenticated() {
+    isAuthenticated(): boolean {
         return this.principal.isAuthenticated();
     }
 }

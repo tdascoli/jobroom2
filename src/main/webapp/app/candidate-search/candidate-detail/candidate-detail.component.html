@@ -5,11 +5,13 @@
                 <div class="d-flex d-sm-block flex-column-reverse">
                     <ul class="pagination pagination--block pagination-alv d-md-flex">
                         <li class="page-item">
-                            <a class="page-link" routerLink="/candidate-search">{{'candidate-detail.back' | translate}}</a>
+                            <a class="page-link" routerLink="/candidate-search">{{'candidate-detail.back' |
+                                translate}}</a>
                         </li>
                     </ul>
 
-                    <div *ngIf="jobCenter$ | async as jobCenter" class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
+                    <div *ngIf="jobCenter$ | async as jobCenter"
+                         class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
                         <div class="detail__subtitle">{{ 'candidate-detail.job-center.title' | translate }}</div>
 
                         <div class="detail__content">
@@ -21,16 +23,22 @@
                                 </p>
                             </address>
 
-                        <p>
-                            {{'candidate-detail.job-center.phone.label' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone
-                            | jr2PhoneNumber}}</a><br/>
-                            <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
-                                {{'candidate-detail.job-center.email.label' | translate}} <a href="mailto:{{jobCenter.email}}">{{jobCenter.email}}</a>
+                            <div *ngIf="contact">
+                                <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
+                                    {{contact.firstName}} {{contact.lastName}}
+                                </div>
+                                <div>
+                                    <span>{{'candidate-detail.job-center.phone.label' | translate}}</span>
+                                    <a href="tel:{{contact.phone}}">{{contact.phone | jr2PhoneNumber}}</a>
+                                </div>
+                                <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
+                                    <span>{{'candidate-detail.job-center.email.label' | translate}}</span>
+                                    <a href="mailto:{{contact.email}}">{{contact.email}}</a>
+                                </div>
+                                <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
                             </div>
-                        </p>
-                        <strong *ngIf="candidateProfile$ | async as candidateProfile">{{'candidate-detail.external-id' | translate}}: {{ candidateProfile.externalId }}</strong>
+                        </div>
                     </div>
-                </div>
 
                 </div>
             </div>
