@@ -40,7 +40,6 @@ export class CandidateDetailComponent implements OnInit {
     candidateProfileListTotalSize$: Observable<number>;
     relevantJobExperience$: Observable<JobExperience>;
     candidateUrl: string;
-    isCopied: boolean;
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
 

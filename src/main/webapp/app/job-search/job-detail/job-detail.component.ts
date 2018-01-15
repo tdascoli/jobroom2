@@ -24,7 +24,6 @@ export class JobDetailComponent implements OnInit, OnDestroy, AfterViewInit {
     jobList$: Observable<Job[]>;
     jobCenter$: Observable<JobCenter>;
     jobUrl: String;
-    isCopied: boolean;
     showExternalJobDisclaimer: boolean;
     jobListTotalSize$: Observable<number>;
 
