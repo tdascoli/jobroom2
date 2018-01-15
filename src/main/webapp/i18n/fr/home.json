@@ -65,6 +65,7 @@
                     "placeholder": "max. 9000 caract\u00e8res"
                 },
                 "disclaimer": "Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localit\u00e9.",
+                "disclaimer.error": "Bitte best\u00e4tigen Sie, dass sie als Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einhalten.",
                 "driving-licence": "Permis de conduire",
                 "experience": "Exp\u00e9rience professionnelle",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 ann\u00e9es",

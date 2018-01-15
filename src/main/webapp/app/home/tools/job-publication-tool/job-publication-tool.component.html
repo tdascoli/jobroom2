@@ -490,6 +490,10 @@
                         <label for="first">
                             {{ 'home.tools.job-publication.disclaimer' | translate }}
                         </label>
+                        <small class="form-text text-danger"
+                               *ngIf="jobPublicationForm.get('disclaimer').invalid"
+                               jhiTranslate="home.tools.job-publication.disclaimer.error">
+                        </small>
                     </div>
                 </fieldset>
                 <div class="job-publication--horizontal__actions">
