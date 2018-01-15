@@ -5,7 +5,7 @@ import { TranslateService } from '@ngx-translate/core';
 @Injectable()
 export class LanguageFilterService {
 
-    private readonly MOST_USED_LANGUAGE_CODES = ['de', 'fr', 'it', 'de-ch'];
+    private readonly MOST_USED_LANGUAGE_CODES = ['de', 'fr', 'it', 'en', 'de-ch'];
 
     constructor(private translateService: TranslateService) {
     }

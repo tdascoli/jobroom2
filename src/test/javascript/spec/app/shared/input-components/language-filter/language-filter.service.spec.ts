@@ -11,11 +11,12 @@ describe('LanguageFilterService', () => {
         global: {
             reference: {
                 language: {
+                    ar: 'Arab',
+                    'de-ch': 'Swiss German',
                     en: 'English',
                     de: 'German',
                     it: 'Italian',
                     fr: 'French',
-                    ua: 'Ukrainian'
                 }
             }
         }
@@ -36,7 +37,8 @@ describe('LanguageFilterService', () => {
                 { key: 'fr', value: 'French' },
                 { key: 'it', value: 'Italian' },
                 { key: 'en', value: 'English' },
-                { key: 'ua', value: 'Ukrainian' },
+                { key: 'de-ch', value: 'Swiss German' },
+                { key: 'ar', value: 'Arab' },
             ];
             const expectedObservable = cold('-a', { a: expected });
             expect(result).toBeObservable(expectedObservable);
