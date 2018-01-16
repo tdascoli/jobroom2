@@ -12,7 +12,7 @@
                 "title": "Organization"
             },
             "email": "Email",
-            "externalId": "External Id",
+            "externalId": "External ID",
             "home": {
                 "createLabel": "Create a new Organization",
                 "createOrEditLabel": "Create or edit a Organization",
@@ -20,11 +20,11 @@
                 "title": "Organizations"
             },
             "name": "Name",
-            "phone": "Phone",
+            "phone": "Telephone",
             "street": "Street",
             "type": "Type",
             "updated": "A Organization is updated with identifier {{ param }}",
-            "zipCode": "Zip Code"
+            "zipCode": "Postal code"
         }
     }
 }

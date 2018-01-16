@@ -1,21 +1,21 @@
 {
     "job-publication-details": {
         "application": {
-            "additionalInfo": "Erg\u00e4nzende Angaben",
-            "email": "E-Mail",
-            "post": "Post",
-            "telephone": "Telefonisch",
-            "title": "Weitere Bewerbungsformen"
+            "additionalInfo": "Dati complementari",
+            "email": "E-mail",
+            "post": "Per posta",
+            "telephone": "Telefonicamente",
+            "title": "Forme di candidatura"
         },
-        "cancel": "Stelle abmelden",
+        "cancel": "Cancellare un'offerta d'impiego",
         "contact": {
-            "accountNumber": "Stellennummer",
+            "accountNumber": "Numero posto",
             "jobRoom": "Job-Room",
-            "title": "Ihre Kontaktperson"
+            "title": "Persona di contatto"
         },
-        "copy": "Stelle duplizieren",
-        "permanent": "Permanent",
-        "print": "Drucken",
-        "temporary": "Temporary"
+        "copy": "Dupliquer l'offre d'emploi",
+        "permanent": "A tempo indeterminato",
+        "print": "Stampa",
+        "temporary": "A tempo determinato"
     }
 }

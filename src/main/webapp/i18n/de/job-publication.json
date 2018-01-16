@@ -3,19 +3,19 @@
         "application": {
             "additionalInfo": "Erg\u00e4nzende Angaben",
             "email": "E-Mail",
-            "post": "Post",
+            "post": "Per Post",
             "telephone": "Telefonisch",
-            "title": "Weitere Bewerbungsformen"
+            "title": "Bewerbungsformen"
         },
-        "cancel": "Stelle abmelden",
+        "cancel": "Stellenangebot abmelden",
         "contact": {
             "accountNumber": "Stellennummer",
             "jobRoom": "Job-Room",
             "title": "Ihre Kontaktperson"
         },
         "copy": "Stelle duplizieren",
-        "permanent": "Permanent",
+        "permanent": "Unbefristet",
         "print": "Drucken",
-        "temporary": "Temporary"
+        "temporary": "Befristet"
     }
 }

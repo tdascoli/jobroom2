@@ -8,18 +8,18 @@
         "candidate-search-list": {
             "error-message": "Die Resultate der Kandidatensuche konnten nicht geladen werden",
             "title": {
+                "many": "{{count}} Kandidaten",
+                "many.with-locality": "{{count}} Kandidaten in {{locality}}",
+                "many.with-query": "{{count}} '{{query}}' Kandidaten",
+                "many.with-query.with-locality": "{{count}} '{{query}}' Kandidaten in {{locality}}",
                 "none": "Keine Kandidaten",
-                "none.with-query": "Keine '{{query}}' Kandidaten",
                 "none.with-locality": "Keine Kandidaten in {{locality}}",
+                "none.with-query": "Keine '{{query}}' Kandidaten",
                 "none.with-query.with-locality": "Keine '{{query}}' Kandidaten in {{locality}}",
                 "one": "1 Kandidat",
-                "one.with-query": "1 '{{query}}' Kandidat",
                 "one.with-locality": "1 Kandidat in {{locality}}",
-                "one.with-query.with-locality": "1 '{{query}}' Kandidat in {{locality}}",
-                "many": "{{count}} Kandidaten",
-                "many.with-query": "{{count}} '{{query}}' Kandidaten",
-                "many.with-locality": "{{count}} Kandidaten in {{locality}}",
-                "many.with-query.with-locality": "{{count}} '{{query}}' Kandidaten in {{locality}}"
+                "one.with-query": "1 '{{query}}' Kandidat",
+                "one.with-query.with-locality": "1 '{{query}}' Kandidat in {{locality}}"
             }
         },
         "education": {

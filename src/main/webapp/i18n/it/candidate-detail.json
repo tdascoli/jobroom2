@@ -36,7 +36,7 @@
         },
         "job-center": {
             "email": {
-                "label": "email"
+                "label": "E-mail"
             },
             "phone": {
                 "label": "Telefono"
@@ -72,7 +72,7 @@
                 "label": "Indirizzo"
             },
             "e-mail": {
-                "label": "email"
+                "label": "E-mail"
             },
             "mobile": {
                 "label": "Cellulare"

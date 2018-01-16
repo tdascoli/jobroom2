@@ -34,7 +34,7 @@
     "error": {
         "NotNull": "Field {{ fieldName }} cannot be empty!",
         "Size": "Field {{ fieldName }} does not meet min/max size requirements!",
-        "emailexists": "Email is already in use!",
+        "emailexists": "Email address is already in use!",
         "idexists": "A new {{ entityName }} cannot have an ID yet.",
         "internalServerError": "Internal server error",
         "server": {

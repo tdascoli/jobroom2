@@ -6,12 +6,12 @@
             "print": "Imprimer",
             "saveJob": "Sauvegarder l'offre d'emploi",
             "savePdf": "Sauvegarder en tant que PDF",
-            "sendEmail": "Envoyer par e-mail",
+            "sendEmail": "Envoyer par courriel",
             "showExternalPage": "Vers l'offre d'emploi externe"
         },
         "application": {
             "additionalInfo": "Indications compl\u00e9mentaires",
-            "email": "Par e-mail",
+            "email": "Par courriel",
             "mail": "Par la poste",
             "mail.text": "Voir l'adresse de l'entreprise",
             "phone": "Par t\u00e9l\u00e9phone",

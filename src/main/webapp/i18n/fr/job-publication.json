@@ -1,21 +1,21 @@
 {
     "job-publication-details": {
         "application": {
-            "additionalInfo": "Erg\u00e4nzende Angaben",
-            "email": "E-Mail",
-            "post": "Post",
-            "telephone": "Telefonisch",
-            "title": "Weitere Bewerbungsformen"
+            "additionalInfo": "Indications compl\u00e9mentaires",
+            "email": "Courriel",
+            "post": "Par la poste",
+            "telephone": "Par t\u00e9l\u00e9phone",
+            "title": "Formes de postulation"
         },
-        "cancel": "Stelle abmelden",
+        "cancel": "Retirer l'offre d'emploi",
         "contact": {
-            "accountNumber": "Stellennummer",
+            "accountNumber": "Num\u00e9ro du poste",
             "jobRoom": "Job-Room",
-            "title": "Ihre Kontaktperson"
+            "title": "Votre personne de contact"
         },
-        "copy": "Stelle duplizieren",
-        "permanent": "Permanent",
-        "print": "Drucken",
-        "temporary": "Temporary"
+        "copy": "Duplicate job offer",
+        "permanent": "Ind\u00e9termin\u00e9",
+        "print": "Imprimer",
+        "temporary": "Dur\u00e9e limit\u00e9e"
     }
 }

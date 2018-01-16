@@ -19,8 +19,8 @@
             "online-since": {
                 "label": "En ligne depuis",
                 "day": {
-                    "one": "Jour",
-                    "many": "Jours"
+                    "one": "jour",
+                    "many": "jours"
                 }
             },
             "sort": {
@@ -45,18 +45,18 @@
         "job-search-list": {
             "error-message": "Les r\u00e9sultats de la recherche d'emplois n'ont pas pu \u00eatre charg\u00e9s",
             "title": {
-                "none": "Aucunemploi",
-                "none.with-query": "Aucun '{{query}}' emploi",
-                "none.with-locality": "Aucun emploi \u00e0 {{locality}}",
-                "none.with-query.with-locality": "Aucun emploi de '{{query}}' \u00e0 {{locality}}",
-                "one": "1 emploi",
-                "one.with-query": "1 '{{query}}' emploi",
-                "one.with-locality": "1 emploi \u00e0 {{locality}}",
-                "one.with-query.with-locality": "1 emploi de '{{query}}' \u00e0",
                 "many": "{{count}} emplois",
-                "many.with-query": "{{count}} emplois de '{{query}}'",
                 "many.with-locality": "{{count}} emplois \u00e0 {{locality}}",
-                "many.with-query.with-locality": "{{count}} emplois de '{{query}}' \u00e0 {{locality}}"
+                "many.with-query": "{{count}} emplois pour '{{query}}'",
+                "many.with-query.with-locality": "{{count}} emplois pour '{{query}}' \u00e0 {{locality}}",
+                "none": "Aucun emploi",
+                "none.with-locality": "Aucun emploi \u00e0 {{locality}}",
+                "none.with-query": "Aucun emploi pour '{{query}}'",
+                "none.with-query.with-locality": "Aucun emploi pour '{{query}}' \u00e0 {{locality}}",
+                "one": "1 emploi",
+                "one.with-locality": "1 emploi \u00e0 {{locality}}",
+                "one.with-query": "1 emploi pour '{{query}}'",
+                "one.with-query.with-locality": "1 emploi pour '{{query}}' \u00e0"
             }
         },
         "title": "Chercher un emploi",

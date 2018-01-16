@@ -25,7 +25,7 @@
         "lastName": "Last name",
         "login": "Login",
         "organization": "Organization",
-        "phone": "Phone",
+        "phone": "Telephone",
         "profiles": "Profiles",
         "search": {
             "placeholder": "Search for user by username, name or email"

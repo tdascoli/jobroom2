@@ -19,7 +19,7 @@
             "messages": {
                 "info": "Veuillez indiquer username.",
                 "notfound": "<strong>Username n'existe pas !</strong> Merci de la v\u00e9rifier et de r\u00e9essayer.",
-                "success": "Un e-mail vous a \u00e9t\u00e9 envoy\u00e9, contenant les instructions pour r\u00e9initialiser votre mot de passe."
+                "success": "Un courriel vous a \u00e9t\u00e9 envoy\u00e9, contenant les instructions pour r\u00e9initialiser votre mot de passe."
             },
             "title": "R\u00e9initialiser le mot de passe"
         }

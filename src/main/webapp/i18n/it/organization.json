@@ -1,30 +1,30 @@
 {
     "jobroomApp": {
         "organization": {
-            "active": "Active",
-            "city": "City",
+            "active": "Attivo",
+            "city": "Luogo",
             "created": "&Egrave",
             "delete": {
                 "question": "Sei sicuro di volere eliminare Organization {{ id }}?"
             },
             "deleted": "&Egrave",
             "detail": {
-                "title": "Organization"
+                "title": "Organizzazione"
             },
-            "email": "Email",
-            "externalId": "External Id",
+            "email": "E-mail",
+            "externalId": "ID esterna",
             "home": {
                 "createLabel": "Genera un nuovo Organization",
                 "createOrEditLabel": "Genera o modifica un Organization",
                 "search": "Cerca Organization",
-                "title": "Organizations"
+                "title": "Organizzazoni"
             },
-            "name": "Name",
-            "phone": "Phone",
-            "street": "Street",
-            "type": "Type",
+            "name": "cognome",
+            "phone": "Telefono",
+            "street": "Via",
+            "type": "Tipo",
             "updated": "&Egrave",
-            "zipCode": "Zip Code"
+            "zipCode": "NPA"
         }
     }
 }

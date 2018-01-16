@@ -19,7 +19,7 @@
             "messages": {
                 "info": "Geben Sie Ihren Benutzername ein.",
                 "notfound": "<strong>Dieser Benutzername existiert nicht!</strong> \u00dcberpr\u00fcfen Sie Ihren Benutzername und versuchen Sie es nocheinmal.",
-                "success": "Eine Email mit weiteren Instruktionen f\u00fcr das Zur\u00fccksetzen des Passworts wurde gesendet."
+                "success": "Eine E-Mail mit weiteren Instruktionen f\u00fcr das Zur\u00fccksetzen des Passworts wurde gesendet."
             },
             "title": "Passwort zur\u00fccksetzen"
         }

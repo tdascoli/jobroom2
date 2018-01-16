@@ -10,7 +10,7 @@
         },
         "messages": {
             "error": {
-                "emailexists": "<strong>Email wird bereits verwendet!</strong> Bitte w\u00e4hlen Sie eine andere aus.",
+                "emailexists": "<strong>E-Mail-Adresse wird bereits verwendet!</strong> Bitte w\u00e4hlen Sie eine andere aus.",
                 "fail": "<strong>Es ist ein Fehler aufgetreten!</strong> Die Einstellungen konnten nicht gespeichert werden."
             },
             "success": "<strong>Einstellungen wurden gespeichert!</strong>",

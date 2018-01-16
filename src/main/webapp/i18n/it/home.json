@@ -44,10 +44,10 @@
                     "postbox-city": "Luogo",
                     "postbox-number": "N. casella postale",
                     "postbox-zip": "Casella postale NPA",
-                    "postbox-zipcode": "Casella postale NPA/Luogo",
+                    "postbox-zipcode": "Casella postale NPA / luogo",
                     "street": "Via",
                     "title": "Impresa",
-                    "zipcode": "NPA / Luogo"
+                    "zipcode": "NPA / luogo"
                 },
                 "contact": {
                     "email": "E-mail",
@@ -65,7 +65,7 @@
                     "placeholder": "max. 9000 caratteri"
                 },
                 "disclaimer": "Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attivit\u00e0 viene svolta.",
-                "disclaimer.error": "Bitte best\u00e4tigen Sie, dass sie als Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einhalten.",
+                "disclaimer.error": "Confermare che il datore di lavoro rispetta le condizioni salariali e lavorative del luogo e del ramo.",
                 "driving-licence": "Patente",
                 "experience": "Esperienza professionale",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 anni",
@@ -82,16 +82,16 @@
                     "city": "Luogo",
                     "country": "Paese",
                     "title": "Sede di lavoro",
-                    "zip": "NPA / Luogo",
-                    "zipcode": "NPA / Luogo"
+                    "zip": "NPA  ",
+                    "zipcode": "NPA / luogo"
                 },
                 "messages": {
                     "validate": {
-                        "email-format": "L'indirizzo email non \u00e8 valido.",
+                        "email-format": "L'indirizzo e-mail non \u00e8 valido.",
                         "phone-format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99",
                         "required": "Questo campo \u00e8 obbligatorio.",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value"
+                        "zip-format": "NPA non \u00e8 valido.",
+                        "zip-or-city-format": "NPA/luogo non \u00e8 valido."
                     }
                 },
                 "no-selection": "nessuna scelta",
@@ -127,7 +127,7 @@
                 "reset": "Ripristina",
                 "submit": "Pubblica posto",
                 "submit.error": "Job could not be saved!",
-                "submit.success": "Grazie dell'offerta di lavoro",
+                "submit.success": "Grazie dell'offerta di lavoro, che verr\u00e0 pubblicata dopo la verifica da parte dell'URC. A breve Le verr\u00e0 inviata un'e-mail.",
                 "workload": "Grado di occupazione"
             },
             "job-search": {

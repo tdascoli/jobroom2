@@ -12,7 +12,7 @@
         "detail": {
             "title": "Utilisateur"
         },
-        "email": "E-mail",
+        "email": "Courriel",
         "firstName": "Pr\u00e9nom",
         "home": {
             "createLabel": "Cr\u00e9er un nouvel utilisateur",
@@ -25,7 +25,7 @@
         "lastName": "Nom",
         "login": "Login",
         "organization": "Organization",
-        "phone": "Phone",
+        "phone": "T\u00e9l\u00e9phone",
         "profiles": "Profils",
         "search": {
             "placeholder": "Search for user by username, name or email"

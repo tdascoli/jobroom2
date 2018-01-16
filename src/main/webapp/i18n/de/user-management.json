@@ -12,10 +12,10 @@
         "detail": {
             "title": "Benutzer"
         },
-        "email": "Email",
+        "email": "E-Mail",
         "firstName": "Vorname",
         "home": {
-            "createLabel": "Neuer Benutzer erstellen",
+            "createLabel": "Neuen Benutzer erstellen",
             "createOrEditLabel": "Benutzer erstellen oder bearbeiten",
             "title": "Benutzer"
         },
@@ -25,10 +25,10 @@
         "lastName": "Nachname",
         "login": "Login",
         "organization": "Organization",
-        "phone": "Phone",
+        "phone": "Telefon",
         "profiles": "Profile",
         "search": {
-            "placeholder": "Search for user by username, name or email"
+            "placeholder": "Benutzer nach Name oder E-Mail-Adresse suchen"
         },
         "updated": "Ein Benutzer mit ID {{ param }} wurde ge\u00e4ndert"
     }

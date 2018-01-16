@@ -5,11 +5,11 @@
         },
         "messages": {
             "error": {
-                "emailexists": "<strong>Email wird bereits verwendet!</strong> Bitte w\u00e4hlen Sie eine andere aus.",
+                "emailexists": "<strong>E-Mail-Adresse wird bereits verwendet!</strong> Bitte w\u00e4hlen Sie eine andere aus.",
                 "fail": "<strong>Registrierung fehlgeschlagen!</strong> Bitte versuchen Sie es sp\u00e4ter nochmal.",
                 "userexists": "<strong>Benutzername bereits vergeben!</strong> Bitte w\u00e4hlen Sie einen anderen aus."
             },
-            "success": "<strong>Registrierung gespeichert!</strong> Bitte \u00fcberpr\u00fcfen Sie Ihre Emails um die Registrierung zu best\u00e4tigen.",
+            "success": "<strong>Registrierung gespeichert!</strong> Bitte \u00fcberpr\u00fcfen Sie Ihre E-Mails um die Registrierung zu best\u00e4tigen.",
             "validate": {
                 "login": {
                     "maxlength": "Ihr Benutzername darf nicht l\u00e4nger als 50 Zeichen sein",

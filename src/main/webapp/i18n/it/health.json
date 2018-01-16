@@ -13,7 +13,7 @@
             "discoveryComposite": "Discovery Composite",
             "diskSpace": "Spazio su disco",
             "hystrix": "Hystrix",
-            "mail": "Email",
+            "mail": "E-mail",
             "refreshScope": "Scopo di Aggiornamento Microservice"
         },
         "refresh": {

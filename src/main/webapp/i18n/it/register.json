@@ -5,11 +5,11 @@
         },
         "messages": {
             "error": {
-                "emailexists": "<strong>L'indirizzo email \u00e8 gi\u00e0 in uso</strong> Si prega di sceglierne un altro.",
+                "emailexists": "<strong>L'indirizzo e-mail \u00e8 gi\u00e0 in uso</strong> Si prega di sceglierne un altro.",
                 "fail": "<strong>La registrazione dell'account \u00e8 fallita!</strong> Riprova pi\u00f9 tardi.",
                 "userexists": "<strong>Il nome utente scelto \u00e8 gi\u00e0 registrato!</strong> Si prega di scegliere un altro nome utente."
             },
-            "success": "<strong>La registrazione account \u00e8 stata salvata!</strong> Controlla la tua email per confermare.",
+            "success": "<strong>La registrazione account \u00e8 stata salvata!</strong> Controlla la tua e-mail per confermare.",
             "validate": {
                 "login": {
                     "maxlength": "Il nome utente non pu\u00f2 contenere pi\u00f9 di 50 caratteri",

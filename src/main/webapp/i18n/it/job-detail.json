@@ -6,12 +6,12 @@
             "print": "Stampa",
             "saveJob": "Salva offerta di lavoro",
             "savePdf": "Salva come PDF",
-            "sendEmail": "Invia per email",
+            "sendEmail": "Invia per e-mail",
             "showExternalPage": "vai all'annuncio esterno"
         },
         "application": {
             "additionalInfo": "Dati complementari",
-            "email": "Via email",
+            "email": "Per e-mail",
             "mail": "Per posta",
             "mail.text": "V. indirizzo dell'impresa",
             "phone": "Telefonicamente",

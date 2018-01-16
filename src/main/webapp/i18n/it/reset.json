@@ -19,7 +19,7 @@
             "messages": {
                 "info": "Inserisci l'indirizzo useranme.",
                 "notfound": "<strong>Username non registrata!</strong> Si prega di verificarla e riprovare!",
-                "success": "Controlla la tua email per i dettagli su come reimpostare la password."
+                "success": "Controlla la tua e-mail per i dettagli su come reimpostare la password."
             },
             "title": "Reimposta Password"
         }

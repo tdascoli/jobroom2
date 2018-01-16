@@ -34,7 +34,7 @@
     "error": {
         "NotNull": "Il campo {{ fieldName }} non pu\u00f2 essere vuoto!",
         "Size": "Il campo {{ fieldName }} non \u00e8 conforme ai requisiti di lunghezza min/max!",
-        "emailexists": "L'email \u00e8 gi\u00e0 in uso!",
+        "emailexists": "L'indirizzo e-mail \u00e8 gi\u00e0 in uso!",
         "idexists": "Un(a) nuovo/a {{entityName}} non pu\u00f2 gi\u00e0 avere un ID",
         "internalServerError": "Errore interno server",
         "server": {
@@ -142,8 +142,8 @@
         "form": {
             "confirmpassword": "Conferma nuova password",
             "confirmpassword.placeholder": "Conferma nuova password",
-            "email": "Email",
-            "email.placeholder": "Il tuo indirizzo email",
+            "email": "Indirizzo e-mail",
+            "email.placeholder": "Il tuo indirizzo e-mail",
             "newpassword": "Nuova password",
             "newpassword.placeholder": "Nuova password",
             "username": "Utente",
@@ -226,10 +226,10 @@
                     "required": "La password di conferma \u00e8 obbligatoria."
                 },
                 "email": {
-                    "invalid": "L'indirizzo email non \u00e8 valido.",
-                    "maxlength": "L'indirizzo email non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
-                    "minlength": "L'indirizzo email deve essere di almeno 5 caratteri",
-                    "required": "L'indirizzo email \u00e8 obbligatorio."
+                    "invalid": "L'indirizzo e-mail non \u00e8 valido.",
+                    "maxlength": "L'indirizzo e-mail non pu\u00f2 contenere pi\u00f9 di 50 caratteri",
+                    "minlength": "L'indirizzo e-mail deve essere di almeno 5 caratteri",
+                    "required": "L'indirizzo e-mail \u00e8 obbligatorio."
                 },
                 "newpassword": {
                     "maxlength": "La password non pu\u00f2 contenere pi\u00f9 di 50 caratteri",

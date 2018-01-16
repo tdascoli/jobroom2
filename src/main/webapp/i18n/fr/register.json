@@ -5,11 +5,11 @@
         },
         "messages": {
             "error": {
-                "emailexists": "<strong>Cet e-mail est d\u00e9j\u00e0 utilis\u00e9 !</strong> Veuillez en choisir un autre.",
+                "emailexists": "<strong>Cette adresse courriel est d\u00e9j\u00e0 utilis\u00e9 !</strong> Veuillez en choisir un autre.",
                 "fail": "<strong>Compte non cr\u00e9\u00e9 !</strong> Merci de r\u00e9essayer plus tard.",
                 "userexists": "<strong>Ce nom d'utilisateur existe d\u00e9j\u00e0 !</strong> Veuillez en choisir un autre."
             },
-            "success": "<strong>Compte enregistr\u00e9 !</strong> Merci de consulter l'e-mail de confirmation.",
+            "success": "<strong>Compte enregistr\u00e9 !</strong> Merci de consulter le courriel de confirmation.",
             "validate": {
                 "login": {
                     "maxlength": "Votre nom d'utilisateur ne peut pas contenir plus de 50 caract\u00e8res.",

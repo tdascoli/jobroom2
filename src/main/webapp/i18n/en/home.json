@@ -43,11 +43,11 @@
                     "house-number": "No.",
                     "postbox-city": "City",
                     "postbox-number": "PO box no.",
-                    "postbox-zip": "PO box Postcode",
-                    "postbox-zipcode": "PO box Postcode / City",
+                    "postbox-zip": "PO box postal code",
+                    "postbox-zipcode": "PO box postal code / city",
                     "street": "Street",
                     "title": "Business",
-                    "zipcode": "Postcode / City"
+                    "zipcode": "Postal code / city"
                 },
                 "contact": {
                     "email": "Email",
@@ -65,7 +65,7 @@
                     "placeholder": "max. 9000 characters"
                 },
                 "disclaimer": "I certify that the employer complies with local and industry-standard wage and working conditions.",
-                "disclaimer.error": "Bitte best\u00e4tigen Sie, dass sie als Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einhalten.",
+                "disclaimer.error": "Please confirm that the employer complies with local and industry standards for wage and working conditions.",
                 "driving-licence": "Driving licence",
                 "experience": "Work experience",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 years",
@@ -82,16 +82,16 @@
                     "city": "City",
                     "country": "Country",
                     "title": "Place of work",
-                    "zip": "Postcode",
-                    "zipcode": "Postcode / City"
+                    "zip": "Postal code",
+                    "zipcode": "Postal code / city"
                 },
                 "messages": {
                     "validate": {
-                        "email-format": "Your email address is invalid.",
+                        "email-format": "This email address is invalid.",
                         "phone-format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99",
                         "required": "This field is required.",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value"
+                        "zip-format": "Invalid postal code",
+                        "zip-or-city-format": "Invalid postal code/city"
                     }
                 },
                 "no-selection": "No selection",

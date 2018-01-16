@@ -34,7 +34,7 @@
     "error": {
         "NotNull": "Le champ {{fieldName}} ne peut pas \u00eatre vide !",
         "Size": "Le champ {{fieldName}} ne respecte pas les crit\u00e8res minimums et maximums !",
-        "emailexists": "E-mail d\u00e9j\u00e0 utilis\u00e9 !",
+        "emailexists": "Adresse courriel d\u00e9j\u00e0 utilis\u00e9 !",
         "idexists": "La nouvelle entit\u00e9 {{entityName}} ne peut pas encore avoir d'ID !",
         "internalServerError": "Erreur interne du serveur",
         "server": {
@@ -142,8 +142,8 @@
         "form": {
             "confirmpassword": "Confirmer le nouveau mot de passe",
             "confirmpassword.placeholder": "Confirmez votre nouveau mot de passe",
-            "email": "Adresse e-mail",
-            "email.placeholder": "Votre adresse e-mail",
+            "email": "Adresse courriel",
+            "email.placeholder": "Votre adresse courriel",
             "newpassword": "Nouveau mot de passe",
             "newpassword.placeholder": "Nouveau mot de passe",
             "username": "Nom d'utilisateur",
@@ -226,10 +226,10 @@
                     "required": "Vous devez confirmer le mot de passe."
                 },
                 "email": {
-                    "invalid": "Votre adresse e-mail n'est pas valide.",
-                    "maxlength": "Votre adresse e-mail ne doit pas comporter plus de 50 caract\u00e8res.",
-                    "minlength": "Votre adresse e-mail doit comporter au moins 5 caract\u00e8res.",
-                    "required": "Votre adresse e-mail est requise."
+                    "invalid": "Votre adresse courriel n'est pas valide.",
+                    "maxlength": "Votre adresse courriel ne doit pas comporter plus de 50 caract\u00e8res.",
+                    "minlength": "Votre adresse courriel doit comporter au moins 5 caract\u00e8res.",
+                    "required": "Votre adresse courriel est requise."
                 },
                 "newpassword": {
                     "maxlength": "Votre mot de passe ne doit pas comporter plus de 50 caract\u00e8res.",

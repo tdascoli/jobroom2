@@ -6,13 +6,13 @@
             "print": "Print",
             "saveJob": "Save job posting",
             "savePdf": "Save as PDF",
-            "sendEmail": "Send via email",
+            "sendEmail": "Send by email",
             "showExternalPage": "Link to external job posting"
         },
         "application": {
             "additionalInfo": "Additional information",
-            "email": "Via email",
-            "mail": "Via post",
+            "email": "By email",
+            "mail": "By mail",
             "mail.text": "See company address",
             "phone": "By phone",
             "title": "Application forms"

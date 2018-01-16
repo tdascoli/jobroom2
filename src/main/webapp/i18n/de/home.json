@@ -65,7 +65,7 @@
                     "placeholder": "max. 9000 Zeichen"
                 },
                 "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
-                "disclaimer.error": "Bitte best\u00e4tigen Sie, dass sie als Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einhalten.",
+                "disclaimer.error": "Bitte best\u00e4tigen Sie, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
                 "driving-licence": "F\u00fchrerausweis",
                 "experience": "Berufserfahrung",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 Jahre",
@@ -87,11 +87,11 @@
                 },
                 "messages": {
                     "validate": {
-                        "email-format": "Ihre Email Adresse ist ung\u00fcltig.",
+                        "email-format": "Diese E-Mail-Adresse ist ung\u00fcltig.",
                         "phone-format": "Bitte g\u00fcltige Telefonnummer eingeben z. B. 031 999 99 99 oder +41 31 999 99 99",
                         "required": "Pflichtfeld",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value"
+                        "zip-format": "PLZ ung\u00fcltig",
+                        "zip-or-city-format": "PLZ/Ort ung\u00fcltig"
                     }
                 },
                 "no-selection": "keine Auswahl",

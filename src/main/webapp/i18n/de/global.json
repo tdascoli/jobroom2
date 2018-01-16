@@ -34,7 +34,7 @@
     "error": {
         "NotNull": "Feld {{fieldName}} darf nicht leer sein!",
         "Size": "Feld {{fieldName}} erf\u00fcllt nicht die minimalen/maximalen Voraussetzungen!",
-        "emailexists": "Email wird bereits verwendet!",
+        "emailexists": "E-Mail-Adresse wird bereits verwendet!",
         "idexists": "Ein neuer {{entityName}} kann noch keine ID haben",
         "internalServerError": "Interner Serverfehler",
         "server": {
@@ -142,8 +142,8 @@
         "form": {
             "confirmpassword": "Neues Passwort best\u00e4tigen",
             "confirmpassword.placeholder": "Best\u00e4tigen Sie Ihr neues Passwort",
-            "email": "Email Adresse",
-            "email.placeholder": "Ihre Email Adresse",
+            "email": "E-Mail-Adresse",
+            "email.placeholder": "Ihre E-Mail Adresse",
             "newpassword": "Neues Passwort",
             "newpassword.placeholder": "Neues Passwort",
             "username": "Benutzername",
@@ -226,10 +226,10 @@
                     "required": "Sie m\u00fcssen das Passwort best\u00e4tigen."
                 },
                 "email": {
-                    "invalid": "Ihre Email Adresse ist ung\u00fcltig.",
-                    "maxlength": "Ihre Email Adresse darf nicht l\u00e4nger als 50 Zeichen sein",
-                    "minlength": "Ihre Email Adresse muss mindestens 5 Zeichen lang sein",
-                    "required": "Ihre Email Adresse wird ben\u00f6tigt."
+                    "invalid": "Ihre E-Mail Adresse ist ung\u00fcltig.",
+                    "maxlength": "Ihre E-Mail Adresse darf nicht l\u00e4nger als 50 Zeichen sein",
+                    "minlength": "Ihre E-Mail Adresse muss mindestens 5 Zeichen lang sein",
+                    "required": "Ihre E-Mail Adresse wird ben\u00f6tigt."
                 },
                 "newpassword": {
                     "maxlength": "Das neue Passwort darf nicht l\u00e4nger als 50 Zeichen sein",

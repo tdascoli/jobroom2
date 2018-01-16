@@ -10,7 +10,7 @@
         },
         "messages": {
             "error": {
-                "emailexists": "<strong>Cet e-mail est d\u00e9j\u00e0 utilis\u00e9 !</strong> Veuillez en choisir un autre.",
+                "emailexists": "<strong>Cet adresse courriel est d\u00e9j\u00e0 utilis\u00e9 !</strong> Veuillez en choisir un autre.",
                 "fail": "<strong>Une erreur s'est produite !</strong> Les param\u00e8tres n'ont pas \u00e9t\u00e9 sauvegard\u00e9s."
             },
             "success": "<strong>Les param\u00e8tres ont \u00e9t\u00e9 sauvegard\u00e9s !</strong>",

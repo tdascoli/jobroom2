@@ -30,7 +30,7 @@
                         "label": "Indications compl\u00e9mentaires",
                         "placeholder": "max. 240 caract\u00e8res"
                     },
-                    "email": "E-mail",
+                    "email": "Courriel",
                     "email-enabled": "Postulation en ligne",
                     "mail-enabled": "Postulation par \u00e9crit",
                     "online-form": "Formulaire en ligne",
@@ -44,13 +44,13 @@
                     "postbox-city": "Lieu",
                     "postbox-number": "Num\u00e9ro de case postale",
                     "postbox-zip": "Case postale NPA",
-                    "postbox-zipcode": "Case postale NPA / Lieu",
+                    "postbox-zipcode": "Case postale NPA / lieu",
                     "street": "Rue",
                     "title": "Entreprise",
-                    "zipcode": "NPA / Lieu"
+                    "zipcode": "NPA / lieu"
                 },
                 "contact": {
-                    "email": "E-mail",
+                    "email": "Courriel",
                     "first-name": "Pr\u00e9nom",
                     "last-name": "Nom",
                     "phone": "T\u00e9l\u00e9phone",
@@ -65,7 +65,7 @@
                     "placeholder": "max. 9000 caract\u00e8res"
                 },
                 "disclaimer": "Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localit\u00e9.",
-                "disclaimer.error": "Bitte best\u00e4tigen Sie, dass sie als Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einhalten.",
+                "disclaimer.error": "Veuillez confirmer que l'employeur respecte bien les conditions de travail et de salaire en vigueur dans la branche et la localit\u00e9.",
                 "driving-licence": "Permis de conduire",
                 "experience": "Exp\u00e9rience professionnelle",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 ann\u00e9es",
@@ -83,15 +83,15 @@
                     "country": "Pays",
                     "title": "Lieu de travail",
                     "zip": "NPA  ",
-                    "zipcode": "NPA / Lieu"
+                    "zipcode": "NPA / lieu"
                 },
                 "messages": {
                     "validate": {
-                        "email-format": "Votre adresse e-mail n'est pas valide.",
+                        "email-format": "Cette adresse courriel n'est pas valide.",
                         "phone-format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99",
                         "required": "Ce champ est obligatoire.",
-                        "zip-format": "Invalid ZIP code format",
-                        "zip-or-city-format": "Invalid ZIP code or city value"
+                        "zip-format": "NPA n'est pas valide.",
+                        "zip-or-city-format": "NPA/lieu n'est pas valide."
                     }
                 },
                 "no-selection": "aucune s\u00e9lection",
