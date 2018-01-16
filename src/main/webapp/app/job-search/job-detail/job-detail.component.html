@@ -45,7 +45,7 @@
                                 <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
                                 <p>{{jobCenter.address.name}}, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</p>
                                 <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
-                                <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone}}</a></p>
+                                <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone | jr2PhoneNumber}}</a></p>
                             </address>
 
                             <ng-container *ngIf="job.avamJobId || job.egovJobId">
