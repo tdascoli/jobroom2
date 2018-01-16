@@ -7,7 +7,8 @@ import {
 } from '../../shared/reference-service/reference.service';
 import { Job } from '../services';
 import {
-    getJobList, getTotalJobCount,
+    getJobList,
+    getTotalJobCount,
     JobSearchState
 } from '../state-management/state/job-search.state';
 import { Store } from '@ngrx/store';
@@ -23,7 +24,6 @@ export class JobDetailComponent implements OnInit, OnDestroy, AfterViewInit {
     job: Job;
     jobList$: Observable<Job[]>;
     jobCenter$: Observable<JobCenter>;
-    jobUrl: String;
     showExternalJobDisclaimer: boolean;
     jobListTotalSize$: Observable<number>;
 
@@ -46,8 +46,6 @@ export class JobDetailComponent implements OnInit, OnDestroy, AfterViewInit {
                 : Observable.empty();
             this.showExternalJobDisclaimer = !!this.job.externalUrl;
         });
-
-        this.jobUrl = window.location.href;
     }
 
     ngOnDestroy(): void {
@@ -55,5 +53,9 @@ export class JobDetailComponent implements OnInit, OnDestroy, AfterViewInit {
 
     printJob() {
         window.print();
+    }
+
+    getJobUrl() {
+        return window.location.href;
     }
 }

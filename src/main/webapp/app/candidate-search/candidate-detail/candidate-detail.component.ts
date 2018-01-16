@@ -1,20 +1,27 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import {
-    Candidate, CandidateProfile, Degree,
+    Candidate,
+    CandidateProfile,
+    Degree,
     JobExperience
 } from '../services/candidate';
 import { Observable } from 'rxjs/Observable';
 import {
-    GenderAwareOccupationLabel, JobCenter, OccupationPresentationService,
+    GenderAwareOccupationLabel,
+    JobCenter,
+    OccupationPresentationService,
     ReferenceService
 } from '../../shared/reference-service';
 import { CandidateService } from '../services/candidate.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Store } from '@ngrx/store';
 import {
-    CandidateSearchFilter, CandidateSearchState, getCandidateProfileList,
-    getSearchFilter, getTotalCandidateCount
+    CandidateSearchFilter,
+    CandidateSearchState,
+    getCandidateProfileList,
+    getSearchFilter,
+    getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Contact, Gender, Graduation } from '../../shared';
 import { Principal } from '../../shared/auth/principal.service';
@@ -39,7 +46,6 @@ export class CandidateDetailComponent implements OnInit {
     candidateProfiles$: Observable<Array<CandidateProfile>>;
     candidateProfileListTotalSize$: Observable<number>;
     relevantJobExperience$: Observable<JobExperience>;
-    candidateUrl: string;
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
     contact: Contact;
@@ -65,8 +71,6 @@ export class CandidateDetailComponent implements OnInit {
 
         this.candidateProtectedData$ = this.candidateProfile$
             .flatMap((candidateProfile) => this.candidateService.findCandidate(candidateProfile));
-
-        this.candidateUrl = window.location.href;
 
         this.candidateProfiles$ = this.store.select(getCandidateProfileList);
         this.candidateProfileListTotalSize$ = this.store.select(getTotalCandidateCount);
@@ -98,7 +102,7 @@ export class CandidateDetailComponent implements OnInit {
         Observable.combineLatest(this.candidateProfile$, this.jobCenter$)
             .subscribe(([candidateProfile, jobCenter]) => {
                 if (jobCenter && (jobCenter.code.startsWith('BEA') || jobCenter.code.startsWith('BSA'))) {
-                    this.contact =  { phone: jobCenter.phone, email: jobCenter.email };
+                    this.contact = { phone: jobCenter.phone, email: jobCenter.email };
                 } else {
                     this.contact = candidateProfile.jobAdvisor;
                 }
@@ -140,6 +144,10 @@ export class CandidateDetailComponent implements OnInit {
 
     printCandidateDetails(): void {
         window.print();
+    }
+
+    getCandidateUrl() {
+        return window.location.href;
     }
 
     isDisplayGraduation(graduation: string): boolean {
