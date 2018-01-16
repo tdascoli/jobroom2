@@ -8,10 +8,6 @@
         "candidate-search-list": {
             "error-message": "Impossibile caricare la lista risultati dei candidati!",
             "title": {
-                "many": "Pi\u00f9 di {{count}} candidati",
-                "many.with-query": "Pi\u00f9 di {{count}} candidati per '{{query}}'",
-                "many.with-locality": "Pi\u00f9 di {{count}} candidati per '{{query}}' in {{locality}}",
-                "many.with-query.with-locality": "Pi\u00f9 di {{count}} candidati in {{locality}}",
                 "none": "Nessun candidato",
                 "none.with-query": "Nessun candidato per '{{query}}'",
                 "none.with-locality": "Nessun candidato in {{locality}}",
@@ -20,10 +16,10 @@
                 "one.with-query": "1 candidato  per '{{query}}'",
                 "one.with-locality": "1 candidato in {{locality}}",
                 "one.with-query.with-locality": "1 candidato per '{{query}}' in {{locality}}",
-                "other": "{{count}} candidati",
-                "other.with-query": "{{count}} candidati per '{{query}}'",
-                "other.with-locality": "{{count}} candidati in {{locality}}",
-                "other.with-query.with-locality": "{{count}} candidati per '{{query}}' in {{locality}}"
+                "many": "{{count}} candidati",
+                "many.with-query": "{{count}} candidati per '{{query}}'",
+                "many.with-locality": "{{count}} candidati in {{locality}}",
+                "many.with-query.with-locality": "{{count}} candidati per '{{query}}' in {{locality}}"
             }
         },
         "education": {

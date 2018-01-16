@@ -71,7 +71,7 @@ export class JobSearchListComponent implements OnDestroy, AfterViewInit {
         } else if (this.totalCount === 1) {
             key += '.one';
         } else {
-            key += '.other';
+            key += '.many';
         }
 
         if (this.baseQueryString && this.baseQueryString.length > 0) {

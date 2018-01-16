@@ -75,7 +75,7 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
         } else if (this.totalCount === 1) {
             key += '.one';
         } else {
-            key += '.other';
+            key += '.many';
         }
 
         if (this.occupationName && this.occupationName.length > 0) {
