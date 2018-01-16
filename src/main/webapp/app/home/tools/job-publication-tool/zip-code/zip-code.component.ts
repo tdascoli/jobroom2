@@ -30,6 +30,8 @@ export interface Translations {
     changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ZipCodeComponent implements OnInit, OnChanges {
+    private static readonly ZIP_CODE_REGEX = /^[a-z0-9][a-z0-9\- ]{0,10}[a-z0-9]$/i;
+
     @Input()
     group: FormGroup;
     @Input()
@@ -122,7 +124,7 @@ export class ZipCodeComponent implements OnInit, OnChanges {
                     : null;
 
                 this.zipGroup = this.fb.group({
-                    zip: ['', [...zipGroupInputValidators, Validators.pattern(/^\d*$/)]],
+                    zip: ['', [...zipGroupInputValidators, Validators.pattern(ZipCodeComponent.ZIP_CODE_REGEX)]],
                     city: ['', zipGroupInputValidators]
                 }, {
                     validator: zipGroupValidator
