@@ -97,7 +97,6 @@ export class CandidateDetailComponent implements OnInit {
 
         Observable.combineLatest(this.candidateProfile$, this.jobCenter$)
             .subscribe(([candidateProfile, jobCenter]) => {
-                console.log(candidateProfile, jobCenter);
                 if (jobCenter && (jobCenter.code.startsWith('BEA') || jobCenter.code.startsWith('BSA'))) {
                     this.contact =  { phone: jobCenter.phone, email: jobCenter.email };
                 } else {
