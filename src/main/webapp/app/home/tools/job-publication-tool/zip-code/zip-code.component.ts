@@ -17,6 +17,7 @@ import { Observable } from 'rxjs/Observable';
 import { LocalityAutocomplete } from '../../../../shared/reference-service';
 import { LocalityService } from '../../../../shared/index';
 import { AbstractControl } from '@angular/forms/src/model';
+import { LocalitySuggestion } from '../../../../shared/reference-service/locality-autocomplete';
 
 export interface Translations {
     zipCode: string;
@@ -51,7 +52,11 @@ export class ZipCodeComponent implements OnInit, OnChanges {
     zipGroup: FormGroup;
 
     static localityResultMapper(localityAutocomplete: LocalityAutocomplete): any {
+        const localityComparator = (a: LocalitySuggestion, b: LocalitySuggestion) =>
+            a.city.localeCompare(b.city) || a.zipCode.localeCompare(b.zipCode);
+
         return localityAutocomplete.localities
+            .sort(localityComparator)
             .map((locality) => ({
                 zip: locality.zipCode,
                 city: locality.city,
