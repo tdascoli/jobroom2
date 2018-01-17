@@ -58,6 +58,21 @@
     }
 }
 
+/deep/ ss-multiselect-dropdown {
+    .dropdown-item a {
+        color: $main-color-black;
+    }
+
+    button.dropdown-toggle.custom-select {
+        height: inherit;
+        text-align: left;
+
+        &:after {
+            content: none;
+        }
+    }
+}
+
 :host /deep/ .typeahead-singleselect__type-label--canton {
     background-color: $typeahead-color-canton;
 }

@@ -4,13 +4,12 @@ import {
     CandidateSearchState,
     getSearchFilter
 } from '../state-management/state/candidate-search.state';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 import {
     CantonSuggestion,
     LocalityAutocomplete,
     LocalityInputType,
-    LocalityService,
     LocalitySuggestion
 } from '../../shared/reference-service';
 import { LanguageSkillService } from '../services/language-skill.service';
@@ -25,6 +24,8 @@ import {
     ISCED_1997,
     WorkForm
 } from '../../shared';
+import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
+import { CantonService } from '../services/canton.service';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -37,11 +38,10 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
     @Input()
     set reset(value: number) {
-        if (value && this.filterForm) {
+        if (value && this.filterForm && this.residence) {
             this.filterForm.reset({
                 graduation: this.searchFilter.graduation,
                 experience: this.searchFilter.experience,
-                workplace: this.searchFilter.workplace,
                 availability: this.searchFilter.availability,
                 workload: this.searchFilter.workload,
                 workForm: this.searchFilter.workForm,
@@ -49,7 +49,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
                 drivingLicenceCategory: this.searchFilter.drivingLicenceCategory,
                 languageSkills: [...this.searchFilter.languageSkills || []]
             });
-
+            this.residence.reset(this.searchFilter.residence, { emitEvent: false });
         }
     };
 
@@ -63,23 +63,34 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     drivingLicenceCategories = DrivingLicenceCategory;
     filterForm: FormGroup;
     candidateSearchUrl$: Observable<string>;
+    cantonOptions$: Observable<IMultiSelectOption[]>;
+
+    residence: FormControl;
+
+    multiSelectSettings: IMultiSelectSettings = {
+        buttonClasses: 'form-control form-control-sm custom-select',
+        containerClasses: '',
+        checkedStyle: 'fontawesome',
+        isLazyLoad: true,
+        dynamicTitleMaxItems: 1
+    };
 
     private formChangesSubscription: Subscription;
 
     constructor(private languageSkillService: LanguageSkillService,
-                private localityService: LocalityService,
                 private fb: FormBuilder,
                 private store: Store<CandidateSearchState>,
+                private cantonService: CantonService,
                 private candidateService: CandidateService) {
         // todo review if the isFilterCollapsed should be part of the CandidateSearchState or not
         this.isFilterCollapsed = true;
     }
 
     ngOnInit(): void {
+        this.residence = this.fb.control(this.searchFilter.residence);
         this.filterForm = this.fb.group({
             graduation: [this.searchFilter.graduation],
             experience: [this.searchFilter.experience],
-            workplace: [this.searchFilter.workplace],
             availability: [this.searchFilter.availability],
             workload: [this.searchFilter.workload],
             workForm: [this.searchFilter.workForm],
@@ -88,7 +99,17 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
             languageSkills: [[...this.searchFilter.languageSkills || []]]
         });
 
-        this.formChangesSubscription = this.filterForm.valueChanges.subscribe((formValue: any) => {
+        this.cantonOptions$ = this.cantonService.getCantonOptions();
+
+        // todo: Review this:
+        // Residence input triggers a value change event on language change,
+        // that's why distinctUntilChanged is used.
+        const residence$ = this.residence.valueChanges
+            .distinctUntilChanged()
+            .map((residence: string) => Object.assign(this.filterForm.value, { residence }));
+
+        this.formChangesSubscription = Observable.merge(this.filterForm.valueChanges, residence$)
+            .subscribe((formValue: any) => {
                 const searchFilter = Object.assign({}, this.searchFilter, formValue);
                 this.searchCandidates.emit(searchFilter)
             }
@@ -110,9 +131,6 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     toggleFilter() {
         this.isFilterCollapsed = !this.isFilterCollapsed;
     }
-
-    fetchLocalitySuggestions = (prefix: string) =>
-        this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
 }
 
 export function customLocalityAutocompleteMapper(localityAutocomplete: LocalityAutocomplete): TypeaheadMultiselectModel[] {

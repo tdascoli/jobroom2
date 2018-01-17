@@ -7,21 +7,19 @@ import {
     Output,
     ViewChild
 } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { Observable } from 'rxjs/Observable';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import {
     CandidateSearchFilter,
 } from '../state-management/state/candidate-search.state';
-import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
-import { CantonService } from '../services/canton.service';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn,
+    FormatterFn, LocalityService,
     OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn,
 } from '../../shared/reference-service';
 import { Subject } from 'rxjs/Subject';
+import { customLocalityAutocompleteMapper } from '../candidate-search-filter/candidate-search-filter.component';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -36,12 +34,12 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     @Input()
     set reset(value: number) {
-        if (value && this.toolbarForm && this.residence) {
+        if (value && this.toolbarForm) {
             this.toolbarForm.reset({
                 occupation: this.searchFilter.occupation,
                 skills: [...this.searchFilter.skills || []],
+                workplace: this.searchFilter.workplace
             });
-            this.residence.reset(this.searchFilter.residence, { emitEvent: false });
         }
     };
 
@@ -49,17 +47,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
 
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
-    cantonOptions$: Observable<IMultiSelectOption[]>;
-    multiSelectSettings: IMultiSelectSettings = {
-        buttonClasses: 'form-control form-control-lg custom-select',
-        containerClasses: '',
-        checkedStyle: 'fontawesome',
-        isLazyLoad: true,
-        dynamicTitleMaxItems: 1
-    };
-
     toolbarForm: FormGroup;
-    residence: FormControl;
 
     fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
     occupationFormatter: FormatterFn<OccupationOption>;
@@ -67,29 +55,20 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
     private unsubscribe$ = new Subject<void>();
 
     constructor(private occupationPresentationService: OccupationPresentationService,
-                private cantonService: CantonService,
+                private localityService: LocalityService,
                 private fb: FormBuilder) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnInit() {
-        this.residence = this.fb.control(this.searchFilter.residence);
         this.toolbarForm = this.fb.group({
             occupation: [this.searchFilter.occupation],
             skills: [[...this.searchFilter.skills || []]],
+            workplace: [this.searchFilter.workplace]
         });
 
-        this.cantonOptions$ = this.cantonService.getCantonOptions();
-
-        // todo: Review this:
-        // Residence input triggers a value change event on language change,
-        // that's why distinctUntilChanged is used.
-        const residence$ = this.residence.valueChanges
-            .distinctUntilChanged()
-            .map((residence: string) => Object.assign(this.toolbarForm.value, { residence }));
-
-        Observable.merge(this.toolbarForm.valueChanges, residence$)
+        this.toolbarForm.valueChanges
             .takeUntil(this.unsubscribe$)
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) =>
@@ -101,6 +80,9 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
     }
+
+    fetchLocalitySuggestions = (prefix: string) =>
+        this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
 
     clearInvalidValue(event: any) {
         const occupationControl = this.toolbarForm.get('occupation');

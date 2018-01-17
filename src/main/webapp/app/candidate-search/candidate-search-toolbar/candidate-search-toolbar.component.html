@@ -18,11 +18,13 @@
                 </jr2-multiselect>
             </div>
 
-            <div *ngIf="cantonOptions$ | async as cantonOptions" class="form-group form-group--wide">
-                <ss-multiselect-dropdown [options]="cantonOptions"
-                                         [texts]="{defaultTitle: 'candidate-search.toolbar.residence.placeholder' | translate, checkedPlural: 'candidate-search.toolbar.residence.selected' | translate}"
-                                         [settings]="multiSelectSettings"
-                                         [formControl]="residence"></ss-multiselect-dropdown>
+            <div class="form-group form-group--wide">
+                <label class="sr-only" translate="candidate-search.workplace.label"></label>
+                <jr2-typeahead-singleselect formControlName="workplace"
+                                            size="lg" class="w-100"
+                                            [placeholder]="'candidate-search.workplace.placeholder' | translate"
+                                            [itemLoader]="fetchLocalitySuggestions"
+                                            [editable]="false"></jr2-typeahead-singleselect>
             </div>
 
             <jr2-search-button [loading]="loading"></jr2-search-button>
