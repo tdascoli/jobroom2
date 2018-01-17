@@ -51,9 +51,16 @@ export class MultiselectComponent implements ControlValueAccessor, AfterViewInit
 
     ngAfterViewInit() {
         const canvas = this.canvasEl.nativeElement;
-        const font = this.window.getComputedStyle(this.inputEl.nativeElement).font || DEFAULT_FONT;
         this.canvasCtx = canvas.getContext('2d');
-        this.canvasCtx.font = font;
+        this.canvasCtx.font = this.getFont();
+    }
+
+    private getFont() {
+        const computedStyle = this.window.getComputedStyle(this.inputEl.nativeElement);
+        const { fontFamily, fontSize } = computedStyle;
+        const font = [fontSize, fontFamily].filter((property) => !!property).join(' ');
+
+        return font || DEFAULT_FONT;
     }
 
     writeValue(obj: any): void {
@@ -86,7 +93,7 @@ export class MultiselectComponent implements ControlValueAccessor, AfterViewInit
             return 0;
         } else if (value.length > 0) {
             const lastChar = this.lastKey.length === 1 ? this.lastKey : '';
-            const width = this.canvasCtx.measureText(value + lastChar).width;
+            const width = this.canvasCtx.measureText(value + lastChar + ' ').width;
             return `${width}px`;
         } else if (this.selectedItems.length > 0) {
             return '0.5em';
