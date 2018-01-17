@@ -34,7 +34,7 @@
             <div>
                 <nouislider [min]="1" [max]="60" [config]="{step: 1}" class="range-input"
                         [formControl]="filterForm.get('onlineSince')"></nouislider>
-                <span class="range-slider__value range-slider__value--unit small"
+                <span class="range-slider__value range-slider__value--unit small text-nowrap"
                       [attr.data-unit]="(filterForm.get('onlineSince').value > 1 ? 'job-search.filter.online-since.day.many' : 'job-search.filter.online-since.day.one') | translate">
                     {{ filterForm.get('onlineSince').value }}
                 </span>
