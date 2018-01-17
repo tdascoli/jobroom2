@@ -1,0 +1,10 @@
+.range-select {
+    width: 70%;
+    float: right;
+}
+
+div.text-right {
+    & .small {
+        padding-right: 15%;
+    }
+}

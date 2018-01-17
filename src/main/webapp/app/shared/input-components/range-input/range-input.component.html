@@ -2,17 +2,17 @@
     <div class="col">
         <ng-container *ngIf="!hideDelimiter"><label class="small">{{'global.filter.from' | translate}}</label>
         </ng-container>
-        <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select"
+        <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select range-select"
                 name="workingTimeMin" id="workingTimeMin"
                 [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
             <option *ngFor="let i of options" [value]="i" [disabled]="i > range[1]">{{ i }} %</option>
         </select>
     </div>
-    <div class="col">
+    <div class="col text-right">
         <ng-container *ngIf="!hideDelimiter"><label class="small">{{'global.filter.to' | translate}}</label>
         </ng-container>
         <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)"
-                class="form-control form-control-sm custom-select" name="workingTimeMax" id="workingTimeMax"
+                class="form-control form-control-sm custom-select range-select" name="workingTimeMax" id="workingTimeMax"
                 [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
             <option *ngFor="let i of options" [value]="i" [disabled]="i < range[0]">{{ i }} %</option>
         </select>
