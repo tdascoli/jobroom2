@@ -1,69 +1,69 @@
 {
     "dashboard": {
         "job-publication": {
-            "action": "Aktion",
-            "action.copy": "Stelle kopieren",
-            "action.delete": "Stelle abmelden",
-            "action.view": "Stelle sichten",
-            "avam": "#AVAM",
+            "action": "Action",
+            "action.copy": "Copy job",
+            "action.delete": "Cancel job",
+            "action.view": "View job",
+            "avam": "Job number AVAM",
             "job-name": {
-                "placeholder": "In Stellen suchen"
+                "placeholder": "Search jobs"
             },
-            "job-room-id": "#Job-Room",
-            "job-title": "Stellenbezeichnung",
-            "location": "Arbeitsort",
-            "publication-date": "Meldedatum",
+            "job-room-id": "Job number Job-Room",
+            "job-title": "Job description",
+            "location": "Place of work",
+            "publication-date": "Registration date",
             "publication-period": {
                 "all": "All",
-                "label": "Alter der Stellen",
-                "month": "{{ month }} Month",
-                "months": "{{ months }} Months",
-                "week": "{{ week }} Week",
-                "year": "{{ years }} Year"
+                "label": "Age of posts",
+                "month": "{{ month }} month",
+                "months": "{{ months }} months",
+                "week": "{{ week }} week",
+                "year": "{{ years }} year"
             },
             "status": "Status",
-            "title": "Jobs bewirtschaften",
+            "title": "Manage jobs",
             "user-information": {
-                "title": "Sie sind eingeloggt als"
+                "title": "You are logged in as"
             }
         },
         "title": "Dashboard"
     },
     "job-publication-cancel": {
-        "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung des Stellenangebots.",
+        "alert": "Please fill in the cancellation details and confirm cancellation of the job offer.",
         "job": {
-            "confirm": "Abmeldung best\u00e4tigen",
-            "dismiss": "Abbrechen",
-            "not-occupied": "Sie konnten die Stelle nicht besetzen",
-            "occupied": "Sie konnten die Stelle besetzen",
-            "occupied.jobCenter": "in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)",
-            "occupied.privateAgency": "in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)",
-            "occupied.self": "Sie konnten die Stelle selber besetzen"
+            "confirm": "Confirm cancellation",
+            "dismiss": "Cancel",
+            "not-occupied": "You were unable to fill the position",
+            "occupied": "You were able to fill the position",
+            "occupied.jobCenter": "in cooperation with the regional employment centre (RAV)",
+            "occupied.privateAgency": "in cooperation with the private employment agency (pAV)",
+            "occupied.self": "You were able to fill the position yourself"
         },
-        "title": "Stelle abmelden"
+        "title": "Cancel job"
     },
     "job-publication-details": {
         "application": {
-            "additionalInfo": "Erg\u00e4nzende Angaben",
-            "email": "E-Mail",
-            "post": "Post",
-            "telephone": "Telefonisch",
-            "title": "Weitere Bewerbungsformen"
+            "additionalInfo": "Additional Information",
+            "email": "Email",
+            "post": "By mail",
+            "telephone": "By telephone",
+            "title": "Other application forms"
         },
-        "byArrangement": "Nach Vereinbarung",
-        "cancel": "Stelle abmelden",
-        "cancel.error": "Failed to cancel job publication. Try again later.",
-        "cancel.success": "Job publication cancelled successfully.",
+        "byArrangement": "By arrangement",
+        "cancel": "Cancel job",
+        "cancel.error": "It was not possible to cancel the job offer Please try again later.",
+        "cancel.success": "Job offer canceled",
         "contact": {
-            "accountNumber": "Stellennummer",
+            "accountNumber": "Job number",
             "avam": "AVAM",
             "jobRoom": "Job-Room",
-            "title": "Ihre Kontaktperson"
+            "title": "Your contact person"
         },
-        "copy": "Stelle duplizieren",
-        "immediately": "ab Sofort",
-        "permanent": "Permanent",
-        "print": "Drucken",
+        "copy": "Duplicate the job offer",
+        "immediately": "immediately",
+        "permanent": "Permanent position",
+        "print": "Print",
         "startDate": "Vacant since",
         "status": "Status",
         "temporary": "Temporary",

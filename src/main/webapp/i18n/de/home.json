@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Job Room",
+        "title": "Job-Room",
         "title.portal": "arbeit",
         "title.portal-url": "https://www.arbeit.swiss",
         "toolbar": {
@@ -125,25 +125,25 @@
                     "title": "Stellenantritt"
                 },
                 "reset": "Zur\u00fccksetzen",
-                "submit": "Job publizieren",
+                "submit": "Stelle publizieren",
                 "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
                 "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
                 "workload": "Arbeitspensum"
             },
             "job-search": {
                 "search-badge": {
-                    "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Jobs",
-                    "none": "Diesem Profil entsprechen keine Jobs",
-                    "one": "Diesem Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Job",
+                    "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellenangebote",
+                    "none": "Diesem Profil entsprechen keine Stellen",
+                    "one": "Diesem Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Stelle",
                     "show": "Jetzt anzeigen!"
                 },
                 "search-button": {
-                    "title": "Jobs anzeigen"
+                    "title": "Stellen anzeigen"
                 }
             },
-            "jobPublicationTab": "Job publizieren",
+            "jobPublicationTab": "Stelle publizieren",
             "jobSearch": {
-                "title": "Finden Sie passende Jobs"
+                "title": "Finden Sie passende Stellen"
             }
         }
     }

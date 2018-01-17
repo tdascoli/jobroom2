@@ -21,8 +21,8 @@
         "contactPerson": "Ihre Kontaktperson",
         "external-job-disclaimer": "Dieses Inserat wurde auf einer externen Website gefunden. Die Arbeitslosenversicherung und \u00f6ffentliche Arbeitsvermittlung stellt Ihnen dieses Suchresultat als zus\u00e4tzliche Dienstleistung zur Verf\u00fcgung, hat aber keinerlei Einfluss auf dessen Inhalt und Qualit\u00e4t.                                                                                                                                                              ",
         "onlineSince": "Vakant seit",
-        "otherJobsCompany": "{{count}} Jobs anzeigen",
-        "otherJobsEquivalent": "{{count}} \u00e4hnliche Jobs anzeigen",
+        "otherJobsCompany": "{{count}} Stellen anzeigen",
+        "otherJobsEquivalent": "{{count}} \u00e4hnliche Stellen anzeigen",
         "reference": "Referenz",
         "reference.job-id": "Stellennummer",
         "reference.phone": "Telefon",
@@ -31,6 +31,6 @@
         "startsImmediately": "Stellenantritt",
         "startsImmediately.false": "Nach Vereinbarung",
         "startsImmediately.true": "Ab Sofort",
-        "title": "Job detail"
+        "title": "Stellenbeschreibung"
     }
 }

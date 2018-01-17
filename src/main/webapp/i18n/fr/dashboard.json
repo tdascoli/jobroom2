@@ -1,72 +1,72 @@
 {
     "dashboard": {
         "job-publication": {
-            "action": "Aktion",
-            "action.copy": "Stelle kopieren",
-            "action.delete": "Stelle abmelden",
-            "action.view": "Stelle sichten",
-            "avam": "#AVAM",
+            "action": "Action",
+            "action.copy": "Copier le poste",
+            "action.delete": "Supprimer le poste",
+            "action.view": "Consulter le poste",
+            "avam": "Num\u00e9ro de poste PLASTA",
             "job-name": {
-                "placeholder": "In Stellen suchen"
+                "placeholder": "Recherche dans les postes"
             },
-            "job-room-id": "#Job-Room",
-            "job-title": "Stellenbezeichnung",
-            "location": "Arbeitsort",
-            "publication-date": "Meldedatum",
+            "job-room-id": "Num\u00e9ro de poste Job-Room",
+            "job-title": "D\u00e9signation du poste",
+            "location": "Lieu de travail",
+            "publication-date": "Date de l'annonce",
             "publication-period": {
-                "all": "All",
-                "label": "Alter der Stellen",
-                "month": "{{ month }} Monat",
-                "months": "{{ months }} Monate",
-                "week": "{{ week }} Week",
-                "year": "{{ years }} Jahr"
+                "all": "Tous",
+                "label": "Anciennet\u00e9 des postes",
+                "month": "{{ month }} mois",
+                "months": "{{ months }} mois",
+                "week": "{{ week }} semaine",
+                "year": "{{ years }} ann\u00e9es"
             },
-            "status": "Status",
-            "title": "Jobs bewirtschaften",
+            "status": "Statut",
+            "title": "G\u00e9rer les emplois",
             "user-information": {
-                "title": "Sie sind eingeloggt als"
+                "title": "Vous \u00eates connect\u00e9(e)"
             }
         },
-        "title": "Dashboard"
+        "title": "Tableau de bord"
     },
     "job-publication-cancel": {
-        "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung des Stellenangebots.",
+        "alert": "Veuillez remplir les informations li\u00e9es \u00e0 l'annulation et confirmer l'annulation de l'offre d'emploi.",
         "job": {
-            "confirm": "Abmeldung best\u00e4tigen",
-            "dismiss": "Abbrechen",
-            "not-occupied": "Sie konnten die Stelle nicht besetzen",
-            "occupied": "Sie konnten die Stelle besetzen",
-            "occupied.jobCenter": "in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)",
-            "occupied.privateAgency": "in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)",
-            "occupied.self": "Sie konnten die Stelle selber besetzen"
+            "confirm": "Confirmer l'annulation",
+            "dismiss": "Interrompre",
+            "not-occupied": "Vous n'avez pas pu pourvoir le poste",
+            "occupied": "Vous avez pourvu le poste",
+            "occupied.jobCenter": "en collaboration avec l'Office r\u00e9gional de placement (ORP)",
+            "occupied.privateAgency": "en collaboration avec un placeur priv\u00e9",
+            "occupied.self": "Vous avez pourvu le poste par vos propres soins."
         },
-        "title": "Stelle abmelden"
+        "title": "Supprimer le poste"
     },
     "job-publication-details": {
         "application": {
-            "additionalInfo": "Erg\u00e4nzende Angaben",
-            "email": "E-Mail",
-            "post": "Post",
-            "telephone": "Telefonisch",
-            "title": "Weitere Bewerbungsformen"
+            "additionalInfo": "Indications compl\u00e9mentaires",
+            "email": "Courriel",
+            "post": "Par voie postale",
+            "telephone": "Par t\u00e9l\u00e9phone",
+            "title": "Autres formes de postulation"
         },
-        "byArrangement": "Nach Vereinbarung",
-        "cancel": "Stelle abmelden",
-        "cancel.error": "Failed to cancel job publication. Try again later.",
-        "cancel.success": "Job publication cancelled successfully.",
+        "byArrangement": "\u00c0 convenir",
+        "cancel": "Supprimer le poste",
+        "cancel.error": "L'offre d'emploi n'a pas pu \u00eatre supprim\u00e9e. Veuillez r\u00e9essayer plus tard.",
+        "cancel.success": "Le poste a \u00e9t\u00e9 supprim\u00e9 avec succ\u00e8s.",
         "contact": {
-            "accountNumber": "Stellennummer",
-            "avam": "AVAM",
+            "accountNumber": "Num\u00e9ro de poste",
+            "avam": "PLASTA",
             "jobRoom": "Job-Room",
-            "title": "Ihre Kontaktperson"
+            "title": "Votre interlocuteur"
         },
-        "copy": "Stelle duplizieren",
-        "immediately": "ab Sofort",
-        "permanent": "Permanent",
-        "print": "Drucken",
+        "copy": "Dupliquer l'offre d'emploi",
+        "immediately": "d\u00e8s maintenant",
+        "permanent": "Poste \u00e0 dur\u00e9e ind\u00e9termin\u00e9e",
+        "print": "Imprimer",
         "startDate": "Libre depuis",
-        "status": "Status",
-        "temporary": "Temporary",
-        "title": "Job publication"
+        "status": "Statut",
+        "temporary": "A dur\u00e9e d\u00e9termin\u00e9e",
+        "title": "Publication de l'emploi"
     }
 }

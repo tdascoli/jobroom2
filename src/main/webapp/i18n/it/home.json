@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Job Room",
+        "title": "Job-Room",
         "title.portal": "lavoro",
         "title.portal-url": "https://www.lavoro.swiss",
         "toolbar": {
@@ -126,7 +126,7 @@
                 },
                 "reset": "Ripristina",
                 "submit": "Pubblica posto",
-                "submit.error": "Job could not be saved!",
+                "submit.error": "Offerta d'impiego non salvata!",
                 "submit.success": "Grazie dell'offerta di lavoro, che verr\u00e0 pubblicata dopo la verifica da parte dell'URC. A breve Le verr\u00e0 inviata un'e-mail.",
                 "workload": "Grado di occupazione"
             },
@@ -138,12 +138,12 @@
                     "show": "Visualizza ora!"
                 },
                 "search-button": {
-                    "title": "Trova il lavoro da sogno!"
+                    "title": "Visualizza offerte di lavoro"
                 }
             },
             "jobPublicationTab": "Pubblica lavoro",
             "jobSearch": {
-                "title": "Trova adesso il tuo lavoro da sogno!"
+                "title": "Trovare il posto giusto"
             }
         }
     }

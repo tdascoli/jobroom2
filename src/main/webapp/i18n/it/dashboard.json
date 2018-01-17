@@ -1,72 +1,72 @@
 {
     "dashboard": {
         "job-publication": {
-            "action": "Aktion",
-            "action.copy": "Stelle kopieren",
-            "action.delete": "Stelle abmelden",
-            "action.view": "Stelle sichten",
-            "avam": "#AVAM",
+            "action": "Azione",
+            "action.copy": "Copiare il posto vacante",
+            "action.delete": "Cancellare il posto vacante",
+            "action.view": "Vedere il posto vacante",
+            "avam": "N. del posto vacante COLSTA",
             "job-name": {
-                "placeholder": "In Stellen suchen"
+                "placeholder": "Ricercare nei posti vacanti"
             },
-            "job-room-id": "#Job-Room",
-            "job-title": "Stellenbezeichnung",
-            "location": "Arbeitsort",
-            "publication-date": "Meldedatum",
+            "job-room-id": "N. del posto vacante Job-Room",
+            "job-title": "Descrizione del posto",
+            "location": "Luogo di lavoro",
+            "publication-date": "Data dell'annuncio",
             "publication-period": {
-                "all": "All",
-                "label": "Alter der Stellen",
-                "month": "{{ month }} Monat",
-                "months": "{{ months }} Monate",
-                "week": "{{ week }} Week",
-                "year": "{{ years }} Jahr"
+                "all": "Tutti",
+                "label": "Pubblicato da",
+                "month": "{{ month }} mese",
+                "months": "{{ months }} mesi",
+                "week": "{{ week }} settimana",
+                "year": "{{ years }} anni"
             },
-            "status": "Status",
-            "title": "Jobs bewirtschaften",
+            "status": "Stato",
+            "title": "Gestire i posti vacanti",
             "user-information": {
-                "title": "Sie sind eingeloggt als"
+                "title": "Registrato in qualit\u00e0 di:"
             }
         },
         "title": "Dashboard"
     },
     "job-publication-cancel": {
-        "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung des Stellenangebots.",
+        "alert": "Compilare i dati per la cancellazione dell'annuncio e confermare",
         "job": {
-            "confirm": "Abmeldung best\u00e4tigen",
-            "dismiss": "Abbrechen",
-            "not-occupied": "Sie konnten die Stelle nicht besetzen",
-            "occupied": "Sie konnten die Stelle besetzen",
-            "occupied.jobCenter": "in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV)",
-            "occupied.privateAgency": "in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)",
-            "occupied.self": "Sie konnten die Stelle selber besetzen"
+            "confirm": "Confermare la cancellazione",
+            "dismiss": "Interrompere",
+            "not-occupied": "Il posto non \u00e8 stato assegnato",
+            "occupied": "Il posto \u00e8 stato assegnato",
+            "occupied.jobCenter": "in collaborazione con l'Ufficio regionale di collocamento (URC)",
+            "occupied.privateAgency": "in collaborazione con le agenzie private di collocamento",
+            "occupied.self": "Il posto \u00e8 stato assegnato senza interventi esterni"
         },
-        "title": "Stelle abmelden"
+        "title": "Cancellare il posto vacante"
     },
     "job-publication-details": {
         "application": {
-            "additionalInfo": "Erg\u00e4nzende Angaben",
-            "email": "E-Mail",
-            "post": "Post",
-            "telephone": "Telefonisch",
-            "title": "Weitere Bewerbungsformen"
+            "additionalInfo": "Informazioni complementari",
+            "email": "E-mail",
+            "post": "Posta",
+            "telephone": "Telefono",
+            "title": "Altre modalit\u00e0 di candidatura"
         },
-        "byArrangement": "Nach Vereinbarung",
-        "cancel": "Stelle abmelden",
-        "cancel.error": "Failed to cancel job publication. Try again later.",
-        "cancel.success": "Job publication cancelled successfully.",
+        "byArrangement": "Previo accordo",
+        "cancel": "Cancellare il posto vacante",
+        "cancel.error": "Cancellazione non riuscita. Riprovare tra poco.",
+        "cancel.success": "Posto vacante cancellato",
         "contact": {
-            "accountNumber": "Stellennummer",
-            "avam": "AVAM",
+            "accountNumber": "N. del posto vacante",
+            "avam": "COLSTA",
             "jobRoom": "Job-Room",
-            "title": "Ihre Kontaktperson"
+            "title": "Persona di contatto"
         },
-        "copy": "Stelle duplizieren",
-        "immediately": "ab Sofort",
-        "permanent": "Permanent",
-        "print": "Drucken",
+        "copy": "Duplicare l'offerta d'impiego",
+        "immediately": "da subito",
+        "permanent": "Posto a tempo indeterminato",
+        "print": "Stampare",
         "startDate": "Vacante dal",
-        "status": "Status",
-        "temporary": "Temporary",
-        "title": "Job publication"
+        "status": "Stato",
+        "temporary": "a tempo determinato",
+        "title": "Pubblicare posto"
     }
 }

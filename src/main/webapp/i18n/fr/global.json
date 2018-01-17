@@ -238,7 +238,7 @@
                     "strength": "Robustesse du mot de passe :"
                 },
                 "phone": {
-                    "format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99"
+                    "format": "Veuillez ins\u00e9rer une num\u00e9ro de t\u00e9l\u00e9phone valide par ex. 031 999 99 99 or +41 31 999 99 99"
                 },
                 "username": {
                     "invalid": "Votre nom d'utilisateur n'est pas valide.",
@@ -462,7 +462,7 @@
             "development": "D\u00e9veloppement",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Job-Room"
     },
     "header": {
         "title": "Assurance-ch\u00f4mage AC"

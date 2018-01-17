@@ -238,7 +238,7 @@
                     "strength": "Sicurezza della password:"
                 },
                 "phone": {
-                    "format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99"
+                    "format": "Inserire un n. di telefono valido p. e. 031 999 99 99 or +41 31 999 99 99"
                 },
                 "username": {
                     "invalid": "Nome utente non \u00e8 valido.",
@@ -462,7 +462,7 @@
             "development": "Development",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Job-Room"
     },
     "header": {
         "title": "Assicurazione contro la disoccupazione AD"

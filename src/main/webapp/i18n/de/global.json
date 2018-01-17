@@ -197,7 +197,7 @@
             "dashboard": "Dashboard",
             "entities": {
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)",
-                "job": "Job",
+                "job": "Stelle",
                 "main": "Entit\u00e4ten"
             },
             "home": "Startseite",
@@ -462,7 +462,7 @@
             "development": "Entwicklung",
             "test": "Test"
         },
-        "title": "Jobroom"
+        "title": "Job-Room"
     },
     "header": {
         "title": "Arbeitslosenversicherung ALV"

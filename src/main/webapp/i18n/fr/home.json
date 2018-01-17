@@ -1,6 +1,6 @@
 {
     "home": {
-        "title": "Job Room",
+        "title": "Job-Room",
         "title.portal": "travail",
         "title.portal-url": "https://www.travail.swiss",
         "toolbar": {
@@ -126,7 +126,7 @@
                 },
                 "reset": "R\u00e9tablir",
                 "submit": "Publier un emploi",
-                "submit.error": "Job could not be saved!",
+                "submit.error": "L'emploi n'a pas pu \u00eatre sauvegard\u00e9!",
                 "submit.success": "Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel d\u00e8s sa publication.",
                 "workload": "Taux d'occupation"
             },
@@ -143,7 +143,7 @@
             },
             "jobPublicationTab": "Publier une place vacante",
             "jobSearch": {
-                "title": "Trouver le travail de vos r\u00eaves!"
+                "title": "Trouvez des offres appropri\u00e9s"
             }
         }
     }

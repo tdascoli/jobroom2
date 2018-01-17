@@ -51,7 +51,7 @@
                 "countryCode": "Locality Country Code",
                 "regionCode": "Locality Region Code",
                 "text": "Locality Text",
-                "zipCode": "Job Locality Zip Code"
+                "zipCode": "Job postal code"
             },
             "numberOfJobs": "Number of jobs",
             "paymentMax": "Max payment",

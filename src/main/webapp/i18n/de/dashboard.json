@@ -5,24 +5,24 @@
             "action.copy": "Stelle kopieren",
             "action.delete": "Stelle abmelden",
             "action.view": "Stelle sichten",
-            "avam": "#AVAM",
+            "avam": "Stellennummer AVAM",
             "job-name": {
                 "placeholder": "In Stellen suchen"
             },
-            "job-room-id": "#Job-Room",
+            "job-room-id": "Stellennummer Job-Room",
             "job-title": "Stellenbezeichnung",
             "location": "Arbeitsort",
             "publication-date": "Meldedatum",
             "publication-period": {
-                "all": "All",
+                "all": "Alle",
                 "label": "Alter der Stellen",
                 "month": "{{ month }} Monat",
                 "months": "{{ months }} Monate",
-                "week": "{{ week }} Week",
+                "week": "{{ week }} Woche",
                 "year": "{{ years }} Jahr"
             },
             "status": "Status",
-            "title": "Jobs bewirtschaften",
+            "title": "Stellen bewirtschaften",
             "user-information": {
                 "title": "Sie sind eingeloggt als"
             }
@@ -52,21 +52,21 @@
         },
         "byArrangement": "Nach Vereinbarung",
         "cancel": "Stelle abmelden",
-        "cancel.error": "Failed to cancel job publication. Try again later.",
-        "cancel.success": "Job publication cancelled successfully.",
+        "cancel.error": "Stellenangebot konnte nicht abgemeldet werden. Bitte versuchen Sie es sp\u00e4ter nocheinmal.",
+        "cancel.success": "Stellenangebot erfolgreich abgemeldet",
         "contact": {
             "accountNumber": "Stellennummer",
             "avam": "AVAM",
             "jobRoom": "Job-Room",
             "title": "Ihre Kontaktperson"
         },
-        "copy": "Stelle duplizieren",
+        "copy": "Stellenangebot duplizieren",
         "immediately": "ab Sofort",
-        "permanent": "Permanent",
+        "permanent": "Festanstellung",
         "print": "Drucken",
         "startDate": "Vakant seit",
         "status": "Status",
-        "temporary": "Temporary",
-        "title": "Job publication"
+        "temporary": "Befristet",
+        "title": "Stellenpublikation"
     }
 }

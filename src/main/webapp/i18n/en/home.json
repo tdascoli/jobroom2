@@ -1,13 +1,13 @@
 {
     "home": {
-        "title": "Job Room",
+        "title": "Job-Room",
         "title.portal": "work",
         "title.portal-url": "https://www.work.swiss",
         "toolbar": {
             "companies": "Employers",
             "jobSeekers": "Job seekers",
             "recruitmentAgencies": "Recruitment agencies",
-            "title": "Job Room offers services for"
+            "title": "Job-Room offers services for"
         },
         "tools": {
             "candidate-search": {
@@ -138,12 +138,12 @@
                     "show": "Show search results."
                 },
                 "search-button": {
-                    "title": "Find your dream job!"
+                    "title": "Show job offers"
                 }
             },
             "jobPublicationTab": "Publish job",
             "jobSearch": {
-                "title": "Find your dream job now!"
+                "title": "Find suitable positions"
             }
         }
     }

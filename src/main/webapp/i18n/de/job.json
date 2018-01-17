@@ -23,11 +23,11 @@
             "contactTitle": "Kontakt Anrede",
             "currencyCode": "W\u00e4hrungscode",
             "delete": {
-                "question": "Soll Job {{ id }} wirklich endg\u00fcltig gel\u00f6scht werden?"
+                "question": "Soll Stelle {{ id }} wirklich endg\u00fcltig gel\u00f6scht werden?"
             },
             "description": "Beschreibung",
             "detail": {
-                "title": "Job"
+                "title": "Stelle"
             },
             "drivingLicenseLevel": "F\u00fchrerausweis",
             "endDate": "Enddatum",
@@ -37,9 +37,9 @@
             "gender": "Geschlecht",
             "hasPersonalVehicle": "Verf\u00fcgt \u00fcber eigenes Fahrzeug",
             "home": {
-                "createLabel": "Job erstellen",
-                "createOrEditLabel": "Job erstellen oder bearbeiten",
-                "title": "Jobs"
+                "createLabel": "Stellenangebot erstellen",
+                "createOrEditLabel": "Stellenangebot erstellen oder bearbeiten",
+                "title": "Stellen"
             },
             "isJobSharing": "Jobsharing",
             "isPermanent": "Festanstellung",
@@ -51,9 +51,9 @@
                 "countryCode": "Locality Country Code",
                 "regionCode": "Locality Region Code",
                 "text": "Locality Text",
-                "zipCode": "Job Locality Zip Code"
+                "zipCode": "Arbeitsort PLZ"
             },
-            "numberOfJobs": "Anzahl Jobangebote",
+            "numberOfJobs": "Anzahl Stellenangebote",
             "paymentMax": "Maximaler Lohn",
             "paymentMin": "Minimaler Lohn",
             "professions": "Berufe",
@@ -69,9 +69,9 @@
     },
     "jobserviceApp": {
         "job": {
-            "created": "Job mit ID {{ param }} erstellt",
-            "deleted": "Job mit ID {{ param }} gel\u00f6scht",
-            "updated": "Job mit ID {{ param }} aktualisiert"
+            "created": "Stelle mit ID {{ param }} erstellt",
+            "deleted": "Stelle mit ID {{ param }} gel\u00f6scht",
+            "updated": "Stelle mit ID {{ param }} aktualisiert"
         }
     }
 }
