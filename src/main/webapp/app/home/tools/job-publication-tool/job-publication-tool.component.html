@@ -4,7 +4,7 @@
             <ngb-alert *ngIf="showSuccessSaveMessage" type="success" (close)="showSuccessSaveMessage = false">{{ 'home.tools.job-publication.submit.success' | translate }}</ngb-alert>
             <ngb-alert *ngIf="showErrorSaveMessage" type="danger" (close)="showErrorSaveMessage = false">{{ 'home.tools.job-publication.submit.error' | translate }}</ngb-alert>
 
-            <form [formGroup]="jobPublicationForm" (ngSubmit)="onSubmit()" novalidate jr2ScrollToFirstInvalid>
+            <form #form="ngForm" [formGroup]="jobPublicationForm" (ngSubmit)="onSubmit()" novalidate jr2ScrollToFirstInvalid>
 
                 <ng-container formGroupName="job">
                     <fieldset class="job-publication--horizontal">
@@ -491,7 +491,7 @@
                             {{ 'home.tools.job-publication.disclaimer' | translate }}
                         </label>
                         <small class="form-text text-danger"
-                               *ngIf="jobPublicationForm.get('disclaimer').invalid"
+                               *ngIf="form.submitted && jobPublicationForm.get('disclaimer').invalid"
                                jhiTranslate="home.tools.job-publication.disclaimer.error">
                         </small>
                     </div>
@@ -501,7 +501,7 @@
                         <button type="submit" class="btn btn-primary btn-lg">
                             {{ 'home.tools.job-publication.submit' | translate }}
                         </button>
-                        <button type="button" (click)="resetForm()" class="btn btn-secondary btn-lg">
+                        <button type="button" (click)="form.resetForm(); resetForm()" class="btn btn-secondary btn-lg">
                             {{ 'home.tools.job-publication.reset' | translate }}
                         </button>
                     </div>
