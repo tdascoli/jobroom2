@@ -24,49 +24,8 @@ only screen and (min-resolution: 2dppx) {
         background-size: contain;
     }
 }
-.background--jobseeker,
-.background--companies,
-.background--pea {
-    min-height: 100vh;
-}
 
-.background--jobseeker {
-    background: url("../../content/images/bg-jobseeker.jpeg") no-repeat center center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.background--companies {
-    background: url("../../content/images/bg-companies.jpeg") no-repeat top center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
-.background--pea {
-    background: url("../../content/images/bg-pea.jpeg") no-repeat top center fixed;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
 
 .mobile-toggle {
     cursor: pointer;
-}
-
-/*Edge*/
-@supports (-ms-ime-align:auto) {
-    .navbar-brand {
-        background: red !important;
-    }
-}
-
-@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-    .background--jobseeker,
-    .background--companies,
-    .background--pea {
-        background-attachment: scroll !important;
-    }
 }
