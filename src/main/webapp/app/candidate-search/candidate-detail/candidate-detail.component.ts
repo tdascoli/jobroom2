@@ -150,6 +150,11 @@ export class CandidateDetailComponent implements OnInit {
         return window.location.href;
     }
 
+    getEncodedCandidateUrl() {
+        // todo: Review if we need a pipe for this.
+        return encodeURIComponent(this.getCandidateUrl());
+    }
+
     isDisplayGraduation(graduation: string): boolean {
         return graduation && graduation !== Graduation[Graduation.NONE];
     }
