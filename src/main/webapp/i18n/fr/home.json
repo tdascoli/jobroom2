@@ -32,7 +32,7 @@
                     },
                     "email": "Courriel",
                     "email-enabled": "Postulation en ligne",
-                    "mail-enabled": "Postulation par \u00e9crit",
+                    "mail-enabled": "Postulation par courrier",
                     "online-form": "Formulaire en ligne",
                     "phone": "T\u00e9l\u00e9phone",
                     "phone-enabled": "Postulation par t\u00e9l\u00e9phone",
@@ -61,7 +61,7 @@
                 "degree": "Formation",
                 "description": {
                     "characters-counter-text": "{{count}} caract\u00e8res disponibles",
-                    "label": "Activit\u00e9 / Exigences",
+                    "label": "Activit\u00e9 / exigences",
                     "placeholder": "max. 9000 caract\u00e8res"
                 },
                 "disclaimer": "Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localit\u00e9.",
@@ -126,8 +126,8 @@
                 },
                 "reset": "R\u00e9tablir",
                 "submit": "Publier un emploi",
-                "submit.error": "L'emploi n'a pas pu \u00eatre sauvegard\u00e9!",
-                "submit.success": "Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel d\u00e8s sa publication.",
+                "submit.error": "L'emploi n'a pas pu \u00eatre sauvegard\u00e9.",
+                "submit.success": "Merci pour votre offre d'emploi que l'ORP va l'examiner. Vous recevrez un courriel d\u00e8s sa publication.",
                 "workload": "Taux d'occupation"
             },
             "job-search": {

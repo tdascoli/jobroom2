@@ -3,11 +3,11 @@
         "organization": {
             "active": "Attivo",
             "city": "Luogo",
-            "created": "&Egrave",
+            "created": "Une organisation a \u00e9t\u00e9 cr\u00e9\u00e9 avec l'identifiant {{ param }}",
             "delete": {
-                "question": "Sei sicuro di volere eliminare Organization {{ id }}?"
+                "question": "Sei sicuro di volere eliminare l'organizzazione {{ id }}?"
             },
-            "deleted": "&Egrave",
+            "deleted": "L'organisation avec l'identifiant {{ param }} a \u00e9t\u00e9 supprim\u00e9",
             "detail": {
                 "title": "Organizzazione"
             },
@@ -23,7 +23,7 @@
             "phone": "Telefono",
             "street": "Via",
             "type": "Tipo",
-            "updated": "&Egrave",
+            "updated": "L'organisation avec l'identifiant {{ param }} a \u00e9t\u00e9 mis \u00e0 jour",
             "zipCode": "NPA"
         }
     }

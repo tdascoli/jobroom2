@@ -3,17 +3,18 @@
         "application": {
             "additionalInfo": "Supplementary information",
             "email": "Email",
-            "post": "By mail",
+            "post": "By post",
+            "online-form": "Online form",
             "telephone": "By phone",
             "title": "Application forms"
         },
-        "cancel": "Cancel job offer",
+        "cancel": "Cancel job posting",
         "contact": {
             "accountNumber": "Job ID",
             "jobRoom": "Job-Room",
             "title": "Your contact person"
         },
-        "copy": "Stellenangebot duplizieren",
+        "copy": "Duplicate job posting",
         "permanent": "Permanent",
         "print": "Print",
         "temporary": "Temporary"

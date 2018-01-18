@@ -1,10 +1,10 @@
 {
     "job-detail": {
         "action": {
-            "applyNow": "Jetzt Bewerben",
+            "applyNow": "Jetzt bewerben",
             "copyLink": "Link kopieren",
             "print": "Drucken",
-            "saveJob": "Stellenangebot speichern",
+            "saveJob": "Stellenanzeige speichern",
             "savePdf": "Als PDF speichern",
             "sendEmail": "Per E-Mail versenden",
             "showExternalPage": "Zum externen Stelleninserat"

@@ -15,7 +15,7 @@
                     "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellensuchende",
                     "none": "Diesem Profil ensprechen keine Stellensuchenden",
                     "one": "Diesem Profil ensprechen <br><span class=\"badge badge-radar\">1</span><br>Stellensuchende",
-                    "show": "Jetzt anzeigen!"
+                    "show": "Jetzt anzeigen"
                 },
                 "search-button": {
                     "title": "Kandidaten anzeigen"
@@ -32,7 +32,7 @@
                     },
                     "email": "E-Mail",
                     "email-enabled": "Elektronische Bewerbung",
-                    "mail-enabled": "Schriftliche Bewerbung",
+                    "mail-enabled": "Bewerbung per Post",
                     "online-form": "Online-Formular",
                     "phone": "Telefon",
                     "phone-enabled": "Telefonische Bewerbung",
@@ -61,7 +61,7 @@
                 "degree": "Ausbildung",
                 "description": {
                     "characters-counter-text": "{{count}} Zeichen verbleibend.",
-                    "label": "T\u00e4tigkeit /Anforderungen",
+                    "label": "T\u00e4tigkeit / Anforderungen",
                     "placeholder": "max. 9000 Zeichen"
                 },
                 "disclaimer": "Ich best\u00e4tige, dass der Arbeitgeber die orts- und branchen\u00fcblichen Lohn- und Arbeitsbedingungen einh\u00e4lt.",
@@ -126,16 +126,16 @@
                 },
                 "reset": "Zur\u00fccksetzen",
                 "submit": "Stelle publizieren",
-                "submit.error": "Das Stellenangebot konnte nicht gespeichert werden!",
-                "submit.success": "Besten Dank f\u00fcr Ihr Stellenangebot. Dieses wird nach der Pr\u00fcfung durch das RAV publiziert. Sie erhalten dazu in K\u00fcrze eine E-Mail.",
+                "submit.error": "Die Stellenanzeige konnte nicht gespeichert werden.",
+                "submit.success": "Besten Dank f\u00fcr Ihre Stellenmeldung. Ihr Inserat wird nun von einem Regionalen Arbeitsvermittlungszentrum (RAV) gepr\u00fcft. Sie werden per E-Mail informiert, sobald die Stelle ver\u00f6ffentlicht wurde.",
                 "workload": "Arbeitspensum"
             },
             "job-search": {
                 "search-badge": {
-                    "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellenangebote",
+                    "many": "Diesem Profil entsprechen <br><span class=\"badge badge-radar\">{{count}}</span><br>Stellen",
                     "none": "Diesem Profil entsprechen keine Stellen",
                     "one": "Diesem Profil entspricht <br><span class=\"badge badge-radar\">1</span><br>Stelle",
-                    "show": "Jetzt anzeigen!"
+                    "show": "Jetzt anzeigen"
                 },
                 "search-button": {
                     "title": "Stellen anzeigen"

@@ -46,14 +46,14 @@
         "application": {
             "additionalInfo": "Indications compl\u00e9mentaires",
             "email": "Courriel",
-            "post": "Par voie postale",
+            "post": "Par la poste",
             "telephone": "Par t\u00e9l\u00e9phone",
             "title": "Autres formes de postulation"
         },
         "byArrangement": "\u00c0 convenir",
         "cancel": "Supprimer le poste",
         "cancel.error": "L'offre d'emploi n'a pas pu \u00eatre supprim\u00e9e. Veuillez r\u00e9essayer plus tard.",
-        "cancel.success": "Le poste a \u00e9t\u00e9 supprim\u00e9 avec succ\u00e8s.",
+        "cancel.success": "Le poste a \u00e9t\u00e9 supprim\u00e9.",
         "contact": {
             "accountNumber": "Num\u00e9ro de poste",
             "avam": "PLASTA",

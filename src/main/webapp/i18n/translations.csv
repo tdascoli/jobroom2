@@ -51,7 +51,7 @@ candidate-detail,candidate-detail.personal-information.name.label,Name / Vorname
 candidate-detail,candidate-detail.personal-information.nationality.label,Staatsangehörigkeit,Nationality,"Nationalité ",Cittadinanza
 candidate-detail,candidate-detail.personal-information.phone.label,Telefon,Telephone,Téléphone,Telefono
 candidate-detail,candidate-detail.personal-information.title,Personalien / Kontaktdaten des Kandidaten,Personal information / Candidate contact details,Coordonnées du candidat,Generalità / coordinate del candidato
-candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
+candidate-search,candidate-search.availability.BY_ARRANGEMENT,Nach Vereinbarung,By agreement,À convenir,Previo accordo
 candidate-search,candidate-search.availability.IMMEDIATE,Ab sofort,Immediately,Tout de suite,Da subito
 candidate-search,candidate-search.availability.label,Verfügbarkeit,Availability,Disponibilité,Disponibilità
 candidate-search,candidate-search.candidate-search-list.error-message,Die Resultate der Kandidatensuche konnten nicht geladen werden,Failed to load candidate result list.,Les résultats de la recherche de candidats n'ont pas pu être chargés,Impossibile caricare la lista risultati dei candidati!
@@ -123,7 +123,7 @@ dashboard,dashboard.job-publication.status,Status,Status,Statut,Stato
 dashboard,dashboard.job-publication.title,Stellen bewirtschaften,Manage jobs,Gérer les emplois,Gestire i posti vacanti
 dashboard,dashboard.job-publication.user-information.title,Sie sind eingeloggt als,You are logged in as,Vous êtes connecté(e),Registrato in qualità di:
 dashboard,dashboard.title,Dashboard,Dashboard,Tableau de bord,Dashboard
-dashboard,job-publication-cancel.alert,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung des Stellenangebots.,Please fill in the cancellation details and confirm cancellation of the job offer.,Veuillez remplir les informations liées à l'annulation et confirmer l'annulation de l'offre d'emploi.,Compilare i dati per la cancellazione dell'annuncio e confermare
+dashboard,job-publication-cancel.alert,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung der Stellenanzeige.,Please fill in the cancellation details and confirm cancellation of the job posting.,Veuillez remplir les informations liées à l'annulation et confirmer l'annulation de l'offre d'emploi.,Compilare i dati per la cancellazione dell'annuncio e confermare
 dashboard,job-publication-cancel.job.confirm,Abmeldung bestätigen,Confirm cancellation,Confirmer l'annulation,Confermare la cancellazione
 dashboard,job-publication-cancel.job.dismiss,Abbrechen,Cancel,Interrompre,Interrompere
 dashboard,job-publication-cancel.job.not-occupied,Sie konnten die Stelle nicht besetzen,You were unable to fill the position,Vous n'avez pas pu pourvoir le poste,Il posto non è stato assegnato
@@ -134,18 +134,18 @@ dashboard,job-publication-cancel.job.occupied.self,Sie konnten die Stelle selber
 dashboard,job-publication-cancel.title,Stelle abmelden,Cancel job,Supprimer le poste,Cancellare il posto vacante
 dashboard,job-publication-details.application.additionalInfo,Ergänzende Angaben,Additional Information,Indications complémentaires,Informazioni complementari
 dashboard,job-publication-details.application.email,E-Mail,Email,Courriel,E-mail
-dashboard,job-publication-details.application.post,Post,By mail,Par voie postale,Posta
+dashboard,job-publication-details.application.post,Per Post,By post,Par la poste,Per posta
 dashboard,job-publication-details.application.telephone,Telefonisch,By telephone,Par téléphone,Telefono
 dashboard,job-publication-details.application.title,Weitere Bewerbungsformen,Other application forms,Autres formes de postulation,Altre modalità di candidatura
-dashboard,job-publication-details.byArrangement,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
+dashboard,job-publication-details.byArrangement,Nach Vereinbarung,By agreement,À convenir,Previo accordo
 dashboard,job-publication-details.cancel,Stelle abmelden,Cancel job,Supprimer le poste,Cancellare il posto vacante
-dashboard,job-publication-details.cancel.error,Stellenangebot konnte nicht abgemeldet werden. Bitte versuchen Sie es später nocheinmal.,It was not possible to cancel the job offer Please try again later.,L'offre d'emploi n'a pas pu être supprimée. Veuillez réessayer plus tard.,Cancellazione non riuscita. Riprovare tra poco.
-dashboard,job-publication-details.cancel.success,Stellenangebot erfolgreich abgemeldet,Job offer canceled,Le poste a été supprimé avec succès.,Posto vacante cancellato
+dashboard,job-publication-details.cancel.error,Stellenanzeige konnte nicht abgemeldet werden. Bitte versuchen Sie es später nocheinmal.,It was not possible to cancel the job posting. Please try again later.,L'offre d'emploi n'a pas pu être supprimée. Veuillez réessayer plus tard.,Cancellazione non riuscita. Riprovare tra poco.
+dashboard,job-publication-details.cancel.success,Stellenanzeige abgemeldet,Job posting canceled,Le poste a été supprimé.,Posto vacante cancellato
 dashboard,job-publication-details.contact.accountNumber,Stellennummer,Job number,Numéro de poste,N. del posto vacante
 dashboard,job-publication-details.contact.avam,AVAM,AVAM,PLASTA,COLSTA
 dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
 dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Your contact person,Votre interlocuteur,Persona di contatto
-dashboard,job-publication-details.copy,Stellenangebot duplizieren,Duplicate the job offer,Dupliquer l'offre d'emploi,Duplicare l'offerta d'impiego
+dashboard,job-publication-details.copy,Stellenanzeige duplizieren,Duplicate the job posting,Dupliquer l'offre d'emploi,Duplicare l'offerta d'impiego
 dashboard,job-publication-details.immediately,ab Sofort,immediately,dès maintenant,da subito
 dashboard,job-publication-details.permanent,Festanstellung,Permanent position,Poste à durée indéterminée,Posto a tempo indeterminato
 dashboard,job-publication-details.print,Drucken,Print,Imprimer,Stampare
@@ -580,7 +580,7 @@ home,home.toolbar.title,Job-Room bietet Leistungen für,Job-Room offers services
 home,home.tools.candidate-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellensuchende","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>candidates","<br><span class=""badge badge-radar"">{{count}}</span><br>candidats correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>candidati"
 home,home.tools.candidate-search.search-badge.none,Diesem Profil ensprechen keine Stellensuchenden,No candidates match this profile,Aucun candidat correspond à ce profil,Non ci sono candidati corrispondenti a questo profilo
 home,home.tools.candidate-search.search-badge.one,"Diesem Profil ensprechen <br><span class=""badge badge-radar"">1</span><br>Stellensuchende","This profile matches <br><span class=""badge badge-radar"">1</span><br>candidate","<br><span class=""badge badge-radar"">1</span><br>candidat correspond à ce profil","A questo profilo corrisponde<br><span class=""badge badge-radar"">1</span><br>candidato"
-home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen!,Show search results.,Afficher maintenant,Visualizza ora!
+home,home.tools.candidate-search.search-badge.show,Jetzt anzeigen,Show search results,Afficher maintenant,Visualizza ora
 home,home.tools.candidate-search.search-button.title,Kandidaten anzeigen,Display candidates,Afficher des candidats,Visualizza candidati
 home,home.tools.candidate-search.title,Finden Sie passende Kandidaten,Find suitable candidates,Trouvez des candidats appropriés,Trova il candidato giusto
 home,home.tools.candidateSearchTab,Kandidaten finden,Find candidates,Trouver des candidats,Trova candidati
@@ -589,7 +589,7 @@ home,home.tools.job-publication.application.additional-info.label,Ergänzende An
 home,home.tools.job-publication.application.additional-info.placeholder,max. 240 Zeichen,Max. 240 characters,max. 240 caractères,max. 240 caratteri
 home,home.tools.job-publication.application.email,E-Mail,Email,Courriel,E-mail
 home,home.tools.job-publication.application.email-enabled,Elektronische Bewerbung,Electronic application,Postulation en ligne,Candidatura elettronica
-home,home.tools.job-publication.application.mail-enabled,Schriftliche Bewerbung,Written application,Postulation par écrit,Candidatura cartacea
+home,home.tools.job-publication.application.mail-enabled,Bewerbung per Post,Paper application,Postulation par courrier,Candidatura per posta
 home,home.tools.job-publication.application.online-form,Online-Formular,Online form,Formulaire en ligne,Modulo online
 home,home.tools.job-publication.application.phone,Telefon,Telephone number,Téléphone,Telefono
 home,home.tools.job-publication.application.phone-enabled,Telefonische Bewerbung,Application by telephone,Postulation par téléphone,Candidatura telefonica
@@ -612,7 +612,7 @@ home,home.tools.job-publication.contact.title,Kontaktperson,Contact person,Perso
 home,home.tools.job-publication.date-placeholder,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
 home,home.tools.job-publication.degree,Ausbildung,Education,Formation,Formazione
 home,home.tools.job-publication.description.characters-counter-text,{{count}} Zeichen verbleibend.,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
-home,home.tools.job-publication.description.label,Tätigkeit /Anforderungen,Employment / requirements,Activité / Exigences,Attività / requisiti
+home,home.tools.job-publication.description.label,Tätigkeit / Anforderungen,Duties / requirements,Activité / exigences,Attività / requisiti
 home,home.tools.job-publication.description.placeholder,max. 9000 Zeichen,max. 9000 characters,max. 9000 caractères,max. 9000 caratteri
 home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",I certify that the employer complies with local and industry-standard wage and working conditions.,Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localité.,Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attività viene svolta.
 home,home.tools.job-publication.disclaimer.error,"Bitte bestätigen Sie, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",Please confirm that the employer complies with local and industry standards for wage and working conditions.,Veuillez confirmer que l'employeur respecte bien les conditions de travail et de salaire en vigueur dans la branche et la localité.,Confermare che il datore di lavoro rispetta le condizioni salariali e lavorative del luogo e del ramo.
@@ -660,26 +660,26 @@ home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Dat
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Employment start,"Entrée en fonction  ",Inizio dell'attività
 home,home.tools.job-publication.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 home,home.tools.job-publication.submit,Stelle publizieren,Publish job,Publier un emploi,Pubblica posto
-home,home.tools.job-publication.submit.error,Das Stellenangebot konnte nicht gespeichert werden!,Job could not be saved!,L'emploi n'a pas pu être sauvegardé!,Offerta d'impiego non salvata!
-home,home.tools.job-publication.submit.success,Besten Dank für Ihr Stellenangebot. Dieses wird nach der Prüfung durch das RAV publiziert. Sie erhalten dazu in Kürze eine E-Mail.,Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.,Merci pour votre offre d'emploi! L'ORP va l'examiner. Vous recevrez un courriel dès sa publication.,"Grazie dell'offerta di lavoro, che verrà pubblicata dopo la verifica da parte dell'URC. A breve Le verrà inviata un'e-mail."
+home,home.tools.job-publication.submit.error,Die Stellenanzeige konnte nicht gespeichert werden.,Job could not be saved.,L'emploi n'a pas pu être sauvegardé.,Offerta d'impiego non salvata.
+home,home.tools.job-publication.submit.success,"Besten Dank für Ihre Stellenmeldung. Ihr Inserat wird nun von einem Regionalen Arbeitsvermittlungszentrum (RAV) geprüft. Sie werden per E-Mail informiert, sobald die Stelle veröffentlicht wurde.","Thank you for your job posting. You advert will now be checked by a regional employment centre (RAV). You will be informed by e-mail as soon as the job is published.","Merci pour votre offre d'emploi que l'ORP va l'examiner. Vous recevrez un courriel dès sa publication.","Grazie, abbiamo ricevuto l'annuncio. Riceverà un'e-mail non appena il posto vacante verrà pubblicato, a seguito delle verifiche dell'URC."
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
-home,home.tools.job-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellenangebote","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>jobs","<br><span class=""badge badge-radar"">{{count}}</span><br>emplois correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>posti"
+home,home.tools.job-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellen","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>jobs","<br><span class=""badge badge-radar"">{{count}}</span><br>emplois correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>posti"
 home,home.tools.job-search.search-badge.none,Diesem Profil entsprechen keine Stellen,No jobs match this profile,Aucun emploi correspond à ce profil,Non ci sono posti corrispondenti a questo profilo
 home,home.tools.job-search.search-badge.one,"Diesem Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Stelle","This profile matches <br><span class=""badge badge-radar"">1</span><br>job","<br><span class=""badge badge-radar"">1</span><br>emploi correspond à ce profil","A questo profilo corrisponde<br><span class=""badge badge-radar"">1</span><br>posto"
-home,home.tools.job-search.search-badge.show,Jetzt anzeigen!,Show search results.,Afficher maintenant,Visualizza ora!
+home,home.tools.job-search.search-badge.show,Jetzt anzeigen,Show search results.,Afficher maintenant,Visualizza ora
 home,home.tools.job-search.search-button.title,Stellen anzeigen,Show job offers,Afficher les offres d'emploi,Visualizza offerte di lavoro
 home,home.tools.jobPublicationTab,Stelle publizieren,Publish job,Publier une place vacante,Pubblica lavoro
 home,home.tools.jobSearch.title,Finden Sie passende Stellen,Find suitable positions,Trouvez des offres appropriés,Trovare il posto giusto
-job-detail,job-detail.action.applyNow,Jetzt Bewerben,Apply now,Postuler maintenant,Candidarsi ora
+job-detail,job-detail.action.applyNow,Jetzt bewerben,Apply now,Postuler maintenant,Candidarsi ora
 job-detail,job-detail.action.copyLink,Link kopieren,Copy link,Copier le lien,Copia link
 job-detail,job-detail.action.print,Drucken,Print,Imprimer,Stampa
-job-detail,job-detail.action.saveJob,Stellenangebot speichern,Save job posting,Sauvegarder l'offre d'emploi,Salva offerta di lavoro
+job-detail,job-detail.action.saveJob,Stellenanzeige speichern,Save job posting,Sauvegarder l'offre d'emploi,Salva offerta di lavoro
 job-detail,job-detail.action.savePdf,Als PDF speichern,Save as PDF,Sauvegarder en tant que PDF,Salva come PDF
 job-detail,job-detail.action.sendEmail,Per E-Mail versenden,Send by email,Envoyer par courriel,Invia per e-mail
 job-detail,job-detail.action.showExternalPage,Zum externen Stelleninserat,Link to external job posting,Vers l'offre d'emploi externe,vai all'annuncio esterno
 job-detail,job-detail.application.additionalInfo,Ergänzende Angaben,Additional information,Indications complémentaires,Dati complementari
 job-detail,job-detail.application.email,Per E-Mail,By email,Par courriel,Per e-mail
-job-detail,job-detail.application.mail,Per Post,By mail,Par la poste,Per posta
+job-detail,job-detail.application.mail,Per Post,By post,Par la poste,Per posta
 job-detail,job-detail.application.mail.text,siehe Adresse des Unternehmens,See company address,Voir l'adresse de l'entreprise,V. indirizzo dell'impresa
 job-detail,job-detail.application.phone,Telefonisch,By phone,Par téléphone,Telefonicamente
 job-detail,job-detail.application.title,Bewerbungsformen,Application forms,Types de postulation,Tipologie di candidatura
@@ -695,19 +695,20 @@ job-detail,job-detail.reference.phone,Telefon,Telephone,Téléphone,Telefono
 job-detail,job-detail.reference.responsible-job-center,Zuständiges RAV,Responsible job centre,ORP compétent,URC competente
 job-detail,job-detail.startDate,Ab {{date}},From {{date}},Du {{date}},Dal {{date}}
 job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fonction,Entrata in funzione
-job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By arrangement,À convenir,Previo accordo
+job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By agreement,À convenir,Previo accordo
 job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite,Da subito
 job-detail,job-detail.title,Stellenbeschreibung,Job detail,Détail de l'emploi,Dettagli sul posto
 job-publication,job-publication-details.application.additionalInfo,Ergänzende Angaben,Supplementary information,Indications complémentaires,Dati complementari
 job-publication,job-publication-details.application.email,E-Mail,Email,Courriel,E-mail
-job-publication,job-publication-details.application.post,Per Post,By mail,Par la poste,Per posta
+job-publication,job-publication-details.application.post,Per Post,By post,Par la poste,Per posta
+job-publication,job-publication-details.application.online-form,Online-Formular,Online form,Formulaire en ligne,Modulo online
 job-publication,job-publication-details.application.telephone,Telefonisch,By phone,Par téléphone,Telefonicamente
 job-publication,job-publication-details.application.title,Bewerbungsformen,Application forms,Formes de postulation,Forme di candidatura
-job-publication,job-publication-details.cancel,Stellenangebot abmelden,Cancel job offer,Retirer l'offre d'emploi,Cancellare un'offerta d'impiego
+job-publication,job-publication-details.cancel,Stellenanzeige abmelden,Cancel job posting,Retirer l'offre d'emploi,Cancellare un'offerta d'impiego
 job-publication,job-publication-details.contact.accountNumber,Stellennummer,Job ID,Numéro du poste,Numero posto
 job-publication,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
 job-publication,job-publication-details.contact.title,Ihre Kontaktperson,Your contact person,Votre personne de contact,Persona di contatto
-job-publication,job-publication-details.copy,Stellenangebot duplizieren,Stellenangebot duplizieren,Duplicate job offer,Dupliquer l'offre d'emploi
+job-publication,job-publication-details.copy,Stellenanzeige duplizieren,Duplicate job posting,Dupliquer l'offre d'emploi,Duplicare l'offerta d'impiego
 job-publication,job-publication-details.permanent,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
 job-publication,job-publication-details.print,Drucken,Print,Imprimer,Stampa
 job-publication,job-publication-details.temporary,Befristet,Temporary,Durée limitée,A tempo determinato
@@ -750,70 +751,11 @@ job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
 job-search,typeahead-multiselect.type.classification,Berufskategorie,Category,Catégorie,Categoria
 job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località
 job-search,typeahead-multiselect.type.occupation,Berufsbezeichnung,Occupation,Profession,Professione
-job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url
-job,jobroomApp.job.cancellationDate,Annulationsdatum,Cancellation date,Date d'annulation,Data di cancellazione
-job,jobroomApp.job.cancellationReason,Annluationsgrund,Cancellation reason,Motif de l'annulation,Motivo cancellazione
-job,jobroomApp.job.companyAddressLine1,Unternehmensadresse Zeile 1,Company Address Line 1,Adresse de l'entreprise - ligne 1,Indirizzo impresa riga 1
-job,jobroomApp.job.companyAddressLine2,Unternehmensadresse Zeile 2,Company Address Line 2,Adresse de l'entreprise - ligne 2,Indirizzo impresa riga 2
-job,jobroomApp.job.companyCity,Ort,Company City,Lieu,Città dell'impresa
-job,jobroomApp.job.companyCountryCode,Land,Company Country Code,Pays,Codice Paese impresa
-job,jobroomApp.job.companyEmail,E-Mail Adresse,Company email,Adresse courriel,E-Mail impresa
-job,jobroomApp.job.companyName,Name,Company Name,Nom,Nome impresa
-job,jobroomApp.job.companyPhone,Telefon,Company Phone,Téléphone,Telefono impresa
-job,jobroomApp.job.companyPostboxCity,Postfach,Company Postbox City,Case postale,Casella postale Città impresa
-job,jobroomApp.job.companyPostboxNumber,Postfachnummer,Company Postbox Number,Numéro de la case postale,Numero casella postale impresa
-job,jobroomApp.job.companyPostboxZipCode,Postleitzahl,Company Postbox Zip Code,Code postal,Zip Code casella postale impresa
-job,jobroomApp.job.companyWebsite,Website,Company Website,Site web,Sito web impresa
-job,jobroomApp.job.companyZipCode,Postleitzahl,Company Zip Code,Code postal,Zip Code impresa
-job,jobroomApp.job.contactEmail,Kontakt E-Mail,Contact Email,Contact - courriel,E-mail contatto
-job,jobroomApp.job.contactFirstName,Kontakt Vorname,Contact First Name,Contact - Prénom,Nome contatto
-job,jobroomApp.job.contactLastName,Kontakt Nachname,Contact Last Name,Contact - Nom,Cognome contatto
-job,jobroomApp.job.contactPhone,Kontakt Telefonnummer,Contact Phone,Contact - Numéro de téléphone,Telefono contatto
-job,jobroomApp.job.contactTitle,Kontakt Anrede,Contact Title,Contact - Titre,Titolo contatto
-job,jobroomApp.job.currencyCode,Währungscode,Currency Code,Monnaie,Codice valuta
-job,jobroomApp.job.delete.question,Soll Stelle {{ id }} wirklich endgültig gelöscht werden?,Are you sure you want to delete the job {{ id }}?,Etes-vous certain de vouloir supprimer l'emploi {{ id }} ?,Sei sicuro di volere eliminare il posto {{ id }}?
-job,jobroomApp.job.description,Beschreibung,Description,Description,Descrizione
-job,jobroomApp.job.detail.title,Stelle,Job,Emploi,Posto
-job,jobroomApp.job.drivingLicenseLevel,Führerausweis,Driving licence,Permis de conduire,Patente
-job,jobroomApp.job.endDate,Enddatum,End date,Date de fin,Data finale
-job,jobroomApp.job.externalId,Externe ID,External ID,ID externe,Id esterna
-job,jobroomApp.job.externalUrl,Externe URL,External Url,URL externe,Url esterna
-job,jobroomApp.job.fingerPrint,Fingerabdruck,Fingerprint,Empreinte digitale,Impronta digitale
-job,jobroomApp.job.gender,Geschlecht,Gender,Sexe,Sesso
-job,jobroomApp.job.hasPersonalVehicle,Verfügt über eigenes Fahrzeug,Has personal vehicle,Dispose de son propre véhicule,Automunito
-job,jobroomApp.job.home.createLabel,Stellenangebot erstellen,Create a new job,Créer un emploi,Genera un nuovo posto
-job,jobroomApp.job.home.createOrEditLabel,Stellenangebot erstellen oder bearbeiten,Create or edit a job,Créer ou éditer un emploi,Genera o modifica un posto
-job,jobroomApp.job.home.title,Stellen,Jobs,Emplois,Posti
-job,jobroomApp.job.isJobSharing,Jobsharing,Is job sharing,Partage d'emploi (job sharing),Is Job Sharing
-job,jobroomApp.job.isPermanent,Festanstellung,Is permanent,Emploi fixe,Is permanente
-job,jobroomApp.job.isSuitableForDisabled,Is Suitable For Disabled,Is suitable for disabled,Convient aux personnes handicapées,Is adatto ai disabili
-job,jobroomApp.job.languages,Sprachen,Languages,Langues,Lingue
-job,jobroomApp.job.locality.cantonCode,Locality Canton Code,Locality Canton Code,Localité - code canton,"Codice cantonale località "
-job,jobroomApp.job.locality.communalCode,Locality Communal Code,Locality Communal Code,Localité - code commune,"Codice comunale località "
-job,jobroomApp.job.locality.countryCode,Locality Country Code,Locality Country Code,Localité - code pays,"Codice Paese località "
-job,jobroomApp.job.locality.regionCode,Locality Region Code,Locality Region Code,Localité - code région,"Codice regione località "
-job,jobroomApp.job.locality.text,Locality Text,Locality Text,Texte localité,"Testo località "
-job,jobroomApp.job.locality.zipCode,Arbeitsort PLZ,Job postal code,Code postal lieu de l'emploi,Zip Code località posto
-job,jobroomApp.job.numberOfJobs,Anzahl Stellenangebote,Number of jobs,Nombre des offres d'emploi,Numero di posti
-job,jobroomApp.job.paymentMax,Maximaler Lohn,Max payment,Salaire maximal,Pagamento max
-job,jobroomApp.job.paymentMin,Minimaler Lohn,Min payment,Salaire minimal,Pagamento min
-job,jobroomApp.job.professions,Berufe,Professions,Professions,Professioni
-job,jobroomApp.job.publicationEndDate,Publizieren bis,Publication end date,Publication jusqu'au,Data finale pubblicazione
-job,jobroomApp.job.publicationStartDate,Publizieren ab,Publication start date,Publication à partir du,Data inizio pubblicazione
-job,jobroomApp.job.registrationDate,Registriert am,Registration date,Saisi le,Data di registrazione
-job,jobroomApp.job.startDate,Verfügbar ab,Available from,Disponible à partir du,Data d'inizio
-job,jobroomApp.job.startsImmediately,sofort Verfügbar,Available immediately,Disponible tout de suite,Inizio immediato
-job,jobroomApp.job.title,Stellentitel,Job title,Titre du poste,Titolo del posto
-job,jobroomApp.job.workingTimePercentageMax,Max. Beschäftigungsgrad,Maximum working time percentage,Taux d'occupation maximal,Grado di occupazione max
-job,jobroomApp.job.workingTimePercentageMin,Min. Beschäftigungsgrad,Minimum working time percentage,Taux d'occupation minimal,Grado di occupazione min
-job,jobserviceApp.job.created,Stelle mit ID {{ param }} erstellt,A new job is created with identifier {{ param }},"Un emploi portant l'ID {{ param }} a été créé ",È stato generato un nuovo posto con identificatore { param }}
-job,jobserviceApp.job.deleted,Stelle mit ID {{ param }} gelöscht,A job is deleted with identifier {{ param }},L'emploi portant l'ID {{ param }} a été supprimé,È stato eliminato un posto con identificatore {{ param }}
-job,jobserviceApp.job.updated,Stelle mit ID {{ param }} aktualisiert,A job is updated with identifier {{ param }},L'emploi portant l'ID {{ param }} a été mis à jour,È stato aggiornato un posto identificato da {{ param }}
 login,login.form.button,Anmelden,Sign in,Connexion,Accedi
 login,login.form.password,Passwort,Password,Mot de passe,Password
 login,login.form.password.placeholder,Ihr Passwort,Your password,Votre mot de passe,La tua password
 login,login.form.rememberme,Automatische Anmeldung,Remember me,Garder la session ouverte,Ricordami
-login,login.messages.error.authentication,<strong>Anmeldung fehlgeschlagen!</strong> Überprüfen Sie bitte Ihre Angaben und versuchen Sie es erneut.,<strong>Failed to sign in!</strong> Please check your credentials and try again.,<strong>Erreur d'authentification !</strong> Veuillez vérifier vos identifiants de connexion.,<strong>Accesso non riuscito!</strong> Si prega di controllare le credenziali e riprovare.
+login,login.messages.error.authentication,<strong>Anmeldung fehlgeschlagen!</strong> Überprüfen Sie bitte Ihre Angaben und versuchen Sie es erneut.,<strong>Failed to sign in!</strong> Please check your login credentials and try again.,<strong>Erreur d'authentification !</strong> Veuillez vérifier vos identifiants de connexion.,<strong>Accesso non riuscito!</strong> Si prega di controllare le credenziali e riprovare.
 login,login.password.forgot,Passwort vergessen,Did you forget your password?,Avez-vous oublié votre mot de passe ?,Password dimenticata?
 login,login.title,Anmelden,Sign in,Connexion,Accedi
 logs,audits.filter.button.clear,Clear,Clear,Effacer,Clear
@@ -909,9 +851,9 @@ metrics,metrics.title,Anwendungs-Metriken,Application Metrics,Métriques de l'ap
 metrics,metrics.updating,Aktualisierung...,Updating...,Mise à jour...,Aggiornamento...
 organization,jobroomApp.organization.active,Aktiv,Active,Active,Attivo
 organization,jobroomApp.organization.city,Ort,City,Lieu,Luogo
-organization,jobroomApp.organization.created,Organization erstellt mit ID {{ param }},A new Organization is created with identifier {{ param }},Un nouveau Organization a été créé avec l'identifiant {{ param }},&Egrave
-organization,jobroomApp.organization.delete.question,Soll Organization {{ id }} wirklich dauerhaft gelöscht werden?,Are you sure you want to delete Organization {{ id }}?,Etes-vous certain de vouloir supprimer le Organization {{ id }} ?,Sei sicuro di volere eliminare Organization {{ id }}?
-organization,jobroomApp.organization.deleted,Organization gelöscht mit ID {{ param }},A Organization is deleted with identifier {{ param }},Le Organization avec l'identifiant {{ param }} a été supprimé,&Egrave
+organization,jobroomApp.organization.created,Organisation erstellt mit ID {{ param }},A new Organization has been created with identifier {{ param }},Une organisation a été créé avec l'identifiant {{ param }},Une organisation a été créé avec l'identifiant {{ param }}
+organization,jobroomApp.organization.delete.question,Soll Organisation {{ id }} wirklich dauerhaft gelöscht werden?,Are you sure you want to delete Organization {{ id }}?,Etes-vous certain de vouloir supprimer l'organisation {{ id }} ?,Sei sicuro di volere eliminare l'organizzazione {{ id }}?
+organization,jobroomApp.organization.deleted,Organisation gelöscht mit ID {{ param }},A Organization is deleted with identifier {{ param }},L'organisation avec l'identifiant {{ param }} a été supprimé,L'organisation avec l'identifiant {{ param }} a été supprimé
 organization,jobroomApp.organization.detail.title,Organisation,Organization,Organisation,Organizzazione
 organization,jobroomApp.organization.email,E-Mail,Email,Courriel,E-mail
 organization,jobroomApp.organization.externalId,Externe ID,External ID,ID externe,ID esterna
@@ -923,7 +865,7 @@ organization,jobroomApp.organization.name,Name,Name,Nom,cognome
 organization,jobroomApp.organization.phone,Telefon,Telephone,Téléphone,Telefono
 organization,jobroomApp.organization.street,Strasse,Street,Rue,Via
 organization,jobroomApp.organization.type,Typ,Type,Type,Tipo
-organization,jobroomApp.organization.updated,Organization aktualisiert mit ID {{ param }},A Organization is updated with identifier {{ param }},Le Organization avec l'identifiant {{ param }} a été mis à jour,&Egrave
+organization,jobroomApp.organization.updated,Organisation aktualisiert mit ID {{ param }},A Organization is updated with identifier {{ param }},L'organisation avec l'identifiant {{ param }} a été mis à jour,L'organisation avec l'identifiant {{ param }} a été mis à jour
 organization,jobroomApp.organization.zipCode,PLZ,Postal code,NPA,NPA
 password,password.form.button,Speichern,Save,Sauvegarder,Salva
 password,password.messages.error,<strong>Es ist ein Fehler aufgetreten!</strong> Das Passwort konnte nicht geändert werden.,<strong>An error has occurred!</strong> The password could not be changed.,<strong>Une erreur s'est produite !</strong> Le mot de passe n'a pas pu être modifié.,<strong>C'è stato un errore!</strong> Impossibile cambiare password.

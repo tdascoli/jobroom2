@@ -12,7 +12,7 @@
         "application": {
             "additionalInfo": "Additional information",
             "email": "By email",
-            "mail": "By mail",
+            "mail": "By post",
             "mail.text": "See company address",
             "phone": "By phone",
             "title": "Application forms"
@@ -29,7 +29,7 @@
         "reference.responsible-job-center": "Responsible job centre",
         "startDate": "From {{date}}",
         "startsImmediately": "Start date",
-        "startsImmediately.false": "By arrangement",
+        "startsImmediately.false": "By agreement",
         "startsImmediately.true": "Immediately",
         "title": "Job detail"
     }

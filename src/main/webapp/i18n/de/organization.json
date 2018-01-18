@@ -3,11 +3,11 @@
         "organization": {
             "active": "Aktiv",
             "city": "Ort",
-            "created": "Organization erstellt mit ID {{ param }}",
+            "created": "Organisation erstellt mit ID {{ param }}",
             "delete": {
-                "question": "Soll Organization {{ id }} wirklich dauerhaft gel\u00f6scht werden?"
+                "question": "Soll Organisation {{ id }} wirklich dauerhaft gel\u00f6scht werden?"
             },
-            "deleted": "Organization gel\u00f6scht mit ID {{ param }}",
+            "deleted": "Organisation gel\u00f6scht mit ID {{ param }}",
             "detail": {
                 "title": "Organisation"
             },
@@ -23,7 +23,7 @@
             "phone": "Telefon",
             "street": "Strasse",
             "type": "Typ",
-            "updated": "Organization aktualisiert mit ID {{ param }}",
+            "updated": "Organisation aktualisiert mit ID {{ param }}",
             "zipCode": "PLZ"
         }
     }

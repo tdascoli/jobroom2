@@ -4,6 +4,7 @@
             "additionalInfo": "Indications compl\u00e9mentaires",
             "email": "Courriel",
             "post": "Par la poste",
+            "online-form": "Formulaire en ligne",
             "telephone": "Par t\u00e9l\u00e9phone",
             "title": "Formes de postulation"
         },
@@ -13,7 +14,7 @@
             "jobRoom": "Job-Room",
             "title": "Votre personne de contact"
         },
-        "copy": "Duplicate job offer",
+        "copy": "Dupliquer l'offre d'emploi",
         "permanent": "Ind\u00e9termin\u00e9",
         "print": "Imprimer",
         "temporary": "Dur\u00e9e limit\u00e9e"

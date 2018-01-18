@@ -15,7 +15,7 @@
                     "many": "A questo profilo corrispondono <br><span class=\"badge badge-radar\">{{count}}</span><br>candidati",
                     "none": "Non ci sono candidati corrispondenti a questo profilo",
                     "one": "A questo profilo corrisponde<br><span class=\"badge badge-radar\">1</span><br>candidato",
-                    "show": "Visualizza ora!"
+                    "show": "Visualizza ora"
                 },
                 "search-button": {
                     "title": "Visualizza candidati"
@@ -32,7 +32,7 @@
                     },
                     "email": "E-mail",
                     "email-enabled": "Candidatura elettronica",
-                    "mail-enabled": "Candidatura cartacea",
+                    "mail-enabled": "Candidatura per posta",
                     "online-form": "Modulo online",
                     "phone": "Telefono",
                     "phone-enabled": "Candidatura telefonica",
@@ -126,8 +126,8 @@
                 },
                 "reset": "Ripristina",
                 "submit": "Pubblica posto",
-                "submit.error": "Offerta d'impiego non salvata!",
-                "submit.success": "Grazie dell'offerta di lavoro, che verr\u00e0 pubblicata dopo la verifica da parte dell'URC. A breve Le verr\u00e0 inviata un'e-mail.",
+                "submit.error": "Offerta d'impiego non salvata.",
+                "submit.success": "Grazie, abbiamo ricevuto l'annuncio. Ricever\u00e0 un'e-mail non appena il posto vacante verr\u00e0 pubblicato, a seguito delle verifiche dell'URC.",
                 "workload": "Grado di occupazione"
             },
             "job-search": {
@@ -135,7 +135,7 @@
                     "many": "A questo profilo corrispondono <br><span class=\"badge badge-radar\">{{count}}</span><br>posti",
                     "none": "Non ci sono posti corrispondenti a questo profilo",
                     "one": "A questo profilo corrisponde<br><span class=\"badge badge-radar\">1</span><br>posto",
-                    "show": "Visualizza ora!"
+                    "show": "Visualizza ora"
                 },
                 "search-button": {
                     "title": "Visualizza offerte di lavoro"

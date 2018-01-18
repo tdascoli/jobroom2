@@ -3,11 +3,11 @@
         "organization": {
             "active": "Active",
             "city": "Lieu",
-            "created": "Un nouveau Organization a \u00e9t\u00e9 cr\u00e9\u00e9 avec l'identifiant {{ param }}",
+            "created": "Une organisation a \u00e9t\u00e9 cr\u00e9\u00e9 avec l'identifiant {{ param }}",
             "delete": {
-                "question": "Etes-vous certain de vouloir supprimer le Organization {{ id }} ?"
+                "question": "Etes-vous certain de vouloir supprimer l'organisation {{ id }} ?"
             },
-            "deleted": "Le Organization avec l'identifiant {{ param }} a \u00e9t\u00e9 supprim\u00e9",
+            "deleted": "L'organisation avec l'identifiant {{ param }} a \u00e9t\u00e9 supprim\u00e9",
             "detail": {
                 "title": "Organisation"
             },
@@ -23,7 +23,7 @@
             "phone": "T\u00e9l\u00e9phone",
             "street": "Rue",
             "type": "Type",
-            "updated": "Le Organization avec l'identifiant {{ param }} a \u00e9t\u00e9 mis \u00e0 jour",
+            "updated": "L'organisation avec l'identifiant {{ param }} a \u00e9t\u00e9 mis \u00e0 jour",
             "zipCode": "NPA"
         }
     }

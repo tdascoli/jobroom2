@@ -17,11 +17,11 @@
                 }
             },
             "online-since": {
-                "label": "Online seit",
                 "day": {
-                    "one": "Tag",
-                    "many": "Tagen"
-                }
+                    "many": "Tagen",
+                    "one": "Tag"
+                },
+                "label": "Online seit"
             },
             "sort": {
                 "label": "Sortierung",

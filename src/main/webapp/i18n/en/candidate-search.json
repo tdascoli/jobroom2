@@ -1,7 +1,7 @@
 {
     "candidate-search": {
         "availability": {
-            "BY_ARRANGEMENT": "By arrangement",
+            "BY_ARRANGEMENT": "By agreement",
             "IMMEDIATE": "Immediately",
             "label": "Availability"
         },

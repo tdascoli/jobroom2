@@ -4,16 +4,17 @@
             "additionalInfo": "Erg\u00e4nzende Angaben",
             "email": "E-Mail",
             "post": "Per Post",
+            "online-form": "Online-Formular",
             "telephone": "Telefonisch",
             "title": "Bewerbungsformen"
         },
-        "cancel": "Stellenangebot abmelden",
+        "cancel": "Stellenanzeige abmelden",
         "contact": {
             "accountNumber": "Stellennummer",
             "jobRoom": "Job-Room",
             "title": "Ihre Kontaktperson"
         },
-        "copy": "Stellenangebot duplizieren",
+        "copy": "Stellenanzeige duplizieren",
         "permanent": "Unbefristet",
         "print": "Drucken",
         "temporary": "Befristet"

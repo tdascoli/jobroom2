@@ -15,7 +15,7 @@
                     "many": "This profile matches <br><span class=\"badge badge-radar\">{{count}}</span><br>candidates",
                     "none": "No candidates match this profile",
                     "one": "This profile matches <br><span class=\"badge badge-radar\">1</span><br>candidate",
-                    "show": "Show search results."
+                    "show": "Show search results"
                 },
                 "search-button": {
                     "title": "Display candidates"
@@ -32,7 +32,7 @@
                     },
                     "email": "Email",
                     "email-enabled": "Electronic application",
-                    "mail-enabled": "Written application",
+                    "mail-enabled": "Paper application",
                     "online-form": "Online form",
                     "phone": "Telephone number",
                     "phone-enabled": "Application by telephone",
@@ -61,7 +61,7 @@
                 "degree": "Education",
                 "description": {
                     "characters-counter-text": "{{count}} characters available",
-                    "label": "Employment / requirements",
+                    "label": "Duties / requirements",
                     "placeholder": "max. 9000 characters"
                 },
                 "disclaimer": "I certify that the employer complies with local and industry-standard wage and working conditions.",
@@ -126,8 +126,8 @@
                 },
                 "reset": "Reset",
                 "submit": "Publish job",
-                "submit.error": "Job could not be saved!",
-                "submit.success": "Thank you for this job offer. It will be published after validation by the job center. You will receive an email shortly.",
+                "submit.error": "Job could not be saved.",
+                "submit.success": "Thank you for your job posting. You advert will now be checked by a regional employment centre (RAV). You will be informed by e-mail as soon as the job is published.",
                 "workload": "Workload"
             },
             "job-search": {

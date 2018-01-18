@@ -30,7 +30,7 @@
         "title": "Dashboard"
     },
     "job-publication-cancel": {
-        "alert": "Please fill in the cancellation details and confirm cancellation of the job offer.",
+        "alert": "Please fill in the cancellation details and confirm cancellation of the job posting.",
         "job": {
             "confirm": "Confirm cancellation",
             "dismiss": "Cancel",
@@ -46,21 +46,21 @@
         "application": {
             "additionalInfo": "Additional Information",
             "email": "Email",
-            "post": "By mail",
+            "post": "By post",
             "telephone": "By telephone",
             "title": "Other application forms"
         },
-        "byArrangement": "By arrangement",
+        "byArrangement": "By agreement",
         "cancel": "Cancel job",
-        "cancel.error": "It was not possible to cancel the job offer Please try again later.",
-        "cancel.success": "Job offer canceled",
+        "cancel.error": "It was not possible to cancel the job posting. Please try again later.",
+        "cancel.success": "Job posting canceled",
         "contact": {
             "accountNumber": "Job number",
             "avam": "AVAM",
             "jobRoom": "Job-Room",
             "title": "Your contact person"
         },
-        "copy": "Duplicate the job offer",
+        "copy": "Duplicate the job posting",
         "immediately": "immediately",
         "permanent": "Permanent position",
         "print": "Print",

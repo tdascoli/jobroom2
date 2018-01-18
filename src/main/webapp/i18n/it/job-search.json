@@ -17,11 +17,11 @@
                 }
             },
             "online-since": {
-                "label": "Online dal",
                 "day": {
-                    "one": "giorno",
-                    "many": "giorni"
-                }
+                    "many": "giorni",
+                    "one": "giorno"
+                },
+                "label": "Online dal"
             },
             "sort": {
                 "label": "Classificazione",

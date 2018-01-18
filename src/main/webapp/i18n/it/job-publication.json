@@ -4,6 +4,7 @@
             "additionalInfo": "Dati complementari",
             "email": "E-mail",
             "post": "Per posta",
+            "online-form": "Modulo online",
             "telephone": "Telefonicamente",
             "title": "Forme di candidatura"
         },
@@ -13,7 +14,7 @@
             "jobRoom": "Job-Room",
             "title": "Persona di contatto"
         },
-        "copy": "Dupliquer l'offre d'emploi",
+        "copy": "Duplicare l'offerta d'impiego",
         "permanent": "A tempo indeterminato",
         "print": "Stampa",
         "temporary": "A tempo determinato"

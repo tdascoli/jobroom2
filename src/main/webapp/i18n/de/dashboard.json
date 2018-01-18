@@ -30,7 +30,7 @@
         "title": "Dashboard"
     },
     "job-publication-cancel": {
-        "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung des Stellenangebots.",
+        "alert": "Bitte f\u00fcllen Sie die Abmeldeinformationen aus und best\u00e4tigen Sie die Abmeldung der Stellenanzeige.",
         "job": {
             "confirm": "Abmeldung best\u00e4tigen",
             "dismiss": "Abbrechen",
@@ -46,21 +46,21 @@
         "application": {
             "additionalInfo": "Erg\u00e4nzende Angaben",
             "email": "E-Mail",
-            "post": "Post",
+            "post": "Per Post",
             "telephone": "Telefonisch",
             "title": "Weitere Bewerbungsformen"
         },
         "byArrangement": "Nach Vereinbarung",
         "cancel": "Stelle abmelden",
-        "cancel.error": "Stellenangebot konnte nicht abgemeldet werden. Bitte versuchen Sie es sp\u00e4ter nocheinmal.",
-        "cancel.success": "Stellenangebot erfolgreich abgemeldet",
+        "cancel.error": "Stellenanzeige konnte nicht abgemeldet werden. Bitte versuchen Sie es sp\u00e4ter nocheinmal.",
+        "cancel.success": "Stellenanzeige abgemeldet",
         "contact": {
             "accountNumber": "Stellennummer",
             "avam": "AVAM",
             "jobRoom": "Job-Room",
             "title": "Ihre Kontaktperson"
         },
-        "copy": "Stellenangebot duplizieren",
+        "copy": "Stellenanzeige duplizieren",
         "immediately": "ab Sofort",
         "permanent": "Festanstellung",
         "print": "Drucken",

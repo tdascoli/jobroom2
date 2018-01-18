@@ -1,12 +1,11 @@
-<div class="container" xmlns="http://www.w3.org/1999/html">
+<div class="container">
     <div *ngIf="jobPublication$ | async as jobPublication" class="base">
 
         <div class="base__subnavbar job-detail__references">
             <div class="sticked sticked--top__parent">
                 <ul class="d-none d-md-flex flex-column nav filter-nav">
                     <li *ngIf="showCancellationLink$ | async" class="nav-item">
-                        <a class="nav-link"
-                           (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)">
+                        <a class="nav-link" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)">
                             <span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>
                             {{'job-publication-details.cancel' | translate }}
                         </a>
@@ -14,12 +13,10 @@
                     <li class="nav-item">
                         <a class="nav-link"
                            [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id, accessToken: jobPublication.accessToken }]"><span
-                                class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' |
-                            translate }}</a>
+                            class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' | translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="printJobPublication()"><i class="fa fa-fw fa-print"
-                                                                               aria-hidden="true"></i> {{
+                        <a class="nav-link" (click)="printJobPublication()"><i class="fa fa-fw fa-print" aria-hidden="true"></i> {{
                             'job-publication-details.print' | translate }}</a>
                     </li>
                 </ul>
@@ -62,20 +59,17 @@
         </div>
 
         <div class="base__content job-detail__body">
-            <ngb-alert *ngIf="showCancellationSuccess$ | async" [type]="'success'" class="d-print-none"
-                       (close)="closeSuccessMessage()">
+            <ngb-alert *ngIf="showCancellationSuccess$ | async" [type]="'success'" class="d-print-none" (close)="closeSuccessMessage()">
                 {{ 'job-publication-details.cancel.success' | translate }}
             </ngb-alert>
-            <ngb-alert *ngIf="showCancellationError$ | async" [type]="'danger'" class="d-print-none"
-                       (close)="closeErrorMessage()">
+            <ngb-alert *ngIf="showCancellationError$ | async" [type]="'danger'" class="d-print-none" (close)="closeErrorMessage()">
                 {{ 'job-publication-details.cancel.error' | translate }}
             </ngb-alert>
             <!-- Job details -->
             <div class="job-detail__title">
                 <h2 class="text--light">{{ jobPublication.job.title }}</h2>
                 <h4 class="text--light">{{ 'job-publication-details.status' | translate }}: {{
-                    'global.job-publication.status.' + jobPublication.status |
-                    translate }}</h4>
+                    'global.job-publication.status.' + jobPublication.status | translate }}</h4>
                 <strong>{{ jobPublication.company.name }}</strong>
                 <small *ngIf="jobPublication.job.startDate" class="job-detail__date">
                     {{ 'job-publication-details.startDate' | translate }} {{ jobPublication.job.startDate | jr2Date }}
@@ -115,7 +109,7 @@
                         <a href="mailto:{{ application.email }}">{{ application.email }}</a>
                     </p>
                     <p *ngIf="application.url">
-                        <span>{{ 'job-publication-details.application.post' | translate }}:</span><br/>
+                        <span>{{ 'job-publication-details.application.online-form' | translate }}:</span><br/>
                         <a href="{{ application.url }}">{{ application.url }}</a>
                     </p>
                     <p *ngIf="application.phoneNumber">
