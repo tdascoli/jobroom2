@@ -40,24 +40,31 @@ import { reducers } from './shared/state-management/reducers/core.reducers';
 
 // jhipster-needle-angular-add-module-import JHipster will add new module here
 
+const imports = [
+    BrowserModule,
+    AppRoutingModule,
+    LayoutRoutingModule,
+    Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
+    JobroomSharedModule,
+    JobroomHomeModule,
+    JobroomAdminModule,
+    JobroomAccountModule,
+    JobroomEntityModule,
+    JobSearchModule,
+    CandidateSearchModule,
+    DashboardModule,
+    StoreModule.forRoot(reducers),
+    StoreRouterConnectingModule,
+    EffectsModule.forRoot([])
+];
+
+if (DEBUG_INFO_ENABLED) {
+    imports.push(StoreDevtoolsModule.instrument({ maxAge: 25 }));
+}
+
 @NgModule({
     imports: [
-        BrowserModule,
-        AppRoutingModule,
-        LayoutRoutingModule,
-        Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),
-        JobroomSharedModule,
-        JobroomHomeModule,
-        JobroomAdminModule,
-        JobroomAccountModule,
-        JobroomEntityModule,
-        JobSearchModule,
-        CandidateSearchModule,
-        DashboardModule,
-        StoreModule.forRoot(reducers),
-        StoreRouterConnectingModule,
-        DEBUG_INFO_ENABLED ? StoreDevtoolsModule.instrument({ maxAge: 25 }) : [],
-        EffectsModule.forRoot([])
+        ...imports
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
