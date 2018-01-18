@@ -366,12 +366,18 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     onSubmit(): void {
+        this.resetAlerts();
         if (this.jobPublicationForm.valid) {
             const jobPublication = JobPublicationMapper.mapJobPublicationFormToJobPublication(this.jobPublicationForm.value);
             this.jobPublicationForm.get('disclaimer').reset(false);
             this.jobPublicationService.save(jobPublication)
                 .subscribe(this.createSaveSubscriber());
         }
+    }
+
+    private resetAlerts() {
+        this.showSuccessSaveMessage = false;
+        this.showErrorSaveMessage = false;
     }
 
     private createSaveSubscriber() {
@@ -409,6 +415,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     }
 
     resetForm(): void {
+        this.resetAlerts();
         this.jobPublicationForm.reset(this.createDefaultFormModel());
     }
 }
