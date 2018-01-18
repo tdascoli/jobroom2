@@ -16,7 +16,6 @@ export class RangeInputComponent implements OnInit, ControlValueAccessor {
     @Input() max: number;
     @Input() step: number;
     @Input() inputSize: 'sm' | 'lg' | null;
-    @Input() hideDelimiter = false;
 
     range: Array<number>;
     options: Array<number>;

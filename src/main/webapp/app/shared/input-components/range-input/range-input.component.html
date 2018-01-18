@@ -1,20 +1,31 @@
 <div class="form-row">
     <div class="col">
-        <ng-container *ngIf="!hideDelimiter"><label class="small">{{'global.filter.from' | translate}}</label>
-        </ng-container>
-        <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select range-select"
-                name="workingTimeMin" id="workingTimeMin"
-                [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
-            <option *ngFor="let i of options" [value]="i" [disabled]="i > range[1]">{{ i }} %</option>
-        </select>
+        <div class="row">
+            <div class="col-3 d-block d-sm-none d-md-block">
+                <label class="small">{{ 'global.filter.from' | translate }}</label>
+            </div>
+            <div class="col">
+                <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select"
+                        name="workingTimeMin" id="workingTimeMin"
+                        [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
+                    <option *ngFor="let i of options" [value]="i" [disabled]="i > range[1]">{{ i }} %</option>
+                </select>
+            </div>
+        </div>
     </div>
-    <div class="col text-right">
-        <ng-container *ngIf="!hideDelimiter"><label class="small">{{'global.filter.to' | translate}}</label>
-        </ng-container>
-        <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)"
-                class="form-control form-control-sm custom-select range-select" name="workingTimeMax" id="workingTimeMax"
-                [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
-            <option *ngFor="let i of options" [value]="i" [disabled]="i < range[0]">{{ i }} %</option>
-        </select>
+    <div class="text-center col-1 d-none d-sm-block d-md-none">-</div>
+    <div class="col">
+        <div class="row">
+            <div class="col-3 d-block d-sm-none d-md-block">
+                <label class="small pl-4">{{ 'global.filter.to' | translate }}</label>
+            </div>
+            <div class="col">
+                <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)"
+                        class="form-control form-control-sm custom-select" name="workingTimeMax" id="workingTimeMax"
+                        [ngClass]="{'form-control-sm': inputSize === 'sm', 'form-control-lg': inputSize === 'lg'}">
+                    <option *ngFor="let i of options" [value]="i" [disabled]="i < range[0]">{{ i }} %</option>
+                </select>
+            </div>
+        </div>
     </div>
 </div>
