@@ -1,11 +1,12 @@
-<div class="container">
+<div class="container" xmlns="http://www.w3.org/1999/html">
     <div *ngIf="jobPublication$ | async as jobPublication" class="base">
 
         <div class="base__subnavbar job-detail__references">
             <div class="sticked sticked--top__parent">
                 <ul class="d-none d-md-flex flex-column nav filter-nav">
                     <li *ngIf="showCancellationLink$ | async" class="nav-item">
-                        <a class="nav-link" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)">
+                        <a class="nav-link"
+                           (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)">
                             <span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>
                             {{'job-publication-details.cancel' | translate }}
                         </a>
@@ -13,10 +14,12 @@
                     <li class="nav-item">
                         <a class="nav-link"
                            [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id, accessToken: jobPublication.accessToken }]"><span
-                            class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' | translate }}</a>
+                                class="fa fa-fw fa-clone" aria-hidden="true"></span> {{ 'job-publication-details.copy' |
+                            translate }}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" (click)="printJobPublication()"><i class="fa fa-fw fa-print" aria-hidden="true"></i> {{
+                        <a class="nav-link" (click)="printJobPublication()"><i class="fa fa-fw fa-print"
+                                                                               aria-hidden="true"></i> {{
                             'job-publication-details.print' | translate }}</a>
                     </li>
                 </ul>
@@ -32,10 +35,16 @@
                 </div>
 
                 <div *ngIf="jobPublication.contact as contact" class="job-detail__content">
-                    <strong>{{ 'job-publication-details.contact.title' | translate }}</strong><br>
-                    {{ contact.firstName }} {{ contact.lastName }}<br>
-                    {{ contact.email }}<br>
-                    {{ contact.phoneNumber | jr2PhoneNumber }}<br>
+                    <strong>{{ 'job-publication-details.contact.title' | translate }}</strong>
+                    <div>
+                        {{ contact.firstName }} {{ contact.lastName }}
+                    </div>
+                    <div>
+                        <a href="mailto={{ contact.email }}">{{ contact.email }}</a>
+                    </div>
+                    <div>
+                        <a href="tel={{ contact.phoneNumber }}">{{ contact.phoneNumber | jr2PhoneNumber }}</a>
+                    </div>
                 </div>
             </div>
 
@@ -53,16 +62,19 @@
         </div>
 
         <div class="base__content job-detail__body">
-            <ngb-alert *ngIf="showCancellationSuccess$ | async" [type]="'success'" class="d-print-none" (close)="closeSuccessMessage()">
+            <ngb-alert *ngIf="showCancellationSuccess$ | async" [type]="'success'" class="d-print-none"
+                       (close)="closeSuccessMessage()">
                 {{ 'job-publication-details.cancel.success' | translate }}
             </ngb-alert>
-            <ngb-alert *ngIf="showCancellationError$ | async" [type]="'danger'" class="d-print-none" (close)="closeErrorMessage()">
+            <ngb-alert *ngIf="showCancellationError$ | async" [type]="'danger'" class="d-print-none"
+                       (close)="closeErrorMessage()">
                 {{ 'job-publication-details.cancel.error' | translate }}
             </ngb-alert>
             <!-- Job details -->
             <div class="job-detail__title">
                 <h2 class="text--light">{{ jobPublication.job.title }}</h2>
-                <h4 class="text--light">{{ 'job-publication-details.status' | translate }}: {{ 'global.job-publication.status.' + jobPublication.status |
+                <h4 class="text--light">{{ 'job-publication-details.status' | translate }}: {{
+                    'global.job-publication.status.' + jobPublication.status |
                     translate }}</h4>
                 <strong>{{ jobPublication.company.name }}</strong>
                 <small *ngIf="jobPublication.job.startDate" class="job-detail__date">
@@ -93,27 +105,28 @@
 
         </div>
 
-        <div *ngIf="jobPublication.application as application" class="base__related job-detail__actions">
-            <div class="sticked sticked--top__parent" style="top: 154px;">
+        <div *ngIf="jobPublication.application as application" class="base__related">
+            <div class="sticked sticked--top__parent" style="top: 124px;">
 
-                <!-- Contact person -->
-                <ul class="nav filter-nav flex-column job-detail__applications">
-                    <li class="nav-item">
-                        <span class="nav-title">{{ 'job-publication-details.application.title' | translate }}</span>
-                    </li>
-                    <li *ngIf="application.email" class="nav-item">
-                        <span class="nav-link">{{ 'job-publication-details.application.email' | translate }}: <a href="mailto:{{ application.email }}">{{ application.email }}</a></span>
-                    </li>
-                    <li *ngIf="application.url" class="nav-item">
-                        <span class="nav-link">{{ 'job-publication-details.application.post' | translate }}: <a href="{{ application.url }}">{{ application.url }}</a></span>
-                    </li>
-                    <li *ngIf="application.phoneNumber" class="nav-item">
-                        <span class="nav-link">{{ 'job-publication-details.application.telephone' | translate }}: {{ application.phoneNumber | jr2PhoneNumber }}</span>
-                    </li>
-                    <li *ngIf="application.additionalInfo" class="nav-item">
-                        <span class="nav-link">{{ 'job-publication-details.application.additionalInfo' | translate }}: {{ application.additionalInfo }}</span>
-                    </li>
-                </ul>
+                <div class="alv-logo-box flex-height flex-column md-whiteframe-1dp filter-nav">
+                    <p><strong>{{ 'job-publication-details.application.title' | translate }}</strong></p>
+                    <p *ngIf="application.email" class="nav-item">
+                        <span>{{ 'job-publication-details.application.email' | translate }}:</span><br/>
+                        <a href="mailto:{{ application.email }}">{{ application.email }}</a>
+                    </p>
+                    <p *ngIf="application.url">
+                        <span>{{ 'job-publication-details.application.post' | translate }}:</span><br/>
+                        <a href="{{ application.url }}">{{ application.url }}</a>
+                    </p>
+                    <p *ngIf="application.phoneNumber">
+                        <span>{{ 'job-publication-details.application.telephone' | translate }}:</span><br/>
+                        <a href="tel:{{application.phoneNumber}}">{{ application.phoneNumber | jr2PhoneNumber }}</a>
+                    </p>
+                    <p *ngIf="application.additionalInfo">
+                        <span>{{ 'job-publication-details.application.additionalInfo' | translate }}:</span><br/>
+                        <span>{{ application.additionalInfo }}</span>
+                    </p>
+                </div>
             </div>
         </div>
     </div>
