@@ -7,15 +7,17 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
 
-        <a class="navbar-brand portal-logo" routerLink="home">
+        <div class="navbar-brand portal-logo">
             <div class="portal-logo__image" [ngSwitch]="getCurrentLanguage()">
-                <span>Job-Room</span>
-                <img *ngSwitchCase="'de'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_de.svg" />
-                <img *ngSwitchCase="'fr'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_fr.svg" />
-                <img *ngSwitchCase="'it'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_it.svg" />
-                <img *ngSwitchCase="'en'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_en.svg" />
+                <a routerLink="home"><span>Job-Room</span></a>
+                <a [href]="'home.title.portal-url' | translate" target="work.swiss">
+                    <img *ngSwitchCase="'de'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_de.svg" />
+                    <img *ngSwitchCase="'fr'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_fr.svg" />
+                    <img *ngSwitchCase="'it'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_it.svg" />
+                    <img *ngSwitchCase="'en'" src="~@alv-ch/alv-styleguide/src/assets/styleguide/images/arbeit.swiss_en.svg" />
+                </a>
             </div>
-        </a>
+        </div>
 
         <!-- MOBILE MENU -->
         <div class="ml-auto d-sm-none">
@@ -325,11 +327,6 @@
                             </div>
                         </div>
                     </div>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" [href]="'home.title.portal-url' | translate" target="work.swiss">
-                        {{ 'home.title.portal' | translate }}.swiss
-                    </a>
                 </li>
                 <li class="nav-item" *ngIf="!isAuthenticated()">
                     <a class="nav-link nav-link--login" (click)="login(false)"
