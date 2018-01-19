@@ -104,9 +104,9 @@ configuration,configuration.table.prefix,Präfix,Prefix,Préfixe,Prefisso
 configuration,configuration.table.properties,Eigenschaften,Properties,Propriétés,Proprietà
 configuration,configuration.title,Konfiguration,Configuration,Configuration,Configurazione
 dashboard,dashboard.job-publication.action,Aktion,Action,Action,Azione
-dashboard,dashboard.job-publication.action.copy,Stelle kopieren,Copy job,Copier le poste,Copiare il posto vacante
-dashboard,dashboard.job-publication.action.delete,Stelle abmelden,Cancel job,Supprimer le poste,Cancellare il posto vacante
-dashboard,dashboard.job-publication.action.view,Stelle sichten,View job,Consulter le poste,Vedere il posto vacante
+dashboard,dashboard.job-publication.action.copy,Stellenanzeige duplizieren,Duplicate the job ad,Dupliquer l'annonce,Duplicare l'annuncio
+dashboard,dashboard.job-publication.action.delete,Stellenanzeige abmelden,Cancel job posting,Retirer l'annonce,Cancellare il posto vacante
+dashboard,dashboard.job-publication.action.view,Stellenanzeige sichten,View job ad,Consulter l'annonce,Vedere il posto vacante
 dashboard,dashboard.job-publication.avam,Stellennummer AVAM,Job number AVAM,Numéro de poste PLASTA,N. del posto vacante COLSTA
 dashboard,dashboard.job-publication.job-name.placeholder,In Stellen suchen,Search jobs,Recherche dans les postes,Ricercare nei posti vacanti
 dashboard,dashboard.job-publication.job-room-id,Stellennummer Job-Room,Job number Job-Room,Numéro de poste Job-Room,N. del posto vacante Job-Room
@@ -120,10 +120,10 @@ dashboard,dashboard.job-publication.publication-period.months,{{ months }} Monat
 dashboard,dashboard.job-publication.publication-period.week,{{ week }} Woche,{{ week }} week,{{ week }} semaine,{{ week }} settimana
 dashboard,dashboard.job-publication.publication-period.year,{{ years }} Jahr,{{ years }} year,{{ years }} années,{{ years }} anni
 dashboard,dashboard.job-publication.status,Status,Status,Statut,Stato
-dashboard,dashboard.job-publication.title,Stellen bewirtschaften,Manage jobs,Gérer les emplois,Gestire i posti vacanti
+dashboard,dashboard.job-publication.title,Stellenanzeigen bewirtschaften,Manage job ads,Gérer les annonces,Gestire gli annunci
 dashboard,dashboard.job-publication.user-information.title,Sie sind eingeloggt als,You are logged in as,Vous êtes connecté(e),Registrato in qualità di:
 dashboard,dashboard.title,Dashboard,Dashboard,Tableau de bord,Dashboard
-dashboard,job-publication-cancel.alert,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung der Stellenanzeige.,Please fill in the cancellation details and confirm cancellation of the job posting.,Veuillez remplir les informations liées à l'annulation et confirmer l'annulation de l'offre d'emploi.,Compilare i dati per la cancellazione dell'annuncio e confermare
+dashboard,job-publication-cancel.alert,Bitte füllen Sie die Abmeldeinformationen aus und bestätigen Sie die Abmeldung der Stellenanzeige.,Please fill in the cancellation details and confirm cancellation of the job posting.,Veuillez remplir les informations et confirmer l'annulation de l'annonce.,Compilare i dati per la cancellazione dell'annuncio e confermare
 dashboard,job-publication-cancel.job.confirm,Abmeldung bestätigen,Confirm cancellation,Confirmer l'annulation,Confermare la cancellazione
 dashboard,job-publication-cancel.job.dismiss,Abbrechen,Cancel,Interrompre,Interrompere
 dashboard,job-publication-cancel.job.not-occupied,Sie konnten die Stelle nicht besetzen,You were unable to fill the position,Vous n'avez pas pu pourvoir le poste,Il posto non è stato assegnato
@@ -131,21 +131,21 @@ dashboard,job-publication-cancel.job.occupied,Sie konnten die Stelle besetzen,Yo
 dashboard,job-publication-cancel.job.occupied.jobCenter,in Zusammenarbeit mit der regionalen Arbeitsvermittlung (RAV),in cooperation with the regional employment centre (RAV),en collaboration avec l'Office régional de placement (ORP),in collaborazione con l'Ufficio regionale di collocamento (URC)
 dashboard,job-publication-cancel.job.occupied.privateAgency,in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV),in cooperation with the private employment agency (pAV),en collaboration avec un placeur privé,in collaborazione con le agenzie private di collocamento
 dashboard,job-publication-cancel.job.occupied.self,Sie konnten die Stelle selber besetzen,You were able to fill the position yourself,Vous avez pourvu le poste par vos propres soins.,Il posto è stato assegnato senza interventi esterni
-dashboard,job-publication-cancel.title,Stelle abmelden,Cancel job,Supprimer le poste,Cancellare il posto vacante
+dashboard,job-publication-cancel.title,Stellenanzeige abmelden,Cancel job posting,Retirer l'annonce,Cancellare il posto vacante
 dashboard,job-publication-details.application.additionalInfo,Ergänzende Angaben,Additional Information,Indications complémentaires,Informazioni complementari
 dashboard,job-publication-details.application.email,E-Mail,Email,Courriel,E-mail
-dashboard,job-publication-details.application.post,Per Post,By post,Par la poste,Per posta
+dashboard,job-publication-details.application.post,Per Post,Paper application,Par courrier,Per posta
 dashboard,job-publication-details.application.telephone,Telefonisch,By telephone,Par téléphone,Telefono
 dashboard,job-publication-details.application.title,Weitere Bewerbungsformen,Other application forms,Autres formes de postulation,Altre modalità di candidatura
 dashboard,job-publication-details.byArrangement,Nach Vereinbarung,By agreement,À convenir,Previo accordo
-dashboard,job-publication-details.cancel,Stelle abmelden,Cancel job,Supprimer le poste,Cancellare il posto vacante
+dashboard,job-publication-details.cancel,Stellenanzeige abmelden,Cancel job posting,Retirer l'annonce,Cancellare il posto vacante
 dashboard,job-publication-details.cancel.error,Stellenanzeige konnte nicht abgemeldet werden. Bitte versuchen Sie es später nocheinmal.,It was not possible to cancel the job posting. Please try again later.,L'offre d'emploi n'a pas pu être supprimée. Veuillez réessayer plus tard.,Cancellazione non riuscita. Riprovare tra poco.
-dashboard,job-publication-details.cancel.success,Stellenanzeige abgemeldet,Job posting canceled,Le poste a été supprimé.,Posto vacante cancellato
+dashboard,job-publication-details.cancel.success,Stellenanzeige abgemeldet,Job posting canceled,L'annonce a été retiré.,Posto vacante cancellato
 dashboard,job-publication-details.contact.accountNumber,Stellennummer,Job number,Numéro de poste,N. del posto vacante
 dashboard,job-publication-details.contact.avam,AVAM,AVAM,PLASTA,COLSTA
 dashboard,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
 dashboard,job-publication-details.contact.title,Ihre Kontaktperson,Your contact person,Votre interlocuteur,Persona di contatto
-dashboard,job-publication-details.copy,Stellenanzeige duplizieren,Duplicate the job posting,Dupliquer l'offre d'emploi,Duplicare l'offerta d'impiego
+dashboard,job-publication-details.copy,Stellenanzeige duplizieren,Duplicate the job ad,Dupliquer l'annonce,Duplicare l'annuncio
 dashboard,job-publication-details.immediately,ab Sofort,immediately,dès maintenant,da subito
 dashboard,job-publication-details.permanent,Festanstellung,Permanent position,Poste à durée indéterminée,Posto a tempo indeterminato
 dashboard,job-publication-details.print,Drucken,Print,Imprimer,Stampare
@@ -614,8 +614,8 @@ home,home.tools.job-publication.degree,Ausbildung,Education,Formation,Formazione
 home,home.tools.job-publication.description.characters-counter-text,{{count}} Zeichen verbleibend.,{{count}} characters available,{{count}} caractères disponibles,{{count}} caratteri disponibili
 home,home.tools.job-publication.description.label,Tätigkeit / Anforderungen,Duties / requirements,Activité / exigences,Attività / requisiti
 home,home.tools.job-publication.description.placeholder,max. 9000 Zeichen,max. 9000 characters,max. 9000 caractères,max. 9000 caratteri
-home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",I certify that the employer complies with local and industry-standard wage and working conditions.,Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localité.,Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attività viene svolta.
-home,home.tools.job-publication.disclaimer.error,"Bitte bestätigen Sie, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",Please confirm that the employer complies with local and industry standards for wage and working conditions.,Veuillez confirmer que l'employeur respecte bien les conditions de travail et de salaire en vigueur dans la branche et la localité.,Confermare che il datore di lavoro rispetta le condizioni salariali e lavorative del luogo e del ramo.
+home,home.tools.job-publication.disclaimer,"Ich bestätige, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",I certify that the employer complies with local and industry standards for wage and working conditions.,Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localité en question.,Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in questione.
+home,home.tools.job-publication.disclaimer.error,"Bitte bestätigen Sie, dass der Arbeitgeber die orts- und branchenüblichen Lohn- und Arbeitsbedingungen einhält.",Please confirm that the employer complies with local and industry standards for wage and working conditions.,Veuillez confirmer que l'employeur respecte bien les conditions de travail et de salaire en vigueur dans la branche et la localité en question.,Confermare che il datore di lavoro rispetta le condizioni salariali e lavorative del luogo e del ramo in questione.
 home,home.tools.job-publication.driving-licence,Führerausweis,Driving licence,Permis de conduire,Patente
 home,home.tools.job-publication.experience,Berufserfahrung,Work experience,Expérience professionnelle,Esperienza professionale
 home,home.tools.job-publication.experience.BETWEEN_1_AND_3_YEARS,1 - 3 Jahre,1 - 3 years,1 - 3 années,1 - 3 anni
@@ -660,15 +660,15 @@ home,home.tools.job-publication.publicationStartDate.label,Stellenantritt ab Dat
 home,home.tools.job-publication.publicationStartDate.title,Stellenantritt,Employment start,"Entrée en fonction  ",Inizio dell'attività
 home,home.tools.job-publication.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 home,home.tools.job-publication.submit,Stelle publizieren,Publish job,Publier un emploi,Pubblica posto
-home,home.tools.job-publication.submit.error,Die Stellenanzeige konnte nicht gespeichert werden.,Job could not be saved.,L'emploi n'a pas pu être sauvegardé.,Offerta d'impiego non salvata.
-home,home.tools.job-publication.submit.success,"Besten Dank für Ihre Stellenmeldung. Ihr Inserat wird nun von einem Regionalen Arbeitsvermittlungszentrum (RAV) geprüft. Sie werden per E-Mail informiert, sobald die Stelle veröffentlicht wurde.","Thank you for your job posting. You advert will now be checked by a regional employment centre (RAV). You will be informed by e-mail as soon as the job is published.","Merci pour votre offre d'emploi que l'ORP va l'examiner. Vous recevrez un courriel dès sa publication.","Grazie, abbiamo ricevuto l'annuncio. Riceverà un'e-mail non appena il posto vacante verrà pubblicato, a seguito delle verifiche dell'URC."
+home,home.tools.job-publication.submit.error,Die Stellenanzeige konnte nicht gespeichert werden.,Job ad could not be saved.,L'annonce n'a pas pu être sauvegardé.,Annuncio non salvata.
+home,home.tools.job-publication.submit.success,"Besten Dank für Ihre Stellenmeldung. Ihr Inserat wird nun von einem Regionalen Arbeitsvermittlungszentrum (RAV) geprüft. Sie werden per E-Mail informiert, sobald die Stelle veröffentlicht wurde.","Thank you for posting this job ad, which will now be checked by a regional employment centre (RAV). You will be informed by email as soon as it is published.","Merci d'avoir annoncé le poste vacant que l'ORP va examiner. Vous recevrez un courriel dès sa publication.","Grazie di aver annunciato il posto vacante que sarà esaminato dall'URC. Riceverà un'e-mail non appena il posto vacante verrà pubblicato."
 home,home.tools.job-publication.workload,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
 home,home.tools.job-search.search-badge.many,"Diesem Profil entsprechen <br><span class=""badge badge-radar"">{{count}}</span><br>Stellen","This profile matches <br><span class=""badge badge-radar"">{{count}}</span><br>jobs","<br><span class=""badge badge-radar"">{{count}}</span><br>emplois correspondent à ce profil","A questo profilo corrispondono <br><span class=""badge badge-radar"">{{count}}</span><br>posti"
 home,home.tools.job-search.search-badge.none,Diesem Profil entsprechen keine Stellen,No jobs match this profile,Aucun emploi correspond à ce profil,Non ci sono posti corrispondenti a questo profilo
 home,home.tools.job-search.search-badge.one,"Diesem Profil entspricht <br><span class=""badge badge-radar"">1</span><br>Stelle","This profile matches <br><span class=""badge badge-radar"">1</span><br>job","<br><span class=""badge badge-radar"">1</span><br>emploi correspond à ce profil","A questo profilo corrisponde<br><span class=""badge badge-radar"">1</span><br>posto"
 home,home.tools.job-search.search-badge.show,Jetzt anzeigen,Show search results.,Afficher maintenant,Visualizza ora
 home,home.tools.job-search.search-button.title,Stellen anzeigen,Show job offers,Afficher les offres d'emploi,Visualizza offerte di lavoro
-home,home.tools.jobPublicationTab,Stelle publizieren,Publish job,Publier une place vacante,Pubblica lavoro
+home,home.tools.jobPublicationTab,Stelle melden,Post job,Publier une place vacante,Pubblica lavoro
 home,home.tools.jobSearch.title,Finden Sie passende Stellen,Find suitable positions,Trouvez des offres appropriés,Trovare il posto giusto
 job-detail,job-detail.action.applyNow,Jetzt bewerben,Apply now,Postuler maintenant,Candidarsi ora
 job-detail,job-detail.action.copyLink,Link kopieren,Copy link,Copier le lien,Copia link
@@ -700,15 +700,15 @@ job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite
 job-detail,job-detail.title,Stellenbeschreibung,Job detail,Détail de l'emploi,Dettagli sul posto
 job-publication,job-publication-details.application.additionalInfo,Ergänzende Angaben,Supplementary information,Indications complémentaires,Dati complementari
 job-publication,job-publication-details.application.email,E-Mail,Email,Courriel,E-mail
-job-publication,job-publication-details.application.post,Per Post,By post,Par la poste,Per posta
+job-publication,job-publication-details.application.post,Per Post,Paper application,Par courrier,Per posta
 job-publication,job-publication-details.application.online-form,Online-Formular,Online form,Formulaire en ligne,Modulo online
 job-publication,job-publication-details.application.telephone,Telefonisch,By phone,Par téléphone,Telefonicamente
 job-publication,job-publication-details.application.title,Bewerbungsformen,Application forms,Formes de postulation,Forme di candidatura
-job-publication,job-publication-details.cancel,Stellenanzeige abmelden,Cancel job posting,Retirer l'offre d'emploi,Cancellare un'offerta d'impiego
+job-publication,job-publication-details.cancel,Stellenanzeige abmelden,Cancel job posting,Retirer l'annonce,Cancellare il posto vacante
 job-publication,job-publication-details.contact.accountNumber,Stellennummer,Job ID,Numéro du poste,Numero posto
 job-publication,job-publication-details.contact.jobRoom,Job-Room,Job-Room,Job-Room,Job-Room
 job-publication,job-publication-details.contact.title,Ihre Kontaktperson,Your contact person,Votre personne de contact,Persona di contatto
-job-publication,job-publication-details.copy,Stellenanzeige duplizieren,Duplicate job posting,Dupliquer l'offre d'emploi,Duplicare l'offerta d'impiego
+job-publication,job-publication-details.copy,Stellenanzeige duplizieren,Duplicate the job ad,Dupliquer l'annonce,Duplicare l'annuncio
 job-publication,job-publication-details.permanent,Unbefristet,Permanent,Indéterminé,A tempo indeterminato
 job-publication,job-publication-details.print,Drucken,Print,Imprimer,Stampa
 job-publication,job-publication-details.temporary,Befristet,Temporary,Durée limitée,A tempo determinato
