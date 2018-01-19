@@ -205,7 +205,7 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
                     experience: null
                 },
                 description: '',
-                workload: [0, 100],
+                workload: [100, 100],
                 publicationStartDate: {
                     immediate: true,
                     date: null
