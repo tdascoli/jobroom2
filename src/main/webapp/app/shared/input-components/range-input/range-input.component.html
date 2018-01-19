@@ -1,9 +1,11 @@
 <div class="form-row">
     <div class="col">
         <div class="row">
-            <div class="col-3 d-block d-sm-none d-md-block">
+            <div class="col">
                 <label class="small">{{ 'global.filter.from' | translate }}</label>
             </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <select [ngModel]="range[0]" (ngModelChange)="onChangeMin($event)" class="form-control custom-select"
                         name="workingTimeMin" id="workingTimeMin"
@@ -13,12 +15,13 @@
             </div>
         </div>
     </div>
-    <div class="text-center col-1 d-none d-sm-block d-md-none">-</div>
     <div class="col">
         <div class="row">
-            <div class="col-3 d-block d-sm-none d-md-block">
-                <label class="small pl-4">{{ 'global.filter.to' | translate }}</label>
+            <div class="col">
+                <label class="small">{{ 'global.filter.to' | translate }}</label>
             </div>
+        </div>
+        <div class="row">
             <div class="col">
                 <select [ngModel]="range[1]" (ngModelChange)="onChangeMax($event)"
                         class="form-control form-control-sm custom-select" name="workingTimeMax" id="workingTimeMax"
