@@ -37,10 +37,10 @@
                         {{ contact.firstName }} {{ contact.lastName }}
                     </div>
                     <div>
-                        <a href="mailto={{ contact.email }}">{{ contact.email }}</a>
+                        <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
                     </div>
                     <div>
-                        <a href="tel={{ contact.phoneNumber }}">{{ contact.phoneNumber | jr2PhoneNumber }}</a>
+                        <a href="tel:{{ contact.phoneNumber }}">{{ contact.phoneNumber | jr2PhoneNumber }}</a>
                     </div>
                 </div>
             </div>
@@ -104,13 +104,16 @@
 
                 <div class="alv-logo-box flex-height flex-column md-whiteframe-1dp filter-nav">
                     <p><strong>{{ 'job-publication-details.application.title' | translate }}</strong></p>
+                    <p *ngIf="application.written" class="nav-item">
+                        <span>{{ 'job-publication-details.application.post' | translate }}</span>
+                    </p>
                     <p *ngIf="application.email" class="nav-item">
                         <span>{{ 'job-publication-details.application.email' | translate }}:</span><br/>
                         <a href="mailto:{{ application.email }}">{{ application.email }}</a>
                     </p>
                     <p *ngIf="application.url">
                         <span>{{ 'job-publication-details.application.online-form' | translate }}:</span><br/>
-                        <a href="{{ application.url }}">{{ application.url }}</a>
+                        <a href="{{ application.url }}" target="_blank">{{ application.url }}</a>
                     </p>
                     <p *ngIf="application.phoneNumber">
                         <span>{{ 'job-publication-details.application.telephone' | translate }}:</span><br/>

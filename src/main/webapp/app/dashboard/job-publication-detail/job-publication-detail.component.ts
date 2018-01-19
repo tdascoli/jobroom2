@@ -33,11 +33,21 @@ export class JobPublicationDetailComponent {
                 private jobPublicationCancelDialogService: JobPublicationCancelDialogService) {
         this.showCancellationSuccess$ = store.select(getShowCancellationSuccess);
         this.showCancellationError$ = store.select(getShowCancellationError);
-        this.jobPublication$ = store.select(getJobPublication);
+        this.jobPublication$ = store.select(getJobPublication)
+            .map(this.fixApplicationUrl);
         this.showCancellationLink$ = store.select(getJobPublication)
             .filter((jobPublication: JobPublication) => !!jobPublication)
             .map((jobPublication: JobPublication) =>
                 this.jobPublicationService.isJobPublicationCancellable(jobPublication.status))
+    }
+
+    private fixApplicationUrl(jobPublication: JobPublication) {
+        if (!jobPublication.application.url.startsWith('http')) {
+            jobPublication.application = Object.assign(jobPublication.application, {
+                url: `http://${jobPublication.application.url}`
+            });
+        }
+        return jobPublication;
     }
 
     showCancellationDialog(id: string, accessToken: string) {
