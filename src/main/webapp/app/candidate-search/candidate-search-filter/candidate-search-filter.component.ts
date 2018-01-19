@@ -117,7 +117,8 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
         this.candidateSearchUrl$ = this.store.select(getSearchFilter)
             .map((filter: CandidateSearchFilter) =>
-                `${window.location.href}/?searchFilter=${this.candidateService.encodeURISearchFilter(filter)}`);
+                `${window.location.href}/?searchFilter=${this.candidateService.encodeURISearchFilter(filter)}`)
+            .map((url) => encodeURIComponent(url));
     }
 
     ngOnDestroy(): void {
