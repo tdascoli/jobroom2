@@ -2,7 +2,7 @@
     "dashboard": {
         "job-publication": {
             "action": "Azione",
-            "action.copy": "Copiare il posto vacante",
+            "action.copy": "Duplicare l'annuncio",
             "action.delete": "Cancellare il posto vacante",
             "action.view": "Vedere il posto vacante",
             "avam": "N. del posto vacante COLSTA",
@@ -22,7 +22,7 @@
                 "year": "{{ years }} anni"
             },
             "status": "Stato",
-            "title": "Gestire i posti vacanti",
+            "title": "Gestire gli annunci",
             "user-information": {
                 "title": "Registrato in qualit\u00e0 di:"
             }
@@ -60,7 +60,7 @@
             "jobRoom": "Job-Room",
             "title": "Persona di contatto"
         },
-        "copy": "Duplicare l'offerta d'impiego",
+        "copy": "Duplicare l'annuncio",
         "immediately": "da subito",
         "permanent": "Posto a tempo indeterminato",
         "print": "Stampare",

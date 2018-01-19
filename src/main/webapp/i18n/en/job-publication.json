@@ -3,7 +3,7 @@
         "application": {
             "additionalInfo": "Supplementary information",
             "email": "Email",
-            "post": "By post",
+            "post": "Paper application",
             "online-form": "Online form",
             "telephone": "By phone",
             "title": "Application forms"
@@ -14,7 +14,7 @@
             "jobRoom": "Job-Room",
             "title": "Your contact person"
         },
-        "copy": "Duplicate job posting",
+        "copy": "Duplicate the job ad",
         "permanent": "Permanent",
         "print": "Print",
         "temporary": "Temporary"

@@ -64,8 +64,8 @@
                     "label": "Activit\u00e9 / exigences",
                     "placeholder": "max. 9000 caract\u00e8res"
                 },
-                "disclaimer": "Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localit\u00e9.",
-                "disclaimer.error": "Veuillez confirmer que l'employeur respecte bien les conditions de travail et de salaire en vigueur dans la branche et la localit\u00e9.",
+                "disclaimer": "Je confirme que l'employeur respecte les conditions de travail et de salaire usuelles dans la branche et la localit\u00e9 en question.",
+                "disclaimer.error": "Veuillez confirmer que l'employeur respecte bien les conditions de travail et de salaire en vigueur dans la branche et la localit\u00e9 en question.",
                 "driving-licence": "Permis de conduire",
                 "experience": "Exp\u00e9rience professionnelle",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 ann\u00e9es",
@@ -126,8 +126,8 @@
                 },
                 "reset": "R\u00e9tablir",
                 "submit": "Publier un emploi",
-                "submit.error": "L'emploi n'a pas pu \u00eatre sauvegard\u00e9.",
-                "submit.success": "Merci pour votre offre d'emploi que l'ORP va l'examiner. Vous recevrez un courriel d\u00e8s sa publication.",
+                "submit.error": "L'annonce n'a pas pu \u00eatre sauvegard\u00e9.",
+                "submit.success": "Merci d'avoir annonc\u00e9 le poste vacant que l'ORP va examiner. Vous recevrez un courriel d\u00e8s sa publication.",
                 "workload": "Taux d'occupation"
             },
             "job-search": {

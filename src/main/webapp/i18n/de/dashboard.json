@@ -2,9 +2,9 @@
     "dashboard": {
         "job-publication": {
             "action": "Aktion",
-            "action.copy": "Stelle kopieren",
-            "action.delete": "Stelle abmelden",
-            "action.view": "Stelle sichten",
+            "action.copy": "Stellenanzeige duplizieren",
+            "action.delete": "Stellenanzeige abmelden",
+            "action.view": "Stellenanzeige sichten",
             "avam": "Stellennummer AVAM",
             "job-name": {
                 "placeholder": "In Stellen suchen"
@@ -22,7 +22,7 @@
                 "year": "{{ years }} Jahr"
             },
             "status": "Status",
-            "title": "Stellen bewirtschaften",
+            "title": "Stellenanzeigen bewirtschaften",
             "user-information": {
                 "title": "Sie sind eingeloggt als"
             }
@@ -40,7 +40,7 @@
             "occupied.privateAgency": "in Zusammenarbeit mit der privaten Arbeitsvermittlung (pAV)",
             "occupied.self": "Sie konnten die Stelle selber besetzen"
         },
-        "title": "Stelle abmelden"
+        "title": "Stellenanzeige abmelden"
     },
     "job-publication-details": {
         "application": {
@@ -51,7 +51,7 @@
             "title": "Weitere Bewerbungsformen"
         },
         "byArrangement": "Nach Vereinbarung",
-        "cancel": "Stelle abmelden",
+        "cancel": "Stellenanzeige abmelden",
         "cancel.error": "Stellenanzeige konnte nicht abgemeldet werden. Bitte versuchen Sie es sp\u00e4ter nocheinmal.",
         "cancel.success": "Stellenanzeige abgemeldet",
         "contact": {

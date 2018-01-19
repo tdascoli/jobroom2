@@ -2,9 +2,9 @@
     "dashboard": {
         "job-publication": {
             "action": "Action",
-            "action.copy": "Copier le poste",
-            "action.delete": "Supprimer le poste",
-            "action.view": "Consulter le poste",
+            "action.copy": "Dupliquer l'annonce",
+            "action.delete": "Retirer l'annonce",
+            "action.view": "Consulter l'annonce",
             "avam": "Num\u00e9ro de poste PLASTA",
             "job-name": {
                 "placeholder": "Recherche dans les postes"
@@ -22,7 +22,7 @@
                 "year": "{{ years }} ann\u00e9es"
             },
             "status": "Statut",
-            "title": "G\u00e9rer les emplois",
+            "title": "G\u00e9rer les annonces",
             "user-information": {
                 "title": "Vous \u00eates connect\u00e9(e)"
             }
@@ -30,7 +30,7 @@
         "title": "Tableau de bord"
     },
     "job-publication-cancel": {
-        "alert": "Veuillez remplir les informations li\u00e9es \u00e0 l'annulation et confirmer l'annulation de l'offre d'emploi.",
+        "alert": "Veuillez remplir les informations et confirmer l'annulation de l'annonce.",
         "job": {
             "confirm": "Confirmer l'annulation",
             "dismiss": "Interrompre",
@@ -40,27 +40,27 @@
             "occupied.privateAgency": "en collaboration avec un placeur priv\u00e9",
             "occupied.self": "Vous avez pourvu le poste par vos propres soins."
         },
-        "title": "Supprimer le poste"
+        "title": "Retirer l'annonce"
     },
     "job-publication-details": {
         "application": {
             "additionalInfo": "Indications compl\u00e9mentaires",
             "email": "Courriel",
-            "post": "Par la poste",
+            "post": "Par courrier",
             "telephone": "Par t\u00e9l\u00e9phone",
             "title": "Autres formes de postulation"
         },
         "byArrangement": "\u00c0 convenir",
-        "cancel": "Supprimer le poste",
+        "cancel": "Retirer l'annonce",
         "cancel.error": "L'offre d'emploi n'a pas pu \u00eatre supprim\u00e9e. Veuillez r\u00e9essayer plus tard.",
-        "cancel.success": "Le poste a \u00e9t\u00e9 supprim\u00e9.",
+        "cancel.success": "L'annonce a \u00e9t\u00e9 retir\u00e9.",
         "contact": {
             "accountNumber": "Num\u00e9ro de poste",
             "avam": "PLASTA",
             "jobRoom": "Job-Room",
             "title": "Votre interlocuteur"
         },
-        "copy": "Dupliquer l'offre d'emploi",
+        "copy": "Dupliquer l'annonce",
         "immediately": "d\u00e8s maintenant",
         "permanent": "Poste \u00e0 dur\u00e9e ind\u00e9termin\u00e9e",
         "print": "Imprimer",

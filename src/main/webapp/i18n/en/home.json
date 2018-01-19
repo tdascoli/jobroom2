@@ -64,7 +64,7 @@
                     "label": "Duties / requirements",
                     "placeholder": "max. 9000 characters"
                 },
-                "disclaimer": "I certify that the employer complies with local and industry-standard wage and working conditions.",
+                "disclaimer": "I certify that the employer complies with local and industry standards for wage and working conditions.",
                 "disclaimer.error": "Please confirm that the employer complies with local and industry standards for wage and working conditions.",
                 "driving-licence": "Driving licence",
                 "experience": "Work experience",
@@ -126,8 +126,8 @@
                 },
                 "reset": "Reset",
                 "submit": "Publish job",
-                "submit.error": "Job could not be saved.",
-                "submit.success": "Thank you for your job posting. You advert will now be checked by a regional employment centre (RAV). You will be informed by e-mail as soon as the job is published.",
+                "submit.error": "Job ad could not be saved.",
+                "submit.success": "Thank you for posting this job ad, which will now be checked by a regional employment centre (RAV). You will be informed by email as soon as it is published.",
                 "workload": "Workload"
             },
             "job-search": {
@@ -141,7 +141,7 @@
                     "title": "Show job offers"
                 }
             },
-            "jobPublicationTab": "Publish job",
+            "jobPublicationTab": "Post job",
             "jobSearch": {
                 "title": "Find suitable positions"
             }

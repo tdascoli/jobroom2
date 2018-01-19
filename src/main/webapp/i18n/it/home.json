@@ -64,8 +64,8 @@
                     "label": "Attivit\u00e0 / requisiti",
                     "placeholder": "max. 9000 caratteri"
                 },
-                "disclaimer": "Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in cui l'attivit\u00e0 viene svolta.",
-                "disclaimer.error": "Confermare che il datore di lavoro rispetta le condizioni salariali e lavorative del luogo e del ramo.",
+                "disclaimer": "Confermo che il datore di lavoro rispetta le condizioni salariali e lavorative usuali nel ramo e nel luogo in questione.",
+                "disclaimer.error": "Confermare che il datore di lavoro rispetta le condizioni salariali e lavorative del luogo e del ramo in questione.",
                 "driving-licence": "Patente",
                 "experience": "Esperienza professionale",
                 "experience.BETWEEN_1_AND_3_YEARS": "1 - 3 anni",
@@ -126,8 +126,8 @@
                 },
                 "reset": "Ripristina",
                 "submit": "Pubblica posto",
-                "submit.error": "Offerta d'impiego non salvata.",
-                "submit.success": "Grazie, abbiamo ricevuto l'annuncio. Ricever\u00e0 un'e-mail non appena il posto vacante verr\u00e0 pubblicato, a seguito delle verifiche dell'URC.",
+                "submit.error": "Annuncio non salvata.",
+                "submit.success": "Grazie di aver annunciato il posto vacante que sar\u00e0 esaminato dall'URC. Ricever\u00e0 un'e-mail non appena il posto vacante verr\u00e0 pubblicato.",
                 "workload": "Grado di occupazione"
             },
             "job-search": {

@@ -2,9 +2,9 @@
     "dashboard": {
         "job-publication": {
             "action": "Action",
-            "action.copy": "Copy job",
-            "action.delete": "Cancel job",
-            "action.view": "View job",
+            "action.copy": "Duplicate the job ad",
+            "action.delete": "Cancel job posting",
+            "action.view": "View job ad",
             "avam": "Job number AVAM",
             "job-name": {
                 "placeholder": "Search jobs"
@@ -22,7 +22,7 @@
                 "year": "{{ years }} year"
             },
             "status": "Status",
-            "title": "Manage jobs",
+            "title": "Manage job ads",
             "user-information": {
                 "title": "You are logged in as"
             }
@@ -40,18 +40,18 @@
             "occupied.privateAgency": "in cooperation with the private employment agency (pAV)",
             "occupied.self": "You were able to fill the position yourself"
         },
-        "title": "Cancel job"
+        "title": "Cancel job posting"
     },
     "job-publication-details": {
         "application": {
             "additionalInfo": "Additional Information",
             "email": "Email",
-            "post": "By post",
+            "post": "Paper application",
             "telephone": "By telephone",
             "title": "Other application forms"
         },
         "byArrangement": "By agreement",
-        "cancel": "Cancel job",
+        "cancel": "Cancel job posting",
         "cancel.error": "It was not possible to cancel the job posting. Please try again later.",
         "cancel.success": "Job posting canceled",
         "contact": {
@@ -60,7 +60,7 @@
             "jobRoom": "Job-Room",
             "title": "Your contact person"
         },
-        "copy": "Duplicate the job posting",
+        "copy": "Duplicate the job ad",
         "immediately": "immediately",
         "permanent": "Permanent position",
         "print": "Print",
