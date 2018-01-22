@@ -33,8 +33,7 @@
                                     {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                                 </p>
                                 <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone | jr2PhoneNumber }}</a></p>
-                                <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
-                                    }}</a></p>
+                                <p><a href="mailto:{{ job.contact.email }}">{{ job.contact.email }}</a></p>
                             </div>
                         </div>
                     </div>
