@@ -4,9 +4,8 @@ import static java.util.Objects.isNull;
 import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
 import java.time.Instant;
+import java.time.LocalDateTime;
 import java.time.ZoneId;
-import java.time.ZonedDateTime;
-import java.time.temporal.ChronoUnit;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
@@ -20,7 +19,7 @@ import reactor.core.publisher.Flux;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionTemplate;
@@ -56,11 +55,11 @@ public class OrganizationServiceImpl implements OrganizationService {
     private final OrganizationSuggestionService organizationSuggestionService;
 
     public OrganizationServiceImpl(OrganizationRepository organizationRepository,
-        OrganizationMapper organizationMapper,
-        OrganizationSearchRepository organizationSearchRepository,
-        TransactionTemplate transactionTemplate,
-        EntityManager entityManager,
-        OrganizationSuggestionService organizationSuggestionService) {
+            OrganizationMapper organizationMapper,
+            OrganizationSearchRepository organizationSearchRepository,
+            TransactionTemplate transactionTemplate,
+            EntityManager entityManager,
+            OrganizationSuggestionService organizationSuggestionService) {
         this.organizationRepository = organizationRepository;
         this.organizationMapper = organizationMapper;
         this.organizationSearchRepository = organizationSearchRepository;
@@ -82,9 +81,9 @@ public class OrganizationServiceImpl implements OrganizationService {
         Organization organization = organizationMapper.toEntity(organizationDTO);
         if (isNull(organization.getId())) {
             organizationRepository.findByExternalId(organization.getExternalId())
-                .ifPresent(item ->
-                    organization.setId(item.getId())
-                );
+                    .ifPresent(item ->
+                            organization.setId(item.getId())
+                    );
         }
 
         Organization organizationSaved = organizationRepository.save(organization);
@@ -104,7 +103,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Page<OrganizationDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Organizations");
         return organizationRepository.findAll(pageable)
-            .map(organizationMapper::toDto);
+                .map(organizationMapper::toDto);
     }
 
     /**
@@ -118,7 +117,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Optional<OrganizationDTO> findOne(UUID id) {
         log.debug("Request to get Organization : {}", id);
         return organizationRepository.findById(id)
-            .map(organizationMapper::toDto);
+                .map(organizationMapper::toDto);
     }
 
     @Override
@@ -126,7 +125,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Optional<OrganizationDTO> findOneByExternalId(String externalId) {
         log.debug("Request to get Organization by externalId : {}", externalId);
         return organizationRepository.findByExternalId(externalId)
-            .map(organizationMapper::toDto);
+                .map(organizationMapper::toDto);
     }
 
     /**
@@ -162,39 +161,34 @@ public class OrganizationServiceImpl implements OrganizationService {
         return organizationSuggestionService.suggest(prefix, resultSize);
     }
 
-    @Scheduled(cron = "0 0 5 * * *")
+    @Async
     @Transactional
-    public void housekeeping() {
+    public void housekeeping(LocalDateTime beforeDateTime) {
         log.info("Start housekeeping");
 
-        // TODO check if transactionTemplate is required. There might be a limitation because of the @Scheduled and @Transactional combination
-        transactionTemplate.execute(status -> {
-            organizationRepository.findFirstByOrderByLastModifiedDateDesc().ifPresent(organization -> {
-                Instant startOfLastModificationDay = toStartOfDay(organization.getLastModifiedDate());
-                Stream<Organization> organizationWithoutUpdate = organizationRepository.findByLastModifiedDateIsBefore(startOfLastModificationDay);
-                log.info("Deactivate jobs without update");
-                deactivate(organizationWithoutUpdate);
-            });
-            return null;
-        });
+        deactivate(
+                organizationRepository
+                        .findByLastModifiedDateIsBefore(toInstant(beforeDateTime))
+        );
 
         log.info("Housekeeping finished. Organization counts: {} / {}", organizationRepository.count(), organizationSearchRepository.count());
     }
 
-    private Instant toStartOfDay(Instant instant) {
-        return ZonedDateTime.ofInstant(instant, ZoneId.systemDefault()).truncatedTo(ChronoUnit.DAYS).toInstant();
+    private Instant toInstant(LocalDateTime localDateTime) {
+        return localDateTime.atZone(ZoneId.systemDefault()).toInstant();
     }
 
     private void deactivate(Stream<Organization> jobs) {
         AtomicInteger counter = new AtomicInteger(0);
         Flux.fromStream(jobs)
-            .buffer(100)
-            .doOnSubscribe(subscription -> log.info("Start deactive organizations"))
-            .doFinally(signalType -> log.info("End deactive organizations. {} organizations deactived", counter.get()))
-            .doOnNext(organizationRepository::saveAll)
-            .doOnNext(organizationSearchRepository::saveAll)
-            .doOnNext(organizationsPartition -> entityManager.clear())
-            .doOnNext(organizationsPartition -> counter.addAndGet(organizationsPartition.size()))
-            .subscribe(organizationsPartition -> log.debug("{} organizations deactivated from database and elasticsearch", counter.get()));
+                .buffer(100)
+                .doOnSubscribe(subscription -> log.info("Start deactive organizations"))
+                .doFinally(signalType -> log.info("End deactive organizations. {} organizations deactived", counter.get()))
+                .doOnError(exception -> log.error("Failed to delete organizations", exception))
+                .doOnNext(organizationRepository::saveAll)
+                .doOnNext(organizationSearchRepository::saveAll)
+                .doOnNext(organizationsPartition -> entityManager.clear())
+                .doOnNext(organizationsPartition -> counter.addAndGet(organizationsPartition.size()))
+                .subscribe(organizationsPartition -> log.debug("{} organizations deactivated from database and elasticsearch", counter.get()));
     }
 }

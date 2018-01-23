@@ -11,18 +11,27 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.UUID;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import javax.persistence.EntityManager;
 
+import org.aspectj.lang.annotation.Aspect;
+import org.assertj.core.api.Condition;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.MockitoAnnotations;
+import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.data.web.PageableHandlerMethodArgumentResolver;
 import org.springframework.http.MediaType;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
@@ -40,6 +49,7 @@ import ch.admin.seco.jobroom.service.OrganizationService;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
 import ch.admin.seco.jobroom.service.mapper.OrganizationMapper;
 import ch.admin.seco.jobroom.web.rest.errors.ExceptionTranslator;
+
 /**
  * Test class for the OrganizationResource REST controller.
  *
@@ -77,6 +87,9 @@ public class OrganizationResourceIntTest {
     private static final Boolean UPDATED_ACTIVE = true;
 
     @Autowired
+    private AsyncNotifier asyncNotifier;
+
+    @Autowired
     private OrganizationRepository organizationRepository;
 
     @Autowired
@@ -109,10 +122,10 @@ public class OrganizationResourceIntTest {
         MockitoAnnotations.initMocks(this);
         final OrganizationResource organizationResource = new OrganizationResource(organizationService);
         this.restOrganizationMockMvc = MockMvcBuilders.standaloneSetup(organizationResource)
-            .setCustomArgumentResolvers(pageableArgumentResolver)
-            .setControllerAdvice(exceptionTranslator)
-            .setConversionService(createFormattingConversionService())
-            .setMessageConverters(jacksonMessageConverter).build();
+                .setCustomArgumentResolvers(pageableArgumentResolver)
+                .setControllerAdvice(exceptionTranslator)
+                .setConversionService(createFormattingConversionService())
+                .setMessageConverters(jacksonMessageConverter).build();
     }
 
     /**
@@ -121,24 +134,24 @@ public class OrganizationResourceIntTest {
      * This is a static method, as tests for other entities might also need it,
      * if they test an entity which requires the current entity.
      */
-    public static Organization createEntity(EntityManager em) {
+    public Organization createEntity() {
         Organization organization = new Organization()
-            .externalId(DEFAULT_EXTERNAL_ID)
-            .name(DEFAULT_NAME)
-            .street(DEFAULT_STREET)
-            .zipCode(DEFAULT_ZIP_CODE)
-            .city(DEFAULT_CITY)
-            .email(DEFAULT_EMAIL)
-            .phone(DEFAULT_PHONE)
-            .type(DEFAULT_TYPE)
-            .active(DEFAULT_ACTIVE);
+                .externalId(DEFAULT_EXTERNAL_ID)
+                .name(DEFAULT_NAME)
+                .street(DEFAULT_STREET)
+                .zipCode(DEFAULT_ZIP_CODE)
+                .city(DEFAULT_CITY)
+                .email(DEFAULT_EMAIL)
+                .phone(DEFAULT_PHONE)
+                .type(DEFAULT_TYPE)
+                .active(DEFAULT_ACTIVE);
         return organization;
     }
 
     @Before
     public void initTest() {
         organizationSearchRepository.deleteAll();
-        organization = createEntity(em);
+        organization = createEntity();
     }
 
     @Test
@@ -150,9 +163,9 @@ public class OrganizationResourceIntTest {
         // Create the Organization
         OrganizationDTO organizationDTO = organizationMapper.toDto(organization);
         restOrganizationMockMvc.perform(post("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isCreated());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isCreated());
 
         // Validate the Organization in the database
         List<Organization> organizationList = organizationRepository.findAll();
@@ -171,7 +184,7 @@ public class OrganizationResourceIntTest {
         // Validate the Organization in Elasticsearch
         Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
         assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
-            "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
+                "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
 
     @Test
@@ -185,9 +198,9 @@ public class OrganizationResourceIntTest {
 
         // An entity with an existing ID cannot be created, so this API call must fail
         restOrganizationMockMvc.perform(post("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isBadRequest());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isBadRequest());
 
         // Validate the Organization in the database
         List<Organization> organizationList = organizationRepository.findAll();
@@ -205,9 +218,9 @@ public class OrganizationResourceIntTest {
         OrganizationDTO organizationDTO = organizationMapper.toDto(organization);
 
         restOrganizationMockMvc.perform(post("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isBadRequest());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isBadRequest());
 
         List<Organization> organizationList = organizationRepository.findAll();
         assertThat(organizationList).hasSize(databaseSizeBeforeTest);
@@ -224,9 +237,9 @@ public class OrganizationResourceIntTest {
         OrganizationDTO organizationDTO = organizationMapper.toDto(organization);
 
         restOrganizationMockMvc.perform(post("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isBadRequest());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isBadRequest());
 
         List<Organization> organizationList = organizationRepository.findAll();
         assertThat(organizationList).hasSize(databaseSizeBeforeTest);
@@ -243,9 +256,9 @@ public class OrganizationResourceIntTest {
         OrganizationDTO organizationDTO = organizationMapper.toDto(organization);
 
         restOrganizationMockMvc.perform(post("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isBadRequest());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isBadRequest());
 
         List<Organization> organizationList = organizationRepository.findAll();
         assertThat(organizationList).hasSize(databaseSizeBeforeTest);
@@ -259,18 +272,18 @@ public class OrganizationResourceIntTest {
 
         // Get all the organizationList
         restOrganizationMockMvc.perform(get("/api/organizations?sort=id,desc"))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(organization.getId().toString())))
-            .andExpect(jsonPath("$.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID.toString())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
-            .andExpect(jsonPath("$.[*].street").value(hasItem(DEFAULT_STREET.toString())))
-            .andExpect(jsonPath("$.[*].zipCode").value(hasItem(DEFAULT_ZIP_CODE.toString())))
-            .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
-            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
-            .andExpect(jsonPath("$.[*].phone").value(hasItem(DEFAULT_PHONE.toString())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
-            .andExpect(jsonPath("$.[*].active").value(hasItem(DEFAULT_ACTIVE.booleanValue())));
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                .andExpect(jsonPath("$.[*].id").value(hasItem(organization.getId().toString())))
+                .andExpect(jsonPath("$.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID.toString())))
+                .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
+                .andExpect(jsonPath("$.[*].street").value(hasItem(DEFAULT_STREET.toString())))
+                .andExpect(jsonPath("$.[*].zipCode").value(hasItem(DEFAULT_ZIP_CODE.toString())))
+                .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
+                .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+                .andExpect(jsonPath("$.[*].phone").value(hasItem(DEFAULT_PHONE.toString())))
+                .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
+                .andExpect(jsonPath("$.[*].active").value(hasItem(DEFAULT_ACTIVE.booleanValue())));
     }
 
     @Test
@@ -281,18 +294,18 @@ public class OrganizationResourceIntTest {
 
         // Get the organization
         restOrganizationMockMvc.perform(get("/api/organizations/{id}", organization.getId()))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(organization.getId().toString()))
-            .andExpect(jsonPath("$.externalId").value(DEFAULT_EXTERNAL_ID.toString()))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
-            .andExpect(jsonPath("$.street").value(DEFAULT_STREET.toString()))
-            .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE.toString()))
-            .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
-            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
-            .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE.toString()))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
-            .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE.booleanValue()));
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                .andExpect(jsonPath("$.id").value(organization.getId().toString()))
+                .andExpect(jsonPath("$.externalId").value(DEFAULT_EXTERNAL_ID.toString()))
+                .andExpect(jsonPath("$.name").value(DEFAULT_NAME.toString()))
+                .andExpect(jsonPath("$.street").value(DEFAULT_STREET.toString()))
+                .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE.toString()))
+                .andExpect(jsonPath("$.city").value(DEFAULT_CITY.toString()))
+                .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL.toString()))
+                .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE.toString()))
+                .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
+                .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE.booleanValue()));
     }
 
     @Test
@@ -300,7 +313,7 @@ public class OrganizationResourceIntTest {
     public void getNonExistingOrganization() throws Exception {
         // Get the organization
         restOrganizationMockMvc.perform(get("/api/organizations/{id}", UUID.randomUUID()))
-            .andExpect(status().isNotFound());
+                .andExpect(status().isNotFound());
     }
 
     @Test
@@ -314,21 +327,21 @@ public class OrganizationResourceIntTest {
         // Update the organization
         Organization updatedOrganization = organizationRepository.getOne(organization.getId());
         updatedOrganization
-            .externalId(UPDATED_EXTERNAL_ID)
-            .name(UPDATED_NAME)
-            .street(UPDATED_STREET)
-            .zipCode(UPDATED_ZIP_CODE)
-            .city(UPDATED_CITY)
-            .email(UPDATED_EMAIL)
-            .phone(UPDATED_PHONE)
-            .type(UPDATED_TYPE)
-            .active(UPDATED_ACTIVE);
+                .externalId(UPDATED_EXTERNAL_ID)
+                .name(UPDATED_NAME)
+                .street(UPDATED_STREET)
+                .zipCode(UPDATED_ZIP_CODE)
+                .city(UPDATED_CITY)
+                .email(UPDATED_EMAIL)
+                .phone(UPDATED_PHONE)
+                .type(UPDATED_TYPE)
+                .active(UPDATED_ACTIVE);
         OrganizationDTO organizationDTO = organizationMapper.toDto(updatedOrganization);
 
         restOrganizationMockMvc.perform(put("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isOk());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isOk());
 
         // Validate the Organization in the database
         List<Organization> organizationList = organizationRepository.findAll();
@@ -347,7 +360,7 @@ public class OrganizationResourceIntTest {
         // Validate the Organization in Elasticsearch
         Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
         assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
-            "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
+                "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
 
     @Test
@@ -360,9 +373,9 @@ public class OrganizationResourceIntTest {
 
         // If the entity doesn't have an ID, it will be created instead of just being updated
         restOrganizationMockMvc.perform(put("/api/organizations")
-            .contentType(TestUtil.APPLICATION_JSON_UTF8)
-            .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
-            .andExpect(status().isOk());
+                .contentType(TestUtil.APPLICATION_JSON_UTF8)
+                .content(TestUtil.convertObjectToJsonBytes(organizationDTO)))
+                .andExpect(status().isOk());
 
         // Validate the Organization in the database
         List<Organization> organizationList = organizationRepository.findAll();
@@ -379,8 +392,8 @@ public class OrganizationResourceIntTest {
 
         // Get the organization
         restOrganizationMockMvc.perform(delete("/api/organizations/{id}", organization.getId())
-            .accept(TestUtil.APPLICATION_JSON_UTF8))
-            .andExpect(status().isOk());
+                .accept(TestUtil.APPLICATION_JSON_UTF8))
+                .andExpect(status().isOk());
 
         // Validate Elasticsearch is empty
         boolean organizationExistsInEs = organizationSearchRepository.existsById(organization.getId());
@@ -400,18 +413,18 @@ public class OrganizationResourceIntTest {
 
         // Search the organization
         restOrganizationMockMvc.perform(get("/api/_search/organizations?query=id:" + organization.getId()))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.[*].id").value(hasItem(organization.getId().toString())))
-            .andExpect(jsonPath("$.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID.toString())))
-            .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
-            .andExpect(jsonPath("$.[*].street").value(hasItem(DEFAULT_STREET.toString())))
-            .andExpect(jsonPath("$.[*].zipCode").value(hasItem(DEFAULT_ZIP_CODE.toString())))
-            .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
-            .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
-            .andExpect(jsonPath("$.[*].phone").value(hasItem(DEFAULT_PHONE.toString())))
-            .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
-            .andExpect(jsonPath("$.[*].active").value(hasItem(DEFAULT_ACTIVE.booleanValue())));
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                .andExpect(jsonPath("$.[*].id").value(hasItem(organization.getId().toString())))
+                .andExpect(jsonPath("$.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID.toString())))
+                .andExpect(jsonPath("$.[*].name").value(hasItem(DEFAULT_NAME.toString())))
+                .andExpect(jsonPath("$.[*].street").value(hasItem(DEFAULT_STREET.toString())))
+                .andExpect(jsonPath("$.[*].zipCode").value(hasItem(DEFAULT_ZIP_CODE.toString())))
+                .andExpect(jsonPath("$.[*].city").value(hasItem(DEFAULT_CITY.toString())))
+                .andExpect(jsonPath("$.[*].email").value(hasItem(DEFAULT_EMAIL.toString())))
+                .andExpect(jsonPath("$.[*].phone").value(hasItem(DEFAULT_PHONE.toString())))
+                .andExpect(jsonPath("$.[*].type").value(hasItem(DEFAULT_TYPE.toString())))
+                .andExpect(jsonPath("$.[*].active").value(hasItem(DEFAULT_ACTIVE.booleanValue())));
     }
 
     @Test
@@ -422,18 +435,18 @@ public class OrganizationResourceIntTest {
 
         // Get the organization
         restOrganizationMockMvc.perform(get("/api/organizations/externalId/{id}", organization.getExternalId()))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.id").value(organization.getId().toString()))
-            .andExpect(jsonPath("$.externalId").value(DEFAULT_EXTERNAL_ID))
-            .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
-            .andExpect(jsonPath("$.street").value(DEFAULT_STREET))
-            .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE))
-            .andExpect(jsonPath("$.city").value(DEFAULT_CITY))
-            .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
-            .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE))
-            .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
-            .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE));
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                .andExpect(jsonPath("$.id").value(organization.getId().toString()))
+                .andExpect(jsonPath("$.externalId").value(DEFAULT_EXTERNAL_ID))
+                .andExpect(jsonPath("$.name").value(DEFAULT_NAME))
+                .andExpect(jsonPath("$.street").value(DEFAULT_STREET))
+                .andExpect(jsonPath("$.zipCode").value(DEFAULT_ZIP_CODE))
+                .andExpect(jsonPath("$.city").value(DEFAULT_CITY))
+                .andExpect(jsonPath("$.email").value(DEFAULT_EMAIL))
+                .andExpect(jsonPath("$.phone").value(DEFAULT_PHONE))
+                .andExpect(jsonPath("$.type").value(DEFAULT_TYPE.toString()))
+                .andExpect(jsonPath("$.active").value(DEFAULT_ACTIVE));
     }
 
     @Test
@@ -445,12 +458,12 @@ public class OrganizationResourceIntTest {
 
         // Search the organization
         restOrganizationMockMvc.perform(get("/api/_search/organizations/suggest?prefix=AAA&resultSize=1"))
-            .andExpect(status().isOk())
-            .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
-            .andExpect(jsonPath("$.organizations.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID)))
-            .andExpect(jsonPath("$.organizations.[*].name").value(hasItem(DEFAULT_NAME)))
-            .andExpect(jsonPath("$.organizations.[*].street").value(hasItem(DEFAULT_STREET)))
-            .andExpect(jsonPath("$.organizations.[*].city").value(hasItem(DEFAULT_CITY)));
+                .andExpect(status().isOk())
+                .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
+                .andExpect(jsonPath("$.organizations.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID)))
+                .andExpect(jsonPath("$.organizations.[*].name").value(hasItem(DEFAULT_NAME)))
+                .andExpect(jsonPath("$.organizations.[*].street").value(hasItem(DEFAULT_STREET)))
+                .andExpect(jsonPath("$.organizations.[*].city").value(hasItem(DEFAULT_CITY)));
     }
 
     @Test
@@ -489,5 +502,40 @@ public class OrganizationResourceIntTest {
     public void testEntityFromId() {
         assertThat(organizationMapper.fromId(UUID.fromString("00000000-0000-0000-0000-000000000042")).getId()).isEqualTo(UUID.fromString("00000000-0000-0000-0000-000000000042"));
         assertThat(organizationMapper.fromId(null)).isNull();
+    }
+
+    @Test
+    @Transactional
+    public void housekeeping() throws Exception {
+        organizationService.save(organizationMapper.toDto(createEntity().externalId("1")));
+        organizationService.save(organizationMapper.toDto(createEntity().externalId("2")));
+        organizationService.save(organizationMapper.toDto(createEntity().externalId("3")));
+        OrganizationDTO organizationDTO = organizationService.save(organizationMapper.toDto(createEntity().externalId("4")));
+        Organization deleteAllButThisEntity = organizationRepository.getOne(organizationDTO.getId());
+
+        LocalDateTime beforeDateTime = LocalDateTime.ofInstant(deleteAllButThisEntity.getLastModifiedDate(), ZoneId.systemDefault());
+        restOrganizationMockMvc.perform(post("/api/organizations/housekeeping")
+                .param("beforeDateTime", beforeDateTime.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
+                .contentType(TestUtil.APPLICATION_JSON_UTF8))
+                .andExpect(status().isAccepted());
+
+        asyncNotifier.housekeepingCountDownLatch.await(5, TimeUnit.SECONDS);
+        assertThat(organizationRepository.count()).isEqualTo(4L);
+        assertThat(organizationRepository.findByLastModifiedDateIsBefore(deleteAllButThisEntity.getLastModifiedDate()))
+                .hasSize(3)
+                .areNot(new Condition<Organization>(Organization::isActive, "organization is active"));
+        assertThat(organizationSearchRepository.count()).isEqualTo(4L);
+    }
+
+    @TestConfiguration
+    @Aspect
+    static class AsyncNotifier {
+        private CountDownLatch housekeepingCountDownLatch = new CountDownLatch(1);
+
+        @org.aspectj.lang.annotation.After("execution(* ch.admin.seco.jobroom.service.impl.OrganizationServiceImpl.housekeeping(..))")
+        public void afterHousekeeping() {
+            LoggerFactory.getLogger(this.getClass()).info("OrganizationServiceImpl.housekeeping(..) finished");
+            housekeepingCountDownLatch.countDown();
+        }
     }
 }

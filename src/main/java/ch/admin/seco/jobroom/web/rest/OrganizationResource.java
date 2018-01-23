@@ -2,6 +2,7 @@ package ch.admin.seco.jobroom.web.rest;
 
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
@@ -16,6 +17,7 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -46,10 +48,8 @@ import ch.admin.seco.jobroom.web.rest.util.PaginationUtil;
 @RequestMapping("/api")
 public class OrganizationResource {
 
-    private final Logger log = LoggerFactory.getLogger(OrganizationResource.class);
-
     private static final String ENTITY_NAME = "organization";
-
+    private final Logger log = LoggerFactory.getLogger(OrganizationResource.class);
     private final OrganizationService organizationService;
 
     public OrganizationResource(OrganizationService organizationService) {
@@ -72,8 +72,8 @@ public class OrganizationResource {
         }
         OrganizationDTO result = organizationService.save(organizationDTO);
         return ResponseEntity.created(new URI("/api/organizations/" + result.getId()))
-            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
-            .body(result);
+                .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+                .body(result);
     }
 
     /**
@@ -87,13 +87,13 @@ public class OrganizationResource {
      */
     @PutMapping("/organizations")
     @Timed
-    public ResponseEntity<OrganizationDTO> updateOrganization(@Valid @RequestBody OrganizationDTO organizationDTO) throws URISyntaxException {
+    public ResponseEntity<OrganizationDTO> updateOrganization(@Valid @RequestBody OrganizationDTO organizationDTO) {
         log.debug("REST request to update Organization : {}", organizationDTO);
 
         OrganizationDTO result = organizationService.save(organizationDTO);
         return ResponseEntity.ok()
-            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()))
-            .body(result);
+                .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()))
+                .body(result);
     }
 
     /**
@@ -174,11 +174,11 @@ public class OrganizationResource {
     @PostMapping("/organizations/housekeeping")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
-    public ResponseEntity<Void> reindexAll() throws URISyntaxException {
+    public ResponseEntity<Void> housekeeping(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime beforeDateTime) {
         log.info("REST request to start housekeeping for Organizations by user : {}", SecurityUtils.getCurrentUserLogin());
-        organizationService.housekeeping();
+        organizationService.housekeeping(beforeDateTime);
         return ResponseEntity.accepted()
-            .headers(HeaderUtil.createAlert("housekeeping.accepted", null))
-            .build();
+                .headers(HeaderUtil.createAlert("housekeeping.accepted", "true"))
+                .build();
     }
 }

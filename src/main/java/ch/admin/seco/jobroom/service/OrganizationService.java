@@ -1,5 +1,6 @@
 package ch.admin.seco.jobroom.service;
 
+import java.time.LocalDateTime;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -71,5 +72,5 @@ public interface OrganizationService {
      */
     OrganizationAutocompleteDTO suggest(String prefix, int resultSize);
 
-    void housekeeping();
+    void housekeeping(LocalDateTime beforeDateTime);
 }
