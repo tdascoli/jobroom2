@@ -47,6 +47,7 @@ export interface Application {
 export interface Job {
     id: string;
     externalId: string;
+    source: string;
     publicationStartDate?: Date;
     publicationEndDate: Date;
     externalUrl?: string;

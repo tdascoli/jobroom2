@@ -44,7 +44,7 @@ export class JobDetailComponent implements OnInit, OnDestroy, AfterViewInit {
             this.jobCenter$ = this.job.jobCenterCode
                 ? this.referenceService.resolveJobCenter(this.job.jobCenterCode)
                 : Observable.empty();
-            this.showExternalJobDisclaimer = !!this.job.externalUrl;
+            this.showExternalJobDisclaimer = this.job.source === 'extern';
         });
     }
 
