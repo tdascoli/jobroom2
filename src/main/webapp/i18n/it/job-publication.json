@@ -3,8 +3,8 @@
         "application": {
             "additionalInfo": "Dati complementari",
             "email": "E-mail",
-            "post": "Per posta",
             "online-form": "Modulo online",
+            "post": "Per posta",
             "telephone": "Telefonicamente",
             "title": "Forme di candidatura"
         },

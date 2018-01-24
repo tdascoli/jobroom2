@@ -3,8 +3,8 @@
         "application": {
             "additionalInfo": "Supplementary information",
             "email": "Email",
-            "post": "Paper application",
             "online-form": "Online form",
+            "post": "Paper application",
             "telephone": "By phone",
             "title": "Application forms"
         },

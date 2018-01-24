@@ -219,7 +219,7 @@ global,error.url.not.found,Nicht gefunden,Not found,Non trouvé,Non trovato
 global,error.userexists,Benutzername bereits vergeben!,Login name already used!,Nom d'utilisateur déjà utilisé !,Il nome utente è già in uso!
 global,footer.link.abbreviation.text,Abkürzungen,Abbreviations,Abréviations,Abbreviazioni
 global,footer.link.legal.text,Rechtliche Hinweise,Legal information,Droits d'usage,Avvertenze giuridiche
-global,footer.link.legal.url,https://www.arbeit.swiss/home/service/rechtliche-hinweise.html,https://www.work.swiss/home/service/rechtliche-hinweise.html,https://www.travail.swiss/home/service/rechtliche-hinweise.html,https://www.lavoro.swiss/home/service/rechtliche-hinweise.html
+global,footer.link.legal.url,https://www.arbeit.swiss/secoalv/de/home/service/rechtliche-hinweise.html,https://www.arbeit.swiss/secoalv/en/home/service/rechtliche-hinweise.html,https://www.arbeit.swiss/secoalv/fr/home/service/rechtliche-hinweise.html,https://www.arbeit.swiss/secoalv/it/home/service/rechtliche-hinweise.html
 global,footer.link.seco.text,Arbeitslosenversicherung / Arbeitsmarkt ALV,Unemployment insurance/Labour market,Assurance-chômage / marché du travail AC,Assicurazione contro la disoccupazione / Mercato del lavoro AD
 global,global.browsehappy,"Sie benutzen einen <strong>veralteten</strong> Browser. Bitte <a href=""http://browsehappy.com/?locale=de/"">aktualisieren Sie Ihren Browser</a>, um die Benutzerfreundlichkeit zu erhöhen.","You are using an <strong>outdated</strong> browser. Please <a href=""http://browsehappy.com/?locale=en"">upgrade your browser</a> to improve your experience.","Vous utilisez un <strong>ancien</strong> navigateur. Veuillez <a href=""http://browsehappy.com/?locale=fr"">mettre à jour votre navigateur</a> pour une meilleure expérience.","Stai utilizzando un browser <strong> non aggiornato </ strong> <a href=""http://browsehappy.com/?locale=it""> Aggiorna il tuo browser per </a> migliorare la tua esperienza."
 global,global.button.add.title,Hinzufügen,Add,Ajouter,Aggiungere
@@ -572,7 +572,7 @@ health,health.table.status,Status,Status,Etat,Stato
 health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
 home,home.title,Job-Room,Job-Room,Job-Room,Job-Room
 home,home.title.portal,arbeit,work,travail,lavoro
-home,home.title.portal-url,https://www.arbeit.swiss,https://www.work.swiss,https://www.travail.swiss,https://www.lavoro.swiss
+home,home.title.portal-url,https://www.arbeit.swiss,https://www.arbeit.swiss/secoalv/en/home.html,https://www.arbeit.swiss/secoalv/fr/home.html,https://www.arbeit.swiss/secoalv/it/home.html
 home,home.toolbar.companies,Arbeitgeber,Employers,Employeurs,Datori di lavoro
 home,home.toolbar.jobSeekers,Stellensuchende,Job seekers,Demandeur d'emploi,Persone in cerca d'impiego
 home,home.toolbar.recruitmentAgencies,Arbeitsvermittler,Recruitment agencies,Agence de placement,Collocatori

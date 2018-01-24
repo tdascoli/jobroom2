@@ -3,8 +3,8 @@
         "application": {
             "additionalInfo": "Erg\u00e4nzende Angaben",
             "email": "E-Mail",
-            "post": "Per Post",
             "online-form": "Online-Formular",
+            "post": "Per Post",
             "telephone": "Telefonisch",
             "title": "Bewerbungsformen"
         },

@@ -3,8 +3,8 @@
         "application": {
             "additionalInfo": "Indications compl\u00e9mentaires",
             "email": "Courriel",
-            "post": "Par courrier",
             "online-form": "Formulaire en ligne",
+            "post": "Par courrier",
             "telephone": "Par t\u00e9l\u00e9phone",
             "title": "Formes de postulation"
         },
