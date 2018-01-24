@@ -54,7 +54,7 @@ deploy:
     condition: "$TRAVIS_BRANCH =~ ^release.*$"
 - provider: script
   skip_cleanup: true
-  script: "export GA_TRACKING_ID=$ANALYTICS_TRACKING_ID ./gradlew bootWar publish -Pprod -Pzipkin -Pversion=${TRAVIS_TAG} -x test --stacktrace"
+  script: "export GA_TRACKING_ID=$ANALYTICS_TRACKING_ID; ./gradlew bootWar publish -Pprod -Pzipkin -Pversion=${TRAVIS_TAG} -x test --stacktrace"
   on:
     tags: true
 #Uncomment gatling task when at least one test exists
