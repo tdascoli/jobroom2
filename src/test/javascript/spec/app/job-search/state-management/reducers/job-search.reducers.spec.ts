@@ -119,18 +119,21 @@ describe('jobSearchReducer', () => {
                 id: '0',
                 externalId: 'extId0',
                 title: 'title-0',
+                source: 'api',
                 publicationEndDate: new Date()
             },
             {
                 id: '1',
                 externalId: 'extId1',
                 title: 'title-1',
+                source: 'api',
                 publicationEndDate: new Date()
             },
             {
                 id: '2',
                 externalId: 'extId2',
                 title: 'title-2',
+                source: 'api',
                 publicationEndDate: new Date()
             }
         ];
@@ -168,18 +171,21 @@ describe('jobSearchReducer', () => {
                 id: '0',
                 externalId: 'extId0',
                 title: 'title-0',
+                source: 'api',
                 publicationEndDate: new Date()
             },
             {
                 id: '1',
                 externalId: 'extId1',
                 title: 'title-1',
+                source: 'api',
                 publicationEndDate: new Date()
             },
             {
                 id: '2',
                 externalId: 'extId2',
                 title: 'title-2',
+                source: 'api',
                 publicationEndDate: new Date()
             }
         ];
@@ -191,18 +197,21 @@ describe('jobSearchReducer', () => {
                 id: '3',
                 externalId: 'extId3',
                 title: 'title-3',
+                source: 'api',
                 publicationEndDate: new Date()
             },
             {
                 id: '4',
                 externalId: 'extId4',
                 title: 'title-4',
+                source: 'api',
                 publicationEndDate: new Date()
             },
             {
                 id: '5',
                 externalId: 'extId5',
                 title: 'title-5',
+                source: 'api',
                 publicationEndDate: new Date()
             }
         ];

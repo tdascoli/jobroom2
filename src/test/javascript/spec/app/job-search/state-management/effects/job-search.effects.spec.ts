@@ -65,6 +65,7 @@ describe('JobSearchEffects', () => {
                     id: '0',
                     externalId: 'extId0',
                     title: 'title-0',
+                    source: 'api',
                     publicationEndDate: new Date()
                 }
             ];
@@ -91,6 +92,7 @@ describe('JobSearchEffects', () => {
                         id: '0',
                         externalId: 'extId0',
                         title: 'title-0',
+                        source: 'api',
                         publicationEndDate: new Date()
                     }
                 ],
@@ -118,18 +120,21 @@ describe('JobSearchEffects', () => {
                     id: '0',
                     externalId: 'extId0',
                     title: 'title-0',
+                    source: 'api',
                     publicationEndDate: new Date()
                 },
                 {
                     id: '1',
                     externalId: 'extId1',
                     title: 'title-1',
+                    source: 'api',
                     publicationEndDate: new Date()
                 },
                 {
                     id: '2',
                     externalId: 'extId2',
                     title: 'title-2',
+                    source: 'api',
                     publicationEndDate: new Date()
                 }
             ];
@@ -173,18 +178,21 @@ describe('JobSearchEffects', () => {
                     id: '0',
                     externalId: 'extId0',
                     title: 'title-0',
+                    source: 'api',
                     publicationEndDate: new Date()
                 },
                 {
                     id: '1',
                     externalId: 'extId1',
                     title: 'title-1',
+                    source: 'api',
                     publicationEndDate: new Date()
                 },
                 {
                     id: '2',
                     externalId: 'extId2',
                     title: 'title-2',
+                    source: 'api',
                     publicationEndDate: new Date()
                 }
             ];
@@ -220,6 +228,7 @@ describe('JobSearchEffects', () => {
             id: '0',
             externalId: 'extId0',
             title: 'title-0',
+            source: 'api',
             publicationEndDate: new Date()
         };
         const jobList = [job1];
