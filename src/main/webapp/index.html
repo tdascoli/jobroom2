@@ -51,8 +51,10 @@
         e=o.createElement(i);r=o.getElementsByTagName(i)[0];
         e.src='//www.google-analytics.com/analytics.js';
         r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-        ga('create','UA-36686902-1');
+        /* @toreplace GA_TRACKING_ID */
+        ga('create', _GA_TRACKING_ID);
         ga('send','pageview');
+        ga('set', 'anonymizeIp', true);
     </script>
 </body>
 </html>

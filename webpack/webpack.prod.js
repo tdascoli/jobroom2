@@ -10,10 +10,12 @@ const utils = require('./utils.js');
 const commonConfig = require('./webpack.common.js');
 
 const ENV = 'production';
+const GA_TRACKING_ID = process.env['GA_TRACKING_ID'];
+
 const extractSASS = new ExtractTextPlugin(`[name]-sass.[hash].css`);
 const extractCSS = new ExtractTextPlugin(`[name].[hash].css`);
 
-module.exports = webpackMerge(commonConfig({ env: ENV }), {
+module.exports = webpackMerge(commonConfig({ env: ENV, gaTrackingId: GA_TRACKING_ID }), {
     // Enable source maps. Please note that this will slow down the build.
     // You have to enable it in UglifyJSPlugin config below and in tsconfig-aot.json as well
     // devtool: 'source-map',

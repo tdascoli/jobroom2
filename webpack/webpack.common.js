@@ -10,6 +10,7 @@ module.exports = (options) => {
     const DATAS = {
         VERSION: `'${utils.parseVersion()}'`,
         DEBUG_INFO_ENABLED: options.env === 'development',
+        GA_TRACKING_ID: options.gaTrackingId ? `'${options.gaTrackingId}'` : '"UA-XXXXX-X"',
         // The root URL for API calls, ending with a '/' - for example: `"http://www.jhipster.tech:8081/myservice/"`.
         // If this URL is left empty (""), then it will be relative to the current context.
         // If you use an API server, in `prod` mode, you will need to enable CORS
@@ -48,7 +49,7 @@ module.exports = (options) => {
                     loader: 'file-loader?name=manifest.webapp!web-app-manifest-loader'
                 },
                 {
-                    test: /app.constants.ts$/,
+                    test: /(app.constants.ts|index.html)$/,
                     loader: StringReplacePlugin.replace({
                         replacements: [{
                             pattern: /\/\* @toreplace (\w*?) \*\//ig,
