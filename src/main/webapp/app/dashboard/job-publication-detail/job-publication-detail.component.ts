@@ -42,7 +42,7 @@ export class JobPublicationDetailComponent {
     }
 
     private fixApplicationUrl(jobPublication: JobPublication) {
-        if (!jobPublication.application.url.startsWith('http')) {
+        if (jobPublication.application.url && !jobPublication.application.url.startsWith('http')) {
             jobPublication.application = Object.assign(jobPublication.application, {
                 url: `http://${jobPublication.application.url}`
             });
