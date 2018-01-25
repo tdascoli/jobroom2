@@ -29,6 +29,15 @@ export class JobService {
             });
     }
 
+    findByExternalId(externalId: string): Observable<Job> {
+        return this.http.get(this.resourceUrl, { params: { 'externalId': externalId } })
+            .map((res: Response) => {
+                const jsonResponse = res.json();
+                this.convertItemFromServer(jsonResponse);
+                return jsonResponse;
+            });
+    }
+
     search(req: JobSearchRequest): Observable<ResponseWrapper> {
         const options = new BaseRequestOptions();
         options.params = createPageableURLSearchParams(req);

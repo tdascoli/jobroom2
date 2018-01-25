@@ -24,6 +24,8 @@ import { JobService } from './services';
 import { JobLocalityComponent } from './job-locality/job-locality.component';
 import { DetailsPagePaginationEffects } from '../shared/components/details-page-pagination/state-management/effects/details-page-pagination.effects';
 import { NouisliderModule } from 'ng2-nouislider';
+import { JobFingerprintRedirectComponent } from './job-fingerprint-redirect/job-fingerprint-redirect.component';
+import { JobFingerprintRedirectResolver } from './job-fingerprint-redirect/job-fingerprint-redirect.resolver';
 
 @NgModule({
     imports: [
@@ -46,12 +48,14 @@ import { NouisliderModule } from 'ng2-nouislider';
         JobSearchListItemComponent,
         JobSearchListComponent,
         JobDetailComponent,
+        JobFingerprintRedirectComponent,
         JobSearchFilterComponent,
         JobLocalityComponent
     ],
     providers: [
         customHttpProvider(),
         JobDetailResolver,
+        JobFingerprintRedirectResolver,
         JobService
     ]
 })

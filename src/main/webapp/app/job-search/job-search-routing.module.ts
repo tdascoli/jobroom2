@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { JobSearchComponent } from './job-search.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
 import { JobDetailResolver } from './job-detail/job-detail.resolver';
+import { JobFingerprintRedirectComponent } from './job-fingerprint-redirect/job-fingerprint-redirect.component';
+import { JobFingerprintRedirectResolver } from './job-fingerprint-redirect/job-fingerprint-redirect.resolver';
 
 const routes: Routes = [
     {
@@ -22,6 +24,13 @@ const routes: Routes = [
         data: {
             authorities: [],
             pageTitle: 'job-detail.title'
+        }
+    },
+    {
+        path: 'job-fingerprint-redirect',
+        component: JobFingerprintRedirectComponent,
+        resolve: {
+            id: JobFingerprintRedirectResolver
         }
     }
 ];
