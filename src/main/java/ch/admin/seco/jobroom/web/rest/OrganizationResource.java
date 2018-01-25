@@ -17,7 +17,6 @@ import org.slf4j.LoggerFactory;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -174,7 +173,7 @@ public class OrganizationResource {
     @PostMapping("/organizations/housekeeping")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
-    public ResponseEntity<Void> housekeeping(@RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDateTime beforeDateTime) {
+    public ResponseEntity<Void> housekeeping(@RequestParam LocalDateTime beforeDateTime) {
         log.info("REST request to start housekeeping for Organizations by user : {}", SecurityUtils.getCurrentUserLogin());
         organizationService.housekeeping(beforeDateTime);
         return ResponseEntity.accepted()
