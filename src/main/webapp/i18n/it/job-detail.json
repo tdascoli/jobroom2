@@ -32,5 +32,8 @@
         "startsImmediately.false": "Previo accordo",
         "startsImmediately.true": "Da subito",
         "title": "Dettagli sul posto"
+    },
+  "job-fingerprint-redirect": {
+    "not-found": "Job not found"
     }
 }

@@ -698,6 +698,7 @@ job-detail,job-detail.startsImmediately,Stellenantritt,Start date,Entrée en fon
 job-detail,job-detail.startsImmediately.false,Nach Vereinbarung,By agreement,À convenir,Previo accordo
 job-detail,job-detail.startsImmediately.true,Ab Sofort,Immediately,Tout de suite,Da subito
 job-detail,job-detail.title,Stellenbeschreibung,Job detail,Détail de l'emploi,Dettagli sul posto
+job-detail,job-fingerprint-redirect.not-found,Job not found,Job not found,Job not found,Job not found
 job-publication,job-publication-details.application.additionalInfo,Ergänzende Angaben,Supplementary information,Indications complémentaires,Dati complementari
 job-publication,job-publication-details.application.email,E-Mail,Email,Courriel,E-mail
 job-publication,job-publication-details.application.online-form,Online-Formular,Online form,Formulaire en ligne,Modulo online
