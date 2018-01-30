@@ -28,7 +28,7 @@
         "phone": "Telefono",
         "profiles": "Profili",
         "search": {
-            "placeholder": "Search for user by username, name or email"
+            "placeholder": "Search for user by username, name, email or organization"
         },
         "updated": "Sono stato aggiornati i dati dell'utente identificato da {{ param }}"
     }

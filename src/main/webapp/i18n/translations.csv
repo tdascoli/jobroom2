@@ -996,5 +996,5 @@ user-management,userManagement.login,Login,Login,Login,Login
 user-management,userManagement.organization,Organization,Organization,Organization,Organization
 user-management,userManagement.phone,Telefon,Telephone,Téléphone,Telefono
 user-management,userManagement.profiles,Profile,Profiles,Profils,Profili
-user-management,userManagement.search.placeholder,Benutzer nach Name oder E-Mail-Adresse suchen,"Search for user by username, name or email","Search for user by username, name or email","Search for user by username, name or email"
+user-management,userManagement.search.placeholder,"Benutzer nach Name, E-Mail-Adresse oder Organization suchen","Search for user by username, name, email or organization","Search for user by username, name, email or organization","Search for user by username, name, email or organization"
 user-management,userManagement.updated,Ein Benutzer mit ID {{ param }} wurde geändert,A user was updated with identifier {{ param }},L'utilisateur portant l'ID {{ param }} a été modifié.,Sono stato aggiornati i dati dell'utente identificato da {{ param }}

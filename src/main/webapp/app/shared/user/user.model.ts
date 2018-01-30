@@ -17,6 +17,7 @@ export class User {
     public password?: string;
     public phone?: string;
     public organizationId?: string;
+    public organizationName?: string;
 
     constructor(
         id?: any,
@@ -35,6 +36,7 @@ export class User {
         password?: string,
         phone?: string,
         organizationId?: string,
+        organizationName?: string
     ) {
         this.id = id ? id : null;
         this.login = login ? login : null;
@@ -52,5 +54,6 @@ export class User {
         this.password = password ? password : null;
         this.phone = phone ? phone : null;
         this.organizationId = organizationId ? organizationId : null;
+        this.organizationName = this.organizationName ? organizationName : null;
     }
 }

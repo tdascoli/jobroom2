@@ -35,6 +35,18 @@
             },
             "authorities": {
                 "type": "keyword"
+            },
+            "organization": {
+                "properties": {
+                    "name": {
+                        "type": "text",
+                        "analyzer": "ascii_folding"
+                    },
+                    "externalId": {
+                        "type": "keyword"
+                    }
+                },
+                "type": "nested"
             }
         }
     }

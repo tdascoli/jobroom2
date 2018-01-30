@@ -28,7 +28,7 @@
         "phone": "Telephone",
         "profiles": "Profiles",
         "search": {
-            "placeholder": "Search for user by username, name or email"
+            "placeholder": "Search for user by username, name, email or organization"
         },
         "updated": "A user was updated with identifier {{ param }}"
     }

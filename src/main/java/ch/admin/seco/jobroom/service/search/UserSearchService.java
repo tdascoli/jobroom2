@@ -1,8 +1,12 @@
 package ch.admin.seco.jobroom.service.search;
 
+import static org.elasticsearch.index.query.QueryBuilders.boolQuery;
+import static org.elasticsearch.index.query.QueryBuilders.nestedQuery;
 import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 
+import org.apache.lucene.search.join.ScoreMode;
 import org.elasticsearch.index.query.Operator;
+import org.elasticsearch.index.query.QueryBuilder;
 import org.elasticsearch.index.query.QueryStringQueryBuilder;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,13 +34,7 @@ public class UserSearchService {
     }
 
     public Page<UserDTO> searchByQuery(String query, Pageable pageable) {
-        QueryStringQueryBuilder queryBuilder = queryStringQuery(query)
-            .defaultOperator(Operator.AND)
-            .field("login")
-            .field("firstName")
-            .field("lastName")
-            .field("email");
-
+        QueryBuilder queryBuilder = buildQueryBuilder(query);
         SearchQuery searchQuery = new NativeSearchQueryBuilder()
             .withQuery(queryBuilder)
             .withPageable(pageable)
@@ -44,5 +42,28 @@ public class UserSearchService {
 
         return userSearchRepository.search(searchQuery)
             .map(userDocumentMapper::userDocumentToUserDto);
+    }
+
+    private QueryBuilder buildQueryBuilder(String query) {
+        return boolQuery()
+            .should(buildUserQueryBuilder(query))
+            .should(buildOrganizationQueryBuilder(query));
+    }
+
+    private QueryBuilder buildUserQueryBuilder(String query) {
+        return queryStringQuery(query)
+            .defaultOperator(Operator.AND)
+            .field("login")
+            .field("firstName")
+            .field("lastName")
+            .field("email");
+    }
+
+    private QueryBuilder buildOrganizationQueryBuilder(String query) {
+        final QueryStringQueryBuilder queryStringBuilder = queryStringQuery(query)
+            .defaultOperator(Operator.AND)
+            .field("organization.name")
+            .field("organization.externalId");
+        return nestedQuery("organization", queryStringBuilder, ScoreMode.Avg);
     }
 }

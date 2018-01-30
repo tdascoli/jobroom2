@@ -1,9 +1,8 @@
 package ch.admin.seco.jobroom.service.dto;
 
-import static java.util.Objects.nonNull;
-
 import java.time.Instant;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -19,6 +18,7 @@ import org.hibernate.validator.constraints.NotBlank;
 
 import ch.admin.seco.jobroom.config.Constants;
 import ch.admin.seco.jobroom.domain.Authority;
+import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.domain.User;
 import ch.admin.seco.jobroom.domain.enumeration.Gender;
 
@@ -71,6 +71,8 @@ public class UserDTO {
 
     private String organizationId;
 
+    private String organizationName;
+
     public UserDTO() {
         // Empty constructor needed for Jackson.
     }
@@ -82,7 +84,7 @@ public class UserDTO {
             user.getAuthorities().stream().map(Authority::getName)
                 .collect(Collectors.toSet())
         );
-        this.organizationId = getOrganizationId(user);
+        setOrganizationData(user.getOrganization());
     }
 
     public UserDTO(UUID id, String login, String firstName, String lastName,
@@ -105,6 +107,13 @@ public class UserDTO {
         this.lastModifiedBy = lastModifiedBy;
         this.lastModifiedDate = lastModifiedDate;
         this.authorities = authorities;
+    }
+
+    private void setOrganizationData(Organization organization) {
+        if (Objects.nonNull(organization)) {
+            this.organizationId = organization.getExternalId();
+            this.organizationName = organization.getName();
+        }
     }
 
     public UUID getId() {
@@ -235,6 +244,14 @@ public class UserDTO {
         this.organizationId = organizationId;
     }
 
+    public String getOrganizationName() {
+        return organizationName;
+    }
+
+    public void setOrganizationName(String organizationName) {
+        this.organizationName = organizationName;
+    }
+
     @Override
     public String toString() {
         return "UserDTO{" +
@@ -252,10 +269,8 @@ public class UserDTO {
             ", lastModifiedBy='" + lastModifiedBy + '\'' +
             ", lastModifiedDate=" + lastModifiedDate +
             ", authorities=" + authorities +
+            ", organizationId=" + organizationId +
+            ", organizationName=" + organizationName +
             "}";
-    }
-
-    private String getOrganizationId(User user) {
-        return nonNull(user.getOrganization()) ? user.getOrganization().getExternalId() : null;
     }
 }

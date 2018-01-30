@@ -35,6 +35,8 @@ public class UserDocument {
 
     private Set<String> authorities;
 
+    private OrganizationDocument organization;
+
     public UUID getId() {
         return id;
     }
@@ -121,5 +123,13 @@ public class UserDocument {
 
     public void setActivated(boolean activated) {
         this.activated = activated;
+    }
+
+    public OrganizationDocument getOrganization() {
+        return organization;
+    }
+
+    public void setOrganization(OrganizationDocument organization) {
+        this.organization = organization;
     }
 }

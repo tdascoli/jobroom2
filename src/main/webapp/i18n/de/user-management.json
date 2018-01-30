@@ -28,7 +28,7 @@
         "phone": "Telefon",
         "profiles": "Profile",
         "search": {
-            "placeholder": "Benutzer nach Name oder E-Mail-Adresse suchen"
+            "placeholder": "Benutzer nach Name, E-Mail-Adresse oder Organization suchen"
         },
         "updated": "Ein Benutzer mit ID {{ param }} wurde ge\u00e4ndert"
     }

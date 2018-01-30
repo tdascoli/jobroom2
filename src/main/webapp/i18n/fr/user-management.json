@@ -28,7 +28,7 @@
         "phone": "T\u00e9l\u00e9phone",
         "profiles": "Profils",
         "search": {
-            "placeholder": "Search for user by username, name or email"
+            "placeholder": "Search for user by username, name, email or organization"
         },
         "updated": "L'utilisateur portant l'ID {{ param }} a \u00e9t\u00e9 modifi\u00e9."
     }
