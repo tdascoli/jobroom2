@@ -149,7 +149,7 @@
                     <h4 class="detail__content__title">{{ 'candidate-detail.personal-information.title' | translate }}</h4>
                     <div *ngIf="candidateProtectedData.firstName || candidateProtectedData.lastName" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.name.label' | translate }}</strong>
-                        <span>{{ candidateProtectedData.firstName }} {{ candidateProtectedData.lastName }}</span>
+                        <span>{{ candidateProtectedData.lastName }} {{ candidateProtectedData.firstName }}</span>
                     </div>
                     <div *ngIf="candidateProtectedData.nationalityCode" class="content__item">
                         <strong>{{ 'candidate-detail.personal-information.nationality.label' | translate }}</strong>
