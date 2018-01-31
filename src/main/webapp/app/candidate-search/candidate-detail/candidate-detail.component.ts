@@ -75,13 +75,8 @@ export class CandidateDetailComponent implements OnInit {
         this.candidateProfiles$ = this.store.select(getCandidateProfileList);
         this.candidateProfileListTotalSize$ = this.store.select(getTotalCandidateCount);
 
-        const currentLanguage$ = Observable.merge(
-            Observable.of(this.translateService.currentLang),
-            this.translateService.onLangChange
-                .map((langChange) => langChange.lang));
-
-        this.jobExperiences$ = Observable.combineLatest(this.candidateProfile$, currentLanguage$)
-            .flatMap(([profile]) => {
+        this.jobExperiences$ = this.candidateProfile$
+            .flatMap((profile) => {
                 const wantedJobExperiences = profile.jobExperiences
                     .filter((experience) => experience.wanted);
                 return Observable.combineLatest(wantedJobExperiences.map(this.enrichWithLabels.bind(this)))

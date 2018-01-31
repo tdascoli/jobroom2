@@ -1,13 +1,11 @@
 <jr2-candidate-search-toolbar [loading]="loading$ | async"
                               [searchFilter]="searchFilter$ | async"
-                              [reset]="reset$ | async"
                               (searchCandidates)="searchCandidates($event)"></jr2-candidate-search-toolbar>
 
 <div class="container">
     <div class="base">
         <div class="base__subnavbar">
             <jr2-candidate-search-filter [searchFilter]="searchFilter$ | async"
-                                         [reset]="reset$ | async"
                                          (searchCandidates)="searchCandidates($event)"></jr2-candidate-search-filter>
         </div>
 

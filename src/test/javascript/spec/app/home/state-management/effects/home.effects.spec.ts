@@ -1,16 +1,15 @@
 import { HomeEffects } from '../../../../../../../main/webapp/app/home/state-management/effects/home.effects';
 import { Observable } from 'rxjs/Observable';
-import { Store, StoreModule } from '@ngrx/store';
-import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
+import { Store } from '@ngrx/store';
 import { MockRouter } from '../../../../helpers/mock-route.service';
 import { TestBed } from '@angular/core/testing';
 import { provideMockActions } from '@ngrx/effects/testing';
 import { CandidateService } from '../../../../../../../main/webapp/app/candidate-search/services/candidate.service';
 import { Router } from '@angular/router';
-import { candidateSearchToolReducer } from '../../../../../../../main/webapp/app/home/state-management/reducers/candidate-search-tool.reducers';
 import {
     CandidateSearchToolCountAction,
-    CandidateSearchToolCountedAction
+    CandidateSearchToolCountedAction,
+    UpdateOccupationTranslationAction
 } from '../../../../../../../main/webapp/app/home/state-management/actions/candidate-search-tool.actions';
 import { initialState as initialCandidateToolState } from '../../../../../../../main/webapp/app/home/state-management/state/candidate-search-tool.state';
 import { initialState as initialJobToolState } from '../../../../../../../main/webapp/app/home/state-management/state/job-search-tool.state';
@@ -18,34 +17,43 @@ import { cold, hot } from 'jasmine-marbles';
 import { JobService } from '../../../../../../../main/webapp/app/job-search/services/job.service';
 import { JobSearchToolCountedAction } from '../../../../../../../main/webapp/app/home/state-management/index';
 import { JobSearchToolCountAction } from '../../../../../../../main/webapp/app/home/state-management/actions/job-search-tool.actions';
+import { LanguageChangedAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
+import {
+    GenderAwareOccupationLabel,
+    OccupationPresentationService
+} from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 
 describe('HomeEffects', () => {
     // todo: implement
 
     let effects: HomeEffects;
     let actions$: Observable<any>;
-    let store: Store<CandidateSearchFilter>;
+    let mockState$: Observable<any>;
 
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['count']);
     const mockJobService = jasmine.createSpyObj('mockJobService', ['count']);
+    const mockOccupationPresentationService = jasmine.createSpyObj('mockOccupationPresentationService', ['findOccupationLabelsByCode']);
+    const mockStore = jasmine.createSpyObj('mockStore', ['select']);
     const mockRouter = new MockRouter();
 
     beforeEach(() => {
+        mockStore.select.and.returnValue(Observable.defer(() => mockState$));
         TestBed.configureTestingModule({
-            imports: [
-                StoreModule.forRoot({ candidateSearch: candidateSearchToolReducer })
-            ],
             providers: [
                 HomeEffects,
                 provideMockActions(() => actions$),
                 { provide: CandidateService, useValue: mockCandidateService },
                 { provide: JobService, useValue: mockJobService },
-                { provide: Router, useValue: mockRouter }
+                { provide: Router, useValue: mockRouter },
+                { provide: Store, useValue: mockStore },
+                {
+                    provide: OccupationPresentationService,
+                    useValue: mockOccupationPresentationService
+                }
             ]
         });
 
         effects = TestBed.get(HomeEffects);
-        store = TestBed.get(Store);
     });
 
     describe('candidateSearchToolCount$', () => {
@@ -102,5 +110,42 @@ describe('HomeEffects', () => {
 
             expect(effects.jobSearchToolCount$).toBeObservable(expected);
         })
+    });
+
+    describe('languageChange$', () => {
+
+        it('should not return anything if state.occupation is falsy', () => {
+            mockState$ = Observable.of({});
+            const action = new LanguageChangedAction('de');
+
+            actions$ = hot('-a---', { a: action });
+
+            const expected = cold('-');
+            expect(effects.languageChange$).toBeObservable(expected);
+        });
+
+        it('should return a new UpdateOccupationTranslationAction if state.occupation exists', () => {
+            const occupation = { key: 'avam:7632', label: 'java' };
+            mockState$ = Observable.of({ occupation });
+
+            const action = new LanguageChangedAction('de');
+            actions$ = hot('-a---', { a: action });
+
+            const label: GenderAwareOccupationLabel = {
+                'default': 'java_de',
+                female: 'java_f',
+                male: 'java_m'
+            };
+
+            const response = cold('-a|', { a: label });
+            mockOccupationPresentationService.findOccupationLabelsByCode.and.returnValue(response);
+
+            const updateOccupationTranslationAction = new UpdateOccupationTranslationAction(
+                { key: 'avam:7632', label: 'java_de' }
+            );
+
+            const expected = cold('--b---', { b: updateOccupationTranslationAction });
+            expect(effects.languageChange$).toBeObservable(expected);
+        });
     })
 });

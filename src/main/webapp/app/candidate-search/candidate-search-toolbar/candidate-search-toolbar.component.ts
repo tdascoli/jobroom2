@@ -2,18 +2,19 @@ import {
     Component,
     EventEmitter,
     Input,
+    OnChanges,
     OnDestroy,
     OnInit,
     Output,
+    SimpleChanges,
     ViewChild
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import {
-    CandidateSearchFilter,
-} from '../state-management/state/candidate-search.state';
+import { CandidateSearchFilter, } from '../state-management/state/candidate-search.state';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn, LocalityService,
+    FormatterFn,
+    LocalityService,
     OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn,
@@ -27,21 +28,10 @@ import { customLocalityAutocompleteMapper } from '../candidate-search-filter/can
     styleUrls: ['./candidate-search-toolbar.component.scss']
 })
 
-export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
+export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnChanges {
 
     @Input() loading: boolean;
     @Input() searchFilter: CandidateSearchFilter;
-
-    @Input()
-    set reset(value: number) {
-        if (value && this.toolbarForm) {
-            this.toolbarForm.reset({
-                occupation: this.searchFilter.occupation,
-                skills: [...this.searchFilter.skills || []],
-                workplace: this.searchFilter.workplace
-            });
-        }
-    };
 
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
@@ -59,6 +49,14 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy {
                 private fb: FormBuilder) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
+    }
+
+    ngOnChanges(changes: SimpleChanges): void {
+        const model = changes['searchFilter'];
+        if (model && !model.isFirstChange()) {
+            const { occupation } = model.currentValue;
+            this.toolbarForm.get('occupation').patchValue(occupation, { emitEvent: false });
+        }
     }
 
     ngOnInit() {

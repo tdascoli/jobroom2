@@ -1,15 +1,15 @@
 import { initialState } from '../state/core.state';
-import { RESET, ResetAction } from '../actions/core.actions';
+import { LANGUAGE_CHANGED, LanguageChangedAction } from '../actions/core.actions';
 import { ActionReducerMap } from '@ngrx/store';
 import { routerReducer, RouterReducerState } from '@ngrx/router-store';
 import { RouterStateUrl } from '../../custom-router-state-serializer/custom-router-state-serializer';
 
-export function coreReducer(state = initialState, action: ResetAction) {
+export function coreReducer(state = initialState, action: LanguageChangedAction) {
     let newState;
 
     switch (action.type) {
-        case RESET:
-            newState = Object.assign({}, state, { reset: action.payload });
+        case LANGUAGE_CHANGED:
+            newState = Object.assign({}, state, { language: action.payload });
             break;
 
         default:

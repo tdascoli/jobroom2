@@ -3,7 +3,8 @@ import { Actions, Effect } from '@ngrx/effects';
 import { Action, Store } from '@ngrx/store';
 import {
     CandidateSearchState,
-    getCandidateSearchState
+    getCandidateSearchState,
+    getSearchFilter
 } from '../state/candidate-search.state';
 import { Scheduler } from 'rxjs/Scheduler';
 import { Observable } from 'rxjs/Observable';
@@ -19,7 +20,8 @@ import {
     SEARCH_CANDIDATES,
     SearchCandidatesAction,
     SHOW_CANDIDATE_LIST_ERROR,
-    ShowCandidateListErrorAction
+    ShowCandidateListErrorAction,
+    UpdateOccupationTranslationAction
 } from '../actions/candidate-search.actions';
 import { CandidateService } from '../../services/candidate.service';
 import { CandidateSearchRequest } from '../../services/candidate-search-request';
@@ -37,6 +39,8 @@ import {
 import { Router } from '@angular/router';
 import { CandidateProfile } from '../../services/candidate';
 import { WINDOW } from '../../../shared/shared-libs.module';
+import { LANGUAGE_CHANGED } from '../../../shared/state-management/actions/core.actions';
+import { OccupationPresentationService } from '../../../shared/reference-service/occupation-presentation.service';
 
 export const CANDIDATE_SEARCH_DEBOUNCE = new InjectionToken<number>('CANDIDATE_SEARCH_DEBOUNCE');
 export const CANDIDATE_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('CANDIDATE_SEARCH_SCHEDULER');
@@ -111,9 +115,22 @@ export class CandidateSearchEffects {
             this.router.navigate(['/candidate-detail', action.payload.item.id])
         });
 
+    @Effect()
+    languageChange$: Observable<Action> = this.actions$
+        .ofType(LANGUAGE_CHANGED)
+        .withLatestFrom(this.store.select(getSearchFilter))
+        .filter(([action, state]) => !!state.occupation)
+        .switchMap(([action, state]) => {
+            const { occupation } = state;
+            return this.occupationPresentationService.findOccupationLabelsByCode(occupation.key)
+                .map((label) => Object.assign({}, occupation, { label: label.default }))
+                .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
+        });
+
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,
                 private candidateService: CandidateService,
+                private occupationPresentationService: OccupationPresentationService,
                 @Optional()
                 @Inject(CANDIDATE_SEARCH_DEBOUNCE)
                 private debounce,

@@ -6,7 +6,7 @@ import {
     CandidateSearchToolCountAction,
     CandidateSearchToolCountedAction,
     CandidateSearchToolSubmittedAction,
-    ResetCandidateSearchToolCountAction
+    ResetCandidateSearchToolCountAction, UpdateOccupationTranslationAction
 } from './actions/candidate-search-tool.actions';
 import {
     SelectAgencyTabAction,
@@ -33,6 +33,7 @@ export type Actions =
     | CandidateSearchToolSubmittedAction
     | CandidateSearchToolCountAction
     | CandidateSearchToolCountedAction
+    | UpdateOccupationTranslationAction
     | ResetCandidateSearchToolCountAction
     | SelectToolbarItemAction
     | SelectCompanyTabAction

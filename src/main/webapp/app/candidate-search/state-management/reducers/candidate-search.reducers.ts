@@ -7,11 +7,11 @@ import {
     NEXT_PAGE_LOADED,
     SAVE_SCROLL_Y,
     SEARCH_CANDIDATES,
-    SHOW_CANDIDATE_LIST_ERROR
+    SHOW_CANDIDATE_LIST_ERROR,
+    UPDATE_OCCUPATION_LABEL
 } from '../actions/candidate-search.actions';
-import * as core from '../../../shared/state-management/actions/core.actions';
 
-export function candidateSearchReducer(state = initialState, action: Actions | core.ResetAction): CandidateSearchState {
+export function candidateSearchReducer(state = initialState, action: Actions): CandidateSearchState {
     let newState;
     switch (action.type) {
         case CANDIDATE_LIST_LOADED:
@@ -63,8 +63,10 @@ export function candidateSearchReducer(state = initialState, action: Actions | c
             newState = Object.assign({}, state, { candidateListScrollY: action.payload });
             break;
 
-        case core.RESET:
-            newState = Object.assign({}, initialState);
+        case UPDATE_OCCUPATION_LABEL:
+            newState = Object.assign({}, state, {
+                searchFilter: Object.assign({}, state.searchFilter, { occupation: action.payload })
+            });
             break;
 
         default:

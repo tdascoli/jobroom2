@@ -6,7 +6,10 @@ import { LANGUAGES } from './language.constants';
 import { JhiLanguageService } from 'ng-jhipster';
 import { CoreState } from '../state-management/state/core.state';
 import { Store } from '@ngrx/store';
-import { ResetAction } from '../state-management/actions/core.actions';
+import {
+    InitLanguageAction,
+    LanguageChangedAction
+} from '../state-management/actions/core.actions';
 
 const LANGUAGE_KEY = 'NG_TRANSLATE_LANG_KEY';
 
@@ -25,6 +28,7 @@ export class Jobroom2LanguageService {
 
     init() {
         this.jhiLanguageService.init();
+        this.store.dispatch(new InitLanguageAction(this.currentLang));
     }
 
     set currentLang(langKey: string) {
@@ -38,7 +42,7 @@ export class Jobroom2LanguageService {
     changeLanguage(languageKey: string) {
         this.cookieService.put(LANGUAGE_KEY, languageKey);
         this.jhiLanguageService.changeLanguage(languageKey);
-        this.store.dispatch(new ResetAction(new Date().getTime()));
+        this.store.dispatch(new LanguageChangedAction(languageKey));
     }
 
     getCurrent(): Promise<string> {

@@ -1,12 +1,12 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 
 export interface CoreState {
-    reset: number
+    language: string
 }
 
 export const initialState: CoreState = {
-    reset: null
+    language: null
 };
 
 export const getCoreState = createFeatureSelector<CoreState>('coreReducer');
-export const getReset = createSelector(getCoreState, (state: CoreState) => state.reset);
+export const getLanguage = createSelector(getCoreState, (state: CoreState) => state.language);

@@ -35,7 +35,7 @@ export class CandidateSearchListItemComponent implements OnInit {
                     {
                         occupation: occupationLabels.default
                     }))
-                .share();
+                .shareReplay();
         } else {
             this.validExperienceData = false;
         }

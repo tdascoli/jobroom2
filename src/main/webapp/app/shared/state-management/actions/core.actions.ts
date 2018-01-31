@@ -1,10 +1,18 @@
 import { Action } from '@ngrx/store';
 
-export const RESET = 'CORE:RESET';
+export const LANGUAGE_CHANGED = 'CORE:LANGUAGE_CHANGED';
+export const INIT_LANGUAGE = 'CORE:INIT_LANGUAGE';
 
-export class ResetAction implements Action {
-    readonly type = RESET;
+export class InitLanguageAction implements Action {
+    readonly type = INIT_LANGUAGE;
 
-    constructor(public payload: number) {
+    constructor(public payload: string) {
+    }
+}
+
+export class LanguageChangedAction implements Action {
+    readonly type = LANGUAGE_CHANGED;
+
+    constructor(public payload: string) {
     }
 }

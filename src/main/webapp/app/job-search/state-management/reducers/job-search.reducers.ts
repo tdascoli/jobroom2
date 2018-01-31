@@ -13,7 +13,7 @@ import {
 } from '../actions/job-search.actions';
 import * as core from '../../../shared/state-management/actions/core.actions';
 
-export function jobSearchReducer(state = initialState, action: Actions | core.ResetAction): JobSearchState {
+export function jobSearchReducer(state = initialState, action: Actions | core.LanguageChangedAction): JobSearchState {
     let newState;
     switch (action.type) {
         case TOOLBAR_CHANGED:
@@ -67,7 +67,7 @@ export function jobSearchReducer(state = initialState, action: Actions | core.Re
             newState = Object.assign({}, state, { jobListScrollY: action.payload });
             break;
 
-        case core.RESET:
+        case core.LANGUAGE_CHANGED:
             newState = Object.assign({}, initialState);
             break;
 

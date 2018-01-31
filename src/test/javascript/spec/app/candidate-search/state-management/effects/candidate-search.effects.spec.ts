@@ -4,7 +4,10 @@ import {
     CandidateSearchEffects
 } from '../../../../../../../main/webapp/app/candidate-search/state-management/effects/candidate-search.effects';
 import { Observable } from 'rxjs/Observable';
-import { CandidateSearchState } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
+import {
+    CandidateSearchState,
+    initialState
+} from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import { Store, StoreModule } from '@ngrx/store';
 import { MockRouter } from '../../../../helpers/mock-route.service';
 import { TestBed } from '@angular/core/testing';
@@ -28,13 +31,20 @@ import {
 } from '../../../../../../../main/webapp/app/shared/components/details-page-pagination/state-management/actions/details-page-pagination.actions';
 import { WINDOW } from '../../../../../../../main/webapp/app/shared/shared-libs.module';
 import { ReplaySubject } from 'rxjs';
+import {
+    GenderAwareOccupationLabel,
+    OccupationPresentationService
+} from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { LanguageChangedAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('CandidateSearchEffects', () => {
     let effects: CandidateSearchEffects;
     let actions$: Observable<any>;
     let store: Store<CandidateSearchState>;
+    let mockState$: Observable<CandidateSearchState>;
 
     const mockCandidateService = jasmine.createSpyObj('mockCandidateService', ['search']);
+    const mockOccupationPresentationService = jasmine.createSpyObj('mockOccupationPresentationService', ['findOccupationLabelsByCode']);
     const mockRouter = new MockRouter();
 
     const mockWindow = jasmine.createSpyObj('mockWindow', ['scroll']);
@@ -48,6 +58,10 @@ describe('CandidateSearchEffects', () => {
                 CandidateSearchEffects,
                 provideMockActions(() => actions$),
                 { provide: CandidateService, useValue: mockCandidateService },
+                {
+                    provide: OccupationPresentationService,
+                    useValue: mockOccupationPresentationService
+                },
                 { provide: Router, useValue: mockRouter },
                 { provide: CANDIDATE_SEARCH_SCHEDULER, useFactory: getTestScheduler },
                 { provide: CANDIDATE_SEARCH_DEBOUNCE, useValue: 30 },
@@ -63,6 +77,7 @@ describe('CandidateSearchEffects', () => {
         const action = new actions.InitCandidateSearchAction();
 
         it('should return new CandidateProfileListLoadedAction if store is in initial state', () => {
+            mockState$ = hot('-a|', { a: initialState })
             const candidateProfileList = [
                 createCandidateProfile('c1'),
                 createCandidateProfile('c2'),
@@ -240,4 +255,39 @@ describe('CandidateSearchEffects', () => {
             expect(effects.nextItemsPageLoaded$).toBeObservable(expected);
         });
     });
+
+    describe('languageChange$', () => {
+
+        it('should not return anything if state.occupation is falsy', () => {
+            const action = new LanguageChangedAction('de');
+
+            actions$ = hot('-a---', { a: action });
+
+            const expected = cold('-');
+            expect(effects.languageChange$).toBeObservable(expected);
+        });
+
+        it('should return a new UpdateOccupationTranslationAction if state.occupation exists', () => {
+            const occupation = { key: 'avam:7632', label: 'java' };
+            store.dispatch(new actions.SearchCandidatesAction({ occupation }));
+            const action = new LanguageChangedAction('de');
+            actions$ = hot('-a---', { a: action });
+
+            const label: GenderAwareOccupationLabel = {
+                'default': 'java_de',
+                female: 'java_f',
+                male: 'java_m'
+            };
+
+            const response = cold('-a|', { a: label });
+            mockOccupationPresentationService.findOccupationLabelsByCode.and.returnValue(response);
+
+            const updateOccupationTranslationAction = new actions.UpdateOccupationTranslationAction(
+                { key: 'avam:7632', label: 'java_de' }
+            );
+
+            const expected = cold('--b---', { b: updateOccupationTranslationAction });
+            expect(effects.languageChange$).toBeObservable(expected);
+        });
+    })
 });

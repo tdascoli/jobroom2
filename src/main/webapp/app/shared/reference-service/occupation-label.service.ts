@@ -77,7 +77,7 @@ export class OccupationLabelService {
             url += '/' + classifier;
         }
 
-        return this.http.get(OCCUPATION_LABEL_RESOURCE_URL)
+        return this.http.get(url)
             .map((res: Response) => <OccupationLabelData>res.json())
     }
 

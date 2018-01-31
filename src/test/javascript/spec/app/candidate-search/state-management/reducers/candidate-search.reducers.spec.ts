@@ -8,7 +8,6 @@ import { CandidateProfile } from '../../../../../../../main/webapp/app/candidate
 import { createCandidateProfile } from '../utils';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/index';
 import { TypeaheadItemDisplayModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-item-display-model';
-import { ResetAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('candidateSearchReducer', () => {
     it('should not update CandidateSearchState for INIT_CANDIDATE_SEARCH action', () => {
@@ -180,23 +179,28 @@ describe('candidateSearchReducer', () => {
         verifyUnchanged(newState, state, ['candidateListScrollY']);
     });
 
-    it('should update CandidateSearchState for core.ResetAction action', () => {
+    it('should update CandidateSearchState for UPDATE_OCCUPATION_LABEL action', () => {
         // GIVEN
         const state = Object.assign({}, initialState, {
-            candidateProfileList: [
-                createCandidateProfile('c0'),
-                createCandidateProfile('c1'),
-                createCandidateProfile('c2')
-            ],
-            page: 1
+            searchFilter: {
+                occupation: { key: 'avam:7632', label: 'java' },
+            }
         });
-        const action = new ResetAction(12);
+        const action = new actions.UpdateOccupationTranslationAction({
+            key: 'avam:7632',
+            label: 'java_de'
+        });
 
         // WHEN
         const newState = candidateSearchReducer(state, action);
 
         // THEN
-        expect(newState).toEqual(initialState);
+        expect(newState.searchFilter.occupation).toEqual({
+            key: 'avam:7632',
+            label: 'java_de'
+        });
+        verifyUnchanged(newState, initialState, ['searchFilter']);
+        verifyUnchanged(newState.searchFilter, initialState.searchFilter, ['occupation']);
     });
 
 });

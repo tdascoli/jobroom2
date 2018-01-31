@@ -7,11 +7,11 @@ import {
     CANDIDATE_SEARCH_TOOL_COUNT,
     CANDIDATE_SEARCH_TOOL_COUNTED,
     CANDIDATE_SEARCH_TOOL_SUBMITTED,
-    RESET_CANDIDATE_SEARCH_TOOL_COUNT
+    RESET_CANDIDATE_SEARCH_TOOL_COUNT,
+    UPDATE_OCCUPATION_LABEL
 } from '../actions/candidate-search-tool.actions';
-import * as core from '../../../shared/state-management/actions/core.actions';
 
-export function candidateSearchToolReducer(state = initialState, action: Actions | core.ResetAction): CandidateSearchToolState {
+export function candidateSearchToolReducer(state = initialState, action: Actions): CandidateSearchToolState {
     let newState;
     switch (action.type) {
         case CANDIDATE_SEARCH_TOOL_SUBMITTED:
@@ -26,8 +26,8 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
         case RESET_CANDIDATE_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, initialState);
             break;
-        case core.RESET:
-            newState = Object.assign({}, initialState);
+        case UPDATE_OCCUPATION_LABEL:
+            newState = Object.assign({}, state, { occupation: action.payload });
             break;
 
         default:

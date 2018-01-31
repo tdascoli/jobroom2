@@ -18,7 +18,6 @@ import { CandidateProfile } from './services/candidate';
 import { OccupationOption } from '../shared/reference-service';
 import { CantonService } from './services/canton.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
-import { getReset } from '../shared/state-management/state/core.state';
 
 @Component({
     selector: 'jr2-candidate-search',
@@ -35,7 +34,6 @@ export class CandidateSearchComponent {
     occupationCode$: Observable<string>;
     occupationName$: Observable<string>;
     residenceFilterString$: Observable<string>;
-    reset$: Observable<number>;
 
     constructor(private store: Store<CandidateSearchState>,
                 private cantonService: CantonService) {
@@ -56,7 +54,6 @@ export class CandidateSearchComponent {
         this.residenceFilterString$ = this.store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));
-        this.reset$ = store.select(getReset);
     }
 
     searchCandidates(filter: CandidateSearchFilter): void {

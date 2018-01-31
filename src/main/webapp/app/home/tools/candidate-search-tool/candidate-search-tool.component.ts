@@ -1,46 +1,42 @@
-import { Component, Input, OnDestroy, OnInit, ViewChild } from '@angular/core';
+import {
+    Component,
+    Input,
+    OnChanges,
+    OnDestroy,
+    OnInit,
+    SimpleChanges,
+    ViewChild
+} from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Store } from '@ngrx/store';
-import { CandidateSearchToolState } from '../../state-management';
 import {
     CandidateSearchToolCountAction,
+    CandidateSearchToolState,
     CandidateSearchToolSubmittedAction,
     ResetCandidateSearchToolCountAction
 } from '../../state-management';
-import { Subscription } from 'rxjs/Subscription';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn, LocalityService,
+    FormatterFn,
+    LocalityService,
     OccupationOption,
     OccupationPresentationService,
     SuggestionLoaderFn
 } from '../../../shared/reference-service';
 import { customLocalityAutocompleteMapper } from '../../../candidate-search/candidate-search-filter/candidate-search-filter.component';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
     templateUrl: './candidate-search-tool.component.html',
     styleUrls: ['./candidate-search-tool.component.scss']
 })
-export class CandidateSearchToolComponent implements OnInit, OnDestroy {
+export class CandidateSearchToolComponent implements OnInit, OnDestroy, OnChanges {
 
     @Input() candidateSearchToolModel: CandidateSearchToolState;
-
-    @Input()
-    set reset(value: number) {
-        if (value && this.candidateSearchForm) {
-            this.candidateSearchForm.reset({
-                occupation: this.candidateSearchToolModel.occupation,
-                workplace: this.candidateSearchToolModel.workplace,
-                skills: [...this.candidateSearchToolModel.skills || []]
-            });
-
-        }
-    };
-
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
-    private subscription: Subscription;
+    private unsubscribe$: Subject<void> = new Subject();
 
     candidateSearchForm: FormGroup;
 
@@ -55,6 +51,14 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
+    ngOnChanges(changes: SimpleChanges): void {
+        const model = changes['candidateSearchToolModel'];
+        if (model && !model.isFirstChange()) {
+            const { occupation } = model.currentValue;
+            this.candidateSearchForm.get('occupation').patchValue(occupation, { emitEvent: false });
+        }
+    }
+
     ngOnInit(): void {
         this.candidateSearchForm = this.fb.group({
             occupation: [this.candidateSearchToolModel.occupation],
@@ -62,16 +66,16 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy {
             skills: [[...this.candidateSearchToolModel.skills || []]]
         });
 
-        this.subscription = this.candidateSearchForm.valueChanges
+        this.candidateSearchForm.valueChanges
             .distinctUntilChanged()
+            .takeUntil(this.unsubscribe$)
             .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) => this.filterChanged(formValue));
     }
 
     ngOnDestroy(): void {
-        if (this.subscription) {
-            this.subscription.unsubscribe();
-        }
+        this.unsubscribe$.next();
+        this.unsubscribe$.complete();
     }
 
     clearInvalidValue(event: any) {

@@ -17,7 +17,7 @@ import {
 } from './state-management/state/job-search.state';
 import { Job } from './services';
 import { InitJobSearchAction } from './state-management/actions/job-search.actions';
-import { getReset } from '../shared/state-management/state/core.state';
+import { getLanguage } from '../shared/state-management/state/core.state';
 
 @Component({
     selector: 'jr2-job-search',
@@ -45,7 +45,7 @@ export class JobSearchComponent {
         this.totalCount$ = store.select(getTotalJobCount);
         this.loading$ = store.select(getLoading);
         this.initialized$ = store.select(getInitialState).map((initialState: boolean) => !initialState);
-        this.reset$ = store.select(getReset);
+        this.reset$ = store.select(getLanguage).scan((acc: number) => acc + 1, 0);
     }
 }
 

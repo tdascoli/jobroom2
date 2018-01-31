@@ -10,7 +10,7 @@ import {
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../../../../../main/webapp/app/shared/constants/job-search.constants';
-import { ResetAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
+import { LanguageChangedAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('jobSearchReducer', () => {
     it('should not change state for undefined action', () => {
@@ -279,7 +279,7 @@ describe('jobSearchReducer', () => {
         verifyUnchanged(newState, state, ['jobListScrollY']);
     });
 
-    it('should update JobSearchState for core.ResetAction action', () => {
+    it('should update JobSearchState for core.LanguageChangedAction action', () => {
         // GIVEN
         const state: JobSearchState = {
                 jobListScrollY: 0,
@@ -303,7 +303,7 @@ describe('jobSearchReducer', () => {
                 initialState: false
             }
         ;
-        const action = new ResetAction(12);
+        const action = new LanguageChangedAction('de');
 
         // WHEN
         const newState = jobSearchReducer(state, action);

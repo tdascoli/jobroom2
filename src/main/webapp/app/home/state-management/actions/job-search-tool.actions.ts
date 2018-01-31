@@ -30,6 +30,6 @@ export class JobSearchToolCountedAction implements Action {
 export class ResetJobSearchToolCountAction implements Action {
     readonly type = RESET_JOB_SEARCH_TOOL_COUNT;
 
-    constructor() {
+    constructor(public payload = {}) {
     }
 }

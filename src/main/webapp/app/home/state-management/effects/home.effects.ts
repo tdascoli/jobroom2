@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Actions, Effect } from '@ngrx/effects';
-import { Action } from '@ngrx/store';
+import { Action, Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import * as jobSearch from '../../../job-search/state-management/actions/job-search.actions';
 import * as candidateSearch from '../../../candidate-search/state-management/actions/candidate-search.actions';
@@ -17,12 +17,16 @@ import {
     CANDIDATE_SEARCH_TOOL_SUBMITTED,
     CandidateSearchToolCountAction,
     CandidateSearchToolCountedAction,
-    CandidateSearchToolSubmittedAction
+    CandidateSearchToolSubmittedAction,
+    UpdateOccupationTranslationAction
 } from '../actions/candidate-search-tool.actions';
 import { CandidateService } from '../../../candidate-search/services/candidate.service';
 import { createCandidateSearchRequestFromToolState } from '../../../candidate-search/state-management/util/search-request-mapper';
 import { JobService } from '../../../job-search/services/job.service';
 import { createJobSearchRequestFromToolState } from '../../../job-search/state-management/util/search-request-mapper';
+import { LANGUAGE_CHANGED } from '../../../shared/state-management/actions/core.actions';
+import { OccupationPresentationService } from '../../../shared/reference-service/occupation-presentation.service';
+import { getCandidateSearchToolState, HomeState } from '../state/home.state';
 
 @Injectable()
 export class HomeEffects {
@@ -61,8 +65,22 @@ export class HomeEffects {
             }
         );
 
+    @Effect()
+    languageChange$: Observable<Action> = this.actions$
+        .ofType(LANGUAGE_CHANGED)
+        .withLatestFrom(this.store.select(getCandidateSearchToolState))
+        .filter(([action, state]) => !!state.occupation)
+        .switchMap(([action, state]) => {
+            const { occupation } = state;
+            return this.occupationPresentationService.findOccupationLabelsByCode(occupation.key)
+                .map((label) => Object.assign({}, occupation, { label: label.default }))
+                .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
+        });
+
     constructor(private actions$: Actions,
                 private router: Router,
+                private store: Store<HomeState>,
+                private occupationPresentationService: OccupationPresentationService,
                 private candidateService: CandidateService,
                 private jobService: JobService) {
     }

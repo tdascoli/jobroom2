@@ -7,7 +7,7 @@ import {
 } from '../actions/job-search-tool.actions';
 import * as core from '../../../shared/state-management/actions/core.actions';
 
-export function jobSearchToolReducer(state = initialState, action: Actions | core.ResetAction): JobSearchToolState {
+export function jobSearchToolReducer(state = initialState, action: Actions | core.LanguageChangedAction): JobSearchToolState {
     let newState;
     switch (action.type) {
         case JOB_SEARCH_TOOL_SUBMITTED:
@@ -22,7 +22,7 @@ export function jobSearchToolReducer(state = initialState, action: Actions | cor
         case RESET_JOB_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, initialState);
             break;
-        case core.RESET:
+        case core.LANGUAGE_CHANGED:
             newState = Object.assign({}, initialState);
             break;
 

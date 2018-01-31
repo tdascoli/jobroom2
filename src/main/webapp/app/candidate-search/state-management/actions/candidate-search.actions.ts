@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { CandidateSearchFilter } from '../state/candidate-search.state';
 import { CandidateProfile } from '../../services/candidate';
+import { OccupationOption } from '../../../shared/reference-service/occupation-presentation.service';
 
 export const INIT_CANDIDATE_SEARCH = 'CANDIDATES:INIT_CANDIDATE_SEARCH';
 export const SEARCH_CANDIDATES = 'CANDIDATES:SEARCH_CANDIDATES';
@@ -12,11 +13,19 @@ export const SHOW_CANDIDATE_LIST_ERROR = 'CANDIDATES:SHOW_CANDIDATE_LIST_ERROR';
 export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
 export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
+export const UPDATE_OCCUPATION_LABEL = 'CANDIDATES:UPDATE_OCCUPATION_LABEL';
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
 
-    constructor() {
+    constructor(public payload = {}) {
+    }
+}
+
+export class UpdateOccupationTranslationAction implements Action {
+    readonly type = UPDATE_OCCUPATION_LABEL;
+
+    constructor(public payload: OccupationOption) {
     }
 }
 
@@ -44,7 +53,7 @@ export class CandidateProfileListLoadedAction implements Action {
 export class LoadNextPageAction implements Action {
     readonly type = LOAD_NEXT_PAGE;
 
-    constructor() {
+    constructor(public payload = {}) {
     }
 }
 
@@ -59,14 +68,14 @@ export class NextPageLoadedAction implements Action {
 export class ShowCandidateListErrorAction implements Action {
     readonly type = SHOW_CANDIDATE_LIST_ERROR;
 
-    constructor(public error: any) {
+    constructor(public payload: any) {
     }
 }
 
 export class HideCandidateListErrorAction implements Action {
     readonly type = HIDE_CANDIDATE_LIST_ERROR;
 
-    constructor() {
+    constructor(public payload = {}) {
     }
 }
 
@@ -91,6 +100,7 @@ export type Actions =
     | LoadNextPageAction
     | NextPageLoadedAction
     | CandidateProfileListLoadedAction
+    | UpdateOccupationTranslationAction
     | ShowCandidateListErrorAction
     | HideCandidateListErrorAction
     | CountCandidatesAction

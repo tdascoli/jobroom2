@@ -20,7 +20,7 @@ describe('OccupationPresentationService', () => {
         mockOccupationLabelService = jasmine.createSpyObj('mockOccupationLabelService',
             ['getOccupationLabelsByKey', 'suggestOccupation']
         );
-        mockTranslateService = { currentLang: 'de' } as TranslateService;
+        mockTranslateService = { currentLang: 'de', onLangChange: Observable.empty() } as TranslateService;
         sut = new OccupationPresentationService(mockOccupationLabelService, mockTranslateService);
     });
 

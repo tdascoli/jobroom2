@@ -3,14 +3,14 @@ import {
     CandidateSearchToolCountAction,
     CandidateSearchToolCountedAction,
     CandidateSearchToolSubmittedAction,
-    ResetCandidateSearchToolCountAction
+    ResetCandidateSearchToolCountAction,
+    UpdateOccupationTranslationAction
 } from '../../../../../../../main/webapp/app/home/state-management/actions/candidate-search-tool.actions';
 import { candidateSearchToolReducer } from '../../../../../../../main/webapp/app/home/state-management/reducers/candidate-search-tool.reducers';
 import {
     Canton,
     Graduation
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
-import { ResetAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('candidateSearchToolReducer', () => {
     it('should reset CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
@@ -72,20 +72,25 @@ describe('candidateSearchToolReducer', () => {
         expect(newState.totalCount).toEqual(initialState.totalCount);
     });
 
-    it('should update CandidateSearchToolState for core.RESET action', () => {
+    it('should update CandidateSearchToolState.occupation for UPDATE_OCCUPATION_LABEL action', () => {
         // GIVEN
-        const action = new ResetAction(12);
-        const state = Object.assign({}, initialState, {
-            occupation: { key: 'avam:11', label: 'test' },
-            residence: new Array(Canton.BS),
-            graduation: Graduation.ACCEPTED,
+        const searchModel = {
+            occupation: { key: 'avam:7632', label: 'java' },
+            residence: null,
+            graduation: Graduation.CH,
             totalCount: 0
+        };
+        const action = new UpdateOccupationTranslationAction({
+            key: 'avam:7632',
+            label: 'java_de'
         });
+
+        const state = Object.assign({}, initialState, searchModel);
 
         // WHEN
         const newState = candidateSearchToolReducer(state, action);
 
         // THEN
-        expect(newState).toEqual(initialState);
+        expect(newState.occupation).toEqual({ key: 'avam:7632', label: 'java_de' });
     });
 });
