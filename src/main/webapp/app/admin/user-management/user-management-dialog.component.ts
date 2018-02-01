@@ -19,7 +19,7 @@ import {
     templateUrl: './user-management-dialog.component.html'
 })
 export class UserMgmtDialogComponent implements OnInit {
-    private static readonly ORGANIZATION_SUGGESTIONS_SIZE = 10;
+    private static readonly ORGANIZATION_SUGGESTIONS_SIZE = 25;
 
     user: User;
     languages: any[];
