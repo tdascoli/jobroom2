@@ -20,7 +20,6 @@ import {
 import { ActivatedRoute, Router } from '@angular/router';
 import { JobPublication } from '../shared/job-publication/job-publication.model';
 import { UserData } from './tools/job-publication-tool/service/user-data-resolver.service';
-import { getLanguage } from '../shared/state-management/state/core.state';
 import { Subscription } from 'rxjs/Subscription';
 
 const BACKGROUND_CLASS_NAME_ARRAY = [];
@@ -47,7 +46,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     activeAgencyTabId$: Observable<string>;
     jobPublication$: Observable<JobPublication>;
     userData$: Observable<UserData>;
-    reset$: Observable<number>;
     isSubnavCollapsed: boolean;
 
     private subscription: Subscription;
@@ -61,8 +59,6 @@ export class HomeComponent implements OnInit, OnDestroy {
         this.activeToolbarItem$ = store.select(getActiveToolbarItem);
         this.activeCompanyTabId$ = store.select(getActiveCompanyTabId);
         this.activeAgencyTabId$ = store.select(getActiveAgencyTabId);
-        this.reset$ = store.select(getLanguage)
-            .scan((acc: number) => acc + 1, 0);
 
         this.isSubnavCollapsed = true;
 

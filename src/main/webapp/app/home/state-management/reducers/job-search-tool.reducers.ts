@@ -22,9 +22,6 @@ export function jobSearchToolReducer(state = initialState, action: Actions | cor
         case RESET_JOB_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, initialState);
             break;
-        case core.LANGUAGE_CHANGED:
-            newState = Object.assign({}, initialState);
-            break;
 
         default:
             newState = state;

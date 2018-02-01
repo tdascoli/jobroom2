@@ -71,21 +71,4 @@ describe('jobSearchToolReducer', () => {
         // THEN
         expect(newState.totalCount).toEqual(totalCount);
     });
-
-    it('should update JobSearchToolState for core.ResetAction action', () => {
-        // GIVEN
-        const action = new LanguageChangedAction('de');
-        const state = {
-            baseQuery: [],
-            localityQuery: [],
-            totalCount: 12,
-            onlineSince: ONLINE_SINCE_DEFAULT_VALUE - 2
-        };
-
-        // WHEN
-        const newState = jobSearchToolReducer(state, action);
-
-        // THEN
-        expect(newState).toEqual(initialState);
-    });
 });

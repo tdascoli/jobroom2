@@ -22,16 +22,6 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     @Input() loading: boolean;
     @Input() searchQuery: JobSearchQuery;
 
-    @Input()
-    set reset(value: number) {
-        if (value && this.toolbarForm) {
-            this.toolbarForm.reset({
-                baseQuery: [...this.searchQuery.baseQuery],
-                localityQuery: [...this.searchQuery.localityQuery]
-            });
-        }
-    };
-
     toolbarForm: FormGroup;
 
     private subscription: Subscription;

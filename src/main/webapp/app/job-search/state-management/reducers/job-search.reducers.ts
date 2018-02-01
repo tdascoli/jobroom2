@@ -67,10 +67,6 @@ export function jobSearchReducer(state = initialState, action: Actions | core.La
             newState = Object.assign({}, state, { jobListScrollY: action.payload });
             break;
 
-        case core.LANGUAGE_CHANGED:
-            newState = Object.assign({}, initialState);
-            break;
-
         default:
             newState = state;
     }

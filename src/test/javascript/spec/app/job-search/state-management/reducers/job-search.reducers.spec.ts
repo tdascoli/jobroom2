@@ -278,39 +278,6 @@ describe('jobSearchReducer', () => {
         expect(newState.jobListScrollY).toEqual(600);
         verifyUnchanged(newState, state, ['jobListScrollY']);
     });
-
-    it('should update JobSearchState for core.LanguageChangedAction action', () => {
-        // GIVEN
-        const state: JobSearchState = {
-                jobListScrollY: 0,
-                loading: false,
-                searchError: false,
-                searchQuery: {
-                    baseQuery: [
-                        new TypeaheadMultiselectModel('some-free-text', 'x1', 'x1')
-                    ],
-                    localityQuery: []
-                },
-                searchFilter: {
-                    contractType: ContractType.PERMANENT,
-                    workingTime: [0, 80],
-                    sort: Sort.DATE_ASC,
-                    onlineSince: ONLINE_SINCE_DEFAULT_VALUE - 1
-                },
-                totalJobCount: 0,
-                page: 0,
-                jobList: [],
-                initialState: false
-            }
-        ;
-        const action = new LanguageChangedAction('de');
-
-        // WHEN
-        const newState = jobSearchReducer(state, action);
-
-        // THEN
-        expect(newState).toEqual(initialState);
-    });
 });
 
 function verifyUnchanged(newState: JobSearchState, oldState: JobSearchState, ignoreFields: Array<string>) {
