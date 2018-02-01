@@ -6,6 +6,7 @@ import {
     TypeaheadMultiselectComponent,
     TypeaheadMultiselectModel
 } from '../../../../../../../../main/webapp/app/shared/input-components';
+import { MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH } from '../../../../../../../../main/webapp/app/app.constants';
 
 describe('TypeaheadMultiselectComponent', () => {
 
@@ -74,9 +75,9 @@ describe('TypeaheadMultiselectComponent', () => {
             expect(component.selectedItems).toContain(new TypeaheadMultiselectModel('free-text', 'free text value', 'free text value'));
         });
 
-        it('should not allow free text value with length < 3', () => {
+        it('should not allow free text value with length < MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH', () => {
             // WHEN
-            component.inputValue = 'te';
+            component.inputValue = new Array(MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH - 1).fill('a').join('');
             const freeText = component.selectFreeText();
 
             // THAN

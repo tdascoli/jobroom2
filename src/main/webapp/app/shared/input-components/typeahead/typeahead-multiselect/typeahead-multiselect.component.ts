@@ -1,7 +1,9 @@
 import {
     ChangeDetectorRef,
-    Component, ElementRef,
-    forwardRef, HostListener,
+    Component,
+    ElementRef,
+    forwardRef,
+    HostListener,
     Input,
     ViewChild
 } from '@angular/core';
@@ -9,7 +11,10 @@ import { Observable } from 'rxjs/Rx';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { TypeaheadMultiselectModel } from '../typeahead-multiselect-model';
 import { TypeaheadItemDisplayModel } from '../typeahead-item-display-model';
-import { TYPEAHEAD_QUERY_MIN_LENGTH } from '../../../../app.constants';
+import {
+    MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH,
+    TYPEAHEAD_QUERY_MIN_LENGTH
+} from '../../../../app.constants';
 
 enum Key {
     Tab = 9,
@@ -106,7 +111,9 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
 
     selectFreeText() {
         const freeText = new TypeaheadMultiselectModel('free-text', this.inputValue, this.inputValue);
-        if (this.editable && !this.exists(freeText) && freeText.code && freeText.code.length > 2) {
+        if (this.editable && !this.exists(freeText) && freeText.code
+            && freeText.code.length >= MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH) {
+
             const newItems = [...this.selectedItems, freeText];
 
             this._onChange(newItems);

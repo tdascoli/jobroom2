@@ -10,6 +10,7 @@ import {
 import { ControlValueAccessor } from '@angular/forms/src/forms';
 import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { WINDOW } from '../../shared-libs.module';
+import { MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH } from '../../../app.constants';
 
 enum Key {
     Tab = 9,
@@ -17,7 +18,6 @@ enum Key {
 }
 
 export const MAX_ITEM_NUM = 5;
-
 // todo: Check if there is a better way to get the default font
 const DEFAULT_FONT = '14px / 21px "Open Sans", "Helvetica Neue", Arial, sans-serif';
 
@@ -135,7 +135,7 @@ export class MultiselectComponent implements ControlValueAccessor, AfterViewInit
 
     private selectInputValue(): string {
         const value = this.inputEl.nativeElement.value;
-        if (value.length > 2
+        if (value.length >= MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH
             && this.selectedItems.indexOf(value) < 0) {
 
             const newItems = [...this.selectedItems, value];
