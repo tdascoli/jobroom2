@@ -328,12 +328,16 @@
                         </div>
                     </div>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" [href]="'home.contactform.url' | translate" target="_blank">
+                        <span>{{'home.contactform.text' | translate}}</span>
+                    </a>
+                </li>
                 <li class="nav-item" *ngIf="!isAuthenticated()">
                     <a class="nav-link nav-link--login" (click)="login(false)"
                        jhiTranslate="global.menu.account.login">
                         Login
                     </a>
-
                 </li>
                 <li ngbDropdown class="nav-item d-none d-sm-block dropdown" *ngIf="isAuthenticated()">
                     <a ngbDropdownToggle class="nav-link nav-link--account dropdown-toggle"

@@ -9,6 +9,10 @@
             "recruitmentAgencies": "Collocatori",
             "title": "Job-Room offre servizi per"
         },
+        "contactform": {
+            "text": "Contatto",
+            "url": "https://www.arbeit.swiss/secoalv/it/home/service/kontakt.html"
+        },
         "tools": {
             "candidate-search": {
                 "search-badge": {

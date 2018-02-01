@@ -570,6 +570,8 @@ health,health.status.UP,Oben,UP,DISPONIBLE,DISPONIBILE
 health,health.table.service,Dienst Name,Service name,Nom du service,Nome del servizio
 health,health.table.status,Status,Status,Etat,Stato
 health,health.title,Gesundheit Ihrer Anwendung,Health Checks,Diagnostics,Verifiche
+home,home.contactform.text,Kontakt,Contact,Contact,Contatto
+home,home.contactform.url,https://www.arbeit.swiss/secoalv/de/home/service/kontakt.html,https://www.arbeit.swiss/secoalv/en/home/service/kontakt.html,https://www.arbeit.swiss/secoalv/fr/home/service/kontakt.html,https://www.arbeit.swiss/secoalv/it/home/service/kontakt.html
 home,home.title,Job-Room,Job-Room,Job-Room,Job-Room
 home,home.title.portal,arbeit,work,travail,lavoro
 home,home.title.portal-url,https://www.arbeit.swiss,https://www.arbeit.swiss/secoalv/en/home.html,https://www.arbeit.swiss/secoalv/fr/home.html,https://www.arbeit.swiss/secoalv/it/home.html

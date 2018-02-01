@@ -9,6 +9,10 @@
             "recruitmentAgencies": "Recruitment agencies",
             "title": "Job-Room offers services for"
         },
+        "contactform": {
+            "text": "Contact",
+            "url": "https://www.arbeit.swiss/secoalv/en/home/service/kontakt.html"
+        },
         "tools": {
             "candidate-search": {
                 "search-badge": {
