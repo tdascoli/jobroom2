@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Send search as link",
-            "title": "Search candidates"
+          "title": "Filter search result"
         },
         "graduation": {
             "ACCEPTED": "Swiss degree or accepted in Switzerland",
@@ -71,15 +71,12 @@
             "SUNDAY_AND_HOLIDAYS": "Sunday and holiday work",
             "label": "Work form"
         },
-        "workLocation": {
-            "label": "Work location"
-        },
         "workload": {
             "label": "Workload"
         },
         "workplace": {
             "label": "Work location",
-            "placeholder": "Location, municipality, canton"
+          "placeholder": "Work location"
         }
     }
 }

@@ -1,5 +1,9 @@
 {
     "home": {
+      "contactform": {
+        "text": "Contatto",
+        "url": "https://www.arbeit.swiss/secoalv/it/home/service/kontakt.html"
+      },
         "title": "Job-Room",
         "title.portal": "lavoro",
         "title.portal-url": "https://www.arbeit.swiss/secoalv/it/home.html",
@@ -8,10 +12,6 @@
             "jobSeekers": "Persone in cerca d'impiego",
             "recruitmentAgencies": "Collocatori",
             "title": "Job-Room offre servizi per"
-        },
-        "contactform": {
-            "text": "Contatto",
-            "url": "https://www.arbeit.swiss/secoalv/it/home/service/kontakt.html"
         },
         "tools": {
             "candidate-search": {
@@ -85,7 +85,7 @@
                     "additional-text.placeholder": "p. es. servizio esterno in tutta la Svizzera",
                     "city": "Luogo",
                     "country": "Paese",
-                    "title": "Sede di lavoro",
+                  "title": "Luogo di lavoro",
                     "zip": "NPA  ",
                     "zipcode": "NPA / luogo"
                 },

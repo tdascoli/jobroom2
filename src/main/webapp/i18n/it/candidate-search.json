@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Invia ricerca come link",
-            "title": "Cerca candidati"
+          "title": "Filtra risultati della ricerca"
         },
         "graduation": {
             "ACCEPTED": "Diploma svizzero o riconosciuto in Svizzera",
@@ -71,15 +71,12 @@
             "SUNDAY_AND_HOLIDAYS": "Lavoro domenicale e festivo",
             "label": "Tipologia lavorativa"
         },
-        "workLocation": {
-            "label": "Sede di lavoro"
-        },
         "workload": {
             "label": "Grado di occupazione"
         },
         "workplace": {
-            "label": "Sede di lavoro ",
-            "placeholder": "Localit\u00e0, Comune, Cantone"
+          "label": "Luogo di lavoro",
+          "placeholder": "Luogo di lavoro"
         }
     }
 }

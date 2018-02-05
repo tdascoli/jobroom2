@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Envoyer la recherche comme lien",
-            "title": "Chercher des candidats"
+          "title": "Filtrer les r\u00e9sultats"
         },
         "graduation": {
             "ACCEPTED": "Dipl\u00f4me suisse ou reconnu en Suisse",
@@ -71,15 +71,12 @@
             "SUNDAY_AND_HOLIDAYS": "Travail le dimanche et les jours f\u00e9ri\u00e9s",
             "label": "Forme de travail"
         },
-        "workLocation": {
-            "label": "Lieu de travail"
-        },
         "workload": {
             "label": "Taux d'occupation"
         },
         "workplace": {
             "label": "Lieu de travail",
-            "placeholder": "Lieu, commune, canton"
+          "placeholder": "Lieu de travail"
         }
     }
 }

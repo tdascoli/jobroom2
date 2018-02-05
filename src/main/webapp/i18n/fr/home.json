@@ -1,5 +1,9 @@
 {
     "home": {
+      "contactform": {
+        "text": "Contact",
+        "url": "https://www.arbeit.swiss/secoalv/fr/home/service/kontakt.html"
+      },
         "title": "Job-Room",
         "title.portal": "travail",
         "title.portal-url": "https://www.arbeit.swiss/secoalv/fr/home.html",
@@ -8,10 +12,6 @@
             "jobSeekers": "Demandeur d'emploi",
             "recruitmentAgencies": "Agence de placement",
             "title": "Job-Room offre des services pour"
-        },
-        "contactform": {
-            "text": "Contact",
-            "url": "https://www.arbeit.swiss/secoalv/fr/home/service/kontakt.html"
         },
         "tools": {
             "candidate-search": {

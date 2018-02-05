@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Suche als Link versenden",
-            "title": "Kandidaten suchen"
+          "title": "Suchergebnisse filtern"
         },
         "graduation": {
             "ACCEPTED": "Schweizer Abschluss oder anerkannt",
@@ -71,15 +71,12 @@
             "SUNDAY_AND_HOLIDAYS": "Sonn- und Feiertagsarbeit",
             "label": "Arbeitsform"
         },
-        "workLocation": {
-            "label": "Arbeitsort"
-        },
         "workload": {
             "label": "Arbeitspensum"
         },
         "workplace": {
             "label": "Arbeitsort",
-            "placeholder": "Ort, Gemeinde, Kanton"
+          "placeholder": "Arbeitsort"
         }
     }
 }

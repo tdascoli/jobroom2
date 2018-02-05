@@ -70,7 +70,7 @@ candidate-search,candidate-search.candidate-search-list.title.one.with-query.wit
 candidate-search,candidate-search.education.label,Bildungsstufe,Level of education,Niveau de formation,Livello formativo
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
-candidate-search,candidate-search.filter.title,Kandidaten suchen,Search candidates,Chercher des candidats,Cerca candidati
+candidate-search,candidate-search.filter.title,Suchergebnisse filtern,Filter search result,Filtrer les résultats,Filtra risultati della ricerca
 candidate-search,candidate-search.graduation.ACCEPTED,Schweizer Abschluss oder anerkannt,Swiss degree or accepted in Switzerland,Diplôme suisse ou reconnu en Suisse,Diploma svizzero o riconosciuto in Svizzera
 candidate-search,candidate-search.graduation.CH,Schweizer Abschluss,Swiss degree,Diplôme suisse,Diploma svizzero
 candidate-search,candidate-search.graduation.NONE,Kein Abschluss,No degree,Aucun diplôme,Nessun diploma
@@ -92,10 +92,9 @@ candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Night work,Tra
 candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Shift work,Travail en équipes,Lavoro a turni
 candidate-search,candidate-search.workForm.SUNDAY_AND_HOLIDAYS,Sonn- und Feiertagsarbeit,Sunday and holiday work,Travail le dimanche et les jours fériés,Lavoro domenicale e festivo
 candidate-search,candidate-search.workForm.label,Arbeitsform,Work form,Forme de travail,Tipologia lavorativa
-candidate-search,candidate-search.workLocation.label,Arbeitsort,Work location,Lieu de travail,Sede di lavoro
 candidate-search,candidate-search.workload.label,Arbeitspensum,Workload,Taux d'occupation,Grado di occupazione
-candidate-search,candidate-search.workplace.label,Arbeitsort,Work location,Lieu de travail,"Sede di lavoro "
-candidate-search,candidate-search.workplace.placeholder,"Ort, Gemeinde, Kanton","Location, municipality, canton","Lieu, commune, canton","Località, Comune, Cantone"
+candidate-search,candidate-search.workplace.label,Arbeitsort,Work location,Lieu de travail,Luogo di lavoro
+candidate-search,candidate-search.workplace.placeholder,Arbeitsort,Work location,Lieu de travail,Luogo di lavoro
 companyType,jobroomApp.CompanyType.AVG,AVG,AVG,AVG,AVG
 companyType,jobroomApp.CompanyType.RAV,RAV,RAV,RAV,RAV
 companyType,jobroomApp.CompanyType.null,,,,
@@ -632,7 +631,7 @@ home,home.tools.job-publication.locality.additional-text,Zusatztext,Additional t
 home,home.tools.job-publication.locality.additional-text.placeholder,z. B. Aussendienst in der ganzen Schweiz,e.g. in the field throughout Switzerland,p. ex. service externe dans toute la Suisse,p. es. servizio esterno in tutta la Svizzera
 home,home.tools.job-publication.locality.city,Ort,City,Lieu,Luogo
 home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
-home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Sede di lavoro
+home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Luogo di lavoro
 home,home.tools.job-publication.locality.zip,PLZ,Postal code,"NPA  ","NPA  "
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postal code / city,NPA / lieu,NPA / luogo
 home,home.tools.job-publication.messages.validate.email-format,Diese E-Mail-Adresse ist ungültig.,This email address is invalid.,Cette adresse courriel n'est pas valide.,L'indirizzo e-mail non è valido.
