@@ -4,7 +4,7 @@ import java.util.UUID;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import ch.admin.seco.jobroom.domain.search.UserDocument;
+import ch.admin.seco.jobroom.domain.search.user.UserDocument;
 
 /**
  * Spring Data Elasticsearch repository for the User entity.

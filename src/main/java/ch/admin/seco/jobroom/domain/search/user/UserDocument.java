@@ -1,4 +1,4 @@
-package ch.admin.seco.jobroom.domain.search;
+package ch.admin.seco.jobroom.domain.search.user;
 
 import java.time.Instant;
 import java.util.Set;

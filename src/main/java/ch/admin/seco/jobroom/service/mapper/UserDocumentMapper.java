@@ -11,8 +11,8 @@ import org.mapstruct.ReportingPolicy;
 import ch.admin.seco.jobroom.domain.Authority;
 import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.domain.User;
-import ch.admin.seco.jobroom.domain.search.OrganizationDocument;
-import ch.admin.seco.jobroom.domain.search.UserDocument;
+import ch.admin.seco.jobroom.domain.search.user.OrganizationDocument;
+import ch.admin.seco.jobroom.domain.search.user.UserDocument;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE,

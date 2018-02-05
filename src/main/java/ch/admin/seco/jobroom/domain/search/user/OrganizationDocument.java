@@ -1,4 +1,4 @@
-package ch.admin.seco.jobroom.domain.search;
+package ch.admin.seco.jobroom.domain.search.user;
 
 public class OrganizationDocument {
 

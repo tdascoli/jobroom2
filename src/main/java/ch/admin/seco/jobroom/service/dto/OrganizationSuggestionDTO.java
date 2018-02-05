@@ -7,6 +7,7 @@ public class OrganizationSuggestionDTO {
     private String name;
     private String street;
     private String city;
+    private String zipCode;
 
     public String getExternalId() {
         return externalId;
@@ -40,6 +41,14 @@ public class OrganizationSuggestionDTO {
         this.city = city;
     }
 
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -51,11 +60,12 @@ public class OrganizationSuggestionDTO {
         OrganizationSuggestionDTO that = (OrganizationSuggestionDTO) o;
         return Objects.equals(name, that.name) &&
             Objects.equals(street, that.street) &&
-            Objects.equals(city, that.city);
+            Objects.equals(city, that.city) &&
+            Objects.equals(zipCode, that.zipCode);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, street, city);
+        return Objects.hash(name, street, city, zipCode);
     }
 }

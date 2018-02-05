@@ -10,7 +10,9 @@ import { PHONE_NUMBER_REGEX } from '../../shared/validation/regex-patterns';
 import { Observable } from 'rxjs/Observable';
 import { OrganizationService } from '../../shared/organization/organization.service';
 import {
-    Organization, OrganizationAutocomplete,
+    formatOrganizationName,
+    Organization,
+    OrganizationAutocomplete,
     OrganizationSuggestion
 } from '../../shared/organization/organization.model';
 
@@ -87,7 +89,7 @@ export class UserMgmtDialogComponent implements OnInit {
                 : this.organizationService.suggest(term, UserMgmtDialogComponent.ORGANIZATION_SUGGESTIONS_SIZE))
                     .map((autocomplete: OrganizationAutocomplete) => autocomplete ? autocomplete.organizations : []);
 
-    formatter = (suggestion: OrganizationSuggestion) => `${suggestion.name}, ${suggestion.city}, ${suggestion.street}`;
+    formatter = (suggestion: OrganizationSuggestion) => formatOrganizationName(suggestion);
 }
 
 @Component({

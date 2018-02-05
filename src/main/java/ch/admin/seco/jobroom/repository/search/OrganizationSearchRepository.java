@@ -4,10 +4,10 @@ import java.util.UUID;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
 
-import ch.admin.seco.jobroom.domain.Organization;
+import ch.admin.seco.jobroom.domain.search.organization.OrganizationDocument;
 
 /**
  * Spring Data Elasticsearch repository for the Organization entity.
  */
-public interface OrganizationSearchRepository extends ElasticsearchRepository<Organization, UUID> {
+public interface OrganizationSearchRepository extends ElasticsearchRepository<OrganizationDocument, UUID> {
 }

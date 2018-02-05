@@ -6,9 +6,11 @@ import static org.elasticsearch.index.query.QueryBuilders.queryStringQuery;
 import java.time.Instant;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.atomic.AtomicInteger;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.persistence.EntityManager;
@@ -22,15 +24,16 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.transaction.support.TransactionTemplate;
 
 import ch.admin.seco.jobroom.domain.Organization;
+import ch.admin.seco.jobroom.domain.search.organization.OrganizationDocument;
 import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.search.OrganizationSearchRepository;
 import ch.admin.seco.jobroom.service.OrganizationService;
 import ch.admin.seco.jobroom.service.OrganizationSuggestionService;
 import ch.admin.seco.jobroom.service.dto.OrganizationAutocompleteDTO;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
+import ch.admin.seco.jobroom.service.mapper.OrganizationDocumentMapper;
 import ch.admin.seco.jobroom.service.mapper.OrganizationMapper;
 
 /**
@@ -48,24 +51,24 @@ public class OrganizationServiceImpl implements OrganizationService {
 
     private final OrganizationSearchRepository organizationSearchRepository;
 
-    private final TransactionTemplate transactionTemplate;
-
     private final EntityManager entityManager;
 
     private final OrganizationSuggestionService organizationSuggestionService;
 
+    private final OrganizationDocumentMapper organizationDocumentMapper;
+
     public OrganizationServiceImpl(OrganizationRepository organizationRepository,
             OrganizationMapper organizationMapper,
             OrganizationSearchRepository organizationSearchRepository,
-            TransactionTemplate transactionTemplate,
             EntityManager entityManager,
-            OrganizationSuggestionService organizationSuggestionService) {
+            OrganizationSuggestionService organizationSuggestionService,
+            OrganizationDocumentMapper organizationDocumentMapper) {
         this.organizationRepository = organizationRepository;
         this.organizationMapper = organizationMapper;
         this.organizationSearchRepository = organizationSearchRepository;
-        this.transactionTemplate = transactionTemplate;
         this.entityManager = entityManager;
         this.organizationSuggestionService = organizationSuggestionService;
+        this.organizationDocumentMapper = organizationDocumentMapper;
     }
 
     /**
@@ -88,7 +91,8 @@ public class OrganizationServiceImpl implements OrganizationService {
 
         Organization organizationSaved = organizationRepository.save(organization);
         OrganizationDTO result = organizationMapper.toDto(organizationSaved);
-        organizationSearchRepository.save(organizationSaved);
+        organizationSearchRepository.save(organizationDocumentMapper
+            .organizationToOrganizationDocument(organizationSaved));
         return result;
     }
 
@@ -151,7 +155,8 @@ public class OrganizationServiceImpl implements OrganizationService {
     @Transactional(readOnly = true)
     public Page<OrganizationDTO> search(String query, Pageable pageable) {
         log.debug("Request to search for a page of Organizations for query {}", query);
-        Page<Organization> result = organizationSearchRepository.search(queryStringQuery(query), pageable);
+        Page<Organization> result = organizationSearchRepository.search(queryStringQuery(query), pageable)
+            .map(organizationDocumentMapper::organizationDocumentToOrganization);
         return result.map(organizationMapper::toDto);
     }
 
@@ -186,7 +191,12 @@ public class OrganizationServiceImpl implements OrganizationService {
                 .doFinally(signalType -> log.info("End deactive organizations. {} organizations deactived", counter.get()))
                 .doOnError(exception -> log.error("Failed to delete organizations", exception))
                 .doOnNext(organizationRepository::saveAll)
-                .doOnNext(organizationSearchRepository::saveAll)
+                .doOnNext(organizations -> {
+                    final List<OrganizationDocument> documents = organizations.stream()
+                        .map(organizationDocumentMapper::organizationToOrganizationDocument)
+                        .collect(Collectors.toList());
+                    organizationSearchRepository.saveAll(documents);
+                })
                 .doOnNext(organizationsPartition -> entityManager.clear())
                 .doOnNext(organizationsPartition -> counter.addAndGet(organizationsPartition.size()))
                 .subscribe(organizationsPartition -> log.debug("{} organizations deactivated from database and elasticsearch", counter.get()));

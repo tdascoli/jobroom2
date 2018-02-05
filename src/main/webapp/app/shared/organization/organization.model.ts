@@ -5,6 +5,17 @@ export const enum CompanyType {
     'RAV'
 }
 
+export function formatOrganizationName(organization: Organization | OrganizationSuggestion): string {
+    let formattedName = organization.name;
+    const appendValues = (fields: string[]) => {
+        fields
+            .filter((value) => value)
+            .forEach((field) => formattedName = `${formattedName}, ${field}`)
+    };
+    appendValues([organization.city, organization.street, organization.zipCode]);
+    return formattedName;
+}
+
 export class Organization implements BaseEntity {
     constructor(public id?: number,
                 public externalId?: string,
@@ -19,6 +30,10 @@ export class Organization implements BaseEntity {
                 public active?: boolean) {
         this.active = false;
     }
+
+    toString(): string {
+        return formatOrganizationName(this);
+    }
 }
 
 export class OrganizationSuggestion {
@@ -26,6 +41,7 @@ export class OrganizationSuggestion {
     name: string;
     street: string;
     city: string;
+    zipCode: string;
 }
 
 export interface OrganizationAutocomplete {

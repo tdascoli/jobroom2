@@ -2,8 +2,7 @@
     "organization": {
         "properties": {
             "name": {
-                "type": "completion",
-                "analyzer": "ascii_folding"
+                "type": "text"
             },
             "externalId": {
                 "type": "keyword"
@@ -22,6 +21,10 @@
             },
             "phone": {
                 "type": "text"
+            },
+            "suggestions" : {
+                "type": "completion",
+                "analyzer": "ascii_folding"
             }
         }
     }

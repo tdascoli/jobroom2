@@ -43,10 +43,12 @@ import org.springframework.transaction.annotation.Transactional;
 import ch.admin.seco.jobroom.JobroomApp;
 import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
+import ch.admin.seco.jobroom.domain.search.organization.OrganizationDocument;
 import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.search.OrganizationSearchRepository;
 import ch.admin.seco.jobroom.service.OrganizationService;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
+import ch.admin.seco.jobroom.service.mapper.OrganizationDocumentMapper;
 import ch.admin.seco.jobroom.service.mapper.OrganizationMapper;
 import ch.admin.seco.jobroom.web.rest.errors.ExceptionTranslator;
 
@@ -111,7 +113,7 @@ public class OrganizationResourceIntTest {
     private ExceptionTranslator exceptionTranslator;
 
     @Autowired
-    private EntityManager em;
+    private OrganizationDocumentMapper organizationDocumentMapper;
 
     private MockMvc restOrganizationMockMvc;
 
@@ -182,7 +184,7 @@ public class OrganizationResourceIntTest {
         assertThat(testOrganization.isActive()).isEqualTo(DEFAULT_ACTIVE);
 
         // Validate the Organization in Elasticsearch
-        Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
+        OrganizationDocument organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
         assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
                 "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
@@ -321,7 +323,7 @@ public class OrganizationResourceIntTest {
     public void updateOrganization() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organization);
+        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
         int databaseSizeBeforeUpdate = Long.valueOf(organizationRepository.count()).intValue();
 
         // Update the organization
@@ -358,7 +360,7 @@ public class OrganizationResourceIntTest {
         assertThat(testOrganization.isActive()).isEqualTo(UPDATED_ACTIVE);
 
         // Validate the Organization in Elasticsearch
-        Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
+        OrganizationDocument organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
         assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
                 "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
@@ -387,7 +389,7 @@ public class OrganizationResourceIntTest {
     public void deleteOrganization() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organization);
+        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
         int databaseSizeBeforeDelete = Long.valueOf(organizationRepository.count()).intValue();
 
         // Get the organization
@@ -409,7 +411,7 @@ public class OrganizationResourceIntTest {
     public void searchOrganization() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organization);
+        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
 
         // Search the organization
         restOrganizationMockMvc.perform(get("/api/_search/organizations?query=id:" + organization.getId()))
@@ -454,7 +456,7 @@ public class OrganizationResourceIntTest {
     public void suggestOrganizations() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organization);
+        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
 
         // Search the organization
         restOrganizationMockMvc.perform(get("/api/_search/organizations/suggest?prefix=AAA&resultSize=1"))

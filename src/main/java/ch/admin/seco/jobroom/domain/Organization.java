@@ -18,10 +18,6 @@ import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
 import org.hibernate.validator.constraints.Email;
 
-import org.springframework.data.elasticsearch.annotations.Document;
-import org.springframework.data.elasticsearch.annotations.Mapping;
-import org.springframework.data.elasticsearch.annotations.Setting;
-
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 
 /**
@@ -30,9 +26,6 @@ import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 @Entity
 @Table(name = "organization")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
-@Document(indexName = "organization")
-@Mapping(mappingPath = "config/elasticsearch/mappings/organization.json")
-@Setting(settingPath = "config/elasticsearch/settings/folding-analyzer.json")
 public class Organization extends AbstractAuditingEntity implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -205,7 +198,6 @@ public class Organization extends AbstractAuditingEntity implements Serializable
     public void setActive(Boolean active) {
         this.active = active;
     }
-    // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
 
     @Override
     public boolean equals(Object o) {
