@@ -4,9 +4,12 @@
     .sticky-top {
         position: sticky;
         top: calc(#{$header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom});
-        overflow-y: auto;
+        overflow-y: scroll;
+        overflow-x: hidden;
         height: calc(100vh - (#{$header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom}));
         z-index: 100;
+
+        padding-right: .5rem;
     }
 }
 
