@@ -3,6 +3,7 @@ import { JobSearchComponent } from '../../../../../main/webapp/app/job-search/jo
 import { JobroomTestModule } from '../../test.module';
 import { Observable } from 'rxjs/Rx';
 import { Store } from '@ngrx/store';
+import { JobroomSharedLibsModule } from '../../../../../main/webapp/app/shared';
 
 describe('JobSearchComponent', () => {
     const mockStore = jasmine.createSpyObj('mockStore', ['select', 'dispatch']);
@@ -13,7 +14,7 @@ describe('JobSearchComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
-            imports: [JobroomTestModule],
+            imports: [JobroomTestModule, JobroomSharedLibsModule],
             declarations: [JobSearchComponent],
             providers: [
                 { provide: Store, useValue: mockStore },

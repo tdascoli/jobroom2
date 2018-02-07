@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, HostListener, Inject } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../shared/input-components';
@@ -14,9 +14,10 @@ import {
     getLocalityQuery,
     getSearchQuery,
     JobSearchQuery
-} from './state-management/state/job-search.state';
+} from './state-management';
 import { Job } from './services';
-import { InitJobSearchAction } from './state-management/actions/job-search.actions';
+import { InitJobSearchAction } from './state-management';
+import { WINDOW } from '../shared';
 
 @Component({
     selector: 'jr2-job-search',
@@ -32,8 +33,10 @@ export class JobSearchComponent {
     totalCount$: Observable<number>;
     loading$: Observable<boolean>;
     initialized$: Observable<boolean>;
+    showScrollButton = false;
 
-    constructor(private store: Store<JobSearchState>) {
+    constructor(private store: Store<JobSearchState>,
+                @Inject(WINDOW) private window: Window) {
         this.store.dispatch(new InitJobSearchAction());
 
         this.jobList$ = store.select(getJobList);
@@ -43,6 +46,15 @@ export class JobSearchComponent {
         this.totalCount$ = store.select(getTotalJobCount);
         this.loading$ = store.select(getLoading);
         this.initialized$ = store.select(getInitialState).map((initialState: boolean) => !initialState);
+    }
+
+    @HostListener('window:scroll')
+    onWindowScroll(): void {
+        this.showScrollButton = this.window.scrollY > 200;
+    }
+
+    scrollToTop(event: any): void {
+        this.window.scrollTo(0, 0);
     }
 }
 
