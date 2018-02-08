@@ -83,3 +83,63 @@
 :host /deep/ .typeahead-singleselect__type-label--locality {
     background-color: $additional-accent-green;
 }
+
+// IE & Edge
+// all except smartphone
+@media screen and (min-width: 480px){
+    .sticky-top {
+        position: sticky;
+        top: calc(#{$header-navbar-height + $toolbar-height} + #{$toolbar-margin-bottom});
+        z-index: 100;
+    }
+
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .sticky-top {
+            position: fixed;
+            width: calc(20% - #{2 * $grid-gutter-width});
+        }
+    }
+    // Edge
+    @supports (-ms-accelerator:true) {
+        .sticky-top {
+            position: fixed;
+            width: calc(20% - #{2 * $grid-gutter-width});
+        }
+    }
+}
+
+// tablet wide
+@media screen and (min-width: 480px) and (max-width: 1024px){
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .sticky-top {
+            position: fixed;
+            width: calc(25% - #{2 * $grid-gutter-width});
+        }
+    }
+    // Edge
+    @supports (-ms-accelerator:true) {
+        .sticky-top {
+            position: fixed;
+            width: calc(25% - #{2 * $grid-gutter-width});
+        }
+    }
+}
+
+// tablet narrow
+@media screen and (min-width: 480px) and (max-width: 768px){
+    // IE11
+    @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+        .sticky-top {
+            position: static;
+            width: 100%;
+        }
+    }      // Edge
+    @supports (-ms-accelerator:true) {
+        .sticky-top {
+            position: static;
+            width: 100%;
+        }
+    }
+}
