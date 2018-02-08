@@ -4,7 +4,13 @@
             "button": "Anmelden",
             "password": "Passwort",
             "password.placeholder": "Ihr Passwort",
-            "rememberme": "Automatische Anmeldung"
+            "rememberme": "Automatische Anmeldung",
+            "information": {
+                "pea": {
+                    "text":"Vorgehen zur Registrierung für private Arbeitsvermittler",
+                    "url":"https://www.arbeit.swiss/secoalv/de/home/menue/arbeitsvermittler/dienstleistungen-der-rav.html"
+                }
+            }
         },
         "messages": {
             "error": {

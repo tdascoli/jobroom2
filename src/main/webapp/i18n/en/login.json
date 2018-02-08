@@ -4,7 +4,13 @@
             "button": "Sign in",
             "password": "Password",
             "password.placeholder": "Your password",
-            "rememberme": "Remember me"
+            "rememberme": "Remember me",
+            "information": {
+                "pea": {
+                    "text":"[EN] Vorgehen zur Registrierung für private Arbeitsvermittler",
+                    "url":"https://www.arbeit.swiss/secoalv/en/home/menue/arbeitsvermittler/dienstleistungen-der-rav.html"
+                }
+            }
         },
         "messages": {
             "error": {
