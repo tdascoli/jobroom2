@@ -69,7 +69,8 @@
             },
             "occupation": {
                 "placeholder": "Berufsbezeichnungen, Suchbegriffe"
-            }
+            },
+            "reset": "Zur\u00fccksetzen"
         }
     },
     "typeahead-multiselect": {

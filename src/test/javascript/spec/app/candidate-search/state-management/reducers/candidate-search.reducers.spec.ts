@@ -113,7 +113,8 @@ describe('candidateSearchReducer', () => {
             candidateProfileList: [],
             initialState: true,
             searchError: false,
-            candidateListScrollY: 0
+            candidateListScrollY: 0,
+            resetTime: 0
         };
 
         const action = new actions.CandidateSearchToolChangedAction({
@@ -202,6 +203,18 @@ describe('candidateSearchReducer', () => {
         verifyUnchanged(newState, initialState, ['searchFilter']);
         verifyUnchanged(newState.searchFilter, initialState.searchFilter, ['occupation']);
     });
+
+    it('should update CandidateSearchState for RESET_FILTER action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, { searchError: true });
+        const action = new actions.ResetFilterAction(50);
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.resetTime).toEqual(50);
+    })
 
 });
 

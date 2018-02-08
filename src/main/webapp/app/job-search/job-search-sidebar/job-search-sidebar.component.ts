@@ -4,8 +4,9 @@ import {
     getSearchFilter,
     JobSearchFilter,
     JobSearchState
-} from '../state-management/state/job-search.state';
+} from '../state-management';
 import { Observable } from 'rxjs/Observable';
+import { getResetTime } from '../state-management';
 
 @Component({
     selector: 'jr2-job-search-sidebar',
@@ -14,8 +15,11 @@ import { Observable } from 'rxjs/Observable';
 })
 export class JobSearchSidebarComponent {
     searchFilter$: Observable<JobSearchFilter>;
+    reset$: Observable<number>;
 
     constructor(private store: Store<JobSearchState>) {
         this.searchFilter$ = store.select(getSearchFilter);
+        this.reset$ = store.select(getResetTime)
+            .scan((acc: number) => acc + 1, 0);
     }
 }

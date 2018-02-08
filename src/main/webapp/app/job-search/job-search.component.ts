@@ -5,6 +5,7 @@ import { TypeaheadMultiselectModel } from '../shared/input-components';
 import {
     getBaseQuery,
     getJobList,
+    getResetTime,
     getTotalJobCount,
     JobSearchState
 } from './state-management';
@@ -34,6 +35,7 @@ export class JobSearchComponent {
     loading$: Observable<boolean>;
     initialized$: Observable<boolean>;
     showScrollButton = false;
+    reset$: Observable<number>;
 
     constructor(private store: Store<JobSearchState>,
                 @Inject(WINDOW) private window: Window) {
@@ -46,6 +48,7 @@ export class JobSearchComponent {
         this.totalCount$ = store.select(getTotalJobCount);
         this.loading$ = store.select(getLoading);
         this.initialized$ = store.select(getInitialState).map((initialState: boolean) => !initialState);
+        this.reset$ = store.select(getResetTime)
     }
 
     @HostListener('window:scroll')

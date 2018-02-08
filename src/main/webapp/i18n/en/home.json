@@ -1,9 +1,9 @@
 {
     "home": {
-      "contactform": {
-        "text": "Contact",
-        "url": "https://www.arbeit.swiss/secoalv/en/home/service/kontakt.html"
-      },
+        "contactform": {
+            "text": "Contact",
+            "url": "https://www.arbeit.swiss/secoalv/en/home/service/kontakt.html"
+        },
         "title": "Job-Room",
         "title.portal": "work",
         "title.portal-url": "https://www.arbeit.swiss/secoalv/en/home.html",

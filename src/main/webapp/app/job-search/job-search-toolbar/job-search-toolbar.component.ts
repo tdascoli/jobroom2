@@ -8,10 +8,11 @@ import {
 import { Store } from '@ngrx/store';
 import { JobSearchState, ToolbarChangedAction } from '../state-management';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { JobSearchQuery } from '../state-management/state/job-search.state';
+import { JobSearchQuery } from '../state-management';
 import { Subscription } from 'rxjs/Subscription';
-import { LocalityInputType } from '../../shared/reference-service/locality-autocomplete';
+import { LocalityInputType } from '../../shared/reference-service';
 import { TypeaheadMultiselectModel } from '../../shared/input-components';
+import { ResetFilterAction } from '../state-management';
 
 @Component({
     selector: 'jr2-job-search-toolbar',
@@ -21,6 +22,16 @@ import { TypeaheadMultiselectModel } from '../../shared/input-components';
 export class JobSearchToolbarComponent implements OnInit, OnDestroy {
     @Input() loading: boolean;
     @Input() searchQuery: JobSearchQuery;
+
+    @Input()
+    set reset(value: number) {
+        if (value && this.toolbarForm) {
+            this.toolbarForm.reset({
+                baseQuery: [...this.searchQuery.baseQuery],
+                localityQuery: [...this.searchQuery.localityQuery]
+            });
+        }
+    };
 
     toolbarForm: FormGroup;
 
@@ -59,6 +70,11 @@ export class JobSearchToolbarComponent implements OnInit, OnDestroy {
         if (!exists) {
             ctrl.setValue([...ctrl.value, currentLocality]);
         }
+    }
+
+    resetFilters(event: any): void {
+        event.preventDefault();
+        this.store.dispatch(new ResetFilterAction(new Date().getTime()))
     }
 
     fetchOccupationSuggestions = (query: string): Observable<TypeaheadMultiselectModel[]> =>

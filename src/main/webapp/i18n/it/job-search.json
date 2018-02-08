@@ -69,7 +69,8 @@
             },
             "occupation": {
                 "placeholder": "Professioni, parole chiave"
-            }
+            },
+            "reset": "Ripristina"
         }
     },
     "typeahead-multiselect": {

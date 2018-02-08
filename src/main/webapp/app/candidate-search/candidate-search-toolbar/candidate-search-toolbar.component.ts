@@ -10,7 +10,10 @@ import {
     ViewChild
 } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { CandidateSearchFilter, } from '../state-management/state/candidate-search.state';
+import {
+    CandidateSearchFilter,
+    CandidateSearchState,
+} from '../state-management/state/candidate-search.state';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
     FormatterFn,
@@ -21,6 +24,8 @@ import {
 } from '../../shared/reference-service';
 import { Subject } from 'rxjs/Subject';
 import { customLocalityAutocompleteMapper } from '../candidate-search-filter/candidate-search-filter.component';
+import { Store } from '@ngrx/store';
+import { ResetFilterAction } from '../state-management/actions/candidate-search.actions';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -32,6 +37,17 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnCha
 
     @Input() loading: boolean;
     @Input() searchFilter: CandidateSearchFilter;
+
+    @Input()
+    set reset(value: number) {
+        if (value && this.toolbarForm) {
+            this.toolbarForm.reset({
+                occupation: this.searchFilter.occupation,
+                skills: [...this.searchFilter.skills || []],
+                workplace: this.searchFilter.workplace
+            });
+        }
+    };
 
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
@@ -46,7 +62,8 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnCha
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private localityService: LocalityService,
-                private fb: FormBuilder) {
+                private fb: FormBuilder,
+                private store: Store<CandidateSearchState>) {
         this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
         this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
@@ -102,5 +119,10 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnCha
     search(formValue: any): void {
         const searchFilter = Object.assign({}, this.searchFilter, formValue);
         this.searchCandidates.emit(searchFilter);
+    }
+
+    resetFilters(event: any): void {
+        event.preventDefault();
+        this.store.dispatch(new ResetFilterAction(new Date().getTime()))
     }
 }

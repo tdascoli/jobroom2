@@ -36,6 +36,23 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
     isFilterCollapsed: boolean;
     @Input() searchFilter: CandidateSearchFilter;
 
+    @Input()
+    set reset(value: number) {
+        if (value && this.filterForm && this.residence) {
+            this.filterForm.reset({
+                graduation: this.searchFilter.graduation,
+                experience: this.searchFilter.experience,
+                availability: this.searchFilter.availability,
+                workload: this.searchFilter.workload,
+                workForm: this.searchFilter.workForm,
+                educationLevel: this.searchFilter.educationLevel,
+                drivingLicenceCategory: this.searchFilter.drivingLicenceCategory,
+                languageSkills: [...this.searchFilter.languageSkills || []]
+            });
+            this.residence.reset(this.searchFilter.residence, { emitEvent: false });
+        }
+    };
+
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
     graduations = Graduation;

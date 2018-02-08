@@ -33,7 +33,7 @@
         "startsImmediately.true": "Tout de suite",
         "title": "D\u00e9tail de l'emploi"
     },
-  "job-fingerprint-redirect": {
-    "not-found": "Job not found"
+    "job-fingerprint-redirect": {
+        "not-found": "Job not found"
     }
 }

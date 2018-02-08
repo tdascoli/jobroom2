@@ -69,7 +69,8 @@
             },
             "occupation": {
                 "placeholder": "Occupations, keywords"
-            }
+            },
+            "reset": "Reset"
         }
     },
     "typeahead-multiselect": {

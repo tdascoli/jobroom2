@@ -1,7 +1,7 @@
 import { Action } from '@ngrx/store';
 import { CandidateSearchFilter } from '../state/candidate-search.state';
 import { CandidateProfile } from '../../services/candidate';
-import { OccupationOption } from '../../../shared/reference-service/occupation-presentation.service';
+import { OccupationOption } from '../../../shared/reference-service';
 
 export const INIT_CANDIDATE_SEARCH = 'CANDIDATES:INIT_CANDIDATE_SEARCH';
 export const SEARCH_CANDIDATES = 'CANDIDATES:SEARCH_CANDIDATES';
@@ -14,6 +14,7 @@ export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
 export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
 export const UPDATE_OCCUPATION_LABEL = 'CANDIDATES:UPDATE_OCCUPATION_LABEL';
+export const RESET_FILTER = 'CANDIDATES:RESET';
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
@@ -93,6 +94,13 @@ export class SaveScrollYAction implements Action {
     }
 }
 
+export class ResetFilterAction implements Action {
+    readonly type = RESET_FILTER;
+
+    constructor(public payload: number) {
+    }
+}
+
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
@@ -105,4 +113,5 @@ export type Actions =
     | HideCandidateListErrorAction
     | CountCandidatesAction
     | SaveScrollYAction
+    | ResetFilterAction
     ;

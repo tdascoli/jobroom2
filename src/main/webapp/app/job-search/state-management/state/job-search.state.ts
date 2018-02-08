@@ -25,6 +25,7 @@ export interface JobSearchState {
     totalJobCount: number;
     initialState: boolean;
     page: number;
+    resetTime: number;
 }
 
 export interface JobSearchQuery {
@@ -57,7 +58,8 @@ export const initialState: JobSearchState = {
     totalJobCount: 0,
     page: 0,
     jobList: [],
-    initialState: true
+    initialState: true,
+    resetTime: null
 };
 
 export const getJobSearchState = createFeatureSelector<JobSearchState>('jobSearch');
@@ -73,3 +75,4 @@ export const getFilterWorkingTime = createSelector(getSearchFilter, (filter: Job
 export const getLoading = createSelector(getJobSearchState, (state: JobSearchState) => state.loading);
 export const getJobListScrollY = createSelector(getJobSearchState, (state: JobSearchState) => state.jobListScrollY);
 export const getInitialState = createSelector(getJobSearchState, (state: JobSearchState) => state.initialState);
+export const getResetTime = createSelector(getJobSearchState, (state: JobSearchState) => state.resetTime);

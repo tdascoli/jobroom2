@@ -68,7 +68,8 @@ describe('jobSearchReducer', () => {
                 totalJobCount: 0,
                 page: 0,
                 jobList: [],
-                initialState: false
+                initialState: false,
+                resetTime: 0
             }
         ;
         const searchQuery: JobSearchQuery = {
@@ -278,6 +279,18 @@ describe('jobSearchReducer', () => {
         expect(newState.jobListScrollY).toEqual(600);
         verifyUnchanged(newState, state, ['jobListScrollY']);
     });
+
+    it('should update JobSearchState for RESET_FILTER action', () => {
+        // GIVEN
+        const state = Object.assign({}, initialState, { searchError: true });
+        const action = new actions.ResetFilterAction(50);
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.resetTime).toEqual(50);
+    })
 });
 
 function verifyUnchanged(newState: JobSearchState, oldState: JobSearchState, ignoreFields: Array<string>) {

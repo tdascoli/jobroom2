@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Suche als Link versenden",
-          "title": "Suchergebnisse filtern"
+            "title": "Suchergebnisse filtern"
         },
         "graduation": {
             "ACCEPTED": "Schweizer Abschluss oder anerkannt",
@@ -62,7 +62,8 @@
             "residence": {
                 "placeholder": "Wohnkanton",
                 "selected": "Kantone"
-            }
+            },
+            "reset": "Zur\u00fccksetzen"
         },
         "workForm": {
             "HOME_WORK": "Heimarbeit",
@@ -76,7 +77,7 @@
         },
         "workplace": {
             "label": "Arbeitsort",
-          "placeholder": "Arbeitsort"
+            "placeholder": "Arbeitsort"
         }
     }
 }

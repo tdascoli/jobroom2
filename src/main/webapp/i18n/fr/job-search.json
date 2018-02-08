@@ -69,7 +69,8 @@
             },
             "occupation": {
                 "placeholder": "Professions, mots-cl\u00e9s"
-            }
+            },
+            "reset": "R\u00e9tablir"
         }
     },
     "typeahead-multiselect": {

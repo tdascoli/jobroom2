@@ -5,6 +5,7 @@ import {
     CANDIDATE_SEARCH_TOOL_CHANGED,
     HIDE_CANDIDATE_LIST_ERROR,
     NEXT_PAGE_LOADED,
+    RESET_FILTER,
     SAVE_SCROLL_Y,
     SEARCH_CANDIDATES,
     SHOW_CANDIDATE_LIST_ERROR,
@@ -67,6 +68,10 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
             newState = Object.assign({}, state, {
                 searchFilter: Object.assign({}, state.searchFilter, { occupation: action.payload })
             });
+            break;
+
+        case RESET_FILTER:
+            newState = Object.assign({}, initialState, { resetTime: action.payload });
             break;
 
         default:

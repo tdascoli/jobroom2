@@ -12,6 +12,7 @@ export const FILTER_CHANGED = 'JOBS:FILTER_CHANGED';
 export const TOOLBAR_CHANGED = 'JOBS:TOOLBAR_CHANGED';
 export const JOB_SEARCH_TOOL_CHANGED = 'JOBS:JOB_SEARCH_TOOL_CHANGED';
 export const SAVE_SCROLL_Y = 'JOBS:SAVE_SCROLL_Y';
+export const RESET_FILTER = 'JOBS:RESET';
 
 export class InitJobSearchAction implements Action {
     readonly type = INIT_JOB_SEARCH;
@@ -80,6 +81,13 @@ export class SaveScrollYAction implements Action {
     }
 }
 
+export class ResetFilterAction implements Action {
+    readonly type = RESET_FILTER;
+
+    constructor(public payload: number) {
+    }
+}
+
 export type Actions =
     | InitJobSearchAction
     | ToolbarChangedAction
@@ -91,4 +99,5 @@ export type Actions =
     | ShowJobListErrorAction
     | HideJobListErrorAction
     | SaveScrollYAction
+    | ResetFilterAction
     ;

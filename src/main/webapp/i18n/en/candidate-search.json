@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Send search as link",
-          "title": "Filter search result"
+            "title": "Filter search result"
         },
         "graduation": {
             "ACCEPTED": "Swiss degree or accepted in Switzerland",
@@ -62,7 +62,8 @@
             "residence": {
                 "placeholder": "Canton of residence",
                 "selected": "Cantons"
-            }
+            },
+            "reset": "Reset"
         },
         "workForm": {
             "HOME_WORK": "Home-based work",
@@ -76,7 +77,7 @@
         },
         "workplace": {
             "label": "Work location",
-          "placeholder": "Work location"
+            "placeholder": "Work location"
         }
     }
 }

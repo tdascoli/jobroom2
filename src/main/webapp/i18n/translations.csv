@@ -87,6 +87,7 @@ candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Degree,Dipl
 candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Occupation,Profession,Professione
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Canton of residence,Canton de domicile,Luogo di domicilio: Cantone
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Cantons,Cantons,Cantoni
+candidate-search,candidate-search.toolbar.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Home-based work,Travail à domicile,Telelavoro
 candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Night work,Travail de nuit,Lavoro notturno
 candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Shift work,Travail en équipes,Lavoro a turni
@@ -749,6 +750,7 @@ job-search,job-search.title,Stelle suchen,Job search,Chercher un emploi,Cerca po
 job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen,Select my current location,Sélectionner le lieu actuel,selezione la mia posizione attuale
 job-search,job-search.toolbar.locality.placeholder,Ortschaft oder Kanton,Location or canton,Lieu ou canton,Località o Cantone
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnungen, Suchbegriffe","Occupations, keywords","Professions, mots-clés","Professioni, parole chiave"
+job-search,job-search.toolbar.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
 job-search,typeahead-multiselect.type.classification,Berufskategorie,Category,Catégorie,Categoria
 job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località

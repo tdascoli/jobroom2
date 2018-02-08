@@ -5,6 +5,7 @@ import {
     CandidateSearchState,
     getCandidateProfileList,
     getLoading,
+    getResetTime,
     getSearchError,
     getSearchFilter,
     getTotalCandidateCount
@@ -36,6 +37,7 @@ export class CandidateSearchComponent {
     occupationName$: Observable<string>;
     residenceFilterString$: Observable<string>;
     showScrollButton = false;
+    reset$: Observable<number>;
 
     constructor(private store: Store<CandidateSearchState>,
                 private cantonService: CantonService,
@@ -54,9 +56,10 @@ export class CandidateSearchComponent {
         this.occupationName$ = store.select(getSearchFilter)
             .map(occupationMapper)
             .map((occupation) => occupation.label ? occupation.label : '');
-        this.residenceFilterString$ = this.store.select(getSearchFilter)
+        this.residenceFilterString$ = store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));
+        this.reset$ = this.store.select(getResetTime);
     }
 
     searchCandidates(filter: CandidateSearchFilter): void {

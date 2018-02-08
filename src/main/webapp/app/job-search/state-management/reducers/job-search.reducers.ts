@@ -9,7 +9,8 @@ import {
     NEXT_PAGE_LOADED,
     SAVE_SCROLL_Y,
     SHOW_JOB_LIST_ERROR,
-    TOOLBAR_CHANGED
+    TOOLBAR_CHANGED,
+    RESET_FILTER
 } from '../actions/job-search.actions';
 import * as core from '../../../shared/state-management/actions/core.actions';
 
@@ -65,6 +66,10 @@ export function jobSearchReducer(state = initialState, action: Actions | core.La
 
         case SAVE_SCROLL_Y:
             newState = Object.assign({}, state, { jobListScrollY: action.payload });
+            break;
+
+        case RESET_FILTER:
+            newState = Object.assign({}, initialState, { resetTime: action.payload });
             break;
 
         default:

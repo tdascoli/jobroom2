@@ -30,7 +30,7 @@
         },
         "filter": {
             "candidate-search-link": "Envoyer la recherche comme lien",
-          "title": "Filtrer les r\u00e9sultats"
+            "title": "Filtrer les r\u00e9sultats"
         },
         "graduation": {
             "ACCEPTED": "Dipl\u00f4me suisse ou reconnu en Suisse",
@@ -62,7 +62,8 @@
             "residence": {
                 "placeholder": "Canton de domicile",
                 "selected": "Cantons"
-            }
+            },
+            "reset": "R\u00e9tablir"
         },
         "workForm": {
             "HOME_WORK": "Travail \u00e0 domicile",
@@ -76,7 +77,7 @@
         },
         "workplace": {
             "label": "Lieu de travail",
-          "placeholder": "Lieu de travail"
+            "placeholder": "Lieu de travail"
         }
     }
 }

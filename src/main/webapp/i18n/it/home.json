@@ -1,9 +1,9 @@
 {
     "home": {
-      "contactform": {
-        "text": "Contatto",
-        "url": "https://www.arbeit.swiss/secoalv/it/home/service/kontakt.html"
-      },
+        "contactform": {
+            "text": "Contatto",
+            "url": "https://www.arbeit.swiss/secoalv/it/home/service/kontakt.html"
+        },
         "title": "Job-Room",
         "title.portal": "lavoro",
         "title.portal-url": "https://www.arbeit.swiss/secoalv/it/home.html",
@@ -85,7 +85,7 @@
                     "additional-text.placeholder": "p. es. servizio esterno in tutta la Svizzera",
                     "city": "Luogo",
                     "country": "Paese",
-                  "title": "Luogo di lavoro",
+                    "title": "Luogo di lavoro",
                     "zip": "NPA  ",
                     "zipcode": "NPA / luogo"
                 },
