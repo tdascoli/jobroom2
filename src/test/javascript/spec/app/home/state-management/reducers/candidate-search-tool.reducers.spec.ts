@@ -72,7 +72,7 @@ describe('candidateSearchToolReducer', () => {
         expect(newState.totalCount).toEqual(initialState.totalCount);
     });
 
-    it('should update CandidateSearchToolState.occupation for UPDATE_OCCUPATION_LABEL action', () => {
+    it('should update CandidateSearchToolState.occupation for UPDATE_OCCUPATION_TRANSLATION action', () => {
         // GIVEN
         const searchModel = {
             occupation: { key: 'avam:7632', label: 'java' },

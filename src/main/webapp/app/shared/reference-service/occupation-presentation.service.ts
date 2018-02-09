@@ -9,7 +9,6 @@ import {
     OccupationLabelSuggestion
 } from './occupation-label.service';
 import { TypeaheadMultiselectModel } from '../input-components/typeahead/typeahead-multiselect-model';
-import { TranslateService } from '@ngx-translate/core';
 import { OccupationCode } from './occupation-code';
 
 export class OccupationInputType {
@@ -46,48 +45,40 @@ interface OccupationLabelDataCache {
 export class OccupationPresentationService {
     private occupationLabelDataCache: OccupationLabelDataCache = {};
 
-    constructor(private occupationLabelService: OccupationLabelService,
-                private translateService: TranslateService) {
+    constructor(private occupationLabelService: OccupationLabelService) {
     }
 
-    findOccupationLabelsByAvamCode(avamCode: number | string): Observable<GenderAwareOccupationLabel> {
+    findOccupationLabelsByAvamCode(avamCode: number | string, language: string): Observable<GenderAwareOccupationLabel> {
         const extractCode = () => {
             if (typeof avamCode === 'string') {
                 return +avamCode.split(':')[1]
             }
             return avamCode;
         };
-        return this.findOccupationLabelsByCode(new OccupationCode(extractCode(), 'avam').toString());
+        return this.findOccupationLabelsByCode(new OccupationCode(extractCode(), 'avam').toString(), language);
     }
 
-    findOccupationLabelsByBFSCode(bfsCode: number): Observable<GenderAwareOccupationLabel> {
-        return this.findOccupationLabelsByCode(new OccupationCode(bfsCode, 'bfs').toString());
+    findOccupationLabelsByBFSCode(bfsCode: number, language: string): Observable<GenderAwareOccupationLabel> {
+        return this.findOccupationLabelsByCode(new OccupationCode(bfsCode, 'bfs').toString(), language);
     }
 
-    findOccupationLabelsByCode(occupationCodeString: string): Observable<GenderAwareOccupationLabel> {
+    findOccupationLabelsByCode(occupationCodeString: string, language: string): Observable<GenderAwareOccupationLabel> {
         const labelDataMapper = (labelData: OccupationLabelData) => Object.assign({}, {
             default: labelData['default'],
             male: labelData['m'],
             female: labelData['f']
         });
 
-        const currentLanguage$ = Observable.merge(
-            Observable.of(this.translateService.currentLang),
-            this.translateService.onLangChange
-                .map((langChange) => langChange.lang));
-
-        return currentLanguage$.switchMap((currentLang) => {
-            const cacheKey = occupationCodeString + '_' + currentLang;
-            const cachedOccupation = this.occupationLabelDataCache[cacheKey];
-            if (cachedOccupation) {
-                return Observable.of(this.occupationLabelDataCache[cacheKey])
-                    .map(labelDataMapper);
-            }
-
+        const cacheKey = occupationCodeString + '_' + language;
+        const cachedOccupation = this.occupationLabelDataCache[cacheKey];
+        if (cachedOccupation) {
+            return Observable.of(this.occupationLabelDataCache[cacheKey])
+                .map(labelDataMapper);
+        } else {
             return this.occupationLabelService.getOccupationLabelsByKey(occupationCodeString)
                 .do((labelData: OccupationLabelData) => this.occupationLabelDataCache[cacheKey] = labelData)
-                .map(labelDataMapper)
-        });
+                .map(labelDataMapper);
+        }
     }
 
     fetchJobSearchOccupationSuggestions(query: string): Observable<Array<TypeaheadMultiselectModel>> {

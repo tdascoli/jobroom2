@@ -6,6 +6,7 @@ import {
     OccupationPresentationService
 } from '../../shared/reference-service';
 import { CandidateService } from '../services/candidate.service';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
     selector: 'jr2-candidate-search-list-item',
@@ -21,7 +22,8 @@ export class CandidateSearchListItemComponent implements OnInit {
     isDisplayExperience = false;
 
     constructor(private occupationPresentationService: OccupationPresentationService,
-                private candidateService: CandidateService) {
+                private candidateService: CandidateService,
+                private translateService: TranslateService) {
     }
 
     ngOnInit(): void {
@@ -30,7 +32,14 @@ export class CandidateSearchListItemComponent implements OnInit {
 
         if (relevantJobExperience) {
             this.isDisplayExperience = !!relevantJobExperience.experience;
-            this.jobExperience$ = this.occupationPresentationService.findOccupationLabelsByAvamCode(relevantJobExperience.occupationCode)
+
+            const currentLanguage$ = this.translateService.onLangChange
+                .map((langChange) => langChange.lang)
+                .startWith(this.translateService.currentLang);
+
+            this.jobExperience$ = currentLanguage$
+                .switchMap((language) =>
+                    this.occupationPresentationService.findOccupationLabelsByAvamCode(relevantJobExperience.occupationCode, language))
                 .map((occupationLabels: GenderAwareOccupationLabel) => Object.assign({}, relevantJobExperience,
                     {
                         occupation: occupationLabels.default

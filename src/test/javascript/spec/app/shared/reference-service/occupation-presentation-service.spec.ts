@@ -21,7 +21,7 @@ describe('OccupationPresentationService', () => {
             ['getOccupationLabelsByKey', 'suggestOccupation']
         );
         mockTranslateService = { currentLang: 'de', onLangChange: Observable.empty() } as TranslateService;
-        sut = new OccupationPresentationService(mockOccupationLabelService, mockTranslateService);
+        sut = new OccupationPresentationService(mockOccupationLabelService);
     });
 
     describe('findOccupationLabelsByBFSCode', () => {

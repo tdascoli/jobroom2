@@ -9,7 +9,7 @@ import {
     SAVE_SCROLL_Y,
     SEARCH_CANDIDATES,
     SHOW_CANDIDATE_LIST_ERROR,
-    UPDATE_OCCUPATION_LABEL
+    UPDATE_OCCUPATION_TRANSLATION
 } from '../actions/candidate-search.actions';
 
 export function candidateSearchReducer(state = initialState, action: Actions): CandidateSearchState {
@@ -64,7 +64,7 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
             newState = Object.assign({}, state, { candidateListScrollY: action.payload });
             break;
 
-        case UPDATE_OCCUPATION_LABEL:
+        case UPDATE_OCCUPATION_TRANSLATION:
             newState = Object.assign({}, state, {
                 searchFilter: Object.assign({}, state.searchFilter, { occupation: action.payload })
             });

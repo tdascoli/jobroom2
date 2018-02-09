@@ -105,9 +105,16 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {
-        return this.occupationPresentationService.findOccupationLabelsByAvamCode(jobExperience.occupationCode)
-            .map((occupationLabels: GenderAwareOccupationLabel) =>
-                Object.assign({}, jobExperience, { occupationLabels }));
+        const currentLanguage$ = this.translateService.onLangChange
+            .map((langChange) => langChange.lang)
+            .startWith(this.translateService.currentLang);
+
+        return currentLanguage$
+            .switchMap((language) =>
+                this.occupationPresentationService.findOccupationLabelsByAvamCode(jobExperience.occupationCode, language)
+                    .map((occupationLabels: GenderAwareOccupationLabel) =>
+                        Object.assign({}, jobExperience, { occupationLabels }))
+            );
     }
 
     private formatOccupationLabel(gender: Gender): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
