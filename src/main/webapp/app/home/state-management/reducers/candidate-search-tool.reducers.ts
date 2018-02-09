@@ -8,7 +8,7 @@ import {
     CANDIDATE_SEARCH_TOOL_COUNTED,
     CANDIDATE_SEARCH_TOOL_SUBMITTED,
     RESET_CANDIDATE_SEARCH_TOOL_COUNT,
-    UPDATE_OCCUPATION_LABEL
+    UPDATE_OCCUPATION_TRANSLATION
 } from '../actions/candidate-search-tool.actions';
 
 export function candidateSearchToolReducer(state = initialState, action: Actions): CandidateSearchToolState {
@@ -26,7 +26,7 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
         case RESET_CANDIDATE_SEARCH_TOOL_COUNT:
             newState = Object.assign({}, initialState);
             break;
-        case UPDATE_OCCUPATION_LABEL:
+        case UPDATE_OCCUPATION_TRANSLATION:
             newState = Object.assign({}, state, { occupation: action.payload });
             break;
 

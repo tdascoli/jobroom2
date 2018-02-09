@@ -5,11 +5,11 @@ import { OccupationOption } from '../../../shared/reference-service/occupation-p
 export const CANDIDATE_SEARCH_TOOL_SUBMITTED = 'CANDIDATE_SEARCH_TOOL_SUBMITTED';
 export const CANDIDATE_SEARCH_TOOL_COUNT = 'CANDIDATE_SEARCH_TOOL_COUNT';
 export const CANDIDATE_SEARCH_TOOL_COUNTED = 'CANDIDATE_SEARCH_TOOL_COUNTED';
-export const UPDATE_OCCUPATION_LABEL = 'UPDATE_OCCUPATION_LABEL';
+export const UPDATE_OCCUPATION_TRANSLATION = 'UPDATE_OCCUPATION_TRANSLATION';
 export const RESET_CANDIDATE_SEARCH_TOOL_COUNT = 'RESET_CANDIDATE_SEARCH_TOOL_COUNT';
 
 export class UpdateOccupationTranslationAction implements Action {
-    readonly type = UPDATE_OCCUPATION_LABEL;
+    readonly type = UPDATE_OCCUPATION_TRANSLATION;
 
     constructor(public payload: OccupationOption) {
     }

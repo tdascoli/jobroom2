@@ -24,7 +24,10 @@ import { CandidateService } from '../../../candidate-search/services/candidate.s
 import { createCandidateSearchRequestFromToolState } from '../../../candidate-search/state-management/util/search-request-mapper';
 import { JobService } from '../../../job-search/services/job.service';
 import { createJobSearchRequestFromToolState } from '../../../job-search/state-management/util/search-request-mapper';
-import { LANGUAGE_CHANGED } from '../../../shared/state-management/actions/core.actions';
+import {
+    LANGUAGE_CHANGED,
+    LanguageChangedAction
+} from '../../../shared/state-management/actions/core.actions';
 import { OccupationPresentationService } from '../../../shared/reference-service/occupation-presentation.service';
 import { getCandidateSearchToolState, HomeState } from '../state/home.state';
 
@@ -72,7 +75,9 @@ export class HomeEffects {
         .filter(([action, state]) => !!state.occupation)
         .switchMap(([action, state]) => {
             const { occupation } = state;
-            return this.occupationPresentationService.findOccupationLabelsByCode(occupation.key)
+            const language = (action as LanguageChangedAction).payload;
+
+            return this.occupationPresentationService.findOccupationLabelsByCode(occupation.key, language)
                 .map((label) => Object.assign({}, occupation, { label: label.default }))
                 .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
         });

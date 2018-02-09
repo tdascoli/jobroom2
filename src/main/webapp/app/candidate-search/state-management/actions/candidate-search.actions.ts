@@ -13,7 +13,7 @@ export const SHOW_CANDIDATE_LIST_ERROR = 'CANDIDATES:SHOW_CANDIDATE_LIST_ERROR';
 export const HIDE_CANDIDATE_LIST_ERROR = 'CANDIDATES:HIDE_CANDIDATE_LIST_ERROR';
 export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
-export const UPDATE_OCCUPATION_LABEL = 'CANDIDATES:UPDATE_OCCUPATION_LABEL';
+export const UPDATE_OCCUPATION_TRANSLATION = 'CANDIDATES:UPDATE_OCCUPATION_TRANSLATION';
 export const RESET_FILTER = 'CANDIDATES:RESET';
 
 export class InitCandidateSearchAction implements Action {
@@ -24,7 +24,7 @@ export class InitCandidateSearchAction implements Action {
 }
 
 export class UpdateOccupationTranslationAction implements Action {
-    readonly type = UPDATE_OCCUPATION_LABEL;
+    readonly type = UPDATE_OCCUPATION_TRANSLATION;
 
     constructor(public payload: OccupationOption) {
     }

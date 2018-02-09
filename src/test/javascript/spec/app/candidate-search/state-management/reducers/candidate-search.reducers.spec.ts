@@ -180,7 +180,7 @@ describe('candidateSearchReducer', () => {
         verifyUnchanged(newState, state, ['candidateListScrollY']);
     });
 
-    it('should update CandidateSearchState for UPDATE_OCCUPATION_LABEL action', () => {
+    it('should update CandidateSearchState for UPDATE_OCCUPATION_TRANSLATION action', () => {
         // GIVEN
         const state = Object.assign({}, initialState, {
             searchFilter: {
