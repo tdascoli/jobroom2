@@ -1,5 +1,4 @@
-<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/job-detail', job.id]">
-
+<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/job-detail', job.id]" [ngClass]="{'result-list__item--visited' : job.visited}">
     <div class="result-list__item__content d-flex w-100 flex-column flex-sm-row justify-content-between mb-1">
         <h4 class="text--primary-color order-2 order-sm-1"><span [innerHtml]="job.title | safeHtml"></span></h4>
         <div class="order-1 order-sm-2 w-100">

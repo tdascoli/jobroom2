@@ -80,12 +80,13 @@ describe('JobSearchEffects', () => {
                 totalCount: 100,
                 page: 0
             });
-            const expected = cold('--b', { b: jobListLoadedAction });
+            const expected = cold('--b|', { b: jobListLoadedAction });
 
             expect(effects.initJobSearch$).toBeObservable(expected);
         });
 
         it('should not return anything if store is not in initial state', () => {
+
             const loadJobListAction = new actions.JobListLoadedAction({
                 jobList: [
                     {

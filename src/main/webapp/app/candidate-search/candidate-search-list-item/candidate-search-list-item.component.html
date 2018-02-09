@@ -1,4 +1,4 @@
-<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/candidate-detail', profile.id]">
+<div class="logo-box flex-height result-list__item md-whiteframe-1dp" [routerLink]="['/candidate-detail', profile.id]" [ngClass]="{'result-list__item--visited' : profile.visited}">
 
     <div class="d-flex w-100 justify-content-between mb-1">
         <h4 class="text--primary-color" *ngIf="validExperienceData">{{ (jobExperience$ | async)?.occupation}}</h4>

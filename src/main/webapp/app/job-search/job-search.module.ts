@@ -18,7 +18,6 @@ import { JobDetailComponent } from './job-detail/job-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { JobSearchFilterComponent } from './job-search-sidebar/job-search-filter/job-search-filter.component';
 import { MarkdownModule } from 'angular2-markdown';
-import { JobDetailResolver } from './job-detail/job-detail.resolver';
 import { ClipboardModule } from 'ngx-clipboard';
 import { JobService } from './services';
 import { JobLocalityComponent } from './job-locality/job-locality.component';
@@ -54,7 +53,6 @@ import { JobFingerprintRedirectResolver } from './job-fingerprint-redirect/job-f
     ],
     providers: [
         customHttpProvider(),
-        JobDetailResolver,
         JobFingerprintRedirectResolver,
         JobService
     ]

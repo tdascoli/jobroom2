@@ -13,7 +13,6 @@ import { LanguageSkillService } from './services/language-skill.service';
 import { CandidateSearchToolbarComponent } from './candidate-search-toolbar/candidate-search-toolbar.component';
 import { JobSearchSharedModule } from '../shared/job-search/job-search-shared.module';
 import { CandidateDetailComponent } from './candidate-detail/candidate-detail.component';
-import { CandidateDetailResolver } from './candidate-detail/candidate-detail.resolver';
 import { CandidateService } from './services/candidate.service';
 import { DetailsPagePaginationEffects } from '../shared/components/details-page-pagination/state-management/effects/details-page-pagination.effects';
 import { ClipboardModule } from 'ngx-clipboard';
@@ -49,7 +48,6 @@ import { RouterEffects } from './state-management/effects/router.effects';
     ],
     providers: [
         LanguageSkillService,
-        CandidateDetailResolver,
         CandidateService,
         CantonService
     ]

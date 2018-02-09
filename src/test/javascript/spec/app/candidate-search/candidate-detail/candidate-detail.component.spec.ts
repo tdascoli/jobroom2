@@ -8,10 +8,11 @@ import { OccupationPresentationService } from '../../../../../../main/webapp/app
 import { TranslateService } from '@ngx-translate/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { StoreModule } from '@ngrx/store';
+import { Store, StoreModule } from '@ngrx/store';
 import { candidateSearchReducer } from '../../../../../../main/webapp/app/candidate-search/state-management/reducers/candidate-search.reducers';
 import { MockPrincipal } from '../../../helpers/mock-principal.service';
 import { Principal } from '../../../../../../main/webapp/app/shared';
+import { CandidateProfileDetailLoadedAction } from '../../../../../../main/webapp/app/candidate-search/state-management/actions/candidate-search.actions';
 
 describe('CandidateDetailComponent', () => {
     let component: CandidateDetailComponent;
@@ -53,6 +54,8 @@ describe('CandidateDetailComponent', () => {
         })
             .overrideTemplate(CandidateDetailComponent, '')
             .compileComponents();
+        const store = TestBed.get(Store);
+        store.dispatch(new CandidateProfileDetailLoadedAction(candidateProfile));
     }));
 
     beforeEach(() => {

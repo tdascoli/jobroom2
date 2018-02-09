@@ -5,19 +5,16 @@ import { TypeaheadMultiselectModel } from '../shared/input-components';
 import {
     getBaseQuery,
     getJobList,
-    getResetTime,
-    getTotalJobCount,
-    JobSearchState
-} from './state-management';
-import {
-    getInitialState,
     getLoading,
     getLocalityQuery,
+    getResetTime,
     getSearchQuery,
-    JobSearchQuery
+    getTotalJobCount,
+    InitJobSearchAction,
+    JobSearchQuery,
+    JobSearchState
 } from './state-management';
 import { Job } from './services';
-import { InitJobSearchAction } from './state-management';
 import { WINDOW } from '../shared';
 
 @Component({
@@ -33,7 +30,6 @@ export class JobSearchComponent {
     localityQueryString$: Observable<string>;
     totalCount$: Observable<number>;
     loading$: Observable<boolean>;
-    initialized$: Observable<boolean>;
     showScrollButton = false;
     reset$: Observable<number>;
 
@@ -47,7 +43,6 @@ export class JobSearchComponent {
         this.localityQueryString$ = store.select(getLocalityQuery).map(queryModelToTextMapper);
         this.totalCount$ = store.select(getTotalJobCount);
         this.loading$ = store.select(getLoading);
-        this.initialized$ = store.select(getInitialState).map((initialState: boolean) => !initialState);
         this.reset$ = store.select(getResetTime)
     }
 

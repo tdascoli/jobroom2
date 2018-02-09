@@ -94,7 +94,7 @@ describe('CandidateSearchEffects', () => {
                 totalCandidateCount: 100,
                 page: 0
             });
-            const expected = cold('--b', { b: candidateListLoadedAction });
+            const expected = cold('--b|', { b: candidateListLoadedAction });
 
             expect(effects.initCandidateSearch$).toBeObservable(expected);
         });
@@ -121,7 +121,7 @@ describe('CandidateSearchEffects', () => {
             mockCandidateService.search.and.returnValue(response);
 
             const showCandidateListErrorAction = new actions.ShowCandidateListErrorAction('error');
-            const expected = cold('--b', { b: showCandidateListErrorAction });
+            const expected = cold('--(b|)', { b: showCandidateListErrorAction });
 
             expect(effects.initCandidateSearch$).toBeObservable(expected);
         });

@@ -5,6 +5,7 @@ import { Job } from '../../services';
 export const INIT_JOB_SEARCH = 'JOBS:INIT_JOB_SEARCH';
 export const LOAD_NEXT_PAGE = 'JOBS:LOAD_NEXT_PAGE';
 export const JOB_LIST_LOADED = 'JOBS:JOB_LIST_LOADED';
+export const JOB_DETAIL_LOADED = 'JOBS:JOB_DETAIL_LOADED';
 export const NEXT_PAGE_LOADED = 'JOBS:NEXT_PAGE_LOADED';
 export const SHOW_JOB_LIST_ERROR = 'JOBS:SHOW_JOB_LIST_ERROR';
 export const HIDE_JOB_LIST_ERROR = 'JOBS:HIDE_JOB_LIST_ERROR';
@@ -16,6 +17,9 @@ export const RESET_FILTER = 'JOBS:RESET';
 
 export class InitJobSearchAction implements Action {
     readonly type = INIT_JOB_SEARCH;
+
+    constructor(public payload = {}) {
+    }
 }
 
 export class ToolbarChangedAction implements Action {
@@ -42,7 +46,14 @@ export class JobSearchToolChangedAction implements Action {
 export class LoadNextPageAction implements Action {
     readonly type = LOAD_NEXT_PAGE;
 
-    constructor() {
+    constructor(public payload = {}) {
+    }
+}
+
+export class JobDetailLoadedAction implements Action {
+    readonly type = JOB_DETAIL_LOADED;
+
+    constructor(public payload: Job) {
     }
 }
 
@@ -63,14 +74,14 @@ export class NextPageLoadedAction implements Action {
 export class ShowJobListErrorAction implements Action {
     readonly type = SHOW_JOB_LIST_ERROR;
 
-    constructor(public error: any) {
+    constructor(public payload: any) {
     }
 }
 
 export class HideJobListErrorAction implements Action {
     readonly type = HIDE_JOB_LIST_ERROR;
 
-    constructor() {
+    constructor(public payload = {}) {
     }
 }
 
@@ -92,6 +103,7 @@ export type Actions =
     | InitJobSearchAction
     | ToolbarChangedAction
     | JobSearchToolChangedAction
+    | JobDetailLoadedAction
     | FilterChangedAction
     | LoadNextPageAction
     | JobListLoadedAction

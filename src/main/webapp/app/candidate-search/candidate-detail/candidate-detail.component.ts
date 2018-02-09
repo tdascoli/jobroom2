@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import {
     Candidate,
     CandidateProfile,
@@ -21,6 +20,7 @@ import {
     CandidateSearchState,
     getCandidateProfileList,
     getSearchFilter,
+    getSelectedCandidateProfile,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Contact, Gender, Graduation } from '../../shared';
@@ -48,10 +48,9 @@ export class CandidateDetailComponent implements OnInit {
     relevantJobExperience$: Observable<JobExperience>;
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
-    contact: Contact;
+    contact$: Observable<Contact>;
 
-    constructor(private route: ActivatedRoute,
-                private referenceService: ReferenceService,
+    constructor(private referenceService: ReferenceService,
                 private candidateService: CandidateService,
                 private occupationPresentationService: OccupationPresentationService,
                 private translateService: TranslateService,
@@ -60,8 +59,8 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.candidateProfile$ = this.route.data
-            .map((data) => data['candidateProfile']);
+        this.candidateProfile$ = this.store.select(getSelectedCandidateProfile)
+            .filter((candidateProfile) => !!candidateProfile);
 
         this.jobCenter$ = this.candidateProfile$
             .map((candidateProfile) => candidateProfile.jobCenterCode)
@@ -94,14 +93,14 @@ export class CandidateDetailComponent implements OnInit {
                 this.candidateService.getRelevantJobExperience(occupationCode, jobExperiences));
         this.populatePreferredWorkLocations();
 
-        Observable.combineLatest(this.candidateProfile$, this.jobCenter$)
-            .subscribe(([candidateProfile, jobCenter]) => {
+        this.contact$ = Observable.combineLatest(this.candidateProfile$, this.jobCenter$)
+            .map(([candidateProfile, jobCenter]) => {
                 if (jobCenter && (jobCenter.code.startsWith('BEA') || jobCenter.code.startsWith('BSA'))) {
-                    this.contact = { phone: jobCenter.phone, email: jobCenter.email };
+                    return { phone: jobCenter.phone, email: jobCenter.email };
                 } else {
-                    this.contact = candidateProfile.jobAdvisor;
+                    return candidateProfile.jobAdvisor;
                 }
-            });
+            })
     }
 
     private enrichWithLabels(jobExperience: JobExperience): Observable<EnrichedJobExperience> {

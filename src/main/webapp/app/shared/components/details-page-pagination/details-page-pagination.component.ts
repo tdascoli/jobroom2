@@ -1,7 +1,8 @@
-import { AfterViewInit, Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { Store } from '@ngrx/store';
 import {
-    Item, LoadNextItemAction,
+    Item,
+    LoadNextItemAction,
     LoadPreviousItemAction
 } from './state-management/actions/details-page-pagination.actions';
 
@@ -39,7 +40,7 @@ export class DetailsPagePaginationComponent implements OnChanges {
             return;
         }
 
-        this.navigationEnabled = !!this.itemsList.length;
+        this.navigationEnabled = !!this.itemsList.length && !!this.currentItem;
         if (this.navigationEnabled) {
             this.first = this.itemsList[0].id === this.currentItem.id;
             this.last = this.itemsList[this.itemsList.length - 1].id === this.currentItem.id

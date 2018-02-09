@@ -10,7 +10,6 @@ import {
 import * as actions from '../../../../../../../main/webapp/app/job-search/state-management/actions/job-search.actions';
 import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components';
 import { ONLINE_SINCE_DEFAULT_VALUE } from '../../../../../../../main/webapp/app/shared/constants/job-search.constants';
-import { LanguageChangedAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
 
 describe('jobSearchReducer', () => {
     it('should not change state for undefined action', () => {
@@ -68,7 +67,7 @@ describe('jobSearchReducer', () => {
                 totalJobCount: 0,
                 page: 0,
                 jobList: [],
-                initialState: false,
+                selectedJob: null,
                 resetTime: 0
             }
         ;
@@ -88,8 +87,7 @@ describe('jobSearchReducer', () => {
         // THEN
         expect(newState.searchQuery).toEqual(searchQuery);
         expect(newState.loading).toBeTruthy();
-        expect(newState.initialState).toBeFalsy();
-        verifyUnchanged(newState, initialState, ['loading', 'searchQuery', 'initialState']);
+        verifyUnchanged(newState, initialState, ['loading', 'searchQuery']);
     });
 
     it('should update JobSearchState for FILTER_CHANGED action', () => {
@@ -151,14 +149,12 @@ describe('jobSearchReducer', () => {
         expect(newState.jobList).toEqual(jobList);
         expect(newState.totalJobCount).toEqual(100);
         expect(newState.page).toEqual(1);
-        expect(newState.initialState).toBeFalsy();
         expect(newState.loading).toBeFalsy();
 
         verifyUnchanged(newState, state, [
             'jobList',
             'totalJobCount',
             'page',
-            'initialState',
             'loading',
             'jobNavigationEnabled'
         ]);
@@ -291,6 +287,47 @@ describe('jobSearchReducer', () => {
         // THEN
         expect(newState.resetTime).toEqual(50);
     })
+
+    it('should update JobSearchState for JOB_DETAIL_LOADED action', () => {
+        // GIVEN
+        const publicationEndDate = new Date();
+        const state = initialState;
+        const job0 = {
+            id: '0',
+            externalId: 'extId0',
+            title: 'title-0',
+            source: 'api',
+            publicationEndDate
+        };
+        const job1 = {
+            id: '1',
+            externalId: 'extId1',
+            title: 'title-1',
+            source: 'api',
+            publicationEndDate
+        };
+        const job2 = {
+            id: '2',
+            externalId: 'extId2',
+            title: 'title-2',
+            source: 'api',
+            publicationEndDate
+        };
+        const initialJobList = [job0, job1, job2];
+
+        state.jobList.push(...initialJobList);
+
+        const action = new actions.JobDetailLoadedAction(Object.assign({}, job0));
+
+        // WHEN
+        const newState = jobSearchReducer(state, action);
+
+        // THEN
+        expect(newState.jobList[0].visited).toBeTruthy();
+        expect(newState.selectedJob).toEqual(job0);
+
+        verifyUnchanged(newState, state, ['selectedJob', 'jobList']);
+    });
 });
 
 function verifyUnchanged(newState: JobSearchState, oldState: JobSearchState, ignoreFields: Array<string>) {

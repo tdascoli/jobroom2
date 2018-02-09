@@ -2,6 +2,7 @@ import { CandidateSearchState, initialState } from '../state/candidate-search.st
 import {
     Actions,
     CANDIDATE_LIST_LOADED,
+    CANDIDATE_PROFILE_DETAIL_LOADED,
     CANDIDATE_SEARCH_TOOL_CHANGED,
     HIDE_CANDIDATE_LIST_ERROR,
     NEXT_PAGE_LOADED,
@@ -38,8 +39,7 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
         case SEARCH_CANDIDATES:
             newState = Object.assign({}, state, {
                 searchFilter: action.payload,
-                loading: true,
-                initialState: false
+                loading: true
             });
             break;
 
@@ -47,8 +47,7 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
             const searchFilter = Object.assign({}, initialState.searchFilter, action.payload);
             newState = Object.assign({}, initialState, {
                 searchFilter,
-                loading: true,
-                initialState: false
+                loading: true
             });
             break;
 
@@ -69,9 +68,20 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
                 searchFilter: Object.assign({}, state.searchFilter, { occupation: action.payload })
             });
             break;
-
         case RESET_FILTER:
             newState = Object.assign({}, initialState, { resetTime: action.payload });
+            break;
+
+        case CANDIDATE_PROFILE_DETAIL_LOADED:
+            const selectedCandidateProfile = action.payload;
+            newState = Object.assign({}, state, {
+                selectedCandidateProfile,
+                candidateProfileList: state.candidateProfileList.map((candidateProfile) =>
+                    (selectedCandidateProfile && candidateProfile.id === selectedCandidateProfile.id)
+                        ? Object.assign({}, candidateProfile, { visited: true })
+                        : candidateProfile
+                )
+            });
             break;
 
         default:

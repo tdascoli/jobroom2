@@ -11,8 +11,7 @@
         </div>
 
         <div class="base__content--wide">
-            <jr2-job-search-list *ngIf="initialized$ | async"
-                                 [jobList]="jobList$ | async"
+            <jr2-job-search-list [jobList]="jobList$ | async"
                                  [totalCount]="totalCount$ | async"
                                  [baseQueryString]="baseQueryString$ | async"
                                  [localityQueryString]="localityQueryString$ | async"></jr2-job-search-list>

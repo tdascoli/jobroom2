@@ -54,17 +54,14 @@ export class CandidateSearchEffects {
     @Effect()
     initCandidateSearch$: Observable<Action> = this.actions$
         .ofType(INIT_CANDIDATE_SEARCH)
-        .withLatestFrom(this.store.select(getCandidateSearchState))
-        .switchMap(([action, state]) => {
-            if (state.initialState) {
-                return this.candidateService.search(toInitialSearchRequest(state))
-                    .map(toCandidateProfileListLoadedAction)
-                    .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)));
-            } else {
-                // Page is already loaded. Do not change the application state.
-                return [];
-            }
-        });
+        .take(1)
+        .withLatestFrom(this.hasPreviousSearchTrigger(), this.store.select(getCandidateSearchState))
+        .filter(([action, hasPrevTrigger, state]) => !hasPrevTrigger)
+        .switchMap(([action, hasPrevTrigger, state]) =>
+            this.candidateService.search(toInitialSearchRequest(state))
+                .map(toCandidateProfileListLoadedAction)
+                .catch((err: any) => Observable.of(new ShowCandidateListErrorAction(err)))
+        );
 
     @Effect()
     loadCandidateList$: Observable<Action> = this.actions$
@@ -145,6 +142,14 @@ export class CandidateSearchEffects {
                 @Inject(WINDOW)
                 private window: Window,
                 private router: Router) {
+    }
+
+    private hasPreviousSearchTrigger(): Observable<boolean> {
+        return this.actions$
+            .ofType(SEARCH_CANDIDATES, CANDIDATE_SEARCH_TOOL_CHANGED)
+            .take(1)
+            .map((action) => true)
+            .startWith(false);
     }
 }
 

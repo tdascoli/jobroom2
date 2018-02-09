@@ -53,17 +53,14 @@ export class JobSearchEffects {
     @Effect()
     initJobSearch$: Observable<Action> = this.actions$
         .ofType(INIT_JOB_SEARCH)
-        .withLatestFrom(this.store.select(getJobSearchState))
-        .switchMap(([action, state]) => {
-            if (state.initialState) {
-                return this.jobSearchService.search(toInitialSearchRequest(state))
-                    .map(toJobListLoadedAction)
-                    .catch((err: any) => Observable.of(new ShowJobListErrorAction(err)));
-            } else {
-                // Page is already loaded. Do not change the application state.
-                return [];
-            }
-        });
+        .take(1)
+        .withLatestFrom(this.hasPreviousSearchTrigger(), this.store.select(getJobSearchState))
+        .filter(([action, hasPrevTrigger, state]) => !hasPrevTrigger)
+        .switchMap(([action, hasPrevTrigger, state]) =>
+            this.jobSearchService.search(toInitialSearchRequest(state))
+                .map(toJobListLoadedAction)
+                .catch((err: any) => Observable.of(new ShowJobListErrorAction(err)))
+        );
 
     @Effect()
     loadJobList$: Observable<Action> = this.actions$
@@ -103,7 +100,10 @@ export class JobSearchEffects {
                 .take(1);
         })
         .map((selectedJob: Job) => selectedJob
-            ? new NextItemsPageLoadedAction({ item: selectedJob, feature: JOB_DETAIL_FEATURE })
+            ? new NextItemsPageLoadedAction({
+                item: selectedJob,
+                feature: JOB_DETAIL_FEATURE
+            })
             : new LoadNextItemsPageErrorAction({ feature: JOB_DETAIL_FEATURE }));
 
     @Effect({ dispatch: false })
@@ -124,6 +124,14 @@ export class JobSearchEffects {
                 @Inject(JOB_SEARCH_SCHEDULER)
                 private scheduler: Scheduler,
                 private router: Router) {
+    }
+
+    private hasPreviousSearchTrigger(): Observable<boolean> {
+        return this.actions$
+            .ofType(FILTER_CHANGED, JOB_SEARCH_TOOL_CHANGED)
+            .take(1)
+            .map((action) => true)
+            .startWith(false);
     }
 }
 

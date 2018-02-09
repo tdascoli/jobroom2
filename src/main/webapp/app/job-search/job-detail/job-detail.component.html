@@ -1,5 +1,5 @@
 <div class="container mt-md-5">
-    <div class="row base">
+    <div class="row base" *ngIf="job$ | async as job">
         <div class="col-12 col-md order-11 order-md-1 base__subnavbar">
             <div class="base__sticky-panel">
                 <div class="d-flex d-sm-block flex-column-reverse">
@@ -11,7 +11,7 @@
 
                     <hr class="visible-print-block d-none"/>
 
-                    <div class="alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
+                    <div class="alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp" >
                         <div class="detail__content" *ngIf="job.company">
                             <address>
                                 <h4>{{ job.company.name }}</h4>
@@ -59,7 +59,7 @@
         </div>
 
         <div class="col-12 col-md-8 order-3 base__content">
-            <ngb-alert *ngIf="showExternalJobDisclaimer" [type]="'info'" (close)="showExternalJobDisclaimer = false"
+            <ngb-alert *ngIf="isExternalJobDisclaimerShown(job)" [type]="'info'" (close)="externalJobDisclaimerClosed = true"
                        class="d-print-none">
                 {{'job-detail.external-job-disclaimer' | translate}}
             </ngb-alert>

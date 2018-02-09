@@ -4,6 +4,7 @@ import { CandidateProfile } from '../../services/candidate';
 import { OccupationOption } from '../../../shared/reference-service';
 
 export const INIT_CANDIDATE_SEARCH = 'CANDIDATES:INIT_CANDIDATE_SEARCH';
+export const CANDIDATE_PROFILE_DETAIL_LOADED = 'CANDIDATES:CANDIDATE_PROFILE_DETAIL_LOADED';
 export const SEARCH_CANDIDATES = 'CANDIDATES:SEARCH_CANDIDATES';
 export const CANDIDATE_SEARCH_TOOL_CHANGED = 'CANDIDATES:CANDIDATE_SEARCH_TOOL_CHANGED';
 export const LOAD_NEXT_PAGE = 'CANDIDATES:LOAD_NEXT_PAGE';
@@ -15,6 +16,13 @@ export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
 export const UPDATE_OCCUPATION_TRANSLATION = 'CANDIDATES:UPDATE_OCCUPATION_TRANSLATION';
 export const RESET_FILTER = 'CANDIDATES:RESET';
+
+export class CandidateProfileDetailLoadedAction implements Action {
+    readonly type = CANDIDATE_PROFILE_DETAIL_LOADED;
+
+    constructor(public payload: CandidateProfile) {
+    }
+}
 
 export class InitCandidateSearchAction implements Action {
     readonly type = INIT_CANDIDATE_SEARCH;
@@ -105,6 +113,7 @@ export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
     | CandidateSearchToolChangedAction
+    | CandidateProfileDetailLoadedAction
     | LoadNextPageAction
     | NextPageLoadedAction
     | CandidateProfileListLoadedAction

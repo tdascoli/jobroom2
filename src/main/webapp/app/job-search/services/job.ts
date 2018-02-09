@@ -79,4 +79,5 @@ export interface Job {
     occupation?: Occupation[];
     languages?: LanguageSkill[];
     application?: Application;
+    visited?: boolean;
 }

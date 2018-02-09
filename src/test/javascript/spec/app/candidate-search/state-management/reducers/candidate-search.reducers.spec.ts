@@ -95,7 +95,6 @@ describe('candidateSearchReducer', () => {
         // THEN
         expect(newState.searchFilter.workplace).toEqual(new TypeaheadItemDisplayModel(new TypeaheadMultiselectModel('type', 'code', 'label'), true, true));
         expect(newState.loading).toBeTruthy();
-        expect(newState.initialState).toBeFalsy();
         verifyUnchanged(newState, state, ['loading', 'searchFilter', 'initialState']);
     });
 
@@ -111,7 +110,7 @@ describe('candidateSearchReducer', () => {
             totalCandidateCount: 0,
             page: 0,
             candidateProfileList: [],
-            initialState: true,
+            selectedCandidateProfile: null,
             searchError: false,
             candidateListScrollY: 0,
             resetTime: 0
@@ -129,8 +128,7 @@ describe('candidateSearchReducer', () => {
         expect(newState.searchFilter.skills).toEqual(initialState.searchFilter.skills);
         expect(newState.searchFilter.workload).toEqual(initialState.searchFilter.workload);
         expect(newState.loading).toBeTruthy();
-        expect(newState.initialState).toBeFalsy();
-        verifyUnchanged(newState, initialState, ['loading', 'initialState', 'searchFilter']);
+        verifyUnchanged(newState, initialState, ['loading', 'searchFilter']);
         verifyUnchanged(newState.searchFilter, initialState.searchFilter, ['workplace', 'skills', 'workload']);
     });
 
@@ -216,6 +214,38 @@ describe('candidateSearchReducer', () => {
         expect(newState.resetTime).toEqual(50);
     })
 
+    it('should update JobSearchState for CANDIDATE_PROFILE_DETAIL_LOADED action', () => {
+        // GIVEN
+        const state = initialState;
+        const candidate0 = {
+            id: '0',
+            externalId: 'extId0'
+        } as CandidateProfile;
+        const candidate1 = {
+            id: '1',
+            externalId: 'extId1'
+        } as CandidateProfile;
+        const candidate2 = {
+            id: '2',
+            externalId: 'extId2'
+        } as CandidateProfile;
+        const initialCandidateProfileList = [candidate0, candidate1, candidate2];
+
+        state.candidateProfileList.push(...initialCandidateProfileList);
+
+        const action = new actions.CandidateProfileDetailLoadedAction(Object.assign({}, candidate0));
+
+        // WHEN
+        const newState = candidateSearchReducer(state, action);
+
+        // THEN
+        expect(newState.candidateProfileList[0].visited).toBeTruthy();
+        expect(newState.candidateProfileList[1]).toEqual(candidate1);
+        expect(newState.candidateProfileList[2]).toEqual(candidate2);
+        expect(newState.selectedCandidateProfile).toEqual(candidate0);
+
+        verifyUnchanged(newState, state, ['selectedCandidateProfile', 'candidateProfileList']);
+    });
 });
 
 function verifyUnchanged<T>(newState: T, oldState: T, ignoreFields: Array<string>) {

@@ -23,7 +23,7 @@
                                 </p>
                             </address>
 
-                            <div *ngIf="contact">
+                            <div *ngIf="contact$ | async as contact">
                                 <div *ngIf="isAuthenticated() || jobCenter.showContactDetailsToPublic">
                                     {{contact.firstName}} {{contact.lastName}}
                                 </div>

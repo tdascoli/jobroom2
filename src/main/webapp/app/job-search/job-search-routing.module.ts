@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { JobSearchComponent } from './job-search.component';
 import { JobDetailComponent } from './job-detail/job-detail.component';
-import { JobDetailResolver } from './job-detail/job-detail.resolver';
+import { JobDetailGuard } from './job-detail/job-detail.guard';
 import { JobFingerprintRedirectComponent } from './job-fingerprint-redirect/job-fingerprint-redirect.component';
 import { JobFingerprintRedirectResolver } from './job-fingerprint-redirect/job-fingerprint-redirect.resolver';
 
@@ -18,9 +18,7 @@ const routes: Routes = [
     {
         path: 'job-detail/:id',
         component: JobDetailComponent,
-        resolve: {
-            job: JobDetailResolver
-        },
+        canActivate: [JobDetailGuard],
         data: {
             authorities: [],
             pageTitle: 'job-detail.title'
@@ -37,7 +35,8 @@ const routes: Routes = [
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
+    providers: [JobDetailGuard]
 })
 export class JobSearchRoutingModule {
 }

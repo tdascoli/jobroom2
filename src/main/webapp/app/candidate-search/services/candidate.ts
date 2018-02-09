@@ -73,4 +73,5 @@ export interface CandidateProfile {
     highestDegree: string
     jobCenterCode: string;
     jobAdvisor: Contact;
+    visited?: boolean;
 }

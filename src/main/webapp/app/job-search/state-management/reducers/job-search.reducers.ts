@@ -3,6 +3,7 @@ import {
     Actions,
     FILTER_CHANGED,
     HIDE_JOB_LIST_ERROR,
+    JOB_DETAIL_LOADED,
     JOB_LIST_LOADED,
     JOB_SEARCH_TOOL_CHANGED,
     LOAD_NEXT_PAGE,
@@ -30,8 +31,7 @@ export function jobSearchReducer(state = initialState, action: Actions | core.La
             const toolSearchQuery = Object.assign({}, action.payload);
             newState = Object.assign({}, initialState, {
                 searchQuery: toolSearchQuery,
-                loading: true,
-                initialState: false
+                loading: true
             });
             break;
         case JOB_LIST_LOADED:
@@ -40,7 +40,6 @@ export function jobSearchReducer(state = initialState, action: Actions | core.La
                 totalJobCount: action.payload.totalCount,
                 searchError: false,
                 page: action.payload.page,
-                initialState: false,
                 loading: false
             });
             break;
@@ -70,6 +69,18 @@ export function jobSearchReducer(state = initialState, action: Actions | core.La
 
         case RESET_FILTER:
             newState = Object.assign({}, initialState, { resetTime: action.payload });
+            break;
+
+        case JOB_DETAIL_LOADED:
+            const selectedJob = action.payload;
+            newState = Object.assign({}, state, {
+                selectedJob,
+                jobList: state.jobList.map((job) =>
+                    (selectedJob && job.id === selectedJob.id)
+                        ? Object.assign({}, job, { visited: true })
+                        : job
+                )
+            });
             break;
 
         default:
