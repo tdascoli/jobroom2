@@ -1,0 +1,53 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "ch.admin.seco.jobroom",
+      "nativeLanguage": "de",
+      "microservicePath": "../job-service"
+    },
+    "jhipsterVersion": "4.14.0",
+    "baseName": "jobroom",
+    "packageName": "ch.admin.seco.jobroom",
+    "packageFolder": "ch/admin/seco/jobroom",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "hibernateCache": "hazelcast",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": "elasticsearch",
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "2a668c476afe644fa9c3805b2fe7f45097aa5b75",
+    "clientFramework": "angularX",
+    "useSass": true,
+    "clientPackageManager": "yarn",
+    "applicationType": "gateway",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "otherModules": [
+      {
+        "name": "generator-jhipster-postgresuuid-converter",
+        "version": "0.1.0"
+      }
+    ],
+    "enableTranslation": true,
+    "nativeLanguage": "de",
+    "languages": [
+      "de",
+      "en",
+      "fr",
+      "it"
+    ],
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true
+  }
+}
