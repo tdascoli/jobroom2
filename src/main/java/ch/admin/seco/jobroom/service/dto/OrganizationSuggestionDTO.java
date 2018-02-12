@@ -50,6 +50,11 @@ public class OrganizationSuggestionDTO {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hash(name, street, city, zipCode);
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -62,10 +67,5 @@ public class OrganizationSuggestionDTO {
             Objects.equals(street, that.street) &&
             Objects.equals(city, that.city) &&
             Objects.equals(zipCode, that.zipCode);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, street, city, zipCode);
     }
 }

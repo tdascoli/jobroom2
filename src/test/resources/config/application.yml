@@ -15,7 +15,7 @@
 
 eureka:
     client:
-        enabled: false
+        enabled: true
     instance:
         appname: jobroom
         instanceId: jobroom:${spring.application.instance-id:${random.value}}
@@ -26,7 +26,7 @@ spring:
     jackson:
         serialization.write_dates_as_timestamps: false
     cache:
-        type: none
+        type: simple
     datasource:
         type: com.zaxxer.hikari.HikariDataSource
         url: jdbc:h2:mem:jobroom;DB_CLOSE_DELAY=-1
@@ -52,11 +52,9 @@ spring:
     data:
         elasticsearch:
             cluster-name:
-#            cluster-nodes:
-            properties:
-                path:
-                    logs: build/elasticsearch/log
-                    data: build/elasticsearch/data
+            cluster-nodes: localhost:9300
+    liquibase:
+        contexts: test
     mail:
         host: localhost
     messages:
@@ -65,14 +63,7 @@ spring:
         favicon:
             enabled: false
     thymeleaf:
-        mode: XHTML
-
-liquibase:
-    contexts: test
-
-security:
-    basic:
-        enabled: false
+        mode: HTML
 
 server:
     port: 10344
@@ -124,4 +115,4 @@ jhipster:
 # http://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-#application:
+# application:

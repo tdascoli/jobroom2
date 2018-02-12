@@ -58,11 +58,11 @@ public class OrganizationServiceImpl implements OrganizationService {
     private final OrganizationDocumentMapper organizationDocumentMapper;
 
     public OrganizationServiceImpl(OrganizationRepository organizationRepository,
-            OrganizationMapper organizationMapper,
-            OrganizationSearchRepository organizationSearchRepository,
-            EntityManager entityManager,
-            OrganizationSuggestionService organizationSuggestionService,
-            OrganizationDocumentMapper organizationDocumentMapper) {
+        OrganizationMapper organizationMapper,
+        OrganizationSearchRepository organizationSearchRepository,
+        EntityManager entityManager,
+        OrganizationSuggestionService organizationSuggestionService,
+        OrganizationDocumentMapper organizationDocumentMapper) {
         this.organizationRepository = organizationRepository;
         this.organizationMapper = organizationMapper;
         this.organizationSearchRepository = organizationSearchRepository;
@@ -84,9 +84,9 @@ public class OrganizationServiceImpl implements OrganizationService {
         Organization organization = organizationMapper.toEntity(organizationDTO);
         if (isNull(organization.getId())) {
             organizationRepository.findByExternalId(organization.getExternalId())
-                    .ifPresent(item ->
-                            organization.setId(item.getId())
-                    );
+                .ifPresent(item ->
+                    organization.setId(item.getId())
+                );
         }
 
         Organization organizationSaved = organizationRepository.save(organization);
@@ -107,7 +107,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Page<OrganizationDTO> findAll(Pageable pageable) {
         log.debug("Request to get all Organizations");
         return organizationRepository.findAll(pageable)
-                .map(organizationMapper::toDto);
+            .map(organizationMapper::toDto);
     }
 
     /**
@@ -121,7 +121,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Optional<OrganizationDTO> findOne(UUID id) {
         log.debug("Request to get Organization : {}", id);
         return organizationRepository.findById(id)
-                .map(organizationMapper::toDto);
+            .map(organizationMapper::toDto);
     }
 
     @Override
@@ -129,7 +129,7 @@ public class OrganizationServiceImpl implements OrganizationService {
     public Optional<OrganizationDTO> findOneByExternalId(String externalId) {
         log.debug("Request to get Organization by externalId : {}", externalId);
         return organizationRepository.findByExternalId(externalId)
-                .map(organizationMapper::toDto);
+            .map(organizationMapper::toDto);
     }
 
     /**
@@ -172,8 +172,8 @@ public class OrganizationServiceImpl implements OrganizationService {
         log.info("Start housekeeping");
 
         deactivate(
-                organizationRepository
-                        .findByLastModifiedDateIsBefore(toInstant(beforeDateTime))
+            organizationRepository
+                .findByLastModifiedDateIsBefore(toInstant(beforeDateTime))
         );
 
         log.info("Housekeeping finished. Organization counts: {} / {}", organizationRepository.count(), organizationSearchRepository.count());
@@ -186,19 +186,19 @@ public class OrganizationServiceImpl implements OrganizationService {
     private void deactivate(Stream<Organization> jobs) {
         AtomicInteger counter = new AtomicInteger(0);
         Flux.fromStream(jobs)
-                .buffer(100)
-                .doOnSubscribe(subscription -> log.info("Start deactive organizations"))
-                .doFinally(signalType -> log.info("End deactive organizations. {} organizations deactived", counter.get()))
-                .doOnError(exception -> log.error("Failed to delete organizations", exception))
-                .doOnNext(organizationRepository::saveAll)
-                .doOnNext(organizations -> {
-                    final List<OrganizationDocument> documents = organizations.stream()
-                        .map(organizationDocumentMapper::organizationToOrganizationDocument)
-                        .collect(Collectors.toList());
-                    organizationSearchRepository.saveAll(documents);
-                })
-                .doOnNext(organizationsPartition -> entityManager.clear())
-                .doOnNext(organizationsPartition -> counter.addAndGet(organizationsPartition.size()))
-                .subscribe(organizationsPartition -> log.debug("{} organizations deactivated from database and elasticsearch", counter.get()));
+            .buffer(100)
+            .doOnSubscribe(subscription -> log.info("Start deactive organizations"))
+            .doFinally(signalType -> log.info("End deactive organizations. {} organizations deactived", counter.get()))
+            .doOnError(exception -> log.error("Failed to delete organizations", exception))
+            .doOnNext(organizationRepository::saveAll)
+            .doOnNext(organizations -> {
+                final List<OrganizationDocument> documents = organizations.stream()
+                    .map(organizationDocumentMapper::organizationToOrganizationDocument)
+                    .collect(Collectors.toList());
+                organizationSearchRepository.saveAll(documents);
+            })
+            .doOnNext(organizationsPartition -> entityManager.clear())
+            .doOnNext(organizationsPartition -> counter.addAndGet(organizationsPartition.size()))
+            .subscribe(organizationsPartition -> log.debug("{} organizations deactivated from database and elasticsearch", counter.get()));
     }
 }

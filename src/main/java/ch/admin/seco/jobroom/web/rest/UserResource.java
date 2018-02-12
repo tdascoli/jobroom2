@@ -19,10 +19,8 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.annotation.Secured;
-import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -42,7 +40,6 @@ import ch.admin.seco.jobroom.web.rest.errors.BadRequestAlertException;
 import ch.admin.seco.jobroom.web.rest.errors.LoginAlreadyUsedException;
 import ch.admin.seco.jobroom.web.rest.util.HeaderUtil;
 import ch.admin.seco.jobroom.web.rest.util.PaginationUtil;
-import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 
 /**
  * REST controller for managing users.
@@ -89,12 +86,12 @@ public class UserResource {
 
     /**
      * POST  /users  : Creates a new user.
-     *
-     * Creates a new user if the login is not already used, and sends an
+     * <p>
+     * Creates a new user if the login and email are not already used, and sends an
      * mail with an activation link.
      * The user needs to be activated on creation.
      *
-     * @param managedUserVM the user to create
+     * @param userDTO the user to create
      * @return the ResponseEntity with status 201 (Created) and with body the new user, or with status 400 (Bad Request) if the login or email is already in use
      * @throws URISyntaxException if the Location URI syntax is incorrect
      * @throws BadRequestAlertException 400 (Bad Request) if the login or email is already in use
@@ -102,16 +99,16 @@ public class UserResource {
     @PostMapping("/users")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
-    public ResponseEntity<User> createUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
-        log.debug("REST request to save User : {}", managedUserVM);
+    public ResponseEntity<User> createUser(@Valid @RequestBody UserDTO userDTO) throws URISyntaxException {
+        log.debug("REST request to save User : {}", userDTO);
 
-        if (managedUserVM.getId() != null) {
+        if (userDTO.getId() != null) {
             throw new BadRequestAlertException("A new user cannot already have an ID", "userManagement", "idexists");
             // Lowercase the user login before comparing with database
-        } else if (userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase()).isPresent()) {
+        } else if (userRepository.findOneByLogin(userDTO.getLogin().toLowerCase()).isPresent()) {
             throw new LoginAlreadyUsedException();
         } else {
-            User newUser = userService.createUser(managedUserVM);
+            User newUser = userService.createUser(userDTO);
             mailService.sendCreationEmail(newUser);
             return ResponseEntity.created(new URI("/api/users/" + newUser.getLogin()))
                 .headers(HeaderUtil.createAlert("userManagement.created", newUser.getLogin()))
@@ -120,75 +117,43 @@ public class UserResource {
     }
 
     /**
-     * PUT  /users : Updates an existing User.
+     * PUT /users : Updates an existing User.
      *
-     * @param managedUserVM the user to update
+     * @param userDTO the user to update
      * @return the ResponseEntity with status 200 (OK) and with body the updated user
      * @throws LoginAlreadyUsedException 400 (Bad Request) if the login is already in use
      */
     @PutMapping("/users")
     @Timed
     @Secured(AuthoritiesConstants.ADMIN)
-    public ResponseEntity<UserDTO> updateUser(@Valid @RequestBody ManagedUserVM managedUserVM) {
-        log.debug("REST request to update User : {}", managedUserVM);
-        Optional<User> existingUser = userRepository.findOneByLogin(managedUserVM.getLogin().toLowerCase());
-        if (existingUser.isPresent() && (!existingUser.get().getId().equals(managedUserVM.getId()))) {
+    public ResponseEntity<UserDTO> updateUser(@Valid @RequestBody UserDTO userDTO) {
+        log.debug("REST request to update User : {}", userDTO);
+        Optional<User> existingUser = userRepository.findOneByLogin(userDTO.getLogin().toLowerCase());
+        if (existingUser.isPresent() && (!existingUser.get().getId().equals(userDTO.getId()))) {
             throw new LoginAlreadyUsedException();
         }
-        Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
+        Optional<UserDTO> updatedUser = userService.updateUser(userDTO);
+
         return ResponseUtil.wrapOrNotFound(updatedUser,
-            HeaderUtil.createAlert("userManagement.updated", managedUserVM.getLogin()));
-
-    }
-
-    @PatchMapping("/users")
-    @Timed
-    @Secured(AuthoritiesConstants.ADMIN)
-    public ResponseEntity<UserDTO> importUser(@Valid @RequestBody ManagedUserVM managedUserVM) throws URISyntaxException {
-        log.debug("REST request to import User : {}", managedUserVM);
-        String login = managedUserVM.getLogin().toLowerCase();
-        Optional<User> existingUser = userRepository.findOneByLogin(login);
-
-        // update existing user
-        if (existingUser.isPresent()) {
-            User user = existingUser.get();
-
-            managedUserVM.setId(user.getId());
-            Optional<UserDTO> updatedUser = userService.updateUser(managedUserVM);
-
-            if (StringUtils.hasText(managedUserVM.getPassword())) {
-                userService.updatePassword(login, managedUserVM.getPassword());
-            }
-            return ResponseUtil.wrapOrNotFound(updatedUser,
-                HeaderUtil.createAlert("userManagement.updated", login));
-        }
-
-        // create new user
-        User newUser = userService.createUser(managedUserVM);
-        if (StringUtils.hasText(managedUserVM.getPassword())) {
-            userService.updatePassword(login, managedUserVM.getPassword());
-        }
-        return ResponseEntity.created(new URI("/api/users/" + login))
-            .headers(HeaderUtil.createAlert("userManagement.created", login))
-            .body(new UserDTO(newUser));
+            HeaderUtil.createAlert("userManagement.updated", userDTO.getLogin()));
     }
 
     /**
-     * GET  /users : get all users.
+     * GET /users : get all users.
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and with body all users
      */
     @GetMapping("/users")
     @Timed
-    public ResponseEntity<List<UserDTO>> getAllUsers(@ApiParam Pageable pageable) {
+    public ResponseEntity<List<UserDTO>> getAllUsers(Pageable pageable) {
         final Page<UserDTO> page = userService.getAllManagedUsers(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/users");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }
 
     /**
-     * Returns a list of all available authorities.
+     * Get all authorities.
      *
      * @return a string list of the all of the roles
      */
@@ -200,7 +165,7 @@ public class UserResource {
     }
 
     /**
-     * GET  /users/:login : get the "login" user.
+     * GET /users/:login : get the "login" user.
      *
      * @param login the login of the user to find
      * @return the ResponseEntity with status 200 (OK) and with body the "login" user, or with status 404 (Not Found)

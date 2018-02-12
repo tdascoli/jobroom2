@@ -21,7 +21,6 @@ import ch.admin.seco.jobroom.security.AuthoritiesConstants;
 
 public class JWTFilterTest {
 
-
     private TokenProvider tokenProvider;
 
     private JWTFilter jwtFilter;
@@ -92,7 +91,7 @@ public class JWTFilterTest {
     }
 
     @Test
-    public void testJWTFilterWrongScheme() throws Exception {
+    public void testJWTFilterWrongScheme() {
         UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
             "test-user",
             "test-password",

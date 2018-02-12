@@ -33,9 +33,12 @@ before_install:
 - export PATH=$HOME/.yarn/bin:$PATH
 install:
 - yarn install
+- docker-compose -f src/main/docker/elasticsearch.yml up -d
 script:
 - yarn test
 - ./gradlew check jacocoTestReport sonarqube -Pprod
+after_script:
+- docker-compose -f src/main/docker/elasticsearch.yml stop
 after_success:
 - bash <(curl -s https://codecov.io/bash)
 before_deploy:

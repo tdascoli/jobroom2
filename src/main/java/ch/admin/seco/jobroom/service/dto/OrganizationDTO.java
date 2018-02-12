@@ -5,10 +5,9 @@ import java.io.Serializable;
 import java.util.Objects;
 import java.util.UUID;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.validator.constraints.Email;
 
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
 
@@ -129,6 +128,11 @@ public class OrganizationDTO implements Serializable {
     }
 
     @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
@@ -142,11 +146,6 @@ public class OrganizationDTO implements Serializable {
             return false;
         }
         return Objects.equals(getId(), organizationDTO.getId());
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hashCode(getId());
     }
 
     @Override
