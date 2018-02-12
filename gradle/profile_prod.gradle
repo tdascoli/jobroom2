@@ -1,12 +1,9 @@
 apply plugin: 'org.springframework.boot'
+apply plugin: 'com.gorylenko.gradle-git-properties'
 apply plugin: 'com.moowork.node'
 
-ext {
-    logbackLoglevel = "INFO"
-}
-
 dependencies {
-
+    testCompile "com.h2database:h2"
 }
 
 def profiles = 'prod'
@@ -22,6 +19,7 @@ bootRun {
     args = []
 }
 
+
 task webpack_test(type: YarnTask, dependsOn: 'yarn_install') {
     args = ["run", "webpack:test"]
 }
@@ -35,11 +33,6 @@ war {
 }
 
 processResources {
-    filesMatching('**/logback-spring.xml') {
-        filter {
-            it.replace('#logback.loglevel#', logbackLoglevel)
-        }
-    }
     filesMatching('**/application.yml') {
         filter {
             it.replace('#project.version#', version)
@@ -50,6 +43,16 @@ processResources {
             it.replace('#spring.profiles.active#', profiles)
         }
     }
+}
+
+generateGitProperties {
+    onlyIf {
+        !source.isEmpty()
+    }
+}
+
+gitProperties {
+    keys = ['git.branch', 'git.commit.id.abbrev']
 }
 
 test.dependsOn webpack_test

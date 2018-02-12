@@ -1,5 +1,7 @@
 package ch.admin.seco.jobroom.config;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.sql.SQLException;
 
 import javax.sql.DataSource;
@@ -7,7 +9,6 @@ import javax.sql.DataSource;
 import io.github.jhipster.config.JHipsterConstants;
 import io.github.jhipster.config.liquibase.AsyncSpringLiquibase;
 import liquibase.integration.spring.SpringLiquibase;
-import org.h2.tools.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,8 +47,31 @@ public class DatabaseConfiguration {
      */
     @Bean(initMethod = "start", destroyMethod = "stop")
     @Profile(JHipsterConstants.SPRING_PROFILE_DEVELOPMENT)
-    public Server h2TCPServer() throws SQLException {
-        return Server.createTcpServer("-tcp", "-tcpAllowOthers");
+    public Object h2TCPServer() throws SQLException {
+        try {
+            // We don't want to include H2 when we are packaging for the "prod" profile and won't
+            // actually need it, so we have to load / invoke things at runtime through reflection.
+            ClassLoader loader = Thread.currentThread().getContextClassLoader();
+            Class<?> serverClass = Class.forName("org.h2.tools.Server", true, loader);
+            Method createServer = serverClass.getMethod("createTcpServer", String[].class);
+            return createServer.invoke(null, new Object[] {new String[] {"-tcp", "-tcpAllowOthers"}});
+
+        } catch (ClassNotFoundException | LinkageError e) {
+            throw new RuntimeException("Failed to load and initialize org.h2.tools.Server", e);
+
+        } catch (SecurityException | NoSuchMethodException e) {
+            throw new RuntimeException("Failed to get method org.h2.tools.Server.createTcpServer()", e);
+
+        } catch (IllegalAccessException | IllegalArgumentException e) {
+            throw new RuntimeException("Failed to invoke org.h2.tools.Server.createTcpServer()", e);
+
+        } catch (InvocationTargetException e) {
+            Throwable t = e.getTargetException();
+            if (t instanceof SQLException) {
+                throw (SQLException) t;
+            }
+            throw new RuntimeException("Unchecked exception in org.h2.tools.Server.createTcpServer()", t);
+        }
     }
 
     @Bean

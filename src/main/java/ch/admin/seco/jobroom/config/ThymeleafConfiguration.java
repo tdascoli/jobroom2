@@ -1,6 +1,7 @@
 package ch.admin.seco.jobroom.config;
 
-import org.apache.commons.lang3.CharEncoding;
+import java.nio.charset.StandardCharsets;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
@@ -21,8 +22,8 @@ public class ThymeleafConfiguration {
         ClassLoaderTemplateResolver emailTemplateResolver = new ClassLoaderTemplateResolver();
         emailTemplateResolver.setPrefix("mails/");
         emailTemplateResolver.setSuffix(".html");
-        emailTemplateResolver.setTemplateMode("HTML5");
-        emailTemplateResolver.setCharacterEncoding(CharEncoding.UTF_8);
+        emailTemplateResolver.setTemplateMode("HTML");
+        emailTemplateResolver.setCharacterEncoding(StandardCharsets.UTF_8.name());
         emailTemplateResolver.setOrder(1);
         return emailTemplateResolver;
     }

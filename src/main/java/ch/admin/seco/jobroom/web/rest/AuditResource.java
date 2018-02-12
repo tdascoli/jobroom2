@@ -6,7 +6,6 @@ import java.util.List;
 import java.util.UUID;
 
 import io.github.jhipster.web.util.ResponseUtil;
-import io.swagger.annotations.ApiParam;
 
 import org.springframework.boot.actuate.audit.AuditEvent;
 import org.springframework.data.domain.Page;
@@ -37,13 +36,13 @@ public class AuditResource {
     }
 
     /**
-     * GET  /audits : get a page of AuditEvents.
+     * GET /audits : get a page of AuditEvents.
      *
      * @param pageable the pagination information
      * @return the ResponseEntity with status 200 (OK) and the list of AuditEvents in body
      */
     @GetMapping
-    public ResponseEntity<List<AuditEvent>> getAll(@ApiParam Pageable pageable) {
+    public ResponseEntity<List<AuditEvent>> getAll(Pageable pageable) {
         Page<AuditEvent> page = auditEventService.findAll(pageable);
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/management/audits");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
@@ -61,7 +60,7 @@ public class AuditResource {
     public ResponseEntity<List<AuditEvent>> getByDates(
         @RequestParam("fromDate") LocalDate fromDate,
         @RequestParam("toDate") LocalDate toDate,
-        @ApiParam Pageable pageable) {
+        Pageable pageable) {
 
         Page<AuditEvent> page = auditEventService.findByDates(
             fromDate.atStartOfDay(ZoneId.systemDefault()).toInstant(),

@@ -36,7 +36,7 @@ import ch.admin.seco.jobroom.service.dto.UserDTO;
 import ch.admin.seco.jobroom.service.mapper.UserDocumentMapper;
 import ch.admin.seco.jobroom.service.search.UserSearchService;
 import ch.admin.seco.jobroom.service.util.RandomUtil;
-import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
+import ch.admin.seco.jobroom.web.rest.errors.InvalidPasswordException;
 
 /**
  * Service class for managing users.
@@ -45,8 +45,9 @@ import ch.admin.seco.jobroom.web.rest.vm.ManagedUserVM;
 @Transactional
 public class UserService {
 
-    private static final String USERS_CACHE = "users";
+    private static final String USERS_CACHE = UserRepository.USERS_BY_LOGIN_CACHE;
     private final Logger log = LoggerFactory.getLogger(UserService.class);
+
     private final UserRepository userRepository;
 
     private final PasswordEncoder passwordEncoder;
@@ -120,12 +121,12 @@ public class UserService {
             });
     }
 
-    public User registerUser(ManagedUserVM userDTO) {
+    public User registerUser(UserDTO userDTO, String password) {
 
         User newUser = new User();
-        Authority authority = authorityRepository.getOne(AuthoritiesConstants.USER);
+        Authority authority = authorityRepository.findById(AuthoritiesConstants.USER).get();
         Set<Authority> authorities = new HashSet<>();
-        String encryptedPassword = passwordEncoder.encode(userDTO.getPassword());
+        String encryptedPassword = passwordEncoder.encode(password);
         newUser.setLogin(userDTO.getLogin());
         // new user gets initially a generated password
         newUser.setPassword(encryptedPassword);
@@ -168,7 +169,9 @@ public class UserService {
         }
         if (userDTO.getAuthorities() != null) {
             Set<Authority> authorities = userDTO.getAuthorities().stream()
-                .map(authorityRepository::getOne)
+                .map(authorityRepository::findById)
+                .filter(Optional::isPresent)
+                .map(Optional::get)
                 .collect(Collectors.toSet());
             user.setAuthorities(authorities);
         }
@@ -199,18 +202,20 @@ public class UserService {
      * @param imageUrl image URL of user
      */
     public void updateUser(String firstName, String lastName, String email, String phone, Gender gender, String langKey, String imageUrl) {
-        userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
-            user.setFirstName(firstName);
-            user.setLastName(lastName);
-            user.setEmail(email);
-            user.setPhone(phone);
-            user.setGender(gender);
-            user.setLangKey(langKey);
-            user.setImageUrl(imageUrl);
-            userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
-            cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
-            log.debug("Changed Information for User: {}", user);
-        });
+        SecurityUtils.getCurrentUserLogin()
+            .flatMap(userRepository::findOneByLogin)
+            .ifPresent(user -> {
+                user.setFirstName(firstName);
+                user.setLastName(lastName);
+                user.setEmail(email);
+                user.setPhone(phone);
+                user.setGender(gender);
+                user.setLangKey(langKey);
+                user.setImageUrl(imageUrl);
+                userSearchRepository.save(userDocumentMapper.userToUserDocument(user));
+                cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
+                log.debug("Changed Information for User: {}", user);
+            });
     }
 
     /**
@@ -220,8 +225,10 @@ public class UserService {
      * @return updated user
      */
     public Optional<UserDTO> updateUser(UserDTO userDTO) {
-        return userRepository
-            .findById(userDTO.getId())
+        return Optional.of(userRepository
+            .findById(userDTO.getId()))
+            .filter(Optional::isPresent)
+            .map(Optional::get)
             .map(user -> {
                 user.setLogin(userDTO.getLogin());
                 user.setFirstName(userDTO.getFirstName());
@@ -259,13 +266,17 @@ public class UserService {
         });
     }
 
-    public void changePassword(String password) {
-        userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).ifPresent(user -> {
-            String encryptedPassword = passwordEncoder.encode(password);
-            user.setPassword(encryptedPassword);
-            cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
-            log.debug("Changed password for User: {}", user);
-        });
+    public void changePassword(String currentClearTextPassword, String newPassword) {
+        SecurityUtils.getCurrentUserLogin()
+            .flatMap(userRepository::findOneByLogin)
+            .ifPresent(user -> {
+                String currentEncryptedPassword = user.getPassword();
+                assertClearTextPasswordMatchesEncryptedPassword(currentClearTextPassword, currentEncryptedPassword);
+                String encryptedPassword = passwordEncoder.encode(newPassword);
+                user.setPassword(encryptedPassword);
+                cacheManager.getCache(USERS_CACHE).evict(user.getLogin());
+                log.debug("Changed password for User: {}", user);
+            });
     }
 
     public void updatePassword(String login, String encryptedPassword) {
@@ -287,13 +298,13 @@ public class UserService {
     }
 
     @Transactional(readOnly = true)
-    public User getUserWithAuthorities(UUID id) {
+    public Optional<User> getUserWithAuthorities(UUID id) {
         return userRepository.findOneWithAuthoritiesById(id);
     }
 
     @Transactional(readOnly = true)
-    public User getUserWithAuthorities() {
-        return userRepository.findOneWithAuthoritiesByLogin(SecurityUtils.getCurrentUserLogin()).orElse(null);
+    public Optional<User> getUserWithAuthorities() {
+        return SecurityUtils.getCurrentUserLogin().flatMap(userRepository::findOneWithAuthoritiesByLogin);
     }
 
     /**
@@ -325,4 +336,11 @@ public class UserService {
     public Page<UserDTO> searchByQuery(String query, Pageable pageable) {
         return userSearchService.searchByQuery(query, pageable);
     }
+
+    private void assertClearTextPasswordMatchesEncryptedPassword(String clearTextPassword, String encryptedPassword) {
+        if (!passwordEncoder.matches(clearTextPassword, encryptedPassword)) {
+            throw new InvalidPasswordException();
+        }
+    }
+
 }

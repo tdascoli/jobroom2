@@ -39,6 +39,10 @@ public class ManagedUserVM extends UserDTO {
         return password;
     }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     @Override
     public String toString() {
         return "ManagedUserVM{" +

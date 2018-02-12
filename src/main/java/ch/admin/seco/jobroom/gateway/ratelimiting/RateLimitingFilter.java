@@ -70,6 +70,7 @@ public class RateLimitingFilter extends ZuulFilter {
     @Override
     public boolean shouldFilter() {
         // specific APIs can be filtered out using
+        // if (RequestContext.getCurrentContext().getRequest().getRequestURI().startsWith("/api")) { ... }
         return true;
     }
 
@@ -100,7 +101,7 @@ public class RateLimitingFilter extends ZuulFilter {
         };
     }
 
-    /**
+    /*
      * Create a Zuul response error when the API limit is exceeded.
      */
     private void apiLimitExceeded() {
@@ -116,11 +117,6 @@ public class RateLimitingFilter extends ZuulFilter {
      * The ID that will identify the limit: the user login or the user IP address.
      */
     private String getId(HttpServletRequest httpServletRequest) {
-        String login = SecurityUtils.getCurrentUserLogin();
-        if (login != null) {
-            return login;
-        } else {
-            return httpServletRequest.getRemoteAddr();
-        }
+        return SecurityUtils.getCurrentUserLogin().orElse(httpServletRequest.getRemoteAddr());
     }
 }

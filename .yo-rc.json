@@ -5,7 +5,7 @@
       "nativeLanguage": "de",
       "microservicePath": "../job-service"
     },
-    "jhipsterVersion": "4.10.2",
+    "jhipsterVersion": "4.14.0",
     "baseName": "jobroom",
     "packageName": "ch.admin.seco.jobroom",
     "packageFolder": "ch/admin/seco/jobroom",
@@ -36,7 +36,7 @@
     "otherModules": [
       {
         "name": "generator-jhipster-postgresuuid-converter",
-        "version": "0.1.0"
+        "version": "0.2.2"
       }
     ],
     "enableTranslation": true,
@@ -46,6 +46,8 @@
       "en",
       "fr",
       "it"
-    ]
+    ],
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true
   }
 }

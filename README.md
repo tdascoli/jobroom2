@@ -1,10 +1,10 @@
-# jobroom2
+# jobroom
 
 [![Build Status](https://travis-ci.org/alv-ch/jobroom2.svg?branch=develop)](https://travis-ci.org/alv-ch/jobroom2)
 [![Coverage Status](https://codecov.io/github/alv-ch/jobroom2/coverage.svg?branch=develop)](https://codecov.io/github/alv-ch/jobroom2?branch=develop)
 [![Quality Gate](https://sonarqube.com/api/badges/gate?key=ch.admin.seco.jobroom:jobroom)](https://sonarcloud.io/dashboard?id=ch.admin.seco.jobroom:jobroom)
 
-This application was generated using JHipster 4.8.2, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.8.2](http://www.jhipster.tech/documentation-archive/v4.8.2).
+This application was generated using JHipster 4.14.0, you can find documentation and help at [http://www.jhipster.tech/documentation-archive/v4.14.0](http://www.jhipster.tech/documentation-archive/v4.14.0).
 
 This is a "gateway" application intended to be part of a microservice architecture, please refer to the [Doing microservices with JHipster][] page of the documentation for more information.
 
@@ -32,14 +32,6 @@ auto-refreshes when files change on your hard drive.
 
     ./gradlew
     yarn start
-    
-To connect your local front-end to the development environment run
-
-    yarn start-development
-    
-To run your local front-end in mixed mode e.i connect to local reference service on 8082 port and development environment run
-
-    yarn start --env.localUrl='/referenceservice' --env.localPort=8082
 
 [Yarn][] is also used to manage CSS and JavaScript dependencies used in this application. You can upgrade dependencies by
 specifying a newer version in [package.json](package.json). You can also run `yarn update` and `yarn install` to manage dependencies.
@@ -52,7 +44,8 @@ The `yarn run` command will list all of the scripts available to run for this pr
 Service workers are commented by default, to enable them please uncomment the following code.
 
 * The service worker registering script in index.html
-```
+
+```html
 <script>
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker
@@ -61,11 +54,8 @@ Service workers are commented by default, to enable them please uncomment the fo
     }
 </script>
 ```
-* The copy file option in webpack-common.js
-```js
-{ from: './src/main/webapp/sw.js', to: 'sw.js' },
-```
-Note: Add the respective scripts/assets in `sw.js` that is needed to be cached.
+
+Note: workbox creates the respective service worker and dynamically generate the `sw.js`
 
 ### Managing dependencies
 
@@ -78,7 +68,6 @@ To benefit from TypeScript type definitions from [DefinitelyTyped][] repository 
     yarn add --dev --exact @types/leaflet
 
 Then you would import the JS and CSS files specified in library's installation instructions so that [Webpack][] knows about them:
-
 Edit [src/main/webapp/app/vendor.ts](src/main/webapp/app/vendor.ts) file:
 ~~~
 import 'leaflet/dist/leaflet.js';
@@ -88,7 +77,6 @@ Edit [src/main/webapp/content/css/vendor.css](src/main/webapp/content/css/vendor
 ~~~
 @import '~leaflet/dist/leaflet.css';
 ~~~
-
 Note: there are still few other things remaining to do for Leaflet that we won't detail here.
 
 For further instructions on how to develop with JHipster, have a look at [Using JHipster in development][].
@@ -190,19 +178,16 @@ UI end-to-end tests are powered by [Protractor][], which is built on top of WebD
 and can be run by starting Spring Boot in one terminal (`./gradlew bootRun`) and running the tests (`yarn run e2e`) in a second one.
 ### Other tests
 
-Performance tests are run against the DEV enviroment by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling) and can be run with:
+Performance tests are run by [Gatling][] and written in Scala. They're located in [src/test/gatling](src/test/gatling) and can be run with:
 
-    baseURL=https://dev.job-room.ch:8443 ./gradlew -b e2e.gradle gatlingRunAll
-
-or run individual test
-
-    baseURL=https://dev.job-room.ch:8443 ./gradlew -b e2e.gradle gatlingRun -PgatlingSimulationClass=JobGatlingTest
+    ./gradlew gatlingRun
 
 For more information, refer to the [Running tests page][].
 
 ## Using Docker to simplify development (optional)
 
 You can use Docker to improve your JHipster development experience. A number of docker-compose configuration are available in the [src/main/docker](src/main/docker) folder to launch required third party services.
+
 For example, to start a postgresql database in a docker container, run:
 
     docker-compose -f src/main/docker/postgresql.yml up -d
@@ -227,14 +212,14 @@ For more information refer to [Using Docker and Docker-Compose][], this page als
 To configure CI for your project, run the ci-cd sub-generator (`jhipster ci-cd`), this will let you generate configuration files for a number of Continuous Integration systems. Consult the [Setting up Continuous Integration][] page for more information.
 
 [JHipster Homepage and latest documentation]: http://www.jhipster.tech
-[JHipster 4.10.2 archive]: http://www.jhipster.tech/documentation-archive/v4.10.2
-[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.10.2/microservices-architecture/
-[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.10.2/development/
-[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.10.2/microservices-architecture/#jhipster-registry
-[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.10.2/docker-compose
-[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.10.2/production/
-[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.10.2/running-tests/
-[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.10.2/setting-up-ci/
+[JHipster 4.14.0 archive]: http://www.jhipster.tech/documentation-archive/v4.14.0
+[Doing microservices with JHipster]: http://www.jhipster.tech/documentation-archive/v4.14.0/microservices-architecture/
+[Using JHipster in development]: http://www.jhipster.tech/documentation-archive/v4.14.0/development/
+[Service Discovery and Configuration with the JHipster-Registry]: http://www.jhipster.tech/documentation-archive/v4.14.0/microservices-architecture/#jhipster-registry
+[Using Docker and Docker-Compose]: http://www.jhipster.tech/documentation-archive/v4.14.0/docker-compose
+[Using JHipster in production]: http://www.jhipster.tech/documentation-archive/v4.14.0/production/
+[Running tests page]: http://www.jhipster.tech/documentation-archive/v4.14.0/running-tests/
+[Setting up Continuous Integration]: http://www.jhipster.tech/documentation-archive/v4.14.0/setting-up-ci/
 
 [Gatling]: http://gatling.io/
 [Node.js]: https://nodejs.org/

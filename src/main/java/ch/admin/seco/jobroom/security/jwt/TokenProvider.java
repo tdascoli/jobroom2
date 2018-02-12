@@ -1,7 +1,7 @@
 package ch.admin.seco.jobroom.security.jwt;
 
 import java.time.LocalDateTime;
-import java.time.ZoneOffset;
+import java.time.ZoneId;
 import java.time.temporal.ChronoUnit;
 import java.util.Arrays;
 import java.util.Collection;
@@ -54,7 +54,7 @@ public class TokenProvider {
             1000 * jHipsterProperties.getSecurity().getAuthentication().getJwt().getTokenValidityInSecondsForRememberMe();
     }
 
-    public String createToken(Authentication authentication, Boolean rememberMe) {
+    public String createToken(Authentication authentication, boolean rememberMe) {
         return createToken(authentication, getAuthorities(authentication), getValidity(rememberMe));
     }
 
@@ -124,6 +124,7 @@ public class TokenProvider {
     private Date getValidity(Boolean rememberMe) {
         return Date.from(LocalDateTime.now()
             .plus(rememberMe ? this.tokenValidityInMillisecondsForRememberMe : this.tokenValidityInMilliseconds, ChronoUnit.MILLIS)
-            .toInstant(ZoneOffset.UTC));
+            .atZone(ZoneId.systemDefault())
+            .toInstant());
     }
 }

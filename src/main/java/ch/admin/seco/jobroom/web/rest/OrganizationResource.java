@@ -71,8 +71,8 @@ public class OrganizationResource {
         }
         OrganizationDTO result = organizationService.save(organizationDTO);
         return ResponseEntity.created(new URI("/api/organizations/" + result.getId()))
-                .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
-                .body(result);
+            .headers(HeaderUtil.createEntityCreationAlert(ENTITY_NAME, result.getId().toString()))
+            .body(result);
     }
 
     /**
@@ -91,8 +91,8 @@ public class OrganizationResource {
 
         OrganizationDTO result = organizationService.save(organizationDTO);
         return ResponseEntity.ok()
-                .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()))
-                .body(result);
+            .headers(HeaderUtil.createEntityUpdateAlert(ENTITY_NAME, result.getId().toString()))
+            .body(result);
     }
 
     /**
@@ -177,7 +177,7 @@ public class OrganizationResource {
         log.info("REST request to start housekeeping for Organizations by user : {}", SecurityUtils.getCurrentUserLogin());
         organizationService.housekeeping(beforeDateTime);
         return ResponseEntity.accepted()
-                .headers(HeaderUtil.createAlert("housekeeping.accepted", "true"))
-                .build();
+            .headers(HeaderUtil.createAlert("housekeeping.accepted", "true"))
+            .build();
     }
 }

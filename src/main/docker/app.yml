@@ -1,46 +1,16 @@
 version: '2'
 services:
     jobroom-app:
-        build: dockerfiles/jobroom
+        image: jobroom
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
-            - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
-            - EUREKA_INSTANCE_IPADDRESS=${PUBLIC_IP}
-            - EUREKA_INSTANCE_NONSECUREPORT=8080
+            - EUREKA_CLIENT_SERVICE_URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
             - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
             - SPRING_DATASOURCE_URL=jdbc:postgresql://jobroom-postgresql:5432/jobroom
             - JHIPSTER_SLEEP=30 # gives time for the JHipster Registry to boot before the application
             - SPRING_DATA_ELASTICSEARCH_CLUSTER_NODES=jobroom-elasticsearch:9300
         ports:
             - 8080:8080
-    jobservice-app:
-        build: dockerfiles/jobservice
-        environment:
-            - SPRING_PROFILES_ACTIVE=prod,swagger
-            - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
-            - EUREKA_INSTANCE_IPADDRESS=${PUBLIC_IP}
-            - EUREKA_INSTANCE_NONSECUREPORT=8081
-            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://jobroom-postgresql:5432/jobservice
-            - SPRING_DATA_ELASTICSEARCH_CLUSTERNAME=docker-cluster
-            - SPRING_DATA_ELASTICSEARCH_CLUSTERNODES=jobroom-elasticsearch:9300
-            - SLEEP=30 # gives time for the JHipster Registry to boot before the application
-        ports:
-            - 8081:8081
-    referenceservice-app:
-        build: dockerfiles/referenceservice
-        environment:
-            - SPRING_PROFILES_ACTIVE=prod,swagger
-            - EUREKA_CLIENT_SERVICEURL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
-            - EUREKA_INSTANCE_IPADDRESS=${PUBLIC_IP}
-            - EUREKA_INSTANCE_NONSECUREPORT=8082
-            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://jobroom-postgresql:5432/referenceservice
-            - SPRING_DATA_ELASTICSEARCH_CLUSTERNAME=docker-cluster
-            - SPRING_DATA_ELASTICSEARCH_CLUSTERNODES=jobroom-elasticsearch:9300
-            - SLEEP=40 # gives time for the JHipster Registry to boot before the application
-        ports:
-            - 8082:8082
     jobroom-postgresql:
         extends:
             file: postgresql.yml
@@ -55,14 +25,3 @@ services:
             service: jhipster-registry
         environment:
             - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:./central-config/docker-config/
-            - ENCRYPT_KEY=5mA%R8G7@Xwt
-    jobroom-kibana:
-        links:
-          - jobroom-elasticsearch:elasticsearch
-        extends:
-            file: elasticsearch.yml
-            service: jobroom-kibana
-    jobroom-elasticsearch:
-        extends:
-            file: elasticsearch.yml
-            service: jobroom-elasticsearch

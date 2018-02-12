@@ -40,6 +40,7 @@ public class PersistentAuditEvent implements Serializable {
 
     @Column(name = "event_date")
     private Instant auditEventDate;
+
     @Column(name = "event_type")
     private String auditEventType;
 

@@ -1,26 +1,10 @@
 version: '2'
 services:
-    jobroom-kibana:
-        image: docker.elastic.co/kibana/kibana:5.4.1
-#        links:
-#          - jobroom-elasticsearch:elasticsearch
-        ports:
-          - 5601:5601
-        environment:
-            xpack.security.enabled: 'false'
-
     jobroom-elasticsearch:
-        image: docker.elastic.co/elasticsearch/elasticsearch:5.4.1
-        cap_add:
-            - IPC_LOCK
-#        volumes:
-#            - esdata1:/usr/share/elasticsearch/data
+        image: elasticsearch:5.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/jobroom/elasticsearch/:/usr/share/elasticsearch/data/
         ports:
             - 9200:9200
             - 9300:9300
-        environment:
-            xpack.security.enabled: 'false'
-
-#volumes:
-#    esdata1:
-#        driver: local
+        command: -Enetwork.host=0.0.0.0 -Ediscovery.type=single-node

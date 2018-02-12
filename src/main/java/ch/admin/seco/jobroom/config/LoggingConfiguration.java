@@ -1,6 +1,5 @@
 package ch.admin.seco.jobroom.config;
 
-import java.io.IOException;
 import java.net.InetSocketAddress;
 import java.util.Iterator;
 
@@ -14,25 +13,19 @@ import ch.qos.logback.core.Appender;
 import ch.qos.logback.core.filter.EvaluatorFilter;
 import ch.qos.logback.core.spi.ContextAwareBase;
 import ch.qos.logback.core.spi.FilterReply;
-import com.fasterxml.jackson.core.JsonGenerator;
 import io.github.jhipster.config.JHipsterProperties;
 import net.logstash.logback.appender.LogstashTcpSocketAppender;
-import net.logstash.logback.composite.AbstractFieldJsonProvider;
-import net.logstash.logback.composite.JsonWritingUtils;
 import net.logstash.logback.encoder.LogstashEncoder;
 import net.logstash.logback.stacktrace.ShortenedThrowableConverter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
-import org.springframework.cloud.netflix.eureka.EurekaInstanceConfigBean;
+import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.context.annotation.Configuration;
 
-import ch.admin.seco.jobroom.security.SecurityUtils;
-
 @Configuration
-@ConditionalOnProperty("eureka.client.enabled")
+@RefreshScope
 public class LoggingConfiguration {
 
     private static final String LOGSTASH_APPENDER_NAME = "LOGSTASH";
@@ -42,16 +35,14 @@ public class LoggingConfiguration {
     private final Logger log = LoggerFactory.getLogger(LoggingConfiguration.class);
     private final String appName;
     private final String serverPort;
-    private final EurekaInstanceConfigBean eurekaInstanceConfigBean;
     private final String version;
     private final JHipsterProperties jHipsterProperties;
     private LoggerContext context = (LoggerContext) LoggerFactory.getILoggerFactory();
 
     public LoggingConfiguration(@Value("${spring.application.name}") String appName, @Value("${server.port}") String serverPort,
-        EurekaInstanceConfigBean eurekaInstanceConfigBean, @Value("${info.project.version}") String version, JHipsterProperties jHipsterProperties) {
+        @Value("${info.project.version}") String version, JHipsterProperties jHipsterProperties) {
         this.appName = appName;
         this.serverPort = serverPort;
-        this.eurekaInstanceConfigBean = eurekaInstanceConfigBean;
         this.version = version;
         this.jHipsterProperties = jHipsterProperties;
         if (jHipsterProperties.getLogging().getLogstash().isEnabled()) {
@@ -73,15 +64,14 @@ public class LoggingConfiguration {
         log.info("Initializing Logstash logging");
 
         LogstashTcpSocketAppender logstashAppender = new LogstashTcpSocketAppender();
-        logstashAppender.setName("LOGSTASH");
+        logstashAppender.setName(LOGSTASH_APPENDER_NAME);
         logstashAppender.setContext(context);
+        String optionalFields = "";
         String customFields = "{\"app_name\":\"" + appName + "\",\"app_port\":\"" + serverPort + "\"," +
-            "\"instance_id\":\"" + eurekaInstanceConfigBean.getInstanceId() + "\"," + "\"version\":\"" + version + "\"}";
+            optionalFields + "\"version\":\"" + version + "\"}";
 
         // More documentation is available at: https://github.com/logstash/logstash-logback-encoder
         LogstashEncoder logstashEncoder = new LogstashEncoder();
-        logstashEncoder.addProvider(new SecurityJsonProvider());
-
         // Set the Logstash appender config from JHipster properties
         logstashEncoder.setCustomFields(customFields);
         // Set the Logstash appender config from JHipster properties
@@ -98,7 +88,7 @@ public class LoggingConfiguration {
         // Wrap the appender in an Async appender for performance
         AsyncAppender asyncLogstashAppender = new AsyncAppender();
         asyncLogstashAppender.setContext(context);
-        asyncLogstashAppender.setName("ASYNC_LOGSTASH");
+        asyncLogstashAppender.setName(ASYNC_LOGSTASH_APPENDER_NAME);
         asyncLogstashAppender.setQueueSize(jHipsterProperties.getLogging().getLogstash().getQueueSize());
         asyncLogstashAppender.addAppender(logstashAppender);
         asyncLogstashAppender.start();
@@ -165,17 +155,4 @@ public class LoggingConfiguration {
         }
     }
 
-    class SecurityJsonProvider extends AbstractFieldJsonProvider<ILoggingEvent> {
-
-        public static final String FIELD_LEVEL_VALUE = "remote_user";
-
-        SecurityJsonProvider() {
-            setFieldName(FIELD_LEVEL_VALUE);
-        }
-
-        @Override
-        public void writeTo(JsonGenerator generator, ILoggingEvent iLoggingEvent) throws IOException {
-            JsonWritingUtils.writeStringField(generator, getFieldName(), SecurityUtils.getCurrentUserLogin());
-        }
-    }
 }

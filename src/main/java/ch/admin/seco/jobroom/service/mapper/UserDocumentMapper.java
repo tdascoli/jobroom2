@@ -16,7 +16,7 @@ import ch.admin.seco.jobroom.domain.search.user.UserDocument;
 import ch.admin.seco.jobroom.service.dto.UserDTO;
 
 @Mapper(componentModel = "spring", unmappedTargetPolicy = ReportingPolicy.IGNORE,
-    imports = { Authority.class, Collectors.class, Optional.class })
+    imports = {Authority.class, Collectors.class, Optional.class})
 public interface UserDocumentMapper {
 
     @Mapping(target = "organizationName",

@@ -28,8 +28,8 @@ eureka:
         instanceId: jobroom:${spring.application.instance-id:${random.value}}
         lease-renewal-interval-in-seconds: 5
         lease-expiration-duration-in-seconds: 10
-        status-page-url-path: ${management.context-path}/info
-        health-check-url-path: ${management.context-path}/health
+        status-page-url-path: ${management.endpoints.web.base-path}/info
+        health-check-url-path: ${management.endpoints.web.base-path}/health
         metadata-map:
             zone: primary # This is needed for the load balancer
             profile: ${spring.profiles.active}
@@ -62,9 +62,16 @@ hystrix:
                         timeoutInMilliseconds: 10000
 
 management:
-    security:
-        roles: ADMIN
-    context-path: /management
+    endpoints:
+        web:
+            base-path: /management
+            expose: '*'
+    endpoint:
+        health:
+            show-details: true
+    info:
+        git:
+            mode: full
     health:
         mail:
             enabled: false # When using the MailService, configure an SMTP server and set this to true
@@ -86,10 +93,7 @@ spring:
         favicon:
             enabled: false
     thymeleaf:
-        mode: XHTML
-security:
-    basic:
-        enabled: false
+        mode: HTML
 
 server:
     session:
@@ -111,23 +115,12 @@ jhipster:
         core-pool-size: 2
         max-pool-size: 50
         queue-capacity: 10000
-    gateway:
-        rate-limiting:
-            enabled: true
-            limit: 200
-            duration-in-seconds: 30
-        authorized-microservices-endpoints: # Access Control Policy, if left empty for a route, all endpoints will be accessible
-            jobservice: /api,/v2/api-docs # recommended dev configuration
-            referenceservice: /api,/v2/api-docs # recommended dev configuration
-            candidateservice: /api,/v2/api-docs # recommended dev configuration
-            jobpublicationservice: /api,/v2/api-docs # recommended dev configuration
-
     # By default CORS is disabled. Uncomment to enable.
     #cors:
         #allowed-origins: "*"
-        #allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        #allowed-methods: "*"
         #allowed-headers: "*"
-        #exposed-headers:
+        #exposed-headers: "Authorization,Link,X-Total-Count"
         #allow-credentials: true
         #max-age: 1800
     mail:
@@ -158,4 +151,4 @@ jhipster:
 # http://www.jhipster.tech/common-application-properties/
 # ===================================================================
 
-#application:
+# application:
