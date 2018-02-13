@@ -72,6 +72,18 @@
                         </small>
                     </div>
                 </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="phone" jhiTranslate="global.form.phone">Phone</label>
+                    <jr2-phone-number-input id="phone" name="phone" [(ngModel)]="settingsAccount.phone"
+                                            [placeholder]="'global.form.phone.placeholder' | translate"
+                                            [jr2TextSizeLimit]="50" #phoneInput="ngModel"></jr2-phone-number-input>
+                    <div *ngIf="phoneInput.dirty && phoneInput.invalid">
+                        <small class="form-text text-danger"
+                               *ngIf="phoneInput.errors.phoneValidator" jhiTranslate="global.messages.validate.phone.format">
+                            Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99
+                        </small>
+                    </div>
+                </div>
                 <div class="form-group" *ngIf="languages && languages.length > 0">
                     <label for="langKey" jhiTranslate="settings.form.language">Language</label>
                     <select class="form-control" id="langKey" name="langKey" [(ngModel)]="settingsAccount.langKey">

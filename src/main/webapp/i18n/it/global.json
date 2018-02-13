@@ -147,7 +147,9 @@
             "newpassword": "Nuova password",
             "newpassword.placeholder": "Nuova password",
             "username": "Utente",
-            "username.placeholder": "Il tuo nome utente"
+            "username.placeholder": "Il tuo nome utente",
+            "phone": "Telefono",
+            "phone.placeholder": "031 999 99 99 or +41 31 999 99 99"
         },
         "gender": {
             "FEMALE": "femmina",

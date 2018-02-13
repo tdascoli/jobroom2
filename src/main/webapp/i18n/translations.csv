@@ -282,6 +282,8 @@ global,global.form.newpassword,Neues Passwort,New password,Nouveau mot de passe,
 global,global.form.newpassword.placeholder,Neues Passwort,New password,Nouveau mot de passe,Nuova password
 global,global.form.username,Benutzername,Username,Nom d'utilisateur,Utente
 global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom d'utilisateur,Il tuo nome utente
+global,global.form.phone,Telefon,Telephone,Téléphone,Telefono
+global,global.form.phone.placeholder,031 999 99 99 or +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99
 global,global.gender.FEMALE,weiblich,Female,féminin,femmina
 global,global.gender.MALE,männlich,Male,masculin,maschio
 global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} éléments.,Mostra {{first}} - {{second}} di {{total}} articoli.
