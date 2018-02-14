@@ -25,6 +25,11 @@ import {
 } from '../state-management/state/candidate-search.state';
 import { Contact, Gender, Graduation } from '../../shared';
 import { Principal } from '../../shared/auth/principal.service';
+import {
+    MailToOpenedAction,
+    PhoneToOpenedAction,
+    PrintCandidateAction
+} from '../state-management/actions/candidate-search.actions';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -144,7 +149,27 @@ export class CandidateDetailComponent implements OnInit {
     }
 
     printCandidateDetails(): void {
-        window.print();
+        this.store.dispatch(new PrintCandidateAction());
+    }
+
+    onSendLink(): void {
+        this.store.dispatch(new MailToOpenedAction('sendLink'));
+    }
+
+    onMailToJobCenter(): void {
+        this.store.dispatch(new MailToOpenedAction('jobCenter'));
+    }
+
+    onPhoneToJobCenter(): void {
+        this.store.dispatch(new PhoneToOpenedAction('jobCenter'));
+    }
+
+    onMailToCandidate(): void {
+        this.store.dispatch(new MailToOpenedAction('candidate'));
+    }
+
+    onPhoneToCandidate(): void {
+        this.store.dispatch(new PhoneToOpenedAction('candidate'));
     }
 
     getCandidateUrl() {

@@ -17,6 +17,7 @@ import {
     LoadNextPageAction,
     NEXT_PAGE_LOADED,
     NextPageLoadedAction,
+    PRINT_CANDIDATE,
     SEARCH_CANDIDATES,
     SearchCandidatesAction,
     SHOW_CANDIDATE_LIST_ERROR,
@@ -128,6 +129,11 @@ export class CandidateSearchEffects {
                 .map((label) => Object.assign({}, occupation, { label: label.default }))
                 .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
         });
+
+    @Effect({ dispatch: false })
+    printCandidate$: Observable<Action> = this.actions$
+        .ofType(PRINT_CANDIDATE)
+        .do(() => this.window.print());
 
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,

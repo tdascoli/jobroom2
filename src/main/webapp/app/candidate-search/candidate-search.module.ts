@@ -22,14 +22,24 @@ import { CandidateSearchEffects } from './state-management/effects/candidate-sea
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { CantonService } from './services/canton.service';
 import { RouterEffects } from './state-management/effects/router.effects';
+import { UserTrackingEffects } from '../shared/state-management/effects/user-tracking.effects';
+import { UserTrackingService } from '../shared/user-tracking/user-tracking.service';
+import { USER_TRACKING_ENABLED } from '../app.constants';
+
+const effects: Array<any> = [
+    CandidateSearchEffects,
+    DetailsPagePaginationEffects,
+    RouterEffects
+];
+
+if (USER_TRACKING_ENABLED) {
+    effects.push(UserTrackingEffects)
+}
 
 @NgModule({
     imports: [
         StoreModule.forFeature('candidateSearch', candidateSearchReducer),
-        EffectsModule.forFeature([
-            CandidateSearchEffects,
-            DetailsPagePaginationEffects,
-            RouterEffects]),
+        EffectsModule.forFeature([...effects]),
         JobroomSharedModule,
         CommonModule,
         ReactiveFormsModule,
@@ -49,7 +59,8 @@ import { RouterEffects } from './state-management/effects/router.effects';
     providers: [
         LanguageSkillService,
         CandidateService,
-        CantonService
+        CantonService,
+        UserTrackingService
     ]
 })
 export class CandidateSearchModule {

@@ -16,6 +16,9 @@ export const COUNT_CANDIDATES = 'COUNT_CANDIDATES';
 export const SAVE_SCROLL_Y = 'CANDIDATES:SAVE_SCROLL_Y';
 export const UPDATE_OCCUPATION_TRANSLATION = 'CANDIDATES:UPDATE_OCCUPATION_TRANSLATION';
 export const RESET_FILTER = 'CANDIDATES:RESET';
+export const PRINT_CANDIDATE = 'CANDIDATES:PRINT_CANDIDATE';
+export const MAIL_TO_OPENED = 'CANDIDATES:MAIL_TO_OPENED';
+export const PHONE_TO_OPENED = 'CANDIDATES:PHONE_TO_OPENED';
 
 export class CandidateProfileDetailLoadedAction implements Action {
     readonly type = CANDIDATE_PROFILE_DETAIL_LOADED;
@@ -109,6 +112,28 @@ export class ResetFilterAction implements Action {
     }
 }
 
+export class PrintCandidateAction implements Action {
+    readonly type = PRINT_CANDIDATE;
+
+    constructor(public payload = {}) {
+
+    }
+}
+
+export class MailToOpenedAction implements Action {
+    readonly type = MAIL_TO_OPENED;
+
+    constructor(public payload: string) {
+    }
+}
+
+export class PhoneToOpenedAction implements Action {
+    readonly type = PHONE_TO_OPENED;
+
+    constructor(public payload: string) {
+    }
+}
+
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
@@ -116,6 +141,9 @@ export type Actions =
     | CandidateProfileDetailLoadedAction
     | LoadNextPageAction
     | NextPageLoadedAction
+    | MailToOpenedAction
+    | PrintCandidateAction
+    | PhoneToOpenedAction
     | CandidateProfileListLoadedAction
     | UpdateOccupationTranslationAction
     | ShowCandidateListErrorAction

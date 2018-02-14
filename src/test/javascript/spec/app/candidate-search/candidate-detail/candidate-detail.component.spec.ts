@@ -46,9 +46,9 @@ describe('CandidateDetailComponent', () => {
                 },
                 {
                     provide: TranslateService, useValue: {
-                        currentLang: 'en',
-                        onLangChange: Observable.never()
-                    }
+                    currentLang: 'en',
+                    onLangChange: Observable.never()
+                }
                 }
             ]
         })

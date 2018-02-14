@@ -10,7 +10,6 @@ import { JhiLanguageService } from 'ng-jhipster';
 import { customHttpProvider } from '../blocks/interceptor/http.provider';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { jobSearchReducer } from './state-management/reducers/job-search.reducers';
 import { JobSearchEffects } from './state-management/effects/job-search.effects';
 import { JobSearchListComponent } from './job-search-list/job-search-list.component';
@@ -30,7 +29,6 @@ import { JobFingerprintRedirectResolver } from './job-fingerprint-redirect/job-f
     imports: [
         StoreModule.forFeature('jobSearch', jobSearchReducer),
         EffectsModule.forFeature([JobSearchEffects, DetailsPagePaginationEffects]),
-        StoreRouterConnectingModule,
         JobroomSharedModule,
         ReactiveFormsModule,
         CommonModule,

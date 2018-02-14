@@ -15,7 +15,6 @@ import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { ZipCodeComponent } from './tools/job-publication-tool/zip-code/zip-code.component';
 import { LanguageSkillsComponent } from './tools/job-publication-tool/language-skills/language-skills.component';
 import { HomeRoutingModule } from './home-routing.module';
-import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { HomeRouterEffects } from './state-management/effects/router.effects';
 import { JobPublicationResolverService } from './tools/job-publication-tool/service/job-publication-resolver.service';
 import { UserDataResolverService } from './tools/job-publication-tool/service/user-data-resolver.service';
@@ -31,7 +30,6 @@ import { InputErrorMessageComponent } from './tools/job-publication-tool/input-e
         StoreModule.forFeature('home', homeReducers),
         EffectsModule.forFeature([HomeEffects, HomeRouterEffects]),
         HomeRoutingModule,
-        StoreRouterConnectingModule,
         MultiselectDropdownModule
     ],
     declarations: [
