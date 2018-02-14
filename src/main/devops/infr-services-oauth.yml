@@ -1,0 +1,59 @@
+version: '3.4'
+services:
+    keycloak:
+        image: jboss/keycloak:3.3.0.Final
+        command: ["-b", "0.0.0.0", "-Dkeycloak.migration.action=import", "-Dkeycloak.migration.provider=dir", "-Dkeycloak.migration.dir=/opt/jboss/keycloak/realm-config", "-Dkeycloak.migration.strategy=OVERWRITE_EXISTING", "-Djboss.socket.binding.port-offset=1000"]
+        volumes:
+            - ./realm-config:/opt/jboss/keycloak/realm-config
+        environment:
+            - KEYCLOAK_USER=admin
+            - KEYCLOAK_PASSWORD=admin
+        ports:
+            - 9080:9080
+            - 9443:9443
+            - 10990:10990
+        networks:
+            - jobroom_data2
+        secrets:
+            - source: bootstrap.yml-1
+              target: bootstrap.yml
+        deploy:
+            placement:
+                constraints: [node.labels.type == data]
+
+    jhipster-registry:
+        image: jhipster/jhipster-registry:v3.2.4
+        env_file: env.properties
+        environment:
+            - SPRING_PROFILES_ACTIVE=development,swagger,oauth2
+            - GIT_URI=https://github.com/alv-ch/central-config.git
+            - SPRING_CLOUD_CONFIG_PROFILE=development
+            - SECURITY_USER_PASSWORD=$${jhipster.registry.password}
+            - SECURITY_OAUTH2_CLIENT_ACCESS_TOKEN_URI=http://keycloak:9080/auth/realms/jobroom/protocol/openid-connect/token
+            - SECURITY_OAUTH2_CLIENT_USER_AUTHORIZATION_URI=http://keycloak:9080/auth/realms/jobroom/protocol/openid-connect/auth
+            - SECURITY_OAUTH2_RESOURCE_USER_INFO_URI=http://keycloak:9080/auth/realms/jobroom/protocol/openid-connect/userinfo
+            - SECURITY_OAUTH2_RESOURCE_TOKEN_INFO_URI=http://keycloak:9080/auth/realms/jobroom/protocol/openid-connect/token/introspect
+            - SECURITY_OAUTH2_RESOURCE_JWT_KEY_URI=http://keycloak:9080/auth/realms/jobroom
+        ports:
+            - 8761:8761
+        networks:
+            - jobroom_data2
+        secrets:
+            - source: bootstrap.yml-1
+              target: bootstrap.yml
+            - truststore.jks
+        command: java -Xmx512m -Xms256m -Duser.timezone=Europe/Zurich -Djava.security.egd=file:/dev/./urandom -jar /jhipster-registry.war --spring.cloud.config.server.git.uri=https://github.com/alv-ch/central-config.git
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
+networks:
+    jobroom_data2:
+        external: true
+
+secrets:
+    bootstrap.yml-1:
+        external: true
+
+volumes:
+    keycloak-data:
+        external: true
