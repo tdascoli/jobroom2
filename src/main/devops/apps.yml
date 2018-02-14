@@ -6,6 +6,7 @@ services:
         env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
+            - SERVER_PORT=8080
         ports:
             - 8080:8080
         networks:
@@ -22,6 +23,7 @@ services:
         env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
+            - SERVER_PORT=8081
         ports:
             - 8081:8081
         networks:
@@ -38,6 +40,7 @@ services:
         env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
+            - SERVER_PORT=8082
         ports:
             - 8082:8082
         networks:
@@ -54,6 +57,7 @@ services:
         env_file: apps-env.properties
         environment:
             - LIQUIBASE_DROPFIRST=false
+            - SERVER_PORT=8083
         ports:
             - 8083:8083
         networks:
@@ -71,6 +75,7 @@ services:
         environment:
             - SPRING_PROFILES_ACTIVE=development
             - SPRING_APPLICATION_NAME=jobroom_batch
+            - SERVER_PORT=9000
         ports:
             - 9000:9000
         volumes:
@@ -91,9 +96,27 @@ services:
         env_file: apps-env.properties
         environment:
             - LIQUIBASE_ENABLED=false
-            - LIQUIBASE_DROPFIRST=false
+            - SERVER_PORT=8084
         ports:
             - 8084:8084
+        networks:
+            - jobroom_data2
+        secrets:
+            - source: bootstrap.yml-1
+              target: bootstrap.yml
+        deploy:
+            placement:
+                constraints: [node.labels.type == java]
+
+    trackingservice-app:
+        build: dockerfiles/trackingservice
+        image: localhost:5000/jr2_trackingservice-app
+        env_file: apps-env.properties
+        environment:
+            - LIQUIBASE_ENABLED=false
+            - SERVER_PORT=8085
+        ports:
+            - 8085:8085
         networks:
             - jobroom_data2
         secrets:

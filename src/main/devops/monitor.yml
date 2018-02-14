@@ -21,6 +21,8 @@ services:
             - LOGSTASH_DEBUG=false
         ports:
             - 9600:9600
+            - 5000/tcp
+            - 5000/udp
         depends_on:
             - jhipster-elasticsearch
         networks:

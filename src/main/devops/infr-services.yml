@@ -42,6 +42,8 @@ services:
             - target: 443
               published: 8443
               mode: host
+        volumes:
+            - nginx-error-pages:/var/errorpages
         configs:
             - source: nginx-default.conf
               target: /etc/nginx/conf.d/default.conf
@@ -69,5 +71,9 @@ secrets:
         external: true
 
 configs:
-  nginx-default.conf:
-    external: true
+    nginx-default.conf:
+        external: true
+
+volumes:
+    nginx-error-pages: 
+        driver: local
