@@ -20,10 +20,12 @@
                             </address>
 
                             <p><a href="tel:{{job.company.phone}}">{{ job.company.phone | jr2PhoneNumber }}</a></p>
-                            <p><a href="mailto:{{ job.company.email }}">{{ job.company.email
-                                }}</a></p>
-                            <p><a href="{{ job.company.website }}" target="{{ job.id }}">{{ job.company.website |
-                                truncateCharacters:30 }}</a></p>
+                            <p><a href="mailto:{{ job.company.email }}">{{ job.company.email }}</a></p>
+                            <p>
+                                <a href="{{ job.company.website }}" target="{{ job.id }}">
+                                    {{ job.company.website | truncateCharacters:30 }}
+                                </a>
+                            </p>
                         </div>
 
                         <div *ngIf="job.contact">
@@ -32,17 +34,27 @@
                                 <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
                                     {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
                                 </p>
-                                <p><a href="tel:{{job.contact.phone}}">{{ job.contact.phone | jr2PhoneNumber }}</a></p>
-                                <p><a href="mailto:{{ job.contact.email }}">{{ job.contact.email }}</a></p>
+                                <p *ngIf="job.contact.phone">
+                                    <a href="tel:{{job.contact.phone}}">
+                                        {{ job.contact.phone | jr2PhoneNumber }}
+                                    </a>
+                                </p>
+                                <p *ngIf="job.contact.email">
+                                    <a href="mailto:{{ job.contact.email }}">
+                                        {{ job.contact.email }}
+                                    </a>
+                                </p>
                             </div>
                         </div>
                     </div>
 
                     <div *ngIf="jobCenter$ | async as jobCenter" class="order-sm-2 alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
                         <div class="detail__content">
-                            <address>
+                            <address *ngIf="jobCenter.address">
                                 <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
-                                <p>{{jobCenter.address.name}}, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</p>
+                                <p>
+                                    {{jobCenter.address.name}}<ng-container *ngIf="jobCenter.address.street || jobCenter.address.houseNumber">, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</ng-container>
+                                </p>
                                 <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
                                 <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone | jr2PhoneNumber}}</a></p>
                             </address>
@@ -67,18 +79,21 @@
             <div class="detail__title">
                 <h2 class="text--light">{{ job.title }}</h2>
                 <span class="text--primary-color">{{ job.company.name }}</span>
-                <small class="detail__date">
-                    {{'job-detail.onlineSince' | translate}} {{ job.publicationStartDate |
-                    jr2Date }}
+                <small class="detail__date" *ngIf="job.publicationStartDate">
+                    {{'job-detail.onlineSince' | translate}} {{ job.publicationStartDate | jr2Date }}
                 </small>
             </div>
 
             <div class="detail__content">
                 <jr2-job-locality [locality]="job.locality"></jr2-job-locality>
                 <span class="badge badge-gray">{{[job.workingTimePercentageMin, job.workingTimePercentageMax] | workingTimeRange}}</span>
+
                 <span *ngIf="job.startDate" class="badge badge-yellow" translate="job-detail.startDate"
                       [translateParams]="{date: job.startDate | jr2Date}"></span>
-                <span *ngIf="!job.startDate" class="badge badge-yellow">{{'job-detail.startsImmediately.' +  job.startsImmediately | translate}}</span>
+                <span *ngIf="!job.startDate && job.startsImmediately != null" class="badge badge-yellow">
+                    {{'job-detail.startsImmediately.' +  job.startsImmediately | translate}}
+                </span>
+
                 <span *ngIf="job.permanent" class="badge badge-green">{{'job-search.job-search-list-item.badge.permanent' | translate}}</span>
                 <span *ngIf="!job.permanent && !!job.endDate" class="badge badge-yellow" translate="job-detail.endDate"
                       [translateParams]="{date: job.endDate | jr2Date}"></span>

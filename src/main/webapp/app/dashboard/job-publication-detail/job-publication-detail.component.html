@@ -27,7 +27,9 @@
                     <address>
                         <strong>{{ company.name }}</strong><br>
                         {{ company.street }} {{ company.houseNumber }}<br>
-                        {{ company.zipCode }} {{ company.city }}<br>
+                        <ng-container *ngIf="company.zipCode || company.city">
+                            {{ company.zipCode }} {{ company.city }}<br>
+                        </ng-container>
                     </address>
                 </div>
 
@@ -36,16 +38,16 @@
                     <div>
                         {{ contact.firstName }} {{ contact.lastName }}
                     </div>
-                    <div>
+                    <div *ngIf="contact.email">
                         <a href="mailto:{{ contact.email }}">{{ contact.email }}</a>
                     </div>
-                    <div>
+                    <div *ngIf="contact.phoneNumber">
                         <a href="tel:{{ contact.phoneNumber }}">{{ contact.phoneNumber | jr2PhoneNumber }}</a>
                     </div>
                 </div>
             </div>
 
-            <div class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
+            <div *ngIf="jobPublication.idAvam || jobPublication.id" class="job-detail__pes alv-logo-box flex-height md-whiteframe-1dp">
                 <div class="job-detail__content">
                     <strong>{{ 'job-publication-details.contact.accountNumber' | translate }}:</strong><br>
                     <ng-container *ngIf="jobPublication.idAvam">
@@ -68,8 +70,9 @@
             <!-- Job details -->
             <div class="job-detail__title">
                 <h2 class="text--light">{{ jobPublication.job.title }}</h2>
-                <h4 class="text--light">{{ 'job-publication-details.status' | translate }}: {{
-                    'global.job-publication.status.' + jobPublication.status | translate }}</h4>
+                <h4 class="text--light" *ngIf="jobPublication.status">
+                    {{ 'job-publication-details.status' | translate }}: {{'global.job-publication.status.' + jobPublication.status | translate }}
+                </h4>
                 <strong>{{ jobPublication.company.name }}</strong>
                 <small *ngIf="jobPublication.job.startDate" class="job-detail__date">
                     {{ 'job-publication-details.startDate' | translate }} {{ jobPublication.job.startDate | jr2Date }}
@@ -91,8 +94,7 @@
                 <span *ngIf="!job.startsImmediately" class="badge badge-yellow">{{ 'job-publication-details.byArrangement' | translate }}</span>
             </div>
 
-            <div class="job-detail__content" [innerHtml]="jobPublication.job.description | safeHtml">
-            </div>
+            <div class="job-detail__content" [innerHtml]="jobPublication.job.description | safeHtml"></div>
 
             <!-- Languages -->
             <jr2-languages [languages]="jobPublication.job.languageSkills"></jr2-languages>
