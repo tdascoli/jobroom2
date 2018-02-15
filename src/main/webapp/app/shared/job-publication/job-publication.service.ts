@@ -13,8 +13,6 @@ export class JobPublicationService {
 
     private readonly resourceUrl = 'jobpublicationservice/api/jobPublications';
     private readonly searchUrl = 'jobpublicationservice/api/_search/jobPublications';
-    private readonly DEFAULT_LOCALE = 'DE';
-    private readonly EN_LOCALE = 'EN';
 
     private static createCancelJobPublicationParams(jobCancelRequest: JobCancelRequest) {
         const params = new URLSearchParams();
@@ -29,12 +27,9 @@ export class JobPublicationService {
     }
 
     private getJobPublicationLocale(): Observable<string> {
-        const lang$ = this.principal.isAuthenticated()
+        return this.principal.isAuthenticated()
             ? Observable.fromPromise(this.principal.identity())
-                .map((identity) => identity.langKey.toUpperCase())
-            : Observable.of((this.translateService.currentLang).toUpperCase());
-        return lang$
-            .map((lang) => lang === this.EN_LOCALE ? this.DEFAULT_LOCALE : lang);
+            : Observable.of(this.translateService.currentLang);
     }
 
     save(jobPublication: JobPublication): Observable<ResponseWrapper> {
