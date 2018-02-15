@@ -2,6 +2,7 @@ import './vendor.ts';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Ng2Webstorage } from 'ng2-webstorage';
 
 import { JobroomSharedModule, UserRouteAccessService } from './shared';
@@ -42,6 +43,7 @@ import { reducers } from './shared/state-management/reducers/core.reducers';
 
 const imports = [
     BrowserModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
     LayoutRoutingModule,
     Ng2Webstorage.forRoot({ prefix: 'jhi', separator: '-' }),

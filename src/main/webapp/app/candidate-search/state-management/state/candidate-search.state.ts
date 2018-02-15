@@ -23,6 +23,7 @@ export interface CandidateSearchState {
     selectedCandidateProfile: CandidateProfile;
     candidateListScrollY: number;
     resetTime: number;
+    displayUrlCopiedMessage: boolean
 }
 
 export interface CandidateSearchFilter {
@@ -53,7 +54,8 @@ export const initialState: CandidateSearchState = {
     selectedCandidateProfile: null,
     searchError: false,
     candidateListScrollY: 0,
-    resetTime: null
+    resetTime: null,
+    displayUrlCopiedMessage: false
 };
 
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
@@ -65,3 +67,4 @@ export const getTotalCandidateCount = createSelector(getCandidateSearchState, (s
 export const getCandidateListScrollY = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.candidateListScrollY);
 export const getSelectedCandidateProfile = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.selectedCandidateProfile);
 export const getResetTime = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.resetTime);
+export const getDisplayUrlCopiedMessage = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.displayUrlCopiedMessage);

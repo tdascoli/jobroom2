@@ -113,7 +113,8 @@ describe('candidateSearchReducer', () => {
             selectedCandidateProfile: null,
             searchError: false,
             candidateListScrollY: 0,
-            resetTime: 0
+            resetTime: 0,
+            displayUrlCopiedMessage: false
         };
 
         const action = new actions.CandidateSearchToolChangedAction({

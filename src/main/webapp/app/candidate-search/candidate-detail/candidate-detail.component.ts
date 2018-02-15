@@ -19,12 +19,14 @@ import {
     CandidateSearchFilter,
     CandidateSearchState,
     getCandidateProfileList,
+    getDisplayUrlCopiedMessage,
     getSearchFilter,
     getSelectedCandidateProfile,
     getTotalCandidateCount
 } from '../state-management/state/candidate-search.state';
 import { Contact, Gender, Graduation } from '../../shared';
 import { Principal } from '../../shared/auth/principal.service';
+import { CandidateProfileDetailURLCopiedAction } from '../state-management/actions/candidate-search.actions';
 
 interface EnrichedJobExperience extends JobExperience {
     occupationLabels: {
@@ -49,6 +51,7 @@ export class CandidateDetailComponent implements OnInit {
     preferredWorkRegions$: Observable<Array<string>>;
     preferredWorkCantons$: Observable<Array<string>>;
     contact$: Observable<Contact>;
+    displayUrlCopiedMessage$: Observable<boolean>;
 
     constructor(private referenceService: ReferenceService,
                 private candidateService: CandidateService,
@@ -61,6 +64,8 @@ export class CandidateDetailComponent implements OnInit {
     ngOnInit() {
         this.candidateProfile$ = this.store.select(getSelectedCandidateProfile)
             .filter((candidateProfile) => !!candidateProfile);
+
+        this.displayUrlCopiedMessage$ = this.store.select(getDisplayUrlCopiedMessage);
 
         this.jobCenter$ = this.candidateProfile$
             .map((candidateProfile) => candidateProfile.jobCenterCode)
@@ -149,6 +154,10 @@ export class CandidateDetailComponent implements OnInit {
 
     getCandidateUrl() {
         return window.location.href;
+    }
+
+    handleCopyCandidateUrl() {
+        this.store.dispatch(new CandidateProfileDetailURLCopiedAction())
     }
 
     getEncodedCandidateUrl() {

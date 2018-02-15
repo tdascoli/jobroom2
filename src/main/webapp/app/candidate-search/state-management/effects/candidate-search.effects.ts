@@ -9,9 +9,11 @@ import {
 import { Scheduler } from 'rxjs/Scheduler';
 import { Observable } from 'rxjs/Observable';
 import {
+    CANDIDATE_PROFILE_DETAIL_URL_COPIED,
     CANDIDATE_SEARCH_TOOL_CHANGED,
     CandidateProfileListLoadedAction,
     CandidateSearchToolChangedAction,
+    HideURLCopiedMessageAction,
     INIT_CANDIDATE_SEARCH,
     LOAD_NEXT_PAGE,
     LoadNextPageAction,
@@ -128,6 +130,12 @@ export class CandidateSearchEffects {
                 .map((label) => Object.assign({}, occupation, { label: label.default }))
                 .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
         });
+
+    @Effect()
+    candidateProfileDetailURLCopied$ = this.actions$
+        .ofType(CANDIDATE_PROFILE_DETAIL_URL_COPIED)
+        .delay(2500)
+        .map((action) => new HideURLCopiedMessageAction());
 
     constructor(private actions$: Actions,
                 private store: Store<CandidateSearchState>,

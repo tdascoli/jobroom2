@@ -5,6 +5,8 @@ import { OccupationOption } from '../../../shared/reference-service';
 
 export const INIT_CANDIDATE_SEARCH = 'CANDIDATES:INIT_CANDIDATE_SEARCH';
 export const CANDIDATE_PROFILE_DETAIL_LOADED = 'CANDIDATES:CANDIDATE_PROFILE_DETAIL_LOADED';
+export const CANDIDATE_PROFILE_DETAIL_URL_COPIED = 'CANDIDATES:CANDIDATE_PROFILE_DETAIL_URL_COPIED';
+export const HIDE_URL_COPIED_MESSAGE = 'CANDIDATES:HIDE_URL_COPIED_MESSAGE';
 export const SEARCH_CANDIDATES = 'CANDIDATES:SEARCH_CANDIDATES';
 export const CANDIDATE_SEARCH_TOOL_CHANGED = 'CANDIDATES:CANDIDATE_SEARCH_TOOL_CHANGED';
 export const LOAD_NEXT_PAGE = 'CANDIDATES:LOAD_NEXT_PAGE';
@@ -109,11 +111,27 @@ export class ResetFilterAction implements Action {
     }
 }
 
+export class CandidateProfileDetailURLCopiedAction implements Action {
+    readonly type = CANDIDATE_PROFILE_DETAIL_URL_COPIED;
+
+    constructor(public payload = {}) {
+    }
+}
+
+export class HideURLCopiedMessageAction implements Action {
+    readonly type = HIDE_URL_COPIED_MESSAGE;
+
+    constructor(public payload = {}) {
+    }
+}
+
 export type Actions =
     | InitCandidateSearchAction
     | SearchCandidatesAction
     | CandidateSearchToolChangedAction
     | CandidateProfileDetailLoadedAction
+    | CandidateProfileDetailURLCopiedAction
+    | HideURLCopiedMessageAction
     | LoadNextPageAction
     | NextPageLoadedAction
     | CandidateProfileListLoadedAction

@@ -2,9 +2,18 @@ import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { DatePipe } from '@angular/common';
 
 import {
-    AccountService, AuthServerProvider, CSRFService, HasAnyAuthorityDirective,
-    JhiLoginModalComponent, JobroomSharedCommonModule, JobroomSharedLibsModule,
-    LoginModalService, LoginService, Principal, StateStorageService, UserService
+    AccountService,
+    AuthServerProvider,
+    CSRFService,
+    HasAnyAuthorityDirective,
+    JhiLoginModalComponent,
+    JobroomSharedCommonModule,
+    JobroomSharedLibsModule,
+    LoginModalService,
+    LoginService,
+    Principal,
+    StateStorageService,
+    UserService
 } from './';
 import { LocaleAwareDatePipe } from './pipes/locale-aware-date.pipe';
 import { LocaleAwareDecimalPipe } from './pipes/locale-aware-number.pipe';
@@ -19,6 +28,7 @@ import { OrganizationService } from './organization/organization.service';
 import { JobPublicationService } from './job-publication/job-publication.service';
 import { TextSizeLimitDirective } from './validation/text-size-limit.directive';
 import { LanguageFilterService } from './input-components/language-filter/language-filter.service';
+import { FadingMessageComponent } from './components/fading-message/fading-message.component';
 
 @NgModule({
     imports: [
@@ -35,6 +45,7 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
         DetailsPagePaginationComponent,
+        FadingMessageComponent,
         TextSizeLimitDirective
     ],
     providers: [
@@ -70,6 +81,7 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
         DetailsPagePaginationComponent,
+        FadingMessageComponent,
         TextSizeLimitDirective
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]

@@ -3,8 +3,10 @@ import {
     Actions,
     CANDIDATE_LIST_LOADED,
     CANDIDATE_PROFILE_DETAIL_LOADED,
+    CANDIDATE_PROFILE_DETAIL_URL_COPIED,
     CANDIDATE_SEARCH_TOOL_CHANGED,
     HIDE_CANDIDATE_LIST_ERROR,
+    HIDE_URL_COPIED_MESSAGE,
     NEXT_PAGE_LOADED,
     RESET_FILTER,
     SAVE_SCROLL_Y,
@@ -82,6 +84,14 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
                         : candidateProfile
                 )
             });
+            break;
+
+        case CANDIDATE_PROFILE_DETAIL_URL_COPIED:
+            newState = Object.assign({}, state, { displayUrlCopiedMessage: true });
+            break;
+
+        case HIDE_URL_COPIED_MESSAGE:
+            newState = Object.assign({}, state, { displayUrlCopiedMessage: false });
             break;
 
         default:

@@ -9,6 +9,7 @@
   ],
   "dependencies": {
     "@alv-ch/alv-styleguide": "0.1.8",
+    "@angular/animations": "4.3.2",
     "@angular/common": "4.3.2",
     "@angular/compiler": "4.3.2",
     "@angular/core": "4.3.2",
@@ -43,6 +44,7 @@
     "rxjs": "5.4.2",
     "swagger-ui": "2.2.10",
     "tether": "1.4.0",
+    "web-animations-js": "^2.3.1",
     "zone.js": "^0.8.18"
   },
   "devDependencies": {
@@ -52,6 +54,7 @@
     "@types/node": "8.0.18",
     "@types/selenium-webdriver": "3.0.4",
     "angular2-template-loader": "0.6.2",
+    "autoprefixer": "7.2.4",
     "awesome-typescript-loader": "3.2.2",
     "browser-sync": "2.18.13",
     "browser-sync-webpack-plugin": "1.2.0",
@@ -82,6 +85,7 @@
     "merge-jsons-webpack-plugin": "1.0.11",
     "ngc-webpack": "3.2.2",
     "node-sass": "4.5.3",
+    "postcss-flexbox": "1.0.3",
     "postcss-loader": "2.0.6",
     "protractor": "5.1.2",
     "protractor-jasmine2-screenshot-reporter": "0.4.0",
@@ -105,9 +109,7 @@
     "webpack-merge": "4.1.0",
     "webpack-notifier": "1.5.0",
     "webpack-visualizer-plugin": "0.1.11",
-    "write-file-webpack-plugin": "4.1.0",
-    "autoprefixer":"7.2.4",
-    "postcss-flexbox":"1.0.3"
+    "write-file-webpack-plugin": "4.1.0"
   },
   "engines": {
     "node": ">=6.9.0"
@@ -125,7 +127,7 @@
     "test": "karma start src/test/javascript/karma.conf.js",
     "test:watch": "yarn test --watch",
     "webpack:dev": "yarn run webpack-dev-server --config webpack/webpack.dev.js --progress --inline --hot --profile --port=9060 --watch-content-base",
-    "webpack:development": "yarn run webpack-dev-server --config webpack/webpack.dev.js  --progress --inline --hot --profile --port=9060 --env.target=http://dev.job-room.ch:8080",
+    "webpack:development": "yarn run webpack-dev-server --config webpack/webpack.dev.js  --progress --inline --hot --profile --port=9060 --env.target=http://staging.job-room.ch",
     "webpack:build:main": "yarn run webpack --config webpack/webpack.dev.js --progress --profile",
     "webpack:build": "yarn run cleanup && yarn run webpack:build:main",
     "webpack:prod:main": "yarn run webpack --config webpack/webpack.prod.js --progress --profile",
