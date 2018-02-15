@@ -641,6 +641,9 @@ home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postal code / city,NP
 home,home.tools.job-publication.messages.validate.email-format,Diese E-Mail-Adresse ist ungültig.,This email address is invalid.,Cette adresse courriel n'est pas valide.,L'indirizzo e-mail non è valido.
 home,home.tools.job-publication.messages.validate.phone-format,Bitte gültige Telefonnummer eingeben z. B. 031 999 99 99 oder +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99
 home,home.tools.job-publication.messages.validate.required,Pflichtfeld,This field is required.,Ce champ est obligatoire.,Questo campo è obbligatorio.
+home,home.tools.job-publication.messages.validate.date-format,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
+home,home.tools.job-publication.messages.validate.employment-start.date-before,The min date is actual date,The min date is actual date,The min date is actual date,The min date is actual date
+home,home.tools.job-publication.messages.validate.employment-duration.date-before,The min date is employment start date,The min date is employment start date,The min date is employment start date,The min date is employment start date
 home,home.tools.job-publication.messages.validate.zip-format,PLZ ungültig,Invalid postal code,NPA n'est pas valide.,NPA non è valido.
 home,home.tools.job-publication.messages.validate.zip-or-city-format,PLZ/Ort ungültig,Invalid postal code/city,NPA/lieu n'est pas valide.,NPA/luogo non è valido.
 home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta

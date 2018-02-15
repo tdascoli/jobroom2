@@ -136,13 +136,14 @@
                                                 }}
                                             </label>
                                             <input #startDatePicker="ngbDatepicker"
+                                                   #publicationStartDateEl
                                                    class="form-control date__input"
                                                    id="stellenantritt-date"
                                                    placeholder="{{ 'home.tools.job-publication.date-placeholder' | translate }}"
                                                    ngbDatepicker
-                                                   readonly
                                                    formControlName="date"
-                                                   [minDate]="publicationStartDateMin"/>
+                                                   [minDate]="publicationStartDateMin"
+                                                   (focus)="startDatePicker.close()"/>
                                             <button class="input-group-addon"
                                                     (click)="startDatePicker.toggle(); endDatePicker.close()"
                                                     type="button"
@@ -151,6 +152,10 @@
                                                    aria-hidden="true"></i>
                                             </button>
                                         </div>
+                                        <jr2-input-error-message [formGroup]="jobPublicationForm" path="job.publicationStartDate.date"
+                                                                 [errorCodes]="['required', 'ngbDate.invalid', 'ngbDate.requiredBefore']"
+                                                                 [keys]="['home.tools.job-publication.messages.validate.required', 'home.tools.job-publication.messages.validate.date-format', 'home.tools.job-publication.messages.validate.employment-start.date-before']">
+                                        </jr2-input-error-message>
                                     </div>
                                 </div>
                             </div>
@@ -182,13 +187,14 @@
                                                 'home.tools.job-publication.publicationEndDate.label' | translate
                                                 }}</label>
                                             <input #endDatePicker="ngbDatepicker"
+                                                   #publicationEndDateEl
                                                    placeholder="{{ 'home.tools.job-publication.date-placeholder' | translate }}"
                                                    formControlName="date"
                                                    ngbDatepicker
-                                                   readonly
                                                    class="form-control date__input"
                                                    id="anstellungsdauer-date"
-                                                   [minDate]="publicationEndDateMin"/>
+                                                   [minDate]="publicationEndDateMin"
+                                                   (focus)="endDatePicker.close()"/>
                                             <button class="input-group-addon"
                                                     (click)="endDatePicker.toggle(); startDatePicker.close()"
                                                     type="button"
@@ -196,6 +202,10 @@
                                                 <i class="fa fa-calendar-o" aria-hidden="true"></i>
                                             </button>
                                         </div>
+                                        <jr2-input-error-message [formGroup]="jobPublicationForm" path="job.publicationEndDate.date"
+                                                                 [errorCodes]="['required', 'ngbDate.invalid', 'ngbDate.requiredBefore']"
+                                                                 [keys]="['home.tools.job-publication.messages.validate.required', 'home.tools.job-publication.messages.validate.date-format', 'home.tools.job-publication.messages.validate.employment-duration.date-before']">
+                                        </jr2-input-error-message>
                                     </div>
                                 </div>
                             </div>

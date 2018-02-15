@@ -94,6 +94,13 @@
                         "email-format": "Cette adresse courriel n'est pas valide.",
                         "phone-format": "Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99",
                         "required": "Ce champ est obligatoire.",
+                        "date-format": "JJ.MM.AAAA",
+                        "employment-start": {
+                            "date-before": "The min date is actual date"
+                        },
+                        "employment-duration": {
+                            "date-before": "The min date is employment start date"
+                        },
                         "zip-format": "NPA n'est pas valide.",
                         "zip-or-city-format": "NPA/lieu n'est pas valide."
                     }

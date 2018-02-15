@@ -1,10 +1,10 @@
 import {
     ChangeDetectionStrategy,
     ChangeDetectorRef,
-    Component,
+    Component, ElementRef,
     Input,
     OnDestroy,
-    OnInit
+    OnInit, ViewChild
 } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
@@ -61,6 +61,12 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
     @Input()
     userData: UserData;
 
+    @ViewChild('publicationStartDateEl')
+    publicationStartDateElementRef: ElementRef;
+
+    @ViewChild('publicationEndDateEl')
+    publicationEndDateElementRef: ElementRef;
+
     degrees = Degree;
     experiences = Experience;
     drivingLicenceCategories = DrivingLicenceCategory;
@@ -111,9 +117,23 @@ export class JobPublicationToolComponent implements OnInit, OnDestroy {
             'application.email', Validators.pattern(EMAIL_REGEX));
 
         this.configureDateInput('job.publicationStartDate.date', 'job.publicationStartDate.immediate',
-            (disabled) => this.publicationStartDateByArrangement = disabled);
+            (disabled) => {
+                this.publicationStartDateByArrangement = disabled;
+                if (!disabled) {
+                    setTimeout(() => {
+                        this.publicationStartDateElementRef.nativeElement.focus();
+                    }, 0);
+                }
+            });
         this.configureDateInput('job.publicationEndDate.date', 'job.publicationEndDate.permanent',
-            (disabled) => this.publicationEndDateIsPermanent = disabled);
+            (disabled) => {
+                this.publicationEndDateIsPermanent = disabled;
+                if (!disabled) {
+                    setTimeout(() => {
+                        this.publicationEndDateElementRef.nativeElement.focus();
+                    }, 0);
+                }
+            });
         this.updatePublicationStartDateRelatedField();
     }
 

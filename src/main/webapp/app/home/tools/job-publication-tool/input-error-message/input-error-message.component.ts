@@ -20,7 +20,21 @@ export class InputErrorMessageComponent implements OnInit {
 
     isErrorShown(errorCode: string) {
         return this.formControl
-            && this.formControl.hasError(errorCode)
+            && this.hasError(errorCode)
             && this.formControl.touched;
+    }
+
+    private hasError(errorCode: string) {
+        const errorCodePaths = errorCode.split('.');
+        let error = this.formControl.getError(errorCodePaths[0]);
+
+        for (let i = 1; i < errorCodePaths.length; i++) {
+            if (!(error instanceof Object)) {
+                break;
+            }
+            error = error[errorCodePaths[i]];
+        }
+
+        return error !== null && error !== undefined;
     }
 }
