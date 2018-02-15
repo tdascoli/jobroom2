@@ -141,6 +141,7 @@ jhipster:
             - dev
             - development
             - test
+            - staging
 
 # ===================================================================
 # Application specific properties

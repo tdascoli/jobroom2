@@ -549,6 +549,7 @@ global,global.reference.region.ZH12,Stadt Zürich,Zurich City,ville de Zurich,ci
 global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Entwicklung,Development,Développement,Development
 global,global.ribbon.test,Test,Test,Test,Test
+global,global.ribbon.staging,Staging,Staging,Staging,Staging
 global,global.title,Job-Room,Job-Room,Job-Room,Job-Room
 global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
 global,navigation.next,Weiter,Next,Suivant,Seguente

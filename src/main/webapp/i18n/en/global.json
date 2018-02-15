@@ -462,7 +462,8 @@
         "ribbon": {
             "dev": "Local",
             "development": "Development",
-            "test": "Test"
+            "test": "Test",
+            "staging": "Staging"
         },
         "title": "Job-Room"
     },
