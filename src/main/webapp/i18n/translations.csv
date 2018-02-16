@@ -761,6 +761,7 @@ job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
 job-search,typeahead-multiselect.type.classification,Berufskategorie,Category,Catégorie,Categoria
 job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località
 job-search,typeahead-multiselect.type.occupation,Berufsbezeichnung,Occupation,Profession,Professione
+job-search,typeahead-multiselect.tooltip,"Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus."
 job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url
 job,jobroomApp.job.cancellationDate,Annulationsdatum,Cancellation date,Date d'annulation,Data di cancellazione
 job,jobroomApp.job.cancellationReason,Annluationsgrund,Cancellation reason,Motif de l'annulation,Motivo cancellazione

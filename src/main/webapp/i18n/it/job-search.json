@@ -79,6 +79,7 @@
             "classification": "Categoria",
             "locality": "Localit\u00e0",
             "occupation": "Professione"
-        }
+        },
+        "tooltip": "Um <strong>mehrere</strong> Suchbegriffe einzugeben, dr\u00fccken Sie \"ENTER\" auf Ihrer Tastatur oder w\u00e4hlen Sie mehrere Suchbefriffe aus der Liste aus."
     }
 }
