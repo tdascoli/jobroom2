@@ -7,6 +7,7 @@ import org.mapstruct.ReportingPolicy;
 
 import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
+import ch.admin.seco.jobroom.service.dto.OrganizationSuggestionDTO;
 
 /**
  * Mapper for the entity Organization and its DTO OrganizationDTO.
@@ -22,4 +23,6 @@ public interface OrganizationMapper extends EntityMapper<OrganizationDTO, Organi
         organization.setId(id);
         return organization;
     }
+
+    OrganizationSuggestionDTO toSuggestionDto(Organization organization);
 }

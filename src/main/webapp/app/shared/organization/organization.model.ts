@@ -7,12 +7,15 @@ export const enum CompanyType {
 
 export function formatOrganizationName(organization: Organization | OrganizationSuggestion): string {
     let formattedName = organization.name;
-    const appendValues = (fields: string[]) => {
-        fields
-            .filter((value) => value)
-            .forEach((field) => formattedName = `${formattedName}, ${field}`)
-    };
-    appendValues([organization.city, organization.street, organization.zipCode]);
+    if (organization.city || organization.zipCode) {
+        formattedName = organization.city ?
+            `${formattedName}, ${organization.zipCode} ${organization.city}`
+            : `${formattedName}, ${organization.zipCode}`;
+
+    }
+    if (organization.street) {
+        formattedName = `${formattedName}, ${organization.street}`
+    }
     return formattedName;
 }
 

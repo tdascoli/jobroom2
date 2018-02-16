@@ -2,74 +2,67 @@ package ch.admin.seco.jobroom.service;
 
 import java.util.Collections;
 import java.util.List;
-import java.util.Map;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
 import com.google.common.base.Preconditions;
-import org.elasticsearch.action.search.SearchResponse;
-import org.elasticsearch.search.suggest.SuggestBuilder;
-import org.elasticsearch.search.suggest.SuggestBuilders;
-import org.elasticsearch.search.suggest.completion.CompletionSuggestion;
-import org.elasticsearch.search.suggest.completion.CompletionSuggestionBuilder;
+import org.elasticsearch.index.query.MultiMatchQueryBuilder;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.elasticsearch.core.ElasticsearchTemplate;
+import org.springframework.data.elasticsearch.core.query.NativeSearchQueryBuilder;
+import org.springframework.data.elasticsearch.core.query.SearchQuery;
 import org.springframework.stereotype.Service;
 
-import ch.admin.seco.jobroom.domain.search.organization.OrganizationDocument;
+import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.service.dto.OrganizationAutocompleteDTO;
 import ch.admin.seco.jobroom.service.dto.OrganizationSuggestionDTO;
+import ch.admin.seco.jobroom.service.mapper.OrganizationMapper;
 
 @Service
 public class OrganizationSuggestionService {
 
     private final ElasticsearchTemplate elasticsearchTemplate;
+    private final OrganizationMapper organizationMapper;
+    private static final String[] suggestFields = {"name", "city", "zipCode"};
 
     @Autowired
-    public OrganizationSuggestionService(ElasticsearchTemplate elasticsearchTemplate) {
+    public OrganizationSuggestionService(ElasticsearchTemplate elasticsearchTemplate,
+        OrganizationMapper organizationMapper) {
         this.elasticsearchTemplate = elasticsearchTemplate;
+        this.organizationMapper = organizationMapper;
     }
 
-    public OrganizationAutocompleteDTO suggest(String prefix, int resultSize) {
-        Preconditions.checkNotNull(prefix);
+    public OrganizationAutocompleteDTO suggest(String query, int resultSize) {
+        Preconditions.checkNotNull(query);
         Preconditions.checkArgument(resultSize >= 0);
 
-        SuggestBuilder suggestBuilder = buildSuggestBuilder(prefix, resultSize);
-        SearchResponse searchResponse = elasticsearchTemplate.suggest(suggestBuilder, OrganizationDocument.class);
-        return extractSuggestions(searchResponse);
+        final SearchQuery searchQuery = buildSearchQuery(query, resultSize);
+        final List<Organization> organizations = elasticsearchTemplate
+            .queryForList(searchQuery, Organization.class);
+        return extractSuggestions(organizations);
     }
 
-    private SuggestBuilder buildSuggestBuilder(String prefix, int resultSize) {
-        CompletionSuggestionBuilder nameSuggestion = SuggestBuilders.completionSuggestion("suggestions")
-            .prefix(prefix)
-            .size(resultSize);
-        return new SuggestBuilder()
-            .addSuggestion("organizations", nameSuggestion);
+    private SearchQuery buildSearchQuery(String query, int resultSize) {
+        final MultiMatchQueryBuilder multiMatchQueryBuilder = new MultiMatchQueryBuilder(query, suggestFields)
+            .analyzer("ascii_folding")
+            .type(MultiMatchQueryBuilder.Type.CROSS_FIELDS);
+
+        return new NativeSearchQueryBuilder()
+            .withQuery(multiMatchQueryBuilder)
+            .withPageable(PageRequest.of(0, resultSize))
+            .build();
     }
 
-    private OrganizationAutocompleteDTO extractSuggestions(SearchResponse searchResponse) {
-        if (Objects.isNull(searchResponse.getSuggest())) {
+    private OrganizationAutocompleteDTO extractSuggestions(List<Organization> organizationDocuments) {
+        if (Objects.isNull(organizationDocuments)) {
             return new OrganizationAutocompleteDTO(Collections.emptyList());
         }
 
-        final List<OrganizationSuggestionDTO> suggestions = searchResponse.getSuggest()
-            .<CompletionSuggestion>getSuggestion("organizations")
-            .getEntries().stream()
-            .flatMap(item -> item.getOptions().stream())
-            .map(this::convertToOrganizationSuggestion)
+        final List<OrganizationSuggestionDTO> suggestions = organizationDocuments.stream()
+            .map(organizationMapper::toSuggestionDto)
             .collect(Collectors.toList());
         return new OrganizationAutocompleteDTO(suggestions);
-    }
-
-    private OrganizationSuggestionDTO convertToOrganizationSuggestion(CompletionSuggestion.Entry.Option option) {
-        Map<String, Object> source = option.getHit().getSourceAsMap();
-        OrganizationSuggestionDTO suggestion = new OrganizationSuggestionDTO();
-        suggestion.setExternalId(String.class.cast(source.get("externalId")));
-        suggestion.setName(String.class.cast(source.get("name")));
-        suggestion.setCity(String.class.cast(source.get("city")));
-        suggestion.setStreet(String.class.cast(source.get("street")));
-        suggestion.setZipCode(String.class.cast(source.get("zipCode")));
-        return suggestion;
     }
 }

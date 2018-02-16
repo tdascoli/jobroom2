@@ -23,13 +23,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StopWatch;
 
-import ch.admin.seco.jobroom.domain.search.organization.OrganizationDocument;
+import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.domain.search.user.UserDocument;
 import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.UserRepository;
 import ch.admin.seco.jobroom.repository.search.OrganizationSearchRepository;
 import ch.admin.seco.jobroom.repository.search.UserSearchRepository;
-import ch.admin.seco.jobroom.service.mapper.OrganizationDocumentMapper;
 import ch.admin.seco.jobroom.service.mapper.UserDocumentMapper;
 
 @Service
@@ -51,16 +50,13 @@ public class ElasticsearchIndexService {
 
     private final UserDocumentMapper userDocumentMapper;
 
-    private final OrganizationDocumentMapper organizationDocumentMapper;
-
     public ElasticsearchIndexService(
         EntityManager entityManager, UserRepository userRepository,
         UserSearchRepository userSearchRepository,
         OrganizationRepository organizationRepository,
         OrganizationSearchRepository organizationSearchRepository,
         ElasticsearchTemplate elasticsearchTemplate,
-        UserDocumentMapper userDocumentMapper,
-        OrganizationDocumentMapper organizationDocumentMapper) {
+        UserDocumentMapper userDocumentMapper) {
         this.entityManager = entityManager;
         this.userRepository = userRepository;
         this.userSearchRepository = userSearchRepository;
@@ -68,7 +64,6 @@ public class ElasticsearchIndexService {
         this.organizationSearchRepository = organizationSearchRepository;
         this.elasticsearchTemplate = elasticsearchTemplate;
         this.userDocumentMapper = userDocumentMapper;
-        this.organizationDocumentMapper = organizationDocumentMapper;
     }
 
     @Async
@@ -76,8 +71,7 @@ public class ElasticsearchIndexService {
     @Transactional(readOnly = true)
     public void reindexAll() {
         reindexForClass(UserDocument.class, userRepository, userSearchRepository, userDocumentMapper::userToUserDocument);
-        reindexForClass(OrganizationDocument.class, organizationRepository, organizationSearchRepository,
-            organizationDocumentMapper::organizationToOrganizationDocument);
+        reindexForClass(Organization.class, organizationRepository, organizationSearchRepository, Function.identity());
 
         log.info("Elasticsearch: Successfully performed reindexing");
     }

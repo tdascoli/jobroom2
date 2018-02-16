@@ -2,7 +2,8 @@
     "organization": {
         "properties": {
             "name": {
-                "type": "text"
+                "type": "text",
+                "analyzer": "ascii_folding"
             },
             "externalId": {
                 "type": "keyword"
@@ -14,17 +15,14 @@
                 "type": "keyword"
             },
             "city": {
-                "type": "text"
+                "type": "text",
+                "analyzer": "ascii_folding"
             },
             "email": {
                 "type": "text"
             },
             "phone": {
                 "type": "text"
-            },
-            "suggestions" : {
-                "type": "completion",
-                "analyzer": "ascii_folding"
             }
         }
     }

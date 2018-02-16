@@ -66,11 +66,11 @@ public interface OrganizationService {
 
     /**
      * Search for the organizations corresponding to the prefix and limit result by resultSize.
-     * @param prefix the prefix of organization suggest
+     * @param query the prefix of organization suggest
      * @param resultSize the result size
      * @return result of the suggest
      */
-    OrganizationAutocompleteDTO suggest(String prefix, int resultSize);
+    OrganizationAutocompleteDTO suggest(String query, int resultSize);
 
     void housekeeping(LocalDateTime beforeDateTime);
 }

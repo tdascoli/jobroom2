@@ -38,15 +38,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.transaction.annotation.Transactional;
 
-import ch.admin.seco.jobroom.JobroomApp;
 import ch.admin.seco.jobroom.domain.Organization;
 import ch.admin.seco.jobroom.domain.enumeration.CompanyType;
-import ch.admin.seco.jobroom.domain.search.organization.OrganizationDocument;
 import ch.admin.seco.jobroom.repository.OrganizationRepository;
 import ch.admin.seco.jobroom.repository.search.OrganizationSearchRepository;
 import ch.admin.seco.jobroom.service.OrganizationService;
 import ch.admin.seco.jobroom.service.dto.OrganizationDTO;
-import ch.admin.seco.jobroom.service.mapper.OrganizationDocumentMapper;
 import ch.admin.seco.jobroom.service.mapper.OrganizationMapper;
 import ch.admin.seco.jobroom.web.rest.errors.ExceptionTranslator;
 
@@ -109,9 +106,6 @@ public class OrganizationResourceIntTest {
 
     @Autowired
     private ExceptionTranslator exceptionTranslator;
-
-    @Autowired
-    private OrganizationDocumentMapper organizationDocumentMapper;
 
     private MockMvc restOrganizationMockMvc;
 
@@ -182,7 +176,7 @@ public class OrganizationResourceIntTest {
         assertThat(testOrganization.isActive()).isEqualTo(DEFAULT_ACTIVE);
 
         // Validate the Organization in Elasticsearch
-        OrganizationDocument organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
+        Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
         assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
             "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
@@ -321,7 +315,7 @@ public class OrganizationResourceIntTest {
     public void updateOrganization() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
+        organizationSearchRepository.save(organization);
         int databaseSizeBeforeUpdate = Long.valueOf(organizationRepository.count()).intValue();
 
         // Update the organization
@@ -358,7 +352,7 @@ public class OrganizationResourceIntTest {
         assertThat(testOrganization.isActive()).isEqualTo(UPDATED_ACTIVE);
 
         // Validate the Organization in Elasticsearch
-        OrganizationDocument organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
+        Organization organizationEs = organizationSearchRepository.findById(testOrganization.getId()).get();
         assertThat(organizationEs).isEqualToComparingOnlyGivenFields(testOrganization,
             "id", "name", "street", "zipCode", "city", "externalId", "email", "phone", "active");
     }
@@ -387,7 +381,7 @@ public class OrganizationResourceIntTest {
     public void deleteOrganization() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
+        organizationSearchRepository.save(organization);
         int databaseSizeBeforeDelete = Long.valueOf(organizationRepository.count()).intValue();
 
         // Get the organization
@@ -409,7 +403,7 @@ public class OrganizationResourceIntTest {
     public void searchOrganization() throws Exception {
         // Initialize the database
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
+        organizationSearchRepository.save(organization);
 
         // Search the organization
         restOrganizationMockMvc.perform(get("/api/_search/organizations?query=id:" + organization.getId()))
@@ -453,17 +447,20 @@ public class OrganizationResourceIntTest {
     @Transactional
     public void suggestOrganizations() throws Exception {
         // Initialize the database
+        organization = organization
+            .name("das team ag")
+            .city("Olten");
         organizationRepository.saveAndFlush(organization);
-        organizationSearchRepository.save(organizationDocumentMapper.organizationToOrganizationDocument(organization));
+        organizationSearchRepository.save(organization);
 
         // Search the organization
-        restOrganizationMockMvc.perform(get("/api/_search/organizations/suggest?prefix=AAA&resultSize=1"))
+        restOrganizationMockMvc.perform(get("/api/_search/organizations/suggest?prefix=das olten&resultSize=1"))
             .andExpect(status().isOk())
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_UTF8_VALUE))
             .andExpect(jsonPath("$.organizations.[*].externalId").value(hasItem(DEFAULT_EXTERNAL_ID)))
-            .andExpect(jsonPath("$.organizations.[*].name").value(hasItem(DEFAULT_NAME)))
+            .andExpect(jsonPath("$.organizations.[*].name").value(hasItem("das team ag")))
             .andExpect(jsonPath("$.organizations.[*].street").value(hasItem(DEFAULT_STREET)))
-            .andExpect(jsonPath("$.organizations.[*].city").value(hasItem(DEFAULT_CITY)));
+            .andExpect(jsonPath("$.organizations.[*].city").value(hasItem("Olten")));
     }
 
     @Test
