@@ -7,6 +7,8 @@ import {
     TypeaheadMultiselectModel
 } from '../../../../../../../../main/webapp/app/shared/input-components';
 import { MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH } from '../../../../../../../../main/webapp/app/app.constants';
+import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 describe('TypeaheadMultiselectComponent', () => {
 
@@ -15,9 +17,10 @@ describe('TypeaheadMultiselectComponent', () => {
 
     beforeEach(async(() => {
         TestBed.configureTestingModule({
+            imports: [NgbTypeaheadModule.forRoot()],
             declarations: [TypeaheadMultiselectComponent],
         })
-            .overrideTemplate(TypeaheadMultiselectComponent, '<input #input/>') // we need only the @ViewChild
+            .overrideTemplate(TypeaheadMultiselectComponent, '<input [ngbTypeahead]="wrappedItemLoader"/>') // we need only the @ViewChild
             .compileComponents();
     }));
 

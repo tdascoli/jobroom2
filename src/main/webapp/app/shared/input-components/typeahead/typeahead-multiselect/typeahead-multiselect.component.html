@@ -13,7 +13,7 @@
         </div>
     </ng-template>
 
-    <input #input class="input typeahead-multiselect__input" name="inputValue"
+    <input class="input typeahead-multiselect__input" name="inputValue"
            (keydown)="handleKeyDown($event)"
            [placeholder]="showPlaceholder() ? placeHolder : ''"
            [(ngModel)]="inputValue"

@@ -15,6 +15,7 @@ import {
     MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH,
     TYPEAHEAD_QUERY_MIN_LENGTH
 } from '../../../../app.constants';
+import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 
 enum Key {
     Tab = 9,
@@ -37,7 +38,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     @Input() placeHolder: string;
     @Input() editable = true;
     @Input() focusFirst = false;
-    @ViewChild('input') inputEl;
+    @ViewChild(NgbTypeahead) ngbTypeahead;
 
     inputValue: string;
     selectedItems: Array<TypeaheadMultiselectModel> = [];
@@ -82,11 +83,11 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         this._onChange(filteredItems);
         this.writeValue(filteredItems);
 
-        this.inputEl.nativeElement.focus();
+        this.getTypeaheadNativeElement().focus();
     }
 
     focusInput() {
-        this.inputEl.nativeElement.focus();
+        this.getTypeaheadNativeElement().focus();
     }
 
     handleKeyDown(event: KeyboardEvent) {
@@ -99,7 +100,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
     }
 
     getInputWidth() {
-        const value = this.inputEl.nativeElement.value || '';
+        const value = this.getTypeaheadNativeElement().value || '';
         if (value.length > 0) {
             return `${value.length}em`;
         } else if (this.selectedItems.length > 0) {
@@ -107,6 +108,10 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
         } else {
             return '100%';
         }
+    }
+
+    private getTypeaheadNativeElement() {
+        return this.ngbTypeahead._elementRef.nativeElement;
     }
 
     selectFreeText() {
@@ -119,20 +124,21 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
             this._onChange(newItems);
             this.writeValue(newItems);
 
-            this.inputEl.nativeElement.value = '';
+            this.clearInput();
             return freeText;
         }
         return null;
     }
 
     selectItem(event: any) {
+        event.preventDefault();
+
         const newItems = [...this.selectedItems, event.item.model];
 
         this._onChange(newItems);
         this.writeValue(newItems);
 
         this.clearInput();
-        event.preventDefault();
     }
 
     showPlaceholder(): boolean {
@@ -167,6 +173,7 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
 
     private _onChange = (_: any) => {
     };
+
     private _onTouched = () => {
     };
 
@@ -176,13 +183,17 @@ export class TypeaheadMultiselectComponent implements ControlValueAccessor {
             return;
         }
 
-        if (!this.elRef.nativeElement.contains(targetElement)) {
+        if (!this.elRef.nativeElement.contains(targetElement) && !this.selectFreeText()) {
             this.clearInput();
         }
     }
 
     private clearInput(): void {
-        this.inputEl.nativeElement.value = '';
+        // This hack removes the invalid value from the input field.
+        // The idea is from this PR: https://github.com/ng-bootstrap/ng-bootstrap/pull/1468
+        //
+        // todo: We have to review this after updating to the next ng-bootstrap versions.
+        this.ngbTypeahead._userInput = '';
         this.inputValue = '';
     }
 }
