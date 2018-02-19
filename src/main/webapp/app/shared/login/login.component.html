@@ -10,8 +10,10 @@
             <strong>Failed to sign in!</strong> Please check your credentials and try again.
         </div>
 
-        <div class="text-center mb-3">
-            <a [href]="'login.form.information.pea.url' | translate" target="_blank">{{'login.form.information.pea.text' | translate}}</a>
+        <div class="row mb-3">
+            <div class="col-sm-8 ml-auto">
+                <a [href]="'login.form.information.pea.url' | translate" target="_blank">{{'login.form.information.pea.text' | translate}}</a>
+            </div>
         </div>
 
         <form class="form" role="form" (ngSubmit)="login()">
