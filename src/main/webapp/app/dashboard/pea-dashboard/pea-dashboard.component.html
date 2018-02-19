@@ -57,13 +57,13 @@
                             <td>{{ 'global.job-publication.status.' + jobPublication.status | translate }}</td>
                             <td>
                                 <div class="actions">
-                                    <a routerLink="/job-publication-detail/{{jobPublication.id}}?accessToken={{jobPublication.accessToken}}" [attr.aria-label]="'dashboard.job-publication.action.view' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.view' | translate">
+                                    <a routerLink="/job-publication-detail/{{jobPublication.id}}?accessToken={{jobPublication.accessToken}}" [attr.aria-label]="'dashboard.job-publication.action.view' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.view' | translate" class="btn btn-link p-1">
                                         <span class="fa fa-fw fa-eye" aria-hidden="true"></span>
                                     </a>
-                                    <a [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id, accessToken: jobPublication.accessToken }]" [attr.aria-label]="'dashboard.job-publication.action.copy' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.copy' | translate">
+                                    <a [routerLink]="['/agents/jobpublication', { jobPublicationId: jobPublication.id, accessToken: jobPublication.accessToken }]" [attr.aria-label]="'dashboard.job-publication.action.copy' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.copy' | translate" class="btn btn-link p-1">
                                         <span class="fa fa-fw fa-clone" aria-hidden="true"></span>
                                     </a>
-                                    <a *ngIf="isJobPublicationCancellable(jobPublication.status)" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)" [attr.aria-label]="'dashboard.job-publication.action.delete' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.delete' | translate">
+                                    <a *ngIf="isJobPublicationCancellable(jobPublication.status)" (click)="showCancellationDialog(jobPublication.id, jobPublication.accessToken)" [attr.aria-label]="'dashboard.job-publication.action.delete' | translate" data-toggle="tooltip" data-placement="top" [title]="'dashboard.job-publication.action.delete' | translate" class="btn btn-link p-1">
                                         <span class="fa fa-fw fa-trash-o" aria-hidden="true"></span>
                                     </a>
                                 </div>
