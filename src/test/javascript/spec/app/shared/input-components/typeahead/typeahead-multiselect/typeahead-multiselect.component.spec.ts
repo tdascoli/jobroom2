@@ -9,7 +9,6 @@ import {
 import { MULTISELECT_FREE_TEXT_VALUE_MIN_LENGTH } from '../../../../../../../../main/webapp/app/app.constants';
 import { NgbTypeaheadModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 describe('TypeaheadMultiselectComponent', () => {
 
     let component: TypeaheadMultiselectComponent;
