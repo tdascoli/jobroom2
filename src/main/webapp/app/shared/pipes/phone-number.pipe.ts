@@ -7,8 +7,8 @@ import { CountryCode, format, isValidNumber, parse, } from 'libphonenumber-js';
 export class PhoneNumberPipe implements PipeTransform {
 
     transform(value: string, country: CountryCode = 'CH'): string {
-        const parsedNumber = parse(value, country);
-        if (isValidNumber(parsedNumber)) {
+        if (isValidNumber(value, country)) {
+            const parsedNumber = parse(value, country);
             return format(parsedNumber, 'International');
         }
         return value;

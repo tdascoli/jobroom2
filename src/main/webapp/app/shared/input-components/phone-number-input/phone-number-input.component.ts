@@ -14,7 +14,7 @@ import {
     ValidationErrors,
     Validator
 } from '@angular/forms';
-import { asYouType, CountryCode, format, isValidNumber, parse, } from 'libphonenumber-js';
+import { AsYouType, CountryCode, format, isValidNumber, parse } from 'libphonenumber-js';
 
 @Component({
     selector: 'jr2-phone-number-input',
@@ -50,7 +50,7 @@ export class PhoneNumberInputComponent implements OnInit, ControlValueAccessor, 
 
     writeValue(obj: any): void {
         if (obj) {
-            const formatter = new asYouType(this.defaultCountry);
+            const formatter = new AsYouType(this.defaultCountry);
 
             const value = formatter.input(obj);
             this.country = formatter.country;
@@ -74,8 +74,7 @@ export class PhoneNumberInputComponent implements OnInit, ControlValueAccessor, 
     validate(c: AbstractControl): ValidationErrors | any {
         const { value } = c;
         if (!!value) {
-            const parsedNumber = parse(value, this.country);
-            if (!isValidNumber(parsedNumber)) {
+            if (!isValidNumber(value, this.country)) {
                 return {
                     'phoneValidator': {
                         value,
@@ -97,32 +96,32 @@ export class PhoneNumberInputComponent implements OnInit, ControlValueAccessor, 
 
         this.writeValue(eventValue);
 
-        const parsedNumber = parse(eventValue, this.country);
-        const e164Value = format(parsedNumber, 'International_plaintext');
-        if (e164Value) {
+        if (isValidNumber(eventValue, this.country)) {
+            const parsedNumber = parse(eventValue, this.country);
+            const e164Value = format(parsedNumber, 'International');
             this._onChange(e164Value);
         } else {
             this._onChange(eventValue);
         }
+
         this._onTouched();
     }
 
     onBlur(event: any) {
         const eventValue = event.target.value;
-        const parsedNumber = parse(eventValue, this.country);
-        const internationalValue = format(parsedNumber, 'International');
-        if (internationalValue) {
-            this.inputViewChild.nativeElement.value = internationalValue;
+        if (isValidNumber(eventValue, this.country)) {
+            const parsedNumber = parse(eventValue, this.country);
+            this.inputViewChild.nativeElement.value = format(parsedNumber, 'International');
         }
         this._onTouched();
     }
 
     private _onChange = (_: any) => {
-    }
+    };
 
     private _onTouched = () => {
-    }
+    };
 
     private _validatorChange = () => {
-    }
+    };
 }

@@ -14,36 +14,49 @@
                     <div class="alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp" >
                         <div class="detail__content" *ngIf="job.company">
                             <address>
-                                <h4>{{ job.company.name }}</h4>
-                                <p>{{ job.company.street }} {{ job.company.houseNumber }}</p>
-                                <p>{{ job.company.zipCode }} {{ job.company.city }}</p>
+                                <strong>{{ job.company.name }}</strong>
+                                <br>
+
+                                {{ job.company.street }} {{ job.company.houseNumber }}
+                                <br>
+
+                                {{ job.company.zipCode }} {{ job.company.city }}
                             </address>
 
-                            <p><a href="tel:{{job.company.phone}}">{{ job.company.phone | jr2PhoneNumber }}</a></p>
-                            <p><a href="mailto:{{ job.company.email }}">{{ job.company.email }}</a></p>
-                            <p>
-                                <a href="{{ job.company.website }}" target="{{ job.id }}">
-                                    {{ job.company.website | truncateCharacters:30 }}
-                                </a>
-                            </p>
+                            <ng-container *ngIf="job.company.phone">
+                                <a href="tel:{{job.company.phone}}">{{ job.company.phone | jr2PhoneNumber }}</a>
+                                <br>
+                            </ng-container>
+
+                            <ng-container *ngIf="job.company.email">
+                                <a href="mailto:{{ job.company.email }}">{{ job.company.email }}</a>
+                                <br>
+                            </ng-container>
+
+                            <a href="{{ job.company.website }}" target="{{ job.id }}">
+                                {{ job.company.website | truncateCharacters:30 }}
+                            </a>
                         </div>
 
                         <div *ngIf="job.contact">
                             <div class="detail__content">
-                                <h4>{{'job-detail.contactPerson' | translate}}</h4>
-                                <p><span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
-                                    {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
-                                </p>
-                                <p *ngIf="job.contact.phone">
+                                <strong>{{'job-detail.contactPerson' | translate}}</strong>
+                                <br>
+
+                                <span *ngIf="job.contact.salutation">{{ 'global.contactPerson.salutation.' + job.contact.salutation | translate }}</span>
+                                {{ job.contact.firstName }}&nbsp;{{ job.contact.lastName }}
+                                <br>
+
+                                <ng-container *ngIf="job.contact.phone">
                                     <a href="tel:{{job.contact.phone}}">
                                         {{ job.contact.phone | jr2PhoneNumber }}
                                     </a>
-                                </p>
-                                <p *ngIf="job.contact.email">
-                                    <a href="mailto:{{ job.contact.email }}">
-                                        {{ job.contact.email }}
-                                    </a>
-                                </p>
+                                    <br>
+                                </ng-container>
+
+                                <a *ngIf="job.contact.email" href="mailto:{{ job.contact.email }}">
+                                    {{ job.contact.email }}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -51,18 +64,25 @@
                     <div *ngIf="jobCenter$ | async as jobCenter" class="order-sm-2 alv-logo-box logo-box logo-box__company flex-height md-whiteframe-1dp">
                         <div class="detail__content">
                             <address *ngIf="jobCenter.address">
-                                <h4>{{ 'job-detail.reference.responsible-job-center' | translate }}</h4>
-                                <p>
-                                    {{jobCenter.address.name}}<ng-container *ngIf="jobCenter.address.street || jobCenter.address.houseNumber">, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</ng-container>
-                                </p>
-                                <p>{{jobCenter.address.zipCode}} {{jobCenter.address.city}}</p>
-                                <p>{{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone | jr2PhoneNumber}}</a></p>
+                                <strong>{{ 'job-detail.reference.responsible-job-center' | translate }}</strong>
+                                <br>
+
+                                {{jobCenter.address.name}}<ng-container *ngIf="jobCenter.address.street || jobCenter.address.houseNumber">, {{jobCenter.address.street}} {{jobCenter.address.houseNumber}}</ng-container>
+                                <br>
+
+                                {{jobCenter.address.zipCode}} {{jobCenter.address.city}}
+                                <br>
+
+                                {{'job-detail.reference.phone' | translate}} <a href="tel:{{jobCenter.phone}}">{{jobCenter.phone | jr2PhoneNumber}}</a>
                             </address>
 
                             <ng-container *ngIf="job.avamJobId || job.egovJobId">
-                                <h4>{{'job-detail.reference.job-id' | translate}}:</h4>
-                                <p *ngIf="job.avamJobId">AVAM: {{job.avamJobId}}</p>
-                                <p *ngIf="job.egovJobId">Job-Room: {{job.egovJobId}}</p>
+                                <strong>{{'job-detail.reference.job-id' | translate}}:</strong>
+                                <br>
+
+                                <ng-container *ngIf="job.avamJobId">AVAM: {{job.avamJobId}} <br></ng-container>
+
+                                <ng-container *ngIf="job.egovJobId">Job-Room: {{job.egovJobId}}</ng-container>
                             </ng-container>
                         </div>
                     </div>
