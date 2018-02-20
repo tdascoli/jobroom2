@@ -35,7 +35,7 @@ export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSe
     const workplace = mapWorkplace(searchFilter.workplace);
 
     return {
-        occupations: mapOccupationCode(occupations),
+        occupationCodes: mapOccupationCode(occupations),
         skills: searchFilter.skills,
         experience: Experience[experience],
         residence: mapResidence(searchFilter.residence),
@@ -58,7 +58,7 @@ export function createCandidateSearchRequestFromToolState(toolState: CandidateSe
     const workplace = mapWorkplace(toolState.workplace);
 
     return {
-        occupations: mapOccupationCode(occupations),
+        occupationCodes: mapOccupationCode(occupations),
         cantonCode: workplace.pop(),
         regionCode: workplace.pop(),
         skills,

@@ -1,5 +1,5 @@
 export interface CandidateSearchRequest {
-    occupations?: Array<OccupationCode>,
+    occupationCodes?: Array<OccupationCode>,
     skills?: Array<string>,
     experience?: string,
     workplace?: string,

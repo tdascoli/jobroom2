@@ -50,8 +50,8 @@ describe('createCandidateSearchRequestFromFilter', () => {
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
 
         // THEN
-        expect(candidateSearchRequest.occupations[0].value).toEqual(564236);
-        expect(candidateSearchRequest.occupations[0].type).toEqual('bfs');
+        expect(candidateSearchRequest.occupationCodes[0].value).toEqual(564236);
+        expect(candidateSearchRequest.occupationCodes[0].type).toEqual('bfs');
     });
 
     it('should map CandidateSearchFilter with skills', () => {
@@ -237,8 +237,8 @@ describe('createCandidateSearchRequestFromToolState', () => {
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromToolState(filter);
 
         // THEN
-        expect(candidateSearchRequest.occupations[0].value).toEqual(564236);
-        expect(candidateSearchRequest.occupations[0].type).toEqual('bfs');
+        expect(candidateSearchRequest.occupationCodes[0].value).toEqual(564236);
+        expect(candidateSearchRequest.occupationCodes[0].type).toEqual('bfs');
     });
 
     it('should map CandidateSearchFilter with workplace', () => {
