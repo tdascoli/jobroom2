@@ -47,7 +47,7 @@
 
         <div *ngIf="candidateProfile$ | async as candidateProfile" class="col-12 col-md-8 order-3 base__content">
             <div *ngIf="relevantJobExperience$ | async as relevantJobExperience" class="detail__title">
-                <h2 class="text--light">{{ relevantJobExperience.occupation }}</h2>
+                <h2 class="text--light">{{ relevantJobExperience.occupationLabel }}</h2>
             </div>
 
             <div class="detail__content">
@@ -71,7 +71,7 @@
                             {{ (jobExperience.lastJob ? 'candidate-detail.job-experience.last-job.label' :
                             'candidate-detail.job-experience.job.label') | translate}}
                         </strong>
-                        <span class="text--bold">{{ jobExperience.occupation }}</span>
+                        <span class="text--bold">{{ jobExperience.occupationLabel }}</span>
                     </div>
                     <div *ngIf="isDisplayGraduation(jobExperience.graduation)" class="content__item">
                         <strong>{{ 'candidate-detail.job-experience.graduation.label' | translate }}</strong>

@@ -89,13 +89,17 @@ export class CandidateDetailComponent implements OnInit {
             .map((experiences) => experiences.sort((a, b) => +b.lastJob - +a.lastJob))
             .shareReplay();
 
-        const occupationCode$ = this.store.select(getSearchFilter)
-            .map((searchFilter: CandidateSearchFilter) => searchFilter.occupation ? searchFilter.occupation.key : null);
+        const occupationCodes$ = this.store.select(getSearchFilter)
+            .map((searchFilter: CandidateSearchFilter) =>
+                searchFilter.occupations
+                    ? searchFilter.occupations.map((typeaheadMultiselectModel) => typeaheadMultiselectModel.code)
+                    : []
+            );
 
         this.relevantJobExperience$ = this.jobExperiences$
-            .combineLatest(occupationCode$, this.jobExperiences$)
-            .map(([jobExperiences, occupationCode]) =>
-                this.candidateService.getRelevantJobExperience(occupationCode, jobExperiences));
+            .combineLatest(occupationCodes$, this.jobExperiences$)
+            .map(([jobExperiences, occupationCodes]) =>
+                this.candidateService.getRelevantJobExperience(occupationCodes, jobExperiences));
         this.populatePreferredWorkLocations();
 
         this.contact$ = Observable.combineLatest(this.candidateProfile$, this.jobCenter$)
@@ -115,7 +119,7 @@ export class CandidateDetailComponent implements OnInit {
 
         return currentLanguage$
             .switchMap((language) =>
-                this.occupationPresentationService.findOccupationLabelsByAvamCode(jobExperience.occupationCode, language)
+                this.occupationPresentationService.findOccupationLabelsByAvamCode(jobExperience.occupation.avamCode, language)
                     .map((occupationLabels: GenderAwareOccupationLabel) =>
                         Object.assign({}, jobExperience, { occupationLabels }))
             );
@@ -124,8 +128,8 @@ export class CandidateDetailComponent implements OnInit {
     private formatOccupationLabel(gender: Gender): (jobExperience: EnrichedJobExperience) => EnrichedJobExperience {
         return (jobExperience: EnrichedJobExperience) => {
             const { male, female } = jobExperience.occupationLabels;
-            const occupation = (gender === Gender.FEMALE && female) ? female : male;
-            return Object.assign({}, jobExperience, { occupation });
+            const occupationLabel = (gender === Gender.FEMALE && female) ? female : male;
+            return Object.assign({}, jobExperience, { occupationLabel });
         }
     }
 

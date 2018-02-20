@@ -1,12 +1,14 @@
 import {
-    GenderAwareOccupationLabel, OccupationInputType,
+    GenderAwareOccupationLabel,
+    OccupationInputType,
     OccupationPresentationService
 } from '../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 import { TranslateService } from '@ngx-translate/core';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMultiselectModel } from '../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-multiselect-model';
 import {
-    OccupationLabel, OccupationLabelAutocomplete,
+    OccupationLabel,
+    OccupationLabelAutocomplete,
     OccupationLabelSuggestion
 } from '../../../../../../main/webapp/app/shared/reference-service/occupation-label.service';
 
@@ -20,7 +22,10 @@ describe('OccupationPresentationService', () => {
         mockOccupationLabelService = jasmine.createSpyObj('mockOccupationLabelService',
             ['getOccupationLabelsByKey', 'suggestOccupation']
         );
-        mockTranslateService = { currentLang: 'de', onLangChange: Observable.empty() } as TranslateService;
+        mockTranslateService = {
+            currentLang: 'de',
+            onLangChange: Observable.empty()
+        } as TranslateService;
         sut = new OccupationPresentationService(mockOccupationLabelService);
     });
 
@@ -180,14 +185,18 @@ describe('OccupationPresentationService', () => {
             }));
 
             // when
-            sut.fetchCandidateSearchOccupationSuggestions(Observable.of('java')).subscribe((c) => {
+            sut.fetchCandidateSearchOccupationSuggestions('java').subscribe((c) => {
             });
 
             // then
-            expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', ['avam']);
+            expect(mockOccupationLabelService.suggestOccupation).toHaveBeenCalledWith('java', [
+                'avam',
+                'sbn3',
+                'sbn5'
+            ]);
         });
 
-        it('should map suggestion to OccupationOption[] using the avam code', () => {
+        it('should map suggestion to TypeaheadMultiselectModel[] using the bfs code', () => {
             // given
             const suggestResponse: OccupationLabelAutocomplete = {
                 occupations: [
@@ -210,11 +219,11 @@ describe('OccupationPresentationService', () => {
 
             // when
             let suggestion;
-            sut.fetchCandidateSearchOccupationSuggestions(Observable.of('java')).subscribe((s) => suggestion = s);
+            sut.fetchCandidateSearchOccupationSuggestions('java').subscribe((s) => suggestion = s);
 
             // then
             expect(suggestion).toEqual([
-                { key: 'avam:10', label: 'Informatiker' }
+                new TypeaheadMultiselectModel(OccupationInputType.OCCUPATION, 'bfs:12', 'Informatiker', 0)
             ]);
         });
     });

@@ -11,6 +11,7 @@ import {
     Canton,
     Graduation
 } from '../../../../../../../main/webapp/app/shared/model/shared-types';
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-multiselect-model';
 
 describe('candidateSearchToolReducer', () => {
     it('should reset CandidateSearchToolState for CANDIDATE_SEARCH_TOOL_SUBMITTED action', () => {
@@ -75,15 +76,14 @@ describe('candidateSearchToolReducer', () => {
     it('should update CandidateSearchToolState.occupation for UPDATE_OCCUPATION_TRANSLATION action', () => {
         // GIVEN
         const searchModel = {
-            occupation: { key: 'avam:7632', label: 'java' },
+            occupations: [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java')],
             residence: null,
             graduation: Graduation.CH,
             totalCount: 0
         };
-        const action = new UpdateOccupationTranslationAction({
-            key: 'avam:7632',
-            label: 'java_de'
-        });
+        const action = new UpdateOccupationTranslationAction(
+            [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java_de')]
+        );
 
         const state = Object.assign({}, initialState, searchModel);
 
@@ -91,6 +91,6 @@ describe('candidateSearchToolReducer', () => {
         const newState = candidateSearchToolReducer(state, action);
 
         // THEN
-        expect(newState.occupation).toEqual({ key: 'avam:7632', label: 'java_de' });
+        expect(newState.occupations).toEqual([new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java_de')]);
     });
 });

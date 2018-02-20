@@ -15,7 +15,7 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class CandidateSearchListItemComponent implements OnInit {
     @Input() profile: CandidateProfile;
-    @Input() occupationCode: string;
+    @Input() occupationCodes: Array<string>;
 
     jobExperience$: Observable<JobExperience>;
     validExperienceData = true;
@@ -28,7 +28,7 @@ export class CandidateSearchListItemComponent implements OnInit {
 
     ngOnInit(): void {
         const relevantJobExperience = this.candidateService.getRelevantJobExperience(
-            this.occupationCode, this.profile.jobExperiences);
+            this.occupationCodes, this.profile.jobExperiences);
 
         if (relevantJobExperience) {
             this.isDisplayExperience = !!relevantJobExperience.experience;
@@ -39,10 +39,10 @@ export class CandidateSearchListItemComponent implements OnInit {
 
             this.jobExperience$ = currentLanguage$
                 .switchMap((language) =>
-                    this.occupationPresentationService.findOccupationLabelsByAvamCode(relevantJobExperience.occupationCode, language))
+                    this.occupationPresentationService.findOccupationLabelsByAvamCode(relevantJobExperience.occupation.avamCode, language))
                 .map((occupationLabels: GenderAwareOccupationLabel) => Object.assign({}, relevantJobExperience,
                     {
-                        occupation: occupationLabels.default
+                        occupationLabel: occupationLabels.default
                     }))
                 .shareReplay();
         } else {

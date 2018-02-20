@@ -182,24 +182,24 @@ describe('candidateSearchReducer', () => {
         // GIVEN
         const state = Object.assign({}, initialState, {
             searchFilter: {
-                occupation: { key: 'avam:7632', label: 'java' },
+                occupations: [
+                    new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java')
+                ]
             }
         });
-        const action = new actions.UpdateOccupationTranslationAction({
-            key: 'avam:7632',
-            label: 'java_de'
-        });
+        const action = new actions.UpdateOccupationTranslationAction(
+            [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java_de')]
+        );
 
         // WHEN
         const newState = candidateSearchReducer(state, action);
 
         // THEN
-        expect(newState.searchFilter.occupation).toEqual({
-            key: 'avam:7632',
-            label: 'java_de'
-        });
+        expect(newState.searchFilter.occupations).toEqual(
+            [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java_de')]
+        );
         verifyUnchanged(newState, initialState, ['searchFilter']);
-        verifyUnchanged(newState.searchFilter, initialState.searchFilter, ['occupation']);
+        verifyUnchanged(newState.searchFilter, initialState.searchFilter, ['occupations']);
     });
 
     it('should update CandidateSearchState for RESET_FILTER action', () => {

@@ -6,12 +6,11 @@
                 <form [formGroup]="candidateSearchForm" (submit)="search(candidateSearchForm.value)" novalidate>
 
                     <div class="form-group">
-                        <input id="occupation-input" formControlName="occupation" class="form-control"
-                               [ngbTypeahead]="fetchOccupationSuggestions"
-                               [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
-                               [inputFormatter]="occupationFormatter"
-                               [resultFormatter]="occupationFormatter"
-                               (blur)="clearInvalidValue($event)">
+                        <jr2-typeahead-multiselect
+                            formControlName="occupations"
+                            [itemLoader]="fetchOccupationSuggestions"
+                            [editable]="false"
+                            [placeHolder]="'candidate-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
                     </div>
 
                     <div class="form-group">

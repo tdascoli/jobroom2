@@ -13,8 +13,8 @@
 
         <div class="base__content--wide">
             <jr2-candidate-search-list [profileList]="candidateProfileList$ | async"
-                                       [occupationCode]="occupationCode$ | async"
-                                       [occupationName]="occupationName$ | async"
+                                       [occupationCodes]="occupationCodes$ | async"
+                                       [occupationNames]="occupationNames$ | async"
                                        [residenceFilterString]="residenceFilterString$ | async"
                                        [totalCount]="totalCount$ | async"
                                        [showError]="showError$ | async"></jr2-candidate-search-list>

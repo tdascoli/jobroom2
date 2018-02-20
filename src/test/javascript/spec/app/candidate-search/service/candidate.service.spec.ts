@@ -15,11 +15,64 @@ describe('CandidateService', () => {
 
     it('should get JobExperience by occupationCode', () => {
         // GIVEN
-        const occupationCode = '22222';
+        const occupationCodes = ['avam:22222', 'sbn3:222'];
         const jobExperiences: JobExperience[] = [
             {
-                occupationCode: 22222,
-                occupation: 'relevant',
+                occupation: {
+                    avamCode: 22221,
+                    bfsCode: 11,
+                    sbn3Code: 222,
+                    sbn5Code: 11111
+                },
+                occupationLabel: 'relevant1',
+                experience: Experience.LESS_THAN_1_YEAR,
+                graduation: Graduation.ACCEPTED,
+                degree: null,
+                education: ISCED_1997.ISCED1,
+                remark: null,
+                lastJob: true,
+                wanted: true
+            },
+            {
+                occupation: {
+                    avamCode: 11111,
+                    bfsCode: 11,
+                    sbn3Code: 111,
+                    sbn5Code: 11111
+                },
+                occupationLabel: 'non-relevant',
+                experience: Experience.LESS_THAN_1_YEAR,
+                graduation: Graduation.ACCEPTED,
+                degree: null,
+                education: ISCED_1997.ISCED1,
+                remark: null,
+                lastJob: true,
+                wanted: true
+            },
+            {
+                occupation: {
+                    avamCode: 22222,
+                    bfsCode: 10,
+                    sbn3Code: 222,
+                    sbn5Code: 11111
+                },
+                occupationLabel: 'relevant2',
+                experience: Experience.LESS_THAN_1_YEAR,
+                graduation: Graduation.ACCEPTED,
+                degree: null,
+                education: ISCED_1997.ISCED1,
+                remark: null,
+                lastJob: true,
+                wanted: true
+            },
+            {
+                occupation: {
+                    avamCode: 22223,
+                    bfsCode: 11,
+                    sbn3Code: 222,
+                    sbn5Code: 11111
+                },
+                occupationLabel: 'relevant3',
                 experience: Experience.LESS_THAN_1_YEAR,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -31,10 +84,10 @@ describe('CandidateService', () => {
         ];
 
         // WHEN
-        const relevantJobExperience = candidateService.getRelevantJobExperience(occupationCode, jobExperiences);
+        const relevantJobExperience = candidateService.getRelevantJobExperience(occupationCodes, jobExperiences);
 
         // THEN
-        expect(relevantJobExperience.occupation).toEqual('relevant');
+        expect(relevantJobExperience.occupationLabel).toEqual('relevant2');
     });
 
     it('should return null when no jobExperiences', () => {
@@ -52,8 +105,13 @@ describe('CandidateService', () => {
         // GIVEN
         const jobExperiences: JobExperience[] = [
             {
-                occupationCode: 111111,
-                occupation: 'relevant1',
+                occupation: {
+                    avamCode: 111111,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
+                occupationLabel: 'relevant1',
                 experience: Experience.LESS_THAN_1_YEAR,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -63,8 +121,13 @@ describe('CandidateService', () => {
                 wanted: true
             },
             {
-                occupationCode: 22222,
-                occupation: 'relevant2',
+                occupation: {
+                    avamCode: 22222,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
+                occupationLabel: 'relevant2',
                 experience: Experience.LESS_THAN_1_YEAR,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -79,15 +142,20 @@ describe('CandidateService', () => {
         const relevantJobExperience = candidateService.getRelevantJobExperience(null, jobExperiences);
 
         // THEN
-        expect(relevantJobExperience.occupation).toEqual('relevant2');
+        expect(relevantJobExperience.occupationLabel).toEqual('relevant2');
     });
 
     it('should get most experienced JobExperience', () => {
         // GIVEN
         const jobExperiences: JobExperience[] = [
             {
-                occupationCode: 111111,
-                occupation: 'relevant1',
+                occupation: {
+                    avamCode: 111111,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
+                occupationLabel: 'relevant1',
                 experience: Experience.MORE_THAN_3_YEARS,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -97,8 +165,13 @@ describe('CandidateService', () => {
                 wanted: true
             },
             {
-                occupationCode: 22222,
-                occupation: 'relevant2',
+                occupation: {
+                    avamCode: 22222,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
+                occupationLabel: 'relevant2',
                 experience: Experience.LESS_THAN_1_YEAR,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -113,15 +186,20 @@ describe('CandidateService', () => {
         const relevantJobExperience = candidateService.getRelevantJobExperience(null, jobExperiences);
 
         // THEN
-        expect(relevantJobExperience.occupation).toEqual('relevant1');
+        expect(relevantJobExperience.occupationLabel).toEqual('relevant1');
     });
 
     it('should get first JobExperience', () => {
         // GIVEN
         const jobExperiences: JobExperience[] = [
             {
-                occupationCode: 111111,
-                occupation: 'relevant1',
+                occupation: {
+                    avamCode: 111111,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
+                occupationLabel: 'relevant1',
                 experience: null,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -131,8 +209,13 @@ describe('CandidateService', () => {
                 wanted: true
             },
             {
-                occupationCode: 22222,
-                occupation: 'relevant2',
+                occupation: {
+                    avamCode: 22222,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
+                occupationLabel: 'relevant2',
                 experience: null,
                 graduation: Graduation.ACCEPTED,
                 degree: null,
@@ -147,6 +230,6 @@ describe('CandidateService', () => {
         const relevantJobExperience = candidateService.getRelevantJobExperience(null, jobExperiences);
 
         // THEN
-        expect(relevantJobExperience.occupation).toEqual('relevant1');
+        expect(relevantJobExperience.occupationLabel).toEqual('relevant1');
     });
 });

@@ -1,5 +1,10 @@
 import {
-    Availability, Contact, Experience, Gender, Graduation, ISCED_1997,
+    Availability,
+    Contact,
+    Experience,
+    Gender,
+    Graduation,
+    ISCED_1997,
     LanguageSkill
 } from '../../shared/model/shared-types';
 
@@ -42,8 +47,8 @@ export enum Degree {
 }
 
 export interface JobExperience {
-    occupationCode: number;
-    occupation: string;
+    occupation: Occupation,
+    occupationLabel: string;
     experience: Experience;
     graduation: Graduation;
     degree: Degree;
@@ -51,6 +56,13 @@ export interface JobExperience {
     remark: string;
     lastJob: boolean;
     wanted: boolean;
+}
+
+export interface Occupation {
+    avamCode: number;
+    bfsCode: number;
+    sbn3Code: number;
+    sbn5Code: number;
 }
 
 export interface CandidateProfile {

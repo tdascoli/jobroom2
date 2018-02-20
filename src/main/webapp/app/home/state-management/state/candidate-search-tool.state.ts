@@ -1,8 +1,8 @@
-import { OccupationOption } from '../../../shared/reference-service';
 import { TypeaheadItemDisplayModel } from '../../../shared/input-components';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
 
 export interface CandidateSearchToolState {
-    occupation?: OccupationOption,
+    occupations?: Array<TypeaheadMultiselectModel>,
     workplace?: TypeaheadItemDisplayModel,
     skills?: Array<string>,
     totalCount: number,

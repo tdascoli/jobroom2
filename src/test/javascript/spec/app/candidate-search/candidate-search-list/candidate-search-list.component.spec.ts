@@ -31,8 +31,8 @@ describe('CandidateSearchListComponent', () => {
     beforeEach(() => {
         fixture = TestBed.createComponent(CandidateSearchListComponent);
         component = fixture.componentInstance;
-        component.occupationCode = '';
-        component.occupationName = '';
+        component.occupationCodes = [];
+        component.occupationNames = [];
         component.residenceFilterString = '';
         fixture.detectChanges();
     });

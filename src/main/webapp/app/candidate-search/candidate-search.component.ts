@@ -8,6 +8,8 @@ import {
     getResetTime,
     getSearchError,
     getSearchFilter,
+    getSelectedOccupationCodes,
+    getSelectedOccupationNames,
     getTotalCandidateCount
 } from './state-management/state/candidate-search.state';
 import { Store } from '@ngrx/store';
@@ -16,7 +18,6 @@ import {
     SearchCandidatesAction
 } from './state-management/actions/candidate-search.actions';
 import { CandidateProfile } from './services/candidate';
-import { OccupationOption } from '../shared/reference-service';
 import { CantonService } from './services/canton.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
 import { WINDOW } from '../shared';
@@ -33,8 +34,8 @@ export class CandidateSearchComponent {
     loading$: Observable<boolean>;
     showError$: Observable<boolean>;
     candidateProfileList$: Observable<Array<CandidateProfile>>;
-    occupationCode$: Observable<string>;
-    occupationName$: Observable<string>;
+    occupationCodes$: Observable<Array<string>>;
+    occupationNames$: Observable<Array<string>>;
     residenceFilterString$: Observable<string>;
     showScrollButton = false;
     reset$: Observable<number>;
@@ -50,12 +51,8 @@ export class CandidateSearchComponent {
         this.showError$ = store.select(getSearchError);
         this.totalCount$ = store.select(getTotalCandidateCount);
         this.candidateProfileList$ = store.select(getCandidateProfileList);
-        this.occupationCode$ = store.select(getSearchFilter)
-            .map(occupationMapper)
-            .map((occupation) => occupation.key);
-        this.occupationName$ = store.select(getSearchFilter)
-            .map(occupationMapper)
-            .map((occupation) => occupation.label ? occupation.label : '');
+        this.occupationCodes$ = store.select(getSelectedOccupationCodes);
+        this.occupationNames$ = store.select(getSelectedOccupationNames);
         this.residenceFilterString$ = store.select(getSearchFilter)
             .combineLatest(this.cantonService.getCantonOptions())
             .map(([filter, options]) => residenceMapper(filter, options));
@@ -74,10 +71,6 @@ export class CandidateSearchComponent {
     scrollToTop(event: any): void {
         this.window.scrollTo(0, 0);
     }
-}
-
-function occupationMapper(searchFilter: CandidateSearchFilter): OccupationOption {
-    return searchFilter.occupation || { key: '', label: '' };
 }
 
 function residenceMapper(searchFilter: CandidateSearchFilter, cantonOptions: IMultiSelectOption[]): string {

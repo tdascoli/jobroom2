@@ -65,7 +65,7 @@ export function candidateSearchReducer(state = initialState, action: Actions): C
 
         case UPDATE_OCCUPATION_TRANSLATION:
             newState = Object.assign({}, state, {
-                searchFilter: Object.assign({}, state.searchFilter, { occupation: action.payload })
+                searchFilter: Object.assign({}, state.searchFilter, { occupations: action.payload })
             });
             break;
         case RESET_FILTER:

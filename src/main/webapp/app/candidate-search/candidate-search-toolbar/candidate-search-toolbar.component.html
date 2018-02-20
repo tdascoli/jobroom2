@@ -4,12 +4,11 @@
               class="form-inline toolbar-form">
 
             <div class="form-group form-group--wide">
-                <input id="occupation-input" formControlName="occupation" class="form-control form-control-lg"
-                       [ngbTypeahead]="fetchOccupationSuggestions"
-                       [placeholder]="'candidate-search.toolbar.occupation.placeholder' | translate"
-                       [inputFormatter]="occupationFormatter"
-                       [resultFormatter]="occupationFormatter"
-                       (blur)="clearInvalidValue($event)">
+                <jr2-typeahead-multiselect
+                    formControlName="occupations"
+                    [itemLoader]="fetchOccupationSuggestions"
+                    [editable]="false"
+                    [placeHolder]="'job-search.toolbar.occupation.placeholder' | translate"></jr2-typeahead-multiselect>
             </div>
 
             <div class="form-group form-group--wide w-100">

@@ -19,13 +19,13 @@ import { Principal } from '../../../../../../../main/webapp/app/shared';
 import { AccountService } from '../../../../../../../main/webapp/app/shared';
 
 describe('RouterEffects', () => {
-    const testFilter = 'eyJza2lsbHMiOltdLCJsYW5ndWFnZVNraWxscyI6W3siY29kZSI6ImRlIiwid3J' +
-        'pdHRlbiI6MSwic3Bva2VuIjoxfV0sIndvcmtsb2FkIjpbMzAsMTAwXSwib2NjdXBhdGlvbiI6bnVsb' +
-        'CwiZ3JhZHVhdGlvbiI6bnVsbCwicmVzaWRlbmNlIjpbIkFHIiwiQUkiLCJHRSJdLCJleHBlcmllbmN' +
-        'lIjpudWxsLCJ3b3JrcGxhY2UiOnsibW9kZWwiOnsidHlwZSI6ImxvY2FsaXR5IiwiY29kZSI6IlpIO' +
-        'lpIMDgiLCJsYWJlbCI6IkJlcmcgYW0gSXJjaGVsIiwib3JkZXIiOjB9LCJmaXJzdCI6dHJ1ZSwiZml' +
-        'yc3RJbkdyb3VwIjp0cnVlfSwiYXZhaWxhYmlsaXR5IjpudWxsLCJ3b3JrRm9ybSI6bnVsbCwiZGVnc' +
-        'mVlIjpudWxsLCJkcml2aW5nTGljZW5jZUNhdGVnb3J5IjpudWxsfQ==';
+    const testFilter = `eyJza2lsbHMiOltdLCJsYW5ndWFnZVNraWxscyI6W3siY29kZSI6ImRlIiwid3Jpd
+    HRlbiI6MSwic3Bva2VuIjoxfV0sIndvcmtsb2FkIjpbMzAsMTAwXSwib2NjdXBhdGlvbnMiOm51bGwsImdyYW
+    R1YXRpb24iOm51bGwsInJlc2lkZW5jZSI6WyJBRyIsIkFJIiwiR0UiXSwiZXhwZXJpZW5jZSI6bnVsbCwid29
+    ya3BsYWNlIjp7Im1vZGVsIjp7InR5cGUiOiJsb2NhbGl0eSIsImNvZGUiOiJaSDpaSDA4IiwibGFiZWwiOiJC
+    ZXJnIGFtIElyY2hlbCIsIm9yZGVyIjowfSwiZmlyc3QiOnRydWUsImZpcnN0SW5Hcm91cCI6dHJ1ZX0sImF2Y
+    WlsYWJpbGl0eSI6bnVsbCwid29ya0Zvcm0iOm51bGwsImRlZ3JlZSI6bnVsbCwiZHJpdmluZ0xpY2VuY2VDYX
+    RlZ29yeSI6bnVsbH0=`;
 
     const mockRouter = new MockRouter();
 
@@ -80,7 +80,7 @@ describe('RouterEffects', () => {
                     { code: 'de', written: 1, spoken: 1 }
                 ],
                 workload: [30, 100],
-                occupation: null,
+                occupations: null,
                 graduation: null,
                 residence: ['AG', 'AI', 'GE'],
                 experience: null,

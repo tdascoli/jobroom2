@@ -22,6 +22,7 @@ import {
     GenderAwareOccupationLabel,
     OccupationPresentationService
 } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-multiselect-model';
 
 describe('HomeEffects', () => {
     // todo: implement
@@ -125,8 +126,8 @@ describe('HomeEffects', () => {
         });
 
         it('should return a new UpdateOccupationTranslationAction if state.occupation exists', () => {
-            const occupation = { key: 'avam:7632', label: 'java' };
-            mockState$ = Observable.of({ occupation });
+            const occupations = [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java')]
+            mockState$ = Observable.of({ occupations });
 
             const action = new LanguageChangedAction('de');
             actions$ = hot('-a---', { a: action });
@@ -141,10 +142,10 @@ describe('HomeEffects', () => {
             mockOccupationPresentationService.findOccupationLabelsByCode.and.returnValue(response);
 
             const updateOccupationTranslationAction = new UpdateOccupationTranslationAction(
-                { key: 'avam:7632', label: 'java_de' }
+                [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java_de')]
             );
 
-            const expected = cold('--b---', { b: updateOccupationTranslationAction });
+            const expected = cold('---b--', { b: updateOccupationTranslationAction });
             expect(effects.languageChange$).toBeObservable(expected);
         });
     })

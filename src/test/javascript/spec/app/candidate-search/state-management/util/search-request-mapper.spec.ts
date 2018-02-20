@@ -4,9 +4,15 @@ import {
 } from '../../../../../../../main/webapp/app/candidate-search/state-management/util/search-request-mapper';
 import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import {
-    Availability, Canton, CEFR_Level, DrivingLicenceCategory, Experience, Graduation,
-    LanguageSkill, WorkForm
-} from '../../../../../../../main/webapp/app/shared';
+    Availability,
+    Canton,
+    CEFR_Level,
+    DrivingLicenceCategory,
+    Experience,
+    Graduation,
+    LanguageSkill,
+    WorkForm
+} from '../../../../../../../main/webapp/app/shared/model/shared-types';
 import { ITEMS_PER_PAGE } from '../../../../../../../main/webapp/app/shared';
 import {
     CandidateSearchToolState,
@@ -17,7 +23,6 @@ import {
     TypeaheadMultiselectModel
 } from '../../../../../../../main/webapp/app/shared/input-components';
 import { CandidateSearchRequest } from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
-import { OccupationOption } from '../../../../../../../main/webapp/app/shared/reference-service';
 import { Degree } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.model';
 
 describe('createCandidateSearchRequestFromFilter', () => {
@@ -38,17 +43,15 @@ describe('createCandidateSearchRequestFromFilter', () => {
 
     it('should map CandidateSearchFilter with occupation code', () => {
         // GIVEN
-        const occupation: OccupationOption = {
-            label: 'Java',
-            key: 'bfs:564236'
-        };
-        const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { 'occupation': occupation });
+        const occupations = [new TypeaheadMultiselectModel('occupation', 'bfs:564236', 'Java')];
+        const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { occupations });
 
         // WHEN
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
 
         // THEN
-        expect(candidateSearchRequest.occupation).toEqual('564236')
+        expect(candidateSearchRequest.occupations[0].value).toEqual(564236);
+        expect(candidateSearchRequest.occupations[0].type).toEqual('bfs');
     });
 
     it('should map CandidateSearchFilter with skills', () => {
@@ -227,18 +230,15 @@ describe('createCandidateSearchRequestFromToolState', () => {
 
     it('should map CandidateSearchFilter with occupation code', () => {
         // GIVEN
-        const occupation: OccupationOption = {
-            label: 'C++',
-            key: 'bfs:564236'
-        };
-
-        const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { 'occupation': occupation });
+        const occupations = [new TypeaheadMultiselectModel('occupation', 'bfs:564236', 'C++')];
+        const filter: CandidateSearchToolState = Object.assign({}, defaultSearchToolState, { occupations });
 
         // WHEN
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromToolState(filter);
 
         // THEN
-        expect(candidateSearchRequest.occupation).toEqual('564236')
+        expect(candidateSearchRequest.occupations[0].value).toEqual(564236);
+        expect(candidateSearchRequest.occupations[0].type).toEqual('bfs');
     });
 
     it('should map CandidateSearchFilter with workplace', () => {

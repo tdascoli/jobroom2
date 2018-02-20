@@ -16,16 +16,15 @@ import {
 } from '../state-management/state/candidate-search.state';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn,
     LocalityService,
-    OccupationOption,
     OccupationPresentationService,
-    SuggestionLoaderFn,
 } from '../../shared/reference-service';
 import { Subject } from 'rxjs/Subject';
 import { customLocalityAutocompleteMapper } from '../candidate-search-filter/candidate-search-filter.component';
 import { Store } from '@ngrx/store';
 import { ResetFilterAction } from '../state-management/actions/candidate-search.actions';
+import { Observable } from 'rxjs/Observable';
+import { TypeaheadMultiselectModel } from '../../shared/input-components/typeahead/typeahead-multiselect-model';
 
 @Component({
     selector: 'jr2-candidate-search-toolbar',
@@ -42,7 +41,7 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnCha
     set reset(value: number) {
         if (value && this.toolbarForm) {
             this.toolbarForm.reset({
-                occupation: this.searchFilter.occupation,
+                occupations: [...this.searchFilter.occupations || []],
                 skills: [...this.searchFilter.skills || []],
                 workplace: this.searchFilter.workplace
             });
@@ -53,39 +52,39 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnCha
 
     @ViewChild(NgbTypeahead) ngbTypeaheadDirective;
 
+    private unsubscribe$ = new Subject<void>();
+
     toolbarForm: FormGroup;
 
-    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
-    occupationFormatter: FormatterFn<OccupationOption>;
+    fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> =>
+        this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions(prefix);
 
-    private unsubscribe$ = new Subject<void>();
+    fetchLocalitySuggestions = (prefix: string) =>
+        this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private localityService: LocalityService,
                 private fb: FormBuilder,
                 private store: Store<CandidateSearchState>) {
-        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
-        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         const model = changes['searchFilter'];
         if (model && !model.isFirstChange()) {
-            const { occupation } = model.currentValue;
-            this.toolbarForm.get('occupation').patchValue(occupation, { emitEvent: false });
+            const { occupations } = model.currentValue;
+            this.toolbarForm.get('occupations').patchValue(occupations, { emitEvent: false });
         }
     }
 
     ngOnInit() {
         this.toolbarForm = this.fb.group({
-            occupation: [this.searchFilter.occupation],
+            occupations: [[...this.searchFilter.occupations || []]],
             skills: [[...this.searchFilter.skills || []]],
             workplace: [this.searchFilter.workplace]
         });
 
         this.toolbarForm.valueChanges
             .takeUntil(this.unsubscribe$)
-            .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) =>
                 this.search(formValue)
             );
@@ -94,26 +93,6 @@ export class CandidateSearchToolbarComponent implements OnInit, OnDestroy, OnCha
     ngOnDestroy(): void {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
-    }
-
-    fetchLocalitySuggestions = (prefix: string) =>
-        this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
-
-    clearInvalidValue(event: any) {
-        const occupationControl = this.toolbarForm.get('occupation');
-        const value = occupationControl.value;
-        if (value && value.key === undefined) {
-            occupationControl.setValue(undefined, {
-                emitEvent: true,
-            });
-
-            // This hack removes the invalid value from the input field.
-            // The idea is from this PR: https://github.com/ng-bootstrap/ng-bootstrap/pull/1468
-            //
-            // todo: This is duplicated in the CandidateSearchToolComponent, we should eventual remove it.
-            // todo: We have to review this after updating to the next ng-bootstrap versions.
-            this.ngbTypeaheadDirective._userInput = '';
-        }
     }
 
     search(formValue: any): void {

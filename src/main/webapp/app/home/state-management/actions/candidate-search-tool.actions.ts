@@ -1,6 +1,7 @@
 import { Action } from '@ngrx/store';
 import { CandidateSearchToolState } from '../state/candidate-search-tool.state';
 import { OccupationOption } from '../../../shared/reference-service/occupation-presentation.service';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
 
 export const CANDIDATE_SEARCH_TOOL_SUBMITTED = 'CANDIDATE_SEARCH_TOOL_SUBMITTED';
 export const CANDIDATE_SEARCH_TOOL_COUNT = 'CANDIDATE_SEARCH_TOOL_COUNT';
@@ -11,7 +12,7 @@ export const RESET_CANDIDATE_SEARCH_TOOL_COUNT = 'RESET_CANDIDATE_SEARCH_TOOL_CO
 export class UpdateOccupationTranslationAction implements Action {
     readonly type = UPDATE_OCCUPATION_TRANSLATION;
 
-    constructor(public payload: OccupationOption) {
+    constructor(public payload: Array<TypeaheadMultiselectModel>) {
     }
 }
 

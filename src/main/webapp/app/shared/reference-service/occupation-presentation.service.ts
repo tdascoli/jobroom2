@@ -109,18 +109,33 @@ export class OccupationPresentationService {
             })
     }
 
-    fetchCandidateSearchOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
-        prefix$
-            .switchMap((prefix: string) => prefix.length < TYPEAHEAD_QUERY_MIN_LENGTH
-                ? Observable.of([])
-                : this.occupationLabelService.suggestOccupation(prefix, ['avam'])
-                    .map((autoComplete: OccupationLabelAutocomplete) => autoComplete.occupations)
-                    .map((occupations: OccupationLabelSuggestion[]) =>
-                        occupations.map((o: OccupationLabelSuggestion) => Object.assign({}, {
-                            key: new OccupationCode(o.code, 'avam').toString(),
-                            label: o.label
-                        })))
-            );
+    fetchCandidateSearchOccupationSuggestions = (query: string): Observable<Array<TypeaheadMultiselectModel>> => {
+        const occupationLabelMapper =
+            (type: string) =>
+                (startIdx: number) =>
+                    (o: OccupationLabel | OccupationLabelSuggestion, idx: number) => {
+                        const defaultCode = new OccupationCode(o.code, o.type).toString();
+                        const bfsCode = o['mappings'] && o['mappings'].bfs && o.type === 'avam'
+                            ? new OccupationCode(o['mappings'].bfs, 'bfs').toString()
+                            : null;
+                        const code = bfsCode ? bfsCode : defaultCode;
+
+                        return new TypeaheadMultiselectModel(type, code, o.label, idx + startIdx);
+                    };
+
+        const occupationMapper = occupationLabelMapper(OccupationInputType.OCCUPATION);
+        const classificationMapper = occupationLabelMapper(OccupationInputType.CLASSIFICATION);
+
+        return this.occupationLabelService.suggestOccupation(query, ['avam', 'sbn3', 'sbn5'])
+            .map((occupationAutocomplete: OccupationLabelAutocomplete) => {
+                const { occupations, classifications } = occupationAutocomplete;
+
+                const mappedOccupations = occupations.map(occupationMapper(0));
+                const mappedClassifications = classifications.map(classificationMapper(occupations.length));
+
+                return [...mappedOccupations, ...mappedClassifications];
+            })
+    }
 
     fetchJobPublicationOccupationSuggestions = (prefix$: Observable<string>): Observable<Array<OccupationOption>> =>
         prefix$

@@ -36,6 +36,7 @@ import {
     OccupationPresentationService
 } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
 import { LanguageChangedAction } from '../../../../../../../main/webapp/app/shared/state-management/actions/core.actions';
+import { TypeaheadMultiselectModel } from '../../../../../../../main/webapp/app/shared/input-components/typeahead/typeahead-multiselect-model';
 
 describe('CandidateSearchEffects', () => {
     let effects: CandidateSearchEffects;
@@ -77,7 +78,7 @@ describe('CandidateSearchEffects', () => {
         const action = new actions.InitCandidateSearchAction();
 
         it('should return new CandidateProfileListLoadedAction if store is in initial state', () => {
-            mockState$ = hot('-a|', { a: initialState })
+            mockState$ = hot('-a|', { a: initialState });
             const candidateProfileList = [
                 createCandidateProfile('c1'),
                 createCandidateProfile('c2'),
@@ -268,8 +269,8 @@ describe('CandidateSearchEffects', () => {
         });
 
         it('should return a new UpdateOccupationTranslationAction if state.occupation exists', () => {
-            const occupation = { key: 'avam:7632', label: 'java' };
-            store.dispatch(new actions.SearchCandidatesAction({ occupation }));
+            const occupations = [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java')];
+            store.dispatch(new actions.SearchCandidatesAction({ occupations }));
             const action = new LanguageChangedAction('de');
             actions$ = hot('-a---', { a: action });
 
@@ -283,10 +284,10 @@ describe('CandidateSearchEffects', () => {
             mockOccupationPresentationService.findOccupationLabelsByCode.and.returnValue(response);
 
             const updateOccupationTranslationAction = new actions.UpdateOccupationTranslationAction(
-                { key: 'avam:7632', label: 'java_de' }
+                [new TypeaheadMultiselectModel('occupation', 'avam:7632', 'java_de')]
             );
 
-            const expected = cold('--b---', { b: updateOccupationTranslationAction });
+            const expected = cold('---b---', { b: updateOccupationTranslationAction });
             expect(effects.languageChange$).toBeObservable(expected);
         });
     })

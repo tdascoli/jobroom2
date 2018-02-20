@@ -9,6 +9,7 @@ import { createPageableURLSearchParams } from '../../shared/model/request-util';
 import { Experience } from '../../shared/model/shared-types';
 import { JhiBase64Service } from 'ng-jhipster';
 import { Principal } from '../../shared/auth/principal.service';
+import { OccupationCode } from '../../shared/reference-service/occupation-code';
 
 @Injectable()
 export class CandidateService {
@@ -21,17 +22,59 @@ export class CandidateService {
         return new ResponseWrapper(res.headers, res.json(), res.status);
     }
 
+    static getBestMatchingJobExperience(occupationCodes: Array<string>, jobExperiences: JobExperience[]) {
+        const hasOccupationCode =
+            (occupationCode: OccupationCode) =>
+                (jobExperience: JobExperience) => {
+                    const { value, type } = occupationCode;
+                    const { avamCode, bfsCode, sbn3Code, sbn5Code } = jobExperience.occupation;
+
+                    return (avamCode === value && type === 'avam')
+                        || (bfsCode === value && type === 'bfs')
+                        || (sbn3Code === value && type === 'sbn3')
+                        || (sbn5Code === value && type === 'sbn5')
+                }
+        ;
+
+        const matchingExperiences = occupationCodes
+            .map(OccupationCode.fromString)
+            .map((occupationCode) => jobExperiences.find(hasOccupationCode(occupationCode)))
+            .filter((jobExperience) => !!jobExperience)
+            .reduce((acc, curr) => {
+                const key = JSON.stringify(curr);
+                if (!acc[key]) {
+                    acc[key] = { count: 0, jobExperience: curr }
+                }
+                acc[key].count++;
+
+                return acc;
+            }, []);
+
+        const matchingExperienceKeys = Object.keys(matchingExperiences);
+        if (matchingExperienceKeys.length > 0) {
+            const bestMatchingExperienceKey = matchingExperienceKeys
+                .sort((k1, k2) => matchingExperiences[k1].count === matchingExperiences[k2].count
+                    ? 0
+                    : matchingExperiences[k1].count > matchingExperiences[k2].count ? -1 : 1
+                )[0];
+
+            return matchingExperiences[bestMatchingExperienceKey].jobExperience;
+        } else {
+            return null;
+        }
+    }
+
+    constructor(private http: Http,
+                private base64Service: JhiBase64Service,
+                private principal: Principal) {
+    }
+
     encodeURISearchFilter(filter: CandidateSearchFilter): string {
         return this.base64Service.encode(JSON.stringify(filter));
     }
 
     decodeURISearchFilter(URISearchFilter: string): CandidateSearchFilter {
         return JSON.parse(this.base64Service.decode(URISearchFilter));
-    }
-
-    constructor(private http: Http,
-                private base64Service: JhiBase64Service,
-                private principal: Principal) {
     }
 
     findCandidate(candidateProfile: CandidateProfile): Observable<Candidate> {
@@ -79,17 +122,14 @@ export class CandidateService {
             });
     }
 
-    getRelevantJobExperience(occupationCode: string, jobExperiences: JobExperience[]): JobExperience {
+    getRelevantJobExperience(occupationCodes: Array<string>, jobExperiences: JobExperience[]): JobExperience {
         jobExperiences = jobExperiences
             .filter((jobExperience) => jobExperience.wanted);
 
-        if (occupationCode) {
-            const parts = occupationCode.split(':');
-            const code = parts[parts.length - 1];
-            const jobExperience = jobExperiences
-                .find((_jobExperience) => String(_jobExperience.occupationCode) === String(code));
-            if (jobExperience) {
-                return jobExperience;
+        if (occupationCodes) {
+            const bestMatchingJobExperience = CandidateService.getBestMatchingJobExperience(occupationCodes, jobExperiences);
+            if (bestMatchingJobExperience) {
+                return bestMatchingJobExperience;
             }
         }
 

@@ -45,6 +45,7 @@ import {
     LanguageChangedAction
 } from '../../../shared/state-management/actions/core.actions';
 import { OccupationPresentationService } from '../../../shared/reference-service/occupation-presentation.service';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
 
 export const CANDIDATE_SEARCH_DEBOUNCE = new InjectionToken<number>('CANDIDATE_SEARCH_DEBOUNCE');
 export const CANDIDATE_SEARCH_SCHEDULER = new InjectionToken<Scheduler>('CANDIDATE_SEARCH_SCHEDULER');
@@ -120,14 +121,18 @@ export class CandidateSearchEffects {
     languageChange$: Observable<Action> = this.actions$
         .ofType(LANGUAGE_CHANGED)
         .withLatestFrom(this.store.select(getSearchFilter))
-        .filter(([action, state]) => !!state.occupation)
+        .filter(([action, state]) => !!state.occupations)
         .switchMap(([action, state]) => {
-            const { occupation } = state;
+            const { occupations } = state;
             const language = (action as LanguageChangedAction).payload;
 
-            return this.occupationPresentationService.findOccupationLabelsByCode(occupation.key, language)
-                .map((label) => Object.assign({}, occupation, { label: label.default }))
-                .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
+            const translations$ = occupations.map((occupation: TypeaheadMultiselectModel) =>
+                this.occupationPresentationService.findOccupationLabelsByCode(occupation.code, language)
+                    .map((label) => new TypeaheadMultiselectModel(occupation.type, occupation.code, label.default)));
+
+            return Observable.forkJoin(translations$)
+                .map((translatedOccupations: Array<TypeaheadMultiselectModel>) =>
+                    new UpdateOccupationTranslationAction(translatedOccupations));
         });
 
     @Effect({ dispatch: false })

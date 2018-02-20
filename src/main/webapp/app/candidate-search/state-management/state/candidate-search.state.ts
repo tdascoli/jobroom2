@@ -1,5 +1,4 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
-import { OccupationOption } from '../../../shared/reference-service';
 import {
     Availability,
     Canton,
@@ -12,6 +11,7 @@ import {
 } from '../../../shared';
 import { CandidateProfile } from '../../services/candidate';
 import { TypeaheadItemDisplayModel } from '../../../shared/input-components';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
 import { Degree } from '../../../shared/job-publication/job-publication.model';
 
 export interface CandidateSearchState {
@@ -27,7 +27,7 @@ export interface CandidateSearchState {
 }
 
 export interface CandidateSearchFilter {
-    occupation?: OccupationOption,
+    occupations?: Array<TypeaheadMultiselectModel>,
     skills?: Array<string>,
     experience?: Experience,
     workplace?: TypeaheadItemDisplayModel,
@@ -60,6 +60,10 @@ export const initialState: CandidateSearchState = {
 export const getCandidateSearchState = createFeatureSelector<CandidateSearchState>('candidateSearch');
 export const getCandidateProfileList = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.candidateProfileList);
 export const getSearchFilter = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchFilter);
+export const getSelectedOccupationCodes = createSelector(getSearchFilter, (candidateSearchFilter: CandidateSearchFilter) =>
+    (candidateSearchFilter.occupations || []).map((typeaheadMultiselectModel: TypeaheadMultiselectModel) => typeaheadMultiselectModel.code));
+export const getSelectedOccupationNames = createSelector(getSearchFilter, (candidateSearchFilter: CandidateSearchFilter) =>
+    (candidateSearchFilter.occupations || []).map((typeaheadMultiselectModel: TypeaheadMultiselectModel) => typeaheadMultiselectModel.label));
 export const getLoading = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.loading);
 export const getSearchError = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.searchError);
 export const getTotalCandidateCount = createSelector(getCandidateSearchState, (state: CandidateSearchState) => state.totalCandidateCount);

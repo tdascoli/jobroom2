@@ -17,14 +17,13 @@ import {
 } from '../../state-management';
 import { NgbTypeahead } from '@ng-bootstrap/ng-bootstrap';
 import {
-    FormatterFn,
     LocalityService,
-    OccupationOption,
-    OccupationPresentationService,
-    SuggestionLoaderFn
+    OccupationPresentationService
 } from '../../../shared/reference-service';
 import { customLocalityAutocompleteMapper } from '../../../candidate-search/candidate-search-filter/candidate-search-filter.component';
 import { Subject } from 'rxjs/Subject';
+import { Observable } from 'rxjs/Observable';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
 
 @Component({
     selector: 'jr2-candidate-search-tool',
@@ -40,28 +39,26 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy, OnChange
 
     candidateSearchForm: FormGroup;
 
-    fetchOccupationSuggestions: SuggestionLoaderFn<Array<OccupationOption>>;
-    occupationFormatter: FormatterFn<OccupationOption>;
+    fetchOccupationSuggestions = (prefix: string): Observable<TypeaheadMultiselectModel[]> =>
+        this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions(prefix);
 
     constructor(private occupationPresentationService: OccupationPresentationService,
                 private store: Store<CandidateSearchToolState>,
                 private fb: FormBuilder,
                 private localityService: LocalityService) {
-        this.fetchOccupationSuggestions = this.occupationPresentationService.fetchCandidateSearchOccupationSuggestions;
-        this.occupationFormatter = this.occupationPresentationService.occupationFormatter;
     }
 
     ngOnChanges(changes: SimpleChanges): void {
         const model = changes['candidateSearchToolModel'];
         if (model && !model.isFirstChange()) {
-            const { occupation } = model.currentValue;
-            this.candidateSearchForm.get('occupation').patchValue(occupation, { emitEvent: false });
+            const { occupations } = model.currentValue;
+            this.candidateSearchForm.get('occupations').patchValue(occupations, { emitEvent: false });
         }
     }
 
     ngOnInit(): void {
         this.candidateSearchForm = this.fb.group({
-            occupation: [this.candidateSearchToolModel.occupation],
+            occupations: [[...this.candidateSearchToolModel.occupations || []]],
             workplace: [this.candidateSearchToolModel.workplace],
             skills: [[...this.candidateSearchToolModel.skills || []]]
         });
@@ -69,30 +66,12 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy, OnChange
         this.candidateSearchForm.valueChanges
             .distinctUntilChanged()
             .takeUntil(this.unsubscribe$)
-            .filter((formValue: any) => !formValue.occupation || formValue.occupation.key)
             .subscribe((formValue: any) => this.filterChanged(formValue));
     }
 
     ngOnDestroy(): void {
         this.unsubscribe$.next();
         this.unsubscribe$.complete();
-    }
-
-    clearInvalidValue(event: any) {
-        const occupationControl = this.candidateSearchForm.get('occupation');
-        const value = occupationControl.value;
-        if (value && value.key === undefined) {
-            occupationControl.setValue(undefined, {
-                emitEvent: true,
-            });
-
-            // This hack removes the invalid value from the input field.
-            // The idea is from this PR: https://github.com/ng-bootstrap/ng-bootstrap/pull/1468
-            //
-            // todo: This is duplicated in the CandidateSearchToolbarComponent, we should eventual remove it.
-            // todo: We have to review this after updating to the next ng-bootstrap versions.
-            this.ngbTypeaheadDirective._userInput = '';
-        }
     }
 
     search(formValue: any) {
@@ -118,8 +97,8 @@ export class CandidateSearchToolComponent implements OnInit, OnDestroy, OnChange
         this.localityService.fetchSuggestions(prefix, customLocalityAutocompleteMapper);
 
     private filterChanged(formValue: any) {
-        const { occupation, workplace, skills } = formValue;
-        const isFilterSelected = (occupation && occupation.key)
+        const { occupations, workplace, skills } = formValue;
+        const isFilterSelected = (occupations && occupations.length > 0)
             || (workplace && workplace.model)
             || (skills && skills.length);
 

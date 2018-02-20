@@ -21,7 +21,12 @@ describe('CandidateDetailComponent', () => {
     const candidateProfile: any = {
         jobExperiences: [
             {
-                occupationCode: 22222,
+                occupation: {
+                    avamCode: 22222,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
                 wanted: true
             }
         ]
@@ -83,12 +88,17 @@ describe('CandidateDetailComponent', () => {
         // THEN
         const expected = cold('-b', {
             b: [{
-                occupationCode: 22222,
+                occupation: {
+                    avamCode: 22222,
+                    bfsCode: 22,
+                    sbn3Code: 222,
+                    sbn5Code: 22222
+                },
                 occupationLabels: {
                     male: 'Text-M',
                     female: 'Text-F'
                 },
-                occupation: 'Text-M',
+                occupationLabel: 'Text-M',
                 wanted: true
             }]
         });

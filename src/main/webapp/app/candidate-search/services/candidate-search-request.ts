@@ -1,5 +1,5 @@
 export interface CandidateSearchRequest {
-    occupation?: string,
+    occupations?: Array<OccupationCode>,
     skills?: Array<string>,
     experience?: string,
     workplace?: string,
@@ -26,4 +26,9 @@ export interface CandidateLanguageSkill {
     code: string
     written?: string
     spoken?: string
+}
+
+export interface OccupationCode {
+    type: string,
+    value: number
 }

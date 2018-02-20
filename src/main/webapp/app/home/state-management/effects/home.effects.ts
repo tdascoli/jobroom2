@@ -30,6 +30,7 @@ import {
 } from '../../../shared/state-management/actions/core.actions';
 import { OccupationPresentationService } from '../../../shared/reference-service/occupation-presentation.service';
 import { getCandidateSearchToolState, HomeState } from '../state/home.state';
+import { TypeaheadMultiselectModel } from '../../../shared/input-components/typeahead/typeahead-multiselect-model';
 
 @Injectable()
 export class HomeEffects {
@@ -72,14 +73,18 @@ export class HomeEffects {
     languageChange$: Observable<Action> = this.actions$
         .ofType(LANGUAGE_CHANGED)
         .withLatestFrom(this.store.select(getCandidateSearchToolState))
-        .filter(([action, state]) => !!state.occupation)
+        .filter(([action, state]) => !!state.occupations)
         .switchMap(([action, state]) => {
-            const { occupation } = state;
+            const { occupations } = state;
             const language = (action as LanguageChangedAction).payload;
 
-            return this.occupationPresentationService.findOccupationLabelsByCode(occupation.key, language)
-                .map((label) => Object.assign({}, occupation, { label: label.default }))
-                .map((translatedOccupation) => new UpdateOccupationTranslationAction(translatedOccupation))
+            const translations$ = occupations.map((occupation: TypeaheadMultiselectModel) =>
+                this.occupationPresentationService.findOccupationLabelsByCode(occupation.code, language)
+                    .map((label) => new TypeaheadMultiselectModel(occupation.type, occupation.code, label.default)));
+
+            return Observable.forkJoin(translations$)
+                .map((translatedOccupations: Array<TypeaheadMultiselectModel>) =>
+                    new UpdateOccupationTranslationAction(translatedOccupations));
         });
 
     constructor(private actions$: Actions,

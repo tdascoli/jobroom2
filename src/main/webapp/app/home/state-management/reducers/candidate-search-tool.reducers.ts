@@ -27,7 +27,7 @@ export function candidateSearchToolReducer(state = initialState, action: Actions
             newState = Object.assign({}, initialState);
             break;
         case UPDATE_OCCUPATION_TRANSLATION:
-            newState = Object.assign({}, state, { occupation: action.payload });
+            newState = Object.assign({}, state, { occupations: action.payload });
             break;
 
         default:

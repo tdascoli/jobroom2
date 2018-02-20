@@ -29,8 +29,8 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
     @Input() profileList: Array<CandidateProfile>;
     @Input() totalCount: number;
     @Input() showError: boolean;
-    @Input() occupationCode: string;
-    @Input() occupationName: string;
+    @Input() occupationCodes: Array<string>;
+    @Input() occupationNames: Array<string>;
     @Input() residenceFilterString: string;
 
     private subscription: Subscription;
@@ -78,7 +78,8 @@ export class CandidateSearchListComponent implements OnDestroy, AfterViewInit {
             key += '.many';
         }
 
-        if (this.occupationName && this.occupationName.length > 0) {
+        const occupationName = this.occupationNames.join(', ');
+        if (occupationName && occupationName.length > 0) {
             key += '.with-query';
         }
 
