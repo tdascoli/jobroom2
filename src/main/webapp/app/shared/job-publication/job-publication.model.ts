@@ -1,8 +1,6 @@
 import { CEFR_Level, DrivingLicenceCategory } from '../';
 
 export enum Degree {
-    PRIMAR_OBLIGATORISCHE_SCHULE,
-    SEK_I_OBLIGATORISCHE_SCHULE,
     SEK_II_WEITERFUEHRENDE_SCHULE,
     SEK_II_GRUNDBILDUNG_EBA,
     SEK_II_GRUNDBILDUNG_EFZ,

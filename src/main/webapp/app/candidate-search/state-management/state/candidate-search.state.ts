@@ -12,6 +12,7 @@ import {
 } from '../../../shared';
 import { CandidateProfile } from '../../services/candidate';
 import { TypeaheadItemDisplayModel } from '../../../shared/input-components';
+import { Degree } from '../../../shared/job-publication/job-publication.model';
 
 export interface CandidateSearchState {
     searchFilter: CandidateSearchFilter;
@@ -34,7 +35,7 @@ export interface CandidateSearchFilter {
     availability?: Availability,
     workload?: [number, number];
     workForm?: WorkForm,
-    educationLevel?: ISCED_1997,
+    degree?: Degree,
     graduation?: Graduation,
     drivingLicenceCategory?: DrivingLicenceCategory
     languageSkills?: Array<LanguageSkill>

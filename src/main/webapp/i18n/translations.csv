@@ -67,7 +67,6 @@ candidate-search,candidate-search.candidate-search-list.title.one,1 Kandidat,1 c
 candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 Kandidat in {{locality}},1 candidate in {{locality}},1 candidat à {{locality}},1 candidato in {{locality}}
 candidate-search,candidate-search.candidate-search-list.title.one.with-query,1 '{{query}}' Kandidat,1 '{{query}}' candidate,1 candidat pour '{{query}}',1 candidato  per '{{query}}'
 candidate-search,candidate-search.candidate-search-list.title.one.with-query.with-locality,1 '{{query}}' Kandidat in {{locality}},1 '{{query}}' candidate in {{locality}},1 candidat pour '{{query}}' à {{locality}},1 candidato per '{{query}}' in {{locality}}
-candidate-search,candidate-search.education.label,Bildungsstufe,Level of education,Niveau de formation,Livello formativo
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Suchergebnisse filtern,Filter search result,Filtrer les résultats,Filtra risultati della ricerca

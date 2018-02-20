@@ -22,9 +22,6 @@
                 "one.with-query.with-locality": "1 candidat pour '{{query}}' \u00e0 {{locality}}"
             }
         },
-        "education": {
-            "label": "Niveau de formation"
-        },
         "experience": {
             "label": "Exp\u00e9rience professionnelle"
         },

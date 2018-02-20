@@ -4,6 +4,16 @@
     <div class="filter__content" [ngClass]="{show: !isFilterCollapsed}">
         <form [formGroup]="filterForm" novalidate>
             <div class="form-group">
+                <label for="degree" class="small" translate="candidate-search.degree.label"></label>
+                <select formControlName="degree" id="degree" class="form-control-sm custom-select">
+                    <option selected="" value="null" translate="candidate-search.no-selection"></option>
+                    <option *ngFor="let degree of degrees | keys" [ngValue]="degree.key">
+                        {{'global.degree.' + degree.value | translate}}
+                    </option>
+                </select>
+            </div>
+
+            <div class="form-group">
                 <label for="graduation" class="small">{{ 'candidate-search.toolbar.graduation.label' | translate}}</label>
                 <select formControlName="graduation" class="form-control-sm custom-select" id="graduation">
                     <option selected="" value="null" translate="candidate-search.toolbar.graduation.default"></option>
@@ -58,16 +68,6 @@
                     <option selected="" value="null" translate="candidate-search.no-selection"></option>
                     <option *ngFor="let drivingLicenceCategory of drivingLicenceCategories | keys" [ngValue]="drivingLicenceCategory.key">
                         {{'global.drivingLicenceCategory.' + drivingLicenceCategory.value | translate}}
-                    </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="educationLevel" class="small" translate="candidate-search.education.label"></label>
-                <select formControlName="educationLevel" id="educationLevel" class="form-control-sm custom-select">
-                    <option selected="" value="null" translate="candidate-search.no-selection"></option>
-                    <option *ngFor="let educationLevel of educationLevels | keys" [ngValue]="educationLevel.key">
-                        {{'global.education.' + educationLevel.value | translate}}
                     </option>
                 </select>
             </div>

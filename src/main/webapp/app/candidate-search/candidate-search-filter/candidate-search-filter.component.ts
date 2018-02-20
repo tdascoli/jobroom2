@@ -26,6 +26,7 @@ import {
 } from '../../shared';
 import { IMultiSelectOption, IMultiSelectSettings } from 'angular-2-dropdown-multiselect';
 import { CantonService } from '../services/canton.service';
+import { Degree } from '../../shared/job-publication/job-publication.model';
 
 @Component({
     selector: 'jr2-candidate-search-filter',
@@ -45,7 +46,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
                 availability: this.searchFilter.availability,
                 workload: this.searchFilter.workload,
                 workForm: this.searchFilter.workForm,
-                educationLevel: this.searchFilter.educationLevel,
+                degree: this.searchFilter.degree,
                 drivingLicenceCategory: this.searchFilter.drivingLicenceCategory,
                 languageSkills: [...this.searchFilter.languageSkills || []]
             });
@@ -55,10 +56,10 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
 
     @Output() searchCandidates = new EventEmitter<CandidateSearchFilter>();
 
+    degrees = Degree;
     graduations = Graduation;
     experiences = Experience;
     availabilities = Availability;
-    educationLevels = ISCED_1997;
     workForms = WorkForm;
     drivingLicenceCategories = DrivingLicenceCategory;
     filterForm: FormGroup;
@@ -94,7 +95,7 @@ export class CandidateSearchFilterComponent implements OnInit, OnDestroy {
             availability: [this.searchFilter.availability],
             workload: [this.searchFilter.workload],
             workForm: [this.searchFilter.workForm],
-            educationLevel: [this.searchFilter.educationLevel],
+            degree: [this.searchFilter.degree],
             drivingLicenceCategory: [this.searchFilter.drivingLicenceCategory],
             languageSkills: [[...this.searchFilter.languageSkills || []]]
         });

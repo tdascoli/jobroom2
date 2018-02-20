@@ -22,9 +22,6 @@
                 "one.with-query.with-locality": "1 '{{query}}' candidate in {{locality}}"
             }
         },
-        "education": {
-            "label": "Level of education"
-        },
         "experience": {
             "label": "Professional experience"
         },

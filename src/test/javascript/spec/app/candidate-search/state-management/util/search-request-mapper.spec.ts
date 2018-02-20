@@ -5,9 +5,9 @@ import {
 import { CandidateSearchFilter } from '../../../../../../../main/webapp/app/candidate-search/state-management/state/candidate-search.state';
 import {
     Availability, Canton, CEFR_Level, DrivingLicenceCategory, Experience, Graduation,
-    ISCED_1997, LanguageSkill, WorkForm
-} from '../../../../../../../main/webapp/app/shared/model/shared-types';
-import { ITEMS_PER_PAGE } from '../../../../../../../main/webapp/app/shared/constants/pagination.constants';
+    LanguageSkill, WorkForm
+} from '../../../../../../../main/webapp/app/shared';
+import { ITEMS_PER_PAGE } from '../../../../../../../main/webapp/app/shared';
 import {
     CandidateSearchToolState,
     initialState
@@ -15,9 +15,10 @@ import {
 import {
     TypeaheadItemDisplayModel,
     TypeaheadMultiselectModel
-} from '../../../../../../../main/webapp/app/shared/input-components/index';
+} from '../../../../../../../main/webapp/app/shared/input-components';
 import { CandidateSearchRequest } from '../../../../../../../main/webapp/app/candidate-search/services/candidate-search-request';
-import { OccupationOption } from '../../../../../../../main/webapp/app/shared/reference-service/occupation-presentation.service';
+import { OccupationOption } from '../../../../../../../main/webapp/app/shared/reference-service';
+import { Degree } from '../../../../../../../main/webapp/app/shared/job-publication/job-publication.model';
 
 describe('createCandidateSearchRequestFromFilter', () => {
 
@@ -123,14 +124,14 @@ describe('createCandidateSearchRequestFromFilter', () => {
 
     it('should map CandidateSearchFilter with degree', () => {
         // GIVEN
-        const educationLevel: ISCED_1997 = ISCED_1997.ISCED6;
-        const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { 'educationLevel': educationLevel });
+        const degree: Degree = Degree.TER_BERUFSBILDUNG_FA;
+        const filter: CandidateSearchFilter = Object.assign({}, defaultFilter, { 'degree': degree });
 
         // WHEN
         const candidateSearchRequest: CandidateSearchRequest = createCandidateSearchRequestFromFilter(filter);
 
         // THEN
-        expect(candidateSearchRequest.educationLevel).toEqual(ISCED_1997[educationLevel]);
+        expect(candidateSearchRequest.degree).toEqual(Degree[degree]);
     });
 
     it('should map CandidateSearchFilter with graduation', () => {

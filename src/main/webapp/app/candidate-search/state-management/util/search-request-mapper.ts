@@ -19,10 +19,11 @@ import {
     WorkLoad
 } from '../../services/candidate-search-request';
 import { OccupationCode, OccupationOption } from '../../../shared/reference-service';
+import { Degree } from '../../../shared/job-publication/job-publication.model';
 
 export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSearchFilter, page = 0): CandidateSearchRequest {
     const {
-        occupation, experience, availability, workForm, educationLevel, graduation,
+        occupation, experience, availability, workForm, degree, graduation,
         drivingLicenceCategory
     } = searchFilter;
     const workplace = mapWorkplace(searchFilter.workplace);
@@ -37,7 +38,7 @@ export function createCandidateSearchRequestFromFilter(searchFilter: CandidateSe
         availability: Availability[availability],
         workLoad: mapWorkLoad(searchFilter.workload),
         workForm: WorkForm[workForm],
-        educationLevel: ISCED_1997[educationLevel],
+        degree: Degree[degree],
         graduation: Graduation[graduation],
         drivingLicenceCategory: DrivingLicenceCategory[drivingLicenceCategory],
         languageSkills: mapLanguageSkills(searchFilter.languageSkills),

@@ -56,7 +56,7 @@ export function createJobPublication(): JobPublication {
             },
             occupation: {
                 avamOccupation: 'sfsfa',
-                degree: Degree.PRIMAR_OBLIGATORISCHE_SCHULE,
+                degree: Degree.SEK_II_WEITERFUEHRENDE_SCHULE,
                 experience: Experience.LESS_THAN_1_YEAR
             },
             permanent: true,

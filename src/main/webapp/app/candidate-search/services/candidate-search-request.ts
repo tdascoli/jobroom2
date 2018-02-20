@@ -9,7 +9,7 @@ export interface CandidateSearchRequest {
     availability?: string,
     workLoad?: WorkLoad,
     workForm?: string,
-    educationLevel?: string,
+    degree?: string,
     graduation?: string,
     drivingLicenceCategory?: string,
     languageSkills?: Array<CandidateLanguageSkill>,

@@ -68,7 +68,7 @@ describe('JobPublicationMapper', () => {
             },
             occupation: {
                 avamOccupation: 'sfsfa',
-                degree: Degree.PRIMAR_OBLIGATORISCHE_SCHULE,
+                degree: Degree.SEK_II_WEITERFUEHRENDE_SCHULE,
                 experience: Experience.LESS_THAN_1_YEAR,
                 occupationSuggestion: {
                     key: '12312412',
