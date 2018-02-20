@@ -75,6 +75,9 @@
         "workplace": {
             "label": "Lieu de travail",
             "placeholder": "Lieu de travail"
+        },
+        "degree": {
+            "label": "Formation"
         }
     }
 }

@@ -67,6 +67,7 @@ candidate-search,candidate-search.candidate-search-list.title.one,1 Kandidat,1 c
 candidate-search,candidate-search.candidate-search-list.title.one.with-locality,1 Kandidat in {{locality}},1 candidate in {{locality}},1 candidat à {{locality}},1 candidato in {{locality}}
 candidate-search,candidate-search.candidate-search-list.title.one.with-query,1 '{{query}}' Kandidat,1 '{{query}}' candidate,1 candidat pour '{{query}}',1 candidato  per '{{query}}'
 candidate-search,candidate-search.candidate-search-list.title.one.with-query.with-locality,1 '{{query}}' Kandidat in {{locality}},1 '{{query}}' candidate in {{locality}},1 candidat pour '{{query}}' à {{locality}},1 candidato per '{{query}}' in {{locality}}
+candidate-search,candidate-search.degree.label,Ausbildung,Training,Formation,Formazione
 candidate-search,candidate-search.experience.label,Berufserfahrung,Professional experience,Expérience professionnelle,Esperienza professionale
 candidate-search,candidate-search.filter.candidate-search-link,Suche als Link versenden,Send search as link,Envoyer la recherche comme lien,Invia ricerca come link
 candidate-search,candidate-search.filter.title,Suchergebnisse filtern,Filter search result,Filtrer les résultats,Filtra risultati della ricerca
@@ -84,9 +85,9 @@ candidate-search,candidate-search.title,Kandidatensuche,Candidate search,Recherc
 candidate-search,candidate-search.toolbar.graduation.default,Abschluss auswählen,Select degree,Sélectionner un diplôme,Seleziona titolo...
 candidate-search,candidate-search.toolbar.graduation.label,Abschluss,Degree,Diplôme,Titolo
 candidate-search,candidate-search.toolbar.occupation.placeholder,Berufsbezeichnung,Occupation,Profession,Professione
+candidate-search,candidate-search.toolbar.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 candidate-search,candidate-search.toolbar.residence.placeholder,Wohnkanton,Canton of residence,Canton de domicile,Luogo di domicilio: Cantone
 candidate-search,candidate-search.toolbar.residence.selected,Kantone,Cantons,Cantons,Cantoni
-candidate-search,candidate-search.toolbar.reset,Zurücksetzen,Reset,Rétablir,Ripristina
 candidate-search,candidate-search.workForm.HOME_WORK,Heimarbeit,Home-based work,Travail à domicile,Telelavoro
 candidate-search,candidate-search.workForm.NIGHT_WORK,Nachtarbeit,Night work,Travail de nuit,Lavoro notturno
 candidate-search,candidate-search.workForm.SHIFT_WORK,Schichtarbeit,Shift work,Travail en équipes,Lavoro a turni
@@ -279,10 +280,10 @@ global,global.form.email,E-Mail-Adresse,Email address,Adresse courriel,Indirizzo
 global,global.form.email.placeholder,Ihre E-Mail Adresse,Your email address,Votre adresse courriel,Il tuo indirizzo e-mail
 global,global.form.newpassword,Neues Passwort,New password,Nouveau mot de passe,Nuova password
 global,global.form.newpassword.placeholder,Neues Passwort,New password,Nouveau mot de passe,Nuova password
-global,global.form.username,Benutzername,Username,Nom d'utilisateur,Utente
-global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom d'utilisateur,Il tuo nome utente
 global,global.form.phone,Telefon,Telephone,Téléphone,Telefono
 global,global.form.phone.placeholder,031 999 99 99 or +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99,031 999 99 99 or +41 31 999 99 99
+global,global.form.username,Benutzername,Username,Nom d'utilisateur,Utente
+global,global.form.username.placeholder,Ihr Benutzername,Your username,Votre nom d'utilisateur,Il tuo nome utente
 global,global.gender.FEMALE,weiblich,Female,féminin,femmina
 global,global.gender.MALE,männlich,Male,masculin,maschio
 global,global.item-count,Ergebnis {{first}} - {{second}} von {{total}} Elemente.,Showing {{first}} - {{second}} of {{total}} items.,Affichage {{first}} - {{second}} de {{total}} éléments.,Mostra {{first}} - {{second}} di {{total}} articoli.
@@ -547,8 +548,8 @@ global,global.reference.region.ZH11,Hinwil,Hinwil,Hinwil,Hinwil
 global,global.reference.region.ZH12,Stadt Zürich,Zurich City,ville de Zurich,città di Zurigo
 global,global.ribbon.dev,Local,Local,Local,Local
 global,global.ribbon.development,Entwicklung,Development,Développement,Development
-global,global.ribbon.test,Test,Test,Test,Test
 global,global.ribbon.staging,Staging,Staging,Staging,Staging
+global,global.ribbon.test,Test,Test,Test,Test
 global,global.title,Job-Room,Job-Room,Job-Room,Job-Room
 global,header.title,Arbeitslosenversicherung ALV,Unemployment insurance,Assurance-chômage AC,Assicurazione contro la disoccupazione AD
 global,navigation.next,Weiter,Next,Suivant,Seguente
@@ -637,12 +638,12 @@ home,home.tools.job-publication.locality.country,Land,Country,Pays,Paese
 home,home.tools.job-publication.locality.title,Arbeitsort,Place of work,Lieu de travail,Luogo di lavoro
 home,home.tools.job-publication.locality.zip,PLZ,Postal code,"NPA  ","NPA  "
 home,home.tools.job-publication.locality.zipcode,PLZ / Ort,Postal code / city,NPA / lieu,NPA / luogo
+home,home.tools.job-publication.messages.validate.date-format,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
 home,home.tools.job-publication.messages.validate.email-format,Diese E-Mail-Adresse ist ungültig.,This email address is invalid.,Cette adresse courriel n'est pas valide.,L'indirizzo e-mail non è valido.
+home,home.tools.job-publication.messages.validate.employment-duration.date-before,The min date is employment start date,The min date is employment start date,The min date is employment start date,The min date is employment start date
+home,home.tools.job-publication.messages.validate.employment-start.date-before,The min date is actual date,The min date is actual date,The min date is actual date,The min date is actual date
 home,home.tools.job-publication.messages.validate.phone-format,Bitte gültige Telefonnummer eingeben z. B. 031 999 99 99 oder +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99,Please enter a valid phone number e.g. 031 999 99 99 or +41 31 999 99 99
 home,home.tools.job-publication.messages.validate.required,Pflichtfeld,This field is required.,Ce champ est obligatoire.,Questo campo è obbligatorio.
-home,home.tools.job-publication.messages.validate.date-format,TT.MM.JJJJ,DD.MM.YYYY,JJ.MM.AAAA,GG.MM.AAAA
-home,home.tools.job-publication.messages.validate.employment-start.date-before,The min date is actual date,The min date is actual date,The min date is actual date,The min date is actual date
-home,home.tools.job-publication.messages.validate.employment-duration.date-before,The min date is employment start date,The min date is employment start date,The min date is employment start date,The min date is employment start date
 home,home.tools.job-publication.messages.validate.zip-format,PLZ ungültig,Invalid postal code,NPA n'est pas valide.,NPA non è valido.
 home,home.tools.job-publication.messages.validate.zip-or-city-format,PLZ/Ort ungültig,Invalid postal code/city,NPA/lieu n'est pas valide.,NPA/luogo non è valido.
 home,home.tools.job-publication.no-selection,keine Auswahl,No selection,aucune sélection,nessuna scelta
@@ -756,11 +757,11 @@ job-search,job-search.toolbar.locality-select.tooltip,Aktueller Standort wählen
 job-search,job-search.toolbar.locality.placeholder,Ortschaft oder Kanton,Location or canton,Lieu ou canton,Località o Cantone
 job-search,job-search.toolbar.occupation.placeholder,"Berufsbezeichnungen, Suchbegriffe","Occupations, keywords","Professions, mots-clés","Professioni, parole chiave"
 job-search,job-search.toolbar.reset,Zurücksetzen,Reset,Rétablir,Ripristina
+job-search,typeahead-multiselect.tooltip,"Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus."
 job-search,typeahead-multiselect.type.canton,Kanton,Canton,Canton,Cantone
 job-search,typeahead-multiselect.type.classification,Berufskategorie,Category,Catégorie,Categoria
 job-search,typeahead-multiselect.type.locality,Ortschaft,Locality,Localité,Località
 job-search,typeahead-multiselect.type.occupation,Berufsbezeichnung,Occupation,Profession,Professione
-job-search,typeahead-multiselect.tooltip,"Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus.","Um <strong>mehrere</strong> Suchbegriffe einzugeben, drücken Sie ""ENTER"" auf Ihrer Tastatur oder wählen Sie mehrere Suchbefriffe aus der Liste aus."
 job,jobroomApp.job.applicationUrl,Application Url,Application Url,Application Url,Application Url
 job,jobroomApp.job.cancellationDate,Annulationsdatum,Cancellation date,Date d'annulation,Data di cancellazione
 job,jobroomApp.job.cancellationReason,Annluationsgrund,Cancellation reason,Motif de l'annulation,Motivo cancellazione
