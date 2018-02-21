@@ -19,6 +19,7 @@ import { OrganizationService } from './organization/organization.service';
 import { JobPublicationService } from './job-publication/job-publication.service';
 import { TextSizeLimitDirective } from './validation/text-size-limit.directive';
 import { LanguageFilterService } from './input-components/language-filter/language-filter.service';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
     imports: [
@@ -35,7 +36,8 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
         DetailsPagePaginationComponent,
-        TextSizeLimitDirective
+        TextSizeLimitDirective,
+        ScrollToTopComponent
     ],
     providers: [
         LoginService,
@@ -70,7 +72,8 @@ import { LanguageFilterService } from './input-components/language-filter/langua
         LanguageComponent,
         DetailsPagePaginationControlsComponent,
         DetailsPagePaginationComponent,
-        TextSizeLimitDirective
+        TextSizeLimitDirective,
+        ScrollToTopComponent
     ],
     schemas: [CUSTOM_ELEMENTS_SCHEMA]
 

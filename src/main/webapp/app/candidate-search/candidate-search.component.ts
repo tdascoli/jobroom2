@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, HostListener, Inject, } from '@angular/core';
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import {
     CandidateSearchFilter,
@@ -20,7 +20,6 @@ import {
 import { CandidateProfile } from './services/candidate';
 import { CantonService } from './services/canton.service';
 import { IMultiSelectOption } from 'angular-2-dropdown-multiselect';
-import { WINDOW } from '../shared';
 
 @Component({
     selector: 'jr2-candidate-search',
@@ -37,12 +36,10 @@ export class CandidateSearchComponent {
     occupationCodes$: Observable<Array<string>>;
     occupationNames$: Observable<Array<string>>;
     residenceFilterString$: Observable<string>;
-    showScrollButton = false;
     reset$: Observable<number>;
 
     constructor(private store: Store<CandidateSearchState>,
-                private cantonService: CantonService,
-                @Inject(WINDOW) private window: Window) {
+                private cantonService: CantonService) {
 
         this.store.dispatch(new InitCandidateSearchAction());
 
@@ -61,15 +58,6 @@ export class CandidateSearchComponent {
 
     searchCandidates(filter: CandidateSearchFilter): void {
         this.store.dispatch(new SearchCandidatesAction(filter));
-    }
-
-    @HostListener('window:scroll')
-    onWindowScroll(): void {
-        this.showScrollButton = this.window.scrollY > 200;
-    }
-
-    scrollToTop(event: any): void {
-        this.window.scrollTo(0, 0);
     }
 }
 
